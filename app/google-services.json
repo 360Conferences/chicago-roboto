@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1034646346455",
+    "firebase_url": "https://gdg-chicago-devfest.firebaseio.com",
+    "project_id": "gdg-chicago-devfest",
+    "storage_bucket": "gdg-chicago-devfest.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1034646346455:android:c624f82d99155013",
+        "android_client_info": {
+          "package_name": "com.gdgchicagowest.windycitydevcon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1034646346455-plr4lu3fsp908bfjj354r6rkspgmssg4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gdgchicagowest.windycitydevcon",
+            "certificate_hash": "19D081945F34D17B762F2ECDF9ADAEDEEDEE275D"
+          }
+        },
+        {
+          "client_id": "1034646346455-tt6vmudvkr1kalu3m86hta8r9lsrgldo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkzDCz4N_AWbrywq6KUrek5DH86zfQvaE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1034646346455-tt6vmudvkr1kalu3m86hta8r9lsrgldo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
