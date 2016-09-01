@@ -24,8 +24,21 @@ internal class SessionAdapter() : RecyclerView.Adapter<SessionAdapter.ViewHolder
         val session = sessions[position]
         holder.timeslot.text = "${format.format(session.startTime)}\nto\n${format.format(session.endTime)}"
         holder.title.text = session.name
-        holder.speakers.text = session.speakers?.joinToString()
-        holder.room.text = session.room
+
+        val speakers = session.speakers
+        if (speakers == null || speakers.isEmpty()) {
+            holder.speakers.visibility = View.GONE
+        } else {
+            holder.speakers.visibility = View.VISIBLE
+            holder.speakers.text = session.speakers?.joinToString()
+        }
+
+        if (session.room == null) {
+            holder.room.visibility = View.GONE
+        } else {
+            holder.room.visibility = View.VISIBLE
+            holder.room.text = session.room
+        }
 
         if (position > 0) {
             val previous = sessions[position - 1]
