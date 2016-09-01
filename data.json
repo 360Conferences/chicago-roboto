@@ -23,17 +23,6 @@
         "room": "Lake Michigan"
       },
       {
-        "name": "An Intro to developing for Google Cardboard with Unity",
-        "description": "Lorem ipsum dolor sit amet",
-        "start_time": "2016-09-16T10:00:00-0500",
-        "end_time": "2016-09-16T10:45:00-0500",
-        "date": "2016-09-16",
-        "speakers": [
-          "dward"
-        ],
-        "room": "Android"
-      },
-      {
         "name": "Intro to Google Cloud Platform",
         "description": "Lorem ipsum dolor sit amet",
         "start_time": "2016-09-16T10:00:00-0500",
@@ -46,6 +35,17 @@
         "tracks": [
           "cloud"
         ]
+      },
+      {
+        "name": "An Intro to developing for Google Cardboard with Unity",
+        "description": "Lorem ipsum dolor sit amet",
+        "start_time": "2016-09-16T10:00:00-0500",
+        "end_time": "2016-09-16T10:45:00-0500",
+        "date": "2016-09-16",
+        "speakers": [
+          "dward"
+        ],
+        "room": "Android"
       },
       {
         "name": "Intro to Firebase",
@@ -184,8 +184,8 @@
       {
         "name": "Moto Mods",
         "description": "Lorem ipsum dolor sit amet",
-        "start_time": "2016-09-16T15:00:00-0500",
-        "end_time": "2016-09-16T15:45:00-0500",
+        "start_time": "2016-09-16T14:00:00-0500",
+        "end_time": "2016-09-16T14:45:00-0500",
         "date": "2016-09-16",
         "speakers": [
           "cflowers"
@@ -213,8 +213,8 @@
       {
         "name": "Securing Firebase",
         "description": "Lorem ipsum dolor sit amet",
-        "start_time": "2016-09-16T14:00:00-0500",
-        "end_time": "2016-09-16T14:45:00-0500",
+        "start_time": "2016-09-16T15:00:00-0500",
+        "end_time": "2016-09-16T15:45:00-0500",
         "date": "2016-09-16",
         "speakers": [
           "mballard"
