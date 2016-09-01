@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="timeslot_width">72dp</dimen>
-    <dimen name="session_row_height">108dp</dimen>
+    <dimen name="session_row_height">116dp</dimen>
     <dimen name="recycler_spacing_vertical">3dp</dimen>
 </resources>

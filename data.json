@@ -20,7 +20,7 @@
         "speakers": [
           "boberkfell"
         ],
-        "room": "lake-michigan"
+        "room": "Lake Michigan"
       },
       {
         "name": "An Intro to developing for Google Cardboard with Unity",
@@ -31,7 +31,7 @@
         "speakers": [
           "dward"
         ],
-        "room": "android"
+        "room": "Android"
       },
       {
         "name": "Intro to Google Cloud Platform",
@@ -42,7 +42,7 @@
         "speakers": [
           "drowe"
         ],
-        "room": "lake-michigan",
+        "room": "Lake Michigan",
         "tracks": [
           "cloud"
         ]
@@ -56,7 +56,7 @@
         "speakers": [
           "lcledeyn"
         ],
-        "room": "maps",
+        "room": "Maps",
         "tracks": [
           "web"
         ]
@@ -70,7 +70,7 @@
         "speakers": [
           "jmardis"
         ],
-        "room": "lake-michigan",
+        "room": "Lake Michigan",
         "tracks": [
           "android"
         ]
@@ -84,7 +84,7 @@
         "speakers": [
           "vsanchez"
         ],
-        "room": "android",
+        "room": "Android",
         "tracks": [
           "web"
         ]
@@ -98,7 +98,7 @@
         "speakers": [
           "bmcgowen"
         ],
-        "room": "maps",
+        "room": "Maps",
         "tracks": [
           "cloud"
         ]
@@ -119,7 +119,7 @@
         "speakers": [
           "momander"
         ],
-        "room": "lake-michigan",
+        "room": "Lake Michigan",
         "tracks": [
           "web"
         ]
@@ -133,7 +133,7 @@
         "speakers": [
           "dsmith"
         ],
-        "room": "android",
+        "room": "Android",
         "tracks": [
           "android"
         ]
@@ -147,7 +147,7 @@
         "speakers": [
           "jcoca"
         ],
-        "room": "maps",
+        "room": "Maps",
         "tracks": [
           "android"
         ]
@@ -161,7 +161,7 @@
         "speakers": [
           "mevans"
         ],
-        "room": "lake-michigan",
+        "room": "Lake Michigan",
         "tracks": [
           "android"
         ]
@@ -176,7 +176,7 @@
           "vscarlata",
           "smotlani"
         ],
-        "room": "android",
+        "room": "Android",
         "tracks": [
           "code-lab"
         ]
@@ -190,7 +190,7 @@
         "speakers": [
           "cflowers"
         ],
-        "room": "maps",
+        "room": "Maps",
         "tracks": [
           "other"
         ]
@@ -205,7 +205,7 @@
           "bmcgowen",
           "srobinson"
         ],
-        "room": "lake-michigan",
+        "room": "Lake Michigan",
         "tracks": [
           "cloud"
         ]
@@ -219,7 +219,7 @@
         "speakers": [
           "mballard"
         ],
-        "room": "android",
+        "room": "Android",
         "tracks": [
           "android"
         ]
@@ -233,7 +233,7 @@
         "speakers": [
           "astanton"
         ],
-        "room": "maps",
+        "room": "Maps",
         "tracks": [
           "web"
         ]
@@ -247,7 +247,7 @@
         "speakers": [
           "srobinson"
         ],
-        "room": "lake-michigan",
+        "room": "Lake Michigan",
         "tracks": [
           "cloud"
         ]
@@ -261,7 +261,7 @@
         "speakers": [
           "boberkfell"
         ],
-        "room": "android",
+        "room": "Android",
         "tracks": [
           "android"
         ]
@@ -278,7 +278,7 @@
         ],
         "room": "web",
         "tracks": [
-          "maps"
+          "Maps"
         ]
       },
       {
@@ -394,13 +394,13 @@
     }
   },
   "rooms": {
-    "lake-michigan": {
+    "Lake Michigan": {
       "name": "Lake Michigan"
     },
-    "android": {
+    "Android": {
       "name": "Android"
     },
-    "maps": {
+    "Maps": {
       "name": "Maps"
     }
   }

@@ -7,12 +7,14 @@ import android.view.ViewGroup
 import android.widget.TextView
 import com.gdgchicagowest.windycitydevcon.R
 import com.gdgchicagowest.windycitydevcon.model.Session
+import com.gdgchicagowest.windycitydevcon.model.Speaker
 import kotlinx.android.synthetic.main.item_session.view.*
 import java.text.SimpleDateFormat
 
 internal class SessionAdapter() : RecyclerView.Adapter<SessionAdapter.ViewHolder>() {
 
     val sessions: MutableList<Session> = mutableListOf()
+    val speakers: MutableMap<String, Speaker> = mutableMapOf()
     val format = SimpleDateFormat.getTimeInstance(SimpleDateFormat.SHORT)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -25,12 +27,12 @@ internal class SessionAdapter() : RecyclerView.Adapter<SessionAdapter.ViewHolder
         holder.timeslot.text = "${format.format(session.startTime)}\nto\n${format.format(session.endTime)}"
         holder.title.text = session.name
 
-        val speakers = session.speakers
-        if (speakers == null || speakers.isEmpty()) {
+        val sessionSpeakers = session.speakers?.map { speakers[it] }
+        if (sessionSpeakers == null || sessionSpeakers.isEmpty()) {
             holder.speakers.visibility = View.GONE
         } else {
             holder.speakers.visibility = View.VISIBLE
-            holder.speakers.text = session.speakers?.joinToString()
+            holder.speakers.text = sessionSpeakers.map { it?.name }.joinToString()
         }
 
         if (session.room == null) {
