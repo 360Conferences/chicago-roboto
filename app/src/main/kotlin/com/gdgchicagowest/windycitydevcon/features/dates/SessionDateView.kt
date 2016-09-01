@@ -3,6 +3,7 @@ package com.gdgchicagowest.windycitydevcon.features.dates
 import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
+import android.view.View
 import android.widget.FrameLayout
 import com.gdgchicagowest.windycitydevcon.R
 import com.gdgchicagowest.windycitydevcon.data.FirebaseSessionDateProvider
@@ -22,6 +23,8 @@ class SessionDateView(context: Context?, attrs: AttributeSet?, defStyleAttr: Int
         LayoutInflater.from(context).inflate(R.layout.view_sessions, this, true)
 
         presenter = SessionDatePresenter(FirebaseSessionDateProvider())
+
+        toolbar.setTitle(R.string.app_name)
 
         adapter = SessionPagerAdapter()
         pager.adapter = adapter
@@ -47,5 +50,9 @@ class SessionDateView(context: Context?, attrs: AttributeSet?, defStyleAttr: Int
         adapter.dates.clear()
         adapter.dates.addAll(sessionDates)
         adapter.notifyDataSetChanged()
+
+        if (sessionDates.size > 1) {
+            tabs.visibility = View.VISIBLE
+        }
     }
 }

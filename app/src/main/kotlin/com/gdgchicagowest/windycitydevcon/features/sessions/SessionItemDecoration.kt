@@ -27,7 +27,7 @@ internal class SessionItemDecoration(private val context: Context) : RecyclerVie
             val view = parent.getChildAt(i)
             if (view != null) {
                 val holder = parent.getChildViewHolder(view)
-                if (holder is SessionAdapter.ViewHolder) {
+                if (holder is SessionAdapter.ViewHolder && holder.adapterPosition != 0) {
                     if (holder.timeslot.visibility == View.VISIBLE) {
                         val left = 0
                         val top = holder.itemView.top
@@ -44,7 +44,7 @@ internal class SessionItemDecoration(private val context: Context) : RecyclerVie
     override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
         val holder = parent.getChildViewHolder(view)
         if (holder is SessionAdapter.ViewHolder) {
-            if (holder.timeslot.visibility == View.VISIBLE) {
+            if (holder.timeslot.visibility == View.VISIBLE && holder.adapterPosition != 0) {
                 outRect.set(0, divider.intrinsicHeight, 0, 0)
             }
         }

@@ -16,13 +16,17 @@
         <android.support.v7.widget.Toolbar
             android:layout_height="?attr/actionBarSize"
             android:layout_width="match_parent"
+            android:id="@+id/toolbar"
+            app:title="@string/app_name"
             app:layout_scrollFlags="scroll|enterAlways"
-            android:id="@+id/toolbar">
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
         </android.support.v7.widget.Toolbar>
         <android.support.design.widget.TabLayout
             android:id="@+id/tabs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:visibility="gone"
             app:tabMode="scrollable">
         </android.support.design.widget.TabLayout>
     </android.support.design.widget.AppBarLayout>
