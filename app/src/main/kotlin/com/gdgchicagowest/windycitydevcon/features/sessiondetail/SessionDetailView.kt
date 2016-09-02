@@ -33,10 +33,7 @@ class SessionDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
         speakerAdapter = SpeakerAdapter()
         speakers.adapter = speakerAdapter
         speakers.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-    }
 
-    override fun onAttachedToWindow() {
-        super.onAttachedToWindow()
         presenter.onAttach(this)
     }
 

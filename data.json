@@ -25,8 +25,8 @@
     },
     "intro-to-gcp": {
       "id": "intro-to-gcp",
-      "name": "Intro to Google Cloud Platform",
-      "description": "Lorem ipsum dolor sit amet",
+      "name": "Google Cloud Platform Overview",
+      "description": "This presentation will provide an overview of the platform including a few demos of key products within GCP. ",
       "start_time": "2016-09-16T10:00:00-0500",
       "end_time": "2016-09-16T10:45:00-0500",
       "date": "2016-09-16",
@@ -41,7 +41,7 @@
     "intro-cardboard-unity": {
       "id": "intro-cardboard-unity",
       "name": "An Intro to developing for Google Cardboard with Unity",
-      "description": "Lorem ipsum dolor sit amet",
+      "description": "Google Cardboard has been around since Google I/O 2014. It is by far the most affordable, and possibly most clever VR viewer out there today. To develop for Google Cardboard, the popular 3d game engine, Unity can be used.\n\nThis presentation will cover the  basics of developing in Unity for Google Cardboard including:\n\n• What is Unity and how to develop 3d apps using it.\n• How to develop for Google Cardboard in a Unity project.\n• Best practices for developing for Google Cardboard.",
       "start_time": "2016-09-16T10:00:00-0500",
       "end_time": "2016-09-16T10:45:00-0500",
       "date": "2016-09-16",
@@ -53,7 +53,7 @@
     "intro-firebase": {
       "id": "intro-firebase",
       "name": "Intro to Firebase",
-      "description": "Lorem ipsum dolor sit amet",
+      "description": "Hands on Firebase demo and talk ",
       "start_time": "2016-09-16T10:00:00-0500",
       "end_time": "2016-09-16T10:45:00-0500",
       "date": "2016-09-16",
@@ -68,7 +68,7 @@
     "material-animations": {
       "id": "material-animations",
       "name": "Material Animations - A Dive into Motion Design and Animation",
-      "description": "Lorem ipsum dolor sit amet",
+      "description": "A deep dive into the world of animation in Material Design. We'll cover what Material Design is, how natural motion plays a role in its principles and how to create meaningful animations that exhibit the essence of Material Design strives for.",
       "start_time": "2016-09-16T11:00:00-0500",
       "end_time": "2016-09-16T11:45:00-0500",
       "date": "2016-09-16",
@@ -136,7 +136,7 @@
     "system-services": {
       "id": "system-services",
       "name": "Digging Into System Services",
-      "description": "Lorem ipsum dolor sit amet",
+      "description": "As developers, you interact with Android system services every day. They expose a host of platform features to applications, but what do you really know about them? In this talk, we will examine the system service architecture that connects applications to device hardware. You will gain a deeper understanding of core platform technologies such as Binder IPC and AIDL, which you can use to tune how your applications interact with the platform.",
       "start_time": "2016-09-16T13:00:00-0500",
       "end_time": "2016-09-16T13:45:00-0500",
       "date": "2016-09-16",
@@ -151,7 +151,7 @@
     "up-to-speed": {
       "id": "up-to-speed",
       "name": "From Zero to Hero: How to Get Your New Team Up to Speed with Android",
-      "description": "Lorem ipsum dolor sit amet",
+      "description": "Starting a new Android app is always exciting: you have the opportunity to create an awesome app from zero... but it is also a lot of responsibility! Any step in the wrong direction might turn your new app into a disaster.\n\nYou need the right people on your team, you need the right technology and you need the proper setup.\n\nSounds easy, uh? Well... it's not! Many apps did not survive even this first step. Let me help you to identify the key elements to help your Android team succeed.",
       "start_time": "2016-09-16T13:00:00-0500",
       "end_time": "2016-09-16T13:45:00-0500",
       "date": "2016-09-16",
@@ -165,8 +165,8 @@
     },
     "kotlin": {
       "id": "kotlin",
-      "name": "Kotlin for Android",
-      "description": "Lorem ipsum dolor sit amet",
+      "name": "Kotlin for Android Developers",
+      "description": "What’s the deal with Kotlin? Why would you want to learn a new programming language to write Android apps - isn’t Java good enough? This talk is for those unacquainted with Kotlin, and might teach those who are familiar some new tricks.\n\nThis talk will cover:\n\n- Why Kotlin is a good choice for Android Developersn\n- How to solve problems in more expressive ways with Kotlin’s language features\n- Some interesting Kotlin libraries and tools",
       "start_time": "2016-09-16T14:00:00-0500",
       "end_time": "2016-09-16T14:45:00-0500",
       "date": "2016-09-16",
@@ -180,8 +180,8 @@
     },
     "angular": {
       "id": "angular",
-      "name": "Angular 2 Workshop and Codelab",
-      "description": "Lorem ipsum dolor sit amet",
+      "name": "Building Web Apps With Angular 2",
+      "description": "Angular for several years now has been one of the most popular Single Page Application (SPA) frameworks.\n\nIn this talk we'll go over...\n\n- What has changed in Angular 2 vs. Angular 1.x\n- Using TypeScript to code faster and safer\n- The building blocks of Angular 2 Apps - Components, Services and Directives\n\nDuring the talk we'll use live coding examples and then end with resources to getting started with Angular 2 today.",
       "start_time": "2016-09-16T14:00:00-0500",
       "end_time": "2016-09-16T14:45:00-0500",
       "date": "2016-09-16",
@@ -196,8 +196,8 @@
     },
     "moto-mods": {
       "id": "moto-mods",
-      "name": "Moto Mods",
-      "description": "Lorem ipsum dolor sit amet",
+      "name": "Moto Mods Development Kit",
+      "description": "Introduction to the Moto Mods platform and it's capabilities.  Show off the development kit and speak how it makes it easy to go from Prototype->Product.\n\nProbably want to refine this before you put it into a program or anything.",
       "start_time": "2016-09-16T14:00:00-0500",
       "end_time": "2016-09-16T14:45:00-0500",
       "date": "2016-09-16",
@@ -227,8 +227,8 @@
     },
     "securing-firebase": {
       "id": "securing-firebase",
-      "name": "Securing Firebase",
-      "description": "Lorem ipsum dolor sit amet",
+      "name": "Secure Youre Firebase",
+      "description": "As delivered Firebase Database Security is wide open allowing anyone access to your precious data.  We will take a deep dive through various scenarios on how to secure that data and only allow the users that have the proper authority to access and update their data.  Along with valid authorization we will explore implementing valid data schema.  We will explore User Authentication for various user authentication methods.  Firebase security rules apply to your Android, iOS and web apps.",
       "start_time": "2016-09-16T15:00:00-0500",
       "end_time": "2016-09-16T15:45:00-0500",
       "date": "2016-09-16",
@@ -242,8 +242,8 @@
     },
     "google-analytics": {
       "id": "google-analytics",
-      "name": "Google Analytics",
-      "description": "Lorem ipsum dolor sit amet",
+      "name": "Metrics Lessons from Google Analytics",
+      "description": "I frequently refer to Google Analytics as the gold standard for metrics tools. Learn about all the things that GA does magnificently at every stage of the data cycle including why they're important and what they can teach you.",
       "start_time": "2016-09-16T15:00:00-0500",
       "end_time": "2016-09-16T15:45:00-0500",
       "date": "2016-09-16",
@@ -273,7 +273,7 @@
     "fingerprint": {
       "id": "fingerprint",
       "name": "Android Fingerprint Authentication in Action",
-      "description": "Lorem ipsum dolor sit amet",
+      "description": "Your users are asking for fingerprint authentication - deliver it!\n\nIn this session we'll discuss how to build a fingerprint-enhanced user flow on Android.  We'll review the options the framework gives you. You'll learn how to take advantage of them to allow users to log in, and secure sensitive flows like making a purchase or payment.\n\nWe'll explore this through an open source implementation of both an Android app and a simple backend that demonstrates the concepts being discussed.",
       "start_time": "2016-09-16T16:00:00-0500",
       "end_time": "2016-09-16T16:45:00-0500",
       "date": "2016-09-16",
@@ -334,7 +334,7 @@
       },
       {
         "id": "intro-to-gcp",
-        "name": "Intro to Google Cloud Platform",
+        "name": "Google Cloud Platform Overview",
         "description": "Lorem ipsum dolor sit amet",
         "start_time": "2016-09-16T10:00:00-0500",
         "end_time": "2016-09-16T10:45:00-0500",
@@ -377,7 +377,6 @@
       {
         "id": "material-animations",
         "name": "Material Animations - A Dive into Motion Design and Animation",
-        "description": "Lorem ipsum dolor sit amet",
         "start_time": "2016-09-16T11:00:00-0500",
         "end_time": "2016-09-16T11:45:00-0500",
         "date": "2016-09-16",
@@ -474,7 +473,7 @@
       },
       {
         "id": "kotlin",
-        "name": "Kotlin for Android",
+        "name": "Kotlin for Android Developers",
         "description": "Lorem ipsum dolor sit amet",
         "start_time": "2016-09-16T14:00:00-0500",
         "end_time": "2016-09-16T14:45:00-0500",
@@ -489,8 +488,8 @@
       },
       {
         "id": "angular",
-        "name": "Angular 2 Workshop and Codelab",
-        "description": "Lorem ipsum dolor sit amet",
+        "name": "Building Web Apps With Angular 2",
+        "description": "",
         "start_time": "2016-09-16T14:00:00-0500",
         "end_time": "2016-09-16T14:45:00-0500",
         "date": "2016-09-16",
@@ -505,7 +504,7 @@
       },
       {
         "id": "moto-mods",
-        "name": "Moto Mods",
+        "name": "Moto Mods Development Kit",
         "description": "Lorem ipsum dolor sit amet",
         "start_time": "2016-09-16T14:00:00-0500",
         "end_time": "2016-09-16T14:45:00-0500",
@@ -536,7 +535,7 @@
       },
       {
         "id": "securing-firebase",
-        "name": "Securing Firebase",
+        "name": "Secure Your Firebase",
         "description": "Lorem ipsum dolor sit amet",
         "start_time": "2016-09-16T15:00:00-0500",
         "end_time": "2016-09-16T15:45:00-0500",
@@ -551,7 +550,7 @@
       },
       {
         "id": "google-analytics",
-        "name": "Google Analytics",
+        "name": "Metrics Lessons from Google Analytics",
         "description": "Lorem ipsum dolor sit amet",
         "start_time": "2016-09-16T15:00:00-0500",
         "end_time": "2016-09-16T15:45:00-0500",
@@ -622,106 +621,127 @@
   },
   "speakers": {
     "dward": {
+      "id": "dward",
       "name": "Don Ward",
       "email": "don.ward.peng@gmail.com",
       "bio": "Don Ward is passionate about all Google Technologies and local software development communities. He currently co-leads the ever-growing Detroit Google Developers Group. During the day he leads one of the mobile teams at Quicken Loans."
     },
     "drowe": {
+      "id": "drowe",
       "name": "Deanna Rowe",
       "email": "djrowe@google.com",
       "bio": "Deanna is a Solutions Engineer for the Google Cloud Platform helping clients move to the cloud. "
     },
     "boberkfell": {
+      "id": "boberkfell",
       "name": "Ben Obkerfell",
-      "email": "",
+      "email": "ben@oberkfell.com",
       "bio": "Ben is an Android developer at American Express.  Before discovering mobile development, he worked on the Human Genome Project and cancer research projects writing data analysis tools."
     },
     "jmardis": {
+      "id": "jmardis",
       "name": "Jerrell Mardis",
       "email": "jerrell.mardis@gmail.com",
       "bio": "Jerrell (@jerrellmardis) is an Android developer at Salesforce, organizer for Google Developer Group (GDG) Chicago West and Illinois Institute of Technology alum. He's worked on Android for over 6 years and is passionate about building beautiful and functional Android apps that exceed users' expectations. When he's not coding, Jerrell can be found hanging out with his family, catching the latest Bulls or Bears game or playing basketball at his local gym."
     },
     "momander": {
+      "id": "momander",
       "name": "Martin Omander",
       "email": "momander@google.com",
       "bio": "Lorem ipsum dolor sit amit"
     },
     "mevans": {
+      "id": "mevans",
       "name": "Mike Evans",
       "email": "michaelcevans10@gmail.com",
       "bio": "Google Developer Expert and Android Lead at LivingSocial. I’ve been writing apps since Cupcake, co-organizer of DC Droids (the DC Android Meetup), and embarrassingly was one of those people walking around with Google Glass at one point."
     },
     "bmcgowen": {
+      "id": "bmcgowen",
       "name": "Bret McGowen",
       "email": "",
       "bio": "Lorem ipsum dolor sit amit"
     },
     "srobinson": {
+      "id": "srobinson",
       "name": "Sara Robinson",
       "email": "",
       "bio": "Lorem ipsum dolor sit amit"
     },
     "lcledeyn": {
+      "id": "lcledeyn",
       "name": "Lloyd Cledeyn",
       "email": "cledwyn@gmail.com",
       "bio": "Possibly taller than you."
     },
     "dsmith": {
+      "id": "dsmith",
       "name": "Dave Smith",
       "email": "smith@wiresareobsolete.com",
       "bio": "Dave Smith is a Google Developer Expert for Android and IoT working with the Android platform at all levels, developing custom applications and system components to run Android on embedded platforms or interact with external embedded devices."
     },
     "vscarlata": {
+      "id": "vscarlata",
       "name": "Val Scarlata",
       "email": "",
       "bio": "Lorem ipsum dolor sit amit"
     },
     "smotlani": {
+      "id": "smotlani",
       "name": "Shan Motlani",
       "email": "motlani1@gmail.com",
       "bio": "Shan Motlani is a frontend engineer with @WalmartLabs."
     },
     "solson": {
+      "id": "solson",
       "name": "Sarah Olson",
       "email": "sarah@saraheolson.com",
       "bio": "Sarah Olson is a Senior Software Engineer at The Nerdery, currently focused on mobile development. As Director of Women Who Code Twin Cities, she leads a variety of initiatives and events to address the myriad of issues surrounding diversity in tech."
     },
     "astanton": {
+      "id": "astanton",
       "name": "Alison Stanton",
       "email": "astanton@bankofknowledge.net",
       "bio": "Alison focuses on business intelligence reporting, product measurement, process improvement through automation, and technical training. She makes data accessible, discoverable, & actionable. Currently, her main languages are SQL, Python, and LookML."
     },
     "vsanches": {
+      "id": "vsanches",
       "name": "Victor Sanchez",
       "email": "",
       "bio": "Lorem ipsum dolor sit amit"
     },
     "jcoca": {
+      "id": "jcoca",
       "name": "Jorge Coca",
       "email": "jcocaramos@gmail.com",
       "bio": "Spanish engineer lost in Chicago! Currently, I work at BMW in the Android team, delivering the future of the Connected platform for BMW, Mini and Rolls Royce vehicles. Amateur triathlete. Guitar player. Frustrated soccer player."
     },
     "mballard": {
+      "id": "mballard",
       "name": "Marty Ballard",
       "email": "marty331@gmail.com",
       "bio": "I've been developing Android now for over 5 years, as well as doing development in Python, Swift and websites."
     },
     "cflowers": {
+      "id": "cflowers",
       "name": "Christian Flowers",
       "email": "flowers@motorola.com",
       "bio": "Systems Architect at Motorola Mobility"
     },
     "jvasallo": {
+      "id": "jvasallo",
       "name": "Joel Vasallo",
       "email": "",
       "bio": "Lorem ipsum dolor sit amit"
     },
     "awilliams": {
+      "id": "awilliams",
       "name": "Abraham Williams",
       "email": "",
       "bio": "Lorem ipsum dolor sit amit"
     },
     "platteier": {
+      "id": "platteier",
       "name": "Pearl Latteier",
       "email": "",
       "bio": "Lorem ipsum dolor sit amit"
