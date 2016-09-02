@@ -2,6 +2,7 @@ package com.gdgchicagowest.windycitydevcon.features.sessiondetail
 
 import android.content.Context
 import android.support.design.widget.CoordinatorLayout
+import android.support.v7.widget.LinearLayoutManager
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import com.gdgchicagowest.windycitydevcon.R
@@ -16,9 +17,10 @@ import javax.inject.Inject
 class SessionDetailView(context: Context, attrs: AttributeSet? = null, defStyle: Int = 0) :
         CoordinatorLayout(context, attrs, defStyle), SessionDetailMvp.View {
 
-    private val format = SimpleDateFormat("hh:mma")
-
     @Inject lateinit var presenter: SessionDetailMvp.Presenter
+
+    private val format = SimpleDateFormat("hh:mma")
+    private val speakerAdapter: SpeakerAdapter
 
     constructor(context: Context): this(context, null, 0)
     constructor(context: Context, attrs: AttributeSet?): this(context, attrs, 0)
@@ -27,6 +29,10 @@ class SessionDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
         context.getComponent<SessionDetailComponent>().inject(this)
 
         LayoutInflater.from(context).inflate(R.layout.view_session_detail, this, true)
+
+        speakerAdapter = SpeakerAdapter()
+        speakers.adapter = speakerAdapter
+        speakers.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
     }
 
     override fun onAttachedToWindow() {
@@ -64,6 +70,8 @@ class SessionDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
     }
 
     override fun showSpeakerInfo(speakers: Set<Speaker>) {
-        // TODO
+        speakerAdapter.speakers.clear()
+        speakerAdapter.speakers.addAll(speakers)
+        speakerAdapter.notifyDataSetChanged()
     }
 }

@@ -623,86 +623,107 @@
   "speakers": {
     "dward": {
       "name": "Don Ward",
-      "bio": "Lorem ipsum dolor sit amit"
+      "email": "don.ward.peng@gmail.com",
+      "bio": "Don Ward is passionate about all Google Technologies and local software development communities. He currently co-leads the ever-growing Detroit Google Developers Group. During the day he leads one of the mobile teams at Quicken Loans."
     },
     "drowe": {
       "name": "Deanna Rowe",
-      "bio": "Lorem ipsum dolor sit amit"
+      "email": "djrowe@google.com",
+      "bio": "Deanna is a Solutions Engineer for the Google Cloud Platform helping clients move to the cloud. "
     },
     "boberkfell": {
       "name": "Ben Obkerfell",
-      "bio": "Lorem ipsum dolor sit amit"
+      "email": "",
+      "bio": "Ben is an Android developer at American Express.  Before discovering mobile development, he worked on the Human Genome Project and cancer research projects writing data analysis tools."
     },
     "jmardis": {
       "name": "Jerrell Mardis",
-      "bio": "Lorem ipsum dolor sit amit"
+      "email": "jerrell.mardis@gmail.com",
+      "bio": "Jerrell (@jerrellmardis) is an Android developer at Salesforce, organizer for Google Developer Group (GDG) Chicago West and Illinois Institute of Technology alum. He's worked on Android for over 6 years and is passionate about building beautiful and functional Android apps that exceed users' expectations. When he's not coding, Jerrell can be found hanging out with his family, catching the latest Bulls or Bears game or playing basketball at his local gym."
     },
     "momander": {
       "name": "Martin Omander",
+      "email": "momander@google.com",
       "bio": "Lorem ipsum dolor sit amit"
     },
     "mevans": {
       "name": "Mike Evans",
-      "bio": "Lorem ipsum dolor sit amit"
+      "email": "michaelcevans10@gmail.com",
+      "bio": "Google Developer Expert and Android Lead at LivingSocial. I’ve been writing apps since Cupcake, co-organizer of DC Droids (the DC Android Meetup), and embarrassingly was one of those people walking around with Google Glass at one point."
     },
     "bmcgowen": {
       "name": "Bret McGowen",
+      "email": "",
       "bio": "Lorem ipsum dolor sit amit"
     },
     "srobinson": {
       "name": "Sara Robinson",
+      "email": "",
       "bio": "Lorem ipsum dolor sit amit"
     },
     "lcledeyn": {
       "name": "Lloyd Cledeyn",
-      "bio": "Lorem ipsum dolor sit amit"
+      "email": "cledwyn@gmail.com",
+      "bio": "Possibly taller than you."
     },
     "dsmith": {
       "name": "Dave Smith",
-      "bio": "Lorem ipsum dolor sit amit"
+      "email": "smith@wiresareobsolete.com",
+      "bio": "Dave Smith is a Google Developer Expert for Android and IoT working with the Android platform at all levels, developing custom applications and system components to run Android on embedded platforms or interact with external embedded devices."
     },
     "vscarlata": {
       "name": "Val Scarlata",
+      "email": "",
       "bio": "Lorem ipsum dolor sit amit"
     },
     "smotlani": {
       "name": "Shan Motlani",
-      "bio": "Lorem ipsum dolor sit amit"
+      "email": "motlani1@gmail.com",
+      "bio": "Shan Motlani is a frontend engineer with @WalmartLabs."
     },
     "solson": {
       "name": "Sarah Olson",
-      "bio": "Lorem ipsum dolor sit amit"
+      "email": "sarah@saraheolson.com",
+      "bio": "Sarah Olson is a Senior Software Engineer at The Nerdery, currently focused on mobile development. As Director of Women Who Code Twin Cities, she leads a variety of initiatives and events to address the myriad of issues surrounding diversity in tech."
     },
     "astanton": {
       "name": "Alison Stanton",
-      "bio": "Lorem ipsum dolor sit amit"
+      "email": "astanton@bankofknowledge.net",
+      "bio": "Alison focuses on business intelligence reporting, product measurement, process improvement through automation, and technical training. She makes data accessible, discoverable, & actionable. Currently, her main languages are SQL, Python, and LookML."
     },
     "vsanches": {
       "name": "Victor Sanchez",
+      "email": "",
       "bio": "Lorem ipsum dolor sit amit"
     },
     "jcoca": {
       "name": "Jorge Coca",
-      "bio": "Lorem ipsum dolor sit amit"
+      "email": "jcocaramos@gmail.com",
+      "bio": "Spanish engineer lost in Chicago! Currently, I work at BMW in the Android team, delivering the future of the Connected platform for BMW, Mini and Rolls Royce vehicles. Amateur triathlete. Guitar player. Frustrated soccer player."
     },
     "mballard": {
       "name": "Marty Ballard",
-      "bio": "Lorem ipsum dolor sit amit"
+      "email": "marty331@gmail.com",
+      "bio": "I've been developing Android now for over 5 years, as well as doing development in Python, Swift and websites."
     },
     "cflowers": {
       "name": "Christian Flowers",
-      "bio": "Lorem ipsum dolor sit amit"
+      "email": "flowers@motorola.com",
+      "bio": "Systems Architect at Motorola Mobility"
     },
     "jvasallo": {
       "name": "Joel Vasallo",
+      "email": "",
       "bio": "Lorem ipsum dolor sit amit"
     },
     "awilliams": {
       "name": "Abraham Williams",
+      "email": "",
       "bio": "Lorem ipsum dolor sit amit"
     },
     "platteier": {
       "name": "Pearl Latteier",
+      "email": "",
       "bio": "Lorem ipsum dolor sit amit"
     }
   },

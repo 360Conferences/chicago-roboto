@@ -76,6 +76,7 @@ internal class SessionAdapter(val onSessionSelectedListener: ((session: Session)
             speakers = super.itemView.speakers
             room = super.itemView.room
             itemView.setOnClickListener(this)
+
         }
 
         override fun onClick(v: View?) {

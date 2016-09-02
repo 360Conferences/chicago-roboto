@@ -19,13 +19,6 @@ class SessionDetailPresenter(private val sessionProvider: SessionProvider, priva
         this.view = null
     }
 
-    private val onSpeakerReceived = { speaker: Speaker? ->
-        if (speaker != null) {
-            speakers.add(speaker)
-            view?.showSpeakerInfo(speakers)
-        }
-    }
-
     override fun setSessionId(sessionId: String) {
         sessionProvider.addSessionListener(sessionId, { session: Session? ->
             if (session != null) {
@@ -36,4 +29,12 @@ class SessionDetailPresenter(private val sessionProvider: SessionProvider, priva
             }
         })
     }
+
+    private val onSpeakerReceived = { speaker: Speaker? ->
+        if (speaker != null) {
+            speakers.add(speaker)
+            view?.showSpeakerInfo(speakers)
+        }
+    }
+
 }
