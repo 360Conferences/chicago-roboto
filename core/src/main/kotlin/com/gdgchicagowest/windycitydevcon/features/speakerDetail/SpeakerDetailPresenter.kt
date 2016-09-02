@@ -1,4 +1,4 @@
-package com.gdgchicagowest.windycitydevcon.features.speakerDetail
+package com.gdgchicagowest.windycitydevcon.features.speakerdetail
 
 class SpeakerDetailPresenter {
 }

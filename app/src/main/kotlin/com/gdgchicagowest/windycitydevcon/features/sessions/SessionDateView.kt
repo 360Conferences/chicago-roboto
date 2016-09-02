@@ -7,7 +7,6 @@ import android.view.View
 import android.widget.FrameLayout
 import com.gdgchicagowest.windycitydevcon.R
 import com.gdgchicagowest.windycitydevcon.ext.getComponent
-import com.gdgchicagowest.windycitydevcon.features.dates.SessionDateListMvp
 import kotlinx.android.synthetic.main.view_sessions.view.*
 import javax.inject.Inject
 

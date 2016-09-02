@@ -3,8 +3,6 @@ package com.gdgchicagowest.windycitydevcon.features.sessions
 import com.gdgchicagowest.windycitydevcon.data.SessionDateProvider
 import com.gdgchicagowest.windycitydevcon.data.SessionProvider
 import com.gdgchicagowest.windycitydevcon.data.SpeakerProvider
-import com.gdgchicagowest.windycitydevcon.features.dates.SessionDateListMvp
-import com.gdgchicagowest.windycitydevcon.features.dates.SessionDatePresenter
 import dagger.Module
 import dagger.Provides
 
