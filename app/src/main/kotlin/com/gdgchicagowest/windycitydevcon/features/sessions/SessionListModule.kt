@@ -7,11 +7,7 @@ import dagger.Module
 import dagger.Provides
 
 @Module
-class SessionListModule(val sessionDisplay: SessionNavigator) {
-
-    @Provides fun sessionDisplay(): SessionNavigator {
-        return sessionDisplay
-    }
+class SessionListModule() {
 
     @Provides fun provideSessionDatePresenter(sessionDateProvider: SessionDateProvider): SessionDateListMvp.Presenter {
         return SessionDatePresenter(sessionDateProvider)

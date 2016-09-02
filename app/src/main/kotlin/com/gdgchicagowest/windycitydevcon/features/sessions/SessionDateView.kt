@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.FrameLayout
 import com.gdgchicagowest.windycitydevcon.R
 import com.gdgchicagowest.windycitydevcon.ext.getComponent
+import com.gdgchicagowest.windycitydevcon.features.main.MainComponent
 import kotlinx.android.synthetic.main.view_sessions.view.*
 import javax.inject.Inject
 
@@ -21,11 +22,9 @@ class SessionDateView(context: Context, attrs: AttributeSet? = null, defStyle: I
     private val adapter: SessionPagerAdapter
 
     init {
-        context.getComponent<SessionListComponent>().inject(this)
+        context.getComponent<MainComponent>().sessionListComponent().inject(this)
 
         LayoutInflater.from(context).inflate(R.layout.view_sessions, this, true)
-
-        toolbar.setTitle(R.string.app_name)
 
         adapter = SessionPagerAdapter()
         pager.adapter = adapter

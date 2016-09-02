@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView
 import android.util.AttributeSet
 import android.view.ViewGroup
 import com.gdgchicagowest.windycitydevcon.ext.getComponent
+import com.gdgchicagowest.windycitydevcon.features.main.MainComponent
 import com.gdgchicagowest.windycitydevcon.model.Session
 import com.gdgchicagowest.windycitydevcon.model.Speaker
 import javax.inject.Inject
@@ -19,7 +20,7 @@ class SessionListView(context: Context, attrs: AttributeSet? = null, defStyle: I
     @Inject lateinit var sessionNavigator: SessionNavigator
 
     init {
-        context.getComponent<SessionListComponent>().inject(this)
+        context.getComponent<MainComponent>().sessionListComponent().inject(this)
 
         layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
         layoutManager = LinearLayoutManager(context, VERTICAL, false)

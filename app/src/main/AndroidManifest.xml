@@ -9,7 +9,7 @@
         android:theme="@style/AppTheme"
         android:name=".DevconApp">
 
-        <activity android:name=".features.sessions.SessionListActivity">
+        <activity android:name=".features.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>

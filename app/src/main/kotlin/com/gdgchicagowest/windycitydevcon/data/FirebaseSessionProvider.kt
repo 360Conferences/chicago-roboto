@@ -49,6 +49,5 @@ class FirebaseSessionProvider : SessionProvider {
     override fun removeSessionListener(key: Any) {
         val query = queries.remove(key)
         query?.removeEventListener(listeners.remove(key))
-        database.child("sessions").removeEventListener(listeners[key])
     }
 }
