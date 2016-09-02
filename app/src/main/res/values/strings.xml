@@ -2,4 +2,8 @@
     <string name="app_name">Windy City DevCon</string>
     <string name="status_in_progress">This session is in progress</string>
     <string name="status_over">This session is over</string>
+    <string name="action_schedule">Schedule</string>
+    <string name="action_speakers">Speakers</string>
+    <string name="action_location">Location</string>
+    <string name="action_info">Info</string>
 </resources>

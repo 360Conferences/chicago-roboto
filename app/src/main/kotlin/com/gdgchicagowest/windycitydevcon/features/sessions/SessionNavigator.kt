@@ -2,6 +2,6 @@ package com.gdgchicagowest.windycitydevcon.features.sessions
 
 import com.gdgchicagowest.windycitydevcon.model.Session
 
-interface SessionDisplay {
+interface SessionNavigator {
     fun showSession(session: Session)
 }

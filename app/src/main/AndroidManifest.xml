@@ -18,6 +18,7 @@
         </activity>
 
         <activity android:name=".features.sessiondetail.SessionDetailActivity" />
+        <activity android:name=".features.speakerdetail.SpeakerDetailActivity" />
 
     </application>
 

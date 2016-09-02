@@ -7,9 +7,9 @@ import dagger.Module
 import dagger.Provides
 
 @Module
-class SessionListModule(val sessionDisplay: SessionDisplay) {
+class SessionListModule(val sessionDisplay: SessionNavigator) {
 
-    @Provides fun sessionDisplay(): SessionDisplay {
+    @Provides fun sessionDisplay(): SessionNavigator {
         return sessionDisplay
     }
 

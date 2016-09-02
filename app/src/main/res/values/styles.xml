@@ -12,4 +12,8 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="TwitterTextAppearance" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/twitter_blue</item>
+    </style>
 </resources>

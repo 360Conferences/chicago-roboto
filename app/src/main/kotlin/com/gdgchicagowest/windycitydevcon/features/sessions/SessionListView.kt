@@ -16,7 +16,7 @@ class SessionListView(context: Context, attrs: AttributeSet? = null, defStyle: I
     private val adapter: SessionAdapter
 
     @Inject lateinit var presenter: SessionListMvp.Presenter
-    @Inject lateinit var sessionDisplay: SessionDisplay
+    @Inject lateinit var sessionNavigator: SessionNavigator
 
     init {
         context.getComponent<SessionListComponent>().inject(this)
@@ -25,7 +25,7 @@ class SessionListView(context: Context, attrs: AttributeSet? = null, defStyle: I
         layoutManager = LinearLayoutManager(context, VERTICAL, false)
         addItemDecoration(SessionItemDecoration(context))
         adapter = SessionAdapter({ session ->
-            sessionDisplay.showSession(session)
+            sessionNavigator.showSession(session)
         })
         super.setAdapter(adapter)
     }

@@ -9,7 +9,7 @@ import com.gdgchicagowest.windycitydevcon.features.sessiondetail.SessionDetailAc
 import com.gdgchicagowest.windycitydevcon.model.Session
 import javax.inject.Inject
 
-class SessionListActivity : AppCompatActivity(), SessionDisplay {
+class SessionListActivity : AppCompatActivity(), SessionNavigator {
 
     @Inject lateinit var component: SessionListComponent
 

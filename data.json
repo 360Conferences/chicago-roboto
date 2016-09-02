@@ -624,126 +624,147 @@
       "id": "dward",
       "name": "Don Ward",
       "email": "don.ward.peng@gmail.com",
+      "twitter": "@donwardpeng",
       "bio": "Don Ward is passionate about all Google Technologies and local software development communities. He currently co-leads the ever-growing Detroit Google Developers Group. During the day he leads one of the mobile teams at Quicken Loans."
     },
     "drowe": {
       "id": "drowe",
       "name": "Deanna Rowe",
       "email": "djrowe@google.com",
+      "twitter": "",
       "bio": "Deanna is a Solutions Engineer for the Google Cloud Platform helping clients move to the cloud. "
     },
     "boberkfell": {
       "id": "boberkfell",
       "name": "Ben Obkerfell",
       "email": "ben@oberkfell.com",
+      "twitter": "@benlikestocode",
       "bio": "Ben is an Android developer at American Express.  Before discovering mobile development, he worked on the Human Genome Project and cancer research projects writing data analysis tools."
     },
     "jmardis": {
       "id": "jmardis",
       "name": "Jerrell Mardis",
       "email": "jerrell.mardis@gmail.com",
+      "twitter": "@jerrellmardis",
       "bio": "Jerrell (@jerrellmardis) is an Android developer at Salesforce, organizer for Google Developer Group (GDG) Chicago West and Illinois Institute of Technology alum. He's worked on Android for over 6 years and is passionate about building beautiful and functional Android apps that exceed users' expectations. When he's not coding, Jerrell can be found hanging out with his family, catching the latest Bulls or Bears game or playing basketball at his local gym."
     },
     "momander": {
       "id": "momander",
       "name": "Martin Omander",
       "email": "momander@google.com",
+      "twitter": "",
       "bio": "Lorem ipsum dolor sit amit"
     },
     "mevans": {
       "id": "mevans",
       "name": "Mike Evans",
       "email": "michaelcevans10@gmail.com",
+      "twitter": "@m_evans10",
       "bio": "Google Developer Expert and Android Lead at LivingSocial. I’ve been writing apps since Cupcake, co-organizer of DC Droids (the DC Android Meetup), and embarrassingly was one of those people walking around with Google Glass at one point."
     },
     "bmcgowen": {
       "id": "bmcgowen",
       "name": "Bret McGowen",
       "email": "",
+      "twitter": "",
       "bio": "Lorem ipsum dolor sit amit"
     },
     "srobinson": {
       "id": "srobinson",
       "name": "Sara Robinson",
       "email": "",
+      "twitter": "",
       "bio": "Lorem ipsum dolor sit amit"
     },
     "lcledeyn": {
       "id": "lcledeyn",
       "name": "Lloyd Cledeyn",
       "email": "cledwyn@gmail.com",
+      "twitter": "@cledwyn",
       "bio": "Possibly taller than you."
     },
     "dsmith": {
       "id": "dsmith",
       "name": "Dave Smith",
       "email": "smith@wiresareobsolete.com",
+      "twitter": "@devunwired",
       "bio": "Dave Smith is a Google Developer Expert for Android and IoT working with the Android platform at all levels, developing custom applications and system components to run Android on embedded platforms or interact with external embedded devices."
     },
     "vscarlata": {
       "id": "vscarlata",
       "name": "Val Scarlata",
       "email": "",
+      "twitter": "",
       "bio": "Lorem ipsum dolor sit amit"
     },
     "smotlani": {
       "id": "smotlani",
       "name": "Shan Motlani",
       "email": "motlani1@gmail.com",
+      "twitter": "",
       "bio": "Shan Motlani is a frontend engineer with @WalmartLabs."
     },
     "solson": {
       "id": "solson",
       "name": "Sarah Olson",
       "email": "sarah@saraheolson.com",
+      "twitter": "@saraheolson",
       "bio": "Sarah Olson is a Senior Software Engineer at The Nerdery, currently focused on mobile development. As Director of Women Who Code Twin Cities, she leads a variety of initiatives and events to address the myriad of issues surrounding diversity in tech."
     },
     "astanton": {
       "id": "astanton",
       "name": "Alison Stanton",
       "email": "astanton@bankofknowledge.net",
+      "twitter": "@alison985",
       "bio": "Alison focuses on business intelligence reporting, product measurement, process improvement through automation, and technical training. She makes data accessible, discoverable, & actionable. Currently, her main languages are SQL, Python, and LookML."
     },
     "vsanches": {
       "id": "vsanches",
       "name": "Victor Sanchez",
       "email": "",
+      "twitter": "",
       "bio": "Lorem ipsum dolor sit amit"
     },
     "jcoca": {
       "id": "jcoca",
       "name": "Jorge Coca",
       "email": "jcocaramos@gmail.com",
+      "twitter": "@jcocaramos",
       "bio": "Spanish engineer lost in Chicago! Currently, I work at BMW in the Android team, delivering the future of the Connected platform for BMW, Mini and Rolls Royce vehicles. Amateur triathlete. Guitar player. Frustrated soccer player."
     },
     "mballard": {
       "id": "mballard",
       "name": "Marty Ballard",
       "email": "marty331@gmail.com",
+      "twitter": "@marty331",
       "bio": "I've been developing Android now for over 5 years, as well as doing development in Python, Swift and websites."
     },
     "cflowers": {
       "id": "cflowers",
       "name": "Christian Flowers",
       "email": "flowers@motorola.com",
+      "twitter": "",
       "bio": "Systems Architect at Motorola Mobility"
     },
     "jvasallo": {
       "id": "jvasallo",
       "name": "Joel Vasallo",
-      "email": "",
-      "bio": "Lorem ipsum dolor sit amit"
+      "email": "joelvasallo@gogoair.com",
+      "twitter": "@__jvasallo__",
+      "bio": "Joel is currently a DevOps Engineer at Gogo. He's been at Gogo for 4 years, working on various teams and using various technologies. Primarily works with Python, the cloud is his immutable datacenter, and loves exploring his home city Chicago."
     },
     "awilliams": {
       "id": "awilliams",
       "name": "Abraham Williams",
       "email": "",
+      "twitter": "",
       "bio": "Lorem ipsum dolor sit amit"
     },
     "platteier": {
       "id": "platteier",
       "name": "Pearl Latteier",
       "email": "",
+      "twitter": "",
       "bio": "Lorem ipsum dolor sit amit"
     }
   },

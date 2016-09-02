@@ -3,4 +3,7 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="twitter_blue">#55ACEE</color>
+    <color name="color_nav_bg">#2d3f53</color>
 </resources>

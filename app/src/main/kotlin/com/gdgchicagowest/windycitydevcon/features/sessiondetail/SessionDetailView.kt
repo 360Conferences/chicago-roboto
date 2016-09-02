@@ -7,6 +7,7 @@ import android.util.AttributeSet
 import android.view.LayoutInflater
 import com.gdgchicagowest.windycitydevcon.R
 import com.gdgchicagowest.windycitydevcon.ext.getComponent
+import com.gdgchicagowest.windycitydevcon.features.speakerdetail.SpeakerNavigator
 import com.gdgchicagowest.windycitydevcon.model.Session
 import com.gdgchicagowest.windycitydevcon.model.Speaker
 import kotlinx.android.synthetic.main.view_session_detail.view.*
@@ -17,6 +18,7 @@ import javax.inject.Inject
 class SessionDetailView(context: Context, attrs: AttributeSet? = null, defStyle: Int = 0) :
         CoordinatorLayout(context, attrs, defStyle), SessionDetailMvp.View {
 
+    @Inject lateinit var speakerNavigator: SpeakerNavigator
     @Inject lateinit var presenter: SessionDetailMvp.Presenter
 
     private val format = SimpleDateFormat("h:mma")
@@ -30,7 +32,9 @@ class SessionDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
 
         LayoutInflater.from(context).inflate(R.layout.view_session_detail, this, true)
 
-        speakerAdapter = SpeakerAdapter()
+        speakerAdapter = SpeakerAdapter({ speaker, image ->
+            speakerNavigator.nagivateToSpeaker(speaker.id!!, image)
+        })
         speakers.adapter = speakerAdapter
         speakers.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
 

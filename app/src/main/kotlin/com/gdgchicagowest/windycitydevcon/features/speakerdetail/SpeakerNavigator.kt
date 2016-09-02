@@ -1,4 +1,7 @@
 package com.gdgchicagowest.windycitydevcon.features.speakerdetail
 
-class SpeakerNavigator {
+import android.view.View
+
+interface SpeakerNavigator {
+    fun nagivateToSpeaker(id: String, image: View? = null)
 }
