@@ -3,7 +3,7 @@ package com.gdgchicagowest.windycitydevcon.model
 import java.text.SimpleDateFormat
 import java.util.*
 
-class Session(val name: String? = null, val description: String? = null,
+class Session(val id: String? = null, val name: String? = null, val description: String? = null,
               val start_time: String? = null, val end_time: String? = null, val date: String? = null,
               val speakers: List<String>? = null, val room: String? = null,
               val tracks: List<String>? = null) {

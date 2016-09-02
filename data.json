@@ -3,8 +3,317 @@
     "2016-09-16"
   ],
   "sessions": {
+    "breakfast": {
+      "id": "breakfast",
+      "name": "Breakfast",
+      "description": "Lorem ipsum dolor sit amet",
+      "start_time": "2016-09-16T08:30:00-0500",
+      "end_time": "2016-09-16T09:00:00-0500",
+      "date": "2016-09-16"
+    },
+    "keynote": {
+      "id": "keynote",
+      "name": "Keynote",
+      "description": "Lorem ipsum dolor sit amet",
+      "start_time": "2016-09-16T09:00:00-0500",
+      "end_time": "2016-09-16T09:45:00-0500",
+      "date": "2016-09-16",
+      "speakers": [
+        "boberkfell"
+      ],
+      "room": "Lake Michigan"
+    },
+    "intro-to-gcp": {
+      "id": "intro-to-gcp",
+      "name": "Intro to Google Cloud Platform",
+      "description": "Lorem ipsum dolor sit amet",
+      "start_time": "2016-09-16T10:00:00-0500",
+      "end_time": "2016-09-16T10:45:00-0500",
+      "date": "2016-09-16",
+      "speakers": [
+        "drowe"
+      ],
+      "room": "Lake Michigan",
+      "tracks": [
+        "cloud"
+      ]
+    },
+    "intro-cardboard-unity": {
+      "id": "intro-cardboard-unity",
+      "name": "An Intro to developing for Google Cardboard with Unity",
+      "description": "Lorem ipsum dolor sit amet",
+      "start_time": "2016-09-16T10:00:00-0500",
+      "end_time": "2016-09-16T10:45:00-0500",
+      "date": "2016-09-16",
+      "speakers": [
+        "dward"
+      ],
+      "room": "Android"
+    },
+    "intro-firebase": {
+      "id": "intro-firebase",
+      "name": "Intro to Firebase",
+      "description": "Lorem ipsum dolor sit amet",
+      "start_time": "2016-09-16T10:00:00-0500",
+      "end_time": "2016-09-16T10:45:00-0500",
+      "date": "2016-09-16",
+      "speakers": [
+        "lcledeyn"
+      ],
+      "room": "Maps",
+      "tracks": [
+        "web"
+      ]
+    },
+    "material-animations": {
+      "id": "material-animations",
+      "name": "Material Animations - A Dive into Motion Design and Animation",
+      "description": "Lorem ipsum dolor sit amet",
+      "start_time": "2016-09-16T11:00:00-0500",
+      "end_time": "2016-09-16T11:45:00-0500",
+      "date": "2016-09-16",
+      "speakers": [
+        "jmardis"
+      ],
+      "room": "Lake Michigan",
+      "tracks": [
+        "android"
+      ]
+    },
+    "web-rtc": {
+      "id": "web-rtc",
+      "name": "Web RTC ? Other Web video / audio",
+      "description": "Lorem ipsum dolor sit amet",
+      "start_time": "2016-09-16T11:00:00-0500",
+      "end_time": "2016-09-16T11:45:00-0500",
+      "date": "2016-09-16",
+      "speakers": [
+        "vsanchez"
+      ],
+      "room": "Android",
+      "tracks": [
+        "web"
+      ]
+    },
+    "cloud-spin": {
+      "id": "cloud-spin",
+      "name": "Cloud Spin",
+      "description": "Lorem ipsum dolor sit amet",
+      "start_time": "2016-09-16T11:00:00-0500",
+      "end_time": "2016-09-16T11:45:00-0500",
+      "date": "2016-09-16",
+      "speakers": [
+        "bmcgowen"
+      ],
+      "room": "Maps",
+      "tracks": [
+        "cloud"
+      ]
+    },
+    "lunch": {
+      "id": "lunch",
+      "name": "Lunch",
+      "description": "Lorem ipsum dolor sit amet",
+      "start_time": "2016-09-16T12:00:00-0500",
+      "end_time": "2016-09-16T13:00:00-0500",
+      "date": "2016-09-16"
+    },
+    "game-programming": {
+      "id": "game-programming",
+      "name": "Game Programming with Javascript and Firebase",
+      "description": "Lorem ipsum dolor sit amet",
+      "start_time": "2016-09-16T13:00:00-0500",
+      "end_time": "2016-09-16T13:45:00-0500",
+      "date": "2016-09-16",
+      "speakers": [
+        "momander"
+      ],
+      "room": "Lake Michigan",
+      "tracks": [
+        "web"
+      ]
+    },
+    "system-services": {
+      "id": "system-services",
+      "name": "Digging Into System Services",
+      "description": "Lorem ipsum dolor sit amet",
+      "start_time": "2016-09-16T13:00:00-0500",
+      "end_time": "2016-09-16T13:45:00-0500",
+      "date": "2016-09-16",
+      "speakers": [
+        "dsmith"
+      ],
+      "room": "Android",
+      "tracks": [
+        "android"
+      ]
+    },
+    "up-to-speed": {
+      "id": "up-to-speed",
+      "name": "From Zero to Hero: How to Get Your New Team Up to Speed with Android",
+      "description": "Lorem ipsum dolor sit amet",
+      "start_time": "2016-09-16T13:00:00-0500",
+      "end_time": "2016-09-16T13:45:00-0500",
+      "date": "2016-09-16",
+      "speakers": [
+        "jcoca"
+      ],
+      "room": "Maps",
+      "tracks": [
+        "android"
+      ]
+    },
+    "kotlin": {
+      "id": "kotlin",
+      "name": "Kotlin for Android",
+      "description": "Lorem ipsum dolor sit amet",
+      "start_time": "2016-09-16T14:00:00-0500",
+      "end_time": "2016-09-16T14:45:00-0500",
+      "date": "2016-09-16",
+      "speakers": [
+        "mevans"
+      ],
+      "room": "Lake Michigan",
+      "tracks": [
+        "android"
+      ]
+    },
+    "angular": {
+      "id": "angular",
+      "name": "Angular 2 Workshop and Codelab",
+      "description": "Lorem ipsum dolor sit amet",
+      "start_time": "2016-09-16T14:00:00-0500",
+      "end_time": "2016-09-16T14:45:00-0500",
+      "date": "2016-09-16",
+      "speakers": [
+        "vscarlata",
+        "smotlani"
+      ],
+      "room": "Android",
+      "tracks": [
+        "code-lab"
+      ]
+    },
+    "moto-mods": {
+      "id": "moto-mods",
+      "name": "Moto Mods",
+      "description": "Lorem ipsum dolor sit amet",
+      "start_time": "2016-09-16T14:00:00-0500",
+      "end_time": "2016-09-16T14:45:00-0500",
+      "date": "2016-09-16",
+      "speakers": [
+        "cflowers"
+      ],
+      "room": "Maps",
+      "tracks": [
+        "other"
+      ]
+    },
+    "machine-learning": {
+      "id": "machine-learning",
+      "name": "Cloud Machine Learning APIs (Vision + Speech)",
+      "description": "Lorem ipsum dolor sit amet",
+      "start_time": "2016-09-16T15:00:00-0500",
+      "end_time": "2016-09-16T15:45:00-0500",
+      "date": "2016-09-16",
+      "speakers": [
+        "bmcgowen",
+        "srobinson"
+      ],
+      "room": "Lake Michigan",
+      "tracks": [
+        "cloud"
+      ]
+    },
+    "securing-firebase": {
+      "id": "securing-firebase",
+      "name": "Securing Firebase",
+      "description": "Lorem ipsum dolor sit amet",
+      "start_time": "2016-09-16T15:00:00-0500",
+      "end_time": "2016-09-16T15:45:00-0500",
+      "date": "2016-09-16",
+      "speakers": [
+        "mballard"
+      ],
+      "room": "Android",
+      "tracks": [
+        "android"
+      ]
+    },
+    "google-analytics": {
+      "id": "google-analytics",
+      "name": "Google Analytics",
+      "description": "Lorem ipsum dolor sit amet",
+      "start_time": "2016-09-16T15:00:00-0500",
+      "end_time": "2016-09-16T15:45:00-0500",
+      "date": "2016-09-16",
+      "speakers": [
+        "astanton"
+      ],
+      "room": "Maps",
+      "tracks": [
+        "web"
+      ]
+    },
+    "firebase-integrations": {
+      "id": "firebase-integrations",
+      "name": "Firebase Integrations with Cloud",
+      "description": "Lorem ipsum dolor sit amet",
+      "start_time": "2016-09-16T16:00:00-0500",
+      "end_time": "2016-09-16T16:45:00-0500",
+      "date": "2016-09-16",
+      "speakers": [
+        "srobinson"
+      ],
+      "room": "Lake Michigan",
+      "tracks": [
+        "cloud"
+      ]
+    },
+    "fingerprint": {
+      "id": "fingerprint",
+      "name": "Android Fingerprint Authentication in Action",
+      "description": "Lorem ipsum dolor sit amet",
+      "start_time": "2016-09-16T16:00:00-0500",
+      "end_time": "2016-09-16T16:45:00-0500",
+      "date": "2016-09-16",
+      "speakers": [
+        "boberkfell"
+      ],
+      "room": "Android",
+      "tracks": [
+        "android"
+      ]
+    },
+    "progressive-web-apps": {
+      "id": "progressive-web-apps",
+      "name": "Leveraging the Power of Native with Progressive Web Apps",
+      "description": "Lorem ipsum dolor sit amet",
+      "start_time": "2016-09-16T16:00:00-0500",
+      "end_time": "2016-09-16T16:45:00-0500",
+      "date": "2016-09-16",
+      "speakers": [
+        "awilliams",
+        "platteier"
+      ],
+      "room": "web",
+      "tracks": [
+        "Maps"
+      ]
+    },
+    "closing": {
+      "id": "closing",
+      "name": "Closing",
+      "description": "Lorem ipsum dolor sit amet",
+      "start_time": "2016-09-16T17:00:00-0500",
+      "end_time": "2016-09-16T17:30:00-0500",
+      "date": "2016-09-16"
+    }
+  },
+  "sessions_by_date": {
     "2016-09-16": [
       {
+        "id": "breakfast",
         "name": "Breakfast",
         "description": "Lorem ipsum dolor sit amet",
         "start_time": "2016-09-16T08:30:00-0500",
@@ -12,6 +321,7 @@
         "date": "2016-09-16"
       },
       {
+        "id": "keynote",
         "name": "Keynote",
         "description": "Lorem ipsum dolor sit amet",
         "start_time": "2016-09-16T09:00:00-0500",
@@ -23,6 +333,7 @@
         "room": "Lake Michigan"
       },
       {
+        "id": "intro-to-gcp",
         "name": "Intro to Google Cloud Platform",
         "description": "Lorem ipsum dolor sit amet",
         "start_time": "2016-09-16T10:00:00-0500",
@@ -37,6 +348,7 @@
         ]
       },
       {
+        "id": "intro-cardboard-unity",
         "name": "An Intro to developing for Google Cardboard with Unity",
         "description": "Lorem ipsum dolor sit amet",
         "start_time": "2016-09-16T10:00:00-0500",
@@ -48,6 +360,7 @@
         "room": "Android"
       },
       {
+        "id": "intro-firebase",
         "name": "Intro to Firebase",
         "description": "Lorem ipsum dolor sit amet",
         "start_time": "2016-09-16T10:00:00-0500",
@@ -62,6 +375,7 @@
         ]
       },
       {
+        "id": "material-animations",
         "name": "Material Animations - A Dive into Motion Design and Animation",
         "description": "Lorem ipsum dolor sit amet",
         "start_time": "2016-09-16T11:00:00-0500",
@@ -76,6 +390,7 @@
         ]
       },
       {
+        "id": "web-rtc",
         "name": "Web RTC ? Other Web video / audio",
         "description": "Lorem ipsum dolor sit amet",
         "start_time": "2016-09-16T11:00:00-0500",
@@ -90,6 +405,7 @@
         ]
       },
       {
+        "id": "cloud-spin",
         "name": "Cloud Spin",
         "description": "Lorem ipsum dolor sit amet",
         "start_time": "2016-09-16T11:00:00-0500",
@@ -104,6 +420,7 @@
         ]
       },
       {
+        "id": "lunch",
         "name": "Lunch",
         "description": "Lorem ipsum dolor sit amet",
         "start_time": "2016-09-16T12:00:00-0500",
@@ -111,6 +428,7 @@
         "date": "2016-09-16"
       },
       {
+        "id": "game-programming",
         "name": "Game Programming with Javascript and Firebase",
         "description": "Lorem ipsum dolor sit amet",
         "start_time": "2016-09-16T13:00:00-0500",
@@ -125,6 +443,7 @@
         ]
       },
       {
+        "id": "system-services",
         "name": "Digging Into System Services",
         "description": "Lorem ipsum dolor sit amet",
         "start_time": "2016-09-16T13:00:00-0500",
@@ -139,6 +458,7 @@
         ]
       },
       {
+        "id": "up-to-speed",
         "name": "From Zero to Hero: How to Get Your New Team Up to Speed with Android",
         "description": "Lorem ipsum dolor sit amet",
         "start_time": "2016-09-16T13:00:00-0500",
@@ -153,6 +473,7 @@
         ]
       },
       {
+        "id": "kotlin",
         "name": "Kotlin for Android",
         "description": "Lorem ipsum dolor sit amet",
         "start_time": "2016-09-16T14:00:00-0500",
@@ -167,6 +488,7 @@
         ]
       },
       {
+        "id": "angular",
         "name": "Angular 2 Workshop and Codelab",
         "description": "Lorem ipsum dolor sit amet",
         "start_time": "2016-09-16T14:00:00-0500",
@@ -182,6 +504,7 @@
         ]
       },
       {
+        "id": "moto-mods",
         "name": "Moto Mods",
         "description": "Lorem ipsum dolor sit amet",
         "start_time": "2016-09-16T14:00:00-0500",
@@ -196,6 +519,7 @@
         ]
       },
       {
+        "id": "machine-learning",
         "name": "Cloud Machine Learning APIs (Vision + Speech)",
         "description": "Lorem ipsum dolor sit amet",
         "start_time": "2016-09-16T15:00:00-0500",
@@ -211,6 +535,7 @@
         ]
       },
       {
+        "id": "securing-firebase",
         "name": "Securing Firebase",
         "description": "Lorem ipsum dolor sit amet",
         "start_time": "2016-09-16T15:00:00-0500",
@@ -225,6 +550,7 @@
         ]
       },
       {
+        "id": "google-analytics",
         "name": "Google Analytics",
         "description": "Lorem ipsum dolor sit amet",
         "start_time": "2016-09-16T15:00:00-0500",
@@ -239,6 +565,7 @@
         ]
       },
       {
+        "id": "firebase-integrations",
         "name": "Firebase Integrations with Cloud",
         "description": "Lorem ipsum dolor sit amet",
         "start_time": "2016-09-16T16:00:00-0500",
@@ -253,6 +580,7 @@
         ]
       },
       {
+        "id": "fingerprint",
         "name": "Android Fingerprint Authentication in Action",
         "description": "Lorem ipsum dolor sit amet",
         "start_time": "2016-09-16T16:00:00-0500",
@@ -267,6 +595,7 @@
         ]
       },
       {
+        "id": "progressive-web-apps",
         "name": "Leveraging the Power of Native with Progressive Web Apps",
         "description": "Lorem ipsum dolor sit amet",
         "start_time": "2016-09-16T16:00:00-0500",
@@ -282,6 +611,7 @@
         ]
       },
       {
+        "id": "closing",
         "name": "Closing",
         "description": "Lorem ipsum dolor sit amet",
         "start_time": "2016-09-16T17:00:00-0500",

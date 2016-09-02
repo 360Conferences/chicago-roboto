@@ -8,7 +8,25 @@ class FirebaseSessionProvider : SessionProvider {
 
     private val database: DatabaseReference = FirebaseDatabase.getInstance().reference
 
-    private val listeners: MutableMap<Any, ValueEventListener> = HashMap<Any, ValueEventListener>()
+    private val listeners: MutableMap<Any, ValueEventListener> = mutableMapOf()
+    private val queries: MutableMap<Any, Query> = mutableMapOf()
+
+    override fun addSessionListener(id: String, onComplete: (Session?) -> Unit) {
+        val listener = object : ValueEventListener {
+            override fun onDataChange(data: DataSnapshot?) {
+                onComplete(data?.getValue(Session::class.java))
+            }
+
+            override fun onCancelled(e: DatabaseError?) {
+                onComplete(null)
+            }
+        }
+        listeners[id] = listener
+
+        val query = database.child("sessions").child(id)
+        queries[id] = query
+        query.addValueEventListener(listener)
+    }
 
     override fun addSessionListener(key: Any, date: String, onComplete: (List<Session>?) -> Unit) {
         val listener = object : ValueEventListener {
@@ -22,11 +40,15 @@ class FirebaseSessionProvider : SessionProvider {
             }
         }
         listeners[key] = listener
-        val query = database.child("sessions").child(date).orderByChild("start_time")
+
+        val query = database.child("sessions_by_date").child(date).orderByChild("start_time")
+        queries[key] = query
         query.addValueEventListener(listener)
     }
 
     override fun removeSessionListener(key: Any) {
+        val query = queries.remove(key)
+        query?.removeEventListener(listeners.remove(key))
         database.child("sessions").removeEventListener(listeners[key])
     }
 }

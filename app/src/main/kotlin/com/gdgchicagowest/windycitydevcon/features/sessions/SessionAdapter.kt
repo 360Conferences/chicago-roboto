@@ -11,7 +11,8 @@ import com.gdgchicagowest.windycitydevcon.model.Speaker
 import kotlinx.android.synthetic.main.item_session.view.*
 import java.text.SimpleDateFormat
 
-internal class SessionAdapter() : RecyclerView.Adapter<SessionAdapter.ViewHolder>() {
+internal class SessionAdapter(val onSessionSelectedListener: ((session: Session) -> Unit)) :
+        RecyclerView.Adapter<SessionAdapter.ViewHolder>() {
 
     val sessions: MutableList<Session> = mutableListOf()
     val speakers: MutableMap<String, Speaker> = mutableMapOf()
@@ -19,11 +20,12 @@ internal class SessionAdapter() : RecyclerView.Adapter<SessionAdapter.ViewHolder
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_session, parent, false)
-        return ViewHolder(view)
+        return ViewHolder(view, onSessionSelectedListener)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val session = sessions[position]
+        holder.session = session
         holder.timeslot.text = "${format.format(session.startTime)}\nto\n${format.format(session.endTime)}"
         holder.title.text = session.name
 
@@ -58,7 +60,11 @@ internal class SessionAdapter() : RecyclerView.Adapter<SessionAdapter.ViewHolder
         return sessions.size
     }
 
-    internal class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    internal class ViewHolder(itemView: View, private val onSessionSelectedListener: ((session: Session) -> Unit)) :
+            RecyclerView.ViewHolder(itemView), View.OnClickListener {
+
+        var session: Session? = null
+
         val timeslot: TextView
         val title: TextView
         val speakers: TextView
@@ -69,6 +75,13 @@ internal class SessionAdapter() : RecyclerView.Adapter<SessionAdapter.ViewHolder
             title = super.itemView.title
             speakers = super.itemView.speakers
             room = super.itemView.room
+            itemView.setOnClickListener(this)
+        }
+
+        override fun onClick(v: View?) {
+            if (session != null) {
+                onSessionSelectedListener(session!!)
+            }
         }
     }
 }

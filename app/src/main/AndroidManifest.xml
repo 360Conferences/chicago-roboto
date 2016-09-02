@@ -9,13 +9,15 @@
         android:theme="@style/AppTheme"
         android:name=".DevconApp">
 
-        <activity android:name=".SessionListActivity">
+        <activity android:name=".features.sessions.SessionListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
+
+        <activity android:name=".features.sessiondetail.SessionDetailActivity" />
 
     </application>
 

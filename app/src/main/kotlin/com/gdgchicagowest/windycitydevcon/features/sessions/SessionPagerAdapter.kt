@@ -1,4 +1,4 @@
-package com.gdgchicagowest.windycitydevcon.features.dates
+package com.gdgchicagowest.windycitydevcon.features.sessions
 
 import android.support.v4.view.PagerAdapter
 import android.view.View

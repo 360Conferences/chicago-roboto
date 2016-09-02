@@ -8,9 +8,7 @@ import com.gdgchicagowest.windycitydevcon.injection.DaggerAppComponent
 
 class DevconApp() : Application() {
 
-    companion object {
-        @JvmStatic lateinit var component: AppComponent
-    }
+    lateinit var component: AppComponent
 
     override fun onCreate() {
         super.onCreate()
@@ -18,5 +16,12 @@ class DevconApp() : Application() {
                 .dataModule(DataModule())
                 .appModule(AppModule(this))
                 .build()
+    }
+
+    override fun getSystemService(name: String?): Any {
+        when (name) {
+            "component" -> return component
+            else -> return super.getSystemService(name)
+        }
     }
 }
