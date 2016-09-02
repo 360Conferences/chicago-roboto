@@ -19,7 +19,7 @@ class SessionDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
 
     @Inject lateinit var presenter: SessionDetailMvp.Presenter
 
-    private val format = SimpleDateFormat("hh:mma")
+    private val format = SimpleDateFormat("h:mma")
     private val speakerAdapter: SpeakerAdapter
 
     constructor(context: Context): this(context, null, 0)
