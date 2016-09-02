@@ -5,24 +5,25 @@ import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.FrameLayout
+import com.gdgchicagowest.windycitydevcon.DevconApp
 import com.gdgchicagowest.windycitydevcon.R
-import com.gdgchicagowest.windycitydevcon.data.FirebaseSessionDateProvider
 import kotlinx.android.synthetic.main.view_sessions.view.*
+import javax.inject.Inject
 
-class SessionDateView(context: Context?, attrs: AttributeSet?, defStyleAttr: Int, defStyleRes: Int) :
-        FrameLayout(context, attrs, defStyleAttr, defStyleRes), SessionDateListMvp.View {
+class SessionDateView(context: Context, attrs: AttributeSet? = null, defStyle: Int = 0) :
+        FrameLayout(context, attrs, defStyle), SessionDateListMvp.View {
 
-    private val presenter: SessionDatePresenter
+    constructor(context: Context): this(context, null, 0)
+    constructor(context: Context, attrs: AttributeSet?): this(context, attrs, 0)
+
+    @Inject lateinit var presenter: SessionDateListMvp.Presenter
+
     private val adapter: SessionPagerAdapter
 
-    constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) : this(context, attrs, defStyleAttr, 0)
-    constructor(context: Context?, attrs: AttributeSet?) : this(context, null, 0)
-    constructor(context: Context?) : this(context, null)
-
     init {
-        LayoutInflater.from(context).inflate(R.layout.view_sessions, this, true)
+        DevconApp.component.sessionDateComponent().inject(this)
 
-        presenter = SessionDatePresenter(FirebaseSessionDateProvider())
+        LayoutInflater.from(context).inflate(R.layout.view_sessions, this, true)
 
         toolbar.setTitle(R.string.app_name)
 

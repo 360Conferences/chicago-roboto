@@ -5,19 +5,20 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.util.AttributeSet
 import android.view.ViewGroup
-import com.gdgchicagowest.windycitydevcon.data.FirebaseSessionProvider
-import com.gdgchicagowest.windycitydevcon.data.FirebaseSpeakerProvider
+import com.gdgchicagowest.windycitydevcon.DevconApp
 import com.gdgchicagowest.windycitydevcon.model.Session
 import com.gdgchicagowest.windycitydevcon.model.Speaker
+import javax.inject.Inject
 
 class SessionListView(context: Context, attrs: AttributeSet? = null, defStyle: Int = 0) :
         RecyclerView(context, attrs, defStyle), SessionListMvp.View {
 
     private val adapter: SessionAdapter
-    private val presenter: SessionListMvp.Presenter
+
+    @Inject lateinit var presenter: SessionListMvp.Presenter
 
     init {
-        presenter = SessionListPresenter(FirebaseSessionProvider(), FirebaseSpeakerProvider())
+        DevconApp.component.sessionListComponent().inject(this)
 
         layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
         layoutManager = LinearLayoutManager(context, VERTICAL, false)
