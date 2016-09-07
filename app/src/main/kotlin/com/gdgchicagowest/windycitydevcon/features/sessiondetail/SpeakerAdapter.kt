@@ -11,13 +11,16 @@ import com.gdgchicagowest.windycitydevcon.R
 import com.gdgchicagowest.windycitydevcon.model.Speaker
 import kotlinx.android.synthetic.main.item_speaker.view.*
 
-internal class SpeakerAdapter(val onSpeakerClickedListener: ((speaker: Speaker, view: View) -> Unit)) :
+internal class SpeakerAdapter(val wrapsWidth: Boolean = true, val onSpeakerClickedListener: ((speaker: Speaker, view: View) -> Unit)) :
         RecyclerView.Adapter<SpeakerAdapter.ViewHolder>() {
 
     val speakers: MutableList<Speaker> = mutableListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.item_speaker, parent, false)
+        if (!wrapsWidth) {
+            v.layoutParams.width = ViewGroup.LayoutParams.MATCH_PARENT
+        }
         return ViewHolder(v, onSpeakerClickedListener)
     }
 

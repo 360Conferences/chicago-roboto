@@ -32,7 +32,7 @@ class SessionDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
 
         LayoutInflater.from(context).inflate(R.layout.view_session_detail, this, true)
 
-        speakerAdapter = SpeakerAdapter({ speaker, image ->
+        speakerAdapter = SpeakerAdapter(true, { speaker, image ->
             speakerNavigator.nagivateToSpeaker(speaker.id!!, image)
         })
         speakers.adapter = speakerAdapter

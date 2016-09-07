@@ -15,6 +15,7 @@ import com.gdgchicagowest.windycitydevcon.features.sessions.SessionDateView
 import com.gdgchicagowest.windycitydevcon.features.sessions.SessionNavigator
 import com.gdgchicagowest.windycitydevcon.features.speakerdetail.SpeakerDetailActivity
 import com.gdgchicagowest.windycitydevcon.features.speakerdetail.SpeakerNavigator
+import com.gdgchicagowest.windycitydevcon.features.speakerlist.SpeakerListView
 import com.gdgchicagowest.windycitydevcon.model.Session
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -56,9 +57,9 @@ class MainActivity : AppCompatActivity(), SessionNavigator, SpeakerNavigator, Na
     }
 
     private fun showView(viewId: Int): Boolean {
-        val view = when (viewId) {
+        val view: View? = when (viewId) {
             R.id.action_schedule -> SessionDateView(this)
-            R.id.action_speakers -> null // TODO
+            R.id.action_speakers -> SpeakerListView(this)
             else -> null
         }
         if (view != null) {

@@ -3,14 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
-    android:layout_height="match_parent">
+    android:layout_height="?attr/listPreferredItemHeight"
+    android:background="?attr/selectableItemBackground">
 
     <com.mikhaellopez.circularimageview.CircularImageView
-        android:layout_width="56dp"
-        android:layout_height="56dp"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:id="@+id/image"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         app:civ_border_color="#ffcfcfcf"
         app:civ_border_width="2dp"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -31,11 +33,11 @@
         android:id="@+id/title"
         app:layout_constraintLeft_toLeftOf="@+id/name"
         app:layout_constraintTop_toBottomOf="@+id/name"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         tools:text="Speaker Title"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"/>
     <android.support.constraint.Guideline
-        android:layout_width="384dp"
+        android:layout_width="152dp"
         android:layout_height="0dp"
         android:id="@+id/guideline"
         app:layout_constraintGuide_begin="44dp"
