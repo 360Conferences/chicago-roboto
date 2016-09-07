@@ -1,5 +1,6 @@
 package com.gdgchicagowest.windycitydevcon.features.speakerdetail
 
+import android.app.Activity
 import android.content.Context
 import android.support.constraint.ConstraintLayout
 import android.support.v4.view.ViewCompat
@@ -24,6 +25,11 @@ class SpeakerDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
 
         LayoutInflater.from(context).inflate(R.layout.view_speaker_detail, this, true)
         ViewCompat.setTransitionName(image, "image")
+        toolbar.setNavigationOnClickListener {
+            if (context is Activity) {
+                context.finish()
+            }
+        }
 
         presenter.onAttach(this)
     }

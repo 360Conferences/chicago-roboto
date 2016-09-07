@@ -1,5 +1,6 @@
 package com.gdgchicagowest.windycitydevcon.features.sessiondetail
 
+import android.app.Activity
 import android.content.Context
 import android.support.design.widget.CoordinatorLayout
 import android.support.v7.widget.LinearLayoutManager
@@ -31,6 +32,11 @@ class SessionDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
         context.getComponent<SessionDetailComponent>().inject(this)
 
         LayoutInflater.from(context).inflate(R.layout.view_session_detail, this, true)
+        toolbar.setNavigationOnClickListener {
+            if (context is Activity) {
+                context.finish()
+            }
+        }
 
         speakerAdapter = SpeakerAdapter(true, { speaker, image ->
             speakerNavigator.nagivateToSpeaker(speaker.id!!, image)
