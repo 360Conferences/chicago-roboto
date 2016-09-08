@@ -1,4 +1,14 @@
 {
+  "venue": {
+    "name": "Google Chicago",
+    "street": "320 N Morgan",
+    "city": "Chicago",
+    "state": "Il",
+    "zip": "60607",
+    "phone": "",
+    "latitude": 41.888147,
+    "longitude": -87.652836
+  },
   "session_dates": [
     "2016-09-16"
   ],

@@ -18,4 +18,8 @@ class DataModule {
     @Provides @Singleton fun provideSpeakerProvider(): SpeakerProvider {
         return FirebaseSpeakerProvider()
     }
+
+    @Provides @Singleton fun provideVenueProvider(): VenueProvider {
+        return FirebaseVenueProvider()
+    }
 }

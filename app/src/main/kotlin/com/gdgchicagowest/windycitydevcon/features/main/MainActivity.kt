@@ -10,6 +10,7 @@ import android.view.MenuItem
 import android.view.View
 import com.gdgchicagowest.windycitydevcon.R
 import com.gdgchicagowest.windycitydevcon.ext.getAppComponent
+import com.gdgchicagowest.windycitydevcon.features.location.LocationView
 import com.gdgchicagowest.windycitydevcon.features.sessiondetail.SessionDetailActivity
 import com.gdgchicagowest.windycitydevcon.features.sessions.SessionDateView
 import com.gdgchicagowest.windycitydevcon.features.sessions.SessionNavigator
@@ -60,6 +61,7 @@ class MainActivity : AppCompatActivity(), SessionNavigator, SpeakerNavigator, Na
         val view: View? = when (viewId) {
             R.id.action_schedule -> SessionDateView(this)
             R.id.action_speakers -> SpeakerListView(this)
+            R.id.action_location -> LocationView(this)
             else -> null
         }
         if (view != null) {

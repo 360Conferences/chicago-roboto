@@ -32,5 +32,6 @@ task clean(type: Delete) {
 }
 
 ext {
+    gmsVersion = '9.4.0';
     firebaseVersion = '9.4.0';
 }

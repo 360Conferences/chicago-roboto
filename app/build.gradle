@@ -37,6 +37,7 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha7'
     compile 'com.android.support:recyclerview-v7:24.2.0'
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    compile "com.google.android.gms:play-services-maps:${rootProject.gmsVersion}"
     compile "com.google.firebase:firebase-core:${rootProject.firebaseVersion}"
     compile "com.google.firebase:firebase-database:${rootProject.firebaseVersion}"
     compile "com.google.firebase:firebase-auth:${rootProject.firebaseVersion}"

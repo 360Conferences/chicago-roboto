@@ -20,6 +20,14 @@
         <activity android:name=".features.sessiondetail.SessionDetailActivity" />
         <activity android:name=".features.speakerdetail.SpeakerDetailActivity" />
 
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBkzDCz4N_AWbrywq6KUrek5DH86zfQvaE" />
+
     </application>
 
 </manifest>

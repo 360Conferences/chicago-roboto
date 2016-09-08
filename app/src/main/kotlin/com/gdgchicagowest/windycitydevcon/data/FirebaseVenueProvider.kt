@@ -1,41 +1,37 @@
 package com.gdgchicagowest.windycitydevcon.data
 
-import com.gdgchicagowest.windycitydevcon.model.Speaker
+import com.gdgchicagowest.windycitydevcon.model.Venue
 import com.google.firebase.database.*
 
-class FirebaseSpeakerProvider : SpeakerProvider {
+class FirebaseVenueProvider : VenueProvider {
 
     private val database: DatabaseReference = FirebaseDatabase.getInstance().reference
 
     private val queries: MutableMap<Any, Query> = mutableMapOf()
     private val listeners: MutableMap<Any, ValueEventListener> = mutableMapOf()
 
-    override fun addSpeakerListener(key: Any, onComplete: (Map<String, Speaker>?) -> Unit) {
-
-    }
-
-    override fun addSpeakerListener(id: String, onComplete: (Speaker?) -> Unit) {
-        if (queries[id] != null) {
-            removeSpeakerListener(id)
+    override fun addVenueListener(key: Any, onComplete: (Venue?) -> Unit) {
+        if (queries[key] != null) {
+            removeVenueListener(queries)
         }
 
         val listener = object : ValueEventListener {
             override fun onDataChange(data: DataSnapshot?) {
-                onComplete(data?.getValue(Speaker::class.java))
+                onComplete(data?.getValue(Venue::class.java))
             }
 
             override fun onCancelled(e: DatabaseError?) {
                 onComplete(null)
             }
         }
-        listeners[id] = listener
+        listeners[key] = listener
 
-        val query = database.child("speakers").child(id)
+        val query = database.child("venue")
         query.addValueEventListener(listener)
-        queries[id] = query
+        queries[key] = query
     }
 
-    override fun removeSpeakerListener(key: Any) {
+    override fun removeVenueListener(key: Any) {
         val query = queries[key]
         query?.removeEventListener(listeners[key])
 
