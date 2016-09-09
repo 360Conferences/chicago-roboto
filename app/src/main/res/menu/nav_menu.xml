@@ -13,7 +13,7 @@
             android:title="@string/action_speakers" />
     </group>
 
-    <group android:id="@+id/group_other">
+    <group android:id="@+id/group_other" android:checkableBehavior="single">
         <item
             android:id="@+id/action_location"
             android:icon="@drawable/ic_location"
