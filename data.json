@@ -21,6 +21,15 @@
       "end_time": "2016-09-16T09:30:00-0500",
       "date": "2016-09-16"
     },
+    "welcome": {
+      "id": "welcome",
+      "name": "Welcome Remarks",
+      "description": "Welcoming everyone to Windy City DevCon and thanking our sponsors.",
+      "start_time": "2016-09-16T09:30:00-0500",
+      "end_time": "2016-09-16T09:45:00-0500",
+      "date": "2016-09-16",
+      "room": "Lake Michigan"
+    },
     "intro-to-gcp": {
       "id": "intro-to-gcp",
       "name": "Google Cloud Platform Overview",
@@ -56,7 +65,7 @@
       "end_time": "2016-09-16T10:45:00-0500",
       "date": "2016-09-16",
       "speakers": [
-        "lcledeyn"
+        "lcledwyen"
       ],
       "room": "Maps",
       "tracks": [
@@ -305,7 +314,8 @@
       "description": "Closing Remarks and Giveaways!",
       "start_time": "2016-09-16T17:00:00-0500",
       "end_time": "2016-09-16T17:30:00-0500",
-      "date": "2016-09-16"
+      "date": "2016-09-16",
+      "room": "Lake Michigan"
     }
   },
   "sessions_by_date": {
@@ -316,7 +326,17 @@
         "description": "Sign in and Breakfast",
         "start_time": "2016-09-16T08:30:00-0500",
         "end_time": "2016-09-16T09:30:00-0500",
-        "date": "2016-09-16"
+        "date": "2016-09-16",
+        "room": "Lake Michigan"
+      },
+      {
+        "id": "welcome",
+        "name": "Welcome Remarks",
+        "description": "Welcoming everyone to Windy City DevCon and thanking our sponsors.",
+        "start_time": "2016-09-16T09:30:00-0500",
+        "end_time": "2016-09-16T09:45:00-0500",
+        "date": "2016-09-16",
+        "room": "Lake Michigan"
       },
       {
         "id": "intro-to-gcp",
@@ -353,7 +373,7 @@
         "end_time": "2016-09-16T10:45:00-0500",
         "date": "2016-09-16",
         "speakers": [
-          "lcledeyn"
+          "lcledwyen"
         ],
         "room": "Maps",
         "tracks": [
@@ -602,7 +622,8 @@
         "description": "Closing Remarks and Giveaways!",
         "start_time": "2016-09-16T17:00:00-0500",
         "end_time": "2016-09-16T17:30:00-0500",
-        "date": "2016-09-16"
+        "date": "2016-09-16",
+        "room": "Lake Michigan"
       }
     ]
   },
@@ -668,7 +689,7 @@
       "company": "American Express",
       "name": "Ben Oberkfell",
       "title": "Android Developer",
-      "twitter": "benlikestcode",
+      "twitter": "@benlikestcode",
       "github": "benoberkfell",
       "google": "+BenOberkfell",
       "website": "benlikestoco.de"
@@ -679,7 +700,7 @@
       "company": "Salesforce",
       "name": "Jerrell Mardis",
       "title": "Android Developer",
-      "twitter": "jerrellmardis",
+      "twitter": "@jerrellmardis",
       "github": "jerrellmardis",
       "google": "+JerrellMardis",
       "website": ""
@@ -690,7 +711,7 @@
       "company": "LivingSocial",
       "name": "Michael Evans",
       "title": "Android Tech Lead",
-      "twitter": "m_evans10",
+      "twitter": "@m_evans10",
       "github": "MichaelEvans",
       "google": "+MichaelEvans",
       "website": "http://michaelevans.org"
@@ -701,7 +722,7 @@
       "company": "",
       "name": "Dave Smith",
       "title": "",
-      "twitter": "devunwired",
+      "twitter": "@devunwired",
       "github": "devunwired",
       "google": "+DaveSmithDev",
       "website": "http://wiresareobsolete.com/"
@@ -712,7 +733,7 @@
       "company": "",
       "name": "Alison Stanton",
       "title": "",
-      "twitter": "alison985",
+      "twitter": "@alison985",
       "github": "",
       "google": "",
       "website": "http://alisonstanton.com/alisons-blog/"
@@ -734,7 +755,7 @@
       "company": "Quicken Loans",
       "name": "Don Ward",
       "title": "Mobile Lead",
-      "twitter": "donwardpeng",
+      "twitter": "@donwardpeng",
       "github": "",
       "google": "+DonWard",
       "website": ""
@@ -800,6 +821,17 @@
       "company": "WalmartLabs",
       "name": "Shan Motlani",
       "title": "Frontend Engineer",
+      "twitter": "",
+      "github": "",
+      "google": "",
+      "website": ""
+    },
+    "mluebbe": {
+      "id": "mluebbe",
+      "bio": "",
+      "company": "",
+      "name": "Max Luebbe",
+      "title": "",
       "twitter": "",
       "github": "",
       "google": "",
