@@ -9,11 +9,7 @@ class Speaker(val id: String? = null, val name: String? = null, val email: Strin
 
     val avatar: String?
         get() {
-            if (email == null) {
-                return null
-            } else {
-                return "https://www.gravatar.com/avatar/${hash()}"
-            }
+            return "https://firebasestorage.googleapis.com/v0/b/gdg-chicago-devfest.appspot.com/o/speakers%2F$id.jpg?alt=media"
         }
 
     private fun hash(): String {
