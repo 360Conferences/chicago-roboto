@@ -93,6 +93,7 @@
                 android:id="@+id/speakers"/>
         </android.support.constraint.ConstraintLayout>
     </android.support.v4.widget.NestedScrollView>
+
     <android.support.design.widget.FloatingActionButton
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
@@ -101,5 +102,6 @@
         app:srcCompat="@drawable/ic_action_comment"
         android:layout_marginRight="16dp"
         android:clickable="true"
-        android:id="@+id/fab_comment"/>
+        android:id="@+id/fab_comment"
+        android:visibility="gone"/>
 </merge>
