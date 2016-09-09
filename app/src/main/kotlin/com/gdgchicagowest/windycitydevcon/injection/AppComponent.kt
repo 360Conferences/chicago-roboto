@@ -1,6 +1,8 @@
 package com.gdgchicagowest.windycitydevcon.injection
 
 import com.gdgchicagowest.windycitydevcon.data.DataModule
+import com.gdgchicagowest.windycitydevcon.features.info.InfoComponent
+import com.gdgchicagowest.windycitydevcon.features.info.InfoModule
 import com.gdgchicagowest.windycitydevcon.features.main.MainComponent
 import com.gdgchicagowest.windycitydevcon.features.main.MainModule
 import com.gdgchicagowest.windycitydevcon.features.sessiondetail.SessionDetailComponent
@@ -15,5 +17,6 @@ interface AppComponent {
     fun sessionDetailComponent(sessionDetailModule: SessionDetailModule): SessionDetailComponent
     fun speakerDetailComponent(): SpeakerDetailComponent
     fun mainComponent(mainModule: MainModule): MainComponent
+    fun infoComponent(infoModule: InfoModule): InfoComponent
 }
 

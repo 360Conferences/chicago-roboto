@@ -8,4 +8,9 @@
     <string name="action_speakers">Speakers</string>
     <string name="action_location">Location</string>
     <string name="action_info">Info</string>
+
+    <!-- Licensing -->
+    <string name="google_maps">Google Maps</string>
+    <string name="glide">Glide</string>
+    <string name="info_topper">Brought to you with the help of these Open Source projects</string>
 </resources>
