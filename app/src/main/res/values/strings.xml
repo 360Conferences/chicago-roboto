@@ -13,4 +13,10 @@
     <string name="google_maps">Google Maps</string>
     <string name="glide">Glide</string>
     <string name="info_topper">Brought to you with the help of these Open Source projects</string>
+    <string name="feedback_title">How would you rate this session?</string>
+    <string name="feedback_session">Overall session experience:</string>
+    <string name="feedback_content">Technical level of the session content:</string>
+    <string name="feedback_speaker">Presentation skills of the speaker:</string>
+    <string name="cancel">cancel</string>
+    <string name="submit">Submit</string>
 </resources>

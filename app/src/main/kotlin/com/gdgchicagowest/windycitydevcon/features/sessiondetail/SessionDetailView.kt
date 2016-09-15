@@ -8,6 +8,7 @@ import android.util.AttributeSet
 import android.view.LayoutInflater
 import com.gdgchicagowest.windycitydevcon.R
 import com.gdgchicagowest.windycitydevcon.ext.getComponent
+import com.gdgchicagowest.windycitydevcon.features.sessiondetail.feedback.FeedbackDialog
 import com.gdgchicagowest.windycitydevcon.features.speakerdetail.SpeakerNavigator
 import com.gdgchicagowest.windycitydevcon.model.Session
 import com.gdgchicagowest.windycitydevcon.model.Speaker
@@ -24,6 +25,7 @@ class SessionDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
 
     private val format = SimpleDateFormat("h:mma")
     private val speakerAdapter: SpeakerAdapter
+    private var sessionId: String? = null
 
     constructor(context: Context): this(context, null, 0)
     constructor(context: Context, attrs: AttributeSet?): this(context, attrs, 0)
@@ -44,6 +46,12 @@ class SessionDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
         speakers.adapter = speakerAdapter
         speakers.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
 
+        // initially hide the feedback button until we get a session
+        feedback.visibility = GONE
+        feedback.setOnClickListener {
+            FeedbackDialog(context, sessionId!!).show()
+        }
+
         presenter.onAttach(this)
     }
 
@@ -53,7 +61,8 @@ class SessionDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
     }
 
     fun setSession(sessionId: String) {
-       presenter.setSessionId(sessionId)
+        this.sessionId = sessionId
+        presenter.setSessionId(sessionId)
     }
 
     override fun showSessionDetail(session: Session) {
@@ -73,6 +82,8 @@ class SessionDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
                 R.string.status_over
             }
             status.setText(statusString)
+
+            feedback.visibility = VISIBLE
         }
     }
 

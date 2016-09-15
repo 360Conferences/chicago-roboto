@@ -102,6 +102,5 @@
         app:srcCompat="@drawable/ic_action_comment"
         android:layout_marginRight="16dp"
         android:clickable="true"
-        android:id="@+id/fab_comment"
-        android:visibility="gone"/>
+        android:id="@+id/feedback"/>
 </merge>
