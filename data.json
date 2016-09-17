@@ -89,13 +89,13 @@
     },
     "web-rtc": {
       "id": "web-rtc",
-      "name": "Navigating Google Cloud Platform Storage Options",
-      "description": "When do I use Google Cloud Storage vs Datastore vs Firebase vs Bigtable vs Cloud SQL etc etc. Is BigQuery a database? Why not?\n\nMaking the wrong choice early on in a project can become really painful later, migrations can be quite challenging. This session will overview storage choices on Cloud Platform so you can make the right choice on your next project",
+      "name": "The Five Phases of DevOps",
+      "description": "So you want to start a DevOps revolution. Great...where do you start? Going from manual deployments to a fully automated delivery pipeline has brought many changes; both technical and cultural. In this talk, we will cover \"the five phases of DevOps\" we found on our journey at Gogo. Finally, we will wrap up the talk with how you too can start your own DevOps revolution including some tool demos and examples.",
       "start_time": "2016-09-16T11:00:00-0500",
       "end_time": "2016-09-16T11:45:00-0500",
       "date": "2016-09-16",
       "speakers": [
-        "mluebbe"
+        "jvasallo"
       ],
       "room": "Android",
       "tracks": [
@@ -397,13 +397,13 @@
       },
       {
         "id": "web-rtc",
-        "name": "Navigating Google Cloud Platform Storage Options",
-        "description": "When do I use Google Cloud Storage vs Datastore vs Firebase vs Bigtable vs Cloud SQL etc etc. Is BigQuery a database? Why not?\n\nMaking the wrong choice early on in a project can become really painful later, migrations can be quite challenging. This session will overview storage choices on Cloud Platform so you can make the right choice on your next project",
+        "name": "The Five Phases of DevOps",
+        "description": "So you want to start a DevOps revolution. Great...where do you start? Going from manual deployments to a fully automated delivery pipeline has brought many changes; both technical and cultural. In this talk, we will cover \"the five phases of DevOps\" we found on our journey at Gogo. Finally, we will wrap up the talk with how you too can start your own DevOps revolution including some tool demos and examples.",
         "start_time": "2016-09-16T11:00:00-0500",
         "end_time": "2016-09-16T11:45:00-0500",
         "date": "2016-09-16",
         "speakers": [
-          "mluebbe"
+          "jvasallo"
         ],
         "room": "Android",
         "tracks": [
@@ -826,13 +826,13 @@
       "google": "",
       "website": ""
     },
-    "mluebbe": {
-      "id": "mluebbe",
-      "bio": "",
-      "company": "",
-      "name": "Max Luebbe",
-      "title": "",
-      "twitter": "",
+    "jvasallo": {
+      "id": "jvasallo",
+      "bio": "Joel is currently a DevOps Engineer at Gogo. He’s been at Gogo for 4 years improving cloud infrastructure and developing infrastructure tools. Primarily works with Python, the cloud is his immutable datacenter, and loves exploring his home city Chicago from time to time.",
+      "company": "Gogo",
+      "name": "Joel Vasallo",
+      "title": "DevOps Engineer",
+      "twitter": "@__jvasallo__",
       "github": "",
       "google": "",
       "website": ""
