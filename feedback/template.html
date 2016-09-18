@@ -1,0 +1,44 @@
+<p>Dear {{ speaker.name }},</p>
+
+<p>Thanks so much for participating in the first ever Windy City DevCon. You helped make the conference a huge success and we couldn't have done it without you.</p>
+
+<p>Here is the feedback that we received from attendees for your talk, "{{ session.name }}":</p>
+
+<h2>Overall Results:</h2>
+<table cellspacing="0" cellpadding="0" border="0" style="table-layout:fixed;font-size:13px;font-family:arial,sans,sans-serif;border-collapse:collapse;border:1px solid #ccc">
+  <thead>
+    <tr>
+      <td width="100" style="font-weight:bold;text-align:center;table-layout:fixed;font-size:13px;font-family:arial,sans,sans-serif;border-collapse:collapse;border:1px solid #ccc">Overall Experience</td>
+      <td width="100" style="font-weight:bold;text-align:center;table-layout:fixed;font-size:13px;font-family:arial,sans,sans-serif;border-collapse:collapse;border:1px solid #ccc">Speaker Skills</td>
+      <td width="100" style="font-weight:bold;text-align:center;table-layout:fixed;font-size:13px;font-family:arial,sans,sans-serif;border-collapse:collapse;border:1px solid #ccc">Technical Level</td>
+    </tr>
+  </thead>
+  <tr>
+    <td width="100" style="padding:4px;text-align:right;table-layout:fixed;font-size:13px;font-family:arial,sans,sans-serif;border-collapse:collapse;border:1px solid #ccc">{{ '%0.2f'| format(averages.speaker|float) }}</td>
+    <td width="100" style="padding:4px;text-align:right;table-layout:fixed;font-size:13px;font-family:arial,sans,sans-serif;border-collapse:collapse;border:1px solid #ccc">{{ '%0.2f'| format(averages.technical|float) }}</td>
+    <td width="100" style="padding:4px;text-align:right;table-layout:fixed;font-size:13px;font-family:arial,sans,sans-serif;border-collapse:collapse;border:1px solid #ccc">{{ '%0.2f'| format(averages.overall|float) }}</td>
+  </tr>
+</table>
+
+<h2>Raw Results:</h2>
+<table cellspacing="0" cellpadding="0" border="0" width="400">
+  <thead>
+    <tr>
+      <td width="100" style="font-weight:bold;text-align:center;table-layout:fixed;font-size:13px;font-family:arial,sans,sans-serif;border-collapse:collapse;border:1px solid #ccc">Overall Experience</td>
+      <td width="100" style="font-weight:bold;text-align:center;table-layout:fixed;font-size:13px;font-family:arial,sans,sans-serif;border-collapse:collapse;border:1px solid #ccc">Speaker Skills</td>
+      <td width="100" style="font-weight:bold;text-align:center;table-layout:fixed;font-size:13px;font-family:arial,sans,sans-serif;border-collapse:collapse;border:1px solid #ccc">Technical Level</td>
+    </tr>
+  </thead>
+{% for feedback in feedback %}
+  <tr>
+    <td width="100" style="padding:4px;text-align:right;table-layout:fixed;font-size:13px;font-family:arial,sans,sans-serif;border-collapse:collapse;border:1px solid #ccc">{{ feedback.overall }}</td>
+    <td width="100" style="padding:4px;text-align:right;table-layout:fixed;font-size:13px;font-family:arial,sans,sans-serif;border-collapse:collapse;border:1px solid #ccc">{{ feedback.speaker }}</td>
+    <td width="100" style="padding:4px;text-align:right;table-layout:fixed;font-size:13px;font-family:arial,sans,sans-serif;border-collapse:collapse;border:1px solid #ccc">{{ feedback.technical }}</td>
+  </tr>
+{% endfor %}
+</table>
+
+<p>We hope to see you again in 2017!</p>
+
+<p>Best<br/>
+The Windy City DevCon Organizers</p>

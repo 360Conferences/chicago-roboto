@@ -8,6 +8,10 @@ The app should be easily customizable to other deveveloper conferences by simply
 1. Updating the `data.json` file with your conference details, keeping the same structure, and uploading it to Firebase.
 1. Updates graphical assets and strings.
 
+**Note:** There is one place in the app that is currently hard coded, and that is the speaker avatar URL.  You can simply update this is `Speaker.kt:12` until it goes away.
+
+Once a session has started, users will have the option to submit feedback for the session. Check the `feedback` directory for scripts to process that feedback and generate emails to send to speakers.
+
 # Architecture
 
 The app uses an MVP architecture in which the interfaces, presenters and models are contained in a Java only `core` module, and the Android components, like Firebase integration (`providers`), custom View implementations, etc. are in the Android `app` module.
