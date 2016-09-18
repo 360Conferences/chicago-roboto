@@ -21,7 +21,6 @@ You will also find no Java in the project, as it is entirely written in [Kotlin]
 # TODO
 
 1. Tests
-1. Support providing feedback for talks.
 1. Reduce the repetition in the data.json sessions.
 1. Replace the hard coded image path.
 1. Add support for sponsors.
