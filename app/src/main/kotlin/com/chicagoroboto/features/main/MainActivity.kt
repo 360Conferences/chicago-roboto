@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity(), SessionNavigator, SpeakerNavigator, Na
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setTitle(R.string.event_name)
         component = getAppComponent().mainComponent(MainModule(this, this))
 
         setContentView(R.layout.activity_main)

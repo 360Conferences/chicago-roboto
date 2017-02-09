@@ -15,6 +15,8 @@ android {
         vectorDrawables.useSupportLibrary = true
 
         buildConfigField "String", "EVENT_ID", "\"chicagoroboto-2017\""
+        resValue "string", "app_name", "Roboto"
+        resValue "string", "event_name", "Chicago Roboto"
     }
     signingConfigs {
         release {
