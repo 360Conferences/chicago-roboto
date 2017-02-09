@@ -2,841 +2,1043 @@
   "events": {
     "chicagoroboto-2017": {
       "venue": {
-        "name": "Google Chicago",
-        "street": "320 N Morgan",
+        "name": "W Chicago - City Center",
+        "street": "172 W Adams St",
         "city": "Chicago",
         "state": "Il",
-        "zip": "60607",
-        "phone": "",
-        "latitude": 41.888147,
-        "longitude": -87.652836
+        "zip": "60603",
+        "phone": "(312) 332-1200",
+        "latitude": 41.879747,
+        "longitude": -87.633246
       },
       "session_dates": [
-        "2016-09-16"
+        "2017-04-20",
+        "2017-04-21"
       ],
       "sessions": {
-        "breakfast": {
-          "id": "breakfast",
-          "name": "Sign in and Breakfast",
+        "conversation-actions-for-google-assistant": {
+          "id": "conversation-actions-for-google-assistant",
+          "name": "Conversation Actions for Google Assistant",
           "description": "Sign in and Breakfast",
-          "start_time": "2016-09-16T08:30:00-0500",
-          "end_time": "2016-09-16T09:30:00-0500",
-          "date": "2016-09-16"
+          "start_time": "2017-04-20T10:00:00-0500",
+          "end_time": "2017-04-20T10:45:00-0500",
+          "speakers": [
+            "akelly"
+          ],
+          "date": "2017-04-20",
+          "room": "Great Room 1"
         },
-        "welcome": {
-          "id": "welcome",
-          "name": "Welcome Remarks",
+        "break-your-app-before-someone-else-does": {
+          "id": "break-your-app-before-someone-else-does",
+          "name": "Break your app before someone else does",
           "description": "Welcoming everyone to Windy City DevCon and thanking our sponsors.",
-          "start_time": "2016-09-16T09:30:00-0500",
-          "end_time": "2016-09-16T09:45:00-0500",
-          "date": "2016-09-16",
-          "room": "Lake Michigan"
+          "start_time": "2017-04-20T10:00:00-0500",
+          "end_time": "2017-04-20T10:45:00-0500",
+          "speakers": [
+            "abaotic"
+          ],
+          "date": "2017-04-20",
+          "room": "Great Room 2"
         },
-        "intro-to-gcp": {
-          "id": "intro-to-gcp",
-          "name": "Google Cloud Platform Overview",
+        "accessibility-at-scale": {
+          "id": "accessibility-at-scale",
+          "name": "Accessibility @ Scale",
           "description": "This presentation will provide an overview of the platform including a few demos of key products within GCP.",
-          "start_time": "2016-09-16T10:00:00-0500",
-          "end_time": "2016-09-16T10:45:00-0500",
-          "date": "2016-09-16",
+          "start_time": "2017-04-20T11:00:00-0500",
+          "end_time": "2017-04-20T11:45:00-0500",
+          "date": "2017-04-20",
           "speakers": [
-            "drowe"
+            "mpotter"
           ],
-          "room": "Lake Michigan",
+          "room": "Great Room 1",
           "tracks": [
             "cloud"
           ]
         },
-        "intro-cardboard-unity": {
-          "id": "intro-cardboard-unity",
-          "name": "An Intro to developing for Google Cardboard with Unity",
+        "i-like-the-way-you-move": {
+          "id": "i-like-the-way-you-move",
+          "name": "I Like The Way You Move",
           "description": "Google Cardboard has been around since Google I/O 2014. It is by far the most affordable, and possibly most clever VR viewer out there today. To develop for Google Cardboard, the popular 3d game engine, Unity can be used. \n\nThis presentation will cover the  basics of developing in Unity for Google Cardboard including:\n• What is Unity and how to develop 3d apps using it.\n• How to develop for Google Cardboard in a Unity project.\n• Best practices for developing for Google Cardboard.",
-          "start_time": "2016-09-16T10:00:00-0500",
-          "end_time": "2016-09-16T10:45:00-0500",
-          "date": "2016-09-16",
+          "start_time": "2017-04-20T11:00:00-0500",
+          "end_time": "2017-04-20T11:45:00-0500",
+          "date": "2017-04-20",
           "speakers": [
-            "dward"
+            "mallison"
           ],
-          "room": "Android"
-        },
-        "intro-firebase": {
-          "id": "intro-firebase",
-          "name": "Intro to Firebase",
-          "description": "Hands on Firebase demo and talk",
-          "start_time": "2016-09-16T10:00:00-0500",
-          "end_time": "2016-09-16T10:45:00-0500",
-          "date": "2016-09-16",
-          "speakers": [
-            "lcledwyen"
-          ],
-          "room": "Maps",
-          "tracks": [
-            "web"
-          ]
-        },
-        "material-animations": {
-          "id": "material-animations",
-          "name": "Material Animations - A Dive into Motion Design and Animation",
-          "description": "A deep dive into the world of animation in Material Design. We'll cover what Material Design is, how natural motion plays a role in its principles and how to create meaningful animations that exhibit the essence of Material Design strives for.",
-          "start_time": "2016-09-16T11:00:00-0500",
-          "end_time": "2016-09-16T11:45:00-0500",
-          "date": "2016-09-16",
-          "speakers": [
-            "jmardis"
-          ],
-          "room": "Lake Michigan",
-          "tracks": [
-            "android"
-          ]
-        },
-        "web-rtc": {
-          "id": "web-rtc",
-          "name": "The Five Phases of DevOps",
-          "description": "So you want to start a DevOps revolution. Great...where do you start? Going from manual deployments to a fully automated delivery pipeline has brought many changes; both technical and cultural. In this talk, we will cover \"the five phases of DevOps\" we found on our journey at Gogo. Finally, we will wrap up the talk with how you too can start your own DevOps revolution including some tool demos and examples.",
-          "start_time": "2016-09-16T11:00:00-0500",
-          "end_time": "2016-09-16T11:45:00-0500",
-          "date": "2016-09-16",
-          "speakers": [
-            "jvasallo"
-          ],
-          "room": "Android",
-          "tracks": [
-            "cloud"
-          ]
-        },
-        "cloud-spin": {
-          "id": "cloud-spin",
-          "name": "Creating 180-degree Matrix-like video with Android phones and Google Cloud Platform",
-          "description": "Have you seen Cloud Spin? It's a demo that Google Cloud Developer Advocates (Ray Tsang, Bret McGowen, and Francesc Campoy) developed for the Google Cloud Platform Next event series. The demo, consists of 19 Nexus 6 cameras that were placed around a half-circle pointing inwards to take a picture of the subject at the same moment in time, to create a 180 degree animated GIF - see them at @googlecloudspin twitter! But wait, the Android cameras introduces some unknown delays when taking a photo - how did we make all the cameras take pictures at the same time? What did we use to process and stitch the photos together? And most importantly, how did we pull it off in a matter of 3 weeks? Join this session to learn more about what we did behind the scenes, and how we leveraged open source technology, Google Cloud Platform, and Firebase to help us develop the demo rapidly.",
-          "start_time": "2016-09-16T11:00:00-0500",
-          "end_time": "2016-09-16T11:45:00-0500",
-          "date": "2016-09-16",
-          "speakers": [
-            "bmcgowen"
-          ],
-          "room": "Maps",
-          "tracks": [
-            "cloud"
-          ]
+          "room": "Great Room 2"
         },
         "lunch": {
           "id": "lunch",
           "name": "Lunch",
-          "description": "Lunch",
-          "start_time": "2016-09-16T12:00:00-0500",
-          "end_time": "2016-09-16T13:00:00-0500",
-          "date": "2016-09-16"
+          "description": "Lorem ipsum dolor sit amet",
+          "start_time": "2017-04-20T12:00:00-0500",
+          "end_time": "2017-04-20T13:00:00-0500",
+          "date": "2017-04-20"
         },
-        "game-programming": {
-          "id": "game-programming",
-          "name": "Game Programming with Javascript and Firebase",
-          "description": "The Firebase Database lets you synchronize data between clients in real time, which is perfect for building multi-player games. In this talk I will describe a collaborative web-based sci-fi game I built using Firebase, what I learned along the way and how it made me a better dad.",
-          "start_time": "2016-09-16T13:00:00-0500",
-          "end_time": "2016-09-16T13:45:00-0500",
-          "date": "2016-09-16",
+        "retrofitting-retrofit": {
+          "id": "retrofitting-retrofit",
+          "name": "Retrofitting Retrofit",
+          "description": "Hands on Firebase demo and talk",
+          "start_time": "2017-04-20T13:00:00-0500",
+          "end_time": "2017-04-20T13:45:00-0500",
+          "date": "2017-04-20",
           "speakers": [
-            "momander"
+            "clee"
           ],
-          "room": "Lake Michigan",
+          "room": "Great Room 1",
           "tracks": [
             "web"
           ]
         },
-        "system-services": {
-          "id": "system-services",
-          "name": "Digging Into System Services",
+        "mixed-reality-for-social-good": {
+          "id": "mixed-reality-for-social-good",
+          "name": "Mixed Reality for Social Good",
+          "description": "A deep dive into the world of animation in Material Design. We'll cover what Material Design is, how natural motion plays a role in its principles and how to create meaningful animations that exhibit the essence of Material Design strives for.",
+          "start_time": "2017-04-20T13:00:00-0500",
+          "end_time": "2017-04-20T13:45:00-0500",
+          "date": "2017-04-20",
+          "speakers": [
+            "ecaron-petit-pas"
+          ],
+          "room": "Great Room 2",
+          "tracks": [
+            "android"
+          ]
+        },
+        "contextualize-apps-with-nearby-awareness": {
+          "id": "contextualize-apps-with-nearby-awareness",
+          "name": "Contextualize Apps with Nearby + Awareness",
+          "description": "So you want to start a DevOps revolution. Great...where do you start? Going from manual deployments to a fully automated delivery pipeline has brought many changes; both technical and cultural. In this talk, we will cover \"the five phases of DevOps\" we found on our journey at Gogo. Finally, we will wrap up the talk with how you too can start your own DevOps revolution including some tool demos and examples.",
+          "start_time": "2017-04-20T14:00:00-0500",
+          "end_time": "2017-04-20T14:45:00-0500",
+          "date": "2017-04-20",
+          "speakers": [
+            "bduff"
+          ],
+          "room": "Great Room 1",
+          "tracks": [
+            "cloud"
+          ]
+        },
+        "write-less-code-and-get-more-done": {
+          "id": "write-less-code-and-get-more-done",
+          "name": "Write Less Code and Get More Done: Multiplying Your Impact Through Mentorship",
+          "description": "Have you seen Cloud Spin? It's a demo that Google Cloud Developer Advocates (Ray Tsang, Bret McGowen, and Francesc Campoy) developed for the Google Cloud Platform Next event series. The demo, consists of 19 Nexus 6 cameras that were placed around a half-circle pointing inwards to take a picture of the subject at the same moment in time, to create a 180 degree animated GIF - see them at @googlecloudspin twitter! But wait, the Android cameras introduces some unknown delays when taking a photo - how did we make all the cameras take pictures at the same time? What did we use to process and stitch the photos together? And most importantly, how did we pull it off in a matter of 3 weeks? Join this session to learn more about what we did behind the scenes, and how we leveraged open source technology, Google Cloud Platform, and Firebase to help us develop the demo rapidly.",
+          "start_time": "2017-04-20T14:00:00-0500",
+          "end_time": "2017-04-20T14:45:00-0500",
+          "date": "2017-04-20",
+          "speakers": [
+            "jmaltz"
+          ],
+          "room": "Great Room 2",
+          "tracks": [
+            "cloud"
+          ]
+        },
+        "from-interactions-to-insights": {
+          "id": "from-interactions-to-insights",
+          "name": "From Interactions To Insights: Data-Driven Development with Firebase Analytics",
+          "description": "The Firebase Database lets you synchronize data between clients in real time, which is perfect for building multi-player games. In this talk I will describe a collaborative web-based sci-fi game I built using Firebase, what I learned along the way and how it made me a better dad.",
+          "start_time": "2017-04-20T15:00:00-0500",
+          "end_time": "2017-04-20T15:45:00-0500",
+          "date": "2017-04-20",
+          "speakers": [
+            "nnarasimhan"
+          ],
+          "room": "Great Room 1",
+          "tracks": [
+            "web"
+          ]
+        },
+        "websocket-to-me": {
+          "id": "websocket-to-me",
+          "name": "WebSocket to Me!",
           "description": "As developers, you interact with Android system services every day. They expose a host of platform features to applications, but what do you really know about them? In this talk, we will examine the system service architecture that connects applications to device hardware. You will gain a deeper understanding of core platform technologies such as Binder IPC and AIDL, which you can use to tune how your applications interact with the platform.",
-          "start_time": "2016-09-16T13:00:00-0500",
-          "end_time": "2016-09-16T13:45:00-0500",
-          "date": "2016-09-16",
+          "start_time": "2017-04-20T15:00:00-0500",
+          "end_time": "2017-04-20T15:45:00-0500",
+          "date": "2017-04-20",
+          "speakers": [
+            "cguzman"
+          ],
+          "room": "Great Room 2",
+          "tracks": [
+            "android"
+          ]
+        },
+        "just-android-things": {
+          "id": "just-android-things",
+          "name": "Just Android Things...",
+          "description": "Starting a new Android app is always exciting: you have the opportunity to create an awesome app from zero... but it is also a lot of responsibility! Any step in the wrong direction might turn your new app into a disaster. \nYou need the right people on your team, you need the right technology and you need the proper setup.\nSounds easy, uh? Well... it's not! Many apps did not survive even this first step. Let me help you to identify the key elements to help your Android team succeed.",
+          "start_time": "2017-04-20T16:00:00-0500",
+          "end_time": "2017-04-20T16:45:00-0500",
+          "date": "2017-04-20",
           "speakers": [
             "dsmith"
           ],
-          "room": "Android",
+          "room": "Great Room 1",
           "tracks": [
             "android"
           ]
         },
-        "up-to-speed": {
-          "id": "up-to-speed",
-          "name": "From Zero to Hero: How to Get Your New Team Up to Speed with Android",
-          "description": "Starting a new Android app is always exciting: you have the opportunity to create an awesome app from zero... but it is also a lot of responsibility! Any step in the wrong direction might turn your new app into a disaster.\n\nYou need the right people on your team, you need the right technology and you need the proper setup.\n\nSounds easy, uh? Well... it's not! Many apps did not survive even this first step. Let me help you to identify the key elements to help your Android team succeed.",
-          "start_time": "2016-09-16T13:00:00-0500",
-          "end_time": "2016-09-16T13:45:00-0500",
-          "date": "2016-09-16",
+        "whats-new-in-firebase": {
+          "id": "whats-new-in-firebase",
+          "name": "What's new in Firebase",
+          "description": "What’s the deal with Kotlin? Why would you want to learn a new programming language to write Android apps - isn’t Java good enough? This talk is for those unacquainted with Kotlin, and might teach those who are familiar some new tricks.\n\nThis talk will cover:\n- Why Kotlin is a good choice for Android Developers\n- How to solve problems in more expressive ways with Kotlin’s language features\n- Some interesting Kotlin libraries and tools",
+          "start_time": "2017-04-20T16:00:00-0500",
+          "end_time": "2017-04-20T16:45:00-0500",
+          "date": "2017-04-20",
           "speakers": [
-            "jcoca"
+            "dstevenson"
           ],
-          "room": "Maps",
+          "room": "Great Room 2",
           "tracks": [
             "android"
           ]
         },
-        "kotlin": {
-          "id": "kotlin",
-          "name": "Kotlin for Android Developers",
-          "description": "What’s the deal with Kotlin? Why would you want to learn a new programming language to write Android apps - isn’t Java good enough? This talk is for those unacquainted with Kotlin, and might teach those who are familiar some new tricks.\n\nThis talk will cover:\n\n- Why Kotlin is a good choice for Android Developersn\n- How to solve problems in more expressive ways with Kotlin’s language features\n- Some interesting Kotlin libraries and tools",
-          "start_time": "2016-09-16T14:00:00-0500",
-          "end_time": "2016-09-16T14:45:00-0500",
-          "date": "2016-09-16",
-          "speakers": [
-            "mevans"
-          ],
-          "room": "Lake Michigan",
-          "tracks": [
-            "android"
-          ]
-        },
-        "angular": {
-          "id": "angular",
-          "name": "Angular 2 Workshop & Codelab",
+        "where-i-find-stairs-tango": {
+          "id": "where-i-find-stairs-tango",
+          "name": "Where I find stairs, Tango?",
           "description": "Join Shan Motlani and Valerie Scarlata will introduce you to Angular 2 and lead you through a codelab with Angular 2 and Firebase\nWe'll go over...\n- What has changed in Angular 2 vs. Angular 1.x\n- Using TypeScript to code faster and safer\n- The building blocks of Angular 2 Apps - Components, Services and Directives\nThen we will walk you through the development flow of an Angular 2 app by building one that integrates Firebase.",
-          "start_time": "2016-09-16T14:00:00-0500",
-          "end_time": "2016-09-16T14:45:00-0500",
-          "date": "2016-09-16",
+          "start_time": "2017-04-20T17:00:00-0500",
+          "end_time": "2017-04-20T17:45:00-0500",
+          "date": "2017-04-20",
           "speakers": [
-            "vscarlata",
-            "smotlani"
+            "mperlak"
           ],
-          "room": "Android",
+          "room": "Great Room 1",
           "tracks": [
             "code-lab"
           ]
         },
-        "moto-mods": {
-          "id": "moto-mods",
-          "name": "Moto Mods Development Kit",
-          "description": "With Moto Mods, Motorola has brought the concept of modular phones to reality.  No longer are you shackled by just the hardware in your mobile phone, easily enhance it by snapping on custom hardware.  This session will provide an overview of the Moto Mods architecture and how it integrates into Android.  We will also cover the Moto Mods Development Kit and how that can simplify and accelerate your prototype development.  Finally, we'll discuss the partner process and how you bring your prototype to market.  What product will you create?",
-          "start_time": "2016-09-16T14:00:00-0500",
-          "end_time": "2016-09-16T14:45:00-0500",
-          "date": "2016-09-16",
+        "kotlin-uncovered": {
+          "id": "kotlin-uncovered",
+          "name": "Kotlin: Uncovered",
+          "description": "Sign in and Breakfast",
+          "start_time": "2017-04-21T09:00:00-0500",
+          "end_time": "2017-04-21T09:45:00-0500",
           "speakers": [
-            "cflowers"
+            "vgonda"
           ],
-          "room": "Maps",
-          "tracks": [
-            "other"
-          ]
+          "date": "2017-04-21",
+          "room": "Great Room 1"
         },
-        "machine-learning": {
-          "id": "machine-learning",
-          "name": "Puppy or Muffin? Easily Leverage Machine Learning in Your Apps",
-          "description": "Want to take advantage of machine learning without building and training your own models? The Google Cloud Vision and Speech APIs expose the machine learning functionality behind Google Photos, Google Images, and the speech recognition in “Ok, Google.” Developers can now build these features into their apps with a simple REST API call. We’ll provide an overview of these APIs, dive into code, and risk it all with a live demo.",
-          "start_time": "2016-09-16T15:00:00-0500",
-          "end_time": "2016-09-16T15:45:00-0500",
-          "date": "2016-09-16",
+        "a-healthy-dose-of-gradle": {
+          "id": "a-healthy-dose-of-gradle",
+          "name": "A Healthy Dose of Gradle",
+          "description": "Sign in and Breakfast",
+          "start_time": "2017-04-21T11:00:00-0500",
+          "end_time": "2017-04-21T11:45:00-0500",
           "speakers": [
-            "bmcgowen",
-            "srobinson"
+            "pbreault"
           ],
-          "room": "Lake Michigan",
-          "tracks": [
-            "cloud"
-          ]
+          "date": "2017-04-21",
+          "room": "Great Room 1"
         },
-        "securing-firebase": {
-          "id": "securing-firebase",
-          "name": "Securing Firebase",
-          "description": "As delivered Firebase Database Security is wide open allowing anyone access to your precious data.  We will take a deep dive through various scenarios on how to secure that data and only allow the users that have the proper authority to access and update their data.  Along with valid authorization we will explore implementing valid data schema.  We will explore User Authentication for various user authentication methods.  Firebase security rules apply to your Android, iOS and web apps.",
-          "start_time": "2016-09-16T15:00:00-0500",
-          "end_time": "2016-09-16T15:45:00-0500",
-          "date": "2016-09-16",
+        "android-auto-driving-the-future": {
+          "id": "android-auto-driving-the-future",
+          "name": "Android Auto - Driving the Future",
+          "description": "Sign in and Breakfast",
+          "start_time": "2017-04-21T10:00:00-0500",
+          "end_time": "2017-04-21T10:45:00-0500",
           "speakers": [
-            "mballard"
+            "pshadlyn"
           ],
-          "room": "Android",
-          "tracks": [
-            "android"
-          ]
+          "date": "2017-04-21",
+          "room": "Great Room 2"
         },
-        "google-analytics": {
-          "id": "google-analytics",
-          "name": "Metrics Lessons from Google Analytics",
-          "description": "I frequently refer to Google Analytics as the gold standard for metrics tools. Learn about all the things that GA does magnificently at every stage of the data cycle including why they're important and what they can teach you.",
-          "start_time": "2016-09-16T15:00:00-0500",
-          "end_time": "2016-09-16T15:45:00-0500",
-          "date": "2016-09-16",
+        "cool-constraint-layout": {
+          "id": "cool-constraint-layout",
+          "name": "Cool Constraint Layout",
+          "description": "Sign in and Breakfast",
+          "start_time": "2017-04-21T11:00:00-0500",
+          "end_time": "2017-04-21T11:45:00-0500",
           "speakers": [
-            "astanton"
+            "htuedao"
           ],
-          "room": "Maps",
-          "tracks": [
-            "web"
-          ]
+          "date": "2017-04-21",
+          "room": "Great Room 1"
         },
-        "firebase-integrations": {
-          "id": "firebase-integrations",
-          "name": "Supercharge your Firebase app with Google Cloud Platform",
-          "description": "At Google I/O, Firebase announced a new suite of products to help you build extraordinary mobile and web applications. In this talk, you'll learn how to get started with the new Firebase platform. I'll start with a live iOS demo of the Firebase Realtime Database and Authentication. Then, I'll dive into the Firebase, integrations with Google Cloud Platform: Firebase Storage and Analytics.",
-          "start_time": "2016-09-16T16:00:00-0500",
-          "end_time": "2016-09-16T16:45:00-0500",
-          "date": "2016-09-16",
+        "understanding-material-design": {
+          "id": "understanding-material-design",
+          "name": "Understanding Material Design",
+          "description": "Sign in and Breakfast",
+          "start_time": "2017-04-21T11:00:00-0500",
+          "end_time": "2017-04-21T11:45:00-0500",
           "speakers": [
-            "srobinson"
+            "rbhalla"
           ],
-          "room": "Lake Michigan",
-          "tracks": [
-            "cloud"
-          ]
+          "date": "2017-04-21",
+          "room": "Great Room 2"
         },
-        "fingerprint": {
-          "id": "fingerprint",
-          "name": "Android Fingerprint Authentication in Action",
-          "description": "Your users are asking for fingerprint authentication - deliver it!\n\nIn this session we'll discuss how to build a fingerprint-enhanced user flow on Android.  We'll review the options the framework gives you. You'll learn how to take advantage of them to allow users to log in, and secure sensitive flows like making a purchase or payment.\n\nWe'll explore this through an open source implementation of both an Android app and a simple backend that demonstrates the concepts being discussed.",
-          "start_time": "2016-09-16T16:00:00-0500",
-          "end_time": "2016-09-16T16:45:00-0500",
-          "date": "2016-09-16",
+        "lunch-2": {
+          "id": "lunch-2",
+          "name": "Lunch",
+          "description": "Lorem ipsum dolor sit amet",
+          "start_time": "2017-04-21T12:00:00-0500",
+          "end_time": "2017-04-21T13:00:00-0500",
+          "date": "2017-04-21"
+        },
+        "design-develop-deploy": {
+          "id": "design-develop-deploy",
+          "name": "Design Develop Deploy!",
+          "description": "Sign in and Breakfast",
+          "start_time": "2017-04-21T13:00:00-0500",
+          "end_time": "2017-04-21T13:45:00-0500",
           "speakers": [
-            "boberkfell"
+            "yprabhu",
+            "jmoon"
           ],
-          "room": "Android",
-          "tracks": [
-            "android"
-          ]
+          "date": "2017-04-21",
+          "room": "Great Room 2"
         },
-        "progressive-web-apps": {
-          "id": "progressive-web-apps",
-          "name": "Leveraging the Power of Native with Progressive Web Apps",
-          "description": "As developers, we want to create apps that engage users across multiple devices. But building native apps is costly and cumbersome. Progressive Web Apps (PWAs) combine the power of native apps with the ease of building and deploying web apps. Learn to craft PWA experiences using web standards, including offline support, push notifications, background processes, and homescreen access.",
-          "start_time": "2016-09-16T16:00:00-0500",
-          "end_time": "2016-09-16T16:45:00-0500",
-          "date": "2016-09-16",
+        "coordinating-space-and-time": {
+          "id": "coordinating-space-and-time",
+          "name": "Coordinating Space and Time",
+          "description": "Sign in and Breakfast",
+          "start_time": "2017-04-21T14:00:00-0500",
+          "end_time": "2017-04-21T14:45:00-0500",
           "speakers": [
-            "awilliams",
-            "platteier"
+            "jwilson"
           ],
-          "room": "web",
-          "tracks": [
-            "Maps"
-          ]
+          "date": "2017-04-21",
+          "room": "Great Room 1"
         },
-        "closing": {
-          "id": "closing",
-          "name": "Closing Remarks and Giveaways!",
-          "description": "Closing Remarks and Giveaways!",
-          "start_time": "2016-09-16T17:00:00-0500",
-          "end_time": "2016-09-16T17:30:00-0500",
-          "date": "2016-09-16",
-          "room": "Lake Michigan"
+        "rxjava-2-for-the-rest-of-us": {
+          "id": "rxjava-2-for-the-rest-of-us",
+          "name": "RxJava 2 for the Rest of Us",
+          "description": "Sign in and Breakfast",
+          "start_time": "2017-04-21T14:00:00-0500",
+          "end_time": "2017-04-21T14:45:00-0500",
+          "speakers": [
+            "hvisser"
+          ],
+          "date": "2017-04-21",
+          "room": "Great Room 2"
+        },
+        "graphics-programming-for-non-graphics-programmers": {
+          "id": "graphics-programming-for-non-graphics-programmers",
+          "name": "Graphics Programming for Non-Graphics Programmers",
+          "description": "Sign in and Breakfast",
+          "start_time": "2017-04-21T15:00:00-0500",
+          "end_time": "2017-04-21T15:45:00-0500",
+          "speakers": [
+            "rguy"
+          ],
+          "date": "2017-04-21",
+          "room": "Great Room 1"
+        },
+        "advanced-android-touches": {
+          "id": "advanced-android-touches",
+          "name": "Advanced Android Touches",
+          "description": "Sign in and Breakfast",
+          "start_time": "2017-04-21T15:00:00-0500",
+          "end_time": "2017-04-21T15:45:00-0500",
+          "speakers": [
+            "cchang"
+          ],
+          "date": "2017-04-21",
+          "room": "Great Room 2"
+        },
+        "building-gradle-plugins": {
+          "id": "building-gradle-plugins",
+          "name": "Building Gradle Plugins",
+          "description": "Sign in and Breakfast",
+          "start_time": "2017-04-21T16:00:00-0500",
+          "end_time": "2017-04-21T16:45:00-0500",
+          "speakers": [
+            "bsills"
+          ],
+          "date": "2017-04-21",
+          "room": "Great Room 1"
+        },
+        "building-a-modern-android-ui": {
+          "id": "building-a-modern-android-ui",
+          "name": "Building a Modern Android UI",
+          "description": "Sign in and Breakfast",
+          "start_time": "2017-04-21T16:00:00-0500",
+          "end_time": "2017-04-21T16:45:00-0500",
+          "speakers": [
+            "nroard",
+            "jhoford"
+          ],
+          "date": "2017-04-21",
+          "room": "Great Room 2"
+        },
+        "closing-remarks": {
+          "id": "closing-remarks",
+          "name": "Closing Remarks",
+          "description": "Sign in and Breakfast",
+          "start_time": "2017-04-21T17:00:00-0500",
+          "end_time": "2017-04-21T17:45:00-0500",
+          "speakers": [
+            ""
+          ],
+          "date": "2017-04-21",
+          "room": "Great Room 1"
         }
       },
       "sessions_by_date": {
-        "2016-09-16": [
+        "2017-04-20": [
           {
-            "id": "breakfast",
-            "name": "Sign in and Breakfast",
+            "id": "conversation-actions-for-google-assistant",
+            "name": "Conversation Actions for Google Assistant",
             "description": "Sign in and Breakfast",
-            "start_time": "2016-09-16T08:30:00-0500",
-            "end_time": "2016-09-16T09:30:00-0500",
-            "date": "2016-09-16",
-            "room": "Lake Michigan"
+            "start_time": "2017-04-20T10:00:00-0500",
+            "end_time": "2017-04-20T10:45:00-0500",
+            "speakers": [
+              "akelly"
+            ],
+            "date": "2017-04-20",
+            "room": "Great Room 1"
           },
           {
-            "id": "welcome",
-            "name": "Welcome Remarks",
+            "id": "break-your-app-before-someone-else-does",
+            "name": "Break your app before someone else does",
             "description": "Welcoming everyone to Windy City DevCon and thanking our sponsors.",
-            "start_time": "2016-09-16T09:30:00-0500",
-            "end_time": "2016-09-16T09:45:00-0500",
-            "date": "2016-09-16",
-            "room": "Lake Michigan"
+            "start_time": "2017-04-20T10:00:00-0500",
+            "end_time": "2017-04-20T10:45:00-0500",
+            "speakers": [
+              "abaotic"
+            ],
+            "date": "2017-04-20",
+            "room": "Great Room 2"
           },
           {
-            "id": "intro-to-gcp",
-            "name": "Google Cloud Platform Overview",
+            "id": "accessibility-at-scale",
+            "name": "Accessibility @ Scale",
             "description": "This presentation will provide an overview of the platform including a few demos of key products within GCP.",
-            "start_time": "2016-09-16T10:00:00-0500",
-            "end_time": "2016-09-16T10:45:00-0500",
-            "date": "2016-09-16",
+            "start_time": "2017-04-20T11:00:00-0500",
+            "end_time": "2017-04-20T11:45:00-0500",
+            "date": "2017-04-20",
             "speakers": [
-              "drowe"
+              "mpotter"
             ],
-            "room": "Lake Michigan",
+            "room": "Great Room 1",
             "tracks": [
               "cloud"
             ]
           },
           {
-            "id": "intro-cardboard-unity",
-            "name": "An Intro to developing for Google Cardboard with Unity",
+            "id": "i-like-the-way-you-move",
+            "name": "I Like The Way You Move",
             "description": "Google Cardboard has been around since Google I/O 2014. It is by far the most affordable, and possibly most clever VR viewer out there today. To develop for Google Cardboard, the popular 3d game engine, Unity can be used. \n\nThis presentation will cover the  basics of developing in Unity for Google Cardboard including:\n• What is Unity and how to develop 3d apps using it.\n• How to develop for Google Cardboard in a Unity project.\n• Best practices for developing for Google Cardboard.",
-            "start_time": "2016-09-16T10:00:00-0500",
-            "end_time": "2016-09-16T10:45:00-0500",
-            "date": "2016-09-16",
+            "start_time": "2017-04-20T11:00:00-0500",
+            "end_time": "2017-04-20T11:45:00-0500",
+            "date": "2017-04-20",
             "speakers": [
-              "dward"
+              "mallison"
             ],
-            "room": "Android"
-          },
-          {
-            "id": "intro-firebase",
-            "name": "Intro to Firebase",
-            "description": "Hands on Firebase demo and talk",
-            "start_time": "2016-09-16T10:00:00-0500",
-            "end_time": "2016-09-16T10:45:00-0500",
-            "date": "2016-09-16",
-            "speakers": [
-              "lcledwyen"
-            ],
-            "room": "Maps",
-            "tracks": [
-              "web"
-            ]
-          },
-          {
-            "id": "material-animations",
-            "name": "Material Animations - A Dive into Motion Design and Animation",
-            "description": "A deep dive into the world of animation in Material Design. We'll cover what Material Design is, how natural motion plays a role in its principles and how to create meaningful animations that exhibit the essence of Material Design strives for.",
-            "start_time": "2016-09-16T11:00:00-0500",
-            "end_time": "2016-09-16T11:45:00-0500",
-            "date": "2016-09-16",
-            "speakers": [
-              "jmardis"
-            ],
-            "room": "Lake Michigan",
-            "tracks": [
-              "android"
-            ]
-          },
-          {
-            "id": "web-rtc",
-            "name": "The Five Phases of DevOps",
-            "description": "So you want to start a DevOps revolution. Great...where do you start? Going from manual deployments to a fully automated delivery pipeline has brought many changes; both technical and cultural. In this talk, we will cover \"the five phases of DevOps\" we found on our journey at Gogo. Finally, we will wrap up the talk with how you too can start your own DevOps revolution including some tool demos and examples.",
-            "start_time": "2016-09-16T11:00:00-0500",
-            "end_time": "2016-09-16T11:45:00-0500",
-            "date": "2016-09-16",
-            "speakers": [
-              "jvasallo"
-            ],
-            "room": "Android",
-            "tracks": [
-              "cloud"
-            ]
-          },
-          {
-            "id": "cloud-spin",
-            "name": "Creating 180-degree Matrix-like video with Android phones and Google Cloud Platform",
-            "description": "Have you seen Cloud Spin? It's a demo that Google Cloud Developer Advocates (Ray Tsang, Bret McGowen, and Francesc Campoy) developed for the Google Cloud Platform Next event series. The demo, consists of 19 Nexus 6 cameras that were placed around a half-circle pointing inwards to take a picture of the subject at the same moment in time, to create a 180 degree animated GIF - see them at @googlecloudspin twitter! But wait, the Android cameras introduces some unknown delays when taking a photo - how did we make all the cameras take pictures at the same time? What did we use to process and stitch the photos together? And most importantly, how did we pull it off in a matter of 3 weeks? Join this session to learn more about what we did behind the scenes, and how we leveraged open source technology, Google Cloud Platform, and Firebase to help us develop the demo rapidly.",
-            "start_time": "2016-09-16T11:00:00-0500",
-            "end_time": "2016-09-16T11:45:00-0500",
-            "date": "2016-09-16",
-            "speakers": [
-              "bmcgowen"
-            ],
-            "room": "Maps",
-            "tracks": [
-              "cloud"
-            ]
+            "room": "Great Room 2"
           },
           {
             "id": "lunch",
             "name": "Lunch",
             "description": "Lorem ipsum dolor sit amet",
-            "start_time": "2016-09-16T12:00:00-0500",
-            "end_time": "2016-09-16T13:00:00-0500",
-            "date": "2016-09-16"
+            "start_time": "2017-04-20T12:00:00-0500",
+            "end_time": "2017-04-20T13:00:00-0500",
+            "date": "2017-04-20"
           },
           {
-            "id": "game-programming",
-            "name": "Game Programming with Javascript and Firebase",
-            "description": "The Firebase Database lets you synchronize data between clients in real time, which is perfect for building multi-player games. In this talk I will describe a collaborative web-based sci-fi game I built using Firebase, what I learned along the way and how it made me a better dad.",
-            "start_time": "2016-09-16T13:00:00-0500",
-            "end_time": "2016-09-16T13:45:00-0500",
-            "date": "2016-09-16",
+            "id": "retrofitting-retrofit",
+            "name": "Retrofitting Retrofit",
+            "description": "Hands on Firebase demo and talk",
+            "start_time": "2017-04-20T13:00:00-0500",
+            "end_time": "2017-04-20T13:45:00-0500",
+            "date": "2017-04-20",
             "speakers": [
-              "momander"
+              "clee"
             ],
-            "room": "Lake Michigan",
+            "room": "Great Room 1",
             "tracks": [
               "web"
             ]
           },
           {
-            "id": "system-services",
-            "name": "Digging Into System Services",
+            "id": "mixed-reality-for-social-good",
+            "name": "Mixed Reality for Social Good",
+            "description": "A deep dive into the world of animation in Material Design. We'll cover what Material Design is, how natural motion plays a role in its principles and how to create meaningful animations that exhibit the essence of Material Design strives for.",
+            "start_time": "2017-04-20T13:00:00-0500",
+            "end_time": "2017-04-20T13:45:00-0500",
+            "date": "2017-04-20",
+            "speakers": [
+              "ecaron-petit-pas"
+            ],
+            "room": "Great Room 2",
+            "tracks": [
+              "android"
+            ]
+          },
+          {
+            "id": "contextualize-apps-with-nearby-awareness",
+            "name": "Contextualize Apps with Nearby + Awareness",
+            "description": "So you want to start a DevOps revolution. Great...where do you start? Going from manual deployments to a fully automated delivery pipeline has brought many changes; both technical and cultural. In this talk, we will cover \"the five phases of DevOps\" we found on our journey at Gogo. Finally, we will wrap up the talk with how you too can start your own DevOps revolution including some tool demos and examples.",
+            "start_time": "2017-04-20T14:00:00-0500",
+            "end_time": "2017-04-20T14:45:00-0500",
+            "date": "2017-04-20",
+            "speakers": [
+              "bduff"
+            ],
+            "room": "Great Room 1",
+            "tracks": [
+              "cloud"
+            ]
+          },
+          {
+            "id": "write-less-code-and-get-more-done",
+            "name": "Write Less Code and Get More Done: Multiplying Your Impact Through Mentorship",
+            "description": "Have you seen Cloud Spin? It's a demo that Google Cloud Developer Advocates (Ray Tsang, Bret McGowen, and Francesc Campoy) developed for the Google Cloud Platform Next event series. The demo, consists of 19 Nexus 6 cameras that were placed around a half-circle pointing inwards to take a picture of the subject at the same moment in time, to create a 180 degree animated GIF - see them at @googlecloudspin twitter! But wait, the Android cameras introduces some unknown delays when taking a photo - how did we make all the cameras take pictures at the same time? What did we use to process and stitch the photos together? And most importantly, how did we pull it off in a matter of 3 weeks? Join this session to learn more about what we did behind the scenes, and how we leveraged open source technology, Google Cloud Platform, and Firebase to help us develop the demo rapidly.",
+            "start_time": "2017-04-20T14:00:00-0500",
+            "end_time": "2017-04-20T14:45:00-0500",
+            "date": "2017-04-20",
+            "speakers": [
+              "jmaltz"
+            ],
+            "room": "Great Room 2",
+            "tracks": [
+              "cloud"
+            ]
+          },
+          {
+            "id": "from-interactions-to-insights",
+            "name": "From Interactions To Insights: Data-Driven Development with Firebase Analytics",
+            "description": "The Firebase Database lets you synchronize data between clients in real time, which is perfect for building multi-player games. In this talk I will describe a collaborative web-based sci-fi game I built using Firebase, what I learned along the way and how it made me a better dad.",
+            "start_time": "2017-04-20T15:00:00-0500",
+            "end_time": "2017-04-20T15:45:00-0500",
+            "date": "2017-04-20",
+            "speakers": [
+              "nnarasimhan"
+            ],
+            "room": "Great Room 1",
+            "tracks": [
+              "web"
+            ]
+          },
+          {
+            "id": "websocket-to-me",
+            "name": "WebSocket to Me!",
             "description": "As developers, you interact with Android system services every day. They expose a host of platform features to applications, but what do you really know about them? In this talk, we will examine the system service architecture that connects applications to device hardware. You will gain a deeper understanding of core platform technologies such as Binder IPC and AIDL, which you can use to tune how your applications interact with the platform.",
-            "start_time": "2016-09-16T13:00:00-0500",
-            "end_time": "2016-09-16T13:45:00-0500",
-            "date": "2016-09-16",
+            "start_time": "2017-04-20T15:00:00-0500",
+            "end_time": "2017-04-20T15:45:00-0500",
+            "date": "2017-04-20",
+            "speakers": [
+              "cguzman"
+            ],
+            "room": "Great Room 2",
+            "tracks": [
+              "android"
+            ]
+          },
+          {
+            "id": "just-android-things",
+            "name": "Just Android Things...",
+            "description": "Starting a new Android app is always exciting: you have the opportunity to create an awesome app from zero... but it is also a lot of responsibility! Any step in the wrong direction might turn your new app into a disaster. \nYou need the right people on your team, you need the right technology and you need the proper setup.\nSounds easy, uh? Well... it's not! Many apps did not survive even this first step. Let me help you to identify the key elements to help your Android team succeed.",
+            "start_time": "2017-04-20T16:00:00-0500",
+            "end_time": "2017-04-20T16:45:00-0500",
+            "date": "2017-04-20",
             "speakers": [
               "dsmith"
             ],
-            "room": "Android",
+            "room": "Great Room 1",
             "tracks": [
               "android"
             ]
           },
           {
-            "id": "up-to-speed",
-            "name": "From Zero to Hero: How to Get Your New Team Up to Speed with Android",
-            "description": "Starting a new Android app is always exciting: you have the opportunity to create an awesome app from zero... but it is also a lot of responsibility! Any step in the wrong direction might turn your new app into a disaster. \nYou need the right people on your team, you need the right technology and you need the proper setup.\nSounds easy, uh? Well... it's not! Many apps did not survive even this first step. Let me help you to identify the key elements to help your Android team succeed.",
-            "start_time": "2016-09-16T13:00:00-0500",
-            "end_time": "2016-09-16T13:45:00-0500",
-            "date": "2016-09-16",
-            "speakers": [
-              "jcoca"
-            ],
-            "room": "Maps",
-            "tracks": [
-              "android"
-            ]
-          },
-          {
-            "id": "kotlin",
-            "name": "Kotlin for Android",
+            "id": "whats-new-in-firebase",
+            "name": "What's new in Firebase",
             "description": "What’s the deal with Kotlin? Why would you want to learn a new programming language to write Android apps - isn’t Java good enough? This talk is for those unacquainted with Kotlin, and might teach those who are familiar some new tricks.\n\nThis talk will cover:\n- Why Kotlin is a good choice for Android Developers\n- How to solve problems in more expressive ways with Kotlin’s language features\n- Some interesting Kotlin libraries and tools",
-            "start_time": "2016-09-16T14:00:00-0500",
-            "end_time": "2016-09-16T14:45:00-0500",
-            "date": "2016-09-16",
+            "start_time": "2017-04-20T16:00:00-0500",
+            "end_time": "2017-04-20T16:45:00-0500",
+            "date": "2017-04-20",
             "speakers": [
-              "mevans"
+              "dstevenson"
             ],
-            "room": "Lake Michigan",
+            "room": "Great Room 2",
             "tracks": [
               "android"
             ]
           },
           {
-            "id": "angular",
-            "name": "Angular 2 Workshop & Codelab",
+            "id": "where-i-find-stairs-tango",
+            "name": "Where I find stairs, Tango?",
             "description": "Join Shan Motlani and Valerie Scarlata will introduce you to Angular 2 and lead you through a codelab with Angular 2 and Firebase\nWe'll go over...\n- What has changed in Angular 2 vs. Angular 1.x\n- Using TypeScript to code faster and safer\n- The building blocks of Angular 2 Apps - Components, Services and Directives\nThen we will walk you through the development flow of an Angular 2 app by building one that integrates Firebase.",
-            "start_time": "2016-09-16T14:00:00-0500",
-            "end_time": "2016-09-16T14:45:00-0500",
-            "date": "2016-09-16",
+            "start_time": "2017-04-20T17:00:00-0500",
+            "end_time": "2017-04-20T17:45:00-0500",
+            "date": "2017-04-20",
             "speakers": [
-              "vscarlata",
-              "smotlani"
+              "mperlak"
             ],
-            "room": "Android",
+            "room": "Great Room 1",
             "tracks": [
               "code-lab"
             ]
-          },
+          }
+        ],
+        "2017-04-21": [
           {
-            "id": "moto-mods",
-            "name": "Moto Mods Development Kit",
-            "description": "With Moto Mods, Motorola has brought the concept of modular phones to reality.  No longer are you shackled by just the hardware in your mobile phone, easily enhance it by snapping on custom hardware.  This session will provide an overview of the Moto Mods architecture and how it integrates into Android.  We will also cover the Moto Mods Development Kit and how that can simplify and accelerate your prototype development.  Finally, we'll discuss the partner process and how you bring your prototype to market.  What product will you create?",
-            "start_time": "2016-09-16T14:00:00-0500",
-            "end_time": "2016-09-16T14:45:00-0500",
-            "date": "2016-09-16",
+            "id": "kotlin-uncovered",
+            "name": "Kotlin: Uncovered",
+            "description": "Sign in and Breakfast",
+            "start_time": "2017-04-21T09:00:00-0500",
+            "end_time": "2017-04-21T09:45:00-0500",
             "speakers": [
-              "cflowers"
+              "vgonda"
             ],
-            "room": "Maps",
-            "tracks": [
-              "other"
-            ]
+            "date": "2017-04-21",
+            "room": "Great Room 1"
           },
           {
-            "id": "machine-learning",
-            "name": "Puppy or Muffin? Easily Leverage Machine Learning in Your Apps",
-            "description": "Want to take advantage of machine learning without building and training your own models? The Google Cloud Vision and Speech APIs expose the machine learning functionality behind Google Photos, Google Images, and the speech recognition in “Ok, Google.” Developers can now build these features into their apps with a simple REST API call. We’ll provide an overview of these APIs, dive into code, and risk it all with a live demo.",
-            "start_time": "2016-09-16T15:00:00-0500",
-            "end_time": "2016-09-16T15:45:00-0500",
-            "date": "2016-09-16",
+            "id": "a-healthy-dose-of-gradle",
+            "name": "A Healthy Dose of Gradle",
+            "description": "Sign in and Breakfast",
+            "start_time": "2017-04-21T11:00:00-0500",
+            "end_time": "2017-04-21T11:45:00-0500",
             "speakers": [
-              "bmcgowen",
-              "srobinson"
+              "pbreault"
             ],
-            "room": "Lake Michigan",
-            "tracks": [
-              "cloud"
-            ]
+            "date": "2017-04-21",
+            "room": "Great Room 1"
           },
           {
-            "id": "securing-firebase",
-            "name": "Securing Firebase",
-            "description": "As delivered Firebase Database Security is wide open allowing anyone access to your precious data.  We will take a deep dive through various scenarios on how to secure that data and only allow the users that have the proper authority to access and update their data.  Along with valid authorization we will explore implementing valid data schema.  We will explore User Authentication for various user authentication methods.  Firebase security rules apply to your Android, iOS and web apps.",
-            "start_time": "2016-09-16T15:00:00-0500",
-            "end_time": "2016-09-16T15:45:00-0500",
-            "date": "2016-09-16",
+            "id": "android-auto-driving-the-future",
+            "name": "Android Auto - Driving the Future",
+            "description": "Sign in and Breakfast",
+            "start_time": "2017-04-21T10:00:00-0500",
+            "end_time": "2017-04-21T10:45:00-0500",
             "speakers": [
-              "mballard"
+              "pshadlyn"
             ],
-            "room": "Android",
-            "tracks": [
-              "android"
-            ]
+            "date": "2017-04-21",
+            "room": "Great Room 2"
           },
           {
-            "id": "google-analytics",
-            "name": "Metrics Lessons from Google Analytics",
-            "description": "I frequently refer to Google Analytics as the gold standard for metrics tools. Learn about all the things that GA does magnificently at every stage of the data cycle including why they're important and what they can teach you.",
-            "start_time": "2016-09-16T15:00:00-0500",
-            "end_time": "2016-09-16T15:45:00-0500",
-            "date": "2016-09-16",
+            "id": "cool-constraint-layout",
+            "name": "Cool Constraint Layout",
+            "description": "Sign in and Breakfast",
+            "start_time": "2017-04-21T11:00:00-0500",
+            "end_time": "2017-04-21T11:45:00-0500",
             "speakers": [
-              "astanton"
+              "htuedao"
             ],
-            "room": "Maps",
-            "tracks": [
-              "web"
-            ]
+            "date": "2017-04-21",
+            "room": "Great Room 1"
           },
           {
-            "id": "firebase-integrations",
-            "name": "Supercharge your Firebase app with Google Cloud Platform",
-            "description": "At Google I/O, Firebase announced a new suite of products to help you build extraordinary mobile and web applications. In this talk, you'll learn how to get started with the new Firebase platform. I'll start with a live iOS demo of the Firebase Realtime Database and Authentication. Then, I'll dive into the Firebase, integrations with Google Cloud Platform: Firebase Storage and Analytics.",
-            "start_time": "2016-09-16T16:00:00-0500",
-            "end_time": "2016-09-16T16:45:00-0500",
-            "date": "2016-09-16",
+            "id": "understanding-material-design",
+            "name": "Understanding Material Design",
+            "description": "Sign in and Breakfast",
+            "start_time": "2017-04-21T11:00:00-0500",
+            "end_time": "2017-04-21T11:45:00-0500",
             "speakers": [
-              "srobinson"
+              "rbhalla"
             ],
-            "room": "Lake Michigan",
-            "tracks": [
-              "cloud"
-            ]
+            "date": "2017-04-21",
+            "room": "Great Room 2"
           },
           {
-            "id": "fingerprint",
-            "name": "Android Fingerprint Authentication in Action",
-            "description": "Your users are asking for fingerprint authentication - deliver it!\n\nIn this session we'll discuss how to build a fingerprint-enhanced user flow on Android.  We'll review the options the framework gives you. You'll learn how to take advantage of them to allow users to log in, and secure sensitive flows like making a purchase or payment.\n\nWe'll explore this through an open source implementation of both an Android app and a simple backend that demonstrates the concepts being discussed.",
-            "start_time": "2016-09-16T16:00:00-0500",
-            "end_time": "2016-09-16T16:45:00-0500",
-            "date": "2016-09-16",
+            "id": "lunch-2",
+            "name": "Lunch",
+            "description": "Lorem ipsum dolor sit amet",
+            "start_time": "2017-04-21T12:00:00-0500",
+            "end_time": "2017-04-21T13:00:00-0500",
+            "date": "2017-04-21"
+          },
+          {
+            "id": "design-develop-deploy",
+            "name": "Design Develop Deploy!",
+            "description": "Sign in and Breakfast",
+            "start_time": "2017-04-21T13:00:00-0500",
+            "end_time": "2017-04-21T13:45:00-0500",
             "speakers": [
-              "boberkfell"
+              "yprabhu",
+              "jmoon"
             ],
-            "room": "Android",
-            "tracks": [
-              "android"
-            ]
+            "date": "2017-04-21",
+            "room": "Great Room 2"
           },
           {
-            "id": "progressive-web-apps",
-            "name": "Leveraging the Power of Native with Progressive Web Apps",
-            "description": "As developers, we want to create apps that engage users across multiple devices. But building native apps is costly and cumbersome. Progressive Web Apps (PWAs) combine the power of native apps with the ease of building and deploying web apps. Learn to craft PWA experiences using web standards, including offline support, push notifications, background processes, and homescreen access.",
-            "start_time": "2016-09-16T16:00:00-0500",
-            "end_time": "2016-09-16T16:45:00-0500",
-            "date": "2016-09-16",
+            "id": "coordinating-space-and-time",
+            "name": "Coordinating Space and Time",
+            "description": "Sign in and Breakfast",
+            "start_time": "2017-04-21T14:00:00-0500",
+            "end_time": "2017-04-21T14:45:00-0500",
             "speakers": [
-              "awilliams",
-              "platteier"
+              "jwilson"
             ],
-            "room": "web",
-            "tracks": [
-              "Maps"
-            ]
+            "date": "2017-04-21",
+            "room": "Great Room 1"
           },
           {
-            "id": "closing",
-            "name": "Closing Remarks and Giveaways!",
-            "description": "Closing Remarks and Giveaways!",
-            "start_time": "2016-09-16T17:00:00-0500",
-            "end_time": "2016-09-16T17:30:00-0500",
-            "date": "2016-09-16",
-            "room": "Lake Michigan"
+            "id": "rxjava-2-for-the-rest-of-us",
+            "name": "RxJava 2 for the Rest of Us",
+            "description": "Sign in and Breakfast",
+            "start_time": "2017-04-21T14:00:00-0500",
+            "end_time": "2017-04-21T14:45:00-0500",
+            "speakers": [
+              "hvisser"
+            ],
+            "date": "2017-04-21",
+            "room": "Great Room 2"
+          },
+          {
+            "id": "graphics-programming-for-non-graphics-programmers",
+            "name": "Graphics Programming for Non-Graphics Programmers",
+            "description": "Sign in and Breakfast",
+            "start_time": "2017-04-21T15:00:00-0500",
+            "end_time": "2017-04-21T15:45:00-0500",
+            "speakers": [
+              "rguy"
+            ],
+            "date": "2017-04-21",
+            "room": "Great Room 1"
+          },
+          {
+            "id": "advanced-android-touches",
+            "name": "Advanced Android Touches",
+            "description": "Sign in and Breakfast",
+            "start_time": "2017-04-21T15:00:00-0500",
+            "end_time": "2017-04-21T15:45:00-0500",
+            "speakers": [
+              "cchang"
+            ],
+            "date": "2017-04-21",
+            "room": "Great Room 2"
+          },
+          {
+            "id": "building-gradle-plugins",
+            "name": "Building Gradle Plugins",
+            "description": "Sign in and Breakfast",
+            "start_time": "2017-04-21T16:00:00-0500",
+            "end_time": "2017-04-21T16:45:00-0500",
+            "speakers": [
+              "bsills"
+            ],
+            "date": "2017-04-21",
+            "room": "Great Room 1"
+          },
+          {
+            "id": "building-a-modern-android-ui",
+            "name": "Building a Modern Android UI",
+            "description": "Sign in and Breakfast",
+            "start_time": "2017-04-21T16:00:00-0500",
+            "end_time": "2017-04-21T16:45:00-0500",
+            "speakers": [
+              "nroard",
+              "jhoford"
+            ],
+            "date": "2017-04-21",
+            "room": "Great Room 2"
+          },
+          {
+            "id": "closing-remarks",
+            "name": "Closing Remarks",
+            "description": "Sign in and Breakfast",
+            "start_time": "2017-04-21T17:00:00-0500",
+            "end_time": "2017-04-21T17:45:00-0500",
+            "speakers": [
+              ""
+            ],
+            "date": "2017-04-21",
+            "room": "Great Room 1"
           }
         ]
       },
       "speakers": {
-        "srobinson": {
-          "id": "srobinson",
-          "bio": "Sara is a Developer Advocate on Google's Cloud Platform team, where she helps with developer relations through online content, outreach and events. She has a bachelor’s degree in Business and International Studies from Brandeis University. When she's not programming, she can be found running, listening to country music, or finding the best ice cream in NYC.",
-          "company": "Google",
-          "name": "Sara Robinson",
-          "title": "Developer Advocate",
-          "twitter": "@SRobtweets",
-          "github": "",
-          "google": "",
-          "website": ""
-        },
-        "bmcgowen": {
-          "id": "bmcgowen",
-          "bio": "Bret is on the Google Cloud Platform team at Google, focusing on developer-oriented products like App Engine, Compute Engine, machine learning APIs, Firebase and more. He's currently an aspiring Node.js developer. Prior to Google, Bret worked in the cloud industry at Rackspace as a software engineer building the RackConnect hybrid hosting product. Before that, he led engineering teams at e-commerce, non-profit and tried his hand at creating two startups. He's often on the running trail, volleyball court or kickball field.",
-          "company": "Google",
-          "name": "Bret McGowen",
-          "title": "Developer Advocate",
-          "twitter": "@bretmcg",
-          "github": "",
-          "google": "",
-          "website": ""
-        },
-        "momander": {
-          "id": "momander",
-          "bio": "Martin Omander works for Google in Mountain View, California. His job is to support awesome developer communities, like the Google Developer Group in Chicago. On his spare time he manages to sneak in some programming, usually writing HTML5 apps running on top of Firebase. Before Google, Martin worked at string of startups in Silicon Valley as a software engineer.",
-          "company": "Google",
-          "name": "Martin Omander",
-          "title": "Program Manager",
-          "twitter": "@martinomander",
-          "github": "",
-          "google": "",
-          "website": ""
-        },
-        "mballard": {
-          "id": "mballard",
-          "bio": "",
-          "company": "Pillar Consulting",
-          "name": "Marty Ballard",
-          "title": "President",
-          "twitter": "",
-          "github": "",
-          "google": "",
-          "website": ""
-        },
-        "lcledwyen": {
-          "id": "lcledwyen",
-          "bio": "",
+        "mallison": {
+          "bio": "Mark Allison is a GDE for Android and software engineer with over 30 years' experience. He is passionate about providing the user with the best possible experience. He has developed both server and client side, most commonly Android on the client side, but with also for iOS, HTML5, Symbian, and J2ME. Mark writes a technical blog (http://blog.stylingandroid.com) which focuses on Android UI/UX topics, but often covers more general Android development techniques. \n\nWhen not being geeky, Mark likes to unwind by hurling abuse at football referees, specifically those who are unkind to his beloved Watford FC with whom he holds a season ticket. He also has a deep love of the chilli pepper and consumes spicy food (his favourite being Indian) at every opportunity! Mark is happily married with a grown up step-daughter, and lives in Hertfordshire, UK.",
           "company": "",
-          "name": "Lloyd Cledwyen",
+          "github": "",
+          "google": "",
+          "id": "mallison",
+          "name": "Mark Allison",
+          "title": "",
+          "twitter": "@MarkIAllison",
+          "website": ""
+        },
+        "abaotic": {
+          "bio": "During college I got involved in e-learning projects where I developed in Java, and ended up in love with it. After graduation I got a job at Infinum as an Android developer, and have been working there ever since. By the end of 2014. I switched from various projects in the telecommunication, medical and travel industry to mobile banking, where I became the Technical Manager of Mobile Banking in early 2016. My responsibilities include researching new technology and advancements in security, making sure new practices are implemented and generally pushing things forward in the right direction.",
+          "company": "",
+          "github": "",
+          "google": "",
+          "id": "abaotic",
+          "name": "Ana Baoti\u0107",
+          "title": "",
+          "twitter": "@abaotic",
+          "website": ""
+        },
+        "rbhalla": {
+          "bio": "I'm a Google Expert for Design and a Partner at Uncommon, one of the leading design studios in India.",
+          "company": "",
+          "github": "",
+          "google": "",
+          "id": "rbhalla",
+          "name": "Raveesh Bhalla",
+          "title": "",
+          "twitter": "@raveeshbhalla",
+          "website": ""
+        },
+        "pbreault": {
+          "bio": "Philippe is a software engineer at American Express and has been passionate about android since 2010.He worked on a wide variety of Android apps for banks, newspapers, startups, television providers and more.He is a GDE (Google Developer Expert), one of founding organizers of droidcon Montr\u00e9al and the author of the adb idea plugin for Android studio.",
+          "company": "",
+          "github": "",
+          "google": "",
+          "id": "pbreault",
+          "name": "Philippe Breault",
+          "title": "",
+          "twitter": "@pbreault",
+          "website": ""
+        },
+        "ecaron-petit-pas": {
+          "bio": "Etienne is a software developer who\u2019s worked on all tiers (server, web, mobile and embedded) of large scale software platforms. He is now a Mobile Dev Lead for Shopify, and is part of Google's Developer Expert program. \n\nEtienne got his start in programming in the mid-'80s obsessing over C64 demos, and went on to organize the NAID 95/96 demoparties. 3D animation, procedural content generation and VR are some of his hobbies, and he loves to introduce other developers to this fascinating field. He also regularly volunteers his time towards mentoring startups, developers and students in the mobile space. As part of the Montreal Android GDG, he organises meet-ups, hackathons, and gives regular talks on Android and VR-related subjects.\n\nPreviously, Etienne worked on projects ranging from high-availability stock trading software platforms, all the way to large scale municipal bike sharing systems (London\u2019s cycle Hire amongst others). He lives in Montreal with his wife and daughter, and speaks French and English fluently.",
+          "company": "",
+          "github": "",
+          "google": "",
+          "id": "ecaron-petit-pas",
+          "name": "Etienne Caron-Petit-Pas",
+          "title": "",
+          "twitter": "@kanawish",
+          "website": ""
+        },
+        "cchang": {
+          "bio": "I'm currently working on the Android team on June Oven, building the first truly smart oven to help anybody cook! Previously I worked at VSCO, helping build and support the Android app for over 5 million users. I've taught a few Android classes through organizations such as Women Who Code and also AP Computer Science for high school students. ",
+          "company": "",
+          "github": "",
+          "google": "",
+          "id": "cchang",
+          "name": "Caren Chang",
           "title": "",
           "twitter": "",
+          "website": ""
+        },
+        "hdao": {
+          "bio": "Huyen Tue Dao is an Android developer and Google Developer Expert, currently working on the Android team at Trello.\n\nHuyen is co-creator of the \"Android Dialogs\" YouTube channel which features interviews with people in the Android community.\n\nShe lives in Denver, CO though is often found in the DC Metro area. When she is not up late programming, she is often found up late gaming (video, board, card, anything).",
+          "company": "",
           "github": "",
           "google": "",
+          "id": "hdao",
+          "name": "Huyen Tue Dao",
+          "title": "",
+          "twitter": "@queencodemonkey",
           "website": ""
         },
-        "boberkfell": {
-          "id": "boberkfell",
-          "bio": "Ben is an Android developer at American Express.  Before discovering mobile development, he worked on the Human Genome Project and cancer research projects writing data analysis tools.",
-          "company": "American Express",
-          "name": "Ben Oberkfell",
-          "title": "Android Developer",
-          "twitter": "@benlikestcode",
-          "github": "benoberkfell",
-          "google": "+BenOberkfell",
-          "website": "benlikestoco.de"
-        },
-        "jmardis": {
-          "id": "jmardis",
-          "bio": "Jerrell is an Android developer at Salesforce, organizer for Google Developer Group (GDG) Chicago West and Illinois Institute of Technology alum. He's worked on Android for over 6 years and is passionate about building beautiful and functional Android apps that exceed users' expectations. When he's not coding, Jerrell can be found hanging out with his family, catching the latest Bulls or Bears game or playing basketball at his local gym.",
-          "company": "Salesforce",
-          "name": "Jerrell Mardis",
-          "title": "Android Developer",
-          "twitter": "@jerrellmardis",
-          "github": "jerrellmardis",
-          "google": "+JerrellMardis",
+        "bduff": {
+          "bio": "Brian Duff cofounded and leads the Nearby team at Google. He's been on the Android team for the last four years, and hacking on Java in various forms since 1998. As well as being crazily into proximity and Android, Brian loves guitar, looking after his 3 and 4 year old, and singing his geeky heart out.",
+          "company": "",
+          "github": "",
+          "google": "",
+          "id": "bduff",
+          "name": "Brian Duff",
+          "title": "",
+          "twitter": "",
           "website": ""
         },
-        "mevans": {
-          "id": "mevans",
-          "bio": "Google Developer Expert and Android Lead at LivingSocial. I’ve been writing apps since Cupcake, co-organizer of DC Droids (the DC Android Meetup), and embarrassingly was one of those people walking around with Google Glass at one point.",
-          "company": "LivingSocial",
-          "name": "Michael Evans",
-          "title": "Android Tech Lead",
-          "twitter": "@m_evans10",
-          "github": "MichaelEvans",
-          "google": "+MichaelEvans",
-          "website": "http://michaelevans.org"
+        "vgonda": {
+          "bio": "Victoria is a software developer at Collective Idea, building mobile and web applications. She is passionate about using technology to help better the lives of individuals. Studying both Computer Science and Dance in college, she now enjoys digging into dance technology, and keeping up with dance classes in her spare time.",
+          "company": "",
+          "github": "",
+          "google": "",
+          "id": "vgonda",
+          "name": "Victoria Gonda",
+          "title": "",
+          "twitter": "@TTGonda",
+          "website": ""
+        },
+        "rguy": {
+          "bio": "Googler",
+          "company": "",
+          "github": "",
+          "google": "",
+          "id": "rguy",
+          "name": "Romain Guy",
+          "title": "",
+          "twitter": "@romainguy",
+          "website": ""
+        },
+        "cguzman": {
+          "bio": "Originally a ruby on rails developer, Chris made the jump into Android a year ago. He started his dev career 2 years ago after teaching himself to code. Chris loves helping others learn and leads intro to code classes as wells as co-organizes the Baltimore Hackathon.",
+          "company": "",
+          "github": "",
+          "google": "",
+          "id": "cguzman",
+          "name": "Chris Guzman",
+          "title": "",
+          "twitter": "@speaktochris",
+          "website": ""
+        },
+        "jhoford": {
+          "bio": "John works on Android Studio and ConstraintLayout at Google. He has worked previously on RenderScript, Vector Drawables, computed shadows and photo editor filters. Prior to joining Google, John was a principal engineer at GE Healthcare working on their image processing applications framework.",
+          "company": "",
+          "github": "",
+          "google": "",
+          "id": "jhoford",
+          "name": "John Hoford",
+          "title": "",
+          "twitter": "@johnhoford",
+          "website": ""
+        },
+        "akelly": {
+          "bio": "Andrew is a freelance Android Developer based in Sydney Australia. He is also a Google Developer Expert for Android and is one of the organisers of the Sydney Google Developer Group. When he's not coding Andrew is an avid film watcher.",
+          "company": "",
+          "github": "",
+          "google": "",
+          "id": "akelly",
+          "name": "Andrew Kelly",
+          "title": "",
+          "twitter": "@andrew_ke11y",
+          "website": ""
+        },
+        "clee": {
+          "bio": "Christina is a Android developer at Pinterest. After launching the first version of the Pinterest video player on Android, she now works on a special initiatives team doing rapid prototyping for research and validation purposes. ",
+          "company": "",
+          "github": "",
+          "google": "",
+          "id": "clee",
+          "name": "Christina Lee",
+          "title": "",
+          "twitter": "@RunChristinaRun",
+          "website": ""
+        },
+        "jmaltz": {
+          "bio": "I'm an Android engineering building applications at as part of the diner growth team at Yelp Eat24.  Before that, I worked on Yelp's Android application as part of their diner growth team.  When I'm not having dreams  of little green robots, you can find me anxiously waiting for the next batch of interns so that I get to help more people become great developers.",
+          "company": "",
+          "github": "",
+          "google": "",
+          "id": "jmaltz",
+          "name": "Jonathan Maltz",
+          "title": "",
+          "twitter": "@maltzj",
+          "website": ""
+        },
+        "jmoon": {
+          "bio": "",
+          "company": "",
+          "github": "",
+          "google": "",
+          "id": "jmoon",
+          "name": "Jessica Moon",
+          "title": "",
+          "twitter": "",
+          "website": ""
+        },
+        "nnarasimhan": {
+          "bio": "Independent developer and solutions architect targeting the Mobile Web. Completed a PhD in Computer Eng., and worked at Motorola Research on mobile and ubiquitous computing solutions spanning automotive, television, smartphone and wearable platforms for 12 years. Currently work with early stage startups to build cross-platform mobile web product for consumers. \n\nOrganize GDG chapters (NYC and Hudson Valley) and events (Android Camp, DevFest NYC). Currently interested in machine learning, internet of things and ubiquitous computing technology.",
+          "company": "",
+          "github": "",
+          "google": "",
+          "id": "nnarasimhan",
+          "name": "Nitya Narasimhan",
+          "title": "",
+          "twitter": "@nitya",
+          "website": ""
+        },
+        "mperlak": {
+          "bio": "My name is Mateusz (Mat) , I work for ContextMedia Health as senior software developer in android .My twelve years experience in the field range form image processing, backend high scalable server code to android and web front ends..\nCurrently, my team focus on educational platform for health care patients at point of care.",
+          "company": "",
+          "github": "",
+          "google": "",
+          "id": "mperlak",
+          "name": "Mateusz Perlak",
+          "title": "",
+          "twitter": "@magillus",
+          "website": ""
+        },
+        "mpotter": {
+          "bio": "I am an Android engineer working at Pinterest.  I focus on accessibility and app performance.  In my free time, I sing a capella and play soccer.",
+          "company": "",
+          "github": "",
+          "google": "",
+          "id": "mpotter",
+          "name": "Mallika Potter",
+          "title": "",
+          "twitter": "",
+          "website": ""
+        },
+        "yprabhu": {
+          "bio": "Yash Prabhu leads the Android team at DramaFever (a Warner Bros. company). She has spoken at several tech meetups and conferences over the past three years. In her spare time, she volunteers at Google Developers Group/Android Alliance Philadelphia as a teaching assistant, instructor, mentor and organizer\n\nJessica\u2019s career began nearly a decade ago at Cond\u00e9 Nast and Firstborn, before joining Radical.Media as a multi-disciplinary designer focusing on film, packaging, digital & print.  From there, her career focused in ecommerce as a lead designer at Born Group. Throughout her career she has been able to work with brands including Grey Goose,Tommy Hilfiger, Bon Jovi, Sandro (US), Movado, Red Bull, Phaidon and Tag Heuer.  \n\nIn recent years, Jessica has tackled Product Design at a DramaFever, Warner Bros. owned video streaming service, catering to millions of viewers worldwide. She is continually honing and developing her craft through different mediums of digital design, staying atop her field.\n",
+          "company": "",
+          "github": "",
+          "google": "",
+          "id": "yprabhu",
+          "name": "Yash  Prabhu",
+          "title": "",
+          "twitter": "@yashvprabhu",
+          "website": ""
+        },
+        "nroard": {
+          "bio": "Nicolas worked over the years on various projects at Google, from the HTML5 support in Android Browser, implementing the webview hardware acceleration in Honeycomb, or writing a scalable and non-destructive photo editor in JB/KitKat. After a year building high-speed telemetry systems for robots, he came back to Android, developed ConstraintLayout and now works on the Android Studio layout editor.",
+          "company": "",
+          "github": "",
+          "google": "",
+          "id": "nroard",
+          "name": "Nicolas Roard",
+          "title": "",
+          "twitter": "@camaelon",
+          "website": ""
+        },
+        "pshadlyn": {
+          "bio": "I love Android even more than baseball.\n\nI'm an Android development for VarageSale, a family-friendly app which lets you buy and sell new and used items locally.  I\u2019m also the lead Android developer for Triplify, an Australian-based startup which tells you what\u2019s going on wherever you are. In a past life I was a controls engineer, but I started working with Android during the Froyo days and have never looked back.\n\nI've presented at a number of Android meetups and tech events, including giving a talk on Android Auto at the Square offices in Kitchener, Ontario, Canada.  \n\nHere are some of my previous presentations:\n\nhttps://www.youtube.com/watch?v=GeSKaz6PCm4\nhttps://www.youtube.com/watch?v=WNaJlP36I4E\nhttps://speakerdeck.com/physphil",
+          "company": "",
+          "github": "",
+          "google": "",
+          "id": "pshadlyn",
+          "name": "Phil Shadlyn",
+          "title": "",
+          "twitter": "@physphil",
+          "website": ""
+        },
+        "bsills": {
+          "bio": "I am a Chicago-based Android developer working for Isobar, a digital marketing agency. Over the past few years, I've worked many projects for various clients, ranging from sports teams to fast food companies. I have presented a few small talks at local Android meetups. Outside of coding, I enjoy biking around the city, watching movies at my local theater, and going to concerts.",
+          "company": "",
+          "github": "",
+          "google": "",
+          "id": "bsills",
+          "name": "Bryan Sills",
+          "title": "",
+          "twitter": "@bryansills",
+          "website": ""
         },
         "dsmith": {
-          "id": "dsmith",
-          "bio": "Dave Smith is a Google Developer Expert for Android and IoT working with the Android platform at all levels, developing custom applications and system components to run Android on embedded platforms or interact with external embedded devices.",
+          "bio": "Dave Smith is a Developer Advocate for IoT at Google, focused on growing\ndeveloper support on the Android Things platform. Dave has been\nworking with the Android stack at all levels since 2009, developing\ncustom applications and system components to run Android on\nembedded platforms or interact with external embedded\ndevices. He has a passion for making things smart, whether that be other\ndevelopers or devices.",
           "company": "",
+          "github": "",
+          "google": "",
+          "id": "dsmith",
           "name": "Dave Smith",
           "title": "",
-          "twitter": "@devunwired",
-          "github": "devunwired",
-          "google": "+DaveSmithDev",
-          "website": "http://wiresareobsolete.com/"
+          "twitter": "",
+          "website": ""
         },
-        "astanton": {
-          "id": "astanton",
-          "bio": "Alison focuses on business intelligence reporting, product measurement, process improvement through automation, and technical training. She makes data accessible, discoverable, & actionable. Currently, her main languages are SQL, Python, and LookML.",
+        "dstevenson": {
+          "bio": "Doug is a Google Developer Advocate working with the Firebase team.  He's been doing Android development since 2008 with the release of the first Android device, the HTC G1.  Outside of work, Doug follows NHL hockey and enjoys craft beer.",
           "company": "",
-          "name": "Alison Stanton",
-          "title": "",
-          "twitter": "@alison985",
           "github": "",
           "google": "",
-          "website": "http://alisonstanton.com/alisons-blog/"
-        },
-        "drowe": {
-          "id": "drowe",
-          "bio": "Deanna is a Solutions Engineer for the Google Cloud Platform helping clients move to the cloud.",
-          "company": "Google",
-          "name": "Deanna Rowe",
-          "title": "Solutions Engineer (Google Cloud Platform)",
-          "twitter": "",
-          "github": "",
-          "google": "",
-          "website": ""
-        },
-        "dward": {
-          "id": "dward",
-          "bio": "Don Ward is passionate about all Google Technologies and local software development communities. He currently co-leads the ever-growing Detroit Google Developers Group. During the day he leads one of the mobile teams at Quicken Loans.",
-          "company": "Quicken Loans",
-          "name": "Don Ward",
-          "title": "Mobile Lead",
-          "twitter": "@donwardpeng",
-          "github": "",
-          "google": "+DonWard",
-          "website": ""
-        },
-        "platteier": {
-          "id": "platteier",
-          "bio": "Pearl Latteier is a software engineer at Bendyworks in Madison WI. For the past several years, she has focused primarily on building data-intensive JavaScript applications for web and mobile, most recently with React JS and React Native. She is also experienced with server-side technologies including Node, Ruby on Rails, and PHP. Before becoming a software developer, Pearl earned a PhD in from the University of Wisconsin-Madison, where for five years she taught courses in the Department of Communication Arts.",
-          "company": "Bendyworks",
-          "name": "Pearl Latteier",
-          "title": "Software Engineer",
-          "twitter": "",
-          "github": "",
-          "google": "",
-          "website": ""
-        },
-        "awilliams": {
-          "id": "awilliams",
-          "bio": "An experienced developer and start-up founder, Abraham Williams brings a broad range of skills to his current role as a senior developer at Bendyworks.  A top 1% contributor at Stack Overflow and an active member of Google Developer Groups, Abraham has been recognized by Google as a Developer Expert for his ability to identify technology problems and provide quality solutions in the community.",
-          "company": "Bendyworks",
-          "name": "Abraham Williams",
-          "title": "Senior Developer",
-          "twitter": "",
-          "github": "",
-          "google": "",
-          "website": ""
-        },
-        "cflowers": {
-          "id": "cflowers",
-          "bio": "Christian Flowers is a member of the Systems Architecture Team at Motorola Mobility.  He has over a decade of experience on mobile development including modem firmware, Android Framework, and applications.  He helped define how Moto Mods integrate into the Android platform and assisted with documentation at http://developer.motorola.com.  Additionally, he worked to create the Moto Mods Development Kit, providing capable hardware to help you realize your product quickly.",
-          "company": "Motorola",
-          "name": "Christian Flowers",
-          "title": "System Architect",
-          "twitter": "",
-          "github": "",
-          "google": "",
-          "website": ""
-        },
-        "jcoca": {
-          "id": "jcoca",
-          "bio": "Spanish engineer lost in Chicago! Currently, I work at BMW in the Android team, delivering the future of the Connected platform for BMW, Mini and Rolls Royce vehicles. Amateur triathlete. Guitar player. Frustrated soccer player.",
-          "company": "BMW Android Team",
-          "name": "Jorge Coca",
+          "id": "dstevenson",
+          "name": "Doug Stevenson",
           "title": "",
           "twitter": "",
-          "github": "",
-          "google": "",
           "website": ""
         },
-        "vscarlata": {
-          "id": "vscarlata",
-          "bio": "GDG Chicago Talker and Teacher!",
-          "company": "GDG Chicago",
-          "name": "Valerie Scarlata",
-          "title": "Organizer",
+        "hvisser": {
+          "bio": "Hugo is a software engineer who has worked on enterprise, desktop and mobile software products. Since the introduction of Android he has been steadily focussing on developing for Android only, resulting in his first app in 2009. Hugo has released several open source libraries and tools to help him and other developers build better software. He\u2019s a Google Developer Expert for Android and one of the organizers of the Dutch Android User Group. With his company Little Robots, he focuses on smart use of Android in every possible way.",
+          "company": "",
+          "github": "",
+          "google": "",
+          "id": "hvisser",
+          "name": "Hugo  Visser",
+          "title": "",
+          "twitter": "@botteaap",
+          "website": ""
+        },
+        "jwilson": {
+          "bio": "Jesse works on Square Cash in Waterloo Canada. He's contributed to OkHttp, Retrofit, Dagger, and Guava.",
+          "company": "",
+          "github": "",
+          "google": "",
+          "id": "jwilson",
+          "name": "Jesse Wilson",
+          "title": "",
           "twitter": "",
-          "github": "",
-          "google": "",
-          "website": ""
-        },
-        "smotlani": {
-          "id": "smotlani",
-          "bio": "Shan Motlani is a frontend engineer with @WalmartLabs working with Angular and Angular2",
-          "company": "WalmartLabs",
-          "name": "Shan Motlani",
-          "title": "Frontend Engineer",
-          "twitter": "",
-          "github": "",
-          "google": "",
-          "website": ""
-        },
-        "jvasallo": {
-          "id": "jvasallo",
-          "bio": "Joel is currently a DevOps Engineer at Gogo. He’s been at Gogo for 4 years improving cloud infrastructure and developing infrastructure tools. Primarily works with Python, the cloud is his immutable datacenter, and loves exploring his home city Chicago from time to time.",
-          "company": "Gogo",
-          "name": "Joel Vasallo",
-          "title": "DevOps Engineer",
-          "twitter": "@__jvasallo__",
-          "github": "",
-          "google": "",
           "website": ""
         }
       },
@@ -858,14 +1060,11 @@
         }
       },
       "rooms": {
-        "Lake Michigan": {
-          "name": "Lake Michigan"
+        "Great Room 1": {
+          "name": "Great Room 1"
         },
-        "Android": {
-          "name": "Android"
-        },
-        "Maps": {
-          "name": "Maps"
+        "Great Room 2": {
+          "name": "Great Room 2"
         }
       }
     }
