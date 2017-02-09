@@ -1,0 +1,10 @@
+.material-icons {
+  font-size: 36px;
+  top: 8px;
+  position: relative;
+}
+
+.mdl-button .material-icons {
+  top: -1px;
+  margin-right: 5px;
+}
