@@ -7,7 +7,7 @@ export function login() {
 }
 
 export function logout() {
-  return auth.singOut()
+  return auth.signOut()
 }
 
 export function loggedIn() {

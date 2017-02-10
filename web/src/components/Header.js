@@ -2,8 +2,11 @@ import React, { Component } from 'react'
 import logo from '../logo.svg'
 import './Header.css'
 import { login, logout } from '../helpers/auth'
+import { auth } from '../config/constants'
 
 export default class Header extends Component {
+
+
 
   render() {
     return (
@@ -14,8 +17,8 @@ export default class Header extends Component {
           </div>
             {this.props.authed
               ? <div id="user-container">
-                  <div id="user-pic"></div>
-                  <div id="user-name"></div>
+                  <div id="user-pic" style={{backgroundImage: 'url(' + auth.currentUser.photoURL + ')'}}></div>
+                  <div id="user-name">{auth.currentUser.displayName}</div>
                   <button id="sign-out" className="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white"
                       onClick={() => {
                         logout()
