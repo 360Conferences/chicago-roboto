@@ -1,4 +1,4 @@
-.Header {
+/*.Header {
 }
 
 .Header-logo {
@@ -23,23 +23,24 @@
 .mdl-layout__header-row span {
   margin-left: 15px;
   margin-top: 17px;
+}*/
+
+.mdl-layout__header-row {
+  padding: 0 40px;
+}
+
+.mdl-layout-logo {
+  height: 36px;
+  position: relative;
+  margin-right: 16px;
 }
 
 #user-container {
-  position: absolute;
   display: flex;
   flex-direction: row;
-  top: 22px;
-  width: 100%;
-  right: 0;
-  padding-left: 10px;
   justify-content: flex-end;
-  padding-right: 10px;
 }
 #user-container #user-pic {
-  top: -3px;
-  position: relative;
-  display: inline-block;
   background-image: url('/images/user.jpg');
   background-repeat: no-repeat;
   width: 40px;
@@ -48,10 +49,14 @@
   border-radius: 20px;
 }
 #user-container #user-name {
+  line-height: 40px;
   font-size: 16px;
-  line-height: 36px;
   padding-right: 10px;
   padding-left: 20px;
+}
+
+#user-container #sign-out {
+  line-height: 40px;
 }
 
 @media screen and (max-width: 610px) {

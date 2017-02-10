@@ -1,4 +1,4 @@
-import { db, auth } from '../config/constants'
+import { auth } from '../config/constants'
 import * as firebase from 'firebase'
 
 export function login() {

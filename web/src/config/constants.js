@@ -9,5 +9,5 @@ const config = {
 }
 firebase.initializeApp(config)
 
-export const db = firebase.database().ref()
+export const db = firebase.database().ref().child('events').child('chicagoroboto-2017')
 export const auth = firebase.auth()

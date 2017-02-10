@@ -3,7 +3,7 @@ import { auth } from '../config/constants'
 import Header from './Header'
 import Drawer from './Drawer'
 
-export default class Body extends Component {
+export default class App extends Component {
     state = {
       authed: false
     }
@@ -30,12 +30,12 @@ export default class Body extends Component {
       return (
         <div className="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
           <Header authed={this.state.authed} />
-          <main className="mdl-layout__content mdl-layout--fixed-drawer mdl-color--gray-100">
+          <div className="mdl-layout__content mdl-layout--fixed-drawer">
             <Drawer />
-            <div className="mdl-cell mdl-cell--12-col mdl-grid">
-              {this.props.children}
-            </div>
-          </main>
+            <main className="mdl-layout__content mdl-color--gray-100">
+                {this.props.children}
+            </main>
+          </div>
         </div>
       )
     }
