@@ -9,3 +9,7 @@ export function login() {
 export function logout() {
   return auth.singOut()
 }
+
+export function loggedIn() {
+  return auth.currentUser
+}

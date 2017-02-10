@@ -5,16 +5,12 @@ import { login, logout } from '../helpers/auth'
 
 export default class Header extends Component {
 
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <header className="Header mdl-layout__header mdl-color-text--white mdl-color--light-blue-700">
         <div className="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
           <div className="mdl-layout__header-row mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop">
-            <h3><img src={logo} className="Header-logo" alt="logo" /> Chicago Roboto</h3>
+            <h3><img src={logo} className="Header-logo" alt="logo"></img> Chicago Roboto</h3>
           </div>
             {this.props.authed
               ? <div id="user-container">
