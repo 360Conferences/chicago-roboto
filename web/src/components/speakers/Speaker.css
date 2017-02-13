@@ -1,0 +1,20 @@
+.Speaker {
+  margin: 32px;
+}
+
+.Speaker span {
+  display: inline-block;
+  margin: 8px;
+}
+
+.Speaker span.company {
+  font-weight: bold;
+}
+
+.Speaker td.label {
+  font-weight: bold;
+}
+
+.Speaker table {
+  width: 100%;
+}

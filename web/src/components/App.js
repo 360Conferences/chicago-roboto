@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { auth } from '../config/constants'
+import './App.css'
 import Header from './Header'
 import Drawer from './Drawer'
 
@@ -32,7 +33,7 @@ export default class App extends Component {
           <Header authed={this.state.authed} />
           <div className="mdl-layout__content mdl-layout--fixed-drawer">
             <Drawer />
-            <main className="mdl-layout__content mdl-color--gray-100">
+            <main className="content-grid mdl-grid mdl-layout__content mdl-color--gray-100">
                 {this.props.children}
             </main>
           </div>
