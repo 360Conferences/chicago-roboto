@@ -18,3 +18,16 @@
 .Speaker table {
   width: 100%;
 }
+
+.Speaker ul.social img {
+  width: 24px;
+  height: 24px;
+  margin-right: 16px;
+}
+
+.Speaker .edit-button {
+  position: fixed;
+  bottom: 42px;
+  right: 42px;
+  z-index: 999;
+}

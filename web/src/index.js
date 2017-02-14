@@ -7,6 +7,7 @@ import Home from './components/Home'
 import Dashboard from './components/dashboard/Dashboard'
 import SpeakersList from './components/speakers/SpeakersList'
 import Speaker from './components/speakers/Speaker'
+import EditSpeaker from './components/speakers/EditSpeaker'
 
 function requireAuth(nextState, replace) {
   if (!auth.currentUser) {
@@ -21,7 +22,8 @@ render((
     <Route path="/" component={App}>
       <IndexRoute component={Home} />
       <Route path="dashboard" component={Dashboard} onEnter={requireAuth}/>
-      <Route path="/speaker/:speakerId" component={Speaker} onEnter={requireAuth}/>
+      <Route path="/speakers/:speakerId/edit" component={EditSpeaker} onEnter={requireAuth}/>
+      <Route path="/speakers/:speakerId" component={Speaker} onEnter={requireAuth}/>
       <Route path="speakers" component={SpeakersList} onEnter={requireAuth}/>
     </Route>
   </Router>

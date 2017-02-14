@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { auth } from '../config/constants'
-import './App.css'
 import Header from './Header'
 import Drawer from './Drawer'
 

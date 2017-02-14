@@ -20,7 +20,7 @@ export default class SpeakersList extends Component {
   }
 
   viewSpeaker(id) {
-    this.props.router.push('/speaker/' + id)
+    this.props.router.push('/speakers/' + id)
   }
 
   render() {
