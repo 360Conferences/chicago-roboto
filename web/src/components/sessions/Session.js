@@ -3,6 +3,44 @@ import { browserHistory } from 'react-router'
 import { db } from '../../config/constants'
 import './Session.css'
 
+class SpeakerChip extends Component {
+
+  state = {
+    speaker: null
+  }
+
+  componentDidMount() {
+    this.ref = db.child('speakers').child(this.props.speakerId)
+    this.ref.on('value', snapshot => {
+      this.setState({
+        speaker: snapshot.val()
+      })
+    })
+  }
+
+  componentWillUnmount() {
+    this.ref.off()
+  }
+
+  render() {
+    if (this.state.speaker) {
+      return (
+        <span className="mdl-chip mdl-chip--contact">
+          <span className="mdl-chip__contact mdl-color--teal mdl-color-text--white">{this.state.speaker.name.substr(0, 1).toUpperCase()}</span>
+          <span className="mdl-chip__text">{this.state.speaker.name}</span>
+        </span>
+      )
+    } else {
+      return (
+        <span className="mdl-chip mdl-chip--contact">
+          <span className="mdl-chip__contact mdl-color--teal mdl-color-text--white">L</span>
+          <span className="mdl-chip__text">Loading</span>
+        </span>
+      )
+    }
+  }
+}
+
 export default class Session extends Component {
 
   state = {
@@ -15,16 +53,16 @@ export default class Session extends Component {
   }
 
   componentDidMount() {
-    this.ref = db.child('sessions').child(this.props.params.sessionId)
-    this.ref.on('value', snapshot => {
-          this.setState({
-            session: snapshot.val()
-          })
-        })
+    this.sessionRef = db.child('sessions').child(this.props.params.sessionId)
+    this.sessionRef.on('value', snapshot => {
+      this.setState({
+        session: snapshot.val()
+      })
+    })
   }
 
   componentWillUnmount() {
-    this.ref.off()
+    this.sessionRef.off()
   }
 
   edit() {
@@ -39,10 +77,7 @@ export default class Session extends Component {
 
           <div className="speakers">
             {Object.values(this.state.session.speakers).map((speaker) =>
-              <span className="mdl-chip mdl-chip--contact">
-                <span className="mdl-chip__contact mdl-color--teal mdl-color-text--white">{speaker.substr(0, 1).toUpperCase()}</span>
-                <span className="mdl-chip__text">{speaker}</span>
-              </span>
+              <SpeakerChip speakerId={speaker}/>
             )}
           </div>
 
