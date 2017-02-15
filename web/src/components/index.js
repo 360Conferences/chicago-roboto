@@ -9,6 +9,7 @@ import Speaker from './speakers/Speaker'
 import EditSpeaker from './speakers/EditSpeaker'
 import SessionList from './sessions/SessionList'
 import Session from './sessions/Session'
+import EditSession from './sessions/EditSession'
 
 export default class App extends Component {
 
@@ -90,6 +91,11 @@ export default class App extends Component {
           {
             path: '/speakers',
             component: SpeakersList,
+            onEnter: this.requireAdmin
+          },
+          {
+            path: '/sessions/:sessionId/edit',
+            component: EditSession,
             onEnter: this.requireAdmin
           },
           {

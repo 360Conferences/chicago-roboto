@@ -81,7 +81,9 @@ export default class Session extends Component {
             )}
           </div>
 
-          <p className="description">{this.state.session.description}</p>
+          <div className="description">
+            {this.state.session.description.split('\n').map(i => <p>{i}</p>)}
+          </div>
 
           <button className="edit-button mdl-button mdl-js-button mdl-button--fab" onClick={this.edit}>
             <i className="material-icons">edit</i>
