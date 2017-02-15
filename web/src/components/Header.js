@@ -12,7 +12,7 @@ export default class Header extends Component {
     return (
       <header className="mdl-layout__header mdl-color-text--white mdl-color--light-blue-700">
         <div className="mdl-layout__header-row">
-          <img className="mdl-layout-logo" alt="logo" src={logo} />
+          {/*<img className="mdl-layout-logo" alt="logo" src={logo} />*/}
           <span className="mdl-layout-title">Chicago Roboto</span>
 
           <div className="mdl-layout-spacer" />

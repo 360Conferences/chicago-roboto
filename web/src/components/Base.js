@@ -28,14 +28,12 @@ export default class Base extends Component {
 
     render() {
       return (
-        <div className="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <div className="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer">
           <Header authed={this.state.authed} />
-          <div className="mdl-layout__content mdl-layout--fixed-drawer">
             <Drawer />
             <main className="content-grid mdl-grid mdl-layout__content mdl-color--gray-100">
                 {this.props.children}
             </main>
-          </div>
         </div>
       )
     }

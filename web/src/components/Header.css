@@ -25,10 +25,6 @@
   margin-top: 17px;
 }*/
 
-.mdl-layout__header-row {
-  padding: 0 40px;
-}
-
 .mdl-layout-logo {
   height: 36px;
   position: relative;
@@ -60,10 +56,6 @@
 }
 
 @media screen and (max-width: 610px) {
-  header {
-    height: 113px;
-    padding-bottom: 80px !important;
-  }
   #user-container {
     top: 72px;
     background-color: rgb(3,155,229);
