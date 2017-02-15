@@ -71,12 +71,14 @@ export default class Session extends Component {
 
   render() {
     if (this.state.session) {
+      let speakers = this.state.session.speakers || []
+
       return (
         <div className="Session mdl-cell mdl-cell--12-col">
           <h3>{this.state.session.name}</h3>
 
           <div className="speakers">
-            {Object.values(this.state.session.speakers).map((speaker) =>
+            {Object.values(speakers).map((speaker) =>
               <SpeakerChip speakerId={speaker}/>
             )}
           </div>
