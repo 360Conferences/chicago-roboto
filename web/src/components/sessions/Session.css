@@ -1,0 +1,18 @@
+.Session {
+  margin: 32px;
+}
+
+.Session div.speakers {
+  margin-bottom: 16px;
+}
+
+.Session div.speakers span.mdl-chip {
+  margin: 8px;
+}
+
+.Session .edit-button {
+  position: fixed;
+  bottom: 42px;
+  right: 42px;
+  z-index: 999;
+}

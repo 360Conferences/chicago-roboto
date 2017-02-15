@@ -7,6 +7,8 @@ import Dashboard from './dashboard/Dashboard'
 import SpeakersList from './speakers/SpeakersList'
 import Speaker from './speakers/Speaker'
 import EditSpeaker from './speakers/EditSpeaker'
+import SessionList from './sessions/SessionList'
+import Session from './sessions/Session'
 
 export default class App extends Component {
 
@@ -88,6 +90,16 @@ export default class App extends Component {
           {
             path: '/speakers',
             component: SpeakersList,
+            onEnter: this.requireAdmin
+          },
+          {
+            path: '/sessions/:sessionId',
+            component: Session,
+            onEnter: this.requireAdmin
+          },
+          {
+            path: '/sessions',
+            component: SessionList,
             onEnter: this.requireAdmin
           }
         ]
