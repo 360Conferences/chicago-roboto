@@ -4,12 +4,13 @@ import { Card, CardTitle, CardText, CardActions, Button, Grid, Cell,
 import { SelectField, Option } from 'react-mdl-extra'
 import { db } from '../../config/constants'
 import './DataSchedule.css'
+import NewSlotDialog from './NewSlotDialog'
 
 class SessionCard extends Component {
   render() {
     return (
       <Cell col={this.props.col}>
-        <Card style={{backgroundColor: this.props.color}}>
+        <Card className="session" style={{backgroundColor: this.props.color}}>
           <CardTitle>{this.props.session.name}</CardTitle>
           <CardText>{this.props.session.room}</CardText>
           <CardActions>
@@ -25,7 +26,9 @@ class BlankCard extends Component {
   render() {
     return (
       <Cell col={this.props.col}>
-        <Card style={{backgroundColor: "#e1e1e1"}}>
+        <Card className="session blank" style={{backgroundColor: "#e1e1e1"}}>
+          <CardTitle>&nbsp;</CardTitle>
+          <CardText>{this.props.room}</CardText>
           <CardActions>
             <Button colored onClick={this.props.onEdit}>Set</Button>
           </CardActions>
@@ -38,40 +41,57 @@ class BlankCard extends Component {
 export default class DateSchedule extends Component {
 
   state = {
+    date: "",
+    schedule: {slots:{}},
     sessions: [],
-    schedule: [],
-    rooms: [],
-    rows: [],
+    rooms: {},
 
     originalSession: {},
     updatedSessionId: {},
-    editDialog: false
+    editDialog: false,
+    createNewSlot: false
   }
 
   colors = ['#89c541', '#fcc102']
 
   constructor() {
     super()
-    this.renderRow = this.renderRow.bind(this)
+    this.renderSlot = this.renderSlot.bind(this)
     this.chooseSession = this.chooseSession.bind(this)
     this.updateSession = this.updateSession.bind(this)
     this.cancelChooseSession = this.cancelChooseSession.bind(this)
     this.handleDialogSelectionChange = this.handleDialogSelectionChange.bind(this)
+    this.newSlot = this.newSlot.bind(this)
   }
 
-  componentDidMount() {
-    this.roomRef = db.child('rooms')
-    this.roomRef.on('value', (snapshot) => {
+  componentWillReceiveProps(props) {
+    let state = this.state
+    state.date = props.date
+    this.setState(state)
+
+    this.roomsRef = db.child('rooms')
+    this.roomsRef.on('value', (snapshot) => {
       let state = this.state
-      state.rooms = Object.keys(snapshot.val())
+      state.rooms = Object.values(snapshot.val())
+      this.setState(state)
+    })
+    this.scheduleRef = db.child('schedule').child(props.date)
+    this.scheduleRef.on('value', (snapshot) => {
+      let state = this.state
+      state.schedule = snapshot.val()
       this.setState(state)
     })
     this.sessionsRef = db.child('sessions')
-    this.sessionsRef.on('value', (snapshot => {
+    this.sessionsRef.on('value', (snapshot) => {
       let state = this.state
       state.sessions = snapshot.val()
       this.setState(state)
-    }))
+    })
+  }
+
+  componentWillUnmount() {
+    this.scheduleRef.off()
+    this.sessionsRef.off()
   }
 
   formatTime(date) {
@@ -79,38 +99,6 @@ export default class DateSchedule extends Component {
     let min = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()
     let ampm = date.getHours() < 12 ? 'AM' : 'PM'
     return hours + ':' + min + ' ' + ampm
-  }
-
-  componentWillReceiveProps(props) {
-    if (props.date) {
-      this.dateRef = db.child('sessions_by_date').child(props.date)
-      this.dateRef.on('value', (snapshot) => {
-        let state = this.state
-        let schedule = {}
-        state.rows.map((slot) => {
-          schedule[slot.slot] = slot
-        })
-
-        Object.values(snapshot.val()).map((session) => {
-          let start = new Date(session.start_time)
-          let end = new Date(session.end_time)
-          let slot = this.formatTime(start) + '-' + this.formatTime(end)
-          let row = schedule[slot] || {slot: slot, start_time: start, end_time: end}
-          row[session.room] = session
-          schedule[slot] = row
-        })
-
-        state.schedule = schedule
-        state.rows = Object.values(schedule)
-        this.setState(state)
-      })
-    }
-  }
-
-  componentWillUnmount() {
-    this.roomRef.off()
-    this.sessionsRef.off()
-    this.dataRef.off()
   }
 
   chooseSession(session) {
@@ -122,7 +110,7 @@ export default class DateSchedule extends Component {
   }
 
   updateSession() {
-  let state = this.state
+    let state = this.state
     if (state.updatedSessionId !== state.originalSession) {
       this.dateRef.child(state.originalSession.id).remove()
 
@@ -149,33 +137,48 @@ export default class DateSchedule extends Component {
     this.setState(state)
   }
 
-  renderRow(row) {
-    const items = this.state.rooms.map((room) => {
-      let session = row[room]
+  newSlot() {
+    let state = this.state
+    state.createNewSlot = true
+    this.setState(state)
+  }
+
+  renderSlot(slot) {
+    const rooms = this.state.rooms
+    const items = rooms.map((room) => {
+      let sessions = slot.sessions || {}
+      let session = sessions[room.id]
       if (session) {
         return (<SessionCard
           key={session.id}
-          col={6}
-          color={this.colors[this.state.rooms.indexOf(room)]}
+          col={12 / rooms.length}
+          color={this.colors[rooms.indexOf(room)]}
           session={session}
           onEdit={(e) => this.chooseSession(session)} />)
       } else {
         return (
           <BlankCard
-            key={row.slot + room}
-            col={6}
+            key={slot.name + room.name}
+            col={12 / rooms.length}
+            room={room.name}
             onEdit={(e) => this.chooseSession({
               room: room,
-              start_time: row.end_time.toString(),
-              end_time: row.end_time.toString(),
-              slot: row.slot
+              start_time: slot.end_time.toString(),
+              end_time: slot.end_time.toString(),
+              slot: slot
             })}
             />
           )
       }
     })
     return (
-      <Grid key={row.slot}>{items}</Grid>
+      <Grid key={slot.name} className="time-slot">
+        <Cell col={2}>
+          <div style={{padding: '8px'}}>{slot.name}</div></Cell>
+        <Cell col={8}>
+          <Grid>{items}</Grid>
+        </Cell>
+      </Grid>
     )
   }
 
@@ -186,13 +189,28 @@ export default class DateSchedule extends Component {
   }
 
   render() {
-    const rows = this.state.rows.map((row) => this.renderRow(row))
+    if (!this.state.schedule || !this.state.sessions) {
+      return (<h1>Loading...</h1>)
+    }
+
+    const slots = Object.values(this.state.schedule.slots).map((slot) => this.renderSlot(slot))
     const availableSessions = Object.keys(this.state.sessions).map((sessionId) =>
       <option key={sessionId} value={sessionId}>{this.state.sessions[sessionId].name}</option>
     )
     return (
       <div>
-        <Grid className="grid">{rows}</Grid>
+        <Grid className="grid">
+          <Cell col={12}>
+            {slots}
+          </Cell>
+          <Cell col={12}>
+            <Card>
+              <CardActions>
+                <Button colored onClick={this.newSlot}>New Slot</Button>
+              </CardActions>
+            </Card>
+          </Cell>
+        </Grid>
         <Dialog className="update-dialog" open={this.state.editDialog}>
           <DialogTitle>Update Session</DialogTitle>
           <DialogContent>
@@ -208,6 +226,11 @@ export default class DateSchedule extends Component {
             <Button type='button' onClick={this.cancelChooseSession}>Cancel</Button>
           </DialogActions>
         </Dialog>
+        <NewSlotDialog date={this.state.date} open={this.state.createNewSlot} onClose={() => {
+          let state = this.state
+          state.createNewSlot = false
+          this.setState(state)
+        }} />
       </div>
     )
   }

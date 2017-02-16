@@ -14,6 +14,15 @@ dialog > select {
   margin: 20px 24px 24px 24px;
 }
 
+.demo-tabs, .grid {
+  width: 100%;
+}
+
+.mdl-card.session {
+  width: 100%;
+  height: 100%;
+}
+
 select {
   font-family: Roboto, sans-serif;
   -moz-osx-font-smoothing: grayscale;

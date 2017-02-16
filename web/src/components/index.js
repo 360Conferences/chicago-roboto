@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { Router, Route, IndexRoute, browserHistory } from 'react-router'
+import { Router, browserHistory } from 'react-router'
 import { auth, db } from '../config/constants'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Base from './Base'
 import Home from './Home'
 import Dashboard from './dashboard/Dashboard'
@@ -118,7 +119,9 @@ export default class App extends Component {
       }
     ]
     return (
-      <Router history={browserHistory} routes={routeConfig}/>
+      <MuiThemeProvider>
+        <Router history={browserHistory} routes={routeConfig}/>
+      </MuiThemeProvider>
     )
   }
 }
