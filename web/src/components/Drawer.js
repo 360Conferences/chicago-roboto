@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
 import './Drawer.css'
+import { Drawer } from 'react-mdl'
 
 export default class Drawer extends Component {
   render() {
@@ -10,6 +11,7 @@ export default class Drawer extends Component {
           <Link to='/dashboard' className="mdl-navigation__link"><i className="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Dashboard</Link>
           <Link to='/speakers' className="mdl-navigation__link"><i className="mdl-color-text--blue-grey-400 material-icons" role="presentation">people</i>Speakers</Link>
           <Link to='/sessions' className="mdl-navigation__link"><i className="mdl-color-text--blue-grey-400 material-icons" role="presentation">tv</i>Sessions</Link>
+          <Link to='/schedule' className="mdl-navigation__link"><i className="mdl-color-text--blue-grey-400 material-icons" role="presentation">event</i>Schedule</Link>
         </nav>
       </div>
     )
