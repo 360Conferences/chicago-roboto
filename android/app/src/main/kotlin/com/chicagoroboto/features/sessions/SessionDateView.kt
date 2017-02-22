@@ -43,7 +43,8 @@ class SessionDateView(context: Context, attrs: AttributeSet? = null, defStyle: I
     }
 
     override fun showNoSessionDates() {
-        throw UnsupportedOperationException("not implemented") //To change body of created functions use File | Settings | File Templates.
+        adapter.dates.clear()
+        adapter.notifyDataSetChanged()
     }
 
     override fun showSessionDates(sessionDates: List<String>) {

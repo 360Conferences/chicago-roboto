@@ -101,7 +101,7 @@ export default class DateSchedule extends Component {
     return hours + ':' + min + ' ' + ampm
   }
 
-  chooseSession(session) {
+  chooseSession = (session) => {
     let state = this.state
     state.originalSession = session
     state.updatedSessionId = session.id
@@ -214,7 +214,7 @@ export default class DateSchedule extends Component {
         <Dialog className="update-dialog" open={this.state.editDialog}>
           <DialogTitle>Update Session</DialogTitle>
           <DialogContent>
-            <p>Choose the session for <b>{this.state.originalSession.room}</b> during the <strong>{this.state.originalSession.slot}</strong> time slot.</p>
+            <p>Choose the session for <b>{this.state.originalSession.room}</b> during the <strong>{this.state.originalSession.id}</strong> time slot.</p>
           </DialogContent>
 
           <select name="Sessions" value={this.state.updatedSessionId} onChange={this.handleDialogSelectionChange}>
