@@ -7,12 +7,9 @@
   },
   "dependencies": {
     "firebase": "^3.6.9",
-    "material-components-web": "^0.4.0",
     "material-ui": "^0.17.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "react-mdl": "^1.9.0",
-    "react-mdl-extra": "^1.4.3",
     "react-router": "^3.0.2",
     "react-tap-event-plugin": "^2.0.1"
   },

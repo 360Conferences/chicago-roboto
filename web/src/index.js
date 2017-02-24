@@ -6,6 +6,7 @@ import 'react-mdl/extra/material.js';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
 injectTapEventPlugin();
+
 render((
   <App />
 ), document.getElementById('root'))

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { Card, CardTitle, CardText, CardActions, Button, Grid, Cell,
-  Dialog, DialogTitle, DialogContent, DialogActions } from 'react-mdl'
-import { SelectField, Option } from 'react-mdl-extra'
+import { Card, CardTitle, CardText, CardActions } from 'material-ui/Card'
+import FlatButton from 'material-ui/FlatButton'
+import { Button, Grid, Cell } from 'react-mdl'
 import { db } from '../../config/constants'
 import './DataSchedule.css'
 import NewSlotDialog from './NewSlotDialog'
@@ -16,7 +16,7 @@ class SessionCard extends Component {
           <CardTitle>{this.props.session.name}</CardTitle>
           <CardText>{this.props.session.room}</CardText>
           <CardActions>
-            <Button colored onClick={this.props.onEdit}>Update</Button>
+            <FlatButton primary={true} onClick={this.props.onEdit}>Update</FlatButton>
           </CardActions>
         </Card>
       </Cell>
@@ -32,7 +32,7 @@ class BlankCard extends Component {
           <CardTitle>&nbsp;</CardTitle>
           <CardText>{this.props.roomName}</CardText>
           <CardActions>
-            <Button colored onClick={this.props.onEdit}>Set</Button>
+            <FlatButton primary={true} onClick={this.props.onEdit}>Set</FlatButton>
           </CardActions>
         </Card>
       </Cell>
@@ -188,7 +188,7 @@ export default class DateSchedule extends Component {
           <Cell col={12}>
             <Grid className="rooms">
               <Cell col={2}>
-                <Button colored onClick={this.newRoom}>New Room</Button>
+                <FlatButton colored onClick={this.newRoom}>New Room</FlatButton>
               </Cell>
               <Cell col={8}>
                 <Grid>
@@ -201,7 +201,7 @@ export default class DateSchedule extends Component {
           <Cell col={12}>
             <Card>
               <CardActions>
-                <Button colored onClick={this.newSlot}>New Slot</Button>
+                <FlatButton colored onClick={this.newSlot}>New Slot</FlatButton>
               </CardActions>
             </Card>
           </Cell>
