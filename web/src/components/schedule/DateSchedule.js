@@ -5,6 +5,7 @@ import { SelectField, Option } from 'react-mdl-extra'
 import { db } from '../../config/constants'
 import './DataSchedule.css'
 import NewSlotDialog from './NewSlotDialog'
+import EditSlotDialog from './EditSlotDialog'
 
 class SessionCard extends Component {
   render() {
@@ -28,7 +29,7 @@ class BlankCard extends Component {
       <Cell col={this.props.col}>
         <Card className="session blank" style={{backgroundColor: "#e1e1e1"}}>
           <CardTitle>&nbsp;</CardTitle>
-          <CardText>{this.props.room}</CardText>
+          <CardText>{this.props.roomName}</CardText>
           <CardActions>
             <Button colored onClick={this.props.onEdit}>Set</Button>
           </CardActions>
@@ -48,7 +49,12 @@ export default class DateSchedule extends Component {
 
     originalSession: {},
     updatedSessionId: {},
-    editDialog: false,
+    editSlot: false,
+    editDate: null,
+    editRoom: null,
+    editSlotId: null,
+    editStartTime: null,
+    editEndTime: null,
     createNewSlot: false
   }
 
@@ -101,11 +107,14 @@ export default class DateSchedule extends Component {
     return hours + ':' + min + ' ' + ampm
   }
 
-  chooseSession = (session) => {
+  chooseSession = (slot) => {
     let state = this.state
-    state.originalSession = session
-    state.updatedSessionId = session.id
-    state.editDialog = true
+    state.editDate = slot.date
+    state.editRoom = slot.room
+    state.editSlotId = slot.slotId
+    state.editStartTime = slot.startTime
+    state.editEndTime = slot.endTime
+    state.editSlot = true
     this.setState(state)
   }
 
@@ -115,7 +124,7 @@ export default class DateSchedule extends Component {
       this.dateRef.child(state.originalSession.id).remove()
 
       let session = this.state.sessions[state.updatedSessionId]
-      session.date = this.props.date
+      session.date = (state.date.getMonth() + 1) + "-" + state.date.getDate() + "-" + state.date.getFullYear()
       session.start_time = state.originalSession.start_time
       session.end_time = state.originalSession.end_time
       session.room = state.originalSession.room
@@ -125,7 +134,7 @@ export default class DateSchedule extends Component {
 
     state.originalSession = {}
     state.updatedSessionId = ""
-    state.editDialog = false
+    state.editSlot = false
     this.setState(state)
   }
 
@@ -133,7 +142,7 @@ export default class DateSchedule extends Component {
     let state = this.state
     state.originalSession = {}
     state.updatedSessionId = ""
-    state.editDialog = false
+    state.editSlot = false
     this.setState(state)
   }
 
@@ -160,12 +169,13 @@ export default class DateSchedule extends Component {
           <BlankCard
             key={slot.name + room.name}
             col={12 / rooms.length}
-            room={room.name}
+            roomName={room.name}
             onEdit={(e) => this.chooseSession({
+              date: slot.date,
               room: room,
-              start_time: slot.end_time.toString(),
-              end_time: slot.end_time.toString(),
-              slot: slot
+              slotId: slot.id,
+              startTime: slot.start_time.toString(),
+              endTime: slot.end_time.toString(),
             })}
             />
           )
@@ -211,21 +221,24 @@ export default class DateSchedule extends Component {
             </Card>
           </Cell>
         </Grid>
-        <Dialog className="update-dialog" open={this.state.editDialog}>
-          <DialogTitle>Update Session</DialogTitle>
-          <DialogContent>
-            <p>Choose the session for <b>{this.state.originalSession.room}</b> during the <strong>{this.state.originalSession.id}</strong> time slot.</p>
-          </DialogContent>
-
-          <select name="Sessions" value={this.state.updatedSessionId} onChange={this.handleDialogSelectionChange}>
-            {availableSessions}
-          </select>
-
-          <DialogActions>
-            <Button type='button' onClick={this.updateSession}>Update</Button>
-            <Button type='button' onClick={this.cancelChooseSession}>Cancel</Button>
-          </DialogActions>
-        </Dialog>
+        <EditSlotDialog
+            date={this.state.editDate}
+            room={this.state.editRoom}
+            slotId={this.state.editSlotId}
+            startTime={this.state.editStartTime}
+            endTime={this.state.editEndTime}
+            open={this.state.editSlot}
+            onClose={() => {
+              let state = this.state
+              state.editDate = null
+              state.editRoom = null
+              state.editSlotId = null
+              state.editStartTime = null
+              state.editEndTime = null
+              state.editSlot = false
+              this.setState(state)
+            }}
+            />
         <NewSlotDialog date={this.state.date} open={this.state.createNewSlot} onClose={() => {
           let state = this.state
           state.createNewSlot = false

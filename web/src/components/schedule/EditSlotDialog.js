@@ -1,22 +1,25 @@
 import React, { Component } from 'react'
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import Dialog from 'material-ui/Dialog'
-import TimePicker from 'material-ui/TimePicker'
 import TextField from 'material-ui/TextField'
 import FlatButton from 'material-ui/FlatButton'
+import SelectField from 'material-ui/SelectField'
+import MenuItem from 'material-ui/MenuItem'
 import { db } from '../../config/constants'
 
-export default class NewSlotDialog extends Component {
+export default class EditSlotDialog extends Component {
 
   state = {
     date: null,
+    room: null,
+    startTime: null,
+    endTime: null,
+    slotId: null,
     open: false,
     valid: false,
     onClose: () => {},
-    name: null,
-    startTime: null,
-    endTime: null,
-    defaultName: null
+    sessions: [],
+    sessionId: null
   }
 
   formatTime(date) {
@@ -37,10 +40,24 @@ export default class NewSlotDialog extends Component {
     state.open = props.open
     state.onClose = props.onClose
     state.date = props.date
+    state.room = props.room
+    state.slotId = props.slotId
+    state.startTime = props.startTime
+    state.endTime = props.endTime
+    this.sessionRef = db.child('sessions')
+    this.sessionRef.on('value', (snapshot) => {
+      let state = this.state
+      state.sessions = snapshot.val()
+      this.setState(state)
+    })
     this.setState(state)
   }
 
-  validate = (state) => state.date != null && state.startTime != null && state.endTime != null
+  componentWillUnmount() {
+    this.sessionRef.off()
+  }
+
+  validate = (state) => state.sessionId !== null
 
   setState(nextState, callback) {
     nextState.valid = this.validate(nextState)
@@ -54,15 +71,17 @@ export default class NewSlotDialog extends Component {
   }
 
   handleCreate = () => {
-    let ref = db.child('schedule').child(this.state.date).child('slots').push();
-    ref.set({
-      id: ref.key,
-      date: this.state.date,
-      name: this.state.name || this.state.defaultName,
-      start_time: this.state.startTime.toISOString(),
-      end_time: this.state.endTime.toISOString(),
-      sessions: {},
-    }, () => this.handleClose())
+    let session = this.state.sessions[this.state.sessionId]
+    session.date = this.state.date
+    session.room = this.state.room.name
+    session.start_time = this.state.startTime
+    session.end_time = this.state.endTime
+
+    db.child('sessions').child(session.id).set(session)
+    db.child('schedule').child(this.state.date)
+        .child('slots').child(this.state.slotId)
+        .child('sessions').child(this.state.room.id)
+        .set(session, () => this.handleClose())
   }
 
   handleClose = () => {
@@ -72,26 +91,10 @@ export default class NewSlotDialog extends Component {
     state.onClose()
   }
 
-  handleStartTimeChanged = (e, date) => {
+  handleSessionChange = (event, index, value) => {
     let state = this.state
-    state.startTime = date
+    state.sessionId = value
     this.setState(state)
-    this.onTimeUpdated()
-  }
-
-  handleEndTimeChanged = (e, date) => {
-    let state = this.state
-    state.endTime = date
-    this.setState(state)
-    this.onTimeUpdated()
-  }
-
-  onTimeUpdated = () => {
-    let state = this.state
-    if (state.startTime && state.endTime) {
-      state.defaultName = this.formatTime(state.startTime) + ' - ' + this.formatTime(state.endTime)
-      this.setState(state)
-    }
   }
 
   render() {
@@ -101,7 +104,7 @@ export default class NewSlotDialog extends Component {
         primary={true}
         onClick={this.handleClose} />,
       <FlatButton
-        label="Create"
+        label="Update"
         primary={true}
         disabled={!this.state.valid}
         keyboardFocused={true}
@@ -109,14 +112,17 @@ export default class NewSlotDialog extends Component {
     ]
     return (
       <Dialog
-          title="New Time Slot"
+          title="Update Session"
           open={this.state.open}
           actions={actions}
           modal={false}
           onRequestClose={this.handleClose}>
-        <TextField floatingLabelText={this.state.defaultName || "Name (Optional)"} onChange={this.onNameChange}/>
-        <TimePicker hintText="Start Time" onChange={this.handleStartTimeChanged}/>
-        <TimePicker hintText="End Time" onChange={this.handleEndTimeChanged}/>
+
+        <SelectField floatingLabelText="Session" value={this.state.sessionId} onChange={this.handleSessionChange}>
+          {Object.keys(this.state.sessions).map((sessionId) =>
+            <MenuItem key={sessionId} value={sessionId} primaryText={this.state.sessions[sessionId].name}/>
+          )}
+        </SelectField>
       </Dialog>
     )
   }
