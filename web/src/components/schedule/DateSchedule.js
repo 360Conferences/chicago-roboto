@@ -82,9 +82,9 @@ export default class DateSchedule extends Component {
     })
     this.scheduleRef = db.child('schedule').child(props.date)
     this.scheduleRef.on('value', (snapshot) => {
-      let state = this.state
-      state.schedule = snapshot.val()
-      this.setState(state)
+      let schedule = snapshot.val()
+      schedule.slots = schedule.slots || {}
+      this.updateState({schedule: schedule})
     })
     this.sessionsRef = db.child('sessions')
     this.sessionsRef.on('value', (snapshot) => {

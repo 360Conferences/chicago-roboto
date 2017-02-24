@@ -7,7 +7,7 @@ import FlatButton from 'material-ui/FlatButton'
 import { db } from '../../config/constants'
 import { idify } from '../../helpers/TextHelpers'
 
-export default class NewSlotDialog extends Component {
+export default class NewRoomDialog extends Component {
 
   state = {
     open: false,
