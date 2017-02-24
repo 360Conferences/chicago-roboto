@@ -42,6 +42,7 @@ export default class EditSlotDialog extends Component {
     state.date = props.date
     state.room = props.room
     state.slotId = props.slotId
+    state.sessionId = props.sessionId
     state.startTime = props.startTime
     state.endTime = props.endTime
     this.sessionRef = db.child('sessions')
@@ -72,6 +73,7 @@ export default class EditSlotDialog extends Component {
 
   handleCreate = () => {
     let session = this.state.sessions[this.state.sessionId]
+    session.slot_id = this.state.slotId
     session.date = this.state.date
     session.room = this.state.room.name
     session.start_time = this.state.startTime

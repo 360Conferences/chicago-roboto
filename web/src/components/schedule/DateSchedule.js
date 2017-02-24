@@ -53,6 +53,7 @@ export default class DateSchedule extends Component {
     editDate: null,
     editRoom: null,
     editSlotId: null,
+    editSessionId: null,
     editStartTime: null,
     editEndTime: null,
     createNewSlot: false
@@ -112,6 +113,7 @@ export default class DateSchedule extends Component {
     state.editDate = slot.date
     state.editRoom = slot.room
     state.editSlotId = slot.slotId
+    state.editSessionId = slot.sessionId
     state.editStartTime = slot.startTime
     state.editEndTime = slot.endTime
     state.editSlot = true
@@ -163,7 +165,14 @@ export default class DateSchedule extends Component {
           col={12 / rooms.length}
           color={this.colors[rooms.indexOf(room)]}
           session={session}
-          onEdit={(e) => this.chooseSession(session)} />)
+          onEdit={(e) => this.chooseSession({
+            date: slot.date,
+            room: room,
+            slotId: slot.id,
+            startTime: slot.start_time.toString(),
+            endTime: slot.end_time.toString(),
+            sessionId: session.id
+          })} />)
       } else {
         return (
           <BlankCard
@@ -225,6 +234,7 @@ export default class DateSchedule extends Component {
             date={this.state.editDate}
             room={this.state.editRoom}
             slotId={this.state.editSlotId}
+            sessionId={this.state.editSessionId}
             startTime={this.state.editStartTime}
             endTime={this.state.editEndTime}
             open={this.state.editSlot}
@@ -233,6 +243,7 @@ export default class DateSchedule extends Component {
               state.editDate = null
               state.editRoom = null
               state.editSlotId = null
+              state.editSessionId = null
               state.editStartTime = null
               state.editEndTime = null
               state.editSlot = false
