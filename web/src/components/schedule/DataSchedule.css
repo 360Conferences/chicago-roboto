@@ -10,6 +10,24 @@ option {
   padding: 0px 2px 1px;
 }
 
+.mdl-grid.rooms {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.mdl-grid.rooms .mdl-cell {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.room-title {
+  margin: 0;
+}
+
 dialog > select {
   margin: 20px 24px 24px 24px;
 }

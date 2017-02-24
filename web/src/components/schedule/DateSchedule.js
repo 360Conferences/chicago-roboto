@@ -6,6 +6,7 @@ import { db } from '../../config/constants'
 import './DataSchedule.css'
 import NewSlotDialog from './NewSlotDialog'
 import EditSlotDialog from './EditSlotDialog'
+import NewRoomDialog from './NewRoomDialog'
 
 class SessionCard extends Component {
   render() {
@@ -49,13 +50,13 @@ export default class DateSchedule extends Component {
 
     originalSession: {},
     updatedSessionId: {},
-    editSlot: false,
     editDate: null,
     editRoom: null,
     editSlotId: null,
     editSessionId: null,
     editStartTime: null,
     editEndTime: null,
+    editSlot: false,
     createNewSlot: false
   }
 
@@ -65,9 +66,6 @@ export default class DateSchedule extends Component {
     super()
     this.renderSlot = this.renderSlot.bind(this)
     this.chooseSession = this.chooseSession.bind(this)
-    this.updateSession = this.updateSession.bind(this)
-    this.cancelChooseSession = this.cancelChooseSession.bind(this)
-    this.handleDialogSelectionChange = this.handleDialogSelectionChange.bind(this)
     this.newSlot = this.newSlot.bind(this)
   }
 
@@ -101,56 +99,25 @@ export default class DateSchedule extends Component {
     this.sessionsRef.off()
   }
 
-  formatTime(date) {
-    let hours = (date.getHours() + 1) % 12
-    let min = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()
-    let ampm = date.getHours() < 12 ? 'AM' : 'PM'
-    return hours + ':' + min + ' ' + ampm
-  }
-
   chooseSession = (slot) => {
-    let state = this.state
-    state.editDate = slot.date
-    state.editRoom = slot.room
-    state.editSlotId = slot.slotId
-    state.editSessionId = slot.sessionId
-    state.editStartTime = slot.startTime
-    state.editEndTime = slot.endTime
-    state.editSlot = true
-    this.setState(state)
+    this.updateState({
+      editDate: slot.date,
+      editRoom: slot.room,
+      editSlotId: slot.slotId,
+      editSessionId: slot.sessionId,
+      editStartTime: slot.startTime,
+      editEndTime: slot.endTime,
+      editSlot: true,
+    })
   }
 
-  updateSession() {
+  newSlot = () => { this.updateState({createNewSlot: true}) }
+
+  newRoom = () => { this.updateState({createNewRoom: true}) }
+
+  updateState = (newCmpts) => {
     let state = this.state
-    if (state.updatedSessionId !== state.originalSession) {
-      this.dateRef.child(state.originalSession.id).remove()
-
-      let session = this.state.sessions[state.updatedSessionId]
-      session.date = (state.date.getMonth() + 1) + "-" + state.date.getDate() + "-" + state.date.getFullYear()
-      session.start_time = state.originalSession.start_time
-      session.end_time = state.originalSession.end_time
-      session.room = state.originalSession.room
-
-      this.dateRef.child(state.updatedSessionId).set(session)
-    }
-
-    state.originalSession = {}
-    state.updatedSessionId = ""
-    state.editSlot = false
-    this.setState(state)
-  }
-
-  cancelChooseSession() {
-    let state = this.state
-    state.originalSession = {}
-    state.updatedSessionId = ""
-    state.editSlot = false
-    this.setState(state)
-  }
-
-  newSlot() {
-    let state = this.state
-    state.createNewSlot = true
+    Object.assign(state, newCmpts)
     this.setState(state)
   }
 
@@ -201,17 +168,16 @@ export default class DateSchedule extends Component {
     )
   }
 
-  handleDialogSelectionChange = (e) => {
-    let state = this.state
-    state.updatedSessionId = e.target.value
-    this.setState(state)
-  }
-
   render() {
     if (!this.state.schedule || !this.state.sessions) {
       return (<h1>Loading...</h1>)
     }
 
+    const rooms = Object.values(this.state.rooms).map((room) =>
+      <Cell key={room.id} col={12 / this.state.rooms.length}>
+        <h5 className="room-title">{room.name}</h5>
+      </Cell>
+    )
     const slots = Object.values(this.state.schedule.slots).map((slot) => this.renderSlot(slot))
     const availableSessions = Object.keys(this.state.sessions).map((sessionId) =>
       <option key={sessionId} value={sessionId}>{this.state.sessions[sessionId].name}</option>
@@ -220,6 +186,16 @@ export default class DateSchedule extends Component {
       <div>
         <Grid className="grid">
           <Cell col={12}>
+            <Grid className="rooms">
+              <Cell col={2}>
+                <Button colored onClick={this.newRoom}>New Room</Button>
+              </Cell>
+              <Cell col={8}>
+                <Grid>
+                  {rooms}
+                </Grid>
+              </Cell>
+            </Grid>
             {slots}
           </Cell>
           <Cell col={12}>
@@ -255,6 +231,7 @@ export default class DateSchedule extends Component {
           state.createNewSlot = false
           this.setState(state)
         }} />
+        <NewRoomDialog open={this.state.createNewRoom} onClose={() => this.updateState({createNewRoom: false})} />
       </div>
     )
   }
