@@ -20,7 +20,7 @@ export default class NewSlotDialog extends Component {
   }
 
   formatTime(date) {
-    let hours = date.getHours() % 12
+    let hours = date.getHours() % 13
     let min = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()
     let ampm = date.getHours() < 12 ? 'AM' : 'PM'
     return hours + ':' + min + ' ' + ampm
@@ -28,8 +28,6 @@ export default class NewSlotDialog extends Component {
 
   constructor() {
     super()
-    this.onNameChange = this.onNameChange.bind(this)
-    this.handleCreate = this.handleCreate.bind(this)
   }
 
   componentWillReceiveProps(props) {
@@ -47,7 +45,7 @@ export default class NewSlotDialog extends Component {
     super.setState(nextState, callback)
   }
 
-  onNameChange(e) {
+  onNameChange = (e) => {
     let state = this.state
     state.name = e.target.value
     this.setState(state)
