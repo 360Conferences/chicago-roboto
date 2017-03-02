@@ -1,13 +1,46 @@
 import React, { Component } from 'react'
 import { auth } from '../config/constants'
 import { Link } from 'react-router'
-import { Layout, Drawer, Header, Navigation } from 'react-mdl'
+import AppBar from 'material-ui/AppBar'
+import IconMenu from 'material-ui/IconMenu'
+import MenuItem from 'material-ui/MenuItem'
+import IconButton from 'material-ui/IconButton'
+import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert'
+import FlatButton from 'material-ui/FlatButton'
+import Drawer from 'material-ui/Drawer'
+import Home from 'material-ui/svg-icons/action/home'
+import People from 'material-ui/svg-icons/social/people'
+import TV from 'material-ui/svg-icons/hardware/tv'
+import Event from 'material-ui/svg-icons/action/event'
 import { login, logout } from '../helpers/auth'
 import './Base.css'
 
+class LoggedIn extends Component {
+  render() {
+    return (
+      <IconMenu
+        {...this.props}
+        iconButtonElement={<IconButton><MoreVertIcon /></IconButton>}
+        targetOrigin={{horizontal: 'right', vertical: 'top'}}
+        anchorOrigin={{horizontal: 'right', vertical: 'top'}}>
+        <MenuItem primaryText="Sign out" onClick={logout} />
+      </IconMenu>
+    )
+  }
+}
+
+class Login extends Component {
+  render() {
+    return (
+      <FlatButton {...this.props} label="Login" onClick={login} />
+    )
+  }
+}
+
 export default class Base extends Component {
     state = {
-      user: null
+      user: null,
+      drawerOpen: true
     }
 
     componentDidMount() {
@@ -28,43 +61,34 @@ export default class Base extends Component {
       this.removeListener()
     }
 
+    handleMenuButtonTouch = (event) => {
+      this.updateState({drawerOpen: !this.state.drawerOpen})
+    }
+
+    updateState = (newCmpts) => {
+      let state = this.state
+      Object.assign(state, newCmpts)
+      this.setState(state)
+    }
+
     render() {
       return (
-        <Layout className="demo-layout" fixedDrawer fixedHeader>
-          <Header title="Chicago Roboto">
-            {this.state.user
-              ? <div id="user-container">
-                  <div id="user-pic" style={{backgroundImage: 'url(' + this.state.user.photoURL + ')'}}></div>
-                  <div id="user-name">{this.state.user.displayName}</div>
-                  <button id="sign-out" className="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white"
-                      onClick={() => {
-                        logout()
-                      }}>
-                    Sign-out
-                  </button>
-                </div>
-              : <div id="user-container">
-                  <button id="sign-in" className="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white"
-                      onClick={() => {
-                        login()
-                      }}>
-                    <i className="material-icons">account_circle</i>Sign-in with Google
-                  </button>
-                </div>
-            }
-          </Header>
-          <Drawer className="demo-drawer">
-            <Navigation className="demo-navigation mdl-navigation mdl-color--blue-grey-800">
-              <Link to='/dashboard' className="mdl-navigation__link"><i className="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Dashboard</Link>
-              <Link to='/speakers' className="mdl-navigation__link"><i className="mdl-color-text--blue-grey-400 material-icons" role="presentation">people</i>Speakers</Link>
-              <Link to='/sessions' className="mdl-navigation__link"><i className="mdl-color-text--blue-grey-400 material-icons" role="presentation">tv</i>Sessions</Link>
-              <Link to='/schedule' className="mdl-navigation__link"><i className="mdl-color-text--blue-grey-400 material-icons" role="presentation">event</i>Schedule</Link>
-            </Navigation>
+        <div className="demo-layout">
+          <AppBar
+            title="Chicago Roboto"
+            onLeftIconButtonTouchTap={this.handleMenuButtonTouch}
+            iconElementRight={this.state.user ? <LoggedIn user={this.state.user}/> : <Login />}
+          />
+          <Drawer docked={false} open={this.state.drawerOpen} onRequestChange={this.handleMenuButtonTouch} className="demo-drawer">
+            <MenuItem primaryText="Dashboard" leftIcon={<Home />} containerElement={<Link to="/" />} />
+            <MenuItem primaryText="Speakers" leftIcon={<People />} containerElement={<Link to="/speakers" />} />
+            <MenuItem primaryText="Sessions" leftIcon={<TV />} containerElement={<Link to="/sessions" />} />
+            <MenuItem primaryText="Schedule" leftIcon={<Event />} containerElement={<Link to="/schedule" />} />
           </Drawer>
-            <main className="content-grid mdl-grid mdl-layout__content mdl-color--gray-100">
-                {this.props.children}
-            </main>
-        </Layout>
+          <main className="content-grid mdl-grid mdl-layout__content mdl-color--gray-100">
+              {this.props.children}
+          </main>
+        </div>
       )
     }
 }
