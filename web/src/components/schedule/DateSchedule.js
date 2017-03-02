@@ -3,10 +3,10 @@ import { Card, CardTitle, CardText, CardActions } from 'material-ui/Card'
 import FlatButton from 'material-ui/FlatButton'
 import { Button, Grid, Cell } from 'react-mdl'
 import { db } from '../../config/constants'
-import './DataSchedule.css'
 import NewSlotDialog from './NewSlotDialog'
 import EditSlotDialog from './EditSlotDialog'
 import NewRoomDialog from './NewRoomDialog'
+import './DateSchedule.css'
 
 class SessionCard extends Component {
   render() {

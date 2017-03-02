@@ -50,7 +50,7 @@ select {
   letter-spacing: 0.04em;
   line-height: 1.75rem;
   color: rgba(0, 0, 0, 0.87);
-  color: var(--mdc-theme-text-primary-on-light, rgba(0, 0, 0, 0.87));
+  color: rgba(0, 0, 0, 0.87);
   padding-left: 0;
   padding-right: 24px;
   -webkit-appearance: none;
@@ -75,7 +75,6 @@ select {
   background: none;
   background-repeat: no-repeat;
   background-position: right center;
-  background-image: url(data:image/svg+xml,%3Csvg%20width%3D%2210px%22%20height%3D%225px%22%20viewB…oints%3D%227%2010%2012%2015%2017%2010%22%3E%3C%2Fpolygon%3E%0A%3C%2Fsvg%3E);
   font-family: Roboto, sans-serif;
   font-size: .936rem;
   cursor: pointer;
