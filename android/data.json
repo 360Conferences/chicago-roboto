@@ -266,7 +266,6 @@
           "id" : "closing-remarks",
           "name" : "Closing Remarks",
           "room" : "Great Room 1",
-          "speakers" : [ "" ],
           "start_time" : "2017-04-21T17:00:00-0500"
         },
         "contextualize-apps-with-nearby-awareness" : {
@@ -304,7 +303,7 @@
         },
         "coordinating-space-and-time" : {
           "date" : "2017-04-20",
-          "description" : "One of Android's core requirements is that the UI runs on the main thread and IO in the background. Though concurrency is powerful, it's also frustrating to deal with forking threads.\n\nIn this talk we'll:\n\nU+23F0 Learn how smartphone CPUs contradict your memory.\nU+23F0 Discuss how Android's compilers disregard your orders.\nU+23F0 Sync up on Java's concurrency APIs.\n⏰ See how to make sexy apps that aren't racy.\nU+23F0 Determine if reactive programming is the future.\n\nThis talk covers a sequence of concurrency topics. Attendees will be able to fix volatile programs and block threading bugs before they happen.",
+          "description" : "One of Android's core requirements is that the UI runs on the main thread and IO in the background. Though concurrency is powerful, it's also frustrating to deal with forking threads.\n\nIn this talk we'll:\n\n⏰ Learn how smartphone CPUs contradict your memory.\n⏰ Discuss how Android's compilers disregard your orders.\n⏰ Sync up on Java's concurrency APIs.\n⏰ See how to make sexy apps that aren't racy.\n⏰ Determine if reactive programming is the future.\n\nThis talk covers a sequence of concurrency topics. Attendees will be able to fix volatile programs and block threading bugs before they happen.",
           "end_time" : "2017-04-20T16:45:00-0500",
           "id" : "coordinating-space-and-time",
           "name" : "Coordinating Space and Time",
@@ -763,7 +762,6 @@
           "id" : "closing-remarks",
           "name" : "Closing Remarks",
           "room" : "Great Room 1",
-          "speakers" : [ "" ],
           "start_time" : "2017-04-21T17:00:00-0500"
         } ]
       },
