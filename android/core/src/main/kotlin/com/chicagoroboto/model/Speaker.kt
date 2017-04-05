@@ -9,7 +9,7 @@ class Speaker(val id: String? = null, val name: String? = null, val email: Strin
 
     val avatar: String?
         get() {
-            return "https://firebasestorage.googleapis.com/v0/b/gdg-chicago-devfest.appspot.com/o/speakers%2F$id.jpg?alt=media"
+            return "https://firebasestorage.googleapis.com/v0/b/chicago-roboto.appspot.com/o/speakers%2F$id.jpg?alt=media"
         }
 
     private fun hash(): String {
