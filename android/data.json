@@ -185,6 +185,19 @@
       },
       "session_dates" : [ "2017-04-20", "2017-04-21" ],
       "sessions" : {
+        "death-taxes-and-http" : {
+          "date" : "2017-04-20",
+          "description" : "'Tis impossible to be sure of anything but death, taxes, and HTTP. This talk will explore some of the overhead inherent to HTTP and how it can be optimized or eliminated for more efficient networking.",
+          "end_time" : "2017-04-20T09:45:00-0500",
+          "id" : "death-taxes-and-http",
+          "name" : "Death, Taxes, and HTTP (Keynote)",
+          "room" : "Great Room 1",
+          "speakers" : [ "jwharton", "jwilson" ],
+          "start_time" : "2017-04-20T09:00:00-0500",
+          "tracks": [
+            "keynote"
+          ]
+        },
         "a-healthy-dose-of-gradle" : {
           "date" : "2017-04-21",
           "description" : "Gradle is the official build system for Android but few ever go beyond editing dependencies or copy-pasting code from stackoverflow. However, it is possible to have a build that is both fast and tailored to your needs.\n\nThis session aims to make you a better developer by taking back control of your build.  \n\nWe will be covering concepts like the build phases (Initialization, Configuration, Execution), the task graph and the plugins that are available for you. We will look at how to extend an existing build by creating custom tasks, developing our own simple plugins and learning how to debug and test them. And since no one likes a slow build, we will use the Gradle Profiler to troubleshoot performance problems and talk about the usual root causes for neverending builds.",
@@ -381,7 +394,7 @@
           "description" : "Kotlin does a lot for us in the way of reducing boilerplate. But what is it really doing? We will be inspecting some decompiled Kotlin to discover how it does its job. By looking underneath at how it handles data classes, lambdas, and delegation, we can better understand how the language executes what we write. If you’re curious about the language, or already using it in production, you should walk away from this investigation with a deeper understanding of Kotlin, and some tools for continued exploration.",
           "end_time" : "2017-04-21T09:45:00-0500",
           "id" : "kotlin-uncovered",
-          "name" : "Kotlin: Uncovered",
+          "name" : "Kotlin: Uncovered (Keynote)",
           "room" : "Great Room 1",
           "speakers" : [ "vgonda" ],
           "start_time" : "2017-04-21T09:00:00-0500"
@@ -495,7 +508,20 @@
         }
       },
       "sessions_by_date" : {
-        "2017-04-20" : [ {
+        "2017-04-20" : [
+          {
+            "date" : "2017-04-20",
+            "description" : "'Tis impossible to be sure of anything but death, taxes, and HTTP. This talk will explore some of the overhead inherent to HTTP and how it can be optimized or eliminated for more efficient networking.",
+            "end_time" : "2017-04-20T09:45:00-0500",
+            "id" : "death-taxes-and-http",
+            "name" : "Death, Taxes, and HTTP (Keynote)",
+            "room" : "Great Room 1",
+            "speakers" : [ "jwharton", "jwilson" ],
+            "start_time" : "2017-04-20T09:00:00-0500",
+            "tracks": [
+              "keynote"
+            ]
+          }, {
           "date" : "2017-04-20",
           "description" : "Sign in and Breakfast",
           "end_time" : "2017-04-20T10:45:00-0500",
@@ -635,7 +661,7 @@
           "description" : "Sign in and Breakfast",
           "end_time" : "2017-04-21T09:45:00-0500",
           "id" : "kotlin-uncovered",
-          "name" : "Kotlin: Uncovered",
+          "name" : "Kotlin: Uncovered (Keynote)",
           "room" : "Great Room 1",
           "speakers" : [ "vgonda" ],
           "start_time" : "2017-04-21T09:00:00-0500"
