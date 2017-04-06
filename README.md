@@ -1,6 +1,5 @@
-# Windy City DevCon
-
-This is the app for Windy City DevCon 2016.  It is based entirely on the [Firebase](https://firebase.google.com) data in `data.json`.
+# Chicago Roboto
+This is the app for Chicago Robooto 2017. It is based entirely on the [Firebase](https://firebase.google.com) data in `data.json`.
 
 The app should be easily customizable to other deveveloper conferences by simply:
 
