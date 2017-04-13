@@ -79,7 +79,7 @@
                 },
                 "great-room-2" : {
                   "date" : "2017-04-20",
-                  "description" : "Google Cardboard has been around since Google I/O 2014. It is by far the most affordable, and possibly most clever VR viewer out there today. To develop for Google Cardboard, the popular 3d game engine, Unity can be used. \n\nThis presentation will cover the  basics of developing in Unity for Google Cardboard including:\n• What is Unity and how to develop 3d apps using it.\n• How to develop for Google Cardboard in a Unity project.\n• Best practices for developing for Google Cardboard.",
+                  "description" : "Good use of animations can not only help make your app’s UI more intuitive, but can also build emotional attachment with your users.\n\nMark Allison will explore the subtleties of why some animations work where others don’t; The distinct components of effective animation; and, of course, some detailed worked examples of how to create amazing Android animations.",
                   "end_time" : "2017-04-20T17:45:00-0500",
                   "id" : "i-like-the-way-you-move",
                   "name" : "I Like The Way You Move",
@@ -201,150 +201,150 @@
         "a-healthy-dose-of-gradle" : {
           "date" : "2017-04-21",
           "description" : "Gradle is the official build system for Android but few ever go beyond editing dependencies or copy-pasting code from stackoverflow. However, it is possible to have a build that is both fast and tailored to your needs.\n\nThis session aims to make you a better developer by taking back control of your build.  \n\nWe will be covering concepts like the build phases (Initialization, Configuration, Execution), the task graph and the plugins that are available for you. We will look at how to extend an existing build by creating custom tasks, developing our own simple plugins and learning how to debug and test them. And since no one likes a slow build, we will use the Gradle Profiler to troubleshoot performance problems and talk about the usual root causes for neverending builds.",
-          "end_time" : "2017-04-21T11:45:00-0500",
+          "end_time" : "2017-04-21T10:45:00-0500",
           "id" : "a-healthy-dose-of-gradle",
           "name" : "A Healthy Dose of Gradle",
           "room" : "Great Room 1",
           "speakers" : [ "pbreault" ],
-          "start_time" : "2017-04-21T11:00:00-0500"
+          "start_time" : "2017-04-21T10:00:00-0500"
         },
         "accessibility-at-scale" : {
           "date" : "2017-04-20",
           "description" : "Accessibility often isn't a priority for companies as they grow, but if you don't invest in it early it can become a knotty problem.  In this talk I will discuss breaking down a complex Android application to find low-hanging fixes as well as prioritizing larger improvements and investing in accessibility in the future.  We will discuss my experience growing grassroots support for accessibility improvements at Pinterest and both the moral and business value of improving it.\n",
-          "end_time" : "2017-04-20T17:45:00-0500",
+          "end_time" : "2017-04-20T11:45:00-0500",
           "id" : "accessibility-at-scale",
           "name" : "Accessibility @ Scale",
           "room" : "Great Room 1",
           "slot_id" : "-KdlISKeTe7EFw5t4TOm",
           "speakers" : [ "mpotter" ],
-          "start_time" : "2017-04-20T17:00:00-0500",
+          "start_time" : "2017-04-20T11:00:00-0500",
           "tracks" : [ "cloud" ]
         },
         "advanced-android-touches" : {
           "date" : "2017-04-21",
           "description" : "For developers working with custom views and touches for the first time, it could be hard to decipher what goes on when a user touches the screen. In this talk we’ll trace through the steps to see how Android decides which view should handle a touch. We’ll visually examine how a view hierarchy is laid out and examine the multiple methods that are involved when handling touches. Lastly, we’ll look into the different kinds of touches that are categorized in Android and when the system finally decides the action is a 'touch'. \n\nTo wrap up the talk, we’ll look at an example of a custom translucent bottom bar laid over a recycler view. Using our newfound knowledge on touches, we’ll modify the navigation bar to handle different scenarios (such as scrolls, and clicking on a icon) so it can know when to handle a touch event, and when it should pass the event to the recycler view behind it.",
-          "end_time" : "2017-04-21T15:45:00-0500",
+          "end_time" : "2017-04-21T14:45:00-0500",
           "id" : "advanced-android-touches",
           "name" : "Advanced Android Touches",
           "room" : "Great Room 2",
           "speakers" : [ "cchang" ],
-          "start_time" : "2017-04-21T15:00:00-0500"
+          "start_time" : "2017-04-21T14:00:00-0500"
         },
         "android-auto-driving-the-future" : {
           "date" : "2017-04-20",
           "description" : "Curious about Android Auto?  Announced at Google I/O 2014, Android Auto is Google’s attempt to bring Android to the car, with controls and a user interface optimized for driving.  The first cars with Auto support were released in the summer of 2015 and Google has now opened up Android Auto to everyone with the recent release of the Android Auto app, giving developers a unique opportunity to reach a whole new set of users.  The goal of this session is to get you started developing great apps for this emerging platform.\n\n\nWe’ll talk about how to:\n- Extend your existing audio or messaging app to be compatible with an Android Auto head unit;\n\n- Use Android Auto to play music, compose and read messages and respond to user voice actions;\n\n- Develop and test your apps with the Desktop Head Unit;\n\n- Make sense of the Android Auto design guidelines and usability requirements that are in place for Auto apps;\n\n- Distribute your Auto app through Google Play.\n\n\nJoin us as we walk through real-life examples and see just how easy it is to get started with Android Auto!",
-          "end_time" : "2017-04-20T16:45:00-0500",
+          "end_time" : "2017-04-20T17:45:00-0500",
           "id" : "android-auto-driving-the-future",
           "name" : "Android Auto - Driving the Future",
           "room" : "Great Room 2",
           "slot_id" : "-KdhGdDgWd1bG372gIoD",
           "speakers" : [ "pshadlyn" ],
-          "start_time" : "2017-04-20T16:00:00-0500"
+          "start_time" : "2017-04-20T17:00:00-0500"
         },
         "break-your-app-before-someone-else-does" : {
           "date" : "2017-04-20",
           "description" : "You can never really know just how secure your app is until you've done your best trying to break it.\n\nIn a world where building apps is similar to playing with Legos, the sturdiness and stability of our creations is mostly tested by others. Unfortunately, this places our users at risk of exposing their data into potentially harmful hands.\n\nLet's dive together and explore a series of practical, hands-on examples on how to explore an app, dismantle it and alter it in a way it wasn't intended to be.",
-          "end_time" : "2017-04-20T16:45:00-0500",
+          "end_time" : "2017-04-20T10:45:00-0500",
           "id" : "break-your-app-before-someone-else-does",
           "name" : "Break your app before someone else does",
           "room" : "Great Room 2",
           "slot_id" : "-KdlIIuJG7JYu8gpjOzA",
           "speakers" : [ "abaotic" ],
-          "start_time" : "2017-04-20T16:00:00-0500"
+          "start_time" : "2017-04-20T10:00:00-0500"
         },
         "building-a-modern-android-ui" : {
           "date" : "2017-04-21",
           "description" : "Expectations for what makes a good mobile UI increased drastically in recent years, notably with the introduction of Material Design.\nYet, it's not always clear (or easy) how to achieve such results. This talk will cover how to take advantage of existing libraries\n(support lib, constraintlayout), technics (animations, vector drawables) and tools (android studio) in order to craft a modern UI.",
-          "end_time" : "2017-04-21T16:45:00-0500",
+          "end_time" : "2017-04-21T15:45:00-0500",
           "id" : "building-a-modern-android-ui",
           "name" : "Building a Modern Android UI",
           "room" : "Great Room 2",
           "speakers" : [ "nroard", "jhoford" ],
-          "start_time" : "2017-04-21T16:00:00-0500"
+          "start_time" : "2017-04-21T15:00:00-0500"
         },
         "building-gradle-plugins" : {
-          "date" : "2017-04-20",
+          "date" : "2017-04-21",
           "description" : "From simple tricks such as adding a git SHA to their application's version name to complex processes such as generating type-safe code from SQL files, Gradle and its plugins are powerful tools that can help developers automate and simplify their build and release process. I will go through the process of writing a simple task in Gradle to pulling it out and turning it into its own Gradle plugin.",
-          "end_time" : "2017-04-20T16:45:00-0500",
+          "end_time" : "2017-04-21T15:45:00-0500",
           "id" : "building-gradle-plugins",
           "name" : "Building Gradle Plugins",
           "room" : "Great Room 2",
           "speakers" : [ "bsills" ],
-          "start_time" : "2017-04-20T16:00:00-0500"
+          "start_time" : "2017-04-21T15:00:00-0500"
         },
         "closing-remarks" : {
           "date" : "2017-04-21",
-          "description" : "Sign in and Breakfast",
-          "end_time" : "2017-04-21T17:45:00-0500",
+          "description" : "Jerrell, John and Ryan say goodbye",
+          "end_time" : "2017-04-21T16:45:00-0500",
           "id" : "closing-remarks",
           "name" : "Closing Remarks",
           "room" : "Great Room 1",
-          "start_time" : "2017-04-21T17:00:00-0500"
+          "start_time" : "2017-04-21T16:00:00-0500"
         },
         "contextualize-apps-with-nearby-awareness" : {
           "date" : "2017-04-20",
           "description" : "Nearby is a proximity API, allowing your apps to detect and communicate with other devices around them. This talk will describe how the Nearby API can be used in your app to detect other devices and communicate with them. It'll provide an introduction to the Nearby APIs, and give an insight into best practices for adding proximity features to your app. The target audience are app developers who want to explore how communication with nearby devices can provide magical user experiences in their apps.",
-          "end_time" : "2017-04-20T20:45:00-0500",
+          "end_time" : "2017-04-20T14:45:00-0500",
           "id" : "contextualize-apps-with-nearby-awareness",
           "name" : "Contextualize Apps with Nearby + Awareness",
           "room" : "Great Room 1",
           "slot_id" : "-KdlJDEA-NOT1Y90kWi5",
           "speakers" : [ "bduff" ],
-          "start_time" : "2017-04-20T20:00:00-0500",
+          "start_time" : "2017-04-20T14:00:00-0500",
           "tracks" : [ "cloud" ]
         },
         "conversation-actions-for-google-assistant" : {
           "date" : "2017-04-20",
           "description" : "This talk will cover all the basic steps you need to perform in order to go from zero to working conversation with Google Assistant.",
-          "end_time" : "2017-04-20T16:45:00-0500",
+          "end_time" : "2017-04-20T10:45:00-0500",
           "id" : "conversation-actions-for-google-assistant",
           "name" : "Conversation Actions for Google Assistant",
           "room" : "Great Room 1",
           "slot_id" : "-KdlIIuJG7JYu8gpjOzA",
           "speakers" : [ "akelly" ],
-          "start_time" : "2017-04-20T16:00:00-0500"
+          "start_time" : "2017-04-20T10:00:00-0500"
         },
         "cool-constraint-layout" : {
-          "date" : "2017-04-20",
+          "date" : "2017-04-21",
           "description" : "ConstraintLayout is the newest layout on the Android platform. While it’s often compared directly with RelativeLayout in terms of functionality and performance. However, it actually possesses many features and ways of building layouts, even if you don’t count the shiny new features. But since it’s so new, you may not have heard of all of them yet.\n\nIn this session we will look at some examples of cool things that you can do with ConstraintLayout to more easily build complex layouts and transitions, focusing on features unique to ConstraintLayout.",
-          "end_time" : "2017-04-20T16:45:00-0500",
+          "end_time" : "2017-04-21T11:45:00-0500",
           "id" : "cool-constraint-layout",
           "name" : "Cool Constraint Layout",
           "room" : "Great Room 1",
-          "speakers" : [ "htuedao" ],
-          "start_time" : "2017-04-20T16:00:00-0500"
+          "speakers" : [ "hdao" ],
+          "start_time" : "2017-04-21T11:00:00-0500"
+        },
+        "dagger-2" : {
+          "date" : "2017-04-21",
+          "description" : "Dagger 2 is Google’s solution for dependency injection on Android. It powers some of the largest and most successful applications from Google and others, but applying it has been fraught with ambiguity and ad hoc solutions that require a lot of up-front engineering.\n\nIn an effort to make it viable for more projects, the Dagger team at Google has focused specifically on creating new features, libraries and well-documented patterns for using Dagger 2 in an Android application. The result is a structure that allows Android applications to be modular, testable, and performant with minimal boilerplate and infrastructure.\n\nThis is an overview of what has been added, how it was designed and how to apply it. Attendees should leave with a clear understanding the benefits of dependency injection in an Android app and how Dagger 2 can help realize those benefits most simply and effectively.",
+          "end_time" : "2017-04-21T10:45:00-0500",
+          "id" : "dagger-2",
+          "name" : "Dagger 2 on Android",
+          "room" : "Great Room 2",
+          "speakers" : [ "gkick" ],
+          "start_time" : "2017-04-21T10:00:00-0500",
+          "tracks" : [ "development" ]
         },
         "coordinating-space-and-time" : {
-          "date" : "2017-04-20",
+          "date" : "2017-04-21",
           "description" : "One of Android's core requirements is that the UI runs on the main thread and IO in the background. Though concurrency is powerful, it's also frustrating to deal with forking threads.\n\nIn this talk we'll:\n\n⏰ Learn how smartphone CPUs contradict your memory.\n⏰ Discuss how Android's compilers disregard your orders.\n⏰ Sync up on Java's concurrency APIs.\n⏰ See how to make sexy apps that aren't racy.\n⏰ Determine if reactive programming is the future.\n\nThis talk covers a sequence of concurrency topics. Attendees will be able to fix volatile programs and block threading bugs before they happen.",
-          "end_time" : "2017-04-20T16:45:00-0500",
+          "end_time" : "2017-04-21T14:45:00-0500",
           "id" : "coordinating-space-and-time",
           "name" : "Coordinating Space and Time",
           "room" : "Great Room 1",
           "slot_id" : "-KdhGdDgWd1bG372gIoD",
           "speakers" : [ "jwilson" ],
-          "start_time" : "2017-04-20T16:00:00-0500"
-        },
-        "dagger-2" : {
-          "date" : "2017-04-21",
-          "description" : "Dagger 2 is Google’s solution for dependency injection on Android. It powers some of the largest and most successful applications from Google and others, but applying it has been fraught with ambiguity and ad hoc solutions that require a lot of up-front engineering.\n\nIn an effort to make it viable for more projects, the Dagger team at Google has focused specifically on creating new features, libraries and well-documented patterns for using Dagger 2 in an Android application. The result is a structure that allows Android applications to be modular, testable, and performant with minimal boilerplate and infrastructure.\n\nThis is an overview of what has been added, how it was designed and how to apply it. Attendees should leave with a clear understanding the benefits of dependency injection in an Android app and how Dagger 2 can help realize those benefits most simply and effectively.",
-          "end_time" : "2017-04-20T11:45:00-0500",
-          "id" : "dagger-2",
-          "name" : "Dagger 2 on Android",
-          "room" : "Great Room 2",
-          "speakers" : [ "gkick" ],
-          "start_time" : "2017-04-20T11:00:00-0500",
-          "tracks" : [ "development" ]
+          "start_time" : "2017-04-21T14:00:00-0500"
         },
         "design-develop-deploy" : {
-          "date" : "2017-04-20",
+          "date" : "2017-04-21",
           "description" : "Previously at DramaFever (a Warner Bros. company), designers and developers focused mostly on their own tasks without the consideration of how it would affect each other - the ones designing an app and the ones eventually building it. Although we have an iterative process in place, we found ourselves repeating some of the work while working on several projects. \n\nWith our team growing and projects needing to be output faster, we decided to streamline our Android design and development process and would love to share this with all of you!\n\nIn this talk, we will walk you through our process of how to:\n1. Find common ground with your designer or developer\n2. Ship apps faster if you do the legwork beforehand \n3. Design an app from a developer’s perspective as a designer\n4. Implement designs to be more performant and responsive from the developer’s end\n\nThis talk is aimed at designers and developers.",
-          "end_time" : "2017-04-20T16:45:00-0500",
+          "end_time" : "2017-04-21T11:45:00-0500",
           "id" : "design-develop-deploy",
           "name" : "Design Develop Deploy!",
-          "room" : "great-room-1",
+          "room" : "Great Room 1",
           "speakers" : [ "yprabhu", "jmoon" ],
-          "start_time" : "2017-04-20T16:00:00-0500"
+          "start_time" : "2017-04-21T11:00:00-0500"
         },
         "from-interactions-to-insights" : {
           "date" : "2017-04-20",
@@ -357,26 +357,16 @@
           "start_time" : "2017-04-20T15:00:00-0500",
           "tracks" : [ "web" ]
         },
-        "graphics-programming-for-non-graphics-programmers" : {
-          "date" : "2017-04-21",
-          "description" : "Most Android programmers have had encounters with the Android 2D rendering API, Canvas. This API is just one of the many techniques used for real-time and offline rendering on desktop, consoles and mobile devices. In this talk, we'll go through a tour of the various rendering techniques used nowadays: vector graphics, path tracing, signed-distance fields, rasterized 3D (and its various lighting mechanisms), etc.\n",
-          "end_time" : "2017-04-21T15:45:00-0500",
-          "id" : "graphics-programming-for-non-graphics-programmers",
-          "name" : "Graphics Programming for Non-Graphics Programmers",
-          "room" : "Great Room 1",
-          "speakers" : [ "rguy" ],
-          "start_time" : "2017-04-21T15:00:00-0500"
-        },
         "i-like-the-way-you-move" : {
           "date" : "2017-04-20",
-          "description" : "Google Cardboard has been around since Google I/O 2014. It is by far the most affordable, and possibly most clever VR viewer out there today. To develop for Google Cardboard, the popular 3d game engine, Unity can be used. \n\nThis presentation will cover the  basics of developing in Unity for Google Cardboard including:\n• What is Unity and how to develop 3d apps using it.\n• How to develop for Google Cardboard in a Unity project.\n• Best practices for developing for Google Cardboard.",
-          "end_time" : "2017-04-20T17:45:00-0500",
+          "description" : "Good use of animations can not only help make your app’s UI more intuitive, but can also build emotional attachment with your users.\n\nMark Allison will explore the subtleties of why some animations work where others don’t; The distinct components of effective animation; and, of course, some detailed worked examples of how to create amazing Android animations.",
+          "end_time" : "2017-04-20T11:45:00-0500",
           "id" : "i-like-the-way-you-move",
           "name" : "I Like The Way You Move",
           "room" : "Great Room 2",
           "slot_id" : "-KdlISKeTe7EFw5t4TOm",
           "speakers" : [ "mallison" ],
-          "start_time" : "2017-04-20T17:00:00-0500"
+          "start_time" : "2017-04-20T11:00:00-0500"
         },
         "just-android-things" : {
           "date" : "2017-04-20",
@@ -402,54 +392,55 @@
         "lunch" : {
           "date" : "2017-04-20",
           "description" : "",
-          "end_time" : "2017-04-20T19:00:00-0500",
+          "end_time" : "2017-04-20T13:00:00-0500",
           "id" : "lunch",
           "name" : "Lunch",
           "room" : "Local Restaurants",
           "slot_id" : "-KdlItSCtXMMPtiP8DzH",
-          "start_time" : "2017-04-20T18:00:00-0500"
+          "start_time" : "2017-04-20T12:00:00-0500"
         },
         "lunch-2" : {
           "date" : "2017-04-21",
-          "description" : "Lorem ipsum dolor sit amet",
+          "description" : "",
           "end_time" : "2017-04-21T13:00:00-0500",
           "id" : "lunch-2",
           "name" : "Lunch",
+          "room" : "Local Restaurants",
           "start_time" : "2017-04-21T12:00:00-0500"
         },
         "mixed-reality-for-social-good" : {
           "date" : "2017-04-20",
           "description" : "Exciting times for mixed reality enthusiasts. With many AR and VR platforms now available, we're witnessing the birth of a new medium. \n\nIn many ways, this boom is similar to the personal computer revolution of the 70s and 80s. People are wondering: \"Besides games, what are these gadgets good for, anyway?\"\n\nIn this session, we'll see how people are using mixed reality for social good. Then, we'll learn about the Tango and Daydream platforms from Google. We'll use these and other platforms to build our own mixed reality experience.\n",
-          "end_time" : "2017-04-20T19:45:00-0500",
+          "end_time" : "2017-04-20T13:45:00-0500",
           "id" : "mixed-reality-for-social-good",
           "name" : "Mixed Reality for Social Good",
           "room" : "Great Room 2",
           "slot_id" : "-KdlJ5HohmLMRMl85cHf",
           "speakers" : [ "ecaron-petit-pas" ],
-          "start_time" : "2017-04-20T19:00:00-0500",
+          "start_time" : "2017-04-20T13:00:00-0500",
           "tracks" : [ "android" ]
         },
         "retrofitting-retrofit" : {
           "date" : "2017-04-20",
           "description" : "We’ve all been there: you have an app with outdated technology, and you know you should update it. But the legacy code is complicated and opaque, and due to support issues, you can’t just use the new library in the straightforward way the code samples show it. But perf gains and code clarity are on the line, so you need to find a way to make it work.\n\nWell, you’re in luck! This talk is for you, person who’s trying to make it work. Drawing from examples encountered with Pinterest’s own transition to Retrofit, we’ll explore ways to retrofit Retrofit onto an existing networking layer while balancing the interests of hundreds of millions of users relying on a performant app. Ranging from big wins to unsightly mistakes, this tour will be both a cringeworthy and infinitely practical look at what happens when you can’t start from scratch. ",
-          "end_time" : "2017-04-20T19:45:00-0500",
+          "end_time" : "2017-04-20T13:45:00-0500",
           "id" : "retrofitting-retrofit",
           "name" : "Retrofitting Retrofit",
           "room" : "Great Room 1",
           "slot_id" : "-KdlJ5HohmLMRMl85cHf",
           "speakers" : [ "clee" ],
-          "start_time" : "2017-04-20T19:00:00-0500",
+          "start_time" : "2017-04-20T13:00:00-0500",
           "tracks" : [ "web" ]
         },
         "rxjava-2-for-the-rest-of-us" : {
           "date" : "2017-04-21",
           "description" : "The Reactive Extensions for the JVM, better known as RxJava, have become a popular tool in Android development over the past years. Many new and existing libraries added support for Rx and “reactive” solutions to existing problems popped up over time. RxJava is both known for it’s power and it’s steep learning curve, so if you aren’t using RxJava already, what are you missing out on? Should you even be using RxJava?\n\nIn this talk we’ll go over what RxJava is and how you can use it to solve problems in your Android apps, one step at a time. We will discuss how you can prevent shooting yourself in the foot by looking at common mistakes you may make when using RxJava and discussing tips and tricks for keeping your reactive app manageable.",
-          "end_time" : "2017-04-21T14:45:00-0500",
+          "end_time" : "2017-04-21T13:45:00-0500",
           "id" : "rxjava-2-for-the-rest-of-us",
           "name" : "RxJava 2 for the Rest of Us",
           "room" : "Great Room 2",
           "speakers" : [ "hvisser" ],
-          "start_time" : "2017-04-21T14:00:00-0500"
+          "start_time" : "2017-04-21T13:00:00-0500"
         },
         "understanding-material-design" : {
           "date" : "2017-04-21",
@@ -485,10 +476,10 @@
         },
         "where-i-find-stairs-tango" : {
           "date" : "2017-04-20",
-          "description" : "Join Shan Motlani and Valerie Scarlata will introduce you to Angular 2 and lead you through a codelab with Angular 2 and Firebase\nWe'll go over...\n- What has changed in Angular 2 vs. Angular 1.x\n- Using TypeScript to code faster and safer\n- The building blocks of Angular 2 Apps - Components, Services and Directives\nThen we will walk you through the development flow of an Angular 2 app by building one that integrates Firebase.",
+          "description" : "Last year release of new Tango device broaden interest with this  technology. There are more devices expected to be available this year,  which will extend usage opportunity.\n\nSession focuses on recently released technologies like Tango and TensorFlow. After short introduction to Tango device and its SDK, viewer will learn how the point cloud data can be processed, displayed and prepared for further analysis.\n\nThe analysis will lead to showcase use of TensorFlow Android SDK for data processing, calculation and detection of edges on scanned 3D space using NeuralNetwork.\n\nIf you like to see how it is done, come and see how the combined system could be used to help navigate a vision impaired user.",
           "end_time" : "2017-04-20T17:45:00-0500",
           "id" : "where-i-find-stairs-tango",
-          "name" : "Where I find stairs, Tango?",
+          "name" : "Tango, Where do I find stairs?",
           "room" : "Great Room 1",
           "speakers" : [ "mperlak" ],
           "start_time" : "2017-04-20T17:00:00-0500",
@@ -497,14 +488,23 @@
         "write-less-code-and-get-more-done" : {
           "date" : "2017-04-20",
           "description" : "Mentoring and onboarding new engineers is one of the most important things you\ncan do to grow your team.  Effective and intentional mentoring decreases the number of bugs shipped to the Play Store, improves the quality of your application, and helps keep code standards high as your team grows and changes.\n\n\nYet for all of its importance, there is hardly any information about how to mentor effectively.  There are many resources about how engineers can get 4% productivity gains by learning new Android Studio shortcuts, but there are almost none about how they can get 400% productivity gains for their team by helping other developers be more productive.\n\n\nIn this talk, I'll discuss how to think about mentoring Android engineers from the ground-up.  First, we’ll discuss how to structure a plan for your mentee such that they move from “What’s an ADB?” to “Let’s use Retrofit, RxJava, and Dagger to make a testable app with MVP architecture” in no-time flat.  Next, we’ll talk about how to interact with your mentee such that every challenge helps them level-up their development skills and build your team culture.  Lastly, we’ll discuss how you can use your experience as a mentor to improve your own engineering skills.",
-          "end_time" : "2017-04-20T20:45:00-0500",
+          "end_time" : "2017-04-20T14:45:00-0500",
           "id" : "write-less-code-and-get-more-done",
           "name" : "Write Less Code and Get More Done: Multiplying Your Impact Through Mentorship",
           "room" : "Great Room 2",
           "slot_id" : "-KdlJDEA-NOT1Y90kWi5",
           "speakers" : [ "jmaltz" ],
-          "start_time" : "2017-04-20T20:00:00-0500",
+          "start_time" : "2017-04-20T14:00:00-0500",
           "tracks" : [ "cloud" ]
+        },
+        "evening-1-reception": {
+          "date" : "2017-04-20",
+          "description" : "Location to be revealed, but you’ll enjoy great food, and good company, great conversations and drinks too if that’s your thing.",
+          "end_time" : "2017-04-20T20:00:00-0500",
+          "id" : "evening-1-reception",
+          "name" : "Evening Reception",
+          "room" : "Great Room 2",
+          "start_time" : "2017-04-20T18:00:00-0500"
         }
       },
       "sessions_by_date" : {
@@ -551,7 +551,7 @@
           "tracks" : [ "cloud" ]
         }, {
           "date" : "2017-04-20",
-          "description" : "Google Cardboard has been around since Google I/O 2014. It is by far the most affordable, and possibly most clever VR viewer out there today. To develop for Google Cardboard, the popular 3d game engine, Unity can be used. \n\nThis presentation will cover the  basics of developing in Unity for Google Cardboard including:\n• What is Unity and how to develop 3d apps using it.\n• How to develop for Google Cardboard in a Unity project.\n• Best practices for developing for Google Cardboard.",
+          "description" : "Good use of animations can not only help make your app’s UI more intuitive, but can also build emotional attachment with your users.\n\nMark Allison will explore the subtleties of why some animations work where others don’t; The distinct components of effective animation; and, of course, some detailed worked examples of how to create amazing Android animations.",
           "end_time" : "2017-04-20T11:45:00-0500",
           "id" : "i-like-the-way-you-move",
           "name" : "I Like The Way You Move",
@@ -560,10 +560,11 @@
           "start_time" : "2017-04-20T11:00:00-0500"
         }, {
           "date" : "2017-04-20",
-          "description" : "Lorem ipsum dolor sit amet",
+          "description" : "",
           "end_time" : "2017-04-20T13:00:00-0500",
           "id" : "lunch",
           "name" : "Lunch",
+          "room" : "Local Restaurants",
           "start_time" : "2017-04-20T12:00:00-0500"
         }, {
           "date" : "2017-04-20",
@@ -647,14 +648,31 @@
           "tracks" : [ "android" ]
         }, {
           "date" : "2017-04-20",
-          "description" : "Join Shan Motlani and Valerie Scarlata will introduce you to Angular 2 and lead you through a codelab with Angular 2 and Firebase\nWe'll go over...\n- What has changed in Angular 2 vs. Angular 1.x\n- Using TypeScript to code faster and safer\n- The building blocks of Angular 2 Apps - Components, Services and Directives\nThen we will walk you through the development flow of an Angular 2 app by building one that integrates Firebase.",
+          "description" : "Last year release of new Tango device broaden interest with this  technology. There are more devices expected to be available this year,  which will extend usage opportunity.\n\nSession focuses on recently released technologies like Tango and TensorFlow. After short introduction to Tango device and its SDK, viewer will learn how the point cloud data can be processed, displayed and prepared for further analysis.\n\nThe analysis will lead to showcase use of TensorFlow Android SDK for data processing, calculation and detection of edges on scanned 3D space using NeuralNetwork.\n\nIf you like to see how it is done, come and see how the combined system could be used to help navigate a vision impaired user.",
           "end_time" : "2017-04-20T17:45:00-0500",
           "id" : "where-i-find-stairs-tango",
-          "name" : "Where I find stairs, Tango?",
+          "name" : "Tango, Where do I find stairs?",
           "room" : "Great Room 1",
           "speakers" : [ "mperlak" ],
           "start_time" : "2017-04-20T17:00:00-0500",
           "tracks" : [ "code-lab" ]
+        }, {
+          "date" : "2017-04-20",
+          "description" : "Sign in and Breakfast",
+          "end_time" : "2017-04-20T17:45:00-0500",
+          "id" : "android-auto-driving-the-future",
+          "name" : "Android Auto - Driving the Future",
+          "room" : "Great Room 2",
+          "speakers" : [ "pshadlyn" ],
+          "start_time" : "2017-04-20T17:00:00-0500"
+        }, {
+          "date" : "2017-04-20",
+          "description" : "Sign in and Breakfast",
+          "end_time" : "2017-04-20T20:00:00-0500",
+          "id" : "evening-1-reception",
+          "name" : "Evening Reception",
+          "room" : "Great Room 2",
+          "start_time" : "2017-04-20T18:00:00-0500"
         } ],
         "2017-04-21" : [ {
           "date" : "2017-04-21",
@@ -676,13 +694,14 @@
           "start_time" : "2017-04-21T10:00:00-0500"
         }, {
           "date" : "2017-04-21",
-          "description" : "Sign in and Breakfast",
+          "description" : "Dagger 2 is Google’s solution for dependency injection on Android. It powers some of the largest and most successful applications from Google and others, but applying it has been fraught with ambiguity and ad hoc solutions that require a lot of up-front engineering.\n\nIn an effort to make it viable for more projects, the Dagger team at Google has focused specifically on creating new features, libraries and well-documented patterns for using Dagger 2 in an Android application. The result is a structure that allows Android applications to be modular, testable, and performant with minimal boilerplate and infrastructure.\n\nThis is an overview of what has been added, how it was designed and how to apply it. Attendees should leave with a clear understanding the benefits of dependency injection in an Android app and how Dagger 2 can help realize those benefits most simply and effectively.",
           "end_time" : "2017-04-21T10:45:00-0500",
-          "id" : "android-auto-driving-the-future",
-          "name" : "Android Auto - Driving the Future",
+          "id" : "dagger-2",
+          "name" : "Dagger 2 on Android",
           "room" : "Great Room 2",
-          "speakers" : [ "pshadlyn" ],
-          "start_time" : "2017-04-21T10:00:00-0500"
+          "speakers" : [ "gkick" ],
+          "start_time" : "2017-04-21T10:00:00-0500",
+          "tracks" : [ "development" ]
         }, {
           "date" : "2017-04-21",
           "description" : "Sign in and Breakfast",
@@ -694,20 +713,20 @@
           "start_time" : "2017-04-21T11:00:00-0500"
         }, {
           "date" : "2017-04-21",
-          "description" : "Dagger 2 is Google’s solution for dependency injection on Android. It powers some of the largest and most successful applications from Google and others, but applying it has been fraught with ambiguity and ad hoc solutions that require a lot of up-front engineering.\n\nIn an effort to make it viable for more projects, the Dagger team at Google has focused specifically on creating new features, libraries and well-documented patterns for using Dagger 2 in an Android application. The result is a structure that allows Android applications to be modular, testable, and performant with minimal boilerplate and infrastructure.\n\nThis is an overview of what has been added, how it was designed and how to apply it. Attendees should leave with a clear understanding the benefits of dependency injection in an Android app and how Dagger 2 can help realize those benefits most simply and effectively.",
+          "description" : "Sign in and Breakfast",
           "end_time" : "2017-04-21T11:45:00-0500",
-          "id" : "dagger-2",
-          "name" : "Dagger 2 on Android",
+          "id" : "design-develop-deploy",
+          "name" : "Design Develop Deploy!",
           "room" : "Great Room 2",
-          "speakers" : [ "gkick" ],
-          "start_time" : "2017-04-21T11:00:00-0500",
-          "tracks" : [ "development" ]
+          "speakers" : [ "yprabhu", "jmoon" ],
+          "start_time" : "2017-04-21T11:00:00-0500"
         }, {
           "date" : "2017-04-21",
-          "description" : "Lorem ipsum dolor sit amet",
+          "description" : "",
           "end_time" : "2017-04-21T13:00:00-0500",
           "id" : "lunch-2",
           "name" : "Lunch",
+          "room" : "Local Restaurants",
           "start_time" : "2017-04-21T12:00:00-0500"
         }, {
           "date" : "2017-04-21",
@@ -722,10 +741,10 @@
           "date" : "2017-04-21",
           "description" : "Sign in and Breakfast",
           "end_time" : "2017-04-21T13:45:00-0500",
-          "id" : "design-develop-deploy",
-          "name" : "Design Develop Deploy!",
+          "id" : "rxjava-2-for-the-rest-of-us",
+          "name" : "RxJava 2 for the Rest of Us",
           "room" : "Great Room 2",
-          "speakers" : [ "yprabhu", "jmoon" ],
+          "speakers" : [ "hvisser" ],
           "start_time" : "2017-04-21T13:00:00-0500"
         }, {
           "date" : "2017-04-21",
@@ -740,55 +759,37 @@
           "date" : "2017-04-21",
           "description" : "Sign in and Breakfast",
           "end_time" : "2017-04-21T14:45:00-0500",
-          "id" : "rxjava-2-for-the-rest-of-us",
-          "name" : "RxJava 2 for the Rest of Us",
+          "id" : "advanced-android-touches",
+          "name" : "Advanced Android Touches",
           "room" : "Great Room 2",
-          "speakers" : [ "hvisser" ],
+          "speakers" : [ "cchang" ],
           "start_time" : "2017-04-21T14:00:00-0500"
         }, {
           "date" : "2017-04-21",
           "description" : "Sign in and Breakfast",
           "end_time" : "2017-04-21T15:45:00-0500",
-          "id" : "graphics-programming-for-non-graphics-programmers",
-          "name" : "Graphics Programming for Non-Graphics Programmers",
+          "id" : "building-gradle-plugins",
+          "name" : "Building Gradle Plugins",
           "room" : "Great Room 1",
-          "speakers" : [ "rguy" ],
+          "speakers" : [ "bsills" ],
           "start_time" : "2017-04-21T15:00:00-0500"
         }, {
           "date" : "2017-04-21",
           "description" : "Sign in and Breakfast",
           "end_time" : "2017-04-21T15:45:00-0500",
-          "id" : "advanced-android-touches",
-          "name" : "Advanced Android Touches",
-          "room" : "Great Room 2",
-          "speakers" : [ "cchang" ],
-          "start_time" : "2017-04-21T15:00:00-0500"
-        }, {
-          "date" : "2017-04-21",
-          "description" : "Sign in and Breakfast",
-          "end_time" : "2017-04-21T16:45:00-0500",
-          "id" : "building-gradle-plugins",
-          "name" : "Building Gradle Plugins",
-          "room" : "Great Room 1",
-          "speakers" : [ "bsills" ],
-          "start_time" : "2017-04-21T16:00:00-0500"
-        }, {
-          "date" : "2017-04-21",
-          "description" : "Sign in and Breakfast",
-          "end_time" : "2017-04-21T16:45:00-0500",
           "id" : "building-a-modern-android-ui",
           "name" : "Building a Modern Android UI",
           "room" : "Great Room 2",
           "speakers" : [ "nroard", "jhoford" ],
-          "start_time" : "2017-04-21T16:00:00-0500"
+          "start_time" : "2017-04-21T15:00:00-0500"
         }, {
           "date" : "2017-04-21",
-          "description" : "Sign in and Breakfast",
-          "end_time" : "2017-04-21T17:45:00-0500",
+          "description" : "Jerrell, John and Ryan say goodbye",
+          "end_time" : "2017-04-21T16:45:00-0500",
           "id" : "closing-remarks",
           "name" : "Closing Remarks",
           "room" : "Great Room 1",
-          "start_time" : "2017-04-21T17:00:00-0500"
+          "start_time" : "2017-04-21T16:00:00-0500"
         } ]
       },
       "speakers" : {
@@ -1076,17 +1077,6 @@
           "name" : "Raveesh Bhalla",
           "title" : "",
           "twitter" : "@raveeshbhalla",
-          "website" : ""
-        },
-        "rguy" : {
-          "bio" : "Googler",
-          "company" : "",
-          "github" : "",
-          "google" : "",
-          "id" : "rguy",
-          "name" : "Romain Guy",
-          "title" : "",
-          "twitter" : "@romainguy",
           "website" : ""
         },
         "vgonda" : {
