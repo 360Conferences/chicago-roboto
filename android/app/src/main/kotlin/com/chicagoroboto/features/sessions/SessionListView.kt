@@ -15,6 +15,7 @@ class SessionListView(context: Context, attrs: AttributeSet? = null, defStyle: I
         RecyclerView(context, attrs, defStyle), SessionListMvp.View {
 
     private val adapter: SessionAdapter
+    private var date: String? = null
 
     @Inject lateinit var presenter: SessionListMvp.Presenter
     @Inject lateinit var sessionNavigator: SessionNavigator
@@ -34,6 +35,7 @@ class SessionListView(context: Context, attrs: AttributeSet? = null, defStyle: I
     override fun onAttachedToWindow() {
         super.onAttachedToWindow()
         presenter.onAttach(this)
+        date?.let { presenter.setDate(it) }
     }
 
     override fun onDetachedFromWindow() {
@@ -42,7 +44,7 @@ class SessionListView(context: Context, attrs: AttributeSet? = null, defStyle: I
     }
 
     fun setDate(date: String) {
-        presenter.setDate(date)
+        this.date = date
     }
 
     override fun showNoSessions() {
@@ -58,6 +60,12 @@ class SessionListView(context: Context, attrs: AttributeSet? = null, defStyle: I
     override fun showSpeakers(speakers: Map<String, Speaker>) {
         adapter.speakers.clear()
         adapter.speakers.putAll(speakers)
+        adapter.notifyDataSetChanged()
+    }
+
+    override fun showFavorites(favorites: Set<String>) {
+        adapter.favorites.clear()
+        adapter.favorites.addAll(favorites)
         adapter.notifyDataSetChanged()
     }
 }

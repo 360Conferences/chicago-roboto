@@ -1,5 +1,6 @@
 package com.chicagoroboto.features.sessiondetail
 
+import com.chicagoroboto.data.FavoriteProvider
 import com.chicagoroboto.data.SessionProvider
 import com.chicagoroboto.data.SpeakerProvider
 import com.chicagoroboto.features.speakerdetail.SpeakerNavigator
@@ -13,7 +14,9 @@ class SessionDetailModule(private val speakerNavigator: SpeakerNavigator) {
         return speakerNavigator
     }
 
-    @Provides fun sessionDetailPresenter(sessionProvider: SessionProvider, speakerProvider: SpeakerProvider): SessionDetailMvp.Presenter {
-        return SessionDetailPresenter(sessionProvider, speakerProvider)
+    @Provides fun sessionDetailPresenter(sessionProvider: SessionProvider,
+                                         speakerProvider: SpeakerProvider,
+                                         favoriteProvider: FavoriteProvider): SessionDetailMvp.Presenter {
+        return SessionDetailPresenter(sessionProvider, speakerProvider, favoriteProvider)
     }
 }

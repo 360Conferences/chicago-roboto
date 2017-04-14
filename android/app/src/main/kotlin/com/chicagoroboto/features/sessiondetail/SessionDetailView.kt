@@ -3,6 +3,7 @@ package com.chicagoroboto.features.sessiondetail
 import android.app.Activity
 import android.content.Context
 import android.support.design.widget.CoordinatorLayout
+import android.support.v4.content.ContextCompat
 import android.support.v7.widget.LinearLayoutManager
 import android.util.AttributeSet
 import android.view.LayoutInflater
@@ -51,6 +52,9 @@ class SessionDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
         feedback.setOnClickListener {
             FeedbackDialog(context, sessionId!!).show()
         }
+        favorite.setOnClickListener {
+            presenter.toggleFavorite()
+        }
 
         presenter.onAttach(this)
     }
@@ -73,8 +77,10 @@ class SessionDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
         val now = Date()
         if (now.before(session.startTime)) {
             status.visibility = GONE
+            favorite.visibility = VISIBLE
         } else {
             status.visibility = VISIBLE
+            favorite.visibility = GONE
 
             val statusString = if (now.before(session.endTime)) {
                 R.string.status_in_progress
@@ -91,5 +97,10 @@ class SessionDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
         speakerAdapter.speakers.clear()
         speakerAdapter.speakers.addAll(speakers)
         speakerAdapter.notifyDataSetChanged()
+    }
+
+    override fun setIsFavorite(isFavorite: Boolean) {
+        val drawable = if (isFavorite) R.drawable.ic_favorite_white_24dp else R.drawable.ic_favorite_border_white_24dp
+        favorite.setImageDrawable(ContextCompat.getDrawable(context, drawable))
     }
 }

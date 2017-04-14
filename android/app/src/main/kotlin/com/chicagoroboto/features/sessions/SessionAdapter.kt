@@ -4,11 +4,13 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import com.chicagoroboto.R
 import com.chicagoroboto.model.Session
 import com.chicagoroboto.model.Speaker
 import kotlinx.android.synthetic.main.item_session.view.*
+import java.text.DateFormat
 import java.text.SimpleDateFormat
 
 internal class SessionAdapter(val onSessionSelectedListener: ((session: Session) -> Unit)) :
@@ -16,7 +18,8 @@ internal class SessionAdapter(val onSessionSelectedListener: ((session: Session)
 
     val sessions: MutableList<Session> = mutableListOf()
     val speakers: MutableMap<String, Speaker> = mutableMapOf()
-    val format = SimpleDateFormat.getTimeInstance(SimpleDateFormat.SHORT)
+    val favorites: MutableSet<String> = mutableSetOf()
+    val format: DateFormat = SimpleDateFormat.getTimeInstance(SimpleDateFormat.SHORT)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_session, parent, false)
@@ -44,6 +47,12 @@ internal class SessionAdapter(val onSessionSelectedListener: ((session: Session)
             holder.room.text = session.room
         }
 
+        if (favorites.contains(session.id)) {
+            holder.favorite.visibility = View.VISIBLE
+        } else {
+            holder.favorite.visibility = View.GONE
+        }
+
         if (position > 0) {
             val previous = sessions[position - 1]
             holder.timeslot.visibility = if (previous.startTime == session.startTime) {
@@ -69,14 +78,15 @@ internal class SessionAdapter(val onSessionSelectedListener: ((session: Session)
         val title: TextView
         val speakers: TextView
         val room: TextView
+        val favorite: ImageView
 
         init {
             timeslot = super.itemView.timeslot
             title = super.itemView.title
             speakers = super.itemView.speakers
             room = super.itemView.room
+            favorite = super.itemView.favorite
             itemView.setOnClickListener(this)
-
         }
 
         override fun onClick(v: View?) {
