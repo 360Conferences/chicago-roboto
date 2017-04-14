@@ -12,7 +12,7 @@ class InfoView(context: Context, attrs: AttributeSet? = null) : RecyclerView(con
 
     @Inject lateinit var presenter: InfoMvp.Presenter
 
-    private var adapter: InfoAdapter
+    private val adapter: InfoAdapter
 
     init {
         context.getAppComponent().infoComponent(InfoModule(context)).inject(this)
