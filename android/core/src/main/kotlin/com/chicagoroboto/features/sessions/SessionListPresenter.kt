@@ -1,12 +1,16 @@
 package com.chicagoroboto.features.sessions
 
+import com.chicagoroboto.data.FavoriteProvider
 import com.chicagoroboto.data.SessionProvider
 import com.chicagoroboto.data.SpeakerProvider
 
-class SessionListPresenter(private val sessionProvider: SessionProvider, private val speakerProvider: SpeakerProvider)
+class SessionListPresenter(private val sessionProvider: SessionProvider,
+                           private val speakerProvider: SpeakerProvider,
+                           private val favoriteProvider: FavoriteProvider)
         : SessionListMvp.Presenter {
 
     private var view: SessionListMvp.View? = null
+    private var date: String? = null
 
     override fun onAttach(view: SessionListMvp.View) {
         this.view = view
@@ -25,10 +29,17 @@ class SessionListPresenter(private val sessionProvider: SessionProvider, private
                 this.view?.showSpeakers(speakers)
             }
         })
+        favoriteProvider.removeFavoriteListener(date)
+        favoriteProvider.addFavoriteListener(date, { sessions ->
+            this.view?.showFavorites(sessions)
+        })
     }
 
     override fun onDetach() {
         this.view = null
         sessionProvider.removeSessionListener(this)
+        date?.let {
+            favoriteProvider.removeFavoriteListener(it)
+        }
     }
 }

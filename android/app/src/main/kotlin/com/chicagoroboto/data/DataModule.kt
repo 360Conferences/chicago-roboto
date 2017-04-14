@@ -1,6 +1,8 @@
 package com.chicagoroboto.data
 
 import android.app.Application
+import android.content.Context
+import android.content.SharedPreferences
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import dagger.Module
@@ -9,6 +11,14 @@ import javax.inject.Singleton
 
 @Module
 class DataModule {
+
+    @Provides @Singleton fun provideSharedPreferences(application: Application): SharedPreferences {
+        return application.getSharedPreferences("app_prefs", Context.MODE_PRIVATE)
+    }
+
+    @Provides @Singleton fun provideFavoriteProvider(sharedPreferences: SharedPreferences): FavoriteProvider {
+        return LocalFavoriteProvider(sharedPreferences)
+    }
 
     @Provides @Singleton fun providePreferencesProvider(application: Application): PreferencesProvider {
         return PreferencesProvider(application)

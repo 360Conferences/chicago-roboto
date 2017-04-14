@@ -1,5 +1,6 @@
 package com.chicagoroboto.features.sessions
 
+import com.chicagoroboto.data.FavoriteProvider
 import com.chicagoroboto.data.SessionDateProvider
 import com.chicagoroboto.data.SessionProvider
 import com.chicagoroboto.data.SpeakerProvider
@@ -13,8 +14,10 @@ class SessionListModule() {
         return SessionDatePresenter(sessionDateProvider)
     }
 
-    @Provides fun sessionListPresenter(sessionProvider: SessionProvider, speakerProvider: SpeakerProvider): SessionListMvp.Presenter {
-        return SessionListPresenter(sessionProvider, speakerProvider)
+    @Provides fun sessionListPresenter(sessionProvider: SessionProvider,
+                                       speakerProvider: SpeakerProvider,
+                                       favoriteProvider: FavoriteProvider): SessionListMvp.Presenter {
+        return SessionListPresenter(sessionProvider, speakerProvider, favoriteProvider)
     }
 
 }
