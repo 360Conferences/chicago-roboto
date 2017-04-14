@@ -100,4 +100,12 @@ class MainActivity : AppCompatActivity(), SessionNavigator, SpeakerNavigator, Na
         SpeakerDetailActivity.navigate(this, id, image)
     }
 
+    override fun onBackPressed() {
+        if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
+            drawer_layout.closeDrawer(GravityCompat.START)
+        } else {
+            super.onBackPressed()
+        }
+    }
+
 }
