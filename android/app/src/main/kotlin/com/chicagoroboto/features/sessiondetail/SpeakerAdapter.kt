@@ -9,7 +9,10 @@ import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.chicagoroboto.R
 import com.chicagoroboto.model.Speaker
-import kotlinx.android.synthetic.main.item_speaker.view.*
+import com.chicagoroboto.utils.DrawableUtils
+import kotlinx.android.synthetic.main.item_speaker.view.image
+import kotlinx.android.synthetic.main.item_speaker.view.name
+import kotlinx.android.synthetic.main.item_speaker.view.title
 
 internal class SpeakerAdapter(val wrapsWidth: Boolean = true, val onSpeakerClickedListener: ((speaker: Speaker, view: View) -> Unit)) :
         RecyclerView.Adapter<SpeakerAdapter.ViewHolder>() {
@@ -53,7 +56,7 @@ internal class SpeakerAdapter(val wrapsWidth: Boolean = true, val onSpeakerClick
             Glide.with(itemView.context)
                 .load(speaker.avatar)
                 .asBitmap()
-                .placeholder(R.drawable.ph_speaker)
+                .placeholder(DrawableUtils.create(itemView.context, R.drawable.ph_speaker))
                 .into(image)
         }
 

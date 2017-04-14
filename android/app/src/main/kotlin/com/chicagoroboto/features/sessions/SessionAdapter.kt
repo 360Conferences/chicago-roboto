@@ -11,6 +11,7 @@ import android.widget.TextView
 import com.chicagoroboto.R
 import com.chicagoroboto.model.Session
 import com.chicagoroboto.model.Speaker
+import com.chicagoroboto.utils.DrawableUtils
 import kotlinx.android.synthetic.main.item_session.view.favorite
 import kotlinx.android.synthetic.main.item_session.view.room
 import kotlinx.android.synthetic.main.item_session.view.speakers
@@ -47,6 +48,11 @@ internal class SessionAdapter(val onSessionSelectedListener: ((session: Session)
         } else {
             holder.speakers.visibility = View.VISIBLE
             holder.speakers.text = sessionSpeakers.map { it?.name }.joinToString()
+            holder.room.setCompoundDrawablesWithIntrinsicBounds(
+                DrawableUtils.create(context, R.drawable.ic_speaker),
+                null,
+                null,
+                null)
         }
 
         if (session.room == null) {
@@ -54,6 +60,11 @@ internal class SessionAdapter(val onSessionSelectedListener: ((session: Session)
         } else {
             holder.room.visibility = View.VISIBLE
             holder.room.text = session.room
+            holder.room.setCompoundDrawablesWithIntrinsicBounds(
+                DrawableUtils.create(context, R.drawable.ic_room),
+                null,
+                null,
+                null)
         }
 
         if (favorites.contains(session.id)) {

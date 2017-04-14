@@ -3,7 +3,6 @@ package com.chicagoroboto.features.sessiondetail
 import android.app.Activity
 import android.content.Context
 import android.support.design.widget.CoordinatorLayout
-import android.support.v4.content.ContextCompat
 import android.support.v7.widget.LinearLayoutManager
 import android.text.format.DateUtils
 import android.util.AttributeSet
@@ -14,6 +13,7 @@ import com.chicagoroboto.features.sessiondetail.feedback.FeedbackDialog
 import com.chicagoroboto.features.speakerdetail.SpeakerNavigator
 import com.chicagoroboto.model.Session
 import com.chicagoroboto.model.Speaker
+import com.chicagoroboto.utils.DrawableUtils
 import kotlinx.android.synthetic.main.view_session_detail.view.banner
 import kotlinx.android.synthetic.main.view_session_detail.view.description
 import kotlinx.android.synthetic.main.view_session_detail.view.favorite
@@ -112,7 +112,11 @@ class SessionDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
     }
 
     override fun setIsFavorite(isFavorite: Boolean) {
-        val drawable = if (isFavorite) R.drawable.ic_favorite_white_24dp else R.drawable.ic_favorite_border_white_24dp
-        favorite.setImageDrawable(ContextCompat.getDrawable(context, drawable))
+        val drawable = if (isFavorite) {
+            DrawableUtils.create(context, R.drawable.ic_favorite_white_24dp)
+        } else {
+            DrawableUtils.create(context, R.drawable.ic_favorite_border_white_24dp)
+        }
+        favorite.setImageDrawable(drawable)
     }
 }

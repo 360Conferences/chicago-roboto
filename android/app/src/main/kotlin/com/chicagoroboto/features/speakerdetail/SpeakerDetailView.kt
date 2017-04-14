@@ -15,6 +15,7 @@ import com.chicagoroboto.R
 import com.chicagoroboto.ext.getActivity
 import com.chicagoroboto.ext.getComponent
 import com.chicagoroboto.model.Speaker
+import com.chicagoroboto.utils.DrawableUtils
 import kotlinx.android.synthetic.main.view_speaker_detail.view.bio
 import kotlinx.android.synthetic.main.view_speaker_detail.view.image
 import kotlinx.android.synthetic.main.view_speaker_detail.view.name
@@ -66,6 +67,11 @@ class SpeakerDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
         if (speaker.twitter != null && speaker.twitter!!.isNotEmpty()) {
             twitter.visibility = VISIBLE
             twitter.text = speaker.twitter
+            twitter.setCompoundDrawablesWithIntrinsicBounds(
+                DrawableUtils.create(context, R.drawable.ic_logo_twitter),
+                null,
+                null,
+                null)
         } else {
             twitter.visibility = GONE
         }
