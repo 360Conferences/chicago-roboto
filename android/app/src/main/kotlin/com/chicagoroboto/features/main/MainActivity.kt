@@ -3,6 +3,7 @@ package com.chicagoroboto.features.main
 import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.NavigationView
+import android.support.v4.view.GravityCompat
 import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
 import android.view.View
@@ -54,6 +55,16 @@ class MainActivity : AppCompatActivity(), SessionNavigator, SpeakerNavigator, Na
         } else {
             return false
         }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        when (item?.itemId) {
+            android.R.id.home -> {
+                drawer_layout.openDrawer(GravityCompat.START)
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     private fun showView(viewId: Int): Boolean {
