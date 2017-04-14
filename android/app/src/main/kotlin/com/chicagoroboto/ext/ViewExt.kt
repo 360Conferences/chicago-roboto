@@ -10,7 +10,7 @@ fun View.getActivity(): Activity? {
     if (context is ContextWrapper) {
       context = context.baseContext
     } else {
-      context = null
+      return null
     }
   }
   return context
