@@ -1,6 +1,8 @@
 package com.chicagoroboto.features.sessions
 
 import android.support.v7.widget.RecyclerView
+import android.text.format.DateUtils
+import android.text.format.DateUtils.formatDateTime
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,9 +11,12 @@ import android.widget.TextView
 import com.chicagoroboto.R
 import com.chicagoroboto.model.Session
 import com.chicagoroboto.model.Speaker
-import kotlinx.android.synthetic.main.item_session.view.*
-import java.text.DateFormat
-import java.text.SimpleDateFormat
+import com.chicagoroboto.utils.DrawableUtils
+import kotlinx.android.synthetic.main.item_session.view.favorite
+import kotlinx.android.synthetic.main.item_session.view.room
+import kotlinx.android.synthetic.main.item_session.view.speakers
+import kotlinx.android.synthetic.main.item_session.view.timeslot
+import kotlinx.android.synthetic.main.item_session.view.title
 
 internal class SessionAdapter(val onSessionSelectedListener: ((session: Session) -> Unit)) :
         RecyclerView.Adapter<SessionAdapter.ViewHolder>() {
@@ -19,7 +24,6 @@ internal class SessionAdapter(val onSessionSelectedListener: ((session: Session)
     val sessions: MutableList<Session> = mutableListOf()
     val speakers: MutableMap<String, Speaker> = mutableMapOf()
     val favorites: MutableSet<String> = mutableSetOf()
-    val format: DateFormat = SimpleDateFormat.getTimeInstance(SimpleDateFormat.SHORT)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_session, parent, false)
@@ -27,9 +31,15 @@ internal class SessionAdapter(val onSessionSelectedListener: ((session: Session)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val context = holder.itemView.context
         val session = sessions[position]
+
         holder.session = session
-        holder.timeslot.text = "${format.format(session.startTime)}\nto\n${format.format(session.endTime)}"
+
+        val startTime = formatDateTime(context, session.startTime?.time ?: 0, DateUtils.FORMAT_SHOW_TIME)
+        val endTime = formatDateTime(context, session.endTime?.time ?: 0, DateUtils.FORMAT_SHOW_TIME)
+        holder.timeslot.text = String.format(context.getString(R.string.session_time), startTime, endTime)
+
         holder.title.text = session.name
 
         val sessionSpeakers = session.speakers?.map { speakers[it] }
@@ -38,6 +48,11 @@ internal class SessionAdapter(val onSessionSelectedListener: ((session: Session)
         } else {
             holder.speakers.visibility = View.VISIBLE
             holder.speakers.text = sessionSpeakers.map { it?.name }.joinToString()
+            holder.room.setCompoundDrawablesWithIntrinsicBounds(
+                DrawableUtils.create(context, R.drawable.ic_speaker),
+                null,
+                null,
+                null)
         }
 
         if (session.room == null) {
@@ -45,6 +60,11 @@ internal class SessionAdapter(val onSessionSelectedListener: ((session: Session)
         } else {
             holder.room.visibility = View.VISIBLE
             holder.room.text = session.room
+            holder.room.setCompoundDrawablesWithIntrinsicBounds(
+                DrawableUtils.create(context, R.drawable.ic_room),
+                null,
+                null,
+                null)
         }
 
         if (favorites.contains(session.id)) {

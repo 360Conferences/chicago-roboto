@@ -29,7 +29,7 @@ class SpeakerListView(context: Context, attrs: AttributeSet? = null, defStyle: I
         layoutManager = LinearLayoutManager(context, VERTICAL, false)
         addItemDecoration(DividerItemDecoration(context))
         adapter = SpeakerAdapter(false, { speaker, view ->
-            speakerNavigator.nagivateToSpeaker(speaker.id!!, view)
+            speakerNavigator.navigateToSpeaker(speaker.id!!, view)
         })
         super.setAdapter(adapter)
     }

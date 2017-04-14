@@ -9,7 +9,7 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.0'
+        classpath 'com.android.tools.build:gradle:2.3.1'
         classpath 'com.google.gms:google-services:3.0.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 
@@ -32,6 +32,5 @@ task clean(type: Delete) {
 }
 
 ext {
-    gmsVersion = '10.0.1';
-    firebaseVersion = '10.0.1';
+    gpsVersion = '10.2.1'
 }

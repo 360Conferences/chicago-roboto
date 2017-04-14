@@ -3,8 +3,8 @@ package com.chicagoroboto.features.sessiondetail
 import android.app.Activity
 import android.content.Context
 import android.support.design.widget.CoordinatorLayout
-import android.support.v4.content.ContextCompat
 import android.support.v7.widget.LinearLayoutManager
+import android.text.format.DateUtils
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import com.chicagoroboto.R
@@ -13,6 +13,7 @@ import com.chicagoroboto.features.sessiondetail.feedback.FeedbackDialog
 import com.chicagoroboto.features.speakerdetail.SpeakerNavigator
 import com.chicagoroboto.model.Session
 import com.chicagoroboto.model.Speaker
+import com.chicagoroboto.utils.DrawableUtils
 import kotlinx.android.synthetic.main.view_session_detail.view.banner
 import kotlinx.android.synthetic.main.view_session_detail.view.description
 import kotlinx.android.synthetic.main.view_session_detail.view.favorite
@@ -20,7 +21,6 @@ import kotlinx.android.synthetic.main.view_session_detail.view.feedback
 import kotlinx.android.synthetic.main.view_session_detail.view.speakers
 import kotlinx.android.synthetic.main.view_session_detail.view.status
 import kotlinx.android.synthetic.main.view_session_detail.view.toolbar
-import java.text.SimpleDateFormat
 import java.util.Date
 import javax.inject.Inject
 
@@ -30,7 +30,6 @@ class SessionDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
     @Inject lateinit var speakerNavigator: SpeakerNavigator
     @Inject lateinit var presenter: SessionDetailMvp.Presenter
 
-    private val format = SimpleDateFormat("h:mma")
     private val speakerAdapter: SpeakerAdapter
     private var sessionId: String? = null
 
@@ -40,8 +39,6 @@ class SessionDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
     init {
         context.getComponent<SessionDetailComponent>().inject(this)
 
-        fitsSystemWindows = true
-
         LayoutInflater.from(context).inflate(R.layout.view_session_detail, this, true)
         toolbar.setNavigationOnClickListener {
             if (context is Activity) {
@@ -50,7 +47,7 @@ class SessionDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
         }
 
         speakerAdapter = SpeakerAdapter(true, { speaker, image ->
-            speakerNavigator.nagivateToSpeaker(speaker.id!!, image)
+            speakerNavigator.navigateToSpeaker(speaker.id!!, image)
         })
         speakers.adapter = speakerAdapter
         speakers.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
@@ -79,7 +76,14 @@ class SessionDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
 
     override fun showSessionDetail(session: Session) {
         toolbar.title = session.name
-        banner.text = "${session.room}, ${format.format(session.startTime)}-${format.format(session.endTime)}"
+
+        val startTime = DateUtils.formatDateTime(context, session.startTime?.time ?: 0,
+            DateUtils.FORMAT_SHOW_TIME)
+        val endTime = DateUtils.formatDateTime(context, session.endTime?.time ?: 0,
+            DateUtils.FORMAT_SHOW_TIME)
+        banner.text = String.format(context.getString(R.string.session_detail_time), session.room,
+            startTime, endTime)
+
         description.text = session.description
 
         val now = Date()
@@ -108,7 +112,11 @@ class SessionDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
     }
 
     override fun setIsFavorite(isFavorite: Boolean) {
-        val drawable = if (isFavorite) R.drawable.ic_favorite_white_24dp else R.drawable.ic_favorite_border_white_24dp
-        favorite.setImageDrawable(ContextCompat.getDrawable(context, drawable))
+        val drawable = if (isFavorite) {
+            DrawableUtils.create(context, R.drawable.ic_favorite_white_24dp)
+        } else {
+            DrawableUtils.create(context, R.drawable.ic_favorite_border_white_24dp)
+        }
+        favorite.setImageDrawable(drawable)
     }
 }

@@ -9,7 +9,7 @@ import com.chicagoroboto.features.speakerdetail.SpeakerDetailActivity
 import com.chicagoroboto.features.speakerdetail.SpeakerNavigator
 import kotlinx.android.synthetic.main.activity_session_detail.*
 
-class SessionDetailActivity() : AppCompatActivity(), SpeakerNavigator {
+class SessionDetailActivity : AppCompatActivity(), SpeakerNavigator {
     private lateinit var component: SessionDetailComponent
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,7 +29,7 @@ class SessionDetailActivity() : AppCompatActivity(), SpeakerNavigator {
         }
     }
 
-    override fun nagivateToSpeaker(id: String, image: View?) {
+    override fun navigateToSpeaker(id: String, image: View?) {
         SpeakerDetailActivity.navigate(this, id, image)
     }
 

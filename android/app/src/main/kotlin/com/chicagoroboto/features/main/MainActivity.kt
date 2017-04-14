@@ -1,18 +1,12 @@
 package com.chicagoroboto.features.main
 
 import android.content.Intent
-import android.os.Build.VERSION.SDK_INT
-import android.os.Build.VERSION_CODES.LOLLIPOP
 import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
-import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
 import android.view.View
-import android.view.View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-import android.view.View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-import android.view.WindowInsets
 import com.chicagoroboto.R
 import com.chicagoroboto.ext.getAppComponent
 import com.chicagoroboto.features.info.InfoView
@@ -34,38 +28,24 @@ class MainActivity : AppCompatActivity(), SessionNavigator, SpeakerNavigator, Na
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setTitle(R.string.event_name)
+
         component = getAppComponent().mainComponent(MainModule(this, this))
 
         setContentView(R.layout.activity_main)
-        if (SDK_INT >= LOLLIPOP) {
-            findViewById(android.R.id.content).systemUiVisibility = SYSTEM_UI_FLAG_LAYOUT_STABLE or SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-            val doesNotConsume: (View, WindowInsets) -> WindowInsets = { v, insets ->
-                v.onApplyWindowInsets(insets)
-                insets
-            }
-            toolbar.setOnApplyWindowInsetsListener(doesNotConsume)
-            nav_view.getHeaderView(0).setOnApplyWindowInsetsListener(doesNotConsume)
-        }
 
         setSupportActionBar(toolbar)
 
-        val toggle = ActionBarDrawerToggle(this, drawer_layout, toolbar, R.string.open_drawer, R.string.close_drawer)
-        drawer_layout.addDrawerListener(toggle)
-        toggle.syncState()
+        supportActionBar?.let {
+            it.setHomeAsUpIndicator(R.drawable.ic_menu)
+            it.setDisplayHomeAsUpEnabled(true)
+        }
+
+        setTitle(R.string.event_name)
 
         showView(R.id.action_schedule)
 
         nav_view.setNavigationItemSelectedListener(this)
         nav_view.setCheckedItem(R.id.action_schedule)
-    }
-
-    override fun onBackPressed() {
-        if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
-            drawer_layout.closeDrawer(GravityCompat.START)
-        } else {
-            super.onBackPressed()
-        }
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
@@ -75,6 +55,16 @@ class MainActivity : AppCompatActivity(), SessionNavigator, SpeakerNavigator, Na
         } else {
             return false
         }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        when (item?.itemId) {
+            android.R.id.home -> {
+                drawer_layout.openDrawer(GravityCompat.START)
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     private fun showView(viewId: Int): Boolean {
@@ -106,8 +96,16 @@ class MainActivity : AppCompatActivity(), SessionNavigator, SpeakerNavigator, Na
         startActivity(intent)
     }
 
-    override fun nagivateToSpeaker(id: String, image: View?) {
+    override fun navigateToSpeaker(id: String, image: View?) {
         SpeakerDetailActivity.navigate(this, id, image)
+    }
+
+    override fun onBackPressed() {
+        if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
+            drawer_layout.closeDrawer(GravityCompat.START)
+        } else {
+            super.onBackPressed()
+        }
     }
 
 }

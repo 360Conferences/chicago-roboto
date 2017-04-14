@@ -41,8 +41,6 @@
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:drawableLeft="@drawable/ic_room"
-                android:drawableStart="@drawable/ic_room"
                 android:drawablePadding="4dp"
                 tools:text="Michigan Room"/>
 
@@ -54,8 +52,6 @@
                 android:layout_marginBottom="4dp"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:drawableLeft="@drawable/ic_speaker"
-                android:drawableStart="@drawable/ic_speaker"
                 android:drawablePadding="4dp"
                 tools:text="Awesome people"/>
             <ImageView
