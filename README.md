@@ -1,14 +1,13 @@
-# Windy City DevCon
+# Chicago Roboto
+This is the app for Chicago Roboto 2017. It is based entirely on the [Firebase](https://firebase.google.com) data in `data.json`.
 
-This is the app for Windy City DevCon 2016.  It is based entirely on the [Firebase](https://firebase.google.com) data in `data.json`.
-
-The app should be easily customizable to other deveveloper conferences by simply:
+The app should be easily customizable to other developer conferences by simply:
 
 1. Setting up your own Firebase instance, and replacing the `google-services.json` file with your own.
 1. Updating the `data.json` file with your conference details, keeping the same structure, and uploading it to Firebase.
-1. Updates graphical assets and strings.
+1. Updating graphical assets and strings.
 
-**Note:** There is one place in the app that is currently hard coded, and that is the speaker avatar URL.  You can simply update this is `Speaker.kt:12` until it goes away.
+**Note:** There is one place in the app that is currently hard coded, and that is the speaker avatar URL.  You can simply update this in `Speaker.kt:12` until it goes away.
 
 Once a session has started, users will have the option to submit feedback for the session. Check the `feedback` directory for scripts to process that feedback and generate emails to send to speakers.
 
