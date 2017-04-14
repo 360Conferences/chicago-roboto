@@ -2,16 +2,26 @@ package com.chicagoroboto.features.speakerdetail
 
 import android.app.Activity
 import android.content.Context
+import android.graphics.Bitmap
+import android.graphics.drawable.Drawable
 import android.support.constraint.ConstraintLayout
+import android.support.v4.app.ActivityCompat
 import android.support.v4.view.ViewCompat
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import com.bumptech.glide.Glide
+import com.bumptech.glide.request.target.BitmapImageViewTarget
 import com.chicagoroboto.R
+import com.chicagoroboto.ext.getActivity
 import com.chicagoroboto.ext.getComponent
 import com.chicagoroboto.model.Speaker
-import kotlinx.android.synthetic.main.view_speaker_detail.view.*
+import kotlinx.android.synthetic.main.view_speaker_detail.view.bio
+import kotlinx.android.synthetic.main.view_speaker_detail.view.image
+import kotlinx.android.synthetic.main.view_speaker_detail.view.name
+import kotlinx.android.synthetic.main.view_speaker_detail.view.toolbar
+import kotlinx.android.synthetic.main.view_speaker_detail.view.twitter
 import javax.inject.Inject
+
 
 class SpeakerDetailView(context: Context, attrs: AttributeSet? = null, defStyle: Int = 0) :
         ConstraintLayout(context, attrs, defStyle), SpeakerDetailMvp.View {
@@ -24,10 +34,16 @@ class SpeakerDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
         context.getComponent<SpeakerDetailComponent>().inject(this)
 
         LayoutInflater.from(context).inflate(R.layout.view_speaker_detail, this, true)
-        ViewCompat.setTransitionName(image, "image")
+
+        var speakerId = ""
+        getActivity()?.let {
+            speakerId = it.intent.getStringExtra("speaker_id")
+        }
+
+        ViewCompat.setTransitionName(image, "image_$speakerId")
         toolbar.setNavigationOnClickListener {
             if (context is Activity) {
-                context.finish()
+                ActivityCompat.finishAfterTransition(context)
             }
         }
 
@@ -59,7 +75,17 @@ class SpeakerDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
                 .asBitmap()
                 .centerCrop()
                 .dontAnimate()
-                .into(image)
+                .into(object : BitmapImageViewTarget(image) {
+                    override fun setResource(resource: Bitmap?) {
+                        image.setImageBitmap(resource)
+                        ActivityCompat.startPostponedEnterTransition(getActivity())
+                    }
+
+                    override fun onLoadFailed(e: Exception?, errorDrawable: Drawable?) {
+                        super.onLoadFailed(e, errorDrawable)
+                        ActivityCompat.startPostponedEnterTransition(getActivity())
+                    }
+                })
     }
 
 }

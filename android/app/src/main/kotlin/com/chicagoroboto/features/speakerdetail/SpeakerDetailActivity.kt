@@ -1,13 +1,19 @@
 package com.chicagoroboto.features.speakerdetail
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
+import android.os.Build.VERSION
+import android.os.Build.VERSION_CODES
 import android.os.Bundle
+import android.support.v4.util.Pair
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import com.chicagoroboto.R
+import com.chicagoroboto.ext.getActivity
 import com.chicagoroboto.ext.getAppComponent
-import kotlinx.android.synthetic.main.activity_speaker_detail.*
+import kotlinx.android.synthetic.main.activity_speaker_detail.speaker_detail_view
+import java.util.ArrayList
 
 class SpeakerDetailActivity : AppCompatActivity() {
 
@@ -16,13 +22,40 @@ class SpeakerDetailActivity : AppCompatActivity() {
             val intent = Intent(activity, SpeakerDetailActivity::class.java)
             intent.putExtra("speaker_id", speakerId)
 
+            // FIXME: the shared image is transition properly. The start/end locations are off
 //            if (image != null) {
-//                ViewCompat.setTransitionName(image, "image")
-//                val options = ActivityOptionsCompat.makeSceneTransitionAnimation(activity, image, "image")
+//                ViewCompat.setTransitionName(image, "image_$speakerId")
+//                val options = ActivityOptionsCompat.makeSceneTransitionAnimation(activity,
+//                    *buildTransitionPairs(image))
 //                ActivityCompat.startActivity(activity, intent, options.toBundle())
 //            } else {
                 activity.startActivity(intent)
 //            }
+        }
+
+        @SuppressLint("NewApi") @JvmStatic
+        private fun buildTransitionPairs(view: View): Array<Pair<View, String>> {
+            val pairs = ArrayList<Pair<View, String>>()
+
+            view.getActivity()?.let {
+                val decor = it.window.decorView
+
+                val statusBarBackground = decor.findViewById(android.R.id.statusBarBackground)
+                if (statusBarBackground != null) {
+                    pairs.add(Pair.create(statusBarBackground, statusBarBackground.transitionName))
+                }
+
+                val navBar = decor.findViewById(android.R.id.navigationBarBackground)
+                if (navBar != null) {
+                    pairs.add(Pair.create(navBar, navBar.transitionName))
+                }
+
+                pairs.add(Pair.create(view, view.transitionName))
+
+                return pairs.toTypedArray()
+            }
+
+            return pairs.toTypedArray()
         }
     }
 
@@ -31,6 +64,10 @@ class SpeakerDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         component = getAppComponent().speakerDetailComponent()
+
+        if (VERSION.SDK_INT >= VERSION_CODES.LOLLIPOP) {
+            postponeEnterTransition()
+        }
 
         setContentView(R.layout.activity_speaker_detail)
 
