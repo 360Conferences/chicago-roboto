@@ -13,9 +13,15 @@ import com.chicagoroboto.features.sessiondetail.feedback.FeedbackDialog
 import com.chicagoroboto.features.speakerdetail.SpeakerNavigator
 import com.chicagoroboto.model.Session
 import com.chicagoroboto.model.Speaker
-import kotlinx.android.synthetic.main.view_session_detail.view.*
+import kotlinx.android.synthetic.main.view_session_detail.view.banner
+import kotlinx.android.synthetic.main.view_session_detail.view.description
+import kotlinx.android.synthetic.main.view_session_detail.view.favorite
+import kotlinx.android.synthetic.main.view_session_detail.view.feedback
+import kotlinx.android.synthetic.main.view_session_detail.view.speakers
+import kotlinx.android.synthetic.main.view_session_detail.view.status
+import kotlinx.android.synthetic.main.view_session_detail.view.toolbar
 import java.text.SimpleDateFormat
-import java.util.*
+import java.util.Date
 import javax.inject.Inject
 
 class SessionDetailView(context: Context, attrs: AttributeSet? = null, defStyle: Int = 0) :
@@ -33,6 +39,8 @@ class SessionDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
 
     init {
         context.getComponent<SessionDetailComponent>().inject(this)
+
+        fitsSystemWindows = true
 
         LayoutInflater.from(context).inflate(R.layout.view_session_detail, this, true)
         toolbar.setNavigationOnClickListener {
