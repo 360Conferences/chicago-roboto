@@ -25,7 +25,10 @@ class DataModule {
     }
 
     @Provides @Singleton fun provideDatabase(@EventId eventId: String): DatabaseReference {
-        return FirebaseDatabase.getInstance().reference.child("events").child(eventId)
+        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
+        val eventRef = FirebaseDatabase.getInstance().reference.child("events").child(eventId)
+        eventRef.keepSynced(true)
+        return eventRef
     }
 
     @Provides @Singleton fun provideSessionDateProvider(db: DatabaseReference): SessionDateProvider {
