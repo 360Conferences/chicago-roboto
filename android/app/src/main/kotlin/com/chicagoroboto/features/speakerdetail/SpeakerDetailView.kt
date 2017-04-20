@@ -2,8 +2,10 @@ package com.chicagoroboto.features.speakerdetail
 
 import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
+import android.net.Uri
 import android.support.constraint.ConstraintLayout
 import android.support.v4.app.ActivityCompat
 import android.support.v4.view.ViewCompat
@@ -17,6 +19,7 @@ import com.chicagoroboto.ext.getComponent
 import com.chicagoroboto.model.Speaker
 import com.chicagoroboto.utils.DrawableUtils
 import kotlinx.android.synthetic.main.view_speaker_detail.view.bio
+import kotlinx.android.synthetic.main.view_speaker_detail.view.github
 import kotlinx.android.synthetic.main.view_speaker_detail.view.image
 import kotlinx.android.synthetic.main.view_speaker_detail.view.name
 import kotlinx.android.synthetic.main.view_speaker_detail.view.toolbar
@@ -72,8 +75,35 @@ class SpeakerDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
                 null,
                 null,
                 null)
+
+          twitter.setOnClickListener {
+              val twitterIntent = Intent(Intent.ACTION_VIEW).apply {
+                  data = Uri.parse("https://www.twitter.com/${speaker.twitter}")
+              }
+              context.startActivity(twitterIntent)
+          }
         } else {
             twitter.visibility = GONE
+        }
+
+        if (speaker.github?.isNotEmpty() ?: false) {
+            github.visibility = VISIBLE
+            github.text = speaker.github
+            github.setCompoundDrawablesWithIntrinsicBounds(
+                DrawableUtils.create(context, R.drawable.ic_logo_github),
+                null,
+                null,
+                null)
+
+            github.setOnClickListener {
+                val githubIntent = Intent(Intent.ACTION_VIEW).apply {
+                    data = Uri.parse("https://www.github.com/${speaker.github}")
+                }
+                context.startActivity(githubIntent)
+            }
+        }
+        else {
+            github.visibility = GONE
         }
 
         Glide.with(context)

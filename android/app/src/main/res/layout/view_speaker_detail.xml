@@ -77,6 +77,14 @@
             android:textAppearance="@style/TwitterTextAppearance"
             tools:text="\@devunwired"/>
         <TextView
+            android:id="@+id/github"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="4dp"
+            android:layout_marginBottom="8dp"
+            android:textAppearance="@style/GithubTextAppearance"
+            tools:text="\rharter"/>
+        <TextView
             android:id="@+id/bio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
