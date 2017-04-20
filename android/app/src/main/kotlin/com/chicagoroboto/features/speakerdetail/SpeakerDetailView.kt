@@ -2,8 +2,10 @@ package com.chicagoroboto.features.speakerdetail
 
 import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
+import android.net.Uri
 import android.support.constraint.ConstraintLayout
 import android.support.v4.app.ActivityCompat
 import android.support.v4.view.ViewCompat
@@ -73,6 +75,13 @@ class SpeakerDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
                 null,
                 null,
                 null)
+
+          twitter.setOnClickListener {
+              val twitterIntent = Intent(Intent.ACTION_VIEW).apply {
+                  data = Uri.parse("https://www.twitter.com/${speaker.twitter}")
+              }
+              context.startActivity(twitterIntent)
+          }
         } else {
             twitter.visibility = GONE
         }
@@ -86,6 +95,12 @@ class SpeakerDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
                 null,
                 null)
 
+            github.setOnClickListener {
+                val githubIntent = Intent(Intent.ACTION_VIEW).apply {
+                    data = Uri.parse("https://www.github.com/${speaker.github}")
+                }
+                context.startActivity(githubIntent)
+            }
         }
         else {
             github.visibility = GONE
