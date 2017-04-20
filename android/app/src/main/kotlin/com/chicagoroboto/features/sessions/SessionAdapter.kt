@@ -1,5 +1,7 @@
 package com.chicagoroboto.features.sessions
 
+import android.support.v4.content.ContextCompat
+import android.support.v7.widget.CardView
 import android.support.v7.widget.RecyclerView
 import android.text.format.DateUtils
 import android.text.format.DateUtils.formatDateTime
@@ -12,11 +14,8 @@ import com.chicagoroboto.R
 import com.chicagoroboto.model.Session
 import com.chicagoroboto.model.Speaker
 import com.chicagoroboto.utils.DrawableUtils
-import kotlinx.android.synthetic.main.item_session.view.favorite
-import kotlinx.android.synthetic.main.item_session.view.room
-import kotlinx.android.synthetic.main.item_session.view.speakers
-import kotlinx.android.synthetic.main.item_session.view.timeslot
-import kotlinx.android.synthetic.main.item_session.view.title
+import kotlinx.android.synthetic.main.item_session.view.*
+import java.util.*
 
 internal class SessionAdapter(val onSessionSelectedListener: ((session: Session) -> Unit)) :
         RecyclerView.Adapter<SessionAdapter.ViewHolder>() {
@@ -39,6 +38,14 @@ internal class SessionAdapter(val onSessionSelectedListener: ((session: Session)
         val startTime = formatDateTime(context, session.startTime?.time ?: 0, DateUtils.FORMAT_SHOW_TIME)
         val endTime = formatDateTime(context, session.endTime?.time ?: 0, DateUtils.FORMAT_SHOW_TIME)
         holder.timeslot.text = String.format(context.getString(R.string.session_time), startTime, endTime)
+
+        // Dim the session card once hte session is over
+        val now = Date()
+        if (now.before(session.endTime)) {
+            holder.card.setBackgroundColor(ContextCompat.getColor(context, R.color.session_bg))
+        } else {
+            holder.card.setBackgroundColor(ContextCompat.getColor(context, R.color.session_finished_bg))
+        }
 
         holder.title.text = session.name
 
@@ -94,6 +101,7 @@ internal class SessionAdapter(val onSessionSelectedListener: ((session: Session)
 
         var session: Session? = null
 
+        val card: CardView
         val timeslot: TextView
         val title: TextView
         val speakers: TextView
@@ -101,6 +109,7 @@ internal class SessionAdapter(val onSessionSelectedListener: ((session: Session)
         val favorite: ImageView
 
         init {
+            card = super.itemView.card
             timeslot = super.itemView.timeslot
             title = super.itemView.title
             speakers = super.itemView.speakers
