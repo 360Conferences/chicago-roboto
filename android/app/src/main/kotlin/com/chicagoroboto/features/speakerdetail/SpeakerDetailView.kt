@@ -17,6 +17,7 @@ import com.chicagoroboto.ext.getComponent
 import com.chicagoroboto.model.Speaker
 import com.chicagoroboto.utils.DrawableUtils
 import kotlinx.android.synthetic.main.view_speaker_detail.view.bio
+import kotlinx.android.synthetic.main.view_speaker_detail.view.github
 import kotlinx.android.synthetic.main.view_speaker_detail.view.image
 import kotlinx.android.synthetic.main.view_speaker_detail.view.name
 import kotlinx.android.synthetic.main.view_speaker_detail.view.toolbar
@@ -74,6 +75,20 @@ class SpeakerDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
                 null)
         } else {
             twitter.visibility = GONE
+        }
+
+        if (speaker.github?.isNotEmpty() ?: false) {
+            github.visibility = VISIBLE
+            github.text = speaker.github
+            github.setCompoundDrawablesWithIntrinsicBounds(
+                DrawableUtils.create(context, R.drawable.ic_logo_github),
+                null,
+                null,
+                null)
+
+        }
+        else {
+            github.visibility = GONE
         }
 
         Glide.with(context)

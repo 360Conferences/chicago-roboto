@@ -4,7 +4,7 @@ import com.chicagoroboto.ext.toHexString
 import java.security.MessageDigest
 
 class Speaker(val id: String? = null, val name: String? = null, val email: String? = null,
-              val twitter: String? = null, val bio: String? = null) {
+              val twitter: String? = null, val github: String? = null, val bio: String? = null) {
 
 
     val avatar: String?

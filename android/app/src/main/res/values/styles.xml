@@ -13,4 +13,9 @@
     <item name="android:textColor">@color/twitter_blue</item>
   </style>
 
+  <style name="GithubTextAppearance" parent="TextAppearance.AppCompat.Medium">
+    <item name="android:textSize">18sp</item>
+    <item name="android:textColor">@android:color/black</item>
+  </style>
+
 </resources>
