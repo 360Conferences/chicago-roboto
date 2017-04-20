@@ -3,6 +3,8 @@ package com.chicagoroboto.features.sessions
 import com.chicagoroboto.data.FavoriteProvider
 import com.chicagoroboto.data.SessionProvider
 import com.chicagoroboto.data.SpeakerProvider
+import com.chicagoroboto.model.Session
+import java.util.*
 
 class SessionListPresenter(private val sessionProvider: SessionProvider,
                            private val speakerProvider: SpeakerProvider,
@@ -21,7 +23,10 @@ class SessionListPresenter(private val sessionProvider: SessionProvider,
             if (sessions == null || sessions.isEmpty()) {
                 this.view?.showNoSessions()
             } else {
-                this.view?.showSessions(sessions)
+                this.view?.let {
+                    it.showSessions(sessions)
+                    it.scrollTo(findCurrentSessionIndex(sessions))
+                }
             }
         })
         speakerProvider.addSpeakerListener(this, { speakers ->
@@ -41,5 +46,12 @@ class SessionListPresenter(private val sessionProvider: SessionProvider,
         date?.let {
             favoriteProvider.removeFavoriteListener(it)
         }
+    }
+
+    private fun findCurrentSessionIndex(sessions: List<Session>): Int {
+        // find the current session index
+        val now = Date()
+        val index = sessions.indexOfFirst { now.after(it.startTime) && now.before(it.endTime) }
+        return index
     }
 }

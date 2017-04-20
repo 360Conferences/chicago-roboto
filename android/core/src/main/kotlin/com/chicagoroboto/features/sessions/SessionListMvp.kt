@@ -11,6 +11,7 @@ interface SessionListMvp {
         fun showSessions(sessions: List<Session>)
         fun showSpeakers(speakers: Map<String, Speaker>)
         fun showFavorites(favorites: Set<String>)
+        fun scrollTo(index: Int)
     }
 
     interface Presenter : Mvp.Presenter<View> {
