@@ -1,6 +1,7 @@
 package com.chicagoroboto.features.sessions
 
 import android.content.Context
+import android.text.format.DateUtils
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,8 @@ import com.chicagoroboto.R
 import com.chicagoroboto.ext.getComponent
 import com.chicagoroboto.features.main.MainComponent
 import kotlinx.android.synthetic.main.view_sessions.view.*
+import java.text.SimpleDateFormat
+import java.util.*
 import javax.inject.Inject
 
 class SessionDateView(context: Context, attrs: AttributeSet? = null, defStyle: Int = 0) :
@@ -54,6 +57,16 @@ class SessionDateView(context: Context, attrs: AttributeSet? = null, defStyle: I
 
         if (sessionDates.size > 1) {
             tabs.visibility = View.VISIBLE
+        }
+    }
+
+    override fun scrollToCurrentDay() {
+        if (adapter.dates.isNotEmpty()) {
+            val format = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+            val index = adapter.dates.indexOfFirst { DateUtils.isToday(format.parse(it).time) }
+            if (index >= 0) {
+                pager.setCurrentItem(index, false)
+            }
         }
     }
 }

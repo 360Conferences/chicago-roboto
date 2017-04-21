@@ -7,6 +7,7 @@ interface SessionDateListMvp {
     interface View : Mvp.View {
         fun showNoSessionDates()
         fun showSessionDates(sessionDates: List<String>)
+        fun scrollToCurrentDay()
     }
 
     interface Presenter : Mvp.Presenter<View> {
