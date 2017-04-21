@@ -24,6 +24,10 @@ class DataModule {
         return PreferencesProvider(application)
     }
 
+    @Provides @Singleton fun provideNotificationProvider(application: Application): NotificationProvider {
+        return LocalNotificationProvider(application)
+    }
+
     @Provides @Singleton fun provideDatabase(@EventId eventId: String): DatabaseReference {
         FirebaseDatabase.getInstance().setPersistenceEnabled(true);
         val eventRef = FirebaseDatabase.getInstance().reference.child("events").child(eventId)

@@ -22,4 +22,6 @@
     <string name="cancel">cancel</string>
     <string name="submit">Submit</string>
     <string name="cd_logo">Event Logo</string>
+  <string name="note_feedback_title">%1$s complete</string>
+    <string name="note_feedback_msg">Don\'t forget to submit feedback.</string>
 </resources>

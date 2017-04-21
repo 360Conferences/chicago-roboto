@@ -1,6 +1,7 @@
 package com.chicagoroboto.features.sessiondetail
 
 import com.chicagoroboto.data.FavoriteProvider
+import com.chicagoroboto.data.NotificationProvider
 import com.chicagoroboto.data.SessionProvider
 import com.chicagoroboto.data.SpeakerProvider
 import com.chicagoroboto.model.Session
@@ -8,7 +9,8 @@ import com.chicagoroboto.model.Speaker
 
 class SessionDetailPresenter(private val sessionProvider: SessionProvider,
                              private val speakerProvider: SpeakerProvider,
-                             private val favoriteProvider: FavoriteProvider) : SessionDetailMvp.Presenter {
+                             private val favoriteProvider: FavoriteProvider,
+                             private val notificationProvider: NotificationProvider) : SessionDetailMvp.Presenter {
 
     private var sessionId: String? = null
     private var session: Session? = null
@@ -46,6 +48,7 @@ class SessionDetailPresenter(private val sessionProvider: SessionProvider,
 
         this.sessionId = sessionId
         sessionProvider.addSessionListener(sessionId, { session: Session? ->
+            this.session = session
             if (session != null) {
                 view?.showSessionDetail(session)
                 session.speakers?.map {
@@ -70,8 +73,10 @@ class SessionDetailPresenter(private val sessionProvider: SessionProvider,
         sessionId?.let {
             if (isFavorite) {
                 favoriteProvider.removeFavoriteSession(it)
+                session?.let { notificationProvider.unscheduleFeedbackNotification(it) }
             } else {
                 favoriteProvider.addFavoriteSession(it)
+                session?.let { notificationProvider.scheduleFeedbackNotification(it) }
             }
         }
     }

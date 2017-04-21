@@ -2,6 +2,10 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
+def event_id = "chicagoroboto-2017"
+def event_name = "Chicago Roboto"
+def app_name = "Roboto"
+
 android {
     compileSdkVersion 25
     buildToolsVersion '25.0.2'
@@ -14,9 +18,9 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
 
-        buildConfigField "String", "EVENT_ID", "\"chicagoroboto-2017\""
-        resValue "string", "app_name", "Roboto"
-        resValue "string", "event_name", "Chicago Roboto"
+        buildConfigField "String", "EVENT_ID", "\"$event_id\""
+        resValue "string", "app_name", "$app_name"
+        resValue "string", "event_name", "$event_name"
     }
     if (hasProperty('CHICAGO_ROBOTO_STORE_FILE')) {
         signingConfigs {
