@@ -8,7 +8,6 @@ import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.support.constraint.ConstraintLayout
 import android.support.v4.app.ActivityCompat
-import android.support.v4.view.ViewCompat
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import com.bumptech.glide.Glide
@@ -44,7 +43,8 @@ class SpeakerDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
             speakerId = it.intent.getStringExtra("speaker_id")
         }
 
-        ViewCompat.setTransitionName(image, "image_$speakerId")
+        // FIXME: the shared image is transition properly. The start/end locations are off
+        //  ViewCompat.setTransitionName(image, "image_$speakerId")
         toolbar.setNavigationOnClickListener {
             if (context is Activity) {
                 ActivityCompat.finishAfterTransition(context)
