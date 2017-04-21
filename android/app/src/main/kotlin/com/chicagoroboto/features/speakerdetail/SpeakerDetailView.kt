@@ -78,7 +78,7 @@ class SpeakerDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
 
           twitter.setOnClickListener {
               val twitterIntent = Intent(Intent.ACTION_VIEW).apply {
-                  data = Uri.parse("https://www.twitter.com/${speaker.twitter}")
+                  data = Uri.parse("https://www.twitter.com/${speaker.twitter?.removePrefix("@")}")
               }
               context.startActivity(twitterIntent)
           }
