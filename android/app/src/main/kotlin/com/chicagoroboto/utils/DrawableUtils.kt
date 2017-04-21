@@ -2,6 +2,8 @@ package com.chicagoroboto.utils
 
 import android.content.Context
 import android.content.res.Resources
+import android.graphics.Bitmap
+import android.graphics.Canvas
 import android.graphics.drawable.Drawable
 import android.support.annotation.CheckResult
 import android.support.annotation.DrawableRes
@@ -23,4 +25,16 @@ object DrawableUtils {
     }
     return drawable
   }
+
+}
+
+/**
+ * Draws the Drawable to a bitmap.
+ */
+fun Drawable.asBitmap(width: Int = intrinsicWidth, height: Int = intrinsicHeight): Bitmap {
+  val bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
+  val canvas = Canvas(bitmap)
+  draw(canvas)
+  return bitmap
+
 }
