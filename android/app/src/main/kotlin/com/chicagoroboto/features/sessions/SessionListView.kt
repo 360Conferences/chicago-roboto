@@ -68,5 +68,9 @@ class SessionListView(context: Context, attrs: AttributeSet? = null, defStyle: I
         adapter.favorites.addAll(favorites)
         adapter.notifyDataSetChanged()
     }
+
+    override fun scrollTo(index: Int) {
+        scrollToPosition(index)
+    }
 }
 
