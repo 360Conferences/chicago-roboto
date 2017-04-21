@@ -13,7 +13,10 @@ class SessionDatePresenter(private val sessionDateProvider: SessionDateProvider)
             if (sessionDates == null || sessionDates.isEmpty()) {
                 this.view?.showNoSessionDates()
             } else {
-                this.view?.showSessionDates(sessionDates)
+                this.view?.let {
+                    it.showSessionDates(sessionDates)
+                    it.scrollToCurrentDay()
+                }
             }
         })
     }
