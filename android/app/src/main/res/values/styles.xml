@@ -1,12 +1,8 @@
 <resources>
 
-  <style name="Base.AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-    <item name="colorPrimary">@color/colorPrimary</item>
-    <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-    <item name="colorAccent">@color/colorAccent</item>
-  </style>
+  <style name="Base.Theme.Conferences" parent="Theme.AppCompat.Light.NoActionBar"/>
 
-  <style name="AppTheme" parent="Base.AppTheme"/>
+  <style name="Theme.Conferences" parent="Base.Theme.Conferences"/>
 
   <style name="TwitterTextAppearance" parent="TextAppearance.AppCompat.Medium">
     <item name="android:textSize">18sp</item>

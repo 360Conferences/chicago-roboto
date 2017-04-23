@@ -1,6 +1,7 @@
 <resources>
 
-  <style name="AppTheme" parent="Base.AppTheme">
+  <style name="Theme.Conferences"
+      parent="Base.Theme.Conferences">
     <item name="android:windowDrawsSystemBarBackgrounds">true</item>
     <item name="android:statusBarColor">@android:color/transparent</item>
   </style>

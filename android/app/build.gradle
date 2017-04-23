@@ -1,16 +1,11 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-
-def event_id = "chicagoroboto-2017"
-def event_name = "Chicago Roboto"
-def app_name = "Roboto"
 
 android {
     compileSdkVersion 25
     buildToolsVersion '25.0.2'
     defaultConfig {
-        applicationId "com.chicagoroboto"
         minSdkVersion 15
         targetSdkVersion 25
         versionCode 9
@@ -18,28 +13,10 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
 
-        buildConfigField "String", "EVENT_ID", "\"$event_id\""
-        resValue "string", "app_name", "$app_name"
-        resValue "string", "event_name", "$event_name"
-    }
-    if (hasProperty('CHICAGO_ROBOTO_STORE_FILE')) {
-        signingConfigs {
-            release {
-                storeFile file(CHICAGO_ROBOTO_STORE_FILE)
-                storePassword CHICAGO_ROBOTO_STORE_PASSWORD
-                keyAlias CHICAGO_ROBOTO_KEY_ALIAS
-                keyPassword CHICAGO_ROBOTO_KEY_PASSWORD
-            }
-        }
-    }
-    buildTypes {
-        release {
-            if (hasProperty('CHICAGO_ROBOTO_STORE_FILE')) {
-                signingConfig signingConfigs.release
-            }
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
+        // Sample values
+        resValue "string", "event_id", "\"Unknown\""
+        resValue "string", "app_name", "Conference"
+        resValue "string", "event_name", "My Conference"
     }
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
@@ -79,5 +56,3 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:cardview-v7:25.3.1'
 }
-
-apply plugin: 'com.google.gms.google-services'

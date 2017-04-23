@@ -63,7 +63,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/status"
                 tools:text="Session in Progress"
-                android:textColor="@color/colorAccent"
+                android:textColor="?attr/colorAccent"
                 android:layout_marginStart="16dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 android:layout_marginLeft="16dp"
