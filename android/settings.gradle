@@ -1,1 +1,1 @@
-include ':app', ':core', ':roboto'
+include ':library', ':core', ':roboto'
