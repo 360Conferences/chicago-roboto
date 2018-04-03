@@ -22,7 +22,7 @@ android {
         resValue "string", "app_name", "$app_name"
         resValue "string", "event_name", "$event_name"
     }
-    if (hasProperty('CHICAGO_ROBOTO_STORE_FILE')) {
+    if (project.hasProperty('CHICAGO_ROBOTO_STORE_FILE')) {
         signingConfigs {
             release {
                 storeFile file(CHICAGO_ROBOTO_STORE_FILE)
@@ -34,7 +34,7 @@ android {
     }
     buildTypes {
         release {
-            if (hasProperty('CHICAGO_ROBOTO_STORE_FILE')) {
+            if (project.hasProperty('CHICAGO_ROBOTO_STORE_FILE')) {
                 signingConfig signingConfigs.release
             }
             minifyEnabled false
