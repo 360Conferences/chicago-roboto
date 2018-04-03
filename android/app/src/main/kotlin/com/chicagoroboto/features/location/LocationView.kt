@@ -37,8 +37,7 @@ class LocationView(context: Context, attrs: AttributeSet? = null) : RelativeLayo
 
     override fun showVenue(venue: Venue?) {
         name.text = venue?.name
-        address.text = venue?.street
-        city.text = "${venue?.city}, ${venue?.state} ${venue?.zip}"
+        address.text = venue?.address
 
         if (venue != null) {
             map.getMapAsync { map ->

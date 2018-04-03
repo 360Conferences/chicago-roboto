@@ -31,7 +31,7 @@ internal class SessionPagerAdapter : PagerAdapter() {
         container.removeView(`object` as View)
     }
 
-    override fun isViewFromObject(view: View, `object`: Any?): Boolean {
+    override fun isViewFromObject(view: View, `object`: Any): Boolean {
         return view == `object`
     }
 

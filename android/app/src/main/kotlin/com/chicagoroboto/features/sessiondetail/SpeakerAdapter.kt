@@ -8,13 +8,14 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.chicagoroboto.R
+import com.chicagoroboto.data.AvatarProvider
 import com.chicagoroboto.model.Speaker
 import com.chicagoroboto.utils.DrawableUtils
-import kotlinx.android.synthetic.main.item_speaker.view.image
-import kotlinx.android.synthetic.main.item_speaker.view.name
-import kotlinx.android.synthetic.main.item_speaker.view.title
+import kotlinx.android.synthetic.main.item_speaker.view.*
 
-internal class SpeakerAdapter(val wrapsWidth: Boolean = true, val onSpeakerClickedListener: ((speaker: Speaker, view: View) -> Unit)) :
+internal class SpeakerAdapter(private val avatarProvider: AvatarProvider,
+                              val wrapsWidth: Boolean = true,
+                              val onSpeakerClickedListener: ((speaker: Speaker, view: View) -> Unit)) :
         RecyclerView.Adapter<SpeakerAdapter.ViewHolder>() {
 
     val speakers: MutableList<Speaker> = mutableListOf()
@@ -24,7 +25,7 @@ internal class SpeakerAdapter(val wrapsWidth: Boolean = true, val onSpeakerClick
         if (!wrapsWidth) {
             v.layoutParams.width = ViewGroup.LayoutParams.MATCH_PARENT
         }
-        return ViewHolder(v, onSpeakerClickedListener)
+        return ViewHolder(v, avatarProvider, onSpeakerClickedListener)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -35,7 +36,9 @@ internal class SpeakerAdapter(val wrapsWidth: Boolean = true, val onSpeakerClick
         return speakers.size
     }
 
-    internal class ViewHolder(itemView: View, private val onSpeakerClickedListener: ((speaker: Speaker, view: View) -> Unit)) :
+    internal class ViewHolder(itemView: View,
+                              private val avatarProvider: AvatarProvider,
+                              private val onSpeakerClickedListener: ((speaker: Speaker, view: View) -> Unit)) :
             RecyclerView.ViewHolder(itemView), View.OnClickListener {
         private var speaker: Speaker? = null
         val image: ImageView
@@ -53,11 +56,13 @@ internal class SpeakerAdapter(val wrapsWidth: Boolean = true, val onSpeakerClick
             this.speaker = speaker
             name.text = speaker.name
 
-            Glide.with(itemView.context)
-                .load(speaker.avatar)
-                .asBitmap()
-                .placeholder(DrawableUtils.create(itemView.context, R.drawable.ph_speaker))
-                .into(image)
+            avatarProvider.getAvatarUri(speaker) {
+                Glide.with(itemView.context)
+                    .load(it)
+                    .asBitmap()
+                    .placeholder(DrawableUtils.create(itemView.context, R.drawable.ph_speaker))
+                    .into(image)
+            }
         }
 
         override fun onClick(v: View?) {

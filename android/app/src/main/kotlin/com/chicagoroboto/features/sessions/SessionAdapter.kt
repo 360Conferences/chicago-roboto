@@ -15,7 +15,7 @@ import com.chicagoroboto.model.Session
 import com.chicagoroboto.model.Speaker
 import com.chicagoroboto.utils.DrawableUtils
 import kotlinx.android.synthetic.main.item_session.view.*
-import java.util.*
+import java.util.Date
 
 internal class SessionAdapter(val onSessionSelectedListener: ((session: Session) -> Unit)) :
         RecyclerView.Adapter<SessionAdapter.ViewHolder>() {
@@ -47,7 +47,7 @@ internal class SessionAdapter(val onSessionSelectedListener: ((session: Session)
             holder.card.setBackgroundColor(ContextCompat.getColor(context, R.color.session_finished_bg))
         }
 
-        holder.title.text = session.name
+        holder.title.text = session.title
 
         val sessionSpeakers = session.speakers?.map { speakers[it] }
         if (sessionSpeakers == null || sessionSpeakers.isEmpty()) {

@@ -8,19 +8,14 @@ import android.text.format.DateUtils
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import com.chicagoroboto.R
+import com.chicagoroboto.data.AvatarProvider
 import com.chicagoroboto.ext.getComponent
 import com.chicagoroboto.features.sessiondetail.feedback.FeedbackDialog
 import com.chicagoroboto.features.speakerdetail.SpeakerNavigator
 import com.chicagoroboto.model.Session
 import com.chicagoroboto.model.Speaker
 import com.chicagoroboto.utils.DrawableUtils
-import kotlinx.android.synthetic.main.view_session_detail.view.banner
-import kotlinx.android.synthetic.main.view_session_detail.view.description
-import kotlinx.android.synthetic.main.view_session_detail.view.favorite
-import kotlinx.android.synthetic.main.view_session_detail.view.feedback
-import kotlinx.android.synthetic.main.view_session_detail.view.speakers
-import kotlinx.android.synthetic.main.view_session_detail.view.status
-import kotlinx.android.synthetic.main.view_session_detail.view.toolbar
+import kotlinx.android.synthetic.main.view_session_detail.view.*
 import java.util.Date
 import javax.inject.Inject
 
@@ -29,6 +24,7 @@ class SessionDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
 
     @Inject lateinit var speakerNavigator: SpeakerNavigator
     @Inject lateinit var presenter: SessionDetailMvp.Presenter
+    @Inject lateinit var avatarProvider: AvatarProvider
 
     private val speakerAdapter: SpeakerAdapter
     private var sessionId: String? = null
@@ -46,7 +42,7 @@ class SessionDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
             }
         }
 
-        speakerAdapter = SpeakerAdapter(true, { speaker, image ->
+        speakerAdapter = SpeakerAdapter(avatarProvider, true, { speaker, image ->
             speakerNavigator.navigateToSpeaker(speaker.id!!, image)
         })
         speakers.adapter = speakerAdapter
@@ -75,7 +71,7 @@ class SessionDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
     }
 
     override fun showSessionDetail(session: Session) {
-        toolbar.title = session.name
+        toolbar.title = session.title
 
         val startTime = DateUtils.formatDateTime(context, session.startTime?.time ?: 0,
             DateUtils.FORMAT_SHOW_TIME)
@@ -84,7 +80,7 @@ class SessionDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
         banner.text = String.format(context.getString(R.string.session_detail_time), session.room,
             startTime, endTime)
 
-        description.text = session.description
+        description.text = session.abstract
 
         val now = Date()
         if (now.before(session.startTime)) {

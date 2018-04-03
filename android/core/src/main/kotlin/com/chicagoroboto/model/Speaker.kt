@@ -3,14 +3,14 @@ package com.chicagoroboto.model
 import com.chicagoroboto.ext.toHexString
 import java.security.MessageDigest
 
-class Speaker(val id: String? = null, val name: String? = null, val email: String? = null,
-              val twitter: String? = null, val github: String? = null, val bio: String? = null) {
-
-
-    val avatar: String?
-        get() {
-            return "https://firebasestorage.googleapis.com/v0/b/chicago-roboto.appspot.com/o/speakers%2F$id.jpg?alt=media"
-        }
+class Speaker(val id: String? = null,
+              val name: String? = null,
+              val title: String? = null,
+              val company: String? = null,
+              val email: String? = null,
+              val twitter: String? = null,
+              val github: String? = null,
+              val bio: String? = null) {
 
     private fun hash(): String {
         val md = MessageDigest.getInstance("MD5")

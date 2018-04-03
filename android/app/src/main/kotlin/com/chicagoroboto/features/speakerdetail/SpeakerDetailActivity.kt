@@ -12,7 +12,7 @@ import android.view.View
 import com.chicagoroboto.R
 import com.chicagoroboto.ext.getActivity
 import com.chicagoroboto.ext.getAppComponent
-import kotlinx.android.synthetic.main.activity_speaker_detail.speaker_detail_view
+import kotlinx.android.synthetic.main.activity_speaker_detail.*
 import java.util.ArrayList
 
 class SpeakerDetailActivity : AppCompatActivity() {
@@ -40,12 +40,12 @@ class SpeakerDetailActivity : AppCompatActivity() {
             view.getActivity()?.let {
                 val decor = it.window.decorView
 
-                val statusBarBackground = decor.findViewById(android.R.id.statusBarBackground)
+                val statusBarBackground: View = decor.findViewById(android.R.id.statusBarBackground)
                 if (statusBarBackground != null) {
                     pairs.add(Pair.create(statusBarBackground, statusBarBackground.transitionName))
                 }
 
-                val navBar = decor.findViewById(android.R.id.navigationBarBackground)
+                val navBar: View = decor.findViewById(android.R.id.navigationBarBackground)
                 if (navBar != null) {
                     pairs.add(Pair.create(navBar, navBar.transitionName))
                 }

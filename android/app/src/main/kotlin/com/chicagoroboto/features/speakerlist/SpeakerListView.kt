@@ -5,6 +5,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.util.AttributeSet
 import android.view.ViewGroup
+import com.chicagoroboto.data.AvatarProvider
 import com.chicagoroboto.ext.getComponent
 import com.chicagoroboto.features.main.MainComponent
 import com.chicagoroboto.features.sessiondetail.SpeakerAdapter
@@ -21,6 +22,7 @@ class SpeakerListView(context: Context, attrs: AttributeSet? = null, defStyle: I
 
     @Inject lateinit var presenter: SpeakerListMvp.Presenter
     @Inject lateinit var speakerNavigator: SpeakerNavigator
+    @Inject lateinit var avatarProvider: AvatarProvider
 
     init {
         context.getComponent<MainComponent>().speakerListComponent().inject(this)
@@ -28,7 +30,7 @@ class SpeakerListView(context: Context, attrs: AttributeSet? = null, defStyle: I
         layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
         layoutManager = LinearLayoutManager(context, VERTICAL, false)
         addItemDecoration(DividerItemDecoration(context))
-        adapter = SpeakerAdapter(false, { speaker, view ->
+        adapter = SpeakerAdapter(avatarProvider, false, { speaker, view ->
             speakerNavigator.navigateToSpeaker(speaker.id!!, view)
         })
         super.setAdapter(adapter)
