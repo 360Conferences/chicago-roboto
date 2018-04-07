@@ -14,9 +14,7 @@ import com.chicagoroboto.model.Speaker
 import javax.inject.Inject
 
 class SessionListView(context: Context, attrs: AttributeSet? = null, defStyle: Int = 0) :
-        RecyclerView(context, attrs, defStyle), SessionListMvp.View, MainView {
-
-    override val titleResId = R.string.action_schedule
+        RecyclerView(context, attrs, defStyle), SessionListMvp.View {
 
     private val adapter: SessionAdapter
     private var date: String? = null
