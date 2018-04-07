@@ -4,11 +4,14 @@ import android.content.Context
 import android.support.design.widget.TabLayout
 import android.text.format.DateUtils
 import android.util.AttributeSet
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.FrameLayout
 import com.chicagoroboto.R
 import com.chicagoroboto.ext.getComponent
+import com.chicagoroboto.features.MainView
+import com.chicagoroboto.features.TabHolder
 import com.chicagoroboto.features.main.MainComponent
 import kotlinx.android.synthetic.main.view_sessions.view.*
 import java.text.SimpleDateFormat
@@ -16,13 +19,20 @@ import java.util.*
 import javax.inject.Inject
 
 class SessionDateView(context: Context, attrs: AttributeSet? = null, defStyle: Int = 0) :
-        FrameLayout(context, attrs, defStyle), SessionDateListMvp.View {
+        FrameLayout(context, attrs, defStyle), SessionDateListMvp.View, MainView {
 
     constructor(context: Context): this(context, null, 0)
     constructor(context: Context, attrs: AttributeSet?): this(context, attrs, 0)
 
+    override val titleResId = R.string.action_schedule
+
     @Inject lateinit var presenter: SessionDateListMvp.Presenter
+
     private var tabLayout: TabLayout? = null
+        set(value) {
+            field = value
+            field?.setupWithViewPager(pager)
+        }
 
     private val adapter: SessionPagerAdapter
 
@@ -38,6 +48,13 @@ class SessionDateView(context: Context, attrs: AttributeSet? = null, defStyle: I
     override fun onAttachedToWindow() {
         super.onAttachedToWindow()
         presenter.onAttach(this)
+
+        val parentContext = context
+        when (parentContext) {
+            is TabHolder -> {
+                tabLayout = parentContext.tabLayout
+            }
+        }
     }
 
     override fun onDetachedFromWindow() {
@@ -70,11 +87,5 @@ class SessionDateView(context: Context, attrs: AttributeSet? = null, defStyle: I
                 pager.setCurrentItem(index, false)
             }
         }
-    }
-
-    fun setupTabLayout(tabLayout: TabLayout): SessionDateView {
-        this.tabLayout = tabLayout
-        tabLayout.setupWithViewPager(pager)
-        return this
     }
 }

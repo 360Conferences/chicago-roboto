@@ -5,14 +5,18 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.util.AttributeSet
 import android.view.ViewGroup
+import com.chicagoroboto.R
 import com.chicagoroboto.ext.getComponent
+import com.chicagoroboto.features.MainView
 import com.chicagoroboto.features.main.MainComponent
 import com.chicagoroboto.model.Session
 import com.chicagoroboto.model.Speaker
 import javax.inject.Inject
 
 class SessionListView(context: Context, attrs: AttributeSet? = null, defStyle: Int = 0) :
-        RecyclerView(context, attrs, defStyle), SessionListMvp.View {
+        RecyclerView(context, attrs, defStyle), SessionListMvp.View, MainView {
+
+    override val titleResId = R.string.action_schedule
 
     private val adapter: SessionAdapter
     private var date: String? = null

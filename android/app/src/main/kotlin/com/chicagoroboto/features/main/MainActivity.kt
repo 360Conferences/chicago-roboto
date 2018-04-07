@@ -10,6 +10,8 @@ import android.view.MenuItem
 import android.view.View
 import com.chicagoroboto.R
 import com.chicagoroboto.ext.getAppComponent
+import com.chicagoroboto.features.MainView
+import com.chicagoroboto.features.TabHolder
 import com.chicagoroboto.features.info.InfoView
 import com.chicagoroboto.features.location.LocationView
 import com.chicagoroboto.features.sessiondetail.SessionDetailActivity
@@ -21,7 +23,11 @@ import com.chicagoroboto.features.speakerlist.SpeakerListView
 import com.chicagoroboto.model.Session
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity(), SessionNavigator, SpeakerNavigator, NavigationView.OnNavigationItemSelectedListener {
+class MainActivity : AppCompatActivity(), SessionNavigator, SpeakerNavigator, NavigationView.OnNavigationItemSelectedListener,
+        TabHolder {
+
+    override var tabLayout: TabLayout? = null
+        get() = tabs
 
     private val component: MainComponent by lazy {
         getAppComponent().mainComponent(MainModule(this, this))
@@ -38,8 +44,6 @@ class MainActivity : AppCompatActivity(), SessionNavigator, SpeakerNavigator, Na
             it.setHomeAsUpIndicator(R.drawable.ic_menu)
             it.setDisplayHomeAsUpEnabled(true)
         }
-
-        setTitle(R.string.action_speakers)
 
         showView(R.id.action_schedule)
 
@@ -68,7 +72,7 @@ class MainActivity : AppCompatActivity(), SessionNavigator, SpeakerNavigator, Na
 
     private fun showView(viewId: Int): Boolean {
         val view: View? = when (viewId) {
-            R.id.action_schedule -> SessionDateView(this).setupTabLayout(tabs)
+            R.id.action_schedule -> SessionDateView(this)
             R.id.action_speakers -> SpeakerListView(this)
             R.id.action_location -> LocationView(this)
             R.id.action_info -> InfoView(this)
@@ -78,13 +82,10 @@ class MainActivity : AppCompatActivity(), SessionNavigator, SpeakerNavigator, Na
             content.removeAllViews()
             content.addView(view)
             val title = when (view) {
-                is SessionDateView -> R.string.action_schedule
-                is SpeakerListView -> R.string.action_speakers
-                is LocationView -> R.string.action_location
-                is InfoView -> R.string.action_info
+                is MainView -> view.titleResId
                 else -> R.string.app_name
             }
-            toolbar.setTitle(title)
+            setTitle(title)
             true
         } ?: false
     }
