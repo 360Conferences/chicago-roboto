@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity(), SessionNavigator, SpeakerNavigator, Na
     override var tabLayout: TabLayout? = null
         get() = tabs
 
-    private val component: MainComponent by lazy {
+    private val component: MainComponent by lazy(LazyThreadSafetyMode.NONE) {
         getAppComponent().mainComponent(MainModule(this, this))
     }
 
