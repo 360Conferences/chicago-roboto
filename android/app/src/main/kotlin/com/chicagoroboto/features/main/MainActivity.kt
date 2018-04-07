@@ -22,12 +22,13 @@ import com.chicagoroboto.model.Session
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), SessionNavigator, SpeakerNavigator, NavigationView.OnNavigationItemSelectedListener {
-    lateinit var component: MainComponent
+
+    private val component: MainComponent by lazy {
+        getAppComponent().mainComponent(MainModule(this, this))
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        component = getAppComponent().mainComponent(MainModule(this, this))
 
         setContentView(R.layout.activity_main)
 
@@ -38,7 +39,7 @@ class MainActivity : AppCompatActivity(), SessionNavigator, SpeakerNavigator, Na
             it.setDisplayHomeAsUpEnabled(true)
         }
 
-        setTitle(R.string.event_name)
+        setTitle(R.string.action_speakers)
 
         showView(R.id.action_schedule)
 
@@ -73,7 +74,7 @@ class MainActivity : AppCompatActivity(), SessionNavigator, SpeakerNavigator, Na
             R.id.action_info -> InfoView(this)
             else -> null
         }
-        if (view != null) {
+        return view?.let {
             content.removeAllViews()
             content.addView(view)
             val title = when (view) {
@@ -84,21 +85,20 @@ class MainActivity : AppCompatActivity(), SessionNavigator, SpeakerNavigator, Na
                 else -> R.string.app_name
             }
             toolbar.setTitle(title)
-            return true
-        }
-        return false
+            true
+        } ?: false
     }
 
     override fun getSystemService(name: String?): Any {
-        when (name) {
-            "component" -> return component
-            else -> return super.getSystemService(name)
+        return when (name) {
+            "component" -> component
+            else -> super.getSystemService(name)
         }
     }
 
     override fun showSession(session: Session) {
         val intent = Intent(this, SessionDetailActivity::class.java)
-        intent.putExtra("session_id", session.id)
+                .putExtra("session_id", session.id)
         startActivity(intent)
     }
 
