@@ -3,6 +3,7 @@ package com.chicagoroboto.features.main
 import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.NavigationView
+import android.support.design.widget.TabLayout
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
@@ -18,10 +19,7 @@ import com.chicagoroboto.features.speakerdetail.SpeakerDetailActivity
 import com.chicagoroboto.features.speakerdetail.SpeakerNavigator
 import com.chicagoroboto.features.speakerlist.SpeakerListView
 import com.chicagoroboto.model.Session
-import kotlinx.android.synthetic.main.activity_main.content
-import kotlinx.android.synthetic.main.activity_main.drawer_layout
-import kotlinx.android.synthetic.main.activity_main.nav_view
-import kotlinx.android.synthetic.main.activity_main.toolbar
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), SessionNavigator, SpeakerNavigator, NavigationView.OnNavigationItemSelectedListener {
     lateinit var component: MainComponent
@@ -69,7 +67,7 @@ class MainActivity : AppCompatActivity(), SessionNavigator, SpeakerNavigator, Na
 
     private fun showView(viewId: Int): Boolean {
         val view: View? = when (viewId) {
-            R.id.action_schedule -> SessionDateView(this)
+            R.id.action_schedule -> SessionDateView(this).setupTabLayout(tabs)
             R.id.action_speakers -> SpeakerListView(this)
             R.id.action_location -> LocationView(this)
             R.id.action_info -> InfoView(this)

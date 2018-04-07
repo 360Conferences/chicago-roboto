@@ -1,6 +1,7 @@
 package com.chicagoroboto.features.sessions
 
 import android.content.Context
+import android.support.design.widget.TabLayout
 import android.text.format.DateUtils
 import android.util.AttributeSet
 import android.view.LayoutInflater
@@ -21,6 +22,7 @@ class SessionDateView(context: Context, attrs: AttributeSet? = null, defStyle: I
     constructor(context: Context, attrs: AttributeSet?): this(context, attrs, 0)
 
     @Inject lateinit var presenter: SessionDateListMvp.Presenter
+    private var tabLayout: TabLayout? = null
 
     private val adapter: SessionPagerAdapter
 
@@ -31,8 +33,6 @@ class SessionDateView(context: Context, attrs: AttributeSet? = null, defStyle: I
 
         adapter = SessionPagerAdapter()
         pager.adapter = adapter
-
-        tabs.setupWithViewPager(pager)
     }
 
     override fun onAttachedToWindow() {
@@ -41,6 +41,8 @@ class SessionDateView(context: Context, attrs: AttributeSet? = null, defStyle: I
     }
 
     override fun onDetachedFromWindow() {
+        tabLayout?.visibility = View.GONE
+        tabLayout = null
         presenter.onDetach()
         super.onDetachedFromWindow()
     }
@@ -55,8 +57,8 @@ class SessionDateView(context: Context, attrs: AttributeSet? = null, defStyle: I
         adapter.dates.addAll(sessionDates)
         adapter.notifyDataSetChanged()
 
-        if (sessionDates.size > 1) {
-            tabs.visibility = View.VISIBLE
+        if (sessionDates.isNotEmpty()) {
+            tabLayout?.visibility = View.VISIBLE
         }
     }
 
@@ -68,5 +70,11 @@ class SessionDateView(context: Context, attrs: AttributeSet? = null, defStyle: I
                 pager.setCurrentItem(index, false)
             }
         }
+    }
+
+    fun setupTabLayout(tabLayout: TabLayout): SessionDateView {
+        this.tabLayout = tabLayout
+        tabLayout.setupWithViewPager(pager)
+        return this
     }
 }
