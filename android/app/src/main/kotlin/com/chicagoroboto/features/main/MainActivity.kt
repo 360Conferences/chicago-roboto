@@ -76,6 +76,14 @@ class MainActivity : AppCompatActivity(), SessionNavigator, SpeakerNavigator, Na
         if (view != null) {
             content.removeAllViews()
             content.addView(view)
+            val title = when (view) {
+                is SessionDateView -> R.string.action_schedule
+                is SpeakerListView -> R.string.action_speakers
+                is LocationView -> R.string.action_location
+                is InfoView -> R.string.action_info
+                else -> R.string.app_name
+            }
+            toolbar.setTitle(title)
             return true
         }
         return false
