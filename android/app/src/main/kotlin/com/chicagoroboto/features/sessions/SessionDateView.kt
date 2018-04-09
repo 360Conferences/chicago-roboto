@@ -1,6 +1,7 @@
 package com.chicagoroboto.features.sessions
 
 import android.content.Context
+import android.support.design.widget.TabLayout
 import android.text.format.DateUtils
 import android.util.AttributeSet
 import android.view.LayoutInflater
@@ -8,6 +9,8 @@ import android.view.View
 import android.widget.FrameLayout
 import com.chicagoroboto.R
 import com.chicagoroboto.ext.getComponent
+import com.chicagoroboto.features.main.MainView
+import com.chicagoroboto.features.TabHolder
 import com.chicagoroboto.features.main.MainComponent
 import kotlinx.android.synthetic.main.view_sessions.view.*
 import java.text.SimpleDateFormat
@@ -15,12 +18,20 @@ import java.util.*
 import javax.inject.Inject
 
 class SessionDateView(context: Context, attrs: AttributeSet? = null, defStyle: Int = 0) :
-        FrameLayout(context, attrs, defStyle), SessionDateListMvp.View {
+        FrameLayout(context, attrs, defStyle), SessionDateListMvp.View, MainView {
 
     constructor(context: Context): this(context, null, 0)
     constructor(context: Context, attrs: AttributeSet?): this(context, attrs, 0)
 
+    override val titleResId = R.string.action_schedule
+
     @Inject lateinit var presenter: SessionDateListMvp.Presenter
+
+    private var tabLayout: TabLayout? = null
+        set(value) {
+            field = value
+            field?.setupWithViewPager(pager)
+        }
 
     private val adapter: SessionPagerAdapter
 
@@ -31,16 +42,23 @@ class SessionDateView(context: Context, attrs: AttributeSet? = null, defStyle: I
 
         adapter = SessionPagerAdapter()
         pager.adapter = adapter
-
-        tabs.setupWithViewPager(pager)
     }
 
     override fun onAttachedToWindow() {
         super.onAttachedToWindow()
         presenter.onAttach(this)
+
+        val parentContext = context
+        when (parentContext) {
+            is TabHolder -> {
+                tabLayout = parentContext.tabLayout
+            }
+        }
     }
 
     override fun onDetachedFromWindow() {
+        tabLayout?.visibility = View.GONE
+        tabLayout = null
         presenter.onDetach()
         super.onDetachedFromWindow()
     }
@@ -55,8 +73,8 @@ class SessionDateView(context: Context, attrs: AttributeSet? = null, defStyle: I
         adapter.dates.addAll(sessionDates)
         adapter.notifyDataSetChanged()
 
-        if (sessionDates.size > 1) {
-            tabs.visibility = View.VISIBLE
+        if (sessionDates.isNotEmpty()) {
+            tabLayout?.visibility = View.VISIBLE
         }
     }
 

@@ -5,8 +5,10 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.util.AttributeSet
 import android.view.ViewGroup
+import com.chicagoroboto.R
 import com.chicagoroboto.data.AvatarProvider
 import com.chicagoroboto.ext.getComponent
+import com.chicagoroboto.features.main.MainView
 import com.chicagoroboto.features.main.MainComponent
 import com.chicagoroboto.features.sessiondetail.SpeakerAdapter
 import com.chicagoroboto.features.sessions.DividerItemDecoration
@@ -16,7 +18,9 @@ import javax.inject.Inject
 
 class SpeakerListView(context: Context, attrs: AttributeSet? = null, defStyle: Int = 0) :
         RecyclerView(context, attrs, defStyle),
-        SpeakerListMvp.View {
+        SpeakerListMvp.View, MainView {
+
+    override val titleResId = R.string.action_speakers
 
     private val adapter: SpeakerAdapter
 
