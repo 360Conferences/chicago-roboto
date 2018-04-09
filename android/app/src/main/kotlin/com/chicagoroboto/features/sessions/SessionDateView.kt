@@ -4,13 +4,12 @@ import android.content.Context
 import android.support.design.widget.TabLayout
 import android.text.format.DateUtils
 import android.util.AttributeSet
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.FrameLayout
 import com.chicagoroboto.R
 import com.chicagoroboto.ext.getComponent
-import com.chicagoroboto.features.MainView
+import com.chicagoroboto.features.main.MainView
 import com.chicagoroboto.features.TabHolder
 import com.chicagoroboto.features.main.MainComponent
 import kotlinx.android.synthetic.main.view_sessions.view.*

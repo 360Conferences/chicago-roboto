@@ -1,10 +1,6 @@
-package com.chicagoroboto.features
+package com.chicagoroboto.features.main
 
 import android.support.annotation.StringRes
-
-/**
- * Created by feliperoriz on 4/7/18.
- */
 
 interface MainView {
     @get:StringRes val titleResId: Int

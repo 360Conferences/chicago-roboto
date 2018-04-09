@@ -6,7 +6,7 @@ import android.support.v7.widget.RecyclerView
 import android.util.AttributeSet
 import com.chicagoroboto.R
 import com.chicagoroboto.ext.getAppComponent
-import com.chicagoroboto.features.MainView
+import com.chicagoroboto.features.main.MainView
 import com.chicagoroboto.model.Library
 import javax.inject.Inject
 

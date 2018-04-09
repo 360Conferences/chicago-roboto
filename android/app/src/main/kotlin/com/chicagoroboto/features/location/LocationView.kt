@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.widget.RelativeLayout
 import com.chicagoroboto.R
 import com.chicagoroboto.ext.getComponent
-import com.chicagoroboto.features.MainView
+import com.chicagoroboto.features.main.MainView
 import com.chicagoroboto.features.main.MainComponent
 import com.chicagoroboto.model.Venue
 import com.google.android.gms.maps.CameraUpdateFactory

@@ -10,7 +10,6 @@ import android.view.MenuItem
 import android.view.View
 import com.chicagoroboto.R
 import com.chicagoroboto.ext.getAppComponent
-import com.chicagoroboto.features.MainView
 import com.chicagoroboto.features.TabHolder
 import com.chicagoroboto.features.info.InfoView
 import com.chicagoroboto.features.location.LocationView

@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import com.chicagoroboto.R
 import com.chicagoroboto.data.AvatarProvider
 import com.chicagoroboto.ext.getComponent
-import com.chicagoroboto.features.MainView
+import com.chicagoroboto.features.main.MainView
 import com.chicagoroboto.features.main.MainComponent
 import com.chicagoroboto.features.sessiondetail.SpeakerAdapter
 import com.chicagoroboto.features.sessions.DividerItemDecoration
