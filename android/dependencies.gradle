@@ -25,6 +25,7 @@ ext {
       kotlinTest        : "org.jetbrains.kotlin:kotlin-test:$kotlin_version",
       mockitoCore       : "org.mockito:mockito-core:2.8.47",
       mockitoKotlin     : "com.nhaarman:mockito-kotlin:1.5.0",
+      multilineToolbar  : "net.opacapp:multiline-collapsingtoolbar:27.1.0",
       playServicesMaps  : "com.google.android.gms:play-services-maps:$play_services_version",
       recyclerView     : "com.android.support:recyclerview-v7:$support_version",
       supportAppCompat  : "com.android.support:appcompat-v7:$support_version",

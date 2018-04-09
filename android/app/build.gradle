@@ -56,6 +56,7 @@ dependencies {
   implementation libs.firebaseDatabase
   implementation libs.firebaseStorage
   implementation libs.kotlinStdlib
+  implementation libs.multilineToolbar
   implementation libs.playServicesMaps
   implementation libs.recyclerView
   implementation libs.supportAppCompat
