@@ -9,6 +9,8 @@ sourceSets {
 
 dependencies {
     compile libs.kotlinStdlib
+    compile libs.kotlinCoroutineJdk
+    compile libs.kotlinCoroutineAndroid
 
     testCompile libs.junit4
     testCompile libs.truth
@@ -21,3 +23,8 @@ dependencies {
 
 sourceCompatibility = "1.7"
 targetCompatibility = "1.7"
+kotlin {
+    experimental {
+        coroutines "enable"
+    }
+}
