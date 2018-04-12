@@ -16,7 +16,7 @@ import com.chicagoroboto.model.Session
 import com.chicagoroboto.model.Speaker
 import com.chicagoroboto.utils.DrawableUtils
 import kotlinx.android.synthetic.main.view_session_detail.view.*
-import java.util.*
+import java.util.Date
 import javax.inject.Inject
 
 class SessionDetailView(context: Context, attrs: AttributeSet? = null, defStyle: Int = 0) :
