@@ -1,8 +1,8 @@
 package com.chicagoroboto.features.sessiondetail
 
-import android.app.Activity
 import android.content.Context
 import android.support.design.widget.CoordinatorLayout
+import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.text.format.DateUtils
 import android.util.AttributeSet
@@ -36,11 +36,6 @@ class SessionDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
         context.getComponent<SessionDetailComponent>().inject(this)
 
         LayoutInflater.from(context).inflate(R.layout.view_session_detail, this, true)
-        toolbar.setNavigationOnClickListener {
-            if (context is Activity) {
-                context.finish()
-            }
-        }
 
         speakerAdapter = SpeakerAdapter(avatarProvider, true, { speaker, image ->
             speakerNavigator.navigateToSpeaker(speaker.id!!, image)
@@ -72,6 +67,11 @@ class SessionDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
 
     override fun showSessionDetail(session: Session) {
         toolbar.title = session.title
+        val activity = context as AppCompatActivity
+        activity.setSupportActionBar(toolbar)
+        toolbar.setNavigationOnClickListener {
+            activity.finish()
+        }
 
         val startTime = DateUtils.formatDateTime(context, session.startTime?.time ?: 0,
             DateUtils.FORMAT_SHOW_TIME)
