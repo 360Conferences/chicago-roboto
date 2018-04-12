@@ -10,7 +10,8 @@ class Speaker(val id: String? = null,
               val email: String? = null,
               val twitter: String? = null,
               val github: String? = null,
-              val bio: String? = null) {
+              val bio: String? = null,
+              val downloadUrl: String? = null) {
 
     private fun hash(): String {
         val md = MessageDigest.getInstance("MD5")

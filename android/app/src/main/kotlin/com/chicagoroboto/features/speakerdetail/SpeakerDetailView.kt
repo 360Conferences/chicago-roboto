@@ -13,7 +13,6 @@ import android.view.LayoutInflater
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.BitmapImageViewTarget
 import com.chicagoroboto.R
-import com.chicagoroboto.data.AvatarProvider
 import com.chicagoroboto.ext.getActivity
 import com.chicagoroboto.ext.getComponent
 import com.chicagoroboto.model.Speaker
@@ -26,7 +25,6 @@ class SpeakerDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
         ConstraintLayout(context, attrs, defStyle), SpeakerDetailMvp.View {
 
     @Inject lateinit var presenter: SpeakerDetailMvp.Presenter
-    @Inject lateinit var avatarProvider: AvatarProvider
 
     constructor(context: Context, attrs: AttributeSet?): this(context, attrs, 0)
 
@@ -103,7 +101,7 @@ class SpeakerDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
             github.visibility = GONE
         }
 
-        avatarProvider.getAvatarUri(speaker) {
+      speaker.downloadUrl?.let {
             Glide.with(context)
                 .load(it)
                 .asBitmap()

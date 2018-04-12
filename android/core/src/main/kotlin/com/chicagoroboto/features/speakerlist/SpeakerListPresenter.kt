@@ -2,6 +2,9 @@ package com.chicagoroboto.features.speakerlist
 
 import com.chicagoroboto.data.SpeakerProvider
 import com.chicagoroboto.model.Speaker
+import kotlinx.coroutines.experimental.android.UI
+import kotlinx.coroutines.experimental.launch
+import kotlinx.coroutines.experimental.withContext
 import java.util.*
 
 class SpeakerListPresenter(private val speakerProvider: SpeakerProvider) : SpeakerListMvp.Presenter {
@@ -11,11 +14,12 @@ class SpeakerListPresenter(private val speakerProvider: SpeakerProvider) : Speak
     override fun onAttach(view: SpeakerListMvp.View) {
         this.view = view
 
-        speakerProvider.addSpeakerListener(this, { speakers: Map<String, Speaker>? ->
-            if (speakers != null) {
-                this.view?.showSpeakers(ArrayList<Speaker>(speakers.values))
-            }
-        })
+      launch {
+        val speakers = speakerProvider.addSpeakerListener(this).values
+        withContext(UI) {
+          this@SpeakerListPresenter.view?.showSpeakers(speakers)
+        }
+      }
     }
 
     override fun onDetach() {
