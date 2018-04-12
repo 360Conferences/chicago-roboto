@@ -3,8 +3,6 @@ package com.chicagoroboto.features.sessions
 import android.support.v4.content.ContextCompat
 import android.support.v7.widget.CardView
 import android.support.v7.widget.RecyclerView
-import android.text.format.DateUtils
-import android.text.format.DateUtils.formatDateTime
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,6 +12,7 @@ import com.chicagoroboto.R
 import com.chicagoroboto.model.Session
 import com.chicagoroboto.model.Speaker
 import com.chicagoroboto.utils.DrawableUtils
+import com.chicagoroboto.utils.getFormattedSessionTime
 import kotlinx.android.synthetic.main.item_session.view.*
 import java.util.Date
 
@@ -35,11 +34,11 @@ internal class SessionAdapter(val onSessionSelectedListener: ((session: Session)
 
         holder.session = session
 
-        val startTime = formatDateTime(context, session.startTime?.time ?: 0, DateUtils.FORMAT_SHOW_TIME)
-        val endTime = formatDateTime(context, session.endTime?.time ?: 0, DateUtils.FORMAT_SHOW_TIME)
+        var startTime = getFormattedSessionTime(session.startTime)
+        var endTime = getFormattedSessionTime(session.endTime)
         holder.timeslot.text = String.format(context.getString(R.string.session_time), startTime, endTime)
 
-        // Dim the session card once hte session is over
+        // Dim the session card once the session is over
         val now = Date()
         if (now.before(session.endTime)) {
             holder.card.setBackgroundColor(ContextCompat.getColor(context, R.color.session_bg))

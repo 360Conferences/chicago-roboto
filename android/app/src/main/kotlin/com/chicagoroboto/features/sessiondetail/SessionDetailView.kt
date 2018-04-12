@@ -4,7 +4,6 @@ import android.app.Activity
 import android.content.Context
 import android.support.design.widget.CoordinatorLayout
 import android.support.v7.widget.LinearLayoutManager
-import android.text.format.DateUtils
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import com.chicagoroboto.R
@@ -15,6 +14,7 @@ import com.chicagoroboto.features.speakerdetail.SpeakerNavigator
 import com.chicagoroboto.model.Session
 import com.chicagoroboto.model.Speaker
 import com.chicagoroboto.utils.DrawableUtils
+import com.chicagoroboto.utils.getFormattedSessionTime
 import kotlinx.android.synthetic.main.view_session_detail.view.*
 import java.util.Date
 import javax.inject.Inject
@@ -73,10 +73,8 @@ class SessionDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
     override fun showSessionDetail(session: Session) {
         toolbar.title = session.title
 
-        val startTime = DateUtils.formatDateTime(context, session.startTime?.time ?: 0,
-            DateUtils.FORMAT_SHOW_TIME)
-        val endTime = DateUtils.formatDateTime(context, session.endTime?.time ?: 0,
-            DateUtils.FORMAT_SHOW_TIME)
+        val startTime = getFormattedSessionTime(session.startTime)
+        val endTime = getFormattedSessionTime(session.endTime)
         banner.text = String.format(context.getString(R.string.session_detail_time), session.room,
             startTime, endTime)
 
