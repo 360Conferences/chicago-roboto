@@ -67,10 +67,10 @@ class SessionDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
 
     override fun showSessionDetail(session: Session) {
         toolbar.title = session.title
-        val activity = context as? AppCompatActivity
-        activity?.setSupportActionBar(toolbar)
+        val activity = context as AppCompatActivity
+        activity.setSupportActionBar(toolbar)
         toolbar.setNavigationOnClickListener {
-            activity?.finish()
+            activity.finish()
         }
 
         val startTime = DateUtils.formatDateTime(context, session.startTime?.time ?: 0,
