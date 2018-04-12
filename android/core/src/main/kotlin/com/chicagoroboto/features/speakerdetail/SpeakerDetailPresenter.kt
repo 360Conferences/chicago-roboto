@@ -1,7 +1,9 @@
 package com.chicagoroboto.features.speakerdetail
 
 import com.chicagoroboto.data.SpeakerProvider
-import com.chicagoroboto.model.Speaker
+import kotlinx.coroutines.experimental.android.UI
+import kotlinx.coroutines.experimental.launch
+import kotlinx.coroutines.experimental.withContext
 
 class SpeakerDetailPresenter(val speakerProvider: SpeakerProvider) : SpeakerDetailMvp.Presenter {
 
@@ -16,10 +18,11 @@ class SpeakerDetailPresenter(val speakerProvider: SpeakerProvider) : SpeakerDeta
     }
 
     override fun setSpeakerId(speakerId: String) {
-        speakerProvider.addSpeakerListener(speakerId, { speaker: Speaker? ->
-            if (speaker != null) {
-                view?.showSpeaker(speaker)
-            }
-        })
+      launch {
+          val speaker = speakerProvider.getSpeaker(speakerId)
+          withContext(UI) {
+            view?.showSpeaker(speaker)
+          }
+      }
     }
 }

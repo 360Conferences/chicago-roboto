@@ -34,7 +34,7 @@ class SessionListPresenter(private val sessionProvider: SessionProvider,
         })
 
       launch {
-        val speakers = speakerProvider.addSpeakerListener(this)
+        val speakers = speakerProvider.getSpeakersMap(this)
         withContext(UI) {
           this@SessionListPresenter.view?.showSpeakers(speakers)
         }

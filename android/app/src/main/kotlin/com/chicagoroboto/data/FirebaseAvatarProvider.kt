@@ -10,8 +10,8 @@ class FirebaseAvatarProvider(storage: StorageReference) : AvatarProvider {
   private val ref = storage.child("profiles")
 
   override suspend fun getAvatarUri(speaker: Speaker) = suspendCoroutine<String> { c ->
-    val id = speaker.id ?: ""
-    if (id.isEmpty()) {
+    val id = speaker.id
+    if (id == null) {
       c.resume("")
     }
     else {

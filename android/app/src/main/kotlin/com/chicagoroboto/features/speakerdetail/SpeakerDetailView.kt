@@ -101,9 +101,9 @@ class SpeakerDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
             github.visibility = GONE
         }
 
-      speaker.downloadUrl?.let {
+        if (speaker.avatarUrl != null) {
             Glide.with(context)
-                .load(it)
+                .load(speaker.avatarUrl)
                 .asBitmap()
                 .centerCrop()
                 .dontAnimate()

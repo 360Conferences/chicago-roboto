@@ -54,9 +54,9 @@ internal class SpeakerAdapter(val wrapsWidth: Boolean = true,
             this.speaker = speaker
             name.text = speaker.name
 
-            if (speaker.downloadUrl != null) {
+            if (speaker.avatarUrl != null) {
                 Glide.with(itemView.context)
-                    .load(speaker.downloadUrl)
+                    .load(speaker.avatarUrl)
                     .asBitmap()
                     .placeholder(placeHolder)
                     .into(image)

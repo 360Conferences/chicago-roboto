@@ -1,11 +1,9 @@
 package com.chicagoroboto.features.speakerlist
 
 import com.chicagoroboto.data.SpeakerProvider
-import com.chicagoroboto.model.Speaker
 import kotlinx.coroutines.experimental.android.UI
 import kotlinx.coroutines.experimental.launch
 import kotlinx.coroutines.experimental.withContext
-import java.util.*
 
 class SpeakerListPresenter(private val speakerProvider: SpeakerProvider) : SpeakerListMvp.Presenter {
 
@@ -15,7 +13,7 @@ class SpeakerListPresenter(private val speakerProvider: SpeakerProvider) : Speak
         this.view = view
 
       launch {
-        val speakers = speakerProvider.addSpeakerListener(this).values
+        val speakers = speakerProvider.getSpeakersMap(this).values
         withContext(UI) {
           this@SpeakerListPresenter.view?.showSpeakers(speakers)
         }
