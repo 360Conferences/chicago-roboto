@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
@@ -18,6 +19,8 @@ internal class SpeakerAdapter(private val avatarProvider: AvatarProvider,
                               val onSpeakerClickedListener: ((speaker: Speaker, view: View) -> Unit)) :
         RecyclerView.Adapter<SpeakerAdapter.ViewHolder>() {
 
+    private var mLastPosition = -1
+
     val speakers: MutableList<Speaker> = mutableListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -30,6 +33,18 @@ internal class SpeakerAdapter(private val avatarProvider: AvatarProvider,
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(speakers[position])
+
+        mLastPosition = setAnimation(holder.itemView, position, mLastPosition)
+    }
+
+    private fun setAnimation(view: View, position: Int, lastPosition: Int) : Int {
+        var newPosition = lastPosition
+        if(position > lastPosition) {
+            val animation = AnimationUtils.loadAnimation(view.context, android.R.anim.slide_in_left)
+            view.startAnimation(animation)
+            newPosition = position
+        }
+        return newPosition
     }
 
     override fun getItemCount(): Int {

@@ -8,6 +8,7 @@ import android.text.format.DateUtils.formatDateTime
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.TextView
 import com.chicagoroboto.R
@@ -23,6 +24,8 @@ internal class SessionAdapter(val onSessionSelectedListener: ((session: Session)
     val sessions: MutableList<Session> = mutableListOf()
     val speakers: MutableMap<String, Speaker> = mutableMapOf()
     val favorites: MutableSet<String> = mutableSetOf()
+
+    var mLastPosition = -1
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_session, parent, false)
@@ -90,6 +93,19 @@ internal class SessionAdapter(val onSessionSelectedListener: ((session: Session)
         } else {
             holder.timeslot.visibility = View.VISIBLE
         }
+
+        mLastPosition = setAnimation(holder.itemView, position, mLastPosition)
+    }
+
+    private fun setAnimation(view: View, position: Int, lastPosition: Int) : Int {
+        var newPosition = lastPosition
+        if(position > lastPosition) {
+            val animation = AnimationUtils.loadAnimation(view.context, android.R.anim.slide_in_left)
+            animation.duration = 1500
+            view.startAnimation(animation)
+            newPosition = position
+        }
+        return newPosition
     }
 
     override fun getItemCount(): Int {
