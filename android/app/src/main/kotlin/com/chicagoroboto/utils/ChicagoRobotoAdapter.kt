@@ -9,8 +9,7 @@ import kotlin.math.absoluteValue
 /**
  * Adapter base class to optionally add animations to the view items
  */
-abstract class ChicagoRobotoAdapter<T: RecyclerView.ViewHolder>(private var lastPosition:Int = -1,
-                                                            var staggerAnimation:Boolean = false,
+abstract class ChicagoRobotoAdapter<T: RecyclerView.ViewHolder>(var staggerAnimation:Boolean = false,
                                                             var animationDuration:Long = 300,
                                                             var showAnimation:Boolean = false) :
         RecyclerView.Adapter<T>() {
@@ -40,23 +39,18 @@ abstract class ChicagoRobotoAdapter<T: RecyclerView.ViewHolder>(private var last
      * Shows an animation on the cell
      */
     private fun setAnimation(view: View, position: Int) {
-        if(position > lastPosition) {
+        // Start the view out of the screen to the left
+        view.x = (-view.width).toFloat()
+        view.visibility = View.VISIBLE
 
-            val oldX = view.x
-            view.x = (-view.width).toFloat()
-            view.visibility = View.VISIBLE
+        // Animate slide to original position
+        val objectAnimator = ObjectAnimator.ofFloat(view, "translationX", 0f)
 
-            // Animate slide to original position
-            val objectAnimator = ObjectAnimator.ofFloat(view, "translationX", oldX)
-
-            // Stagger effect
-            if(staggerAnimation) {
-                objectAnimator.duration = animationDuration + (lastPosition * STAGGER_FACTOR).absoluteValue
-            }
-
-            objectAnimator.start()
-
-            lastPosition = position
+        // Stagger effect
+        if(staggerAnimation) {
+            objectAnimator.duration = animationDuration + (position * STAGGER_FACTOR).absoluteValue
         }
+
+        objectAnimator.start()
     }
 }
