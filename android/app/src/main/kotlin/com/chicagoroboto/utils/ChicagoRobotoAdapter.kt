@@ -9,6 +9,7 @@ import android.view.animation.AnimationUtils
  * Adapter base class to optionally add animations to the view items
  */
 open class ChicagoRobotoAdapter<T: RecyclerView.ViewHolder>(private var mLastPosition:Int = -1,
+                                                            var mAnimationType:Int = android.R.anim.slide_in_left,
                                                             var mAnimationDuration:Long = ANIMATION_DURATION,
                                                             var mShowAnimation:Boolean = true) :
         RecyclerView.Adapter<T>() {
@@ -45,7 +46,7 @@ open class ChicagoRobotoAdapter<T: RecyclerView.ViewHolder>(private var mLastPos
      */
     private fun setAnimation(view: View, position: Int) {
         if(position > mLastPosition) {
-            val animation = AnimationUtils.loadAnimation(view.context, android.R.anim.slide_in_left)
+            val animation = AnimationUtils.loadAnimation(view.context, mAnimationType)
             animation.duration = mAnimationDuration
             view.startAnimation(animation)
             mLastPosition = position
