@@ -15,30 +15,43 @@ abstract class ChicagoRobotoAdapter<T: RecyclerView.ViewHolder>(private var last
                                                             var showAnimation:Boolean = false) :
         RecyclerView.Adapter<T>() {
 
+    companion object {
+        val STAGGER_FACTOR = 100
+    }
+
     /**
      * Play the animation if enabled
      */
     @CallSuper
     override fun onBindViewHolder(holder: T, position: Int) {
         if(showAnimation) {
-            setAnimation(holder.itemView, position)
+            // Set invisible, initially
+            holder.itemView.visibility = View.INVISIBLE
+
+            // Post so the item has width, which will be used
+            holder.itemView.post({
+                setAnimation(holder.itemView, position)
+            })
+
         }
     }
 
     /**
      * Shows an animation on the cell
-     * Reference: https://stackoverflow.com/questions/26724964/how-to-animate-recyclerview-items-when-they-appear
      */
     private fun setAnimation(view: View, position: Int) {
         if(position > lastPosition) {
 
             val oldX = view.x
-            view.x = -(view.width + 1000).toFloat()
+            view.x = (-view.width).toFloat()
+            view.visibility = View.VISIBLE
+
+            // Animate slide to original position
             val objectAnimator = ObjectAnimator.ofFloat(view, "translationX", oldX)
 
             // Stagger effect
             if(staggerAnimation) {
-                objectAnimator.duration = animationDuration + (lastPosition * 100).absoluteValue
+                objectAnimator.duration = animationDuration + (lastPosition * STAGGER_FACTOR).absoluteValue
             }
 
             objectAnimator.start()
