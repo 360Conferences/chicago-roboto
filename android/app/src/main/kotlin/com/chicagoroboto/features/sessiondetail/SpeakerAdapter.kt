@@ -22,7 +22,6 @@ internal class SpeakerAdapter(private val avatarProvider: AvatarProvider,
     val speakers: MutableList<Speaker> = mutableListOf()
 
     init {
-        animationDuration = 500
         showAnimation = true
     }
 

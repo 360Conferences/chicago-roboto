@@ -27,7 +27,7 @@ internal class SessionAdapter(val onSessionSelectedListener: ((session: Session)
     val favorites: MutableSet<String> = mutableSetOf()
 
     init {
-        animationDuration = 500
+        staggerAnimation = true
         showAnimation = true
     }
 

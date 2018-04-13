@@ -1,17 +1,18 @@
 package com.chicagoroboto.utils
 
+import android.animation.ObjectAnimator
 import android.support.annotation.CallSuper
 import android.support.v7.widget.RecyclerView
 import android.view.View
-import android.view.animation.AnimationUtils
+import kotlin.math.absoluteValue
 
 /**
  * Adapter base class to optionally add animations to the view items
  */
 abstract class ChicagoRobotoAdapter<T: RecyclerView.ViewHolder>(private var lastPosition:Int = -1,
-                                                            var animationType:Int = android.R.anim.slide_in_left,
-                                                            var animationDuration:Long = 1000,
-                                                            var showAnimation:Boolean = true) :
+                                                            var staggerAnimation:Boolean = false,
+                                                            var animationDuration:Long = 300,
+                                                            var showAnimation:Boolean = false) :
         RecyclerView.Adapter<T>() {
 
     /**
@@ -30,9 +31,18 @@ abstract class ChicagoRobotoAdapter<T: RecyclerView.ViewHolder>(private var last
      */
     private fun setAnimation(view: View, position: Int) {
         if(position > lastPosition) {
-            val animation = AnimationUtils.loadAnimation(view.context, animationType)
-            animation.duration = animationDuration
-            view.startAnimation(animation)
+
+            val oldX = view.x
+            view.x = -(view.width + 1000).toFloat()
+            val objectAnimator = ObjectAnimator.ofFloat(view, "translationX", oldX)
+
+            // Stagger effect
+            if(staggerAnimation) {
+                objectAnimator.duration = animationDuration + (lastPosition * 100).absoluteValue
+            }
+
+            objectAnimator.start()
+
             lastPosition = position
         }
     }
