@@ -4,24 +4,27 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.chicagoroboto.R
 import com.chicagoroboto.data.AvatarProvider
 import com.chicagoroboto.model.Speaker
+import com.chicagoroboto.utils.ChicagoRobotoAdapter
 import com.chicagoroboto.utils.DrawableUtils
 import kotlinx.android.synthetic.main.item_speaker.view.*
 
 internal class SpeakerAdapter(private val avatarProvider: AvatarProvider,
-                              val wrapsWidth: Boolean = true,
-                              val onSpeakerClickedListener: ((speaker: Speaker, view: View) -> Unit)) :
-        RecyclerView.Adapter<SpeakerAdapter.ViewHolder>() {
-
-    private var mLastPosition = -1
+                              private val wrapsWidth: Boolean = true,
+                              private val onSpeakerClickedListener: ((speaker: Speaker, view: View) -> Unit)) :
+        ChicagoRobotoAdapter<SpeakerAdapter.ViewHolder>() {
 
     val speakers: MutableList<Speaker> = mutableListOf()
+
+    init {
+        mAnimationDuration = 500
+        mShowAnimation = true
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.item_speaker, parent, false)
@@ -32,19 +35,9 @@ internal class SpeakerAdapter(private val avatarProvider: AvatarProvider,
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        super.onBindViewHolder(holder, position)
+
         holder.bind(speakers[position])
-
-        mLastPosition = setAnimation(holder.itemView, position, mLastPosition)
-    }
-
-    private fun setAnimation(view: View, position: Int, lastPosition: Int) : Int {
-        var newPosition = lastPosition
-        if(position > lastPosition) {
-            val animation = AnimationUtils.loadAnimation(view.context, android.R.anim.slide_in_left)
-            view.startAnimation(animation)
-            newPosition = position
-        }
-        return newPosition
     }
 
     override fun getItemCount(): Int {
