@@ -35,6 +35,7 @@ internal class SpeakerAdapter(private val avatarProvider: AvatarProvider,
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        // Call super to play animation
         super.onBindViewHolder(holder, position)
 
         holder.bind(speakers[position])

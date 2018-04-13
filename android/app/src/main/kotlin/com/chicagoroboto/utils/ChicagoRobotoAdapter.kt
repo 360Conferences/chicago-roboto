@@ -18,7 +18,9 @@ open class ChicagoRobotoAdapter<T: RecyclerView.ViewHolder>(private var mLastPos
     }
 
     /**
-     * These won't be used, but will be implemented by child adapter classes
+     * These won't be used, but will be implemented by child adapter classes.
+     * There's currently no worry on the TODOs getting hit at runtime but if children ever call it
+     * the app can crash.
      */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): T {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
@@ -28,16 +30,21 @@ open class ChicagoRobotoAdapter<T: RecyclerView.ViewHolder>(private var mLastPos
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
+    /**
+     * Play the animation
+     */
     override fun onBindViewHolder(holder: T, position: Int) {
-        setAnimation(holder.itemView, position)
+        if(mShowAnimation) {
+            setAnimation(holder.itemView, position)
+        }
     }
 
     /**
      * Shows an animation on the cell
      * Reference: https://stackoverflow.com/questions/26724964/how-to-animate-recyclerview-items-when-they-appear
      */
-    protected fun setAnimation(view: View, position: Int) {
-        if(mShowAnimation && (position > mLastPosition)) {
+    private fun setAnimation(view: View, position: Int) {
+        if(position > mLastPosition) {
             val animation = AnimationUtils.loadAnimation(view.context, android.R.anim.slide_in_left)
             animation.duration = mAnimationDuration
             view.startAnimation(animation)

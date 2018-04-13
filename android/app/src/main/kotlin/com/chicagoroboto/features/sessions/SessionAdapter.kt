@@ -37,6 +37,7 @@ internal class SessionAdapter(val onSessionSelectedListener: ((session: Session)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        // Call super to play animation
         super.onBindViewHolder(holder, position)
 
         val context = holder.itemView.context
