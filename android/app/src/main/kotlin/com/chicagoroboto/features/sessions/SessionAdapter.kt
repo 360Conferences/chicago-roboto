@@ -27,8 +27,8 @@ internal class SessionAdapter(val onSessionSelectedListener: ((session: Session)
     val favorites: MutableSet<String> = mutableSetOf()
 
     init {
-        mAnimationDuration = 500
-        mShowAnimation = true
+        animationDuration = 500
+        showAnimation = true
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

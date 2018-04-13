@@ -22,8 +22,8 @@ internal class SpeakerAdapter(private val avatarProvider: AvatarProvider,
     val speakers: MutableList<Speaker> = mutableListOf()
 
     init {
-        mAnimationDuration = 500
-        mShowAnimation = true
+        animationDuration = 500
+        showAnimation = true
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
