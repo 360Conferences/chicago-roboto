@@ -1,71 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
-    <LinearLayout
+
+    <android.support.constraint.ConstraintLayout
         android:id="@+id/container_ratings"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingTop="16dp"
         android:paddingBottom="16dp"
         android:paddingLeft="16dp"
-        android:paddingRight="16dp">
+        android:paddingRight="16dp"
+        android:paddingTop="16dp">
+
         <TextView
+            android:id="@+id/feedback_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:textAppearance="?android:textAppearanceLarge"
-            android:text="@string/feedback_title"/>
+            android:text="@string/feedback_title"
+            android:textAppearance="?android:textAppearanceLarge" />
+
         <TextView
+            android:id="@+id/overall_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@string/feedback_session"
             android:textAppearance="?android:textAppearanceMedium"
-            android:text="@string/feedback_session"/>
+            app:layout_constraintTop_toBottomOf="@id/feedback_title" />
+
         <RatingBar
             android:id="@+id/overall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:numStars="5"/>
+            android:numStars="5"
+            app:layout_constraintTop_toBottomOf="@id/overall_title" />
+
+        <TextView
+            android:id="@+id/technical_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/feedback_content"
+            android:textAppearance="?android:textAppearanceMedium"
+            app:layout_constraintTop_toBottomOf="@id/overall" />
+
+        <TextView
+            android:id="@+id/technical_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/not_enough"
+            android:textColor="?attr/colorControlActivated"
+            app:layout_constraintTop_toBottomOf="@id/technical_title" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:textAppearanceMedium"
-            android:text="@string/feedback_content"/>
-        <RatingBar
+            android:text="@string/just_right"
+            android:textColor="?attr/colorControlActivated"
+            app:layout_constraintLeft_toLeftOf="@id/technical"
+            app:layout_constraintRight_toRightOf="@id/technical"
+            app:layout_constraintTop_toBottomOf="@id/technical_title" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:text="@string/too_much"
+            android:textColor="?attr/colorControlActivated"
+            app:layout_constraintRight_toRightOf="@id/technical"
+            app:layout_constraintTop_toBottomOf="@id/technical_title" />
+
+        <android.support.v7.widget.AppCompatSeekBar
             android:id="@+id/technical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:numStars="5"/>
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:max="4"
+            android:maxHeight="48dp"
+            android:progress="2"
+            android:progressBackgroundTint="?attr/colorControlActivated"
+            android:progressBackgroundTintMode="src_over"
+            android:progressTint="?attr/colorControlActivated"
+            android:thumb="@drawable/ic_technical_thumb"
+            app:layout_constraintLeft_toLeftOf="@id/overall"
+            app:layout_constraintRight_toRightOf="@id/overall"
+            app:layout_constraintTop_toBottomOf="@id/technical_label"
+            app:tickMark="@drawable/ic_technical_tick"
+            app:tickMarkTint="?attr/colorControlActivated" />
+
         <TextView
+            android:id="@+id/speaker_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@string/feedback_speaker"
             android:textAppearance="?android:textAppearanceMedium"
-            android:text="@string/feedback_speaker"/>
+            app:layout_constraintTop_toBottomOf="@id/technical" />
+
         <RatingBar
             android:id="@+id/speaker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:numStars="5"/>
-    </LinearLayout>
+            android:numStars="5"
+            app:layout_constraintTop_toBottomOf="@id/speaker_title" />
+    </android.support.constraint.ConstraintLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="end"
         android:orientation="horizontal">
+
         <Button
             android:id="@+id/cancel"
             style="@style/Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/cancel"/>
+            android:text="@string/cancel" />
+
         <Button
             android:id="@+id/submit"
             style="@style/Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/submit"/>
+            android:text="@string/submit" />
     </LinearLayout>
 </LinearLayout>

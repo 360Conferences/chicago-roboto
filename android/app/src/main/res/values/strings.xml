@@ -24,5 +24,8 @@
     <string name="cd_logo">Event Logo</string>
     <string name="note_feedback_title">%1$s complete</string>
     <string name="note_feedback_msg">Don\'t forget to submit feedback.</string>
-  <string name="feedback_note_channel">Session Feedback</string>
+    <string name="feedback_note_channel">Session Feedback</string>
+    <string name="not_enough">Not\nenough</string>
+    <string name="just_right">Just\nright</string>
+    <string name="too_much">Too\nmuch</string>
 </resources>
