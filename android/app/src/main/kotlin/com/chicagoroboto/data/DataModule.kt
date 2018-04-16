@@ -41,6 +41,10 @@ class DataModule {
         return FirebaseStorage.getInstance().reference.child(eventId)
     }
 
+    @Provides @Singleton fun provideConfigProvider(db: DatabaseReference): ConfigProvider {
+        return FirebaseConfigProvider(db)
+    }
+
     @Provides @Singleton fun provideSessionDateProvider(db: DatabaseReference): SessionDateProvider {
         return FirebaseSessionDateProvider(db)
     }
