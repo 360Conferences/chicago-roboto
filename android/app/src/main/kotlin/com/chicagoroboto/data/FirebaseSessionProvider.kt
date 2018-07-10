@@ -1,5 +1,6 @@
 package com.chicagoroboto.data
 
+import android.util.Log
 import com.chicagoroboto.model.Session
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -33,8 +34,12 @@ class FirebaseSessionProvider(private val database: DatabaseReference) : Session
     override fun addSessionListener(key: Any, date: String, onComplete: (List<Session>?) -> Unit) {
         val listener = object : ValueEventListener {
             override fun onDataChange(data: DataSnapshot?) {
-                val typeIndicator = object : GenericTypeIndicator<List<@JvmSuppressWildcards Session>>() {}
-                onComplete(data?.getValue(typeIndicator))
+                val typeIndicator = object : GenericTypeIndicator<HashMap<String, @JvmSuppressWildcards Session>>() {}
+                val sessions = data?.getValue(typeIndicator)
+                        ?.map { it.value }
+                        ?.filter { it.start_time?.startsWith(date) ?: false }
+                        ?.sortedBy { it.startTime }
+                onComplete(sessions)
             }
 
             override fun onCancelled(p0: DatabaseError?) {
@@ -43,7 +48,7 @@ class FirebaseSessionProvider(private val database: DatabaseReference) : Session
         }
         listeners[key] = listener
 
-        val query = database.child("sessions_by_date").child(date).orderByChild("start_time")
+        val query = database.child("sessions")
         queries[key] = query
         query.addValueEventListener(listener)
     }

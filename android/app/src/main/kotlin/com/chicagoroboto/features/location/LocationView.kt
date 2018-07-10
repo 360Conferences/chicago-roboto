@@ -42,9 +42,9 @@ class LocationView(context: Context, attrs: AttributeSet? = null) : RelativeLayo
         name.text = venue?.name
         address.text = venue?.address
 
-        if (venue != null) {
+        venue?.let {
             map.getMapAsync { map ->
-                val location = LatLng(venue.latitude!!, venue.longitude!!)
+                val location = LatLng(it.latitude!!, it.longitude!!)
                 map.moveCamera(CameraUpdateFactory
                         .newLatLngZoom(location, 17f))
                 map.addMarker(MarkerOptions().position(location))
