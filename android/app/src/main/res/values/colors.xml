@@ -5,7 +5,7 @@
   <color name="colorAccent">#ee5c49</color>
 
   <color name="twitter_blue">#55ACEE</color>
-  <color name="color_nav_bg">#2d3f53</color>
+  <color name="color_nav_bg">#333333</color>
   <color name="bg_info_header">#1f000000</color>
   <color name="session_bg">#ffffffff</color>
   <color name="session_finished_bg">#e1e1e1</color>

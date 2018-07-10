@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="color_nav_bg">#2d3f53</color>
+  <color name="bg_info_header">#1f000000</color>
+</resources>

@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "190191541520",
+    "firebase_url": "https://andev-app.firebaseio.com",
+    "project_id": "andev-app",
+    "storage_bucket": "andev-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:190191541520:android:5c3cc9d3e8735ab1",
+        "android_client_info": {
+          "package_name": "com.threesixtyconferences.andev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "190191541520-ah7c4ud2p39uuvs2ea930qkdrpboi6lq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.threesixtyconferences.andev",
+            "certificate_hash": "801a93fcff32149bea7aae2e9a19c9ff153313c1"
+          }
+        },
+        {
+          "client_id": "190191541520-bnlst6koltje6kllpd4lotbcilo2rdh5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.threesixtyconferences.andev",
+            "certificate_hash": "d00e0b0d35a5dae8f7dc33b915f75817b6bd6683"
+          }
+        },
+        {
+          "client_id": "190191541520-2rr3qdiogca7i3i8tr8v0r2162l0j07i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnmmkSkYJmGeh7OG9p1obDwdbb7e8Dzsg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "190191541520-2rr3qdiogca7i3i8tr8v0r2162l0j07i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

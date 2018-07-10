@@ -13,7 +13,7 @@
       android:layout_gravity="center"
       android:contentDescription="@string/cd_logo"
       android:scaleType="fitCenter"
-      android:src="@drawable/logo_dark"
+      android:src="@drawable/logo_nav"
       />
 
 </FrameLayout>
