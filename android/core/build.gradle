@@ -8,16 +8,15 @@ sourceSets {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    compile libs.kotlinStdlib
 
-    testCompile "junit:junit:4.12"
-    testCompile "com.google.truth:truth:0.28"
-    testCompile "org.mockito:mockito-core:2.7.15"
-    testCompile "com.nhaarman:mockito-kotlin:1.3.0"
-    testCompile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    testCompile "org.jetbrains.kotlin:kotlin-runtime:$kotlin_version"
-    testCompile 'org.jetbrains.kotlin:kotlin-test:1.0.3'
+    testCompile libs.junit4
+    testCompile libs.truth
+    testCompile libs.mockitoCore
+    testCompile libs.mockitoKotlin
+    testCompile libs.kotlinStdlib
+    testCompile libs.kotlinRuntime
+    testCompile libs.kotlinTest
 }
 
 sourceCompatibility = "1.7"

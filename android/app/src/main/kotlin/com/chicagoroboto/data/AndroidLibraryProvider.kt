@@ -15,7 +15,8 @@ class AndroidLibraryProvider(private val context: Context) : LibraryProvider {
 //            Library("Google Play Services", "Google", "", ""),
             Library("Kotlin", "JetBrains", "Apache 2", "http://kotlinlang.org/"),
             Library("CircularImageView", "Lopez Mikhael", "Apache 2", "https://github.com/lopspower/CircularImageView"),
-            Library("Glide", "Sam Judd", "Apache 2", "https://github.com/bumptech/glide")
+            Library("Glide", "Sam Judd", "Apache 2", "https://github.com/bumptech/glide"),
+            Library("multiline-collapsingtoolbar", "Opac App", "Apache 2", "https://github.com/opacapp/multiline-collapsingtoolbar")
     )
 
     override fun libraries(onComplete: (List<Library>) -> Unit) {

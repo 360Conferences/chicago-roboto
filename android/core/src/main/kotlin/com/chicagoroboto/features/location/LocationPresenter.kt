@@ -10,7 +10,7 @@ class LocationPresenter(val venueProvider: VenueProvider) : LocationMvp.Presente
         this.view = view
 
         venueProvider.addVenueListener(this, { venue ->
-            view?.showVenue(venue)
+            view.showVenue(venue)
         })
     }
 

@@ -5,11 +5,16 @@ import java.text.DateFormat
 import java.text.FieldPosition
 import java.text.ParsePosition
 import java.text.SimpleDateFormat
-import java.util.*
+import java.util.Date
 
-class Session(val id: String? = null, val name: String? = null, val description: String? = null,
-              val start_time: String? = null, val end_time: String? = null, val date: String? = null,
-              val speakers: List<String>? = null, val room: String? = null,
+class Session(val id: String? = null,
+              val title: String? = null,
+              val abstract: String? = null,
+              val start_time: String? = null,
+              val end_time: String? = null,
+              val date: String? = null,
+              val speakers: List<String>? = null,
+              val room: String? = "Main",
               val tracks: List<String>? = null) {
 
     private val format = object : DateFormat() {

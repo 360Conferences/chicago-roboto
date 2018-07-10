@@ -1,8 +1,12 @@
 package com.chicagoroboto.data
 
 import com.chicagoroboto.model.Session
-import com.google.firebase.database.*
-import java.util.*
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.GenericTypeIndicator
+import com.google.firebase.database.Query
+import com.google.firebase.database.ValueEventListener
 
 class FirebaseSessionProvider(private val database: DatabaseReference) : SessionProvider {
 
@@ -29,7 +33,7 @@ class FirebaseSessionProvider(private val database: DatabaseReference) : Session
     override fun addSessionListener(key: Any, date: String, onComplete: (List<Session>?) -> Unit) {
         val listener = object : ValueEventListener {
             override fun onDataChange(data: DataSnapshot?) {
-                val typeIndicator = object : GenericTypeIndicator<ArrayList<Session>>() {}
+                val typeIndicator = object : GenericTypeIndicator<List<@JvmSuppressWildcards Session>>() {}
                 onComplete(data?.getValue(typeIndicator))
             }
 

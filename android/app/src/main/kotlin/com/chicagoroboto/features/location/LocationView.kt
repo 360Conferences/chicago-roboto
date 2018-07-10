@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.widget.RelativeLayout
 import com.chicagoroboto.R
 import com.chicagoroboto.ext.getComponent
+import com.chicagoroboto.features.main.MainView
 import com.chicagoroboto.features.main.MainComponent
 import com.chicagoroboto.model.Venue
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -14,7 +15,9 @@ import com.google.android.gms.maps.model.MarkerOptions
 import kotlinx.android.synthetic.main.view_location.view.*
 import javax.inject.Inject
 
-class LocationView(context: Context, attrs: AttributeSet? = null) : RelativeLayout(context, attrs), LocationMvp.View {
+class LocationView(context: Context, attrs: AttributeSet? = null) : RelativeLayout(context, attrs), LocationMvp.View, MainView {
+
+    override val titleResId = R.string.action_location
 
     @Inject lateinit var presenter: LocationMvp.Presenter
 
@@ -37,8 +40,7 @@ class LocationView(context: Context, attrs: AttributeSet? = null) : RelativeLayo
 
     override fun showVenue(venue: Venue?) {
         name.text = venue?.name
-        address.text = venue?.street
-        city.text = "${venue?.city}, ${venue?.state} ${venue?.zip}"
+        address.text = venue?.address
 
         if (venue != null) {
             map.getMapAsync { map ->

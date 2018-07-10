@@ -4,7 +4,7 @@ import android.app.AlarmManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
-import android.support.v7.app.NotificationCompat
+import android.support.v4.app.NotificationCompat
 import com.chicagoroboto.R
 import com.chicagoroboto.features.sessiondetail.SessionDetailActivity
 import com.chicagoroboto.model.Session
@@ -29,9 +29,9 @@ class LocalNotificationProvider(private val context: Context) : NotificationProv
   }
 
   private fun createPendingIntent(session: Session): PendingIntent {
-    val noteBuilder = NotificationCompat.Builder(context)
+    val noteBuilder = NotificationCompat.Builder(context, context.getString(R.string.feedback_note_channel))
         .setSmallIcon(R.mipmap.ic_launcher)
-        .setContentTitle(context.getString(R.string.note_feedback_title, session.name))
+        .setContentTitle(context.getString(R.string.note_feedback_title, session.title))
         .setContentText(context.getString(R.string.note_feedback_msg))
         .setAutoCancel(true)
 

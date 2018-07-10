@@ -13,16 +13,12 @@ import android.view.LayoutInflater
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.BitmapImageViewTarget
 import com.chicagoroboto.R
+import com.chicagoroboto.data.AvatarProvider
 import com.chicagoroboto.ext.getActivity
 import com.chicagoroboto.ext.getComponent
 import com.chicagoroboto.model.Speaker
 import com.chicagoroboto.utils.DrawableUtils
-import kotlinx.android.synthetic.main.view_speaker_detail.view.bio
-import kotlinx.android.synthetic.main.view_speaker_detail.view.github
-import kotlinx.android.synthetic.main.view_speaker_detail.view.image
-import kotlinx.android.synthetic.main.view_speaker_detail.view.name
-import kotlinx.android.synthetic.main.view_speaker_detail.view.toolbar
-import kotlinx.android.synthetic.main.view_speaker_detail.view.twitter
+import kotlinx.android.synthetic.main.view_speaker_detail.view.*
 import javax.inject.Inject
 
 
@@ -30,6 +26,7 @@ class SpeakerDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
         ConstraintLayout(context, attrs, defStyle), SpeakerDetailMvp.View {
 
     @Inject lateinit var presenter: SpeakerDetailMvp.Presenter
+    @Inject lateinit var avatarProvider: AvatarProvider
 
     constructor(context: Context, attrs: AttributeSet?): this(context, attrs, 0)
 
@@ -106,22 +103,24 @@ class SpeakerDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
             github.visibility = GONE
         }
 
-        Glide.with(context)
-                .load(speaker.avatar)
+        avatarProvider.getAvatarUri(speaker) {
+            Glide.with(context)
+                .load(it)
                 .asBitmap()
                 .centerCrop()
                 .dontAnimate()
                 .into(object : BitmapImageViewTarget(image) {
                     override fun setResource(resource: Bitmap?) {
                         image.setImageBitmap(resource)
-                        ActivityCompat.startPostponedEnterTransition(getActivity())
+                        getActivity()?.let { ActivityCompat.startPostponedEnterTransition(it) }
                     }
 
                     override fun onLoadFailed(e: Exception?, errorDrawable: Drawable?) {
                         super.onLoadFailed(e, errorDrawable)
-                        ActivityCompat.startPostponedEnterTransition(getActivity())
+                        getActivity()?.let { ActivityCompat.startPostponedEnterTransition(it) }
                     }
                 })
+        }
     }
 
 }

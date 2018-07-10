@@ -1,1134 +1,923 @@
 {
-  "events" : {
-    "chicagoroboto-2017" : {
-      "admins" : [ "ryanjharter@gmail.com", "jerrellmardis@gmail.com", "john.wilker@360conferences.com" ],
-      "rooms" : {
-        "Great Room 1" : {
-          "id" : "great-room-1",
-          "name" : "Great Room 1"
-        },
-        "Great Room 2" : {
-          "id" : "great-room-2",
-          "name" : "Great Room 2"
-        },
-        "Local Restaurants" : {
-          "id" : "local-restaurants",
-          "name" : "Local Restaurants"
-        }
-      },
-      "schedule" : {
-        "2017-04-20" : {
-          "date" : "2017-04-20",
-          "name" : "Thursday",
-          "slots" : {
-            "-KdlIC2cA8x8c4hNdZgB" : {
-              "date" : "2017-04-20",
-              "end_time" : "2017-04-20T15:45:00-0500",
-              "id" : "-KdlIC2cA8x8c4hNdZgB",
-              "name" : "9:00 AM - 9:45 AM",
-              "start_time" : "2017-04-20T15:00:00-0500"
-            },
-            "-KdlIIuJG7JYu8gpjOzA" : {
-              "date" : "2017-04-20",
-              "end_time" : "2017-04-20T16:45:00-0500",
-              "id" : "-KdlIIuJG7JYu8gpjOzA",
-              "name" : "10:00 AM - 10:45 AM",
-              "sessions" : {
-                "great-room-1" : {
-                  "date" : "2017-04-20",
-                  "description" : "This talk will cover all the basic steps you need to perform in order to go from zero to working conversation with Google Assistant.",
-                  "end_time" : "2017-04-20T16:45:00-0500",
-                  "id" : "conversation-actions-for-google-assistant",
-                  "name" : "Conversation Actions for Google Assistant",
-                  "room" : "Great Room 1",
-                  "slot_id" : "-KdlIIuJG7JYu8gpjOzA",
-                  "speakers" : [ "akelly" ],
-                  "start_time" : "2017-04-20T16:00:00-0500"
-                },
-                "great-room-2" : {
-                  "date" : "2017-04-20",
-                  "description" : "You can never really know just how secure your app is until you've done your best trying to break it.\n\nIn a world where building apps is similar to playing with Legos, the sturdiness and stability of our creations is mostly tested by others. Unfortunately, this places our users at risk of exposing their data into potentially harmful hands.\n\nLet's dive together and explore a series of practical, hands-on examples on how to explore an app, dismantle it and alter it in a way it wasn't intended to be.",
-                  "end_time" : "2017-04-20T16:45:00-0500",
-                  "id" : "break-your-app-before-someone-else-does",
-                  "name" : "Break your app before someone else does",
-                  "room" : "Great Room 2",
-                  "slot_id" : "-KdlIIuJG7JYu8gpjOzA",
-                  "speakers" : [ "abaotic" ],
-                  "start_time" : "2017-04-20T16:00:00-0500"
-                }
-              },
-              "start_time" : "2017-04-20T16:00:00-0500"
-            },
-            "-KdlISKeTe7EFw5t4TOm" : {
-              "date" : "2017-04-20",
-              "end_time" : "2017-04-20T17:45:00-0500",
-              "id" : "-KdlISKeTe7EFw5t4TOm",
-              "name" : "11:00 AM - 11:45 AM",
-              "sessions" : {
-                "great-room-1" : {
-                  "date" : "2017-04-20",
-                  "description" : "Accessibility often isn't a priority for companies as they grow, but if you don't invest in it early it can become a knotty problem.  In this talk I will discuss breaking down a complex Android application to find low-hanging fixes as well as prioritizing larger improvements and investing in accessibility in the future.  We will discuss my experience growing grassroots support for accessibility improvements at Pinterest and both the moral and business value of improving it.\n",
-                  "end_time" : "2017-04-20T17:45:00-0500",
-                  "id" : "accessibility-at-scale",
-                  "name" : "Accessibility @ Scale",
-                  "room" : "Great Room 1",
-                  "slot_id" : "-KdlISKeTe7EFw5t4TOm",
-                  "speakers" : [ "mpotter" ],
-                  "start_time" : "2017-04-20T17:00:00-0500",
-                  "tracks" : [ "cloud" ]
-                },
-                "great-room-2" : {
-                  "date" : "2017-04-20",
-                  "description" : "Good use of animations can not only help make your app’s UI more intuitive, but can also build emotional attachment with your users.\n\nMark Allison will explore the subtleties of why some animations work where others don’t; The distinct components of effective animation; and, of course, some detailed worked examples of how to create amazing Android animations.",
-                  "end_time" : "2017-04-20T17:45:00-0500",
-                  "id" : "i-like-the-way-you-move",
-                  "name" : "I Like The Way You Move",
-                  "room" : "Great Room 2",
-                  "slot_id" : "-KdlISKeTe7EFw5t4TOm",
-                  "speakers" : [ "mallison" ],
-                  "start_time" : "2017-04-20T17:00:00-0500"
-                }
-              },
-              "start_time" : "2017-04-20T17:00:00-0500"
-            },
-            "-KdlItSCtXMMPtiP8DzH" : {
-              "date" : "2017-04-20",
-              "end_time" : "2017-04-20T19:00:00-0500",
-              "id" : "-KdlItSCtXMMPtiP8DzH",
-              "name" : "0:00 PM - 1:00 PM",
-              "sessions" : {
-                "local-restaurants" : {
-                  "date" : "2017-04-20",
-                  "description" : "",
-                  "end_time" : "2017-04-20T19:00:00-0500",
-                  "id" : "lunch",
-                  "name" : "Lunch",
-                  "room" : "Local Restaurants",
-                  "slot_id" : "-KdlItSCtXMMPtiP8DzH",
-                  "start_time" : "2017-04-20T18:00:00-0500"
-                }
-              },
-              "start_time" : "2017-04-20T18:00:00-0500"
-            },
-            "-KdlJ5HohmLMRMl85cHf" : {
-              "date" : "2017-04-20",
-              "end_time" : "2017-04-20T19:45:00-0500",
-              "id" : "-KdlJ5HohmLMRMl85cHf",
-              "name" : "1:00 PM - 1:45 PM",
-              "sessions" : {
-                "great-room-1" : {
-                  "date" : "2017-04-20",
-                  "description" : "We’ve all been there: you have an app with outdated technology, and you know you should update it. But the legacy code is complicated and opaque, and due to support issues, you can’t just use the new library in the straightforward way the code samples show it. But perf gains and code clarity are on the line, so you need to find a way to make it work.\n\nWell, you’re in luck! This talk is for you, person who’s trying to make it work. Drawing from examples encountered with Pinterest’s own transition to Retrofit, we’ll explore ways to retrofit Retrofit onto an existing networking layer while balancing the interests of hundreds of millions of users relying on a performant app. Ranging from big wins to unsightly mistakes, this tour will be both a cringeworthy and infinitely practical look at what happens when you can’t start from scratch. ",
-                  "end_time" : "2017-04-20T19:45:00-0500",
-                  "id" : "retrofitting-retrofit",
-                  "name" : "Retrofitting Retrofit",
-                  "room" : "Great Room 1",
-                  "slot_id" : "-KdlJ5HohmLMRMl85cHf",
-                  "speakers" : [ "clee" ],
-                  "start_time" : "2017-04-20T19:00:00-0500",
-                  "tracks" : [ "web" ]
-                },
-                "great-room-2" : {
-                  "date" : "2017-04-20",
-                  "description" : "Exciting times for mixed reality enthusiasts. With many AR and VR platforms now available, we're witnessing the birth of a new medium. \n\nIn many ways, this boom is similar to the personal computer revolution of the 70s and 80s. People are wondering: \"Besides games, what are these gadgets good for, anyway?\"\n\nIn this session, we'll see how people are using mixed reality for social good. Then, we'll learn about the Tango and Daydream platforms from Google. We'll use these and other platforms to build our own mixed reality experience.\n",
-                  "end_time" : "2017-04-20T19:45:00-0500",
-                  "id" : "mixed-reality-for-social-good",
-                  "name" : "Mixed Reality for Social Good",
-                  "room" : "Great Room 2",
-                  "slot_id" : "-KdlJ5HohmLMRMl85cHf",
-                  "speakers" : [ "ecaron-petit-pas" ],
-                  "start_time" : "2017-04-20T19:00:00-0500",
-                  "tracks" : [ "android" ]
-                }
-              },
-              "start_time" : "2017-04-20T19:00:00-0500"
-            },
-            "-KdlJDEA-NOT1Y90kWi5" : {
-              "date" : "2017-04-20",
-              "end_time" : "2017-04-20T20:45:00-0500",
-              "id" : "-KdlJDEA-NOT1Y90kWi5",
-              "name" : "2:00 PM - 2:45 PM",
-              "sessions" : {
-                "great-room-1" : {
-                  "date" : "2017-04-20",
-                  "description" : "Nearby is a proximity API, allowing your apps to detect and communicate with other devices around them. This talk will describe how the Nearby API can be used in your app to detect other devices and communicate with them. It'll provide an introduction to the Nearby APIs, and give an insight into best practices for adding proximity features to your app. The target audience are app developers who want to explore how communication with nearby devices can provide magical user experiences in their apps.",
-                  "end_time" : "2017-04-20T20:45:00-0500",
-                  "id" : "contextualize-apps-with-nearby-awareness",
-                  "name" : "Contextualize Apps with Nearby + Awareness",
-                  "room" : "Great Room 1",
-                  "slot_id" : "-KdlJDEA-NOT1Y90kWi5",
-                  "speakers" : [ "bduff" ],
-                  "start_time" : "2017-04-20T20:00:00-0500",
-                  "tracks" : [ "cloud" ]
-                },
-                "great-room-2" : {
-                  "date" : "2017-04-20",
-                  "description" : "Mentoring and onboarding new engineers is one of the most important things you\ncan do to grow your team.  Effective and intentional mentoring decreases the number of bugs shipped to the Play Store, improves the quality of your application, and helps keep code standards high as your team grows and changes.\n\n\nYet for all of its importance, there is hardly any information about how to mentor effectively.  There are many resources about how engineers can get 4% productivity gains by learning new Android Studio shortcuts, but there are almost none about how they can get 400% productivity gains for their team by helping other developers be more productive.\n\n\nIn this talk, I'll discuss how to think about mentoring Android engineers from the ground-up.  First, we’ll discuss how to structure a plan for your mentee such that they move from “What’s an ADB?” to “Let’s use Retrofit, RxJava, and Dagger to make a testable app with MVP architecture” in no-time flat.  Next, we’ll talk about how to interact with your mentee such that every challenge helps them level-up their development skills and build your team culture.  Lastly, we’ll discuss how you can use your experience as a mentor to improve your own engineering skills.",
-                  "end_time" : "2017-04-20T20:45:00-0500",
-                  "id" : "write-less-code-and-get-more-done",
-                  "name" : "Write Less Code and Get More Done: Multiplying Your Impact Through Mentorship",
-                  "room" : "Great Room 2",
-                  "slot_id" : "-KdlJDEA-NOT1Y90kWi5",
-                  "speakers" : [ "jmaltz" ],
-                  "start_time" : "2017-04-20T20:00:00-0500",
-                  "tracks" : [ "cloud" ]
-                }
-              },
-              "start_time" : "2017-04-20T20:00:00-0500"
-            }
-          }
-        },
-        "2017-04-21" : {
-          "date" : "2017-04-21",
-          "name" : "Friday"
-        }
-      },
-      "session_dates" : [ "2017-04-20", "2017-04-21" ],
-      "sessions" : {
-        "death-taxes-and-http" : {
-          "date" : "2017-04-20",
-          "description" : "'Tis impossible to be sure of anything but death, taxes, and HTTP. This talk will explore some of the overhead inherent to HTTP and how it can be optimized or eliminated for more efficient networking.",
-          "end_time" : "2017-04-20T09:45:00-0500",
-          "id" : "death-taxes-and-http",
-          "name" : "Death, Taxes, and HTTP (Keynote)",
-          "room" : "Great Room 1",
-          "speakers" : [ "jwharton", "jwilson" ],
-          "start_time" : "2017-04-20T09:00:00-0500",
-          "tracks": [
-            "keynote"
-          ]
-        },
-        "a-healthy-dose-of-gradle" : {
-          "date" : "2017-04-21",
-          "description" : "Gradle is the official build system for Android but few ever go beyond editing dependencies or copy-pasting code from stackoverflow. However, it is possible to have a build that is both fast and tailored to your needs.\n\nThis session aims to make you a better developer by taking back control of your build.  \n\nWe will be covering concepts like the build phases (Initialization, Configuration, Execution), the task graph and the plugins that are available for you. We will look at how to extend an existing build by creating custom tasks, developing our own simple plugins and learning how to debug and test them. And since no one likes a slow build, we will use the Gradle Profiler to troubleshoot performance problems and talk about the usual root causes for neverending builds.",
-          "end_time" : "2017-04-21T10:45:00-0500",
-          "id" : "a-healthy-dose-of-gradle",
-          "name" : "A Healthy Dose of Gradle",
-          "room" : "Great Room 1",
-          "speakers" : [ "pbreault" ],
-          "start_time" : "2017-04-21T10:00:00-0500"
-        },
-        "accessibility-at-scale" : {
-          "date" : "2017-04-20",
-          "description" : "Accessibility often isn't a priority for companies as they grow, but if you don't invest in it early it can become a knotty problem.  In this talk I will discuss breaking down a complex Android application to find low-hanging fixes as well as prioritizing larger improvements and investing in accessibility in the future.  We will discuss my experience growing grassroots support for accessibility improvements at Pinterest and both the moral and business value of improving it.\n",
-          "end_time" : "2017-04-20T11:45:00-0500",
-          "id" : "accessibility-at-scale",
-          "name" : "Accessibility @ Scale",
-          "room" : "Great Room 1",
-          "slot_id" : "-KdlISKeTe7EFw5t4TOm",
-          "speakers" : [ "mpotter" ],
-          "start_time" : "2017-04-20T11:00:00-0500",
-          "tracks" : [ "cloud" ]
-        },
-        "advanced-android-touches" : {
-          "date" : "2017-04-21",
-          "description" : "For developers working with custom views and touches for the first time, it could be hard to decipher what goes on when a user touches the screen. In this talk we’ll trace through the steps to see how Android decides which view should handle a touch. We’ll visually examine how a view hierarchy is laid out and examine the multiple methods that are involved when handling touches. Lastly, we’ll look into the different kinds of touches that are categorized in Android and when the system finally decides the action is a 'touch'. \n\nTo wrap up the talk, we’ll look at an example of a custom translucent bottom bar laid over a recycler view. Using our newfound knowledge on touches, we’ll modify the navigation bar to handle different scenarios (such as scrolls, and clicking on a icon) so it can know when to handle a touch event, and when it should pass the event to the recycler view behind it.",
-          "end_time" : "2017-04-21T14:45:00-0500",
-          "id" : "advanced-android-touches",
-          "name" : "Advanced Android Touches",
-          "room" : "Great Room 2",
-          "speakers" : [ "cchang" ],
-          "start_time" : "2017-04-21T14:00:00-0500"
-        },
-        "android-auto-driving-the-future" : {
-          "date" : "2017-04-20",
-          "description" : "Curious about Android Auto?  Announced at Google I/O 2014, Android Auto is Google’s attempt to bring Android to the car, with controls and a user interface optimized for driving.  The first cars with Auto support were released in the summer of 2015 and Google has now opened up Android Auto to everyone with the recent release of the Android Auto app, giving developers a unique opportunity to reach a whole new set of users.  The goal of this session is to get you started developing great apps for this emerging platform.\n\n\nWe’ll talk about how to:\n- Extend your existing audio or messaging app to be compatible with an Android Auto head unit;\n\n- Use Android Auto to play music, compose and read messages and respond to user voice actions;\n\n- Develop and test your apps with the Desktop Head Unit;\n\n- Make sense of the Android Auto design guidelines and usability requirements that are in place for Auto apps;\n\n- Distribute your Auto app through Google Play.\n\n\nJoin us as we walk through real-life examples and see just how easy it is to get started with Android Auto!",
-          "end_time" : "2017-04-20T17:45:00-0500",
-          "id" : "android-auto-driving-the-future",
-          "name" : "Android Auto - Driving the Future",
-          "room" : "Great Room 2",
-          "slot_id" : "-KdhGdDgWd1bG372gIoD",
-          "speakers" : [ "pshadlyn" ],
-          "start_time" : "2017-04-20T17:00:00-0500"
-        },
-        "break-your-app-before-someone-else-does" : {
-          "date" : "2017-04-20",
-          "description" : "You can never really know just how secure your app is until you've done your best trying to break it.\n\nIn a world where building apps is similar to playing with Legos, the sturdiness and stability of our creations is mostly tested by others. Unfortunately, this places our users at risk of exposing their data into potentially harmful hands.\n\nLet's dive together and explore a series of practical, hands-on examples on how to explore an app, dismantle it and alter it in a way it wasn't intended to be.",
-          "end_time" : "2017-04-20T10:45:00-0500",
-          "id" : "break-your-app-before-someone-else-does",
-          "name" : "Break your app before someone else does",
-          "room" : "Great Room 2",
-          "slot_id" : "-KdlIIuJG7JYu8gpjOzA",
-          "speakers" : [ "abaotic" ],
-          "start_time" : "2017-04-20T10:00:00-0500"
-        },
-        "building-a-modern-android-ui" : {
-          "date" : "2017-04-21",
-          "description" : "Expectations for what makes a good mobile UI increased drastically in recent years, notably with the introduction of Material Design.\nYet, it's not always clear (or easy) how to achieve such results. This talk will cover how to take advantage of existing libraries\n(support lib, constraintlayout), technics (animations, vector drawables) and tools (android studio) in order to craft a modern UI.",
-          "end_time" : "2017-04-21T15:45:00-0500",
-          "id" : "building-a-modern-android-ui",
-          "name" : "Building a Modern Android UI",
-          "room" : "Great Room 2",
-          "speakers" : [ "nroard", "jhoford" ],
-          "start_time" : "2017-04-21T15:00:00-0500"
-        },
-        "building-gradle-plugins" : {
-          "date" : "2017-04-21",
-          "description" : "From simple tricks such as adding a git SHA to their application's version name to complex processes such as generating type-safe code from SQL files, Gradle and its plugins are powerful tools that can help developers automate and simplify their build and release process. I will go through the process of writing a simple task in Gradle to pulling it out and turning it into its own Gradle plugin.",
-          "end_time" : "2017-04-21T15:45:00-0500",
-          "id" : "building-gradle-plugins",
-          "name" : "Building Gradle Plugins",
-          "room" : "Great Room 2",
-          "speakers" : [ "bsills" ],
-          "start_time" : "2017-04-21T15:00:00-0500"
-        },
-        "closing-remarks" : {
-          "date" : "2017-04-21",
-          "description" : "Jerrell, John and Ryan say goodbye",
-          "end_time" : "2017-04-21T16:45:00-0500",
-          "id" : "closing-remarks",
-          "name" : "Closing Remarks",
-          "room" : "Great Room 1",
-          "start_time" : "2017-04-21T16:00:00-0500"
-        },
-        "contextualize-apps-with-nearby-awareness" : {
-          "date" : "2017-04-20",
-          "description" : "Nearby is a proximity API, allowing your apps to detect and communicate with other devices around them. This talk will describe how the Nearby API can be used in your app to detect other devices and communicate with them. It'll provide an introduction to the Nearby APIs, and give an insight into best practices for adding proximity features to your app. The target audience are app developers who want to explore how communication with nearby devices can provide magical user experiences in their apps.",
-          "end_time" : "2017-04-20T14:45:00-0500",
-          "id" : "contextualize-apps-with-nearby-awareness",
-          "name" : "Contextualize Apps with Nearby + Awareness",
-          "room" : "Great Room 1",
-          "slot_id" : "-KdlJDEA-NOT1Y90kWi5",
-          "speakers" : [ "bduff" ],
-          "start_time" : "2017-04-20T14:00:00-0500",
-          "tracks" : [ "cloud" ]
-        },
-        "conversation-actions-for-google-assistant" : {
-          "date" : "2017-04-20",
-          "description" : "This talk will cover all the basic steps you need to perform in order to go from zero to working conversation with Google Assistant.",
-          "end_time" : "2017-04-20T10:45:00-0500",
-          "id" : "conversation-actions-for-google-assistant",
-          "name" : "Conversation Actions for Google Assistant",
-          "room" : "Great Room 1",
-          "slot_id" : "-KdlIIuJG7JYu8gpjOzA",
-          "speakers" : [ "akelly" ],
-          "start_time" : "2017-04-20T10:00:00-0500"
-        },
-        "cool-constraint-layout" : {
-          "date" : "2017-04-21",
-          "description" : "ConstraintLayout is the newest layout on the Android platform. While it’s often compared directly with RelativeLayout in terms of functionality and performance. However, it actually possesses many features and ways of building layouts, even if you don’t count the shiny new features. But since it’s so new, you may not have heard of all of them yet.\n\nIn this session we will look at some examples of cool things that you can do with ConstraintLayout to more easily build complex layouts and transitions, focusing on features unique to ConstraintLayout.",
-          "end_time" : "2017-04-21T11:45:00-0500",
-          "id" : "cool-constraint-layout",
-          "name" : "Cool Constraint Layout",
-          "room" : "Great Room 1",
-          "speakers" : [ "hdao" ],
-          "start_time" : "2017-04-21T11:00:00-0500"
-        },
-        "dagger-2" : {
-          "date" : "2017-04-21",
-          "description" : "Dagger 2 is Google’s solution for dependency injection on Android. It powers some of the largest and most successful applications from Google and others, but applying it has been fraught with ambiguity and ad hoc solutions that require a lot of up-front engineering.\n\nIn an effort to make it viable for more projects, the Dagger team at Google has focused specifically on creating new features, libraries and well-documented patterns for using Dagger 2 in an Android application. The result is a structure that allows Android applications to be modular, testable, and performant with minimal boilerplate and infrastructure.\n\nThis is an overview of what has been added, how it was designed and how to apply it. Attendees should leave with a clear understanding the benefits of dependency injection in an Android app and how Dagger 2 can help realize those benefits most simply and effectively.",
-          "end_time" : "2017-04-21T10:45:00-0500",
-          "id" : "dagger-2",
-          "name" : "Dagger 2 on Android",
-          "room" : "Great Room 2",
-          "speakers" : [ "gkick" ],
-          "start_time" : "2017-04-21T10:00:00-0500",
-          "tracks" : [ "development" ]
-        },
-        "coordinating-space-and-time" : {
-          "date" : "2017-04-21",
-          "description" : "One of Android's core requirements is that the UI runs on the main thread and IO in the background. Though concurrency is powerful, it's also frustrating to deal with forking threads.\n\nIn this talk we'll:\n\n⏰ Learn how smartphone CPUs contradict your memory.\n⏰ Discuss how Android's compilers disregard your orders.\n⏰ Sync up on Java's concurrency APIs.\n⏰ See how to make sexy apps that aren't racy.\n⏰ Determine if reactive programming is the future.\n\nThis talk covers a sequence of concurrency topics. Attendees will be able to fix volatile programs and block threading bugs before they happen.",
-          "end_time" : "2017-04-21T14:45:00-0500",
-          "id" : "coordinating-space-and-time",
-          "name" : "Coordinating Space and Time",
-          "room" : "Great Room 1",
-          "slot_id" : "-KdhGdDgWd1bG372gIoD",
-          "speakers" : [ "jwilson" ],
-          "start_time" : "2017-04-21T14:00:00-0500"
-        },
-        "design-develop-deploy" : {
-          "date" : "2017-04-21",
-          "description" : "Previously at DramaFever (a Warner Bros. company), designers and developers focused mostly on their own tasks without the consideration of how it would affect each other - the ones designing an app and the ones eventually building it. Although we have an iterative process in place, we found ourselves repeating some of the work while working on several projects. \n\nWith our team growing and projects needing to be output faster, we decided to streamline our Android design and development process and would love to share this with all of you!\n\nIn this talk, we will walk you through our process of how to:\n1. Find common ground with your designer or developer\n2. Ship apps faster if you do the legwork beforehand \n3. Design an app from a developer’s perspective as a designer\n4. Implement designs to be more performant and responsive from the developer’s end\n\nThis talk is aimed at designers and developers.",
-          "end_time" : "2017-04-21T11:45:00-0500",
-          "id" : "design-develop-deploy",
-          "name" : "Design Develop Deploy!",
-          "room" : "Great Room 1",
-          "speakers" : [ "yprabhu", "jmoon" ],
-          "start_time" : "2017-04-21T11:00:00-0500"
-        },
-        "from-interactions-to-insights" : {
-          "date" : "2017-04-20",
-          "description" : "In 2016 Firebase 2.0 was released, providing a \"backend as a service\" that extended beyond development features to also providing tools for user engagement and monetization. With mobile app markets becoming more crowded, developers increasingly need such tools to differentiate their products and engage (and retain) their users' attention.\n\nIn this talk, I will provide a brief overview of Firebase before doing a deep-dive into Firebase Analytics, a core component that powers many of these features. With Analytics, the developer can instrument the application to gather user behavior information and view valuable insights about individual and collective engagement. They can then use those insights to drive automated actions or prioritize development decisions in an educated manner. \n\nThe first half of this talk will focus on the Firebase API (front-end integration) for Android, focusing specifically on instrumenting data capture. The second half of the talk will focus on the Firebase Dashboard (back-end visualization) and explore the rich set of insights and configuration options available to developers, using a real dataset. \nThe goal of the talk is to demonstrate the ease and utility of Firebase Analytics for mobile development, and also emphasize its value as a common and consistent back-end for cross-platform development.",
-          "end_time" : "2017-04-20T15:45:00-0500",
-          "id" : "from-interactions-to-insights",
-          "name" : "From Interactions To Insights: Data-Driven Development with Firebase Analytics",
-          "room" : "Great Room 1",
-          "speakers" : [ "nnarasimhan" ],
-          "start_time" : "2017-04-20T15:00:00-0500",
-          "tracks" : [ "web" ]
-        },
-        "i-like-the-way-you-move" : {
-          "date" : "2017-04-20",
-          "description" : "Good use of animations can not only help make your app’s UI more intuitive, but can also build emotional attachment with your users.\n\nMark Allison will explore the subtleties of why some animations work where others don’t; The distinct components of effective animation; and, of course, some detailed worked examples of how to create amazing Android animations.",
-          "end_time" : "2017-04-20T11:45:00-0500",
-          "id" : "i-like-the-way-you-move",
-          "name" : "I Like The Way You Move",
-          "room" : "Great Room 2",
-          "slot_id" : "-KdlISKeTe7EFw5t4TOm",
-          "speakers" : [ "mallison" ],
-          "start_time" : "2017-04-20T11:00:00-0500"
-        },
-        "just-android-things" : {
-          "date" : "2017-04-20",
-          "description" : "Google recently announced the public developer preview of Android Things, a platform that brings the power of Android development to embedded and IoT devices. Android developers can use the Android SDK, Google services, and development tools they are familiar with to get up and running quickly. Android Things also brings a suite of new APIs to developers to help their apps better integrate with the hardware and the core operating system. In this talk, you will learn why Android Things exists, where it is supported, and how to get started with development.",
-          "end_time" : "2017-04-20T16:45:00-0500",
-          "id" : "just-android-things",
-          "name" : "Just Android Things...",
-          "room" : "Great Room 1",
-          "speakers" : [ "dsmith" ],
-          "start_time" : "2017-04-20T16:00:00-0500",
-          "tracks" : [ "android" ]
-        },
-        "kotlin-uncovered" : {
-          "date" : "2017-04-21",
-          "description" : "Kotlin does a lot for us in the way of reducing boilerplate. But what is it really doing? We will be inspecting some decompiled Kotlin to discover how it does its job. By looking underneath at how it handles data classes, lambdas, and delegation, we can better understand how the language executes what we write. If you’re curious about the language, or already using it in production, you should walk away from this investigation with a deeper understanding of Kotlin, and some tools for continued exploration.",
-          "end_time" : "2017-04-21T09:45:00-0500",
-          "id" : "kotlin-uncovered",
-          "name" : "Kotlin: Uncovered (Keynote)",
-          "room" : "Great Room 1",
-          "speakers" : [ "vgonda" ],
-          "start_time" : "2017-04-21T09:00:00-0500"
-        },
-        "lunch" : {
-          "date" : "2017-04-20",
-          "description" : "",
-          "end_time" : "2017-04-20T13:00:00-0500",
-          "id" : "lunch",
-          "name" : "Lunch",
-          "room" : "Local Restaurants",
-          "slot_id" : "-KdlItSCtXMMPtiP8DzH",
-          "start_time" : "2017-04-20T12:00:00-0500"
-        },
-        "lunch-2" : {
-          "date" : "2017-04-21",
-          "description" : "",
-          "end_time" : "2017-04-21T13:00:00-0500",
-          "id" : "lunch-2",
-          "name" : "Lunch",
-          "room" : "Local Restaurants",
-          "start_time" : "2017-04-21T12:00:00-0500"
-        },
-        "mixed-reality-for-social-good" : {
-          "date" : "2017-04-20",
-          "description" : "Exciting times for mixed reality enthusiasts. With many AR and VR platforms now available, we're witnessing the birth of a new medium. \n\nIn many ways, this boom is similar to the personal computer revolution of the 70s and 80s. People are wondering: \"Besides games, what are these gadgets good for, anyway?\"\n\nIn this session, we'll see how people are using mixed reality for social good. Then, we'll learn about the Tango and Daydream platforms from Google. We'll use these and other platforms to build our own mixed reality experience.\n",
-          "end_time" : "2017-04-20T13:45:00-0500",
-          "id" : "mixed-reality-for-social-good",
-          "name" : "Mixed Reality for Social Good",
-          "room" : "Great Room 2",
-          "slot_id" : "-KdlJ5HohmLMRMl85cHf",
-          "speakers" : [ "ecaron-petit-pas" ],
-          "start_time" : "2017-04-20T13:00:00-0500",
-          "tracks" : [ "android" ]
-        },
-        "retrofitting-retrofit" : {
-          "date" : "2017-04-20",
-          "description" : "We’ve all been there: you have an app with outdated technology, and you know you should update it. But the legacy code is complicated and opaque, and due to support issues, you can’t just use the new library in the straightforward way the code samples show it. But perf gains and code clarity are on the line, so you need to find a way to make it work.\n\nWell, you’re in luck! This talk is for you, person who’s trying to make it work. Drawing from examples encountered with Pinterest’s own transition to Retrofit, we’ll explore ways to retrofit Retrofit onto an existing networking layer while balancing the interests of hundreds of millions of users relying on a performant app. Ranging from big wins to unsightly mistakes, this tour will be both a cringeworthy and infinitely practical look at what happens when you can’t start from scratch. ",
-          "end_time" : "2017-04-20T13:45:00-0500",
-          "id" : "retrofitting-retrofit",
-          "name" : "Retrofitting Retrofit",
-          "room" : "Great Room 1",
-          "slot_id" : "-KdlJ5HohmLMRMl85cHf",
-          "speakers" : [ "clee" ],
-          "start_time" : "2017-04-20T13:00:00-0500",
-          "tracks" : [ "web" ]
-        },
-        "rxjava-2-for-the-rest-of-us" : {
-          "date" : "2017-04-21",
-          "description" : "The Reactive Extensions for the JVM, better known as RxJava, have become a popular tool in Android development over the past years. Many new and existing libraries added support for Rx and “reactive” solutions to existing problems popped up over time. RxJava is both known for it’s power and it’s steep learning curve, so if you aren’t using RxJava already, what are you missing out on? Should you even be using RxJava?\n\nIn this talk we’ll go over what RxJava is and how you can use it to solve problems in your Android apps, one step at a time. We will discuss how you can prevent shooting yourself in the foot by looking at common mistakes you may make when using RxJava and discussing tips and tricks for keeping your reactive app manageable.",
-          "end_time" : "2017-04-21T13:45:00-0500",
-          "id" : "rxjava-2-for-the-rest-of-us",
-          "name" : "RxJava 2 for the Rest of Us",
-          "room" : "Great Room 2",
-          "speakers" : [ "hvisser" ],
-          "start_time" : "2017-04-21T13:00:00-0500"
-        },
-        "understanding-material-design" : {
-          "date" : "2017-04-21",
-          "description" : "It's been over 2 years since Material Design was released, yet there's still a wide variety of misconceptions out there in the community. In this talk, I'll perform a deep dive into the guidelines, what they actually mean, and ultimately, talk about what is Material and what isn't.\n\nThis is related to my popular Medium series: https://raveesh.in/understanding-material-design-7991b1469a63",
-          "end_time" : "2017-04-21T13:45:00-0500",
-          "id" : "understanding-material-design",
-          "name" : "Understanding Material Design",
-          "room" : "Great Room 2",
-          "speakers" : [ "rbhalla" ],
-          "start_time" : "2017-04-21T13:00:00-0500"
-        },
-        "websocket-to-me" : {
-          "date" : "2017-04-20",
-          "description" : "In a world of constant location updates, real time web, and chat bots, WebSockets have become increasingly common. Recently OkHttp 3.5 included native support for WebSockets and but other libraries have had support for some time. This talk will cover some possible use cases of WebSockets, how to integrate WebSockets into your project, and compare the features of OkHttp with other libraries.",
-          "end_time" : "2017-04-20T15:45:00-0500",
-          "id" : "websocket-to-me",
-          "name" : "WebSocket to Me!",
-          "room" : "Great Room 2",
-          "speakers" : [ "cguzman" ],
-          "start_time" : "2017-04-20T15:00:00-0500",
-          "tracks" : [ "android" ]
-        },
-        "whats-new-in-firebase" : {
-          "date" : "2017-04-20",
-          "description" : "Join this session to find out how the Firebase platform has expanded and what it means for your total application architecture.",
-          "end_time" : "2017-04-20T16:45:00-0500",
-          "id" : "whats-new-in-firebase",
-          "name" : "What's new in Firebase",
-          "room" : "Great Room 2",
-          "speakers" : [ "dstevenson" ],
-          "start_time" : "2017-04-20T16:00:00-0500",
-          "tracks" : [ "android" ]
-        },
-        "where-i-find-stairs-tango" : {
-          "date" : "2017-04-20",
-          "description" : "Last year release of new Tango device broaden interest with this  technology. There are more devices expected to be available this year,  which will extend usage opportunity.\n\nSession focuses on recently released technologies like Tango and TensorFlow. After short introduction to Tango device and its SDK, viewer will learn how the point cloud data can be processed, displayed and prepared for further analysis.\n\nThe analysis will lead to showcase use of TensorFlow Android SDK for data processing, calculation and detection of edges on scanned 3D space using NeuralNetwork.\n\nIf you like to see how it is done, come and see how the combined system could be used to help navigate a vision impaired user.",
-          "end_time" : "2017-04-20T17:45:00-0500",
-          "id" : "where-i-find-stairs-tango",
-          "name" : "Tango, Where do I find stairs?",
-          "room" : "Great Room 1",
-          "speakers" : [ "mperlak" ],
-          "start_time" : "2017-04-20T17:00:00-0500",
-          "tracks" : [ "code-lab" ]
-        },
-        "write-less-code-and-get-more-done" : {
-          "date" : "2017-04-20",
-          "description" : "Mentoring and onboarding new engineers is one of the most important things you\ncan do to grow your team.  Effective and intentional mentoring decreases the number of bugs shipped to the Play Store, improves the quality of your application, and helps keep code standards high as your team grows and changes.\n\n\nYet for all of its importance, there is hardly any information about how to mentor effectively.  There are many resources about how engineers can get 4% productivity gains by learning new Android Studio shortcuts, but there are almost none about how they can get 400% productivity gains for their team by helping other developers be more productive.\n\n\nIn this talk, I'll discuss how to think about mentoring Android engineers from the ground-up.  First, we’ll discuss how to structure a plan for your mentee such that they move from “What’s an ADB?” to “Let’s use Retrofit, RxJava, and Dagger to make a testable app with MVP architecture” in no-time flat.  Next, we’ll talk about how to interact with your mentee such that every challenge helps them level-up their development skills and build your team culture.  Lastly, we’ll discuss how you can use your experience as a mentor to improve your own engineering skills.",
-          "end_time" : "2017-04-20T14:45:00-0500",
-          "id" : "write-less-code-and-get-more-done",
-          "name" : "Write Less Code and Get More Done: Multiplying Your Impact Through Mentorship",
-          "room" : "Great Room 2",
-          "slot_id" : "-KdlJDEA-NOT1Y90kWi5",
-          "speakers" : [ "jmaltz" ],
-          "start_time" : "2017-04-20T14:00:00-0500",
-          "tracks" : [ "cloud" ]
-        },
-        "evening-1-reception": {
-          "date" : "2017-04-20",
-          "description" : "Location to be revealed, but you’ll enjoy great food, and good company, great conversations and drinks too if that’s your thing.",
-          "end_time" : "2017-04-20T20:00:00-0500",
-          "id" : "evening-1-reception",
-          "name" : "Evening Reception",
-          "room" : "Great Room 2",
-          "start_time" : "2017-04-20T18:00:00-0500"
-        }
-      },
-      "sessions_by_date" : {
-        "2017-04-20" : [
-          {
-            "date" : "2017-04-20",
-            "description" : "'Tis impossible to be sure of anything but death, taxes, and HTTP. This talk will explore some of the overhead inherent to HTTP and how it can be optimized or eliminated for more efficient networking.",
-            "end_time" : "2017-04-20T09:45:00-0500",
-            "id" : "death-taxes-and-http",
-            "name" : "Death, Taxes, and HTTP (Keynote)",
-            "room" : "Great Room 1",
-            "speakers" : [ "jwharton", "jwilson" ],
-            "start_time" : "2017-04-20T09:00:00-0500",
-            "tracks": [
-              "keynote"
-            ]
-          }, {
-          "date" : "2017-04-20",
-          "description" : "Sign in and Breakfast",
-          "end_time" : "2017-04-20T10:45:00-0500",
-          "id" : "conversation-actions-for-google-assistant",
-          "name" : "Conversation Actions for Google Assistant",
-          "room" : "Great Room 1",
-          "speakers" : [ "akelly" ],
-          "start_time" : "2017-04-20T10:00:00-0500"
-        }, {
-          "date" : "2017-04-20",
-          "description" : "Welcoming everyone to Windy City DevCon and thanking our sponsors.",
-          "end_time" : "2017-04-20T10:45:00-0500",
-          "id" : "break-your-app-before-someone-else-does",
-          "name" : "Break your app before someone else does",
-          "room" : "Great Room 2",
-          "speakers" : [ "abaotic" ],
-          "start_time" : "2017-04-20T10:00:00-0500"
-        }, {
-          "date" : "2017-04-20",
-          "description" : "This presentation will provide an overview of the platform including a few demos of key products within GCP.",
-          "end_time" : "2017-04-20T11:45:00-0500",
-          "id" : "accessibility-at-scale",
-          "name" : "Accessibility @ Scale",
-          "room" : "Great Room 1",
-          "speakers" : [ "mpotter" ],
-          "start_time" : "2017-04-20T11:00:00-0500",
-          "tracks" : [ "cloud" ]
-        }, {
-          "date" : "2017-04-20",
-          "description" : "Good use of animations can not only help make your app’s UI more intuitive, but can also build emotional attachment with your users.\n\nMark Allison will explore the subtleties of why some animations work where others don’t; The distinct components of effective animation; and, of course, some detailed worked examples of how to create amazing Android animations.",
-          "end_time" : "2017-04-20T11:45:00-0500",
-          "id" : "i-like-the-way-you-move",
-          "name" : "I Like The Way You Move",
-          "room" : "Great Room 2",
-          "speakers" : [ "mallison" ],
-          "start_time" : "2017-04-20T11:00:00-0500"
-        }, {
-          "date" : "2017-04-20",
-          "description" : "",
-          "end_time" : "2017-04-20T13:00:00-0500",
-          "id" : "lunch",
-          "name" : "Lunch",
-          "room" : "Local Restaurants",
-          "start_time" : "2017-04-20T12:00:00-0500"
-        }, {
-          "date" : "2017-04-20",
-          "description" : "Hands on Firebase demo and talk",
-          "end_time" : "2017-04-20T13:45:00-0500",
-          "id" : "retrofitting-retrofit",
-          "name" : "Retrofitting Retrofit",
-          "room" : "Great Room 1",
-          "speakers" : [ "clee" ],
-          "start_time" : "2017-04-20T13:00:00-0500",
-          "tracks" : [ "web" ]
-        }, {
-          "date" : "2017-04-20",
-          "description" : "A deep dive into the world of animation in Material Design. We'll cover what Material Design is, how natural motion plays a role in its principles and how to create meaningful animations that exhibit the essence of Material Design strives for.",
-          "end_time" : "2017-04-20T13:45:00-0500",
-          "id" : "mixed-reality-for-social-good",
-          "name" : "Mixed Reality for Social Good",
-          "room" : "Great Room 2",
-          "speakers" : [ "ecaron-petit-pas" ],
-          "start_time" : "2017-04-20T13:00:00-0500",
-          "tracks" : [ "android" ]
-        }, {
-          "date" : "2017-04-20",
-          "description" : "So you want to start a DevOps revolution. Great...where do you start? Going from manual deployments to a fully automated delivery pipeline has brought many changes; both technical and cultural. In this talk, we will cover \"the five phases of DevOps\" we found on our journey at Gogo. Finally, we will wrap up the talk with how you too can start your own DevOps revolution including some tool demos and examples.",
-          "end_time" : "2017-04-20T14:45:00-0500",
-          "id" : "contextualize-apps-with-nearby-awareness",
-          "name" : "Contextualize Apps with Nearby + Awareness",
-          "room" : "Great Room 1",
-          "speakers" : [ "bduff" ],
-          "start_time" : "2017-04-20T14:00:00-0500",
-          "tracks" : [ "cloud" ]
-        }, {
-          "date" : "2017-04-20",
-          "description" : "Have you seen Cloud Spin? It's a demo that Google Cloud Developer Advocates (Ray Tsang, Bret McGowen, and Francesc Campoy) developed for the Google Cloud Platform Next event series. The demo, consists of 19 Nexus 6 cameras that were placed around a half-circle pointing inwards to take a picture of the subject at the same moment in time, to create a 180 degree animated GIF - see them at @googlecloudspin twitter! But wait, the Android cameras introduces some unknown delays when taking a photo - how did we make all the cameras take pictures at the same time? What did we use to process and stitch the photos together? And most importantly, how did we pull it off in a matter of 3 weeks? Join this session to learn more about what we did behind the scenes, and how we leveraged open source technology, Google Cloud Platform, and Firebase to help us develop the demo rapidly.",
-          "end_time" : "2017-04-20T14:45:00-0500",
-          "id" : "write-less-code-and-get-more-done",
-          "name" : "Write Less Code and Get More Done: Multiplying Your Impact Through Mentorship",
-          "room" : "Great Room 2",
-          "speakers" : [ "jmaltz" ],
-          "start_time" : "2017-04-20T14:00:00-0500",
-          "tracks" : [ "cloud" ]
-        }, {
-          "date" : "2017-04-20",
-          "description" : "The Firebase Database lets you synchronize data between clients in real time, which is perfect for building multi-player games. In this talk I will describe a collaborative web-based sci-fi game I built using Firebase, what I learned along the way and how it made me a better dad.",
-          "end_time" : "2017-04-20T15:45:00-0500",
-          "id" : "from-interactions-to-insights",
-          "name" : "From Interactions To Insights: Data-Driven Development with Firebase Analytics",
-          "room" : "Great Room 1",
-          "speakers" : [ "nnarasimhan" ],
-          "start_time" : "2017-04-20T15:00:00-0500",
-          "tracks" : [ "web" ]
-        }, {
-          "date" : "2017-04-20",
-          "description" : "As developers, you interact with Android system services every day. They expose a host of platform features to applications, but what do you really know about them? In this talk, we will examine the system service architecture that connects applications to device hardware. You will gain a deeper understanding of core platform technologies such as Binder IPC and AIDL, which you can use to tune how your applications interact with the platform.",
-          "end_time" : "2017-04-20T15:45:00-0500",
-          "id" : "websocket-to-me",
-          "name" : "WebSocket to Me!",
-          "room" : "Great Room 2",
-          "speakers" : [ "cguzman" ],
-          "start_time" : "2017-04-20T15:00:00-0500",
-          "tracks" : [ "android" ]
-        }, {
-          "date" : "2017-04-20",
-          "description" : "Starting a new Android app is always exciting: you have the opportunity to create an awesome app from zero... but it is also a lot of responsibility! Any step in the wrong direction might turn your new app into a disaster. \nYou need the right people on your team, you need the right technology and you need the proper setup.\nSounds easy, uh? Well... it's not! Many apps did not survive even this first step. Let me help you to identify the key elements to help your Android team succeed.",
-          "end_time" : "2017-04-20T16:45:00-0500",
-          "id" : "just-android-things",
-          "name" : "Just Android Things...",
-          "room" : "Great Room 1",
-          "speakers" : [ "dsmith" ],
-          "start_time" : "2017-04-20T16:00:00-0500",
-          "tracks" : [ "android" ]
-        }, {
-          "date" : "2017-04-20",
-          "description" : "What’s the deal with Kotlin? Why would you want to learn a new programming language to write Android apps - isn’t Java good enough? This talk is for those unacquainted with Kotlin, and might teach those who are familiar some new tricks.\n\nThis talk will cover:\n- Why Kotlin is a good choice for Android Developers\n- How to solve problems in more expressive ways with Kotlin’s language features\n- Some interesting Kotlin libraries and tools",
-          "end_time" : "2017-04-20T16:45:00-0500",
-          "id" : "whats-new-in-firebase",
-          "name" : "What's new in Firebase",
-          "room" : "Great Room 2",
-          "speakers" : [ "dstevenson" ],
-          "start_time" : "2017-04-20T16:00:00-0500",
-          "tracks" : [ "android" ]
-        }, {
-          "date" : "2017-04-20",
-          "description" : "Last year release of new Tango device broaden interest with this  technology. There are more devices expected to be available this year,  which will extend usage opportunity.\n\nSession focuses on recently released technologies like Tango and TensorFlow. After short introduction to Tango device and its SDK, viewer will learn how the point cloud data can be processed, displayed and prepared for further analysis.\n\nThe analysis will lead to showcase use of TensorFlow Android SDK for data processing, calculation and detection of edges on scanned 3D space using NeuralNetwork.\n\nIf you like to see how it is done, come and see how the combined system could be used to help navigate a vision impaired user.",
-          "end_time" : "2017-04-20T17:45:00-0500",
-          "id" : "where-i-find-stairs-tango",
-          "name" : "Tango, Where do I find stairs?",
-          "room" : "Great Room 1",
-          "speakers" : [ "mperlak" ],
-          "start_time" : "2017-04-20T17:00:00-0500",
-          "tracks" : [ "code-lab" ]
-        }, {
-          "date" : "2017-04-20",
-          "description" : "Sign in and Breakfast",
-          "end_time" : "2017-04-20T17:45:00-0500",
-          "id" : "android-auto-driving-the-future",
-          "name" : "Android Auto - Driving the Future",
-          "room" : "Great Room 2",
-          "speakers" : [ "pshadlyn" ],
-          "start_time" : "2017-04-20T17:00:00-0500"
-        }, {
-          "date" : "2017-04-20",
-          "description" : "Sign in and Breakfast",
-          "end_time" : "2017-04-20T20:00:00-0500",
-          "id" : "evening-1-reception",
-          "name" : "Evening Reception",
-          "room" : "Great Room 2",
-          "start_time" : "2017-04-20T18:00:00-0500"
-        } ],
-        "2017-04-21" : [ {
-          "date" : "2017-04-21",
-          "description" : "Sign in and Breakfast",
-          "end_time" : "2017-04-21T09:45:00-0500",
-          "id" : "kotlin-uncovered",
-          "name" : "Kotlin: Uncovered (Keynote)",
-          "room" : "Great Room 1",
-          "speakers" : [ "vgonda" ],
-          "start_time" : "2017-04-21T09:00:00-0500"
-        }, {
-          "date" : "2017-04-21",
-          "description" : "Sign in and Breakfast",
-          "end_time" : "2017-04-21T10:45:00-0500",
-          "id" : "a-healthy-dose-of-gradle",
-          "name" : "A Healthy Dose of Gradle",
-          "room" : "Great Room 1",
-          "speakers" : [ "pbreault" ],
-          "start_time" : "2017-04-21T10:00:00-0500"
-        }, {
-          "date" : "2017-04-21",
-          "description" : "Dagger 2 is Google’s solution for dependency injection on Android. It powers some of the largest and most successful applications from Google and others, but applying it has been fraught with ambiguity and ad hoc solutions that require a lot of up-front engineering.\n\nIn an effort to make it viable for more projects, the Dagger team at Google has focused specifically on creating new features, libraries and well-documented patterns for using Dagger 2 in an Android application. The result is a structure that allows Android applications to be modular, testable, and performant with minimal boilerplate and infrastructure.\n\nThis is an overview of what has been added, how it was designed and how to apply it. Attendees should leave with a clear understanding the benefits of dependency injection in an Android app and how Dagger 2 can help realize those benefits most simply and effectively.",
-          "end_time" : "2017-04-21T10:45:00-0500",
-          "id" : "dagger-2",
-          "name" : "Dagger 2 on Android",
-          "room" : "Great Room 2",
-          "speakers" : [ "gkick" ],
-          "start_time" : "2017-04-21T10:00:00-0500",
-          "tracks" : [ "development" ]
-        }, {
-          "date" : "2017-04-21",
-          "description" : "Sign in and Breakfast",
-          "end_time" : "2017-04-21T11:45:00-0500",
-          "id" : "cool-constraint-layout",
-          "name" : "Cool Constraint Layout",
-          "room" : "Great Room 1",
-          "speakers" : [ "hdao" ],
-          "start_time" : "2017-04-21T11:00:00-0500"
-        }, {
-          "date" : "2017-04-21",
-          "description" : "Sign in and Breakfast",
-          "end_time" : "2017-04-21T11:45:00-0500",
-          "id" : "design-develop-deploy",
-          "name" : "Design Develop Deploy!",
-          "room" : "Great Room 2",
-          "speakers" : [ "yprabhu", "jmoon" ],
-          "start_time" : "2017-04-21T11:00:00-0500"
-        }, {
-          "date" : "2017-04-21",
-          "description" : "",
-          "end_time" : "2017-04-21T13:00:00-0500",
-          "id" : "lunch-2",
-          "name" : "Lunch",
-          "room" : "Local Restaurants",
-          "start_time" : "2017-04-21T12:00:00-0500"
-        }, {
-          "date" : "2017-04-21",
-          "description" : "Sign in and Breakfast",
-          "end_time" : "2017-04-21T13:45:00-0500",
-          "id" : "understanding-material-design",
-          "name" : "Understanding Material Design",
-          "room" : "Great Room 1",
-          "speakers" : [ "rbhalla" ],
-          "start_time" : "2017-04-21T13:00:00-0500"
-        }, {
-          "date" : "2017-04-21",
-          "description" : "Sign in and Breakfast",
-          "end_time" : "2017-04-21T13:45:00-0500",
-          "id" : "rxjava-2-for-the-rest-of-us",
-          "name" : "RxJava 2 for the Rest of Us",
-          "room" : "Great Room 2",
-          "speakers" : [ "hvisser" ],
-          "start_time" : "2017-04-21T13:00:00-0500"
-        }, {
-          "date" : "2017-04-21",
-          "description" : "Sign in and Breakfast",
-          "end_time" : "2017-04-21T14:45:00-0500",
-          "id" : "coordinating-space-and-time",
-          "name" : "Coordinating Space and Time",
-          "room" : "Great Room 1",
-          "speakers" : [ "jwilson" ],
-          "start_time" : "2017-04-21T14:00:00-0500"
-        }, {
-          "date" : "2017-04-21",
-          "description" : "Sign in and Breakfast",
-          "end_time" : "2017-04-21T14:45:00-0500",
-          "id" : "advanced-android-touches",
-          "name" : "Advanced Android Touches",
-          "room" : "Great Room 2",
-          "speakers" : [ "cchang" ],
-          "start_time" : "2017-04-21T14:00:00-0500"
-        }, {
-          "date" : "2017-04-21",
-          "description" : "Sign in and Breakfast",
-          "end_time" : "2017-04-21T15:45:00-0500",
-          "id" : "building-gradle-plugins",
-          "name" : "Building Gradle Plugins",
-          "room" : "Great Room 1",
-          "speakers" : [ "bsills" ],
-          "start_time" : "2017-04-21T15:00:00-0500"
-        }, {
-          "date" : "2017-04-21",
-          "description" : "Sign in and Breakfast",
-          "end_time" : "2017-04-21T15:45:00-0500",
-          "id" : "building-a-modern-android-ui",
-          "name" : "Building a Modern Android UI",
-          "room" : "Great Room 2",
-          "speakers" : [ "nroard", "jhoford" ],
-          "start_time" : "2017-04-21T15:00:00-0500"
-        }, {
-          "date" : "2017-04-21",
-          "description" : "Jerrell, John and Ryan say goodbye",
-          "end_time" : "2017-04-21T16:45:00-0500",
-          "id" : "closing-remarks",
-          "name" : "Closing Remarks",
-          "room" : "Great Room 1",
-          "start_time" : "2017-04-21T16:00:00-0500"
-        } ]
-      },
-      "speakers" : {
-        "abaotic" : {
-          "bio" : "During college I got involved in e-learning projects where I developed in Java, and ended up in love with it. After graduation I got a job at Infinum as an Android developer, and have been working there ever since. By the end of 2014. I switched from various projects in the telecommunication, medical and travel industry to mobile banking, where I became the Technical Manager of Mobile Banking in early 2016. My responsibilities include researching new technology and advancements in security, making sure new practices are implemented and generally pushing things forward in the right direction.",
-          "company" : "",
-          "github" : "",
-          "google" : "",
-          "id" : "abaotic",
-          "name" : "Ana Baotić",
-          "title" : "",
-          "twitter" : "@abaotic",
-          "website" : ""
-        },
-        "akelly" : {
-          "bio" : "Andrew is a freelance Android Developer based in Sydney Australia. He is also a Google Developer Expert for Android and is one of the organisers of the Sydney Google Developer Group. When he's not coding Andrew is an avid film watcher.",
-          "company" : "",
-          "github" : "",
-          "google" : "",
-          "id" : "akelly",
-          "name" : "Andrew Kelly",
-          "title" : "",
-          "twitter" : "@andrew_ke11y",
-          "website" : ""
-        },
-        "bduff" : {
-          "bio" : "Brian Duff cofounded and leads the Nearby team at Google. He's been on the Android team for the last four years, and hacking on Java in various forms since 1998. As well as being crazily into proximity and Android, Brian loves guitar, looking after his 3 and 4 year old, and singing his geeky heart out.",
-          "company" : "",
-          "github" : "",
-          "google" : "",
-          "id" : "bduff",
-          "name" : "Brian Duff",
-          "title" : "",
-          "twitter" : "",
-          "website" : ""
-        },
-        "bsills" : {
-          "bio" : "I am a Chicago-based Android developer working for Isobar, a digital marketing agency. Over the past few years, I've worked many projects for various clients, ranging from sports teams to fast food companies. I have presented a few small talks at local Android meetups. Outside of coding, I enjoy biking around the city, watching movies at my local theater, and going to concerts.",
-          "company" : "Isobar",
-          "github" : "bryansills",
-          "google" : "",
-          "id" : "bsills",
-          "name" : "Bryan Sills",
-          "title" : "",
-          "twitter" : "@bryansills",
-          "website" : ""
-        },
-        "cchang" : {
-          "bio" : "I'm currently working on the Android team on June Oven, building the first truly smart oven to help anybody cook! Previously I worked at VSCO, helping build and support the Android app for over 5 million users. I've taught a few Android classes through organizations such as Women Who Code and also AP Computer Science for high school students. ",
-          "company" : "",
-          "github" : "",
-          "google" : "",
-          "id" : "cchang",
-          "name" : "Caren Chang",
-          "title" : "",
-          "twitter" : "",
-          "website" : ""
-        },
-        "cguzman" : {
-          "bio" : "Originally a ruby on rails developer, Chris made the jump into Android a year ago. He started his dev career 2 years ago after teaching himself to code. Chris loves helping others learn and leads intro to code classes as wells as co-organizes the Baltimore Hackathon.",
-          "company" : "Nexmo",
-          "github" : "chrisguzman",
-          "google" : "",
-          "id" : "cguzman",
-          "name" : "Chris Guzman",
-          "title" : "Developer Advocate",
-          "twitter" : "@speaktochris",
-          "website" : "chris-guzman.com"
-        },
-        "clee" : {
-          "bio" : "Christina is a Android developer at Pinterest. After launching the first version of the Pinterest video player on Android, she now works on a special initiatives team doing rapid prototyping for research and validation purposes. ",
-          "company" : "",
-          "github" : "",
-          "google" : "",
-          "id" : "clee",
-          "name" : "Christina Lee",
-          "title" : "",
-          "twitter" : "@RunChristinaRun",
-          "website" : ""
-        },
-        "dsmith" : {
-          "bio" : "Dave Smith is a Developer Advocate for IoT at Google, focused on growing\ndeveloper support on the Android Things platform. Dave has been\nworking with the Android stack at all levels since 2009, developing\ncustom applications and system components to run Android on\nembedded platforms or interact with external embedded\ndevices. He has a passion for making things smart, whether that be other\ndevelopers or devices.",
-          "company" : "",
-          "github" : "",
-          "google" : "",
-          "id" : "dsmith",
-          "name" : "Dave Smith",
-          "title" : "",
-          "twitter" : "",
-          "website" : ""
-        },
-        "dstevenson" : {
-          "bio" : "Doug is a Google Developer Advocate working with the Firebase team.  He's been doing Android development since 2008 with the release of the first Android device, the HTC G1.  Outside of work, Doug follows NHL hockey and enjoys craft beer.",
-          "company" : "",
-          "github" : "",
-          "google" : "",
-          "id" : "dstevenson",
-          "name" : "Doug Stevenson",
-          "title" : "",
-          "twitter" : "",
-          "website" : ""
-        },
-        "ecaron-petit-pas" : {
-          "bio" : "Etienne is a software developer who’s worked on all tiers (server, web, mobile and embedded) of large scale software platforms. He is now a Mobile Dev Lead for Shopify, and is part of Google's Developer Expert program. \n\nEtienne got his start in programming in the mid-'80s obsessing over C64 demos, and went on to organize the NAID 95/96 demoparties. 3D animation, procedural content generation and VR are some of his hobbies, and he loves to introduce other developers to this fascinating field. He also regularly volunteers his time towards mentoring startups, developers and students in the mobile space. As part of the Montreal Android GDG, he organises meet-ups, hackathons, and gives regular talks on Android and VR-related subjects.\n\nPreviously, Etienne worked on projects ranging from high-availability stock trading software platforms, all the way to large scale municipal bike sharing systems (London’s cycle Hire amongst others). He lives in Montreal with his wife and daughter, and speaks French and English fluently.",
-          "company" : "",
-          "github" : "",
-          "google" : "",
-          "id" : "ecaron-petit-pas",
-          "name" : "Etienne Caron-Petit-Pas",
-          "title" : "",
-          "twitter" : "@kanawish",
-          "website" : ""
-        },
-        "gkick" : {
-          "bio" : "Staff software engineer for Google.  Currently member of Google’s Java Core Libraries Team working on Dagger: dependency injection for Java and Android.  Former projects include Guava, Caliper, Google Takeout and Feedburner.",
-          "company" : "Google",
-          "github" : "",
-          "google" : "",
-          "id" : "gkick",
-          "name" : "Gregory Kick",
-          "title" : "Staff Software Engineer",
-          "twitter" : "@gk5885",
-          "website" : ""
-        },
-        "hdao" : {
-          "bio" : "Huyen Tue Dao is an Android developer and Google Developer Expert, currently working on the Android team at Trello.\n\nHuyen is co-creator of the \"Android Dialogs\" YouTube channel which features interviews with people in the Android community.\n\nShe lives in Denver, CO though is often found in the DC Metro area. When she is not up late programming, she is often found up late gaming (video, board, card, anything).",
-          "company" : "Trello",
-          "github" : "",
-          "google" : "",
-          "id" : "hdao",
-          "name" : "Huyen Tue Dao",
-          "title" : "Android Developer",
-          "twitter" : "@queencodemonkey",
-          "website" : "randomlytyping.com"
-        },
-        "hvisser" : {
-          "bio" : "Hugo is a software engineer who has worked on enterprise, desktop and mobile software products. Since the introduction of Android he has been steadily focussing on developing for Android only, resulting in his first app in 2009. Hugo has released several open source libraries and tools to help him and other developers build better software. He’s a Google Developer Expert for Android and one of the organizers of the Dutch Android User Group. With his company Little Robots, he focuses on smart use of Android in every possible way.",
-          "company" : "",
-          "github" : "",
-          "google" : "",
-          "id" : "hvisser",
-          "name" : "Hugo  Visser",
-          "title" : "",
-          "twitter" : "@botteaap",
-          "website" : ""
-        },
-        "jhoford" : {
-          "bio" : "John works on Android Studio and ConstraintLayout at Google. He has worked previously on RenderScript, Vector Drawables, computed shadows and photo editor filters. Prior to joining Google, John was a principal engineer at GE Healthcare working on their image processing applications framework.",
-          "company" : "",
-          "github" : "",
-          "google" : "",
-          "id" : "jhoford",
-          "name" : "John Hoford",
-          "title" : "",
-          "twitter" : "@johnhoford",
-          "website" : ""
-        },
-        "jmaltz" : {
-          "bio" : "I'm an Android engineering building applications at as part of the diner growth team at Yelp Eat24.  Before that, I worked on Yelp's Android application as part of their diner growth team.  When I'm not having dreams  of little green robots, you can find me anxiously waiting for the next batch of interns so that I get to help more people become great developers.",
-          "company" : "",
-          "github" : "",
-          "google" : "",
-          "id" : "jmaltz",
-          "name" : "Jonathan Maltz",
-          "title" : "",
-          "twitter" : "@maltzj",
-          "website" : ""
-        },
-        "jmoon" : {
-          "bio" : "",
-          "company" : "",
-          "github" : "",
-          "google" : "",
-          "id" : "jmoon",
-          "name" : "Jessica Moon",
-          "title" : "",
-          "twitter" : "",
-          "website" : ""
-        },
-        "jwharton" : {
-          "bio" : "",
-          "company" : "Square, Inc.",
-          "github" : "JakeWharton",
-          "google" : "+JakeWharton",
-          "id" : "jwharton",
-          "name" : "Jake Wharton",
-          "title" : "Software Engineer",
-          "twitter" : "@jakewharton",
-          "website" : "http://jakewharton.com"
-        },
-        "jwilson" : {
-          "bio" : "Jesse works on Square Cash in Waterloo Canada. He's contributed to OkHttp, Retrofit, Dagger, and Guava.",
-          "company" : "",
-          "github" : "",
-          "google" : "",
-          "id" : "jwilson",
-          "name" : "Jesse Wilson",
-          "title" : "",
-          "twitter" : "",
-          "website" : ""
-        },
-        "mallison" : {
-          "bio" : "Mark Allison is a GDE for Android and software engineer with over 30 years' experience. He is passionate about providing the user with the best possible experience. He has developed both server and client side, most commonly Android on the client side, but with also for iOS, HTML5, Symbian, and J2ME. Mark writes a technical blog (http://blog.stylingandroid.com) which focuses on Android UI/UX topics, but often covers more general Android development techniques. \n\nWhen not being geeky, Mark likes to unwind by hurling abuse at football referees, specifically those who are unkind to his beloved Watford FC with whom he holds a season ticket. He also has a deep love of the chilli pepper and consumes spicy food (his favourite being Indian) at every opportunity! Mark is happily married with a grown up step-daughter, and lives in Hertfordshire, UK.",
-          "company" : "Styling Android Limited",
-          "github" : "StylingAndroid",
-          "google" : "+MarkAllison",
-          "id" : "mallison",
-          "name" : "Mark Allison",
-          "title" : "Owner / Developer",
-          "twitter" : "@MarkIAllison",
-          "website" : "https://blog.stylingandroid.com"
-        },
-        "mperlak" : {
-          "bio" : "My name is Mateusz (Mat) , I work for ContextMedia Health as senior software developer in android .My twelve years experience in the field range form image processing, backend high scalable server code to android and web front ends..\nCurrently, my team focus on educational platform for health care patients at point of care.",
-          "company" : "",
-          "github" : "",
-          "google" : "",
-          "id" : "mperlak",
-          "name" : "Mateusz Perlak",
-          "title" : "",
-          "twitter" : "@magillus",
-          "website" : ""
-        },
-        "mpotter" : {
-          "bio" : "I am an Android engineer working at Pinterest.  I focus on accessibility and app performance.  In my free time, I sing a capella and play soccer.",
-          "company" : "Pinterest",
-          "github" : "",
-          "google" : "",
-          "id" : "mpotter",
-          "name" : "Mallika Potter",
-          "title" : "Software Engineer (Android)",
-          "twitter" : "@mallikaandroid",
-          "website" : ""
-        },
-        "nnarasimhan" : {
-          "bio" : "Independent developer and solutions architect targeting the Mobile Web. Completed a PhD in Computer Eng., and worked at Motorola Research on mobile and ubiquitous computing solutions spanning automotive, television, smartphone and wearable platforms for 12 years. Currently work with early stage startups to build cross-platform mobile web product for consumers. \n\nOrganize GDG chapters (NYC and Hudson Valley) and events (Android Camp, DevFest NYC). Currently interested in machine learning, internet of things and ubiquitous computing technology.",
-          "company" : "",
-          "github" : "",
-          "google" : "",
-          "id" : "nnarasimhan",
-          "name" : "Nitya Narasimhan",
-          "title" : "",
-          "twitter" : "@nitya",
-          "website" : ""
-        },
-        "nroard" : {
-          "bio" : "Nicolas worked over the years on various projects at Google, from the HTML5 support in Android Browser, implementing the webview hardware acceleration in Honeycomb, or writing a scalable and non-destructive photo editor in JB/KitKat. After a year building high-speed telemetry systems for robots, he came back to Android, developed ConstraintLayout and now works on the Android Studio layout editor.",
-          "company" : "",
-          "github" : "",
-          "google" : "",
-          "id" : "nroard",
-          "name" : "Nicolas Roard",
-          "title" : "",
-          "twitter" : "@camaelon",
-          "website" : ""
-        },
-        "pbreault" : {
-          "bio" : "Philippe is a software engineer at American Express and has been passionate about android since 2010.He worked on a wide variety of Android apps for banks, newspapers, startups, television providers and more.He is a GDE (Google Developer Expert), one of founding organizers of droidcon Montréal and the author of the adb idea plugin for Android studio.",
-          "company" : "",
-          "github" : "pbreault",
-          "google" : "+PhilippeBreault",
-          "id" : "pbreault",
-          "name" : "Philippe Breault",
-          "title" : "Senior Software Engineer",
-          "twitter" : "@pbreault",
-          "website" : "developerphil.com"
-        },
-        "pshadlyn" : {
-          "bio" : "I love Android even more than baseball.\n\nI'm an Android development for VarageSale, a family-friendly app which lets you buy and sell new and used items locally.  I’m also the lead Android developer for Triplify, an Australian-based startup which tells you what’s going on wherever you are. In a past life I was a controls engineer, but I started working with Android during the Froyo days and have never looked back.\n\nI've presented at a number of Android meetups and tech events, including giving a talk on Android Auto at the Square offices in Kitchener, Ontario, Canada.  \n\nHere are some of my previous presentations:\n\nhttps://www.youtube.com/watch?v=GeSKaz6PCm4\nhttps://www.youtube.com/watch?v=WNaJlP36I4E\nhttps://speakerdeck.com/physphil",
-          "company" : "Varagesale",
-          "github" : "physphil",
-          "google" : "",
-          "id" : "pshadlyn",
-          "name" : "Phil Shadlyn",
-          "title" : "",
-          "twitter" : "@physphil",
-          "website" : ""
-        },
-        "rbhalla" : {
-          "bio" : "I'm a Google Expert for Design and a Partner at Uncommon, one of the leading design studios in India.",
-          "company" : "",
-          "github" : "",
-          "google" : "",
-          "id" : "rbhalla",
-          "name" : "Raveesh Bhalla",
-          "title" : "",
-          "twitter" : "@raveeshbhalla",
-          "website" : ""
-        },
-        "vgonda" : {
-          "bio" : "Victoria is a software developer at Collective Idea, building mobile and web applications. She is passionate about using technology to help better the lives of individuals. Studying both Computer Science and Dance in college, she now enjoys digging into dance technology, and keeping up with dance classes in her spare time.",
-          "company" : "Collective Idea",
-          "github" : "vgonda",
-          "google" : "",
-          "id" : "vgonda",
-          "name" : "Victoria Gonda",
-          "title" : "",
-          "twitter" : "@TTGonda",
-          "website" : "http://www.victoriagonda.com"
-        },
-        "yprabhu" : {
-          "bio" : "Yash Prabhu leads the Android team at DramaFever (a Warner Bros. company). She has spoken at several tech meetups and conferences over the past three years. In her spare time, she volunteers at Google Developers Group/Android Alliance Philadelphia as a teaching assistant, instructor, mentor and organizer\n\nJessica’s career began nearly a decade ago at Condé Nast and Firstborn, before joining Radical.Media as a multi-disciplinary designer focusing on film, packaging, digital & print.  From there, her career focused in ecommerce as a lead designer at Born Group. Throughout her career she has been able to work with brands including Grey Goose,Tommy Hilfiger, Bon Jovi, Sandro (US), Movado, Red Bull, Phaidon and Tag Heuer.  \n\nIn recent years, Jessica has tackled Product Design at a DramaFever, Warner Bros. owned video streaming service, catering to millions of viewers worldwide. She is continually honing and developing her craft through different mediums of digital design, staying atop her field.\n",
-          "company" : "",
-          "github" : "",
-          "google" : "",
-          "id" : "yprabhu",
-          "name" : "Yash  Prabhu",
-          "title" : "",
-          "twitter" : "@yashvprabhu",
-          "website" : ""
-        }
-      },
-      "tracks" : {
-        "android" : {
-          "name" : "Android"
-        },
-        "cloud" : {
-          "name" : "Cloud"
-        },
-        "code-lab" : {
-          "name" : "Code Lab"
-        },
-        "keynote" : {
-          "name" : "Keynote"
-        },
-        "web" : {
-          "name" : "Web"
-        }
-      },
-      "venue" : {
-        "city" : "Chicago",
-        "latitude" : 41.879747,
-        "longitude" : -87.633246,
-        "name" : "W Chicago - City Center",
-        "phone" : "(312) 332-1200",
-        "state" : "Il",
-        "street" : "172 W Adams St",
-        "zip" : "60603"
-      }
+  "config" : {
+    "admins" : {},
+    "cfp_open" : true,
+    "event_dates" : [ "2018-04-12", "2018-04-13" ],
+    "event_name" : "Chicago Roboto",
+    "event_year" : "2018",
+    "review_open" : false,
+    "reviewers" : {
+      "-Kxyfzoe_4X-ctI_yH2T" : "ryanjharter@gmail.com"
+    },
+    "session_levels" : [ "All" ]
+  },
+  "profiles" : {
+    "6aubESniVrUJCCmMfs7gGQ5ciYU2" : {
+      "id": "6aubESniVrUJCCmMfs7gGQ5ciYU2",
+      "agree_terms" : true,
+      "bio" : "Jerrell Mardis (@jerrellmardis) is a Google Developer Expert for Android, an Android engineer at Salesforce.com and an organizer for Google Developer Group Chicago West. Through his work as a public speaker and community organizer, Jerrell hopes to help elevate the tech community scene in Chicago. He has been developing apps for Android since Android 2.0 and is passionate about building beautiful and functional Android apps that exceed users' expectations. He is also the creator of the successful transit application, Ride Metra.",
+      "company" : "Salesforce",
+      "email" : "jerrell.mardis@gmail.com",
+      "name" : "Jerrell Mardis",
+      "title" : "Lead Android Engineer",
+      "twitter" : "@jerrellmardis"
+    },
+    "8DqZcx3zHoOPuTT1MHM493bpfIF3" : {
+      "id": "8DqZcx3zHoOPuTT1MHM493bpfIF3",
+      "agree_terms" : true,
+      "bio" : "Dan has been an Android programmer at Basecamp for 3 years, and prior to that had been working with Java for...a long time. \n\nHe's always enjoyed Android development, but working with Kotlin over the last two years has rocketed that enthusiasm to a whole new level. The Android community has been instrumental to his work and career, and he's a big believer in paying that forward.\n\nOutside of work, he's an avid Dad 👴, donut aficionado 🍩, pizza lover 🍕, and emoji enthusiast 😉.",
+      "company" : "Basecamp",
+      "email" : "dan@basecamp.com",
+      "name" : "Dan Kim",
+      "title" : "Programmer",
+      "twitter" : "@dankim"
+    },
+    "OrviRlXkHySeGk9LorOCrV6kCwI3" : {
+      "id": "OrviRlXkHySeGk9LorOCrV6kCwI3",
+      "agree_terms" : true,
+      "bio" : "I'm the Android developer at Pixite where I work on Pigment, and I'm also a Google Developer Expert.  I've been developing Android apps since 2009 and love working on anything fun, usually graphics related.",
+      "company" : "Pixite",
+      "email" : "ryanjharter@gmail.com",
+      "name" : "Ryan Harter",
+      "title" : "Android Developer",
+      "twitter" : "@rharter"
     }
+  },
+  "schedule" : {
+    "-Kyta2X6gvz6tNeIZgyJ" : {
+      "end_time" : "2018-04-12T12:00:00-0500",
+      "event_type" : "session",
+      "level" : "0",
+      "room" : "Main",
+      "speakers" : [ "nIiy8GJDcXYiRQfIwDRV74fkA6B2" ],
+      "start_time" : "2018-04-12T11:45:00-0500",
+      "submission_id" : "-Kyta2X6gvz6tNeIZgyJ"
+    },
+    "-L05aVkr2wuZxr7IWT88" : {
+      "end_time" : "2018-04-12T11:30:00-0500",
+      "event_type" : "session",
+      "level" : "0",
+      "room" : "Main",
+      "speakers" : [ "U2Y8xPbQCUTxkErE7dR74dtfoly1" ],
+      "start_time" : "2018-04-12T11:00:00-0500",
+      "submission_id" : "-L05aVkr2wuZxr7IWT88"
+    },
+    "-L1Y4_8Wb9Y_bf3AKBTL" : {
+      "end_time" : "2018-04-12T10:45:00-0500",
+      "event_type" : "session",
+      "level" : "0",
+      "room" : "Main",
+      "speakers" : [ "OiimvTKxeWcCsmaaw63VGcTdMTJ3" ],
+      "start_time" : "2018-04-12T10:00:00-0500",
+      "submission_id" : "-L1Y4_8Wb9Y_bf3AKBTL"
+    },
+    "-L1ZYz-3uEBPZf0LPoPI" : {
+      "end_time" : "2018-04-12T09:45:00-0500",
+      "event_type" : "session",
+      "level" : "0",
+      "room" : "Main",
+      "speakers" : [ "ng4L290T54Q3WsqGwvS3e1TIiDG3" ],
+      "start_time" : "2018-04-12T09:00:00-0500",
+      "submission_id" : "-L1ZYz-3uEBPZf0LPoPI"
+    }
+  },
+  "sessions": {
+    "-L1ZYz-3uEBPZf0LPoPI" : {
+      "abstract" : "Changes in the Android world happen so rapidly. There isn’t one right way to do something and documentation doesn’t always keep up. And sometimes you may feel that you can’t keep up. So how do you as a developer - keep up with an ever changing field, make sure your workplace and community catches up, make sure you are using the right tools to make beautiful apps a reality, and work with people from design, product and/or marketing who may not have worked on the Android ecosystem before? Let’s talk about how you can be an Android developer who brings teams and communities together. \n",
+      "start_time": "2018-04-12T09:00:00-0500",
+      "end_time": "2018-04-12T09:45:00-0500",
+      "date" : "2018-04-12",
+      "accepted" : true,
+      "comments" : {
+        "KJ17IrpIISTfjfCufr5rnglWoU53" : "This is a great topic for keynote"
+      },
+      "duration" : 40,
+      "notes" : "I'm interested in giving a keynote and decided to submit this abstract. I have spoken at several conferences before and feel that my 7 years of professional experience in the Android world and 3 years of community experience as a GDG co-organizer and conference speaker will help me give a keynote that is applicable to all levels of Android developers. All my previous talks are available at http://www.yprabhu.com/p/speaking.html. Thank you!",
+      "scores" : {
+        "8DqZcx3zHoOPuTT1MHM493bpfIF3" : 4,
+        "KJ17IrpIISTfjfCufr5rnglWoU53" : 5,
+        "o1Rg9v9Q1LcFsA4ZWnpsFDOIF8Y2" : 3,
+        "uVl7STcR5uXVn00h5hCtn2Ptz6D2" : 5,
+        "umKCqMZHFnduB6OmD55XKV9ckSw1" : 3
+      },
+      "speakers" : ["ng4L290T54Q3WsqGwvS3e1TIiDG3"],
+      "title" : "Keynote: Being more than an Android developer"
+    },
+    "-L1Y4_8Wb9Y_bf3AKBTL" : {
+      "abstract" : "Architecture Components were announced to much fanfare at Google I/O 2017, as it finally gave Android developers some official guidance on how to architect their applications.  It also gave us tools to make managing lifecycle changes much easier, and to persist data without writing lots of annoying SQLite boilerplate code.  By now we’ve all read the documentation and tutorials, but how easy is it to use these intriguing new tools in a production application? (Spoiler alert: they’re pretty helpful)\n\nI developed an app from scratch using all of the new Architecture Components - ViewModels and an MVVM architecture, Room to persist all the local data, and LiveData objects to easily and safely update the UI with automatic lifecycle handling.  Join us as we discuss in detail what it’s like to use these new Architecture Components in a real world situation - we’ll talk about the problems they solved, the problems they created, and whether or not they’re the right choice for your next project.",
+      "start_time": "2018-04-12T10:00:00-0500",
+      "end_time": "2018-04-12T10:45:00-0500",
+      "date" : "2018-04-12",
+      "accepted" : true,
+      "duration" : 40,
+      "notes" : "I was lucky enough to speak at the inaugural Chicago Roboto 2017 and had an incredible experience, and would love the opportunity to speak again in 2018.  I also spoke at the first droidcon Boston in 2017, and have spoken at various Android meetups and tech events around Toronto.\n\nMy company should be able to help cover at least some (if not all) of the costs.\n\nHere are some of my previous presentations:\n\nhttps://news.realm.io/news/android-auto-drive-your-car-use-your-phone-dont-get-hurt/\nhttps://www.youtube.com/watch?v=GeSKaz6PCm4\nhttps://www.youtube.com/watch?v=WNaJlP36I4E\nhttps://www.youtube.com/watch?v=UsX2ySEKbYw\nhttps://vimeo.com/217597546\nhttps://speakerdeck.com/physphil",
+      "scores" : {
+        "8DqZcx3zHoOPuTT1MHM493bpfIF3" : 5,
+        "KJ17IrpIISTfjfCufr5rnglWoU53" : 5,
+        "o1Rg9v9Q1LcFsA4ZWnpsFDOIF8Y2" : 4,
+        "uVl7STcR5uXVn00h5hCtn2Ptz6D2" : 4,
+        "umKCqMZHFnduB6OmD55XKV9ckSw1" : 3
+      },
+      "speakers" : ["OiimvTKxeWcCsmaaw63VGcTdMTJ3"],
+      "title" : "I Wrote an App Using all of the Architecture Components... And Here’s How It Turned Out."
+    },
+    "-L05aVkr2wuZxr7IWT88" : {
+      "abstract" : "Starting out in a new career is scary.  Learning new technologies, navigating company and career goals, staying up-to-date in a constantly changing ecosystem; it can be overwhelming. \n\nOver the last several years, I’ve learned a number of things (sometimes the hard way) that I’d love to share with my past self.\n\nIn this talk, I’ll share that advice with you. \n\nWe'll explore tips & lessons learned from personal experiences learning Android, starting that 1st professional role, developing your skills, and interacting with the community.",
+      "start_time": "2018-04-12T11:00:00-0500",
+      "end_time": "2018-04-12T11:20:00-0500",
+      "date" : "2018-04-12",
+      "accepted" : true,
+      "duration" : "20",
+      "notes" : "This is a topic near and dear to my heart.  I really believe strongly in developing an inclusive community that includes helping new students/professionals feel welcome, and helping them understand that it's absolutely normal to feel lost and overwhelmed at times.\n\nI've shared a little about my experiences before, https://medium.com/udacity/my-year-with-udacitys-android-nanodegree-e8dab119b085\nI'm organizing a meetup for Udacity students/alumni that will discuss some of these same topics as well: https://www.meetup.com/Udacious-Seattle/",
+      "scores" : {
+        "8DqZcx3zHoOPuTT1MHM493bpfIF3" : 3,
+        "KJ17IrpIISTfjfCufr5rnglWoU53" : 2,
+        "o1Rg9v9Q1LcFsA4ZWnpsFDOIF8Y2" : 5,
+        "uVl7STcR5uXVn00h5hCtn2Ptz6D2" : 2,
+        "umKCqMZHFnduB6OmD55XKV9ckSw1" : 3
+      },
+      "speakers" : ["U2Y8xPbQCUTxkErE7dR74dtfoly1"],
+      "title" : "Tips From the Time Machine: Things I Wish I'd Known When Starting a Career as an Android dev"
+    },
+    "-Kyta2X6gvz6tNeIZgyJ" : {
+      "abstract" : "Working with Android studio Template is fun, productive and efficient developing application in groups. It saves the developer time and facilitates to follow the common coding conventions throughout the organization with ease. By creating efficient templates, developer can focus on other business logic, requirements and architecture rather spending time on doing repetitive tasks all over the day. Yeah! Android Studio Templates are user-friendly which provides cool UI and can be customized according to the industry standards by just editing the templates class files.",
+      "start_time": "2018-04-12T11:25:00-0500",
+      "end_time": "2018-04-12T11:45:00-0500",
+      "date" : "2018-04-12",
+      "accepted" : true,
+      "duration" : "20",
+      "notes" : "Blogs on Template Creation : \n\n1. https://medium.com/androidstarters/mastering-android-studio-templates-ed8fdd98cb78\n2. https://medium.com/androidstarters/creating-android-studio-ide-template-for-recyclerviews-a8b6d4925f3f\n\nGithub Repository:\n\n1. https://github.com/TakeoffAndroid/RecyclerViewTemplate\n2. https://github.com/TakeoffAndroid/MaterialTabsTemplate",
+      "scores" : {
+        "8DqZcx3zHoOPuTT1MHM493bpfIF3" : 2,
+        "KJ17IrpIISTfjfCufr5rnglWoU53" : 4,
+        "o1Rg9v9Q1LcFsA4ZWnpsFDOIF8Y2" : 4,
+        "uVl7STcR5uXVn00h5hCtn2Ptz6D2" : 4,
+        "umKCqMZHFnduB6OmD55XKV9ckSw1" : 4
+      },
+      "speakers" : ["nIiy8GJDcXYiRQfIwDRV74fkA6B2"],
+      "title" : "Mastering Android Studio Template Creation"
+    },
+    "-L-sGVYC5vHBmdl-2apa" : {
+      "abstract" : "ConstraintLayout 2.0 will be introduced early 2018, with many new features. This talk will present those new features and concepts. If possible, we would like the abstract to be updated once the release is out.",
+      "start_time": "2018-04-12T13:00:00-0500",
+      "end_time": "2018-04-12T13:45:00-0500",
+      "date" : "2018-04-12",
+      "accepted" : true,
+      "comments" : {
+        "KJ17IrpIISTfjfCufr5rnglWoU53" : "top"
+      },
+      "duration" : 40,
+      "notes" : "John Hoford hoford@google.com will be my co-presenter",
+      "scores" : {
+        "8DqZcx3zHoOPuTT1MHM493bpfIF3" : 5,
+        "KJ17IrpIISTfjfCufr5rnglWoU53" : 5,
+        "o1Rg9v9Q1LcFsA4ZWnpsFDOIF8Y2" : 3,
+        "uVl7STcR5uXVn00h5hCtn2Ptz6D2" : 4,
+        "umKCqMZHFnduB6OmD55XKV9ckSw1" : 4
+      },
+      "speakers" : ["hXvsojyRLxcJyWaXK8gcocL7Zlf1"],
+      "title" : "ConstraintLayout 2.0"
+    },
+    "-L-2S4rWWRVi2OlUEpRR" : {
+      "abstract" : "Mark Allison (author of https://blog.stylingandroid,com) has a deep love of VectorDrawable. He has spoken at conferences about how to construct and Animate them in his talk entitled \"Vector All The Things\".\n\nIn this all new talk, Mark will look at some of the features which have been added to VectorDrawable and its sibling AnimatedVectorDrawable since they first appeared in Android Lollipop 5.0 (API 21). There will be a dive in to fill windings which can cause some baffling rendering oddities, yet can be quite simple to fix once you recognise that fill windings are the cause; There will also be a look at the recently added gradient support; And, of course, there will be plenty of tricks and tips to help with your creation of fabulous VectorDrawables, and amazing Animations.",
+      "start_time": "2018-04-12T14:00:00-0500",
+      "end_time": "2018-04-1214:45:00-0500",
+      "date" : "2018-04-12",
+      "accepted" : true,
+      "duration" : 40,
+      "notes" : "I will require flights and accommodation to be covered, but may be able to receive some financial assistance from Google toward this (for Chicago Roboto last year, Google paid for my flights, and the organisers only needed to cover my accommodation). However last year was complicated because it was left late, and flight prices has increased, and Google's budget had been largely used up. Therefore the earlier that you could confirm whether I have had a talk accepted, the more likely it is that I shall be able to get some financial assistance from Google.",
+      "scores" : {
+        "8DqZcx3zHoOPuTT1MHM493bpfIF3" : 3,
+        "KJ17IrpIISTfjfCufr5rnglWoU53" : 4,
+        "o1Rg9v9Q1LcFsA4ZWnpsFDOIF8Y2" : 5,
+        "uVl7STcR5uXVn00h5hCtn2Ptz6D2" : 3,
+        "umKCqMZHFnduB6OmD55XKV9ckSw1" : 4
+      },
+      "speakers" : ["P8iQ35ohxFTkl9z2HO7Ts1HUB0R2"],
+      "title" : "wow. very vector. such love"
+    },
+    "-L0R7e0jvXReu7pzpOth" : {
+      "abstract" : "ADB is maybe one of the most used tools by the Android developers. But it is for sure the less known. \nIf you ever wondered how ADB is working? Why is it faster now? How Android Studio is using it under the hood? Why my ADB server is killed sometimes? And by the way, what this server is about? This talk is made for you. \n\nI spent several weeks diving into the ADB source code and I learned interesting things about this project, its history, the internals, the interaction with the developers tools, ... It's time for me to share this with you. \n\nHere is an outline of the presentation: \n- How ADB works (the big picture) \n- Some ADB commands you maybe never heard about \n- The history of the project \n- The ADB Internals (the ADB protocols, the structure of the software)\n- How development tools are using ADB?",
+      "start_time": "2018-04-12T15:00:00-0500",
+      "end_time": "2018-04-12T15:45:00-0500",
+      "date" : "2018-04-12",
+      "accepted" : true,
+      "duration" : "45",
+      "notes" : "I already gave the talk at Droidcon NYC (https://www.youtube.com/watch?v=dzx81sAKylg) and Paris Android User Group (https://www.youtube.com/watch?v=aLNsa1Kjve8).",
+      "scores" : {
+        "8DqZcx3zHoOPuTT1MHM493bpfIF3" : 4,
+        "KJ17IrpIISTfjfCufr5rnglWoU53" : 4,
+        "o1Rg9v9Q1LcFsA4ZWnpsFDOIF8Y2" : 4,
+        "uVl7STcR5uXVn00h5hCtn2Ptz6D2" : 5,
+        "umKCqMZHFnduB6OmD55XKV9ckSw1" : 4
+      },
+      "speakers" : ["r0XXHLRqPmd3YpwBrJkkbJlZtQ62"],
+      "title" : "ADB, Break On Through To the Other Side"
+    },
+    "-L1DYvhOuHCYofznm459" : {
+      "abstract" : "RxJava is an incredibly nice library that lets us take our data on a journey through network calls, databases, UI threads and background threads. But how do we actually achieve concurrency, responsibly? Are we testing it to ensure our own sanity? Are we protecting ourselves against race conditions? Is flatMap() and merge() enough? Demonstrating an understanding in creating and testing Rx streams helps us to achieve concurrency in this powerful library.",
+      "start_time": "2018-04-12T16:00:00-0500",
+      "end_time": "2018-04-12T16:45:00-0500",
+      "date" : "2018-04-12",
+      "accepted" : true,
+      "duration" : 40,
+      "notes" : "Hi Chicago Roboto! I'm currently an Android Developer at Yello.co. I love working with the RxJava framework and how easy it's made our Android app to maintain.\n\nI really want to do a talk on concurrency with this widely-popular framework because, as a junior developer learning all of the pitfalls of concurrency, it's opened my eyes to all the ways we can shoot ourselves in the foot. I wrote this article (https://proandroiddev.com/testing-concurrency-in-rxjava-831804a9e526) in Pro Android Dev to contribute some of what I've learned, but I realized I could do an entire talk on the subject!\n\nI'm hoping to cover a more broad approach to concurrency and leave viewers with a more rounded-out view of how things happen in the framework.\n\nI've never spoken at a conference (at the time of the writing of this proposal) but in January I will have done a talk called Privet Kotlin at Windy City Dev Fest. Here's a link: https://windycity.devfest.io/sessions/-L0GMdpLLWSmT68IqRkO",
+      "scores" : {
+        "8DqZcx3zHoOPuTT1MHM493bpfIF3" : 4,
+        "KJ17IrpIISTfjfCufr5rnglWoU53" : 4,
+        "o1Rg9v9Q1LcFsA4ZWnpsFDOIF8Y2" : 2,
+        "uVl7STcR5uXVn00h5hCtn2Ptz6D2" : 3,
+        "umKCqMZHFnduB6OmD55XKV9ckSw1" : 4
+      },
+      "speakers" : ["GR6IHwqOLOQmwdNIlF4ETRVnAWG2"],
+      "title" : "Achieving Concurrency in RxJava"
+    },
+    "-KysBHqCHfvCEV6OaTnP" : {
+      "abstract" : "Are you one of the numerous developers who wants to implement Espresso testing but hasn't? Perhaps it's for one of the common reasons - not enough expertise or time, it feels like a daunting task, or it feels downright tedious. I have personally felt each of those things. All of that changed once I learned about the robot pattern. In this talk we'll go over how the robot pattern helps you write cleaner and more maintainable tests, as well as how it can be leveraged for better test reporting. You'll walk away with an understanding of how to write tests much more thoroughly and efficiently so that it can easily become a natural part of your build process, and not shoved in the back log and left untouched. \n",
+      "start_time": "2018-04-12T17:00:00-0500",
+      "end_time": "2018-04-12T17:45:00-0500",
+      "date" : "2018-04-12",
+      "accepted" : true,
+      "duration" : 40,
+      "notes" : "A short blog post I've written on this topic, though I plan for the talk to go more in depth - https://androidessence.com/android/leveraging-the-robot-pattern-for-espresso-tests/",
+      "scores" : {
+        "8DqZcx3zHoOPuTT1MHM493bpfIF3" : 4,
+        "KJ17IrpIISTfjfCufr5rnglWoU53" : 2,
+        "o1Rg9v9Q1LcFsA4ZWnpsFDOIF8Y2" : 5,
+        "uVl7STcR5uXVn00h5hCtn2Ptz6D2" : 5,
+        "umKCqMZHFnduB6OmD55XKV9ckSw1" : 4
+      },
+      "speakers" : ["KtiwOUeigvUxn0MUHtJyvCLpOnS2"],
+      "title" : "Espresso Patronum: The Magic Of The Robot Pattern"
+    },
+    "-L1ZrO-T1SS0UzjrX4Gs" : {
+      "abstract" : "Even if you’re brand new to Kotlin, you might know that you can right-click any Java file and convert it automatically. Score! But wait, what are all these “!!” and why is the code littered with “?”. Sure, the code compiles, but how do you make the code not just compile but follow best practices? How do you get closer to making your code idiomatic?\n\nIn the third part of our series on learning the cool and idiomatic parts of Kotlin, we're going to look at some intermediate Kotlin topics. We're going to look at how inlining can improve the performance on higher-order functions as well as allow us to take advantage of type reification. Then we'll take a look at how delegation can help us write dryer, more efficient, and more interesting properties with less boiler plate. Finally, we'll dive into the magical world of asynchronous programming the Kotlin way with coroutines.",
+      "start_time": "2018-04-13T09:00:00-0500",
+      "end_time": "2018-04-13T09:45:00-0500",
+      "date" : "2018-04-13",
+      "accepted" : true,
+      "duration" : "45",
+      "notes" : "My co-presenter will be Christina Lee.\n\nBoth of us spoke at Chicago Roboto last year.\nHuyen Tue Dao, \"Cool ConstraintLayout\": https://youtu.be/Xx4aRI3oQbM\nChristina Lee, \"Retrofitting Retrofit\"\n",
+      "scores" : {
+        "8DqZcx3zHoOPuTT1MHM493bpfIF3" : 5,
+        "KJ17IrpIISTfjfCufr5rnglWoU53" : 4,
+        "o1Rg9v9Q1LcFsA4ZWnpsFDOIF8Y2" : 3,
+        "uVl7STcR5uXVn00h5hCtn2Ptz6D2" : 5,
+        "umKCqMZHFnduB6OmD55XKV9ckSw1" : 4
+      },
+      "speakers" : ["c8LiYaJFquRYKMqVmYeZgTSFaVe2"],
+      "title" : "The Road to Kotlintown III: Delegate 95 to Coroutine 66"
+    },
+    "-L-G9e3es-COhq0M650L" : {
+      "abstract" : "Tofus (□) are representations used when a specific character (like an Emoji) cannot be displayed. You have seen them, and so your users.\n\nThanks to EmojiCompat, now Android developers have a way to provide Emoji compatibility for older devices, but does it solve all the issues developers have with Emoji? \n\nHave you wondered why Twitter counts characters differently depending on the Emoji? Or how gender and skin tone Emoji modifiers work? How can I have a similar functionality as Slack on my app with custom Emoji? Do all your users see the same Emoji?\n\nOn this talk, you will learn about the different pitfalls developers face when working with Emoji, like code points, the Fitzpatrick modifiers and short-names, you will learn how to use EmojiCompat and I will show you alternatives to it.\n\nIn this talk you will learn:\n- What are the problems developers face with Emoji\n- How Emoji works\n- How to use EmojiCompat including dynamic font downloading\n- What is EmojiCompat not solving, and what can you do\n- What alternatives are there to EmojiCompat\n- ..and of course everything with Kotlin!\n\nAfter this talk, you will be an Emoji expert, no longer afraid of showing □ (tofu) to your users!\n",
+      "start_time": "2018-04-13T10:00:00-0500",
+      "end_time": "2018-04-13T10:45:00-0500",
+      "date" : "2018-04-13",
+      "accepted" : true,
+      "duration" : 40,
+      "notes" : "This will be an improved and extended version of the talk I gave on the Berlindroid meetup event back in summer. Here’s a summary on how the talk went: https://medium.com/@Miqubel/talk-no-more-taming-emoji-on-android-c4f3825e510c \n\nThis talk will include as well code samples for the attendees in a GitHub repo.\n\nI am very interested in this topic: At work we used to have a custom solution for displaying Emoji until EmojiCompat came out, and we used to do a lots of tricks to support the latest Unicode Emoji specs, since we are a social network that uses Emoji a lot. We are early adopters of EmojiCompat, using it since it’s beta release.\n\nI think this is an interesting topic that usually doesn’t get enough attention but can affect anyone who is dealing with user generated content.\n\nI will also be giving a talk in February on the DroidKaigi conference in Tokyo, and I’ve also given two talks at the Berlin DevFest. All of them about different topics. You can check my speaker deck: https://speakerdeck.com/miquelbeltran If you need more references, my Medium articles have been published both at AndroidWeekly and KotlinWeekly\n",
+      "scores" : {
+        "8DqZcx3zHoOPuTT1MHM493bpfIF3" : 5,
+        "KJ17IrpIISTfjfCufr5rnglWoU53" : 5,
+        "o1Rg9v9Q1LcFsA4ZWnpsFDOIF8Y2" : 2,
+        "uVl7STcR5uXVn00h5hCtn2Ptz6D2" : 5,
+        "umKCqMZHFnduB6OmD55XKV9ckSw1" : 4
+      },
+      "speakers" : ["NKfa7i1ya1codCObZxEyvBpvv5p1"],
+      "title" : "No More □  —  Mastering Emoji on Android"
+    },
+    "-L1aXPSRjrfFiFS-sksm" : {
+      "abstract" : "Although it is buzzing nowadays, machine learning is still a stranger to many of us.\nHowever, worry not! Making your app smarter has just become wayyy easier with the new TensorFlow for Android.\nOn this talk, we’ll get to know some basic ML concepts and usages, and create our first machine learning Android app using TensorFlow!\n",
+      "start_time": "2018-04-13T11:00:00-0500",
+      "end_time": "2018-04-13T11:45:00-0500",
+      "date" : "2018-04-13",
+      "accepted" : true,
+      "duration" : "45",
+      "scores" : {
+        "8DqZcx3zHoOPuTT1MHM493bpfIF3" : 3,
+        "KJ17IrpIISTfjfCufr5rnglWoU53" : 3,
+        "o1Rg9v9Q1LcFsA4ZWnpsFDOIF8Y2" : 3,
+        "uVl7STcR5uXVn00h5hCtn2Ptz6D2" : 5,
+        "umKCqMZHFnduB6OmD55XKV9ckSw1" : 4
+      },
+      "speakers" : ["zzqX4y5e5yMTVLvIEfsItp4NCp52"],
+      "title" : "Who’s afraid of Machine Learning? First steps with TensorFlow for Android."
+    },
+    "-L1Zag9BgNhutvZebqO8" : {
+      "abstract" : "Picasso is a powerful image downloading and caching library for Android but since its launch in 2013, other libraries have improved or entered the scene and new requirements have come up.  \n\nIn this talk, we’ll:\n* Dig into the internals of Picasso works\n* Compare and contrast to other image libraries\n* Discuss latest improvements as we push to 3.0\n* ...and more!\n\nYou’ll learn to efficiently work with different image formats across millions of devices!",
+      "start_time": "2018-04-13T13:00:00-0500",
+      "end_time": "2018-04-13T13:45:00-0500",
+      "date" : "2018-04-13",
+      "accepted" : true,
+      "duration" : 40,
+      "notes" : "https://speakerdeck.com/jrodbx",
+      "scores" : {
+        "8DqZcx3zHoOPuTT1MHM493bpfIF3" : 4,
+        "KJ17IrpIISTfjfCufr5rnglWoU53" : 2,
+        "o1Rg9v9Q1LcFsA4ZWnpsFDOIF8Y2" : 4,
+        "uVl7STcR5uXVn00h5hCtn2Ptz6D2" : 3,
+        "umKCqMZHFnduB6OmD55XKV9ckSw1" : 4
+      },
+      "speakers" : ["MN4HNiWM7qW96xzbGkRphXprApu1", "ayE1XDMvl2cPi8Sa6bN45l9QLKG2"],
+      "title" : "Rinsing the Brush: Picasso 3.0"
+    },
+    "-L1453alPCtSTM9843Jy" : {
+      "abstract" : "We have had many talks and blog posts on Dagger till now and people have done a great job at explaining it's various concepts. Dagger is something which has become a part of our coding lives now. Yet, from time-to-time we still find ourselves lost while dealing with “The Dahaka (an infinite storm in an ocean of Providers, Factories, Builders, MemberInjectors, DoubleChecks, Lazy, Producers...)”. \n\nStarting to learn about Dagger? Start by creating a Module and a Component. Add a Singleton scope to it. \nDependencies getting out of hand? Create another dependent component.\nCreating a dependent component? You should create another scope!! \nCreate a subcomponent.\nStill alive? Now we present you with Dagger Android and I am sure that it will certainly kill you :P\n\nBut wait! What exactly is the relation between a Module and a Component? \n\nThankfully! Dagger 2 generates all it’s code at compile time and we can actually see what’s going on behind the scenes.\n\nIn this talk we will aim to Defeat “The Dahaka (a storm in the ocean of generated classes)”. After attending this talk you will get a better sense of what goes on behind the scenes and how to smartly move to Dagger Android  :)\n",
+      "start_time": "2018-04-13T14:00:00-0500",
+      "end_time": "2018-04-13T14:45:00-0500",
+      "date" : "2018-04-13",
+      "accepted" : true,
+      "duration" : 40,
+      "notes" : "For more information, series “Dagger and The Dahaka” on medium : https://proandroiddev.com/dagger-2-android-defeat-the-dahaka-b1c542233efc\n\nI gave a similar talk at Droidcon Berlin, 2017 https://droidcon.de/en/sessions/dagger-2-android-defeat-dahaka\n\nDemo code : https://github.com/ragdroid/Dahaka",
+      "scores" : {
+        "8DqZcx3zHoOPuTT1MHM493bpfIF3" : 3,
+        "KJ17IrpIISTfjfCufr5rnglWoU53" : 5,
+        "o1Rg9v9Q1LcFsA4ZWnpsFDOIF8Y2" : 5,
+        "uVl7STcR5uXVn00h5hCtn2Ptz6D2" : 4,
+        "umKCqMZHFnduB6OmD55XKV9ckSw1" : 4
+      },
+      "speakers" : ["kxTClM2ee3fSZmLQe1C4usE8Br13"],
+      "title" : "Dagger 2 Android : Defeat the Dahaka"
+    },
+    "-KxynTzs-dXn0PCuVJdf" : {
+      "abstract" : "Writing high-quality path morphing animations for Android is a near impossible task. In order to morph one shape into another, the SVG paths describing the two must be compatible with each other—that is, they need to have the same number and type of drawing commands. Unfortunately popular design tools, such as Sketch and Illustrator, do not take this into account, and as a result engineers will often have to spend time tweaking the raw SVGs given to them by designers before they can be morphed. To address this issue, I built a web app called Shape Shifter (https://shapeshifter.design), a tool that helps developers and designers to more easily create path morphing animations for their Android apps. In this talk, I will explain how to use Shape Shifter to create seamless transitions between arbitrary shapes using AnimatedVectorDrawables. I will also explain how Shape Shifter internally uses bioinformatics algorithms in order to auto-generate morphing animations between incompatible shapes, as well as some of the challenges I faced while building the tool.",
+      "start_time": "2018-04-13T15:00:00-0500",
+      "end_time": "2018-04-13T15:45:00-0500",
+      "date" : "2018-04-13",
+      "accepted" : true,
+      "duration" : "45",
+      "scores" : {
+        "8DqZcx3zHoOPuTT1MHM493bpfIF3" : 4,
+        "KJ17IrpIISTfjfCufr5rnglWoU53" : 5,
+        "o1Rg9v9Q1LcFsA4ZWnpsFDOIF8Y2" : 4,
+        "uVl7STcR5uXVn00h5hCtn2Ptz6D2" : 3,
+        "umKCqMZHFnduB6OmD55XKV9ckSw1" : 4
+      },
+      "speakers" : ["MkYEWfwwHMeODXHCmn9yp5nsNvZ2"],
+      "title" : "In-depth path morphing w/ Shape Shifter"
+    },
+    "-L1ZPfPC0rO8qTQ3umb3" : {
+      "abstract" : "Every day each one of us turns to community contributions to help us become better developers — blog posts, open source projects, conference talks, podcasts, and so much more. Can you imagine if these community resources didn’t exist?!\n\nAnd while our community is strong today, it’s healthiest when it continues to grow from a broad set of interests, backgrounds and opinions. That diversity and knowledge to keep our community strong can only come from one place: YOU.\n\nI’ll share my thoughts about how this community has helped me (and others) grow, why that’s so important, and ultimately why it’s crucial for all of us to contribute. I’ll discuss five (or so) areas, each with some high level tips to get you started, that we can all contribute to to keep our community strong and healthy.\n\nThe Android community has proven to be one of the most welcoming, friendly, helpful, generous groups I’ve ever encountered. Let’s keep it going!",
+      "start_time": "2018-04-13T16:00:00-0500",
+      "end_time": "2018-04-13T16:45:00-0500",
+      "date" : "2018-04-13",
+      "accepted" : true,
+      "duration" : "30-40",
+      "notes" : "Previous talk:\nhttps://www.youtube.com/watch?v=fsUF5f4GnHc\nhttps://speakerdeck.com/dankim/getting-to-100-percent-kotlin-a-practical-guide",
+      "scores" : {
+        "KJ17IrpIISTfjfCufr5rnglWoU53" : 4,
+        "o1Rg9v9Q1LcFsA4ZWnpsFDOIF8Y2" : 4,
+        "uVl7STcR5uXVn00h5hCtn2Ptz6D2" : 4,
+        "umKCqMZHFnduB6OmD55XKV9ckSw1" : 2
+      },
+      "speakers" : ["8DqZcx3zHoOPuTT1MHM493bpfIF3"],
+      "title" : "The future of our community is YOU"
+    },
+    "ar-core": {
+      "abstract" : "Google introduced ARCore for Android in August of last year. This is your opportunity to step in on the ground floor of the developing potential around augmented reality on mobile. We’ll walk through some of the fundamental capabilities, things to avoid, why you might want to use it, and some resources that might be helpful for you.",
+      "start_time": "2018-04-13T17:00:00-0500",
+      "end_time": "2018-04-13T17:45:00-0500",
+      "date" : "2018-04-13",
+      "accepted" : true,
+      "duration" : "45",
+      "speakers" : ["ngt0jsbDYDew0CUdODzMP54XU0l1"],
+      "title" : "Intro to ARCore"
+    }
+  },
+  "sessions_by_date": {
+    "2018-04-12": [
+      {
+        "abstract" : "Changes in the Android world happen so rapidly. There isn’t one right way to do something and documentation doesn’t always keep up. And sometimes you may feel that you can’t keep up. So how do you as a developer - keep up with an ever changing field, make sure your workplace and community catches up, make sure you are using the right tools to make beautiful apps a reality, and work with people from design, product and/or marketing who may not have worked on the Android ecosystem before? Let’s talk about how you can be an Android developer who brings teams and communities together. \n",
+        "id": "-L1ZYz-3uEBPZf0LPoPI",
+        "start_time": "2018-04-12T09:00:00-0500",
+        "end_time": "2018-04-12T09:45:00-0500",
+        "date" : "2018-04-12",
+        "accepted" : true,
+        "comments" : {
+          "KJ17IrpIISTfjfCufr5rnglWoU53" : "This is a great topic for keynote"
+        },
+        "duration" : 40,
+        "notes" : "I'm interested in giving a keynote and decided to submit this abstract. I have spoken at several conferences before and feel that my 7 years of professional experience in the Android world and 3 years of community experience as a GDG co-organizer and conference speaker will help me give a keynote that is applicable to all levels of Android developers. All my previous talks are available at http://www.yprabhu.com/p/speaking.html. Thank you!",
+        "scores" : {
+          "8DqZcx3zHoOPuTT1MHM493bpfIF3" : 4,
+          "KJ17IrpIISTfjfCufr5rnglWoU53" : 5,
+          "o1Rg9v9Q1LcFsA4ZWnpsFDOIF8Y2" : 3,
+          "uVl7STcR5uXVn00h5hCtn2Ptz6D2" : 5,
+          "umKCqMZHFnduB6OmD55XKV9ckSw1" : 3
+        },
+        "speakers" : ["ng4L290T54Q3WsqGwvS3e1TIiDG3"],
+        "title" : "Keynote: Being more than an Android developer"
+      },
+      {
+        "abstract" : "Architecture Components were announced to much fanfare at Google I/O 2017, as it finally gave Android developers some official guidance on how to architect their applications.  It also gave us tools to make managing lifecycle changes much easier, and to persist data without writing lots of annoying SQLite boilerplate code.  By now we’ve all read the documentation and tutorials, but how easy is it to use these intriguing new tools in a production application? (Spoiler alert: they’re pretty helpful)\n\nI developed an app from scratch using all of the new Architecture Components - ViewModels and an MVVM architecture, Room to persist all the local data, and LiveData objects to easily and safely update the UI with automatic lifecycle handling.  Join us as we discuss in detail what it’s like to use these new Architecture Components in a real world situation - we’ll talk about the problems they solved, the problems they created, and whether or not they’re the right choice for your next project.",
+        "id": "-L1Y4_8Wb9Y_bf3AKBTL",
+        "start_time": "2018-04-12T10:00:00-0500",
+        "end_time": "2018-04-12T10:45:00-0500",
+        "date" : "2018-04-12",
+        "accepted" : true,
+        "duration" : 40,
+        "notes" : "I was lucky enough to speak at the inaugural Chicago Roboto 2017 and had an incredible experience, and would love the opportunity to speak again in 2018.  I also spoke at the first droidcon Boston in 2017, and have spoken at various Android meetups and tech events around Toronto.\n\nMy company should be able to help cover at least some (if not all) of the costs.\n\nHere are some of my previous presentations:\n\nhttps://news.realm.io/news/android-auto-drive-your-car-use-your-phone-dont-get-hurt/\nhttps://www.youtube.com/watch?v=GeSKaz6PCm4\nhttps://www.youtube.com/watch?v=WNaJlP36I4E\nhttps://www.youtube.com/watch?v=UsX2ySEKbYw\nhttps://vimeo.com/217597546\nhttps://speakerdeck.com/physphil",
+        "scores" : {
+          "8DqZcx3zHoOPuTT1MHM493bpfIF3" : 5,
+          "KJ17IrpIISTfjfCufr5rnglWoU53" : 5,
+          "o1Rg9v9Q1LcFsA4ZWnpsFDOIF8Y2" : 4,
+          "uVl7STcR5uXVn00h5hCtn2Ptz6D2" : 4,
+          "umKCqMZHFnduB6OmD55XKV9ckSw1" : 3
+        },
+        "speakers" : ["OiimvTKxeWcCsmaaw63VGcTdMTJ3"],
+        "title" : "I Wrote an App Using all of the Architecture Components... And Here’s How It Turned Out."
+      },
+      {
+        "abstract" : "Starting out in a new career is scary.  Learning new technologies, navigating company and career goals, staying up-to-date in a constantly changing ecosystem; it can be overwhelming. \n\nOver the last several years, I’ve learned a number of things (sometimes the hard way) that I’d love to share with my past self.\n\nIn this talk, I’ll share that advice with you. \n\nWe'll explore tips & lessons learned from personal experiences learning Android, starting that 1st professional role, developing your skills, and interacting with the community.",
+        "id" : "-L05aVkr2wuZxr7IWT88",
+        "start_time": "2018-04-12T11:00:00-0500",
+        "end_time": "2018-04-12T11:20:00-0500",
+        "date" : "2018-04-12",
+        "accepted" : true,
+        "duration" : "20",
+        "notes" : "This is a topic near and dear to my heart.  I really believe strongly in developing an inclusive community that includes helping new students/professionals feel welcome, and helping them understand that it's absolutely normal to feel lost and overwhelmed at times.\n\nI've shared a little about my experiences before, https://medium.com/udacity/my-year-with-udacitys-android-nanodegree-e8dab119b085\nI'm organizing a meetup for Udacity students/alumni that will discuss some of these same topics as well: https://www.meetup.com/Udacious-Seattle/",
+        "scores" : {
+          "8DqZcx3zHoOPuTT1MHM493bpfIF3" : 3,
+          "KJ17IrpIISTfjfCufr5rnglWoU53" : 2,
+          "o1Rg9v9Q1LcFsA4ZWnpsFDOIF8Y2" : 5,
+          "uVl7STcR5uXVn00h5hCtn2Ptz6D2" : 2,
+          "umKCqMZHFnduB6OmD55XKV9ckSw1" : 3
+        },
+        "speakers" : ["U2Y8xPbQCUTxkErE7dR74dtfoly1"],
+        "title" : "Tips From the Time Machine: Things I Wish I'd Known When Starting a Career as an Android dev"
+      },
+      {
+        "abstract" : "Working with Android studio Template is fun, productive and efficient developing application in groups. It saves the developer time and facilitates to follow the common coding conventions throughout the organization with ease. By creating efficient templates, developer can focus on other business logic, requirements and architecture rather spending time on doing repetitive tasks all over the day. Yeah! Android Studio Templates are user-friendly which provides cool UI and can be customized according to the industry standards by just editing the templates class files.",
+        "id": "-Kyta2X6gvz6tNeIZgyJ",
+        "start_time": "2018-04-12T11:25:00-0500",
+        "end_time": "2018-04-12T11:45:00-0500",
+        "date" : "2018-04-12",
+        "accepted" : true,
+        "duration" : "20",
+        "notes" : "Blogs on Template Creation : \n\n1. https://medium.com/androidstarters/mastering-android-studio-templates-ed8fdd98cb78\n2. https://medium.com/androidstarters/creating-android-studio-ide-template-for-recyclerviews-a8b6d4925f3f\n\nGithub Repository:\n\n1. https://github.com/TakeoffAndroid/RecyclerViewTemplate\n2. https://github.com/TakeoffAndroid/MaterialTabsTemplate",
+        "scores" : {
+          "8DqZcx3zHoOPuTT1MHM493bpfIF3" : 2,
+          "KJ17IrpIISTfjfCufr5rnglWoU53" : 4,
+          "o1Rg9v9Q1LcFsA4ZWnpsFDOIF8Y2" : 4,
+          "uVl7STcR5uXVn00h5hCtn2Ptz6D2" : 4,
+          "umKCqMZHFnduB6OmD55XKV9ckSw1" : 4
+        },
+        "speakers" : ["nIiy8GJDcXYiRQfIwDRV74fkA6B2"],
+        "title" : "Mastering Android Studio Template Creation"
+      },
+      {
+        "abstract" : "ConstraintLayout 2.0 will be introduced early 2018, with many new features. This talk will present those new features and concepts. If possible, we would like the abstract to be updated once the release is out.",
+        "id": "-L-sGVYC5vHBmdl-2apa",
+        "start_time": "2018-04-12T13:00:00-0500",
+        "end_time": "2018-04-12T13:45:00-0500",
+        "date" : "2018-04-12",
+        "accepted" : true,
+        "comments" : {
+          "KJ17IrpIISTfjfCufr5rnglWoU53" : "top"
+        },
+        "duration" : 40,
+        "notes" : "John Hoford hoford@google.com will be my co-presenter",
+        "scores" : {
+          "8DqZcx3zHoOPuTT1MHM493bpfIF3" : 5,
+          "KJ17IrpIISTfjfCufr5rnglWoU53" : 5,
+          "o1Rg9v9Q1LcFsA4ZWnpsFDOIF8Y2" : 3,
+          "uVl7STcR5uXVn00h5hCtn2Ptz6D2" : 4,
+          "umKCqMZHFnduB6OmD55XKV9ckSw1" : 4
+        },
+        "speakers" : ["hXvsojyRLxcJyWaXK8gcocL7Zlf1"],
+        "title" : "ConstraintLayout 2.0"
+      },
+      {
+        "abstract" : "Mark Allison (author of https://blog.stylingandroid,com) has a deep love of VectorDrawable. He has spoken at conferences about how to construct and Animate them in his talk entitled \"Vector All The Things\".\n\nIn this all new talk, Mark will look at some of the features which have been added to VectorDrawable and its sibling AnimatedVectorDrawable since they first appeared in Android Lollipop 5.0 (API 21). There will be a dive in to fill windings which can cause some baffling rendering oddities, yet can be quite simple to fix once you recognise that fill windings are the cause; There will also be a look at the recently added gradient support; And, of course, there will be plenty of tricks and tips to help with your creation of fabulous VectorDrawables, and amazing Animations.",
+        "id": "-L-2S4rWWRVi2OlUEpRR",
+        "start_time": "2018-04-12T14:00:00-0500",
+        "end_time": "2018-04-12T14:45:00-0500",
+        "date" : "2018-04-12",
+        "accepted" : true,
+        "duration" : 40,
+        "notes" : "I will require flights and accommodation to be covered, but may be able to receive some financial assistance from Google toward this (for Chicago Roboto last year, Google paid for my flights, and the organisers only needed to cover my accommodation). However last year was complicated because it was left late, and flight prices has increased, and Google's budget had been largely used up. Therefore the earlier that you could confirm whether I have had a talk accepted, the more likely it is that I shall be able to get some financial assistance from Google.",
+        "scores" : {
+          "8DqZcx3zHoOPuTT1MHM493bpfIF3" : 3,
+          "KJ17IrpIISTfjfCufr5rnglWoU53" : 4,
+          "o1Rg9v9Q1LcFsA4ZWnpsFDOIF8Y2" : 5,
+          "uVl7STcR5uXVn00h5hCtn2Ptz6D2" : 3,
+          "umKCqMZHFnduB6OmD55XKV9ckSw1" : 4
+        },
+        "speakers" : ["P8iQ35ohxFTkl9z2HO7Ts1HUB0R2"],
+        "title" : "wow. very vector. such love"
+      },
+      {
+        "abstract" : "ADB is maybe one of the most used tools by the Android developers. But it is for sure the less known. \nIf you ever wondered how ADB is working? Why is it faster now? How Android Studio is using it under the hood? Why my ADB server is killed sometimes? And by the way, what this server is about? This talk is made for you. \n\nI spent several weeks diving into the ADB source code and I learned interesting things about this project, its history, the internals, the interaction with the developers tools, ... It's time for me to share this with you. \n\nHere is an outline of the presentation: \n- How ADB works (the big picture) \n- Some ADB commands you maybe never heard about \n- The history of the project \n- The ADB Internals (the ADB protocols, the structure of the software)\n- How development tools are using ADB?",
+        "id": "-L0R7e0jvXReu7pzpOth",
+        "start_time": "2018-04-12T15:00:00-0500",
+        "end_time": "2018-04-12T15:45:00-0500",
+        "date" : "2018-04-12",
+        "accepted" : true,
+        "duration" : "45",
+        "notes" : "I already gave the talk at Droidcon NYC (https://www.youtube.com/watch?v=dzx81sAKylg) and Paris Android User Group (https://www.youtube.com/watch?v=aLNsa1Kjve8).",
+        "scores" : {
+          "8DqZcx3zHoOPuTT1MHM493bpfIF3" : 4,
+          "KJ17IrpIISTfjfCufr5rnglWoU53" : 4,
+          "o1Rg9v9Q1LcFsA4ZWnpsFDOIF8Y2" : 4,
+          "uVl7STcR5uXVn00h5hCtn2Ptz6D2" : 5,
+          "umKCqMZHFnduB6OmD55XKV9ckSw1" : 4
+        },
+        "speakers" : ["r0XXHLRqPmd3YpwBrJkkbJlZtQ62"],
+        "title" : "ADB, Break On Through To the Other Side"
+      },
+      {
+        "abstract" : "RxJava is an incredibly nice library that lets us take our data on a journey through network calls, databases, UI threads and background threads. But how do we actually achieve concurrency, responsibly? Are we testing it to ensure our own sanity? Are we protecting ourselves against race conditions? Is flatMap() and merge() enough? Demonstrating an understanding in creating and testing Rx streams helps us to achieve concurrency in this powerful library.",
+        "id": "-L1DYvhOuHCYofznm459",
+        "start_time": "2018-04-12T16:00:00-0500",
+        "end_time": "2018-04-12T16:45:00-0500",
+        "date" : "2018-04-12",
+        "accepted" : true,
+        "duration" : 40,
+        "notes" : "Hi Chicago Roboto! I'm currently an Android Developer at Yello.co. I love working with the RxJava framework and how easy it's made our Android app to maintain.\n\nI really want to do a talk on concurrency with this widely-popular framework because, as a junior developer learning all of the pitfalls of concurrency, it's opened my eyes to all the ways we can shoot ourselves in the foot. I wrote this article (https://proandroiddev.com/testing-concurrency-in-rxjava-831804a9e526) in Pro Android Dev to contribute some of what I've learned, but I realized I could do an entire talk on the subject!\n\nI'm hoping to cover a more broad approach to concurrency and leave viewers with a more rounded-out view of how things happen in the framework.\n\nI've never spoken at a conference (at the time of the writing of this proposal) but in January I will have done a talk called Privet Kotlin at Windy City Dev Fest. Here's a link: https://windycity.devfest.io/sessions/-L0GMdpLLWSmT68IqRkO",
+        "scores" : {
+          "8DqZcx3zHoOPuTT1MHM493bpfIF3" : 4,
+          "KJ17IrpIISTfjfCufr5rnglWoU53" : 4,
+          "o1Rg9v9Q1LcFsA4ZWnpsFDOIF8Y2" : 2,
+          "uVl7STcR5uXVn00h5hCtn2Ptz6D2" : 3,
+          "umKCqMZHFnduB6OmD55XKV9ckSw1" : 4
+        },
+        "speakers" : ["GR6IHwqOLOQmwdNIlF4ETRVnAWG2"],
+        "title" : "Achieving Concurrency in RxJava"
+      },
+      {
+        "abstract" : "Are you one of the numerous developers who wants to implement Espresso testing but hasn't? Perhaps it's for one of the common reasons - not enough expertise or time, it feels like a daunting task, or it feels downright tedious. I have personally felt each of those things. All of that changed once I learned about the robot pattern. In this talk we'll go over how the robot pattern helps you write cleaner and more maintainable tests, as well as how it can be leveraged for better test reporting. You'll walk away with an understanding of how to write tests much more thoroughly and efficiently so that it can easily become a natural part of your build process, and not shoved in the back log and left untouched. \n",
+        "id": "-KysBHqCHfvCEV6OaTnP",
+        "start_time": "2018-04-12T17:00:00-0500",
+        "end_time": "2018-04-12T17:45:00-0500",
+        "date" : "2018-04-12",
+        "accepted" : true,
+        "duration" : 40,
+        "notes" : "A short blog post I've written on this topic, though I plan for the talk to go more in depth - https://androidessence.com/android/leveraging-the-robot-pattern-for-espresso-tests/",
+        "scores" : {
+          "8DqZcx3zHoOPuTT1MHM493bpfIF3" : 4,
+          "KJ17IrpIISTfjfCufr5rnglWoU53" : 2,
+          "o1Rg9v9Q1LcFsA4ZWnpsFDOIF8Y2" : 5,
+          "uVl7STcR5uXVn00h5hCtn2Ptz6D2" : 5,
+          "umKCqMZHFnduB6OmD55XKV9ckSw1" : 4
+        },
+        "speakers" : ["KtiwOUeigvUxn0MUHtJyvCLpOnS2"],
+        "title" : "Espresso Patronum: The Magic Of The Robot Pattern"
+      }
+    ],
+    "2018-04-13": [
+      {
+        "abstract" : "Even if you’re brand new to Kotlin, you might know that you can right-click any Java file and convert it automatically. Score! But wait, what are all these “!!” and why is the code littered with “?”. Sure, the code compiles, but how do you make the code not just compile but follow best practices? How do you get closer to making your code idiomatic?\n\nIn the third part of our series on learning the cool and idiomatic parts of Kotlin, we're going to look at some intermediate Kotlin topics. We're going to look at how inlining can improve the performance on higher-order functions as well as allow us to take advantage of type reification. Then we'll take a look at how delegation can help us write dryer, more efficient, and more interesting properties with less boiler plate. Finally, we'll dive into the magical world of asynchronous programming the Kotlin way with coroutines.",
+        "id": "-L1ZrO-T1SS0UzjrX4Gs",
+        "start_time": "2018-04-13T09:00:00-0500",
+        "end_time": "2018-04-13T09:45:00-0500",
+        "date" : "2018-04-13",
+        "accepted" : true,
+        "duration" : "45",
+        "notes" : "My co-presenter will be Christina Lee.\n\nBoth of us spoke at Chicago Roboto last year.\nHuyen Tue Dao, \"Cool ConstraintLayout\": https://youtu.be/Xx4aRI3oQbM\nChristina Lee, \"Retrofitting Retrofit\"\n",
+        "scores" : {
+          "8DqZcx3zHoOPuTT1MHM493bpfIF3" : 5,
+          "KJ17IrpIISTfjfCufr5rnglWoU53" : 4,
+          "o1Rg9v9Q1LcFsA4ZWnpsFDOIF8Y2" : 3,
+          "uVl7STcR5uXVn00h5hCtn2Ptz6D2" : 5,
+          "umKCqMZHFnduB6OmD55XKV9ckSw1" : 4
+        },
+        "speakers" : ["c8LiYaJFquRYKMqVmYeZgTSFaVe2"],
+        "title" : "The Road to Kotlintown III: Delegate 95 to Coroutine 66"
+      },
+      {
+        "abstract" : "Tofus (□) are representations used when a specific character (like an Emoji) cannot be displayed. You have seen them, and so your users.\n\nThanks to EmojiCompat, now Android developers have a way to provide Emoji compatibility for older devices, but does it solve all the issues developers have with Emoji? \n\nHave you wondered why Twitter counts characters differently depending on the Emoji? Or how gender and skin tone Emoji modifiers work? How can I have a similar functionality as Slack on my app with custom Emoji? Do all your users see the same Emoji?\n\nOn this talk, you will learn about the different pitfalls developers face when working with Emoji, like code points, the Fitzpatrick modifiers and short-names, you will learn how to use EmojiCompat and I will show you alternatives to it.\n\nIn this talk you will learn:\n- What are the problems developers face with Emoji\n- How Emoji works\n- How to use EmojiCompat including dynamic font downloading\n- What is EmojiCompat not solving, and what can you do\n- What alternatives are there to EmojiCompat\n- ..and of course everything with Kotlin!\n\nAfter this talk, you will be an Emoji expert, no longer afraid of showing □ (tofu) to your users!\n",
+        "id": "-L-G9e3es-COhq0M650L",
+        "start_time": "2018-04-13T10:00:00-0500",
+        "end_time": "2018-04-13T10:45:00-0500",
+        "date" : "2018-04-13",
+        "accepted" : true,
+        "duration" : 40,
+        "notes" : "This will be an improved and extended version of the talk I gave on the Berlindroid meetup event back in summer. Here’s a summary on how the talk went: https://medium.com/@Miqubel/talk-no-more-taming-emoji-on-android-c4f3825e510c \n\nThis talk will include as well code samples for the attendees in a GitHub repo.\n\nI am very interested in this topic: At work we used to have a custom solution for displaying Emoji until EmojiCompat came out, and we used to do a lots of tricks to support the latest Unicode Emoji specs, since we are a social network that uses Emoji a lot. We are early adopters of EmojiCompat, using it since it’s beta release.\n\nI think this is an interesting topic that usually doesn’t get enough attention but can affect anyone who is dealing with user generated content.\n\nI will also be giving a talk in February on the DroidKaigi conference in Tokyo, and I’ve also given two talks at the Berlin DevFest. All of them about different topics. You can check my speaker deck: https://speakerdeck.com/miquelbeltran If you need more references, my Medium articles have been published both at AndroidWeekly and KotlinWeekly\n",
+        "scores" : {
+          "8DqZcx3zHoOPuTT1MHM493bpfIF3" : 5,
+          "KJ17IrpIISTfjfCufr5rnglWoU53" : 5,
+          "o1Rg9v9Q1LcFsA4ZWnpsFDOIF8Y2" : 2,
+          "uVl7STcR5uXVn00h5hCtn2Ptz6D2" : 5,
+          "umKCqMZHFnduB6OmD55XKV9ckSw1" : 4
+        },
+        "speakers" : ["NKfa7i1ya1codCObZxEyvBpvv5p1"],
+        "title" : "No More □  —  Mastering Emoji on Android"
+      },
+      {
+        "abstract" : "Although it is buzzing nowadays, machine learning is still a stranger to many of us.\nHowever, worry not! Making your app smarter has just become wayyy easier with the new TensorFlow for Android.\nOn this talk, we’ll get to know some basic ML concepts and usages, and create our first machine learning Android app using TensorFlow!\n",
+        "id": "-L1aXPSRjrfFiFS-sksm",
+        "start_time": "2018-04-13T11:00:00-0500",
+        "end_time": "2018-04-13T11:45:00-0500",
+        "date" : "2018-04-13",
+        "accepted" : true,
+        "duration" : "45",
+        "scores" : {
+          "8DqZcx3zHoOPuTT1MHM493bpfIF3" : 3,
+          "KJ17IrpIISTfjfCufr5rnglWoU53" : 3,
+          "o1Rg9v9Q1LcFsA4ZWnpsFDOIF8Y2" : 3,
+          "uVl7STcR5uXVn00h5hCtn2Ptz6D2" : 5,
+          "umKCqMZHFnduB6OmD55XKV9ckSw1" : 4
+        },
+        "speakers" : ["zzqX4y5e5yMTVLvIEfsItp4NCp52"],
+        "title" : "Who’s afraid of Machine Learning? First steps with TensorFlow for Android."
+      },
+      {
+        "abstract" : "Picasso is a powerful image downloading and caching library for Android but since its launch in 2013, other libraries have improved or entered the scene and new requirements have come up.  \n\nIn this talk, we’ll:\n* Dig into the internals of Picasso works\n* Compare and contrast to other image libraries\n* Discuss latest improvements as we push to 3.0\n* ...and more!\n\nYou’ll learn to efficiently work with different image formats across millions of devices!",
+        "id": "-L1Zag9BgNhutvZebqO8",
+        "start_time": "2018-04-13T13:00:00-0500",
+        "end_time": "2018-04-13T13:45:00-0500",
+        "date" : "2018-04-13",
+        "accepted" : true,
+        "duration" : 40,
+        "notes" : "https://speakerdeck.com/jrodbx",
+        "scores" : {
+          "8DqZcx3zHoOPuTT1MHM493bpfIF3" : 4,
+          "KJ17IrpIISTfjfCufr5rnglWoU53" : 2,
+          "o1Rg9v9Q1LcFsA4ZWnpsFDOIF8Y2" : 4,
+          "uVl7STcR5uXVn00h5hCtn2Ptz6D2" : 3,
+          "umKCqMZHFnduB6OmD55XKV9ckSw1" : 4
+        },
+        "speakers" : ["MN4HNiWM7qW96xzbGkRphXprApu1", "ayE1XDMvl2cPi8Sa6bN45l9QLKG2"],
+        "title" : "Rinsing the Brush: Picasso 3.0"
+      },
+      {
+        "abstract" : "We have had many talks and blog posts on Dagger till now and people have done a great job at explaining it's various concepts. Dagger is something which has become a part of our coding lives now. Yet, from time-to-time we still find ourselves lost while dealing with “The Dahaka (an infinite storm in an ocean of Providers, Factories, Builders, MemberInjectors, DoubleChecks, Lazy, Producers...)”. \n\nStarting to learn about Dagger? Start by creating a Module and a Component. Add a Singleton scope to it. \nDependencies getting out of hand? Create another dependent component.\nCreating a dependent component? You should create another scope!! \nCreate a subcomponent.\nStill alive? Now we present you with Dagger Android and I am sure that it will certainly kill you :P\n\nBut wait! What exactly is the relation between a Module and a Component? \n\nThankfully! Dagger 2 generates all it’s code at compile time and we can actually see what’s going on behind the scenes.\n\nIn this talk we will aim to Defeat “The Dahaka (a storm in the ocean of generated classes)”. After attending this talk you will get a better sense of what goes on behind the scenes and how to smartly move to Dagger Android  :)\n",
+        "id": "-L1453alPCtSTM9843Jy",
+        "start_time": "2018-04-13T14:00:00-0500",
+        "end_time": "2018-04-13T14:45:00-0500",
+        "date" : "2018-04-13",
+        "accepted" : true,
+        "duration" : 40,
+        "notes" : "For more information, series “Dagger and The Dahaka” on medium : https://proandroiddev.com/dagger-2-android-defeat-the-dahaka-b1c542233efc\n\nI gave a similar talk at Droidcon Berlin, 2017 https://droidcon.de/en/sessions/dagger-2-android-defeat-dahaka\n\nDemo code : https://github.com/ragdroid/Dahaka",
+        "scores" : {
+          "8DqZcx3zHoOPuTT1MHM493bpfIF3" : 3,
+          "KJ17IrpIISTfjfCufr5rnglWoU53" : 5,
+          "o1Rg9v9Q1LcFsA4ZWnpsFDOIF8Y2" : 5,
+          "uVl7STcR5uXVn00h5hCtn2Ptz6D2" : 4,
+          "umKCqMZHFnduB6OmD55XKV9ckSw1" : 4
+        },
+        "speakers" : ["kxTClM2ee3fSZmLQe1C4usE8Br13"],
+        "title" : "Dagger 2 Android : Defeat the Dahaka"
+      },
+      {
+        "abstract" : "Writing high-quality path morphing animations for Android is a near impossible task. In order to morph one shape into another, the SVG paths describing the two must be compatible with each other—that is, they need to have the same number and type of drawing commands. Unfortunately popular design tools, such as Sketch and Illustrator, do not take this into account, and as a result engineers will often have to spend time tweaking the raw SVGs given to them by designers before they can be morphed. To address this issue, I built a web app called Shape Shifter (https://shapeshifter.design), a tool that helps developers and designers to more easily create path morphing animations for their Android apps. In this talk, I will explain how to use Shape Shifter to create seamless transitions between arbitrary shapes using AnimatedVectorDrawables. I will also explain how Shape Shifter internally uses bioinformatics algorithms in order to auto-generate morphing animations between incompatible shapes, as well as some of the challenges I faced while building the tool.",
+        "id": "-KxynTzs-dXn0PCuVJdf",
+        "start_time": "2018-04-13T15:00:00-0500",
+        "end_time": "2018-04-13T15:45:00-0500",
+        "date" : "2018-04-13",
+        "accepted" : true,
+        "duration" : "45",
+        "scores" : {
+          "8DqZcx3zHoOPuTT1MHM493bpfIF3" : 4,
+          "KJ17IrpIISTfjfCufr5rnglWoU53" : 5,
+          "o1Rg9v9Q1LcFsA4ZWnpsFDOIF8Y2" : 4,
+          "uVl7STcR5uXVn00h5hCtn2Ptz6D2" : 3,
+          "umKCqMZHFnduB6OmD55XKV9ckSw1" : 4
+        },
+        "speakers" : ["MkYEWfwwHMeODXHCmn9yp5nsNvZ2"],
+        "title" : "In-depth path morphing w/ Shape Shifter"
+      },
+      {
+        "abstract" : "Every day each one of us turns to community contributions to help us become better developers — blog posts, open source projects, conference talks, podcasts, and so much more. Can you imagine if these community resources didn’t exist?!\n\nAnd while our community is strong today, it’s healthiest when it continues to grow from a broad set of interests, backgrounds and opinions. That diversity and knowledge to keep our community strong can only come from one place: YOU.\n\nI’ll share my thoughts about how this community has helped me (and others) grow, why that’s so important, and ultimately why it’s crucial for all of us to contribute. I’ll discuss five (or so) areas, each with some high level tips to get you started, that we can all contribute to to keep our community strong and healthy.\n\nThe Android community has proven to be one of the most welcoming, friendly, helpful, generous groups I’ve ever encountered. Let’s keep it going!",
+        "id": "-L1ZPfPC0rO8qTQ3umb3",
+        "start_time": "2018-04-13T16:00:00-0500",
+        "end_time": "2018-04-13T16:45:00-0500",
+        "date" : "2018-04-13",
+        "accepted" : true,
+        "duration" : "30-40",
+        "notes" : "Previous talk:\nhttps://www.youtube.com/watch?v=fsUF5f4GnHc\nhttps://speakerdeck.com/dankim/getting-to-100-percent-kotlin-a-practical-guide",
+        "scores" : {
+          "KJ17IrpIISTfjfCufr5rnglWoU53" : 4,
+          "o1Rg9v9Q1LcFsA4ZWnpsFDOIF8Y2" : 4,
+          "uVl7STcR5uXVn00h5hCtn2Ptz6D2" : 4,
+          "umKCqMZHFnduB6OmD55XKV9ckSw1" : 2
+        },
+        "speakers" : ["8DqZcx3zHoOPuTT1MHM493bpfIF3"],
+        "title" : "The future of our community is YOU"
+      },
+      {
+        "abstract" : "Google introduced ARCore for Android in August of last year. This is your opportunity to step in on the ground floor of the developing potential around augmented reality on mobile. We’ll walk through some of the fundamental capabilities, things to avoid, why you might want to use it, and some resources that might be helpful for you.",
+        "id": "ar-core",
+        "start_time": "2018-04-13T17:00:00-0500",
+        "end_time": "2018-04-13T17:45:00-0500",
+        "date" : "2018-04-13",
+        "accepted" : true,
+        "duration" : "45",
+        "speakers" : ["ngt0jsbDYDew0CUdODzMP54XU0l1"],
+        "title" : "Intro to ARCore"
+      }
+    ]
+  },
+  "session_dates" : [ "2018-04-12", "2018-04-13" ],
+  "speakers": {
+    "ng4L290T54Q3WsqGwvS3e1TIiDG3" : {
+      "id": "ng4L290T54Q3WsqGwvS3e1TIiDG3",
+      "agree_terms" : true,
+      "bio" : "Yash Prabhu currently leads the Android team at Warner Bros. Digital Labs. She has spoken at several meetups and industry conferences over the past three years. In her spare time, she volunteers at local tech groups as a teaching assistant, organizer and mentor. She currently co-organizes Google Developer Groups Philly and is a former DevOpsDays Philly organizer. She is also the recipient of Tech In Motion Philly's Best Tech Manager 2017 Timmy award.",
+      "company" : "Warner Bros. Digital Labs",
+      "email" : "yash.v.prabhu@gmail.com",
+      "name" : "Yash Prabhu",
+      "title" : "Android Tech Lead, Software Engineer",
+      "twitter" : "@yashvprabhu"
+    },
+    "OiimvTKxeWcCsmaaw63VGcTdMTJ3" : {
+      "id": "OiimvTKxeWcCsmaaw63VGcTdMTJ3",
+      "agree_terms" : true,
+      "bio" : "I love Android even more than baseball.\n\nI'm an Android developer at Shopify based in Toronto, Canada. I’ve been working with Android since 2011 and have written and contributed to a wide variety of Android applications, spanning the E-commerce, travel, and healthcare industries. When I’m not behind a keyboard, there’s a good chance I’m either at a baseball game, playing the drums or enjoying a pizza... Ideally all three.",
+      "company" : "Shopify",
+      "email" : "pshadlyn@gmail.com",
+      "name" : "Phil Shadlyn",
+      "title" : "Android Developer",
+      "twitter" : "@physphil"
+    },
+    "U2Y8xPbQCUTxkErE7dR74dtfoly1" : {
+      "id": "U2Y8xPbQCUTxkErE7dR74dtfoly1",
+      "agree_terms" : true,
+      "bio" : "Nate is an Android developer working on mobile apps at Udacity who believes in lifelong education and helping others do the same.  \n\nHe's worked across the android ecosystem building education products, mapping applications, as well as evolving autonomous robots.\n\nHe loves to chat about Android, tech, careers, geekery or anything else; so feel free to reach out.\n\n- Android dev at Udacity\n- Blogger\n- Co-organizer of Udacious Seattle \n- Runner\n- Self-proclaimed geek",
+      "company" : "Udacity",
+      "email" : "n8ebel@gmail.com",
+      "name" : "Nate Ebel",
+      "title" : "Android Developer",
+      "twitter" : "@n8ebel"
+    },
+    "nIiy8GJDcXYiRQfIwDRV74fkA6B2" : {
+      "id": "nIiy8GJDcXYiRQfIwDRV74fkA6B2",
+      "agree_terms" : true,
+      "bio" : "Android Techie geek who loves to code and contribute open source projects. I have authored 16 open source libraries and articled 30 blog posts. I am an enthusiastic coder, believes to automate all complex tasks in Android into Templates which saves hundreds of developer hours. I have contributed two major Android studio templates to the Android community for RecyclerView (https://github.com/TakeoffAndroid/RecyclerViewTemplate) and Material Tabs (https://github.com/TakeoffAndroid/MaterialTabsTemplate)\n\nGithub URL: https://github.com/TakeoffAndroid\nMedium      : https://medium.com/@takeoffandroid",
+      "company" : "F22Labs",
+      "email" : "chandru.androiddeveloper@gmail.com",
+      "name" : "Chandrasekar K",
+      "title" : "Mastering Android Studio Template Creation",
+      "twitter" : "@takeoffandroid"
+    },
+    "hXvsojyRLxcJyWaXK8gcocL7Zlf1" : {
+      "id": "hXvsojyRLxcJyWaXK8gcocL7Zlf1",
+      "agree_terms" : true,
+      "bio" : "Nicolas is the lead for the design tools and ConstraintLayout in Android Studio",
+      "company" : "Google",
+      "email" : "nicolasroard@google.com",
+      "name" : "Nicolas Roard",
+      "title" : "Staff Software Engineer",
+      "twitter" : "@camaelon"
+    },
+    "P8iQ35ohxFTkl9z2HO7Ts1HUB0R2" : {
+      "id": "P8iQ35ohxFTkl9z2HO7Ts1HUB0R2",
+      "agree_terms" : true,
+      "bio" : "Mark Allison is a GDE for Android and software engineer with over 30 years’ experience. He is passionate about providing the user with the best possible experience. He has developed both server and client side, most commonly Android on the client side, but also for iOS, HTML5, Symbian, and J2ME. Mark writes a technical blog (http://blog.stylingandroid.com) which focuses on Android UI/UX topics, but often covers more general Android development techniques. \n\nWhen not being geeky, Mark likes to unwind by hurling abuse at football referees, specifically those who are unkind to his beloved Watford FC with whom he holds a season ticket. Mark also loves single malt whisky. Buy him one and you'll have a friend for life! ",
+      "company" : "Styling Android Limited",
+      "email" : "mark@stylingandroid.com",
+      "name" : "Mark Allison",
+      "title" : "Owner",
+      "twitter" : "@MarkIAllison"
+    },
+    "r0XXHLRqPmd3YpwBrJkkbJlZtQ62" : {
+      "id": "r0XXHLRqPmd3YpwBrJkkbJlZtQ62",
+      "agree_terms" : true,
+      "bio" : "- Treasurer at the Paris Android User Group\n- Co-organizer of Android Makers in Paris\n- Google Developer Expert Android and IoT\n\nI've been working with Android since 2009. I took part of several R&D projects at french internet providers, then at Samsung in the Android B2B team, I also built an Android set-top box for a hotel chain, and I finally worked several years on Genymotion, an Android emulator. I recently joined Qonto a bank for freelancers, startups and SMBs.",
+      "company" : "Qonto",
+      "email" : "eyal.lezmy@gmail.com",
+      "name" : "Eyal Lezmy",
+      "title" : "Software Engineer",
+      "twitter" : "@Eyal_Lezmy"
+    },
+    "GR6IHwqOLOQmwdNIlF4ETRVnAWG2" : {
+      "id": "GR6IHwqOLOQmwdNIlF4ETRVnAWG2",
+      "agree_terms" : true,
+      "bio" : "Nick Cruz is an Android Engineer at Yello. He loves to explore the intricacies of RxJava and designing crisp animations for Android. At the end of the day, you can usually find him swimming laps in the pool.",
+      "company" : "Yello",
+      "email" : "ncruz@umich.edu",
+      "name" : "Nick Cruz",
+      "title" : "Android Developer",
+      "twitter" : "@ReactiveNick"
+    },
+    "KtiwOUeigvUxn0MUHtJyvCLpOnS2" : {
+      "id": "KtiwOUeigvUxn0MUHtJyvCLpOnS2",
+      "agree_terms" : true,
+      "bio" : "Adam is a Software Engineer, Android enthusiast, and pun aficionado. He fell in love with Android when he picked it up as a hobby in 2013 and he's been staying on top of the latest trends and contributing to open source projects ever since. Adam also strives to be an active member of the developer community - traveling the country to attend and speak at hackathons and conferences to both educate and learn from others in the community.",
+      "company" : "OkCupid",
+      "email" : "amcneilly331@gmail.com",
+      "name" : "Adam McNeilly",
+      "title" : "Software Engineer - Android",
+      "twitter" : "@AdamMc331"
+    },
+    "c8LiYaJFquRYKMqVmYeZgTSFaVe2" : {
+      "id": "c8LiYaJFquRYKMqVmYeZgTSFaVe2",
+      "agree_terms" : true,
+      "bio" : "Huyen Tue Dao is an Android developer and Google Developer Expert, currently working on the Trello Android app at Atlassian. She is also co-creator of the \"Android Dialogs\" YouTube channel.\n\nHuyen lives in Denver, CO though is often found in the DC Metro area. When she is not up late programming, she is often found up late gaming (video, board, card, anything).",
+      "company" : "Trello @ Atlassian / Android Dialogs",
+      "email" : "daotueh@gmail.com",
+      "name" : "Huyen Tue Dao",
+      "title" : "Android Developer",
+      "twitter" : "@queencodemonkey"
+    },
+    "NKfa7i1ya1codCObZxEyvBpvv5p1" : {
+      "id": "NKfa7i1ya1codCObZxEyvBpvv5p1",
+      "agree_terms" : true,
+      "bio" : "Miquel is an Android developer based in Berlin, Germany. He got in Android in 2012 when he started building video player SDKs for streaming apps. Currently he is leading the small Android team of Nebenan.de. Miquel is also an active member of the tech community in Berlin, where he has conducted workshops and talks.",
+      "company" : "Nebenan.de",
+      "email" : "mike513@gmail.com",
+      "name" : "Miquel Beltran",
+      "title" : "Lead Android Dev.",
+      "twitter" : "@Miqubel"
+    },
+    "zzqX4y5e5yMTVLvIEfsItp4NCp52" : {
+      "id": "zzqX4y5e5yMTVLvIEfsItp4NCp52",
+      "agree_terms" : true,
+      "bio" : "Britt, is a Google Developer Expert for Android, born and raised in Israel, the “Startup Nation”, where she has started and lead the mobile teams on various startup companies.\n\nPassionate about Android, she is co-leading Android Academy TLV which is one of the largest and most active Android communities out there. \nShe is a public speaker, a mentor at Google Campus TLV, and a blogger about Android development.\nBritt is also Women Techmakers Israel community lead and act to promote diversity in the tech industry.",
+      "company" : "Android Academy",
+      "email" : "britt.barak@gmail.com",
+      "name" : "Britt Barak",
+      "title" : "Google Developer Expert",
+      "twitter" : "@brittBarak"
+    },
+    "MN4HNiWM7qW96xzbGkRphXprApu1" : {
+      "id": "MN4HNiWM7qW96xzbGkRphXprApu1",
+      "agree_terms" : true,
+      "bio" : "Android engineer on Square Cash. Contributor to LeakCanary. Previously at Amplify and Major League Baseball.",
+      "company" : "Square",
+      "email" : "john.rodriguez@gmail.com",
+      "name" : "John Rodriguez",
+      "title" : "Software Engineer",
+      "twitter" : "@jrodbx"
+    },
+    "ayE1XDMvl2cPi8Sa6bN45l9QLKG2" : {
+      "id": "ayE1XDMvl2cPi8Sa6bN45l9QLKG2",
+      "agree_terms" : true,
+      "bio" : "Android engineer at Google working on Kotlin things. Has a long-time severe allergy to boilerplate code and for years has been raising awareness on the issue as well as leading efforts to eradicate this horrible disease that plagues modern developers.",
+      "company" : "Google, Inc.",
+      "email" : "jakewharton@gmail.com",
+      "name" : "Jake Wharton",
+      "title" : "Software Engineer",
+      "twitter" : "@JakeWharton"
+    },
+    "kxTClM2ee3fSZmLQe1C4usE8Br13" : {
+      "id": "kxTClM2ee3fSZmLQe1C4usE8Br13",
+      "agree_terms" : true,
+      "bio" : "She is a computer science post-graduate, currently working a Senior Android Engineer at Fueled having an experience of 4 years in this domain. At Fueled she has worked with some startups and also top clients such as Barnes and Noble College, Barneys New York, Rite Aid Pharmacy, Walc, Pezo and others. She is also a technical speaker and has so far presented at Droidcon India, Droidcon Boston, Droidcon Berlin and some local meetups.",
+      "company" : "Fueled",
+      "email" : "garima.my.way@gmail.com",
+      "name" : "Garima Jain",
+      "title" : "Senior Android Engineer",
+      "twitter" : "@ragdroid"
+    },
+    "MkYEWfwwHMeODXHCmn9yp5nsNvZ2" : {
+      "id": "MkYEWfwwHMeODXHCmn9yp5nsNvZ2",
+      "agree_terms" : true,
+      "bio" : "Alex is an Android designer & developer who helps other designers and developers to understand and create beautiful material design apps.",
+      "company" : "Lyft",
+      "email" : "alexjlockwood@gmail.com",
+      "name" : "Alex Lockwood",
+      "title" : "Software Engineer",
+      "twitter" : "@alexjlockwood"
+    },
+    "8DqZcx3zHoOPuTT1MHM493bpfIF3" : {
+      "id": "8DqZcx3zHoOPuTT1MHM493bpfIF3",
+      "agree_terms" : true,
+      "bio" : "Dan has been an Android programmer at Basecamp for 3 years, and prior to that had been working with Java for...a long time. \n\nHe's always enjoyed Android development, but working with Kotlin over the last two years has rocketed that enthusiasm to a whole new level. The Android community has been instrumental to his work and career, and he's a big believer in paying that forward.\n\nOutside of work, he's an avid Dad 👴, donut aficionado 🍩, pizza lover 🍕, and emoji enthusiast 😉.",
+      "company" : "Basecamp",
+      "email" : "dan@basecamp.com",
+      "name" : "Dan Kim",
+      "title" : "Programmer",
+      "twitter" : "@dankim"
+    },
+    "ngt0jsbDYDew0CUdODzMP54XU0l1" : {
+      "id": "ngt0jsbDYDew0CUdODzMP54XU0l1",
+      "agree_terms" : true,
+      "bio" : "Patrick has been doing Android engineering since 2012, and he loves it. When he’s not making Android apps or following Android news, you can find him helping organize for Google Developer Group Twin Cities, riding his bike, or taking all of the tastiest food photos.",
+      "company" : "The Nerdery",
+      "email" : "fuentespatrick@gmail.com",
+      "name" : "Patrick Fuentes",
+      "title" : "Principal Software Engineer; Android Domain Lead",
+      "twitter" : "@pfue"
+    }
+  },
+  "submissions" : {
+    "-KxUm9laVRcLuGXa9j6g" : {
+      "abstract" : "This is a test that should be deleted.",
+      "accepted" : false,
+      "comments" : {
+        "KJ17IrpIISTfjfCufr5rnglWoU53" : "trolls"
+      },
+      "duration" : 40,
+      "notes" : "Everything is awesome!",
+      "scores" : {
+        "8DqZcx3zHoOPuTT1MHM493bpfIF3" : 1,
+        "KJ17IrpIISTfjfCufr5rnglWoU53" : 1,
+        "OrviRlXkHySeGk9LorOCrV6kCwI3" : 1,
+        "o1Rg9v9Q1LcFsA4ZWnpsFDOIF8Y2" : 1,
+        "uVl7STcR5uXVn00h5hCtn2Ptz6D2" : 1,
+        "umKCqMZHFnduB6OmD55XKV9ckSw1" : 1
+      },
+      "speaker_id" : "OrviRlXkHySeGk9LorOCrV6kCwI3",
+      "title" : "Test Submission"
+    }
+  },
+  "venue" : {
+    "address" : "247 E Ontario St, Chicago, IL 60611",
+    "latitude" : 41.89321169999999,
+    "longitude" : -87.62081,
+    "name" : "Chez Chicago",
+    "phone" : "(312) 255-0288",
+    "rooms" : [ "Main" ]
   }
 }

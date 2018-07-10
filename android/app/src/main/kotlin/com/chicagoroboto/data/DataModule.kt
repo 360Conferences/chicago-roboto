@@ -5,6 +5,8 @@ import android.content.Context
 import android.content.SharedPreferences
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -35,6 +37,10 @@ class DataModule {
         return eventRef
     }
 
+    @Provides @Singleton fun provideStorage(@EventId eventId: String): StorageReference {
+        return FirebaseStorage.getInstance().reference.child(eventId)
+    }
+
     @Provides @Singleton fun provideSessionDateProvider(db: DatabaseReference): SessionDateProvider {
         return FirebaseSessionDateProvider(db)
     }
@@ -53,5 +59,9 @@ class DataModule {
 
     @Provides @Singleton fun provideReviewProvider(db: DatabaseReference, preferencesProvider: PreferencesProvider): FeedbackProvider {
         return FirebaseFeedbackProvider(db, preferencesProvider)
+    }
+
+    @Provides fun provideAvatarProvider(storageReference: StorageReference): AvatarProvider {
+        return FirebaseAvatarProvider(storageReference)
     }
 }

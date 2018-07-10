@@ -1,20 +1,20 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
-def event_id = "chicagoroboto-2017"
+def event_id = "chicagoroboto-2018"
 def event_name = "Chicago Roboto"
 def app_name = "Roboto"
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion '25.0.2'
+    compileSdkVersion rootProject.ext.compileSdkVersion
     defaultConfig {
         applicationId "com.chicagoroboto"
-        minSdkVersion 15
-        targetSdkVersion 25
-        versionCode 9
-        versionName "1.7"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 13
+        versionName "2.2"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
 
@@ -22,7 +22,7 @@ android {
         resValue "string", "app_name", "$app_name"
         resValue "string", "event_name", "$event_name"
     }
-    if (hasProperty('CHICAGO_ROBOTO_STORE_FILE')) {
+    if (project.hasProperty('CHICAGO_ROBOTO_STORE_FILE')) {
         signingConfigs {
             release {
                 storeFile file(CHICAGO_ROBOTO_STORE_FILE)
@@ -34,7 +34,7 @@ android {
     }
     buildTypes {
         release {
-            if (hasProperty('CHICAGO_ROBOTO_STORE_FILE')) {
+            if (project.hasProperty('CHICAGO_ROBOTO_STORE_FILE')) {
                 signingConfig signingConfigs.release
             }
             minifyEnabled false
@@ -48,36 +48,34 @@ android {
     }
 }
 
-kapt {
-    generateStubs = true
-}
-
 dependencies {
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'com.android.support:design:25.3.1'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile 'com.android.support:recyclerview-v7:25.3.1'
-    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    compile "com.google.android.gms:play-services-maps:${rootProject.gpsVersion}"
-    compile "com.google.firebase:firebase-core:${rootProject.gpsVersion}"
-    compile "com.google.firebase:firebase-database:${rootProject.gpsVersion}"
-    compile "com.google.firebase:firebase-auth:${rootProject.gpsVersion}"
+  implementation libs.constraintLayout
+  implementation libs.circularImageView
+  implementation libs.firebaseAuth
+  implementation libs.firebaseCore
+  implementation libs.firebaseDatabase
+  implementation libs.firebaseStorage
+  implementation libs.kotlinStdlib
+  implementation libs.multilineToolbar
+  implementation libs.playServicesMaps
+  implementation libs.recyclerView
+  implementation libs.supportAppCompat
+  implementation libs.supportCardView
+  implementation libs.supportDesign
 
-    compile project(':core')
+  implementation project(':core')
 
-    compile 'com.github.bumptech.glide:glide:3.7.0'
-    compile 'com.mikhaellopez:circularimageview:3.0.2'
+  implementation libs.glide
 
-    compile 'com.google.dagger:dagger:2.4'
-    kapt 'com.google.dagger:dagger-compiler:2.4'
-    provided 'org.glassfish:javax.annotation:10.0-b28'
+  implementation libs.dagger
+  kapt libs.daggerCompiler
+  compileOnly 'org.glassfish:javax.annotation:10.0-b28'
 
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
+  androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+      exclude group: 'com.android.support', module: 'support-annotations'
+  })
 
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:cardview-v7:25.3.1'
+  testImplementation libs.junit4
 }
 
 apply plugin: 'com.google.gms.google-services'
