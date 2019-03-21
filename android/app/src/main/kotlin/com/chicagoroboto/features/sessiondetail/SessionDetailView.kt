@@ -1,12 +1,17 @@
 package com.chicagoroboto.features.sessiondetail
 
 import android.content.Context
+import android.content.Intent
+import android.content.Intent.ACTION_VIEW
+import android.net.Uri
 import android.support.design.widget.CoordinatorLayout
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.text.format.DateUtils
 import android.util.AttributeSet
+import android.util.Log
 import android.view.LayoutInflater
+import android.view.View
 import com.chicagoroboto.R
 import com.chicagoroboto.data.AvatarProvider
 import com.chicagoroboto.ext.getComponent
@@ -15,6 +20,10 @@ import com.chicagoroboto.features.speakerdetail.SpeakerNavigator
 import com.chicagoroboto.model.Session
 import com.chicagoroboto.model.Speaker
 import com.chicagoroboto.utils.DrawableUtils
+import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
+import kotlinx.android.synthetic.main.view_location.view.*
 import kotlinx.android.synthetic.main.view_session_detail.view.*
 import java.util.Date
 import javax.inject.Inject
@@ -77,10 +86,24 @@ class SessionDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
             DateUtils.FORMAT_SHOW_TIME)
         val endTime = DateUtils.formatDateTime(context, session.endTime?.time ?: 0,
             DateUtils.FORMAT_SHOW_TIME)
-        banner.text = String.format(context.getString(R.string.session_detail_time), session.room,
+        banner.text = String.format(context.getString(R.string.session_detail_time), session.location,
             startTime, endTime)
 
-        description.text = session.abstract
+        description.text = session.description
+
+        session.address?.let { address ->
+            location.visibility = View.VISIBLE
+            location.text = address
+
+            location.setOnClickListener {
+                val mapUri = Uri.parse("geo:0,0?q=${session.location},+${address.replace(Regex("[\\r\\n\\s]"), "+")}")
+                val intent = Intent(Intent.ACTION_VIEW, mapUri)
+                intent.setPackage("com.google.android.apps.maps")
+                context.startActivity(intent)
+            }
+        } ?: run {
+            location.visibility = GONE
+        }
 
         val now = Date()
         if (now.before(session.startTime)) {

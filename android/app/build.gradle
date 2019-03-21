@@ -3,24 +3,15 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
-def event_id = "chicagoroboto-2018"
-def event_name = "Chicago Roboto"
-def app_name = "Roboto"
-
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     defaultConfig {
-        applicationId "com.chicagoroboto"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 13
         versionName "2.2"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
-
-        buildConfigField "String", "EVENT_ID", "\"$event_id\""
-        resValue "string", "app_name", "$app_name"
-        resValue "string", "event_name", "$event_name"
     }
     if (project.hasProperty('CHICAGO_ROBOTO_STORE_FILE')) {
         signingConfigs {
@@ -39,6 +30,21 @@ android {
             }
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    flavorDimensions 'version'
+    productFlavors {
+        roboto {
+            applicationId "com.chicagoroboto"
+            buildConfigField "String", "EVENT_ID", "\"chicagoroboto-2018\""
+            resValue "string", "app_name", "Roboto"
+            resValue "string", "event_name", "Chicago Roboto"
+        }
+        andev {
+            applicationId "com.threesixtyconferences.andev"
+            buildConfigField "String", "EVENT_ID", "\"360andev-2018\""
+            resValue "string", "app_name", "360|AnDev"
+            resValue "string", "event_name", "360|AnDev"
         }
     }
     sourceSets {

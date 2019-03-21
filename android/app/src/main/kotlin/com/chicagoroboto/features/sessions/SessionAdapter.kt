@@ -62,11 +62,11 @@ internal class SessionAdapter(val onSessionSelectedListener: ((session: Session)
                 null)
         }
 
-        if (session.room == null) {
+        if (session.location == null) {
             holder.room.visibility = View.GONE
         } else {
             holder.room.visibility = View.VISIBLE
-            holder.room.text = session.room
+            holder.room.text = session.location
             holder.room.setCompoundDrawablesWithIntrinsicBounds(
                 DrawableUtils.create(context, R.drawable.ic_room),
                 null,

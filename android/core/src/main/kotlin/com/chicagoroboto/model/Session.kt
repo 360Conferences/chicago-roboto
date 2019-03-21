@@ -8,13 +8,15 @@ import java.text.SimpleDateFormat
 import java.util.Date
 
 class Session(val id: String? = null,
+              val type: String? = null,
               val title: String? = null,
-              val abstract: String? = null,
+              val description: String? = null,
               val start_time: String? = null,
               val end_time: String? = null,
               val date: String? = null,
               val speakers: List<String>? = null,
-              val room: String? = "Main",
+              val location: String? = "Main",
+              val address: String? = null,
               val tracks: List<String>? = null) {
 
     private val format = object : DateFormat() {
@@ -23,10 +25,10 @@ class Session(val id: String? = null,
         private val df1 = SimpleDateFormat(format1)
         private val df2 = SimpleDateFormat(format2)
         override fun parse(source: String, pos: ParsePosition): Date {
-            if (source.length - pos.index == format1.length) {
-                return df1.parse(source, pos)
+            return if (source.length - pos.index == format1.length) {
+                df1.parse(source, pos)
             } else {
-                return df2.parse(source, pos)
+                df2.parse(source, pos)
             }
         }
 

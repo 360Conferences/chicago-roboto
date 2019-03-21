@@ -27,15 +27,19 @@ class FirebaseFeedbackProvider(private val db: DatabaseReference,
         }
         listeners[sessionId] = listener
 
-        val query = ref.child(sessionId).child(preferencesProvider.getId())
+        val query = ref.child("scores").child(sessionId).child(preferencesProvider.getId())
         query.addListenerForSingleValueEvent(listener)
         queries[sessionId] = query
     }
 
     override fun submitFeedback(sessionId: String, overall: Float, technical: Float, presentation: Float, onComplete: (Feedback) -> Unit) {
         val feedback = Feedback(overall, technical, presentation)
-        ref.child(sessionId).child(preferencesProvider.getId()).setValue(feedback)
+        ref.child("scores").child(sessionId).child(preferencesProvider.getId()).setValue(feedback)
         onComplete(feedback)
+    }
+
+    override fun submitUser(firstName: String, lastName: String) {
+        ref.child("users").child(preferencesProvider.getId()).setValue("$firstName $lastName")
     }
 
     private fun removeFeedbackListener(key: String) {

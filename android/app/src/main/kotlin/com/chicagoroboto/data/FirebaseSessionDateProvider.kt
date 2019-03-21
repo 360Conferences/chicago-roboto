@@ -5,7 +5,7 @@ import java.util.*
 
 class FirebaseSessionDateProvider(private val dbRoot: DatabaseReference) : SessionDateProvider {
 
-    private val ref: DatabaseReference = dbRoot.child("session_dates")
+    private val ref: DatabaseReference = dbRoot.child("config").child("event_dates")
 
     private val listeners: MutableMap<Any, ValueEventListener> = HashMap<Any, ValueEventListener>()
 

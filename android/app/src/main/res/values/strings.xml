@@ -1,8 +1,8 @@
 <resources>
     <string name="open_drawer">Open Drawer</string>
     <string name="close_drawer">Close Drawer</string>
-    <string name="status_in_progress">This session is in progress</string>
-    <string name="status_over">This session is over</string>
+    <string name="status_in_progress">Happening now</string>
+    <string name="status_over">Tell us how it went</string>
     <string name="action_schedule">Schedule</string>
     <string name="action_speakers">Speakers</string>
     <string name="action_location">Location</string>
@@ -19,7 +19,7 @@
     <string name="feedback_session">Overall session experience:</string>
     <string name="feedback_content">Technical level of the session content:</string>
     <string name="feedback_speaker">Presentation skills of the speaker:</string>
-    <string name="cancel">cancel</string>
+    <string name="cancel">Cancel</string>
     <string name="submit">Submit</string>
     <string name="cd_logo">Event Logo</string>
     <string name="note_feedback_title">%1$s complete</string>
