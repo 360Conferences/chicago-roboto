@@ -36,7 +36,7 @@ android {
     productFlavors {
         roboto {
             applicationId "com.chicagoroboto"
-            buildConfigField "String", "EVENT_ID", "\"chicagoroboto-2018\""
+            buildConfigField "String", "EVENT_ID", "\"chicagoroboto-2019\""
             resValue "string", "app_name", "Roboto"
             resValue "string", "event_name", "Chicago Roboto"
         }
