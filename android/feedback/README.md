@@ -7,7 +7,7 @@ Feedback submitted in the app will be entered in the web into a `feedback` colle
   "[talk-id]": {
     "[user-id]": {
       "overall": [0-5],
-      "technical": [0-5],
+      "technical": [0-4],
       "speaker": [0-5]
     },
     ...

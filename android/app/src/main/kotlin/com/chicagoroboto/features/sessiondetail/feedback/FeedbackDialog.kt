@@ -11,6 +11,7 @@ import com.chicagoroboto.features.sessiondetail.SessionDetailComponent
 import com.chicagoroboto.model.Feedback
 import kotlinx.android.synthetic.main.dialog_feedback.view.*
 import javax.inject.Inject
+import kotlin.math.roundToInt
 
 class FeedbackDialog(context: Context, val sessionId: String) : Dialog(context, true, null), FeedbackMvp.View {
 
@@ -25,7 +26,7 @@ class FeedbackDialog(context: Context, val sessionId: String) : Dialog(context, 
 
         view = LayoutInflater.from(context).inflate(R.layout.dialog_feedback, null, false)
         view.submit.setOnClickListener {
-            presenter.submit(view.overall.rating, view.technical.rating, view.speaker.rating)
+            presenter.submit(view.overall.rating, view.technical.progress.toFloat(), view.speaker.rating)
         }
 
         view.cancel.setOnClickListener {
@@ -47,7 +48,7 @@ class FeedbackDialog(context: Context, val sessionId: String) : Dialog(context, 
 
     override fun setFeedback(feedback: Feedback) {
         view.overall.rating = feedback.overall ?: 0f
-        view.technical.rating = feedback.technical ?: 0f
+        view.technical.progress = feedback.technical?.roundToInt() ?: 0
         view.speaker.rating = feedback.speaker ?: 0f
     }
 }
