@@ -3,15 +3,21 @@ package com.chicagoroboto.data
 import com.chicagoroboto.model.Speaker
 import com.google.android.gms.tasks.OnSuccessListener
 import com.google.firebase.storage.StorageReference
+import kotlin.coroutines.experimental.suspendCoroutine
 
 class FirebaseAvatarProvider(storage: StorageReference) : AvatarProvider {
 
   private val ref = storage.child("profiles")
 
-  override fun getAvatarUri(speaker: Speaker, callback: (String) -> Unit) {
-    val id = speaker.id ?: return
-    ref.child(id).downloadUrl.addOnSuccessListener(OnSuccessListener {
-      callback(it.toString())
-    })
+  override suspend fun getAvatarUri(speaker: Speaker) = suspendCoroutine<String> { c ->
+    val id = speaker.id
+    if (id == null) {
+      c.resume("")
+    }
+    else {
+      ref.child(id).downloadUrl.addOnSuccessListener({
+        c.resume(it.toString())
+      })
+    }
   }
 }

@@ -54,7 +54,7 @@ internal class SessionAdapter(val onSessionSelectedListener: ((session: Session)
             holder.speakers.visibility = View.GONE
         } else {
             holder.speakers.visibility = View.VISIBLE
-            holder.speakers.text = sessionSpeakers.map { it?.name }.joinToString()
+            holder.speakers.text = sessionSpeakers.joinToString { it?.name ?: "" }
             holder.room.setCompoundDrawablesWithIntrinsicBounds(
                 DrawableUtils.create(context, R.drawable.ic_speaker),
                 null,

@@ -13,7 +13,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import com.chicagoroboto.R
-import com.chicagoroboto.data.AvatarProvider
 import com.chicagoroboto.ext.getComponent
 import com.chicagoroboto.features.sessiondetail.feedback.FeedbackDialog
 import com.chicagoroboto.features.speakerdetail.SpeakerNavigator
@@ -33,7 +32,6 @@ class SessionDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
 
     @Inject lateinit var speakerNavigator: SpeakerNavigator
     @Inject lateinit var presenter: SessionDetailMvp.Presenter
-    @Inject lateinit var avatarProvider: AvatarProvider
 
     private val speakerAdapter: SpeakerAdapter
     private var sessionId: String? = null
@@ -46,7 +44,7 @@ class SessionDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
 
         LayoutInflater.from(context).inflate(R.layout.view_session_detail, this, true)
 
-        speakerAdapter = SpeakerAdapter(avatarProvider, true, { speaker, image ->
+        speakerAdapter = SpeakerAdapter(true, { speaker, image ->
             speakerNavigator.navigateToSpeaker(speaker.id!!, image)
         })
         speakers.adapter = speakerAdapter

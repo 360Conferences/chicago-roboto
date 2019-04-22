@@ -49,8 +49,8 @@ class DataModule {
         return FirebaseSessionProvider(db)
     }
 
-    @Provides @Singleton fun provideSpeakerProvider(db: DatabaseReference): SpeakerProvider {
-        return FirebaseSpeakerProvider(db)
+    @Provides @Singleton fun provideSpeakerProvider(db: DatabaseReference, avatarProvider: AvatarProvider): SpeakerProvider {
+        return FirebaseSpeakerProvider(db, avatarProvider)
     }
 
     @Provides @Singleton fun provideVenueProvider(db: DatabaseReference): VenueProvider {

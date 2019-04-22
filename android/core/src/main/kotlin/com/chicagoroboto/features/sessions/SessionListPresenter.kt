@@ -4,6 +4,9 @@ import com.chicagoroboto.data.FavoriteProvider
 import com.chicagoroboto.data.SessionProvider
 import com.chicagoroboto.data.SpeakerProvider
 import com.chicagoroboto.model.Session
+import kotlinx.coroutines.experimental.android.UI
+import kotlinx.coroutines.experimental.launch
+import kotlinx.coroutines.experimental.withContext
 import java.util.*
 
 class SessionListPresenter(private val sessionProvider: SessionProvider,
@@ -29,15 +32,17 @@ class SessionListPresenter(private val sessionProvider: SessionProvider,
                 }
             }
         })
-        speakerProvider.addSpeakerListener(this, { speakers ->
-            if (speakers != null && speakers.isNotEmpty()) {
-                this.view?.showSpeakers(speakers)
-            }
-        })
-        favoriteProvider.removeFavoriteListener(date)
-        favoriteProvider.addFavoriteListener(date, { sessions ->
-            this.view?.showFavorites(sessions)
-        })
+
+      launch {
+        val speakers = speakerProvider.getSpeakersMap(this)
+        withContext(UI) {
+          this@SessionListPresenter.view?.showSpeakers(speakers)
+        }
+      }
+      favoriteProvider.removeFavoriteListener(date)
+      favoriteProvider.addFavoriteListener(date, { sessions ->
+        this.view?.showFavorites(sessions)
+      })
     }
 
     override fun onDetach() {
