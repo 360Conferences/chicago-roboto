@@ -89,7 +89,7 @@ class MainActivity : AppCompatActivity(), SessionNavigator, SpeakerNavigator, Na
         } ?: false
     }
 
-    override fun getSystemService(name: String?): Any {
+    override fun getSystemService(name: String): Any? {
         return when (name) {
             "component" -> component
             else -> super.getSystemService(name)
