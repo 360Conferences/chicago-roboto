@@ -5,11 +5,14 @@
     android:background="@color/color_nav_bg"
     android:paddingBottom="16dp"
     android:paddingTop="40dp"
+    android:fitsSystemWindows="true"
     >
 
   <ImageView
       android:layout_width="match_parent"
       android:layout_height="176dp"
+      android:layout_marginTop="4dp"
+      android:layout_marginBottom="4dp"
       android:layout_gravity="center"
       android:contentDescription="@string/cd_logo"
       android:scaleType="fitCenter"
