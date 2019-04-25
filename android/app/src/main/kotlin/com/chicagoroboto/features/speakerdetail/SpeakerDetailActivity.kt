@@ -75,7 +75,7 @@ class SpeakerDetailActivity : AppCompatActivity() {
         speaker_detail_view.setSpeakerId(speakerId)
     }
 
-    override fun getSystemService(name: String?): Any {
+    override fun getSystemService(name: String): Any? {
         when (name) {
             "component" -> return component
             else -> return super.getSystemService(name)
