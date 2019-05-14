@@ -5,6 +5,7 @@ ext {
   minSdkVersion = 21
   targetSdkVersion = 27
 
+  coroutines_version = '1.2.0'
   dagger_version = '2.4'
   play_services_version = '12.0.1'
   support_version = '27.1.0'

@@ -8,6 +8,7 @@ import android.support.v4.app.NotificationCompat
 import com.chicagoroboto.R
 import com.chicagoroboto.features.sessiondetail.SessionDetailActivity
 import com.chicagoroboto.model.Session
+import com.chicagoroboto.model.endTime
 import com.chicagoroboto.notifications.NotificationPublisher
 import com.chicagoroboto.utils.DrawableUtils
 import com.chicagoroboto.utils.asBitmap

@@ -52,6 +52,10 @@ android {
         test.java.srcDirs += 'src/test/kotlin'
         androidTest.java.srcDirs += 'src/androidTest/kotlin'
     }
+  packagingOptions {
+    exclude "META-INF/atomicfu.kotlin_module"
+    exclude "META-INF/kotlinx-coroutines-core.kotlin_module"
+  }
 }
 
 dependencies {
@@ -64,12 +68,13 @@ dependencies {
   implementation libs.kotlinStdlib
   implementation libs.multilineToolbar
   implementation libs.playServicesMaps
+
   implementation libs.recyclerView
   implementation libs.supportAppCompat
   implementation libs.supportCardView
   implementation libs.supportDesign
 
-  implementation project(':core')
+  implementation project(':common')
 
   implementation libs.glide
 

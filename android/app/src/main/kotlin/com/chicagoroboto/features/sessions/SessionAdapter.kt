@@ -13,6 +13,8 @@ import android.widget.TextView
 import com.chicagoroboto.R
 import com.chicagoroboto.model.Session
 import com.chicagoroboto.model.Speaker
+import com.chicagoroboto.model.endTime
+import com.chicagoroboto.model.startTime
 import com.chicagoroboto.utils.DrawableUtils
 import kotlinx.android.synthetic.main.item_session.view.*
 import java.util.Date

@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="177ed9f0-c012-4550-84f5-64b95b74b15e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../android/app/src/main/kotlin/com/chicagoroboto/data/FirebaseDatabaseReference.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../android/app/src/main/kotlin/com/chicagoroboto/storage/PlatformSettings.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/data/DatabaseReferenceWrapper.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/ext/UUID.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/storage/Settings.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../android/common/src/iosMain/kotlin/com/chicagoroboto/ext/randomUUID.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../android/common/src/iosMain/kotlin/com/chicagoroboto/features/sessions/findCurrentSessionIndex.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../android/common/src/iosMain/kotlin/com/chicagoroboto/model/SessionExt.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../android/common/src/iosMain/kotlin/com/chicagoroboto/storage/PlatformSettings.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../android/common/src/jvmMain/kotlin/com/chicagoroboto/ext/randomUUID.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../android/common/src/jvmMain/kotlin/com/chicagoroboto/features/sessions/findCurrentSessionIndex.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../android/common/src/jvmMain/kotlin/com/chicagoroboto/model/SessionExt.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/confios/AppAssembly.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/confios/Assets.xcassets/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/confios/Assets.xcassets/ic_favorite_black_18pt.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/confios/Assets.xcassets/ic_favorite_black_18pt.imageset/baseline_favorite_black_18pt_1x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/confios/Assets.xcassets/ic_favorite_black_18pt.imageset/baseline_favorite_black_18pt_2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/confios/Assets.xcassets/ic_favorite_black_18pt.imageset/baseline_favorite_black_18pt_3x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/confios/Assets.xcassets/ic_favorite_border_black_18pt.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/confios/Assets.xcassets/ic_favorite_border_black_18pt.imageset/baseline_favorite_border_black_18pt_1x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/confios/Assets.xcassets/ic_favorite_border_black_18pt.imageset/baseline_favorite_border_black_18pt_2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/confios/Assets.xcassets/ic_favorite_border_black_18pt.imageset/baseline_favorite_border_black_18pt_3x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/confios/Data/DataAssembly.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/confios/Data/FirebaseDatabaseReferences.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/confios/Features/SessionList/SessionCell.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/confios/Features/SessionList/SessionCell.xib" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/confios/Features/SessionList/SessionListViewController.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/confios/Features/SessionList/SessionListViewController.xib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../android/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/app/src/main/kotlin/com/chicagoroboto/data/DataModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/app/src/main/kotlin/com/chicagoroboto/data/DataModule.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/app/src/main/kotlin/com/chicagoroboto/data/FirebaseFeedbackProvider.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/app/src/main/kotlin/com/chicagoroboto/data/FirebaseFeedbackProvider.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/app/src/main/kotlin/com/chicagoroboto/data/FirebaseSessionDateProvider.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/app/src/main/kotlin/com/chicagoroboto/data/FirebaseSessionDateProvider.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/app/src/main/kotlin/com/chicagoroboto/data/FirebaseSessionProvider.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/app/src/main/kotlin/com/chicagoroboto/data/FirebaseSessionProvider.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/app/src/main/kotlin/com/chicagoroboto/data/FirebaseVenueProvider.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/app/src/main/kotlin/com/chicagoroboto/data/FirebaseVenueProvider.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/app/src/main/kotlin/com/chicagoroboto/data/LocalFavoriteProvider.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/data/LocalFavoriteProvider.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/app/src/main/kotlin/com/chicagoroboto/data/LocalNotificationProvider.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/app/src/main/kotlin/com/chicagoroboto/data/LocalNotificationProvider.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/app/src/main/kotlin/com/chicagoroboto/data/PreferencesProvider.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/data/PreferencesProvider.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/app/src/main/kotlin/com/chicagoroboto/features/sessiondetail/SessionDetailView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/app/src/main/kotlin/com/chicagoroboto/features/sessiondetail/SessionDetailView.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/app/src/main/kotlin/com/chicagoroboto/features/sessions/SessionAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/app/src/main/kotlin/com/chicagoroboto/features/sessions/SessionAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../android/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/core/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../android/common/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/core/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../android/common/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/core/src/main/kotlin/com/chicagoroboto/data/AvatarProvider.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/data/AvatarProvider.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/core/src/main/kotlin/com/chicagoroboto/data/FavoriteProvider.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/data/FavoriteProvider.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/core/src/main/kotlin/com/chicagoroboto/data/FeedbackProvider.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/data/FeedbackProvider.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/core/src/main/kotlin/com/chicagoroboto/data/LibraryProvider.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/data/LibraryProvider.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/core/src/main/kotlin/com/chicagoroboto/data/NotificationProvider.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/data/NotificationProvider.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/core/src/main/kotlin/com/chicagoroboto/data/SessionDateProvider.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/data/SessionDateProvider.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/core/src/main/kotlin/com/chicagoroboto/data/SessionProvider.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/data/SessionProvider.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/core/src/main/kotlin/com/chicagoroboto/data/SpeakerProvider.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/data/SpeakerProvider.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/core/src/main/kotlin/com/chicagoroboto/data/VenueProvider.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/data/VenueProvider.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/core/src/main/kotlin/com/chicagoroboto/ext/Bytes.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/ext/Bytes.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/core/src/main/kotlin/com/chicagoroboto/features/info/InfoMvp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/features/info/InfoMvp.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/core/src/main/kotlin/com/chicagoroboto/features/info/InfoPresenter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/features/info/InfoPresenter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/core/src/main/kotlin/com/chicagoroboto/features/location/LocationMvp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/features/location/LocationMvp.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/core/src/main/kotlin/com/chicagoroboto/features/location/LocationPresenter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/features/location/LocationPresenter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/core/src/main/kotlin/com/chicagoroboto/features/sessiondetail/SessionDetailMvp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/features/sessiondetail/SessionDetailMvp.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/core/src/main/kotlin/com/chicagoroboto/features/sessiondetail/SessionDetailPresenter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/features/sessiondetail/SessionDetailPresenter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/core/src/main/kotlin/com/chicagoroboto/features/sessiondetail/feedback/FeedbackMvp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/features/sessiondetail/feedback/FeedbackMvp.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/core/src/main/kotlin/com/chicagoroboto/features/sessiondetail/feedback/FeedbackPresenter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/features/sessiondetail/feedback/FeedbackPresenter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/core/src/main/kotlin/com/chicagoroboto/features/sessions/SessionDateListMvp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/features/sessions/SessionDateListMvp.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/core/src/main/kotlin/com/chicagoroboto/features/sessions/SessionDatePresenter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/features/sessions/SessionDatePresenter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/core/src/main/kotlin/com/chicagoroboto/features/sessions/SessionListMvp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/features/sessions/SessionListMvp.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/core/src/main/kotlin/com/chicagoroboto/features/sessions/SessionListPresenter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/features/sessions/SessionListPresenter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/core/src/main/kotlin/com/chicagoroboto/features/shared/Mvp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/features/shared/Mvp.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/core/src/main/kotlin/com/chicagoroboto/features/speakerdetail/SpeakerDetailMvp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/features/speakerdetail/SpeakerDetailMvp.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/core/src/main/kotlin/com/chicagoroboto/features/speakerdetail/SpeakerDetailPresenter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/features/speakerdetail/SpeakerDetailPresenter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/core/src/main/kotlin/com/chicagoroboto/features/speakerlist/SpeakerListMvp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/features/speakerlist/SpeakerListMvp.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/core/src/main/kotlin/com/chicagoroboto/features/speakerlist/SpeakerListPresenter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/features/speakerlist/SpeakerListPresenter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/core/src/main/kotlin/com/chicagoroboto/model/Feedback.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/model/Feedback.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/core/src/main/kotlin/com/chicagoroboto/model/Library.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/model/Library.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/core/src/main/kotlin/com/chicagoroboto/model/Room.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/model/Room.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/core/src/main/kotlin/com/chicagoroboto/model/Session.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/model/Session.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/core/src/main/kotlin/com/chicagoroboto/model/Speaker.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/model/Speaker.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/core/src/main/kotlin/com/chicagoroboto/model/Submission.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/model/Submission.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/core/src/main/kotlin/com/chicagoroboto/model/Venue.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/model/Venue.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/core/src/main/kotlin/com/chicagoroboto/navigator/WebNavigator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/navigator/WebNavigator.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/core/src/test/kotlin/com/chicagoroboto/features/sessiondetail/SessionDetailPresenterTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/common/src/test/kotlin/com/chicagoroboto/features/sessiondetail/SessionDetailPresenterTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/dependencies.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../android/dependencies.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../android/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../android/settings.gradle" afterDir="false" />
+    </list>
+    <ignored path="$USER_HOME$/Library/Caches/AppCode2019.1/DerivedData/confios-dnkuekestsnaisauotrxzixljsqi/Build/Intermediates.noindex/" />
+    <ignored path="$USER_HOME$/Library/Caches/AppCode2019.1/DerivedData/confios-cuyhrzfhfmqefafgnzvbkkzrkzls/Build/Intermediates.noindex/" />
+    <ignored path="$USER_HOME$/Library/Caches/AppCode2019.1/DerivedData/confios-foixinrjpncuurgabgspiltmbjkk/Build/Intermediates.noindex/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="iphonesimulator_7BD9CD9E-4AF4-4F86-8E95-39775BEE6F39" />
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/confios/Data/FirebaseDatabaseReferences.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="481">
+              <caret line="61" column="24" lean-forward="true" selection-start-line="61" selection-start-column="24" selection-end-line="61" selection-end-column="29" />
+              <folding>
+                <element signature="e#107#124#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>DatabaseReferenceWrapper</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/confios/Data/FirebaseSessionDateProvider.swift" />
+        <option value="$PROJECT_DIR$/confios/Data/DataAssembly.swift" />
+        <option value="$PROJECT_DIR$/confios/AppAssembly.swift" />
+        <option value="$PROJECT_DIR$/confios/NSViewController+SimpleTransition.swift" />
+        <option value="$PROJECT_DIR$/confios/ViewController.swift" />
+        <option value="$PROJECT_DIR$/confios/AppDelegate.swift" />
+        <option value="$PROJECT_DIR$/confios/Info.plist" />
+        <option value="$PROJECT_DIR$/Podfile" />
+        <option value="$PROJECT_DIR$/confios/Features/SessionList/SessionListViewController.swift" />
+        <option value="$PROJECT_DIR$/confios/Data/FirebaseDatabaseReferences.swift" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="75" />
+    <option name="y" value="23" />
+    <option name="width" value="1479" />
+    <option name="height" value="953" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="confios" type="1d218c8b:XcodeProjectNode" />
+            </path>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="confios" type="1d218c8b:XcodeProjectNode" />
+              <item name="confios" type="fcab9f18:XcodeViewNode" />
+            </path>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="confios" type="1d218c8b:XcodeProjectNode" />
+              <item name="confios" type="fcab9f18:XcodeViewNode" />
+              <item name="Data" type="fcab9f18:XcodeViewNode" />
+            </path>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="confios" type="1d218c8b:XcodeProjectNode" />
+              <item name="confios" type="fcab9f18:XcodeViewNode" />
+              <item name="Features" type="fcab9f18:XcodeViewNode" />
+            </path>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="confios" type="1d218c8b:XcodeProjectNode" />
+              <item name="confios" type="fcab9f18:XcodeViewNode" />
+              <item name="Features" type="fcab9f18:XcodeViewNode" />
+              <item name="SessionList" type="fcab9f18:XcodeViewNode" />
+            </path>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="Pods" type="1d218c8b:XcodeProjectNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="Cidr.FilesView" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="OBJC.PRESERVED_TARGET_SELECTION" value="confios" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="confios" type="AppleRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="confios" TARGET_NAME="confios" CONFIG_NAME="Debug" SCHEME_NAME="confios" IS_LOCATION_SIMULATION_ALLOWED="true" APPLICATION_LANGUAGE="IDELaunchSchemeLanguageUseSystemLanguage" APPLICATION_REGION="" RUN_TARGET_PROJECT_NAME="confios" RUN_TARGET_NAME="confios" MAKE_ACTIVE="TRUE" SHOULD_DEBUG_EXTENSIONS="false">
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+      <embedded_app_extension_list />
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="177ed9f0-c012-4550-84f5-64b95b74b15e" name="Default Changelist" comment="" />
+      <created>1556222508406</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1556222508406</updated>
+      <workItem from="1556222510844" duration="222000" />
+      <workItem from="1556226699182" duration="333000" />
+      <workItem from="1556249460633" duration="6726000" />
+      <workItem from="1556654958587" duration="4475000" />
+      <workItem from="1556683036791" duration="1583000" />
+      <workItem from="1556769029542" duration="320000" />
+      <workItem from="1556855427744" duration="262000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="13921000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="75" y="23" width="1479" height="953" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21990258" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.329849" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Database Changes" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.329849" />
+      <window_info anchor="bottom" id="Messages" order="11" visible="true" weight="0.329849" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>mock:///FirebaseDatabase.FIRDatabaseQuery.swift</url>
+          <line>88</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/../android/common/build/cocoapods/framework/common.framework/Headers/dummy.h" />
+    <entry file="file://$PROJECT_DIR$/confios/Data/FirebaseSessionDateProvider.swift" />
+    <entry file="jar://$APPLICATION_HOME_DIR$/Resources/module_cache_10E1001.zip!/5.0.1/x86_64/iphonesimulator12.2/Swift/Math.Integers.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="2090" column="14" selection-start-line="2090" selection-start-column="14" selection-end-line="2090" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../android/common/build/cocoapods/framework/common.framework/Headers/common.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="492" column="11" selection-start-line="492" selection-start-column="3" selection-end-line="492" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/confios/Data/DataAssembly.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="46" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="46" />
+          <folding>
+            <element signature="e#107#124#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/Resources/module_cache_10E1001.zip!/5.0.1/x86_64/iphonesimulator12.2/UIKit.UIView/UIKit.UIView.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="543" column="48" lean-forward="true" selection-start-line="543" selection-start-column="48" selection-end-line="543" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/confios/NSViewController+SimpleTransition.swift" />
+    <entry file="jar://$APPLICATION_HOME_DIR$/Resources/module_cache_10E1001.zip!/5.0.1/x86_64/iphonesimulator12.2/UIKit.UINavigationController/UIKit.UINavigationController.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="607">
+          <caret line="154" column="13" selection-start-line="154" selection-start-column="13" selection-end-line="154" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/confios/ViewController.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="18" selection-end-column="85" />
+          <folding>
+            <element signature="e#147#159#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/confios/AppDelegate.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="38" column="60" selection-start-line="38" selection-start-column="60" selection-end-line="38" selection-end-column="60" />
+          <folding>
+            <element signature="e#144#156#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/confios/AppAssembly.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="59" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="59" />
+          <folding>
+            <element signature="e#107#124#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/confios/Info.plist">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="appcode.project-settings://7fb8a612">
+      <provider selected="true" editor-type-id="AppCode.ProjectSettings" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Podfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/confios/Features/SessionList/SessionListViewController.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="25" column="51" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/confios/Data/FirebaseDatabaseReferences.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="481">
+          <caret line="61" column="24" lean-forward="true" selection-start-line="61" selection-start-column="24" selection-end-line="61" selection-end-column="29" />
+          <folding>
+            <element signature="e#107#124#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

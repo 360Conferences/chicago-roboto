@@ -1,0 +1,727 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		04347D2022795597006BC2B7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04347D1F22795597006BC2B7 /* GoogleService-Info.plist */; };
+		04347D25227AA093006BC2B7 /* SessionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04347D23227AA093006BC2B7 /* SessionCell.swift */; };
+		04347D26227AA093006BC2B7 /* SessionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04347D24227AA093006BC2B7 /* SessionCell.xib */; };
+		04347D28227AA74D006BC2B7 /* SessionListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04347D27227AA74D006BC2B7 /* SessionListViewController.xib */; };
+		0D03EE738065BED568A6E3A3 /* Pods_confiosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C01037C3CB2F15530E08F7 /* Pods_confiosUITests.framework */; };
+		458AD09480AFA28C7F563180 /* confiosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458ADCC3D5072665DCDAD8BC /* confiosUITests.swift */; };
+		458AD100ABC8C421667D1A2A /* DataAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458AD316116E8E7FE4FDEA04 /* DataAssembly.swift */; };
+		458AD1F2CE3331A143F257FA /* AppAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458ADEFDE9299D717FC8C83F /* AppAssembly.swift */; };
+		458AD43BC9E989C4346C9F18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458AD663E2030DA9DCA1BBAF /* AppDelegate.swift */; };
+		458AD8450B3823C1A5EF1999 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 458ADD664AE3182C2BFAA3C0 /* LaunchScreen.storyboard */; };
+		458ADC14076539198002C698 /* FirebaseDatabaseReferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458AD98EDF4E572F6392DDEA /* FirebaseDatabaseReferences.swift */; };
+		458ADC52875D4BA1D9782292 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 458ADBE0CE006943229187AB /* Assets.xcassets */; };
+		458ADCFA88CDEA27AC44E7FB /* confiosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458AD91AA7AA742191886D11 /* confiosTests.swift */; };
+		458ADF138261EE31E36E523D /* SessionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458ADD92515E43BD93D11EBC /* SessionListViewController.swift */; };
+		4D060E0C81A055D2AA859CF8 /* Pods_confiosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BB49923FF3686EDD954425 /* Pods_confiosTests.framework */; };
+		CB1AF79FDAD62F306A474968 /* Pods_confios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3D1707967F51D3ADF7BE793 /* Pods_confios.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		458AD330A519A79D2BDBFE6C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 458ADB94882B36E7B82AD27E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 458AD7636B3834C20D87FEDE;
+			remoteInfo = confios;
+		};
+		458AD3979DC89E588726708C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 458ADB94882B36E7B82AD27E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 458AD7636B3834C20D87FEDE;
+			remoteInfo = confios;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		04347D1F22795597006BC2B7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		04347D23227AA093006BC2B7 /* SessionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionCell.swift; sourceTree = "<group>"; };
+		04347D24227AA093006BC2B7 /* SessionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SessionCell.xib; sourceTree = "<group>"; };
+		04347D27227AA74D006BC2B7 /* SessionListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SessionListViewController.xib; sourceTree = "<group>"; };
+		10F32991A30E7AFE57704ABF /* Pods-confiosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-confiosTests.debug.xcconfig"; path = "Target Support Files/Pods-confiosTests/Pods-confiosTests.debug.xcconfig"; sourceTree = "<group>"; };
+		171CD3209A8D6DFAC88EF8CE /* Pods-confiosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-confiosUITests.debug.xcconfig"; path = "Target Support Files/Pods-confiosUITests/Pods-confiosUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		316EDA4063DFABCEE89CBED9 /* Pods-confiosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-confiosUITests.release.xcconfig"; path = "Target Support Files/Pods-confiosUITests/Pods-confiosUITests.release.xcconfig"; sourceTree = "<group>"; };
+		3E4AB936EDDB7F57827A1BE5 /* Pods-confios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-confios.debug.xcconfig"; path = "Target Support Files/Pods-confios/Pods-confios.debug.xcconfig"; sourceTree = "<group>"; };
+		458AD03C2A2F40246291BFC9 /* confios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = confios.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		458AD2BB4279A457FD0E2EC2 /* confiosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = confiosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		458AD316116E8E7FE4FDEA04 /* DataAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataAssembly.swift; sourceTree = "<group>"; };
+		458AD422E223A688777B6CA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		458AD663E2030DA9DCA1BBAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		458AD91AA7AA742191886D11 /* confiosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = confiosTests.swift; sourceTree = "<group>"; };
+		458AD98EDF4E572F6392DDEA /* FirebaseDatabaseReferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseDatabaseReferences.swift; sourceTree = "<group>"; };
+		458AD9E07DE583354F1719E5 /* confiosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = confiosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		458ADA5A9D8AFD524958F982 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		458ADBAF890A8CF1A319E03D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		458ADBE0CE006943229187AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		458ADCC3D5072665DCDAD8BC /* confiosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = confiosUITests.swift; sourceTree = "<group>"; };
+		458ADD92515E43BD93D11EBC /* SessionListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionListViewController.swift; sourceTree = "<group>"; };
+		458ADEC83AB6D33C8052FE80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		458ADEFDE9299D717FC8C83F /* AppAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppAssembly.swift; sourceTree = "<group>"; };
+		5B92CF8476383B1354D1C448 /* Pods-confiosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-confiosTests.release.xcconfig"; path = "Target Support Files/Pods-confiosTests/Pods-confiosTests.release.xcconfig"; sourceTree = "<group>"; };
+		5CA80BD133A86BEFBEC86F7A /* Pods-confios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-confios.release.xcconfig"; path = "Target Support Files/Pods-confios/Pods-confios.release.xcconfig"; sourceTree = "<group>"; };
+		90C01037C3CB2F15530E08F7 /* Pods_confiosUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_confiosUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0BB49923FF3686EDD954425 /* Pods_confiosTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_confiosTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3D1707967F51D3ADF7BE793 /* Pods_confios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_confios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		458AD3F4C4B8031050FEFDC7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D03EE738065BED568A6E3A3 /* Pods_confiosUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		458AD5A8632B377D75F2FFE0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D060E0C81A055D2AA859CF8 /* Pods_confiosTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		458ADBE75372ECFA44D00FCB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB1AF79FDAD62F306A474968 /* Pods_confios.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2DD02C81DBBA702F86F835A3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3E4AB936EDDB7F57827A1BE5 /* Pods-confios.debug.xcconfig */,
+				5CA80BD133A86BEFBEC86F7A /* Pods-confios.release.xcconfig */,
+				10F32991A30E7AFE57704ABF /* Pods-confiosTests.debug.xcconfig */,
+				5B92CF8476383B1354D1C448 /* Pods-confiosTests.release.xcconfig */,
+				171CD3209A8D6DFAC88EF8CE /* Pods-confiosUITests.debug.xcconfig */,
+				316EDA4063DFABCEE89CBED9 /* Pods-confiosUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		458AD20DF5F15961A10F5806 /* SessionList */ = {
+			isa = PBXGroup;
+			children = (
+				458ADD92515E43BD93D11EBC /* SessionListViewController.swift */,
+				04347D27227AA74D006BC2B7 /* SessionListViewController.xib */,
+				04347D23227AA093006BC2B7 /* SessionCell.swift */,
+				04347D24227AA093006BC2B7 /* SessionCell.xib */,
+			);
+			path = SessionList;
+			sourceTree = "<group>";
+		};
+		458AD2B5946D4F808A307EE6 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				458AD316116E8E7FE4FDEA04 /* DataAssembly.swift */,
+				458AD98EDF4E572F6392DDEA /* FirebaseDatabaseReferences.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		458AD4921E1EEE1A987845F3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				458AD03C2A2F40246291BFC9 /* confios.app */,
+				458AD2BB4279A457FD0E2EC2 /* confiosTests.xctest */,
+				458AD9E07DE583354F1719E5 /* confiosUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		458AD6AA8538F572BD32193A /* confiosUITests */ = {
+			isa = PBXGroup;
+			children = (
+				458AD422E223A688777B6CA4 /* Info.plist */,
+				458ADCC3D5072665DCDAD8BC /* confiosUITests.swift */,
+			);
+			path = confiosUITests;
+			sourceTree = "<group>";
+		};
+		458AD73E60410C0E3268424B /* confios */ = {
+			isa = PBXGroup;
+			children = (
+				04347D1F22795597006BC2B7 /* GoogleService-Info.plist */,
+				458ADBAF890A8CF1A319E03D /* Info.plist */,
+				458ADBE0CE006943229187AB /* Assets.xcassets */,
+				458ADD664AE3182C2BFAA3C0 /* LaunchScreen.storyboard */,
+				458AD663E2030DA9DCA1BBAF /* AppDelegate.swift */,
+				458AD2B5946D4F808A307EE6 /* Data */,
+				458ADE1BCB4364F03AC44416 /* Features */,
+				458ADEFDE9299D717FC8C83F /* AppAssembly.swift */,
+			);
+			path = confios;
+			sourceTree = "<group>";
+		};
+		458AD8D80029FE3E249227E8 /* confiosTests */ = {
+			isa = PBXGroup;
+			children = (
+				458ADA5A9D8AFD524958F982 /* Info.plist */,
+				458AD91AA7AA742191886D11 /* confiosTests.swift */,
+			);
+			path = confiosTests;
+			sourceTree = "<group>";
+		};
+		458AD9BED68250F54906C87A = {
+			isa = PBXGroup;
+			children = (
+				458AD4921E1EEE1A987845F3 /* Products */,
+				458AD73E60410C0E3268424B /* confios */,
+				458AD8D80029FE3E249227E8 /* confiosTests */,
+				458AD6AA8538F572BD32193A /* confiosUITests */,
+				2DD02C81DBBA702F86F835A3 /* Pods */,
+				DD695E50BCCBD8B5ADE4F99D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		458ADE1BCB4364F03AC44416 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				458AD20DF5F15961A10F5806 /* SessionList */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		DD695E50BCCBD8B5ADE4F99D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C3D1707967F51D3ADF7BE793 /* Pods_confios.framework */,
+				C0BB49923FF3686EDD954425 /* Pods_confiosTests.framework */,
+				90C01037C3CB2F15530E08F7 /* Pods_confiosUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		458AD36BC5BA83D02C4349D0 /* confiosUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 458ADDE3AE56CB65F9EEA342 /* Build configuration list for PBXNativeTarget "confiosUITests" */;
+			buildPhases = (
+				33FC4F53816C73C65B1BF781 /* [CP] Check Pods Manifest.lock */,
+				458AD4178BF33B73ACC662D4 /* Sources */,
+				458AD3F4C4B8031050FEFDC7 /* Frameworks */,
+				458ADF35F44E5AFE1899C82E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				458ADD5FB9F9CE5CFAD8935E /* PBXTargetDependency */,
+			);
+			name = confiosUITests;
+			productName = confiosUITests;
+			productReference = 458AD9E07DE583354F1719E5 /* confiosUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		458AD7636B3834C20D87FEDE /* confios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 458ADC1D4EBE776A6756D87A /* Build configuration list for PBXNativeTarget "confios" */;
+			buildPhases = (
+				CEB4F0C7020965CA782F62EE /* [CP] Check Pods Manifest.lock */,
+				458AD427FE54A04B907F7E7A /* Sources */,
+				458ADBE75372ECFA44D00FCB /* Frameworks */,
+				458AD2FC00D819F3639E06E5 /* Resources */,
+				A77F923AD2FFB6C7BC080B9D /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = confios;
+			productName = confios;
+			productReference = 458AD03C2A2F40246291BFC9 /* confios.app */;
+			productType = "com.apple.product-type.application";
+		};
+		458ADAAF1B56D4A8CD88145D /* confiosTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 458AD9C6A5C99D8549E29228 /* Build configuration list for PBXNativeTarget "confiosTests" */;
+			buildPhases = (
+				605A66A1839117AEA1C2F862 /* [CP] Check Pods Manifest.lock */,
+				458ADE75C7401116AE27540F /* Sources */,
+				458AD5A8632B377D75F2FFE0 /* Frameworks */,
+				458ADABEA65F92176369DF06 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				458AD3854FD2882EB727A486 /* PBXTargetDependency */,
+			);
+			name = confiosTests;
+			productName = confiosTests;
+			productReference = 458AD2BB4279A457FD0E2EC2 /* confiosTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		458ADB94882B36E7B82AD27E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Chicago Roboto";
+			};
+			buildConfigurationList = 458AD57216C15A5BA5171390 /* Build configuration list for PBXProject "confios" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				en,
+				Base,
+			);
+			mainGroup = 458AD9BED68250F54906C87A;
+			productRefGroup = 458AD4921E1EEE1A987845F3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				458AD7636B3834C20D87FEDE /* confios */,
+				458ADAAF1B56D4A8CD88145D /* confiosTests */,
+				458AD36BC5BA83D02C4349D0 /* confiosUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		458AD2FC00D819F3639E06E5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04347D26227AA093006BC2B7 /* SessionCell.xib in Resources */,
+				458ADC52875D4BA1D9782292 /* Assets.xcassets in Resources */,
+				458AD8450B3823C1A5EF1999 /* LaunchScreen.storyboard in Resources */,
+				04347D2022795597006BC2B7 /* GoogleService-Info.plist in Resources */,
+				04347D28227AA74D006BC2B7 /* SessionListViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		458ADABEA65F92176369DF06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		458ADF35F44E5AFE1899C82E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		33FC4F53816C73C65B1BF781 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-confiosUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		605A66A1839117AEA1C2F862 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-confiosTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A77F923AD2FFB6C7BC080B9D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-confios/Pods-confios-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
+				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-confios/Pods-confios-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CEB4F0C7020965CA782F62EE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-confios-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		458AD4178BF33B73ACC662D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				458AD09480AFA28C7F563180 /* confiosUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		458AD427FE54A04B907F7E7A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				458AD43BC9E989C4346C9F18 /* AppDelegate.swift in Sources */,
+				458AD100ABC8C421667D1A2A /* DataAssembly.swift in Sources */,
+				04347D25227AA093006BC2B7 /* SessionCell.swift in Sources */,
+				458ADC14076539198002C698 /* FirebaseDatabaseReferences.swift in Sources */,
+				458ADF138261EE31E36E523D /* SessionListViewController.swift in Sources */,
+				458AD1F2CE3331A143F257FA /* AppAssembly.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		458ADE75C7401116AE27540F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				458ADCFA88CDEA27AC44E7FB /* confiosTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		458AD3854FD2882EB727A486 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 458AD7636B3834C20D87FEDE /* confios */;
+			targetProxy = 458AD330A519A79D2BDBFE6C /* PBXContainerItemProxy */;
+		};
+		458ADD5FB9F9CE5CFAD8935E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 458AD7636B3834C20D87FEDE /* confios */;
+			targetProxy = 458AD3979DC89E588726708C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		458ADD664AE3182C2BFAA3C0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				458ADEC83AB6D33C8052FE80 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		458AD2FCCD4A8025065851B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		458AD538CE4E6ED39DDDEC1D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 171CD3209A8D6DFAC88EF8CE /* Pods-confiosUITests.debug.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = confiosUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chicagoroboto.confiosUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = confios;
+			};
+			name = Debug;
+		};
+		458AD668F99DA0CE82CE7036 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 316EDA4063DFABCEE89CBED9 /* Pods-confiosUITests.release.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = confiosUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chicagoroboto.confiosUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = confios;
+			};
+			name = Release;
+		};
+		458AD9C84EB9E2C3C46E3F49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		458ADA05EC45967CB34FABBC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5CA80BD133A86BEFBEC86F7A /* Pods-confios.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = confios/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chicagoroboto.confios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		458ADBBEC5604E20B77165D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E4AB936EDDB7F57827A1BE5 /* Pods-confios.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = confios/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chicagoroboto.confios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		458ADC81DB5C6E7DA9433E39 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10F32991A30E7AFE57704ABF /* Pods-confiosTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/confios.app/confios";
+				INFOPLIST_FILE = confiosTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chicagoroboto.confiosTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Debug;
+		};
+		458ADEAFCA9B09E90273A3AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B92CF8476383B1354D1C448 /* Pods-confiosTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/confios.app/confios";
+				INFOPLIST_FILE = confiosTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chicagoroboto.confiosTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		458AD57216C15A5BA5171390 /* Build configuration list for PBXProject "confios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				458AD9C84EB9E2C3C46E3F49 /* Debug */,
+				458AD2FCCD4A8025065851B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		458AD9C6A5C99D8549E29228 /* Build configuration list for PBXNativeTarget "confiosTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				458ADC81DB5C6E7DA9433E39 /* Debug */,
+				458ADEAFCA9B09E90273A3AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		458ADC1D4EBE776A6756D87A /* Build configuration list for PBXNativeTarget "confios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				458ADBBEC5604E20B77165D3 /* Debug */,
+				458ADA05EC45967CB34FABBC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		458ADDE3AE56CB65F9EEA342 /* Build configuration list for PBXNativeTarget "confiosUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				458AD538CE4E6ED39DDDEC1D /* Debug */,
+				458AD668F99DA0CE82CE7036 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 458ADB94882B36E7B82AD27E /* Project object */;
+}

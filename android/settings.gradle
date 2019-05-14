@@ -1,1 +1,21 @@
-include ':app', ':core'
+pluginManagement {
+  resolutionStrategy {
+    eachPlugin {
+      if (requested.id.id == "kotlin-multiplatform") {
+        useModule("org.jetbrains.kotlin:kotlin-gradle-plugin:${requested.version}")
+      }
+      if (requested.id.id == "org.jetbrains.kotlin.native.cocoapods" ||
+          requested.id.id == "kotlin-native-cocoapods") {
+        useModule("org.jetbrains.kotlin:kotlin-gradle-plugin:${requested.version}")
+      }
+      if (requested.id.id == "kotlinx-serialization") {
+        useModule("org.jetbrains.kotlin:kotlin-serialization:${requested.version}")
+      }
+    }
+  }
+}
+
+include ':app'
+include ':common'
+include ':common:jvmMain'
+include ':common:iosMain'

@@ -1,0 +1,61 @@
+plugins {
+    id "org.jetbrains.kotlin.multiplatform"
+    id "org.jetbrains.kotlin.native.cocoapods"
+    id "kotlinx-serialization"
+}
+
+apply plugin: 'kotlinx-serialization'
+
+version = "1.0.0-SNAPSHOT"
+
+kotlin {
+    targets {
+        fromPreset(presets.jvm, 'jvm')
+
+        // Change to `presets.iosArm64` to deploy the app to iPhone
+        final def iOSTarget = System.getenv('SDK_NAME')?.startsWith('iphoneos')
+            ? presets.iosArm64 : presets.iosX64
+        fromPreset(iOSTarget, 'ios') {
+            binaries.framework('Common')
+        }
+    }
+    sourceSets {
+        commonMain {
+            dependencies {
+                implementation "org.jetbrains.kotlin:kotlin-stdlib"
+                implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core-common:$coroutines_version"
+            }
+        }
+        commonTest {
+            dependencies {
+//                implementation libs.junit4
+//                implementation libs.truth
+//                implementation libs.mockitoCore
+//                implementation libs.mockitoKotlin
+//                implementation libs.kotlinStdlib
+//                implementation libs.kotlinRuntime
+//                implementation libs.kotlinTest
+            }
+        }
+        jvmMain {
+            dependencies {
+                implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+                implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
+            }
+        }
+        iosMain {
+            dependencies {
+                implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core-native:$coroutines_version"
+            }
+        }
+    }
+
+    cocoapods {
+        summary = "Common code for 360Conferences conference app"
+        homepage = "https://360conferences.com/"
+    }
+}
+
+configurations {
+    compileClasspath
+}

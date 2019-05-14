@@ -1,0 +1,6 @@
+framework module Pods_confiosUITests {
+  umbrella header "Pods-confiosUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
