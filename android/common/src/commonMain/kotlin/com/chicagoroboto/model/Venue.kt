@@ -1,6 +1,7 @@
 package com.chicagoroboto.model
 
 import com.chicagoroboto.data.DataSnapshotWrapper
+import com.chicagoroboto.data.get
 
 class Venue(
     val name: String? = null,

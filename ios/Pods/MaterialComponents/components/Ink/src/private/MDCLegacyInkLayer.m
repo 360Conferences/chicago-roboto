@@ -160,10 +160,9 @@ typedef NS_ENUM(NSInteger, MDCInkRippleState) {
 
 - (CAMediaTimingFunction *)logDecelerateEasing {
   // This bezier curve is an approximation of a log curve.
-  return [[CAMediaTimingFunction alloc] initWithControlPoints:(float)0.157
-                                                             :(float)0.72
-                                                             :(float)0.386
-                                                             :(float)0.987];
+  return
+      [[CAMediaTimingFunction alloc] initWithControlPoints:(float)
+                                                     0.157:(float)0.72:(float)0.386:(float)0.987];
 }
 
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)finished {
@@ -274,8 +273,8 @@ static NSString *const kInkLayerForegroundScaleAnim = @"foregroundScaleAnim";
       MDCLegacyInkLayerForegroundRipple *strongSelf = weakSelf;
       [strongSelf removeFromSuperlayer];
 
-      if ([strongSelf.animationDelegate
-              respondsToSelector:@selector(animationDidStop:shapeLayer:finished:)]) {
+      if ([strongSelf.animationDelegate respondsToSelector:@selector(animationDidStop:
+                                                                           shapeLayer:finished:)]) {
         [strongSelf.animationDelegate animationDidStop:nil shapeLayer:strongSelf finished:YES];
       }
     }];
@@ -404,8 +403,8 @@ static NSString *const kInkLayerBackgroundOpacityAnim = @"backgroundOpacityAnim"
       MDCLegacyInkLayerBackgroundRipple *strongSelf = weakSelf;
       [strongSelf removeFromSuperlayer];
 
-      if ([strongSelf.animationDelegate
-              respondsToSelector:@selector(animationDidStop:shapeLayer:finished:)]) {
+      if ([strongSelf.animationDelegate respondsToSelector:@selector(animationDidStop:
+                                                                           shapeLayer:finished:)]) {
         [strongSelf.animationDelegate animationDidStop:nil shapeLayer:strongSelf finished:YES];
       }
     }];
@@ -477,12 +476,7 @@ static NSString *const kInkLayerBackgroundOpacityAnim = @"backgroundOpacityAnim"
   self = [super init];
   if (self) {
     self.masksToBounds = YES;
-    _inkColor = [UIColor colorWithWhite:0 alpha:(CGFloat)0.08];
-    _bounded = YES;
-    _compositeRipple = [CAShapeLayer layer];
-    _foregroundRipples = [NSMutableArray array];
-    _backgroundRipples = [NSMutableArray array];
-    [self addSublayer:_compositeRipple];
+    [self commonMDCLegacyInkLayerInit];
   }
   return self;
 }
@@ -491,8 +485,6 @@ static NSString *const kInkLayerBackgroundOpacityAnim = @"backgroundOpacityAnim"
   self = [super initWithCoder:aDecoder];
 
   if (self) {
-    _bounded = YES;
-    _inkColor = [UIColor colorWithWhite:0 alpha:(CGFloat)0.08];
     // Discard any sublayers, which should be the composite ripple and any active ripples
     if (self.sublayers.count > 0) {
       NSArray<CALayer *> *sublayers = [self.sublayers copy];
@@ -500,13 +492,19 @@ static NSString *const kInkLayerBackgroundOpacityAnim = @"backgroundOpacityAnim"
         [sublayer removeFromSuperlayer];
       }
     }
-    _compositeRipple = [CAShapeLayer layer];
-    _foregroundRipples = [NSMutableArray array];
-    _backgroundRipples = [NSMutableArray array];
-    [self addSublayer:_compositeRipple];
+    [self commonMDCLegacyInkLayerInit];
   }
 
   return self;
+}
+
+- (void)commonMDCLegacyInkLayerInit {
+  _bounded = YES;
+  _inkColor = [UIColor colorWithWhite:0 alpha:(CGFloat)0.08];
+  _compositeRipple = [CAShapeLayer layer];
+  _foregroundRipples = [NSMutableArray array];
+  _backgroundRipples = [NSMutableArray array];
+  [self addSublayer:_compositeRipple];
 }
 
 - (void)layoutSublayers {

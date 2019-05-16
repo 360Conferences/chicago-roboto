@@ -1,6 +1,8 @@
 package com.chicagoroboto.model
 
 import com.chicagoroboto.data.DataSnapshotWrapper
+import com.chicagoroboto.data.get
+import com.chicagoroboto.data.getList
 
 class Session(
     val id: String? = null,

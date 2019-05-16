@@ -12,8 +12,11 @@ import MaterialComponents.MaterialCards
 
 private let KEY = "SESSION_LIST"
 
+private let sessionReuseIdentifier = "SessionCell"
+
 class SessionListViewControllerFactory {
     private let sessionProvider: SessionProvider
+
     init(sessionProvider: SessionProvider) {
         self.sessionProvider = sessionProvider
     }
@@ -49,25 +52,45 @@ class SessionListViewController: UICollectionViewController {
         }
     }
 
-    required init?(coder aDecoder: NSCoder) { fatalError("die") }
-    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("die")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.view.tintColor = .black
+        self.view.backgroundColor = containerScheme.colorScheme.backgroundColor
+
+        self.collectionView.backgroundColor = containerScheme.colorScheme.backgroundColor
+
+        let sessionCellNib = UINib.init(nibName: "SessionCell", bundle: nil)
+        collectionView.register(sessionCellNib, forCellWithReuseIdentifier: sessionReuseIdentifier)
+
         sessionProvider.addSessionListener(key: KEY, date: date, onComplete: sessionListener)
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        if self.collectionViewLayout is UICollectionViewFlowLayout {
+            let flowLayout = self.collectionViewLayout as? UICollectionViewFlowLayout
+            let HORIZONTAL_SPACING: CGFloat = 8.0
+            let itemSize = CGSize(
+                    width: self.view.frame.size.width - 2.0 * HORIZONTAL_SPACING,
+                    height: 120.0
+            )
+            flowLayout?.itemSize = itemSize
+        }
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return sessions.count
     }
-    
+
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! SessionCell
-        
-        let session = sessions[indexPath.item]
-        cell.title.text = session.title
-        cell.room.text = session.location
-        cell.speakers.text = session.speakers?.joined(separator: ", ")
-        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: sessionReuseIdentifier, for: indexPath) as! SessionCell
+        cell.bind(to: sessions[indexPath.item])
         return cell
     }
 }

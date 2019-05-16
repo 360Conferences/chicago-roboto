@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		04347D2022795597006BC2B7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04347D1F22795597006BC2B7 /* GoogleService-Info.plist */; };
 		04347D25227AA093006BC2B7 /* SessionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04347D23227AA093006BC2B7 /* SessionCell.swift */; };
-		04347D26227AA093006BC2B7 /* SessionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04347D24227AA093006BC2B7 /* SessionCell.xib */; };
 		04347D28227AA74D006BC2B7 /* SessionListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04347D27227AA74D006BC2B7 /* SessionListViewController.xib */; };
+		04F05D7D228CEDAA0036B670 /* SessionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F05D7C228CEDAA0036B670 /* SessionCell.xib */; };
 		0D03EE738065BED568A6E3A3 /* Pods_confiosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C01037C3CB2F15530E08F7 /* Pods_confiosUITests.framework */; };
 		458AD09480AFA28C7F563180 /* confiosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458ADCC3D5072665DCDAD8BC /* confiosUITests.swift */; };
 		458AD100ABC8C421667D1A2A /* DataAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458AD316116E8E7FE4FDEA04 /* DataAssembly.swift */; };
@@ -20,6 +20,7 @@
 		458ADC14076539198002C698 /* FirebaseDatabaseReferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458AD98EDF4E572F6392DDEA /* FirebaseDatabaseReferences.swift */; };
 		458ADC52875D4BA1D9782292 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 458ADBE0CE006943229187AB /* Assets.xcassets */; };
 		458ADCFA88CDEA27AC44E7FB /* confiosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458AD91AA7AA742191886D11 /* confiosTests.swift */; };
+		458ADDC7EB968D5100D10069 /* Scheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458AD38148016BA24E3599BD /* Scheme.swift */; };
 		458ADF138261EE31E36E523D /* SessionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458ADD92515E43BD93D11EBC /* SessionListViewController.swift */; };
 		4D060E0C81A055D2AA859CF8 /* Pods_confiosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BB49923FF3686EDD954425 /* Pods_confiosTests.framework */; };
 		CB1AF79FDAD62F306A474968 /* Pods_confios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3D1707967F51D3ADF7BE793 /* Pods_confios.framework */; };
@@ -45,8 +46,8 @@
 /* Begin PBXFileReference section */
 		04347D1F22795597006BC2B7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		04347D23227AA093006BC2B7 /* SessionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionCell.swift; sourceTree = "<group>"; };
-		04347D24227AA093006BC2B7 /* SessionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SessionCell.xib; sourceTree = "<group>"; };
 		04347D27227AA74D006BC2B7 /* SessionListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SessionListViewController.xib; sourceTree = "<group>"; };
+		04F05D7C228CEDAA0036B670 /* SessionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SessionCell.xib; sourceTree = "<group>"; };
 		10F32991A30E7AFE57704ABF /* Pods-confiosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-confiosTests.debug.xcconfig"; path = "Target Support Files/Pods-confiosTests/Pods-confiosTests.debug.xcconfig"; sourceTree = "<group>"; };
 		171CD3209A8D6DFAC88EF8CE /* Pods-confiosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-confiosUITests.debug.xcconfig"; path = "Target Support Files/Pods-confiosUITests/Pods-confiosUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		316EDA4063DFABCEE89CBED9 /* Pods-confiosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-confiosUITests.release.xcconfig"; path = "Target Support Files/Pods-confiosUITests/Pods-confiosUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -54,6 +55,7 @@
 		458AD03C2A2F40246291BFC9 /* confios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = confios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		458AD2BB4279A457FD0E2EC2 /* confiosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = confiosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		458AD316116E8E7FE4FDEA04 /* DataAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataAssembly.swift; sourceTree = "<group>"; };
+		458AD38148016BA24E3599BD /* Scheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scheme.swift; sourceTree = "<group>"; };
 		458AD422E223A688777B6CA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		458AD663E2030DA9DCA1BBAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		458AD91AA7AA742191886D11 /* confiosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = confiosTests.swift; sourceTree = "<group>"; };
@@ -120,7 +122,7 @@
 				458ADD92515E43BD93D11EBC /* SessionListViewController.swift */,
 				04347D27227AA74D006BC2B7 /* SessionListViewController.xib */,
 				04347D23227AA093006BC2B7 /* SessionCell.swift */,
-				04347D24227AA093006BC2B7 /* SessionCell.xib */,
+				04F05D7C228CEDAA0036B670 /* SessionCell.xib */,
 			);
 			path = SessionList;
 			sourceTree = "<group>";
@@ -144,6 +146,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		458AD51703921A93C1D7AFF6 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				458AD38148016BA24E3599BD /* Scheme.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		458AD6AA8538F572BD32193A /* confiosUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +174,7 @@
 				458AD2B5946D4F808A307EE6 /* Data */,
 				458ADE1BCB4364F03AC44416 /* Features */,
 				458ADEFDE9299D717FC8C83F /* AppAssembly.swift */,
+				458AD51703921A93C1D7AFF6 /* Shared */,
 			);
 			path = confios;
 			sourceTree = "<group>";
@@ -301,9 +312,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04347D26227AA093006BC2B7 /* SessionCell.xib in Resources */,
 				458ADC52875D4BA1D9782292 /* Assets.xcassets in Resources */,
 				458AD8450B3823C1A5EF1999 /* LaunchScreen.storyboard in Resources */,
+				04F05D7D228CEDAA0036B670 /* SessionCell.xib in Resources */,
 				04347D2022795597006BC2B7 /* GoogleService-Info.plist in Resources */,
 				04347D28227AA74D006BC2B7 /* SessionListViewController.xib in Resources */,
 			);
@@ -443,6 +454,7 @@
 				458ADC14076539198002C698 /* FirebaseDatabaseReferences.swift in Sources */,
 				458ADF138261EE31E36E523D /* SessionListViewController.swift in Sources */,
 				458AD1F2CE3331A143F257FA /* AppAssembly.swift in Sources */,
+				458ADDC7EB968D5100D10069 /* Scheme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

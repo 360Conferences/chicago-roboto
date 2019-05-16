@@ -8,6 +8,7 @@
 
 import UIKit
 import MaterialComponents
+import common
 
 class SessionCell: MDCCardCollectionCell {
     
@@ -18,8 +19,23 @@ class SessionCell: MDCCardCollectionCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        self.backgroundColor = .white
-    }
 
+        self.applyTheme(withScheme: containerScheme)
+    }
+    
+    override func prepareForReuse() {
+        clear()
+    }
+    
+    func clear() {
+        title.text = nil
+        speakers.text = nil
+        room.text = nil
+    }
+    
+    func bind(to session: Session) {
+        title.text = session.title
+        speakers.text = session.speakers?.joined(separator: ", ")
+        room.text = session.location
+    }
 }

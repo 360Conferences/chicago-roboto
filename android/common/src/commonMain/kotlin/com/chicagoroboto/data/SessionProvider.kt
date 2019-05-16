@@ -39,6 +39,7 @@ interface SessionProvider {
               ?.filterNotNull()
               ?.filter { it.start_time?.startsWith(date) ?: false }
               ?.sortedBy { it.start_time }
+              ?.toList()
 
           onComplete(sessions)
         }

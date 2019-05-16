@@ -11,6 +11,7 @@ target 'confios' do
   pod 'Firebase/Core'
   pod 'Firebase/Database'
   pod 'MaterialComponents/Cards'
+  pod 'MaterialComponents/Cards+Theming'
 
   target 'confiosTests' do
     inherit! :search_paths

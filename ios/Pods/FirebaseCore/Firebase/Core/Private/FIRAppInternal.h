@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-#import "FIRApp.h"
-#import "FIRErrors.h"
+#import <FirebaseCore/FIRApp.h>
+#import <FirebaseCore/FIRErrors.h>
 
 @class FIRComponentContainer;
-@protocol FIRCoreConfigurable;
+@protocol FIRLibrary;
 
 /**
  * The internal interface to FIRApp. This is meant for first-party integrators, who need to receive
@@ -40,11 +40,9 @@ typedef NS_ENUM(NSInteger, FIRConfigType) {
 extern NSString *const kFIRServiceAdMob;
 extern NSString *const kFIRServiceAuth;
 extern NSString *const kFIRServiceAuthUI;
-extern NSString *const kFIRServiceCrash;
 extern NSString *const kFIRServiceDatabase;
 extern NSString *const kFIRServiceDynamicLinks;
 extern NSString *const kFIRServiceInstanceID;
-extern NSString *const kFIRServiceInvites;
 extern NSString *const kFIRServiceMessaging;
 extern NSString *const kFIRServiceMeasurement;
 extern NSString *const kFIRServiceRemoteConfig;
@@ -135,23 +133,25 @@ extern NSString *const FIRAuthStateDidChangeInternalNotificationUIDKey;
 + (BOOL)isDefaultAppConfigured;
 
 /**
- * Register a class that conforms to `FIRCoreConfigurable`. Each SDK should have one class that
- * registers in order to provide critical information for interoperability and lifecycle events.
- * TODO(wilsonryan): Write more documentation.
+ * Registers a given third-party library with the given version number to be reported for
+ * analytics.
+ *
+ * @param name Name of the library.
+ * @param version Version of the library.
  */
-+ (void)registerAsConfigurable:(Class<FIRCoreConfigurable>)klass;
++ (void)registerLibrary:(nonnull NSString *)name withVersion:(nonnull NSString *)version;
 
 /**
- * Registers a given third-party library with the given version number to be reported for
- * analyitcs.
+ * Registers a given internal library with the given version number to be reported for
+ * analytics.
  *
- * @param library Name of the library
- * @param version Version of the library
+ * @param library Optional parameter for component registration.
+ * @param name Name of the library.
+ * @param version Version of the library.
  */
-// clang-format off
-+ (void)registerLibrary:(NSString *)library
-            withVersion:(NSString *)version NS_SWIFT_NAME(registerLibrary(_:version:));
-// clang-format on
++ (void)registerInternalLibrary:(nonnull Class<FIRLibrary>)library
+                       withName:(nonnull NSString *)name
+                    withVersion:(nonnull NSString *)version;
 
 /**
  * A concatenated string representing all the third-party libraries and version numbers.

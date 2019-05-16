@@ -12,7 +12,7 @@ class FirebaseDatabaseReference(private val ref: DatabaseReference) : DatabaseRe
   @ExperimentalUnsignedTypes
   private val listeners = mutableMapOf<ULong, ValueEventListener>()
 
-  override fun setValue(value: Any) {
+  override fun setValue(value: Any?) {
     ref.setValue(value)
   }
 

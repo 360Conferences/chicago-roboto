@@ -9,11 +9,17 @@ import common
 
 class FirebaseDatabaseReference: DatabaseReferenceWrapper {
 
+    private let singleHandle = UInt64.max
+
     private let ref: FirebaseDatabase.DatabaseReference
     private let handles = [String:UInt]()
 
     init(_ ref: FirebaseDatabase.DatabaseReference) {
         self.ref = ref
+    }
+
+    func setValue(value: Any?) {
+        ref.setValue(value)
     }
 
     func child(path: String) -> DatabaseReferenceWrapper {
@@ -24,13 +30,24 @@ class FirebaseDatabaseReference: DatabaseReferenceWrapper {
         let handle = ref.observe(DataEventType.value, with: { (snapshot) in
             listener.onDataChange(data: FirebaseDataSnapshotWrapper(snapshot))
         }, withCancel: { error in
-            listener.onCancelled(error: error as! KotlinException)
+            listener.onCancelled(error: KotlinException(message: error.localizedDescription))
         })
         return UInt64(handle)
     }
 
+    func addSingleValueEventListener(listener: ValueEventListenerWrapper) -> UInt64 {
+        ref.observeSingleEvent(of: DataEventType.value, with: { (snapshot) -> Void in
+            listener.onDataChange(data: FirebaseDataSnapshotWrapper(snapshot))
+        }, withCancel: { error in
+            listener.onCancelled(error: KotlinException(message: error.localizedDescription))
+        })
+        return singleHandle
+    }
+
     func removeEventListener(handle: UInt64) {
-        ref.removeObserver(withHandle: UInt(handle))
+        if (handle != singleHandle) {
+            ref.removeObserver(withHandle: UInt(handle))
+        }
     }
 }
 
@@ -58,7 +75,7 @@ class FirebaseDataSnapshotWrapper: DataSnapshotWrapper {
         return snapshot.exists()
     }
 
-    func getValue() -> Any {
+    func getValue() -> Any? {
         return snapshot.value
     }
 
@@ -71,6 +88,6 @@ class FirebaseDataSnapshotWrapper: DataSnapshotWrapper {
     }
 
     func getChildren() -> Any {
-        return snapshot.children
+        return snapshot.children.allObjects.map { FirebaseDataSnapshotWrapper($0 as! DataSnapshot) }
     }
 }
