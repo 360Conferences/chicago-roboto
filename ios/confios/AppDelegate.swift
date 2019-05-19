@@ -32,9 +32,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         self.window = UIWindow(frame: UIScreen.main.bounds)
 
-        let sessionListFactory = AppDelegate.shared.resolver.resolve(SessionListViewControllerFactory.self)!
-        let sessionListViewController = sessionListFactory.create(date: "2019-04-25")
-        let rootViewController = UINavigationController(rootViewController: sessionListViewController)
+        let homeViewController = resolver.resolve(HomeViewController.self)!
+        let rootViewController = UINavigationController(rootViewController: homeViewController)
         self.window?.makeKeyAndVisible()
         self.window?.rootViewController = rootViewController
 

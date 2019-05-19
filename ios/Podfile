@@ -10,6 +10,7 @@ target 'confios' do
   pod 'Swinject'
   pod 'Firebase/Core'
   pod 'Firebase/Database'
+  pod 'MaterialComponents/BottomNavigation'
   pod 'MaterialComponents/Cards'
   pod 'MaterialComponents/Cards+Theming'
 

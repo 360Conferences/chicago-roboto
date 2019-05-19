@@ -55,6 +55,14 @@ PODS:
     - GoogleUtilities/Logger
   - leveldb-library (1.20)
   - MaterialComponents/AnimationTiming (84.1.1)
+  - MaterialComponents/BottomNavigation (84.1.1):
+    - MaterialComponents/Ink
+    - MaterialComponents/Palettes
+    - MaterialComponents/private/Math
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/Typography
+    - MDFInternationalization
   - MaterialComponents/Cards (84.1.1):
     - MaterialComponents/Ink
     - MaterialComponents/private/Icons/ic_check_circle
@@ -75,6 +83,7 @@ PODS:
     - MaterialComponents/schemes/Container
   - MaterialComponents/Ink (84.1.1):
     - MaterialComponents/private/Math
+  - MaterialComponents/Palettes (84.1.1)
   - MaterialComponents/private/Application (84.1.1)
   - MaterialComponents/private/Icons/Base (84.1.1)
   - MaterialComponents/private/Icons/ic_check_circle (84.1.1):
@@ -105,6 +114,7 @@ PODS:
   - MaterialComponents/Typography (84.1.1):
     - MaterialComponents/private/Application
     - MaterialComponents/private/Math
+  - MDFInternationalization (2.0.0)
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
     - nanopb/encode (= 0.3.901)
@@ -116,6 +126,7 @@ DEPENDENCIES:
   - common (from `../android/common`)
   - Firebase/Core
   - Firebase/Database
+  - MaterialComponents/BottomNavigation
   - MaterialComponents/Cards
   - "MaterialComponents/Cards+Theming"
   - Swinject
@@ -132,6 +143,7 @@ SPEC REPOS:
     - GoogleUtilities
     - leveldb-library
     - MaterialComponents
+    - MDFInternationalization
     - nanopb
     - Swinject
 
@@ -151,9 +163,10 @@ SPEC CHECKSUMS:
   GoogleUtilities: 84df567c76ca84f67b7bb40e769fdd4acc746a10
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   MaterialComponents: 85832ad0a4a7c0113f67330fa135b9702aae7f93
+  MDFInternationalization: 010097556d6b09d2c4ea38e0820ea6d37be6a314
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Swinject: 48a96cda93633cf2860697b4ce76ab5db9ebaca2
 
-PODFILE CHECKSUM: b34db31fc745a3dbca9936d23ca5b03fa392f29f
+PODFILE CHECKSUM: 0ed0ea1341e2d060496857a0ba45606eb426c705
 
 COCOAPODS: 1.6.0.beta.2
