@@ -12,11 +12,15 @@
 		04347D28227AA74D006BC2B7 /* SessionListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04347D27227AA74D006BC2B7 /* SessionListViewController.xib */; };
 		04F05D7D228CEDAA0036B670 /* SessionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F05D7C228CEDAA0036B670 /* SessionCell.xib */; };
 		0D03EE738065BED568A6E3A3 /* Pods_confiosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C01037C3CB2F15530E08F7 /* Pods_confiosUITests.framework */; };
+		458AD02401E5623B98B7E0EF /* SpeakerListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 458AD2B125EC533709E85847 /* SpeakerListViewController.xib */; };
 		458AD09480AFA28C7F563180 /* confiosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458ADCC3D5072665DCDAD8BC /* confiosUITests.swift */; };
 		458AD100ABC8C421667D1A2A /* DataAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458AD316116E8E7FE4FDEA04 /* DataAssembly.swift */; };
+		458AD110D3009F18FEDF7350 /* SpeakerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458ADA3DCB1550B9136024B6 /* SpeakerCell.swift */; };
+		458AD18B8722CA0803E4D048 /* SpeakerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 458AD7F3A0EA88D023CBF2C9 /* SpeakerCell.xib */; };
 		458AD43BC9E989C4346C9F18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458AD663E2030DA9DCA1BBAF /* AppDelegate.swift */; };
 		458AD496B87A481200FBDD7C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458ADC714AB565A50FB636A8 /* HomeViewController.swift */; };
 		458AD528C3971C7198B268C6 /* AppAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458ADD7D0B1C1A109A3EC527 /* AppAssembly.swift */; };
+		458AD6811C6890660972E64F /* SpeakerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458AD00A08DA21143AD752F7 /* SpeakerListViewController.swift */; };
 		458AD8450B3823C1A5EF1999 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 458ADD664AE3182C2BFAA3C0 /* LaunchScreen.storyboard */; };
 		458ADC14076539198002C698 /* FirebaseDatabaseReferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458AD98EDF4E572F6392DDEA /* FirebaseDatabaseReferences.swift */; };
 		458ADC52875D4BA1D9782292 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 458ADBE0CE006943229187AB /* Assets.xcassets */; };
@@ -53,15 +57,19 @@
 		171CD3209A8D6DFAC88EF8CE /* Pods-confiosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-confiosUITests.debug.xcconfig"; path = "Target Support Files/Pods-confiosUITests/Pods-confiosUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		316EDA4063DFABCEE89CBED9 /* Pods-confiosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-confiosUITests.release.xcconfig"; path = "Target Support Files/Pods-confiosUITests/Pods-confiosUITests.release.xcconfig"; sourceTree = "<group>"; };
 		3E4AB936EDDB7F57827A1BE5 /* Pods-confios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-confios.debug.xcconfig"; path = "Target Support Files/Pods-confios/Pods-confios.debug.xcconfig"; sourceTree = "<group>"; };
+		458AD00A08DA21143AD752F7 /* SpeakerListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerListViewController.swift; sourceTree = "<group>"; };
 		458AD03C2A2F40246291BFC9 /* confios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = confios.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		458AD2B125EC533709E85847 /* SpeakerListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpeakerListViewController.xib; sourceTree = "<group>"; };
 		458AD2BB4279A457FD0E2EC2 /* confiosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = confiosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		458AD316116E8E7FE4FDEA04 /* DataAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataAssembly.swift; sourceTree = "<group>"; };
 		458AD38148016BA24E3599BD /* Scheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scheme.swift; sourceTree = "<group>"; };
 		458AD422E223A688777B6CA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		458AD663E2030DA9DCA1BBAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		458AD7F3A0EA88D023CBF2C9 /* SpeakerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpeakerCell.xib; sourceTree = "<group>"; };
 		458AD91AA7AA742191886D11 /* confiosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = confiosTests.swift; sourceTree = "<group>"; };
 		458AD98EDF4E572F6392DDEA /* FirebaseDatabaseReferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseDatabaseReferences.swift; sourceTree = "<group>"; };
 		458AD9E07DE583354F1719E5 /* confiosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = confiosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		458ADA3DCB1550B9136024B6 /* SpeakerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerCell.swift; sourceTree = "<group>"; };
 		458ADA5A9D8AFD524958F982 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		458ADBAF890A8CF1A319E03D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		458ADBE0CE006943229187AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -202,11 +210,23 @@
 			);
 			sourceTree = "<group>";
 		};
+		458ADDAE32B1DC9D2B619302 /* SpeakerList */ = {
+			isa = PBXGroup;
+			children = (
+				458AD00A08DA21143AD752F7 /* SpeakerListViewController.swift */,
+				458AD2B125EC533709E85847 /* SpeakerListViewController.xib */,
+				458ADA3DCB1550B9136024B6 /* SpeakerCell.swift */,
+				458AD7F3A0EA88D023CBF2C9 /* SpeakerCell.xib */,
+			);
+			path = SpeakerList;
+			sourceTree = "<group>";
+		};
 		458ADE1BCB4364F03AC44416 /* Features */ = {
 			isa = PBXGroup;
 			children = (
 				458AD20DF5F15961A10F5806 /* SessionList */,
 				458ADF0D973C3F506A1EF769 /* Home */,
+				458ADDAE32B1DC9D2B619302 /* SpeakerList */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -328,6 +348,8 @@
 				04F05D7D228CEDAA0036B670 /* SessionCell.xib in Resources */,
 				04347D2022795597006BC2B7 /* GoogleService-Info.plist in Resources */,
 				04347D28227AA74D006BC2B7 /* SessionListViewController.xib in Resources */,
+				458AD02401E5623B98B7E0EF /* SpeakerListViewController.xib in Resources */,
+				458AD18B8722CA0803E4D048 /* SpeakerCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,6 +491,8 @@
 				458ADDC7EB968D5100D10069 /* Scheme.swift in Sources */,
 				458AD496B87A481200FBDD7C /* HomeViewController.swift in Sources */,
 				458AD528C3971C7198B268C6 /* AppAssembly.swift in Sources */,
+				458AD6811C6890660972E64F /* SpeakerListViewController.swift in Sources */,
+				458AD110D3009F18FEDF7350 /* SpeakerCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

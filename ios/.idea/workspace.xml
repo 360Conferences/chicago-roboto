@@ -2,33 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="177ed9f0-c012-4550-84f5-64b95b74b15e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/confios/Shared/AppAssembly.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Podfile" beforeDir="false" afterPath="$PROJECT_DIR$/Podfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Podfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pods/Manifest.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Manifest.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/rharter.xcuserdatad/xcschemes/MaterialComponents-MaterialIcons_ic_check_circle.xcscheme" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/rharter.xcuserdatad/xcschemes/MaterialComponents-MaterialIcons_ic_check_circle.xcscheme" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/rharter.xcuserdatad/xcschemes/MaterialComponents.xcscheme" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/rharter.xcuserdatad/xcschemes/MaterialComponents.xcscheme" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/rharter.xcuserdatad/xcschemes/Pods-confios.xcscheme" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/rharter.xcuserdatad/xcschemes/Pods-confios.xcscheme" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/rharter.xcuserdatad/xcschemes/Swinject.xcscheme" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/rharter.xcuserdatad/xcschemes/Swinject.xcscheme" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/rharter.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/rharter.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/MaterialComponents/MaterialComponents-umbrella.h" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/MaterialComponents/MaterialComponents-umbrella.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/MaterialComponents/MaterialComponents.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/MaterialComponents/MaterialComponents.xcconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-confios/Pods-confios-acknowledgements.markdown" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-confios/Pods-confios-acknowledgements.markdown" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-confios/Pods-confios-acknowledgements.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-confios/Pods-confios-acknowledgements.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-confios/Pods-confios-frameworks.sh" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-confios/Pods-confios-frameworks.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-confios/Pods-confios.debug.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-confios/Pods-confios.debug.xcconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-confios/Pods-confios.release.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-confios/Pods-confios.release.xcconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-confiosTests/Pods-confiosTests.debug.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-confiosTests/Pods-confiosTests.debug.xcconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-confiosTests/Pods-confiosTests.release.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-confiosTests/Pods-confiosTests.release.xcconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-confiosUITests/Pods-confiosUITests.debug.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-confiosUITests/Pods-confiosUITests.debug.xcconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-confiosUITests/Pods-confiosUITests.release.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-confiosUITests/Pods-confiosUITests.release.xcconfig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/confios.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/confios.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/confios.xcodeproj/xcuserdata/rharter.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/confios.xcodeproj/xcuserdata/rharter.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/confios.xcworkspace/xcuserdata/rharter.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/confios.xcworkspace/xcuserdata/rharter.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/confios/AppAssembly.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/confios/AppDelegate.swift" beforeDir="false" afterPath="$PROJECT_DIR$/confios/AppDelegate.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/confios/Shared/AppAssembly.swift" beforeDir="false" afterPath="$PROJECT_DIR$/confios/Shared/AppAssembly.swift" afterDir="false" />
     </list>
     <ignored path="$USER_HOME$/Library/Caches/AppCode2019.1/DerivedData/confios-dnkuekestsnaisauotrxzixljsqi/Build/Intermediates.noindex/" />
     <ignored path="$USER_HOME$/Library/Caches/AppCode2019.1/DerivedData/confios-cuyhrzfhfmqefafgnzvbkkzrkzls/Build/Intermediates.noindex/" />
@@ -43,8 +19,12 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/confios/Assets.xcassets/ic_schedule_black_18pt.imageset/ic_schedule_black_18pt_1x.png">
-          <provider selected="true" editor-type-id="images" />
+        <entry file="file://$PROJECT_DIR$/confios/Features/SpeakerList/SpeakerListViewController.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -74,14 +54,15 @@
         <option value="$PROJECT_DIR$/confios/Features/Home/HomeViewController.swift" />
         <option value="$PROJECT_DIR$/confios/AppAssembly.swift" />
         <option value="$PROJECT_DIR$/confios/AppDelegate.swift" />
+        <option value="$PROJECT_DIR$/confios/Features/SpeakerList/SpeakerCell.swift" />
         <option value="$PROJECT_DIR$/confios/Shared/AppAssembly.swift" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="803" />
+    <option name="x" value="454" />
     <option name="y" value="23" />
-    <option name="width" value="877" />
+    <option name="width" value="1226" />
     <option name="height" value="953" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -132,7 +113,20 @@
               <item name="" type="efc3779f:XcodeRootNode" />
               <item name="confios" type="1d218c8b:XcodeProjectNode" />
               <item name="confios" type="fcab9f18:XcodeViewNode" />
+              <item name="Features" type="fcab9f18:XcodeViewNode" />
+              <item name="SpeakerList" type="fcab9f18:XcodeViewNode" />
+            </path>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="confios" type="1d218c8b:XcodeProjectNode" />
+              <item name="confios" type="fcab9f18:XcodeViewNode" />
               <item name="Shared" type="fcab9f18:XcodeViewNode" />
+            </path>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="confios" type="1d218c8b:XcodeProjectNode" />
+              <item name="confios" type="fcab9f18:XcodeViewNode" />
+              <item name="Assets.xcassets" type="fcab9f18:XcodeViewNode" />
             </path>
           </expand>
           <select />
@@ -149,6 +143,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -189,23 +184,24 @@
       <workItem from="1556654958587" duration="4475000" />
       <workItem from="1556683036791" duration="1583000" />
       <workItem from="1556769029542" duration="320000" />
-      <workItem from="1556855427744" duration="15011000" />
+      <workItem from="1556855427744" duration="16295000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28670000" />
+    <option name="totallyTimeSpent" value="29954000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="803" y="23" width="877" height="953" extended-state="0" />
+    <frame x="454" y="23" width="1226" height="953" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.43832335" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.4375" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329849" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.329849" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.329849" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -413,21 +409,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/confios/Assets.xcassets/ic_favorite_border_black_18pt.imageset/baseline_favorite_border_black_18pt_1x.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/confios/Assets.xcassets/ic_schedule_black_18pt.imageset/ic_schedule_black_18pt_1x.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/confios/Features/SpeakerList/SpeakerCell.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/confios/Shared/AppAssembly.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="21" column="118" selection-start-line="21" selection-start-column="118" selection-end-line="21" selection-end-column="118" />
+        <state relative-caret-position="374">
+          <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
           <folding>
             <element signature="e#107#124#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/confios/Assets.xcassets/ic_favorite_border_black_18pt.imageset/baseline_favorite_border_black_18pt_1x.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/confios/Assets.xcassets/ic_schedule_black_18pt.imageset/ic_schedule_black_18pt_1x.png">
-      <provider selected="true" editor-type-id="images" />
+    <entry file="file://$PROJECT_DIR$/confios/Features/SpeakerList/SpeakerListViewController.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>

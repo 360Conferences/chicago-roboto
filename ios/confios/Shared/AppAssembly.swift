@@ -13,13 +13,15 @@ class AppAssembly: Assembly {
             return SessionListViewControllerFactory(sessionProvider: r.resolve(SessionProvider.self)!)
         }
 
+        container.register(SpeakerListViewController.self) { _ in SpeakerListViewController() }
+
         container.register([UIViewController].self, name: "MainViewControllers") { r in
             let factory = r.resolve(SessionListViewControllerFactory.self)!
             let c1 = factory.create(date: "2019-04-25")
             c1.tabBarItem = UITabBarItem(title: "Sessions", image: UIImage.init(named: "ic_schedule_black_18pt"), tag: 0)
 
-            let c2 = factory.create(date: "2019-04-26")
-            c2.tabBarItem = UITabBarItem(title: "Sessions2", image: UIImage.init(named: "ic_favorite_border_black_18pt"), tag: 1)
+            let c2 = r.resolve(SpeakerListViewController.self)!
+            c2.tabBarItem = UITabBarItem(title: "Speakers", image: UIImage.init(named: "ic_speakers_black_18pt"), tag: 1)
             return [c1, c2]
         }
 
