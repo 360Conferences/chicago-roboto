@@ -21,6 +21,8 @@
 		458AD496B87A481200FBDD7C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458ADC714AB565A50FB636A8 /* HomeViewController.swift */; };
 		458AD528C3971C7198B268C6 /* AppAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458ADD7D0B1C1A109A3EC527 /* AppAssembly.swift */; };
 		458AD6811C6890660972E64F /* SpeakerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458AD00A08DA21143AD752F7 /* SpeakerListViewController.swift */; };
+		458AD70337DB231AF13E9E91 /* VenueViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 458AD53A98C6C7C6BA3FAC42 /* VenueViewController.xib */; };
+		458AD7F37404FD4DAED4C92E /* VenueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458AD3B29936F456BAEF8E6A /* VenueViewController.swift */; };
 		458AD8450B3823C1A5EF1999 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 458ADD664AE3182C2BFAA3C0 /* LaunchScreen.storyboard */; };
 		458ADC14076539198002C698 /* FirebaseDatabaseReferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458AD98EDF4E572F6392DDEA /* FirebaseDatabaseReferences.swift */; };
 		458ADC52875D4BA1D9782292 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 458ADBE0CE006943229187AB /* Assets.xcassets */; };
@@ -63,7 +65,9 @@
 		458AD2BB4279A457FD0E2EC2 /* confiosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = confiosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		458AD316116E8E7FE4FDEA04 /* DataAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataAssembly.swift; sourceTree = "<group>"; };
 		458AD38148016BA24E3599BD /* Scheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scheme.swift; sourceTree = "<group>"; };
+		458AD3B29936F456BAEF8E6A /* VenueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueViewController.swift; sourceTree = "<group>"; };
 		458AD422E223A688777B6CA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		458AD53A98C6C7C6BA3FAC42 /* VenueViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VenueViewController.xib; sourceTree = "<group>"; };
 		458AD663E2030DA9DCA1BBAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		458AD7F3A0EA88D023CBF2C9 /* SpeakerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpeakerCell.xib; sourceTree = "<group>"; };
 		458AD91AA7AA742191886D11 /* confiosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = confiosTests.swift; sourceTree = "<group>"; };
@@ -210,6 +214,15 @@
 			);
 			sourceTree = "<group>";
 		};
+		458ADAF20F1C0B49088C5772 /* Venue */ = {
+			isa = PBXGroup;
+			children = (
+				458AD3B29936F456BAEF8E6A /* VenueViewController.swift */,
+				458AD53A98C6C7C6BA3FAC42 /* VenueViewController.xib */,
+			);
+			path = Venue;
+			sourceTree = "<group>";
+		};
 		458ADDAE32B1DC9D2B619302 /* SpeakerList */ = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +240,7 @@
 				458AD20DF5F15961A10F5806 /* SessionList */,
 				458ADF0D973C3F506A1EF769 /* Home */,
 				458ADDAE32B1DC9D2B619302 /* SpeakerList */,
+				458ADAF20F1C0B49088C5772 /* Venue */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -350,6 +364,7 @@
 				04347D28227AA74D006BC2B7 /* SessionListViewController.xib in Resources */,
 				458AD02401E5623B98B7E0EF /* SpeakerListViewController.xib in Resources */,
 				458AD18B8722CA0803E4D048 /* SpeakerCell.xib in Resources */,
+				458AD70337DB231AF13E9E91 /* VenueViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,6 +508,7 @@
 				458AD528C3971C7198B268C6 /* AppAssembly.swift in Sources */,
 				458AD6811C6890660972E64F /* SpeakerListViewController.swift in Sources */,
 				458AD110D3009F18FEDF7350 /* SpeakerCell.swift in Sources */,
+				458AD7F37404FD4DAED4C92E /* VenueViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

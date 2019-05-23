@@ -14,6 +14,7 @@ class AppAssembly: Assembly {
         }
 
         container.register(SpeakerListViewController.self) { _ in SpeakerListViewController() }
+        container.register(VenueViewController.self) { _ in VenueViewController() }
 
         container.register([UIViewController].self, name: "MainViewControllers") { r in
             let factory = r.resolve(SessionListViewControllerFactory.self)!
@@ -22,7 +23,11 @@ class AppAssembly: Assembly {
 
             let c2 = r.resolve(SpeakerListViewController.self)!
             c2.tabBarItem = UITabBarItem(title: "Speakers", image: UIImage.init(named: "ic_speakers_black_18pt"), tag: 1)
-            return [c1, c2]
+
+            let c3 = r.resolve(VenueViewController.self)!
+            c3.tabBarItem = UITabBarItem(title: "Venue", image: UIImage.init(named: "ic_venue_black_18pt"), tag: 2)
+
+            return [c1, c2, c3]
         }
 
         container.register(HomeViewController.self) { r in
