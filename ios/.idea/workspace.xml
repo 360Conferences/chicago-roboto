@@ -2,9 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="177ed9f0-c012-4550-84f5-64b95b74b15e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/confios.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/confios.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/confios.xcworkspace/xcuserdata/rharter.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/confios.xcworkspace/xcuserdata/rharter.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/confios/Shared/AppAssembly.swift" beforeDir="false" afterPath="$PROJECT_DIR$/confios/Shared/AppAssembly.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/features/sessions/SessionListViewEvent.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/features/sessions/SessionListViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/features/sessions/SessionListViewState.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../android/observable/src/commonMain/kotlin/com/ryanharter/observable/DataObservable.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../android/observable/src/commonMain/kotlin/com/ryanharter/observable/EventObservable.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../android/observable/src/commonMain/kotlin/com/ryanharter/observable/MediatorObservable.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../android/observable/src/commonMain/kotlin/com/ryanharter/observable/Observable.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../android/observable/src/commonMain/kotlin/com/ryanharter/observable/Subject.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../android/observable/src/commonMain/kotlin/com/ryanharter/observable/Transforms.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../android/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/common/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../android/common/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/features/sessions/SessionListPresenter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/features/sessions/SessionListPresenter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../android/settings.gradle" afterDir="false" />
     </list>
     <ignored path="$USER_HOME$/Library/Caches/AppCode2019.1/DerivedData/confios-dnkuekestsnaisauotrxzixljsqi/Build/Intermediates.noindex/" />
     <ignored path="$USER_HOME$/Library/Caches/AppCode2019.1/DerivedData/confios-cuyhrzfhfmqefafgnzvbkkzrkzls/Build/Intermediates.noindex/" />
@@ -21,8 +31,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/confios/Shared/AppAssembly.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="29" column="30" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
+            <state relative-caret-position="371">
+              <caret line="25" selection-start-line="25" selection-end-line="25" />
               <folding>
                 <element signature="e#107#124#0" expanded="true" />
               </folding>
@@ -62,7 +72,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="454" />
     <option name="y" value="23" />
     <option name="width" value="1226" />
@@ -194,24 +204,24 @@
       <workItem from="1556654958587" duration="4475000" />
       <workItem from="1556683036791" duration="1583000" />
       <workItem from="1556769029542" duration="320000" />
-      <workItem from="1556855427744" duration="16872000" />
+      <workItem from="1556855427744" duration="18262000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30531000" />
+    <option name="totallyTimeSpent" value="31921000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="454" y="23" width="1226" height="953" extended-state="0" />
+    <frame x="454" y="23" width="1226" height="953" extended-state="1" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16976352" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16976352" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329849" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.329849" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.329849" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -450,8 +460,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/confios/Shared/AppAssembly.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="29" column="30" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
+        <state relative-caret-position="371">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
           <folding>
             <element signature="e#107#124#0" expanded="true" />
           </folding>

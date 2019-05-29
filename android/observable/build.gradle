@@ -1,0 +1,49 @@
+plugins {
+  id "org.jetbrains.kotlin.multiplatform"
+}
+
+version = "1.0.0-SNAPSHOT"
+
+kotlin {
+  targets {
+    fromPreset(presets.jvm, 'jvm')
+
+    // Change to `presets.iosArm64` to deploy the app to iPhone
+    final def iOSTarget = System.getenv('SDK_NAME')?.startsWith('iphoneos')
+        ? presets.iosArm64 : presets.iosX64
+    fromPreset(iOSTarget, 'ios') {
+      binaries.framework('Observable')
+    }
+  }
+  sourceSets {
+    commonMain {
+      dependencies {
+        implementation "org.jetbrains.kotlin:kotlin-stdlib"
+      }
+    }
+    commonTest {
+      dependencies {
+        implementation "org.jetbrains.kotlin:kotlin-test-common:$kotlin_version"
+        implementation "org.jetbrains.kotlin:kotlin-test-annotations-common:$kotlin_version"
+      }
+    }
+    jvmMain {
+      dependencies {
+        implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+      }
+    }
+    jvmTest {
+      dependencies {
+        implementation "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
+      }
+    }
+    iosMain {
+      dependencies {
+      }
+    }
+  }
+}
+
+configurations {
+  compileClasspath
+}

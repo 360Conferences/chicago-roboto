@@ -19,3 +19,7 @@ include ':app'
 include ':common'
 include ':common:jvmMain'
 include ':common:iosMain'
+
+include ':observable'
+include ':observable:jvmMain'
+include ':observable:iosMain'
