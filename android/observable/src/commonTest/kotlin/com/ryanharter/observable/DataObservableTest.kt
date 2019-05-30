@@ -23,7 +23,7 @@ class DataObservableTest {
     observable.removeObserver(observer)
     assertTrue(observable.onInactiveCalled)
   }
-  
+
   class FakeDataObservable<T> : DataObservable<T>() {
 
     var onActiveCalled = false

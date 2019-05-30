@@ -2,7 +2,6 @@ package com.ryanharter.observable
 
 open class MediatorObservable<T> : DataObservable<T>() {
 
-  private val observers = mutableListOf<Observer<T>>()
   private val sources = mutableMapOf<Observable<*>, Source<*>>()
 
   override val isLive: Boolean

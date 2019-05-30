@@ -14,6 +14,12 @@ class SessionListModule() {
         return SessionDatePresenter(sessionDateProvider)
     }
 
+    @Provides fun sessionListViewModel(sessionProvider: SessionProvider,
+        speakerProvider: SpeakerProvider,
+        favoriteProvider: FavoriteProvider): SessionListViewModel {
+        return SessionListViewModel(sessionProvider, speakerProvider, favoriteProvider)
+    }
+
     @Provides fun sessionListPresenter(sessionProvider: SessionProvider,
                                        speakerProvider: SpeakerProvider,
                                        favoriteProvider: FavoriteProvider): SessionListMvp.Presenter {

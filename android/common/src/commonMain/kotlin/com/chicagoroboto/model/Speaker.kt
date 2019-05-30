@@ -3,7 +3,7 @@ package com.chicagoroboto.model
 import com.chicagoroboto.data.DataSnapshotWrapper
 import com.chicagoroboto.data.get
 
-class Speaker(
+data class Speaker(
     val id: String? = null,
     val name: String? = null,
     val title: String? = null,

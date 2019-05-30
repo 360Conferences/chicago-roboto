@@ -25,7 +25,7 @@ class SessionListPresenter(
       } else {
         this.view?.let {
           it.showSessions(sessions)
-          it.scrollTo(findCurrentSessionIndex(sessions))
+//          it.scrollTo(findCurrentSessionIndex(sessions))
         }
       }
     }
@@ -48,5 +48,3 @@ class SessionListPresenter(
     }
   }
 }
-
-internal expect fun SessionListPresenter.findCurrentSessionIndex(sessions: List<Session>): Int

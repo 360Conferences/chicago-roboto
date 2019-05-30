@@ -1,62 +1,86 @@
 plugins {
-    id "org.jetbrains.kotlin.multiplatform"
-    id "org.jetbrains.kotlin.native.cocoapods"
-    id "kotlinx-serialization"
+  id "org.jetbrains.kotlin.multiplatform"
+  id "org.jetbrains.kotlin.native.cocoapods"
+  id "com.android.library"
+  id "kotlinx-serialization"
 }
 
 apply plugin: 'kotlinx-serialization'
 
 version = "1.0.0-SNAPSHOT"
 
+android {
+  compileSdkVersion rootProject.ext.compileSdkVersion
+  defaultConfig {
+    minSdkVersion rootProject.ext.minSdkVersion
+    targetSdkVersion rootProject.ext.targetSdkVersion
+    versionCode 14
+    versionName "1.0.0"
+    testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+  }
+
+  buildTypes {
+    release {
+      minifyEnabled false
+    }
+
+    debug {
+      // MPP libraries don't currently get this resolution automatically
+      matchingFallbacks = ['release']
+    }
+  }
+}
+
 kotlin {
-    targets {
-        fromPreset(presets.jvm, 'jvm')
+  targets {
+    fromPreset(presets.android, 'jvm')
 
-        // Change to `presets.iosArm64` to deploy the app to iPhone
-        final def iOSTarget = System.getenv('SDK_NAME')?.startsWith('iphoneos')
-            ? presets.iosArm64 : presets.iosX64
-        fromPreset(iOSTarget, 'ios') {
-            binaries.framework('Common')
-        }
+    // Change to `presets.iosArm64` to deploy the app to iPhone
+    final def iOSTarget = System.getenv('SDK_NAME')?.startsWith('iphoneos')
+        ? presets.iosArm64 : presets.iosX64
+    fromPreset(iOSTarget, 'ios') {
+      binaries.framework('Common')
     }
-    sourceSets {
-        commonMain {
-            dependencies {
-                implementation "org.jetbrains.kotlin:kotlin-stdlib"
-                implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core-common:$coroutines_version"
-                api project(":observable")
-            }
-        }
-        commonTest {
-            dependencies {
-//                implementation libs.junit4
-//                implementation libs.truth
-//                implementation libs.mockitoCore
-//                implementation libs.mockitoKotlin
-//                implementation libs.kotlinStdlib
-//                implementation libs.kotlinRuntime
-//                implementation libs.kotlinTest
-            }
-        }
-        jvmMain {
-            dependencies {
-                implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-                implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
-            }
-        }
-        iosMain {
-            dependencies {
-                implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core-native:$coroutines_version"
-            }
-        }
+  }
+  sourceSets {
+    commonMain {
+      dependencies {
+        implementation "org.jetbrains.kotlin:kotlin-stdlib"
+        implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core-common:$coroutines_version"
+        api project(":observable")
+      }
     }
+    commonTest {
+      dependencies {
+        implementation "org.jetbrains.kotlin:kotlin-test-common:$kotlin_version"
+        implementation "org.jetbrains.kotlin:kotlin-test-annotations-common:$kotlin_version"
+      }
+    }
+    jvmMain {
+      dependencies {
+        implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+        implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
+      }
+    }
+    jvmTest {
+      dependencies {
+        implementation "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
+      }
+    }
+    iosMain {
+      dependencies {
+        implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core-native:$coroutines_version"
+        api project(":observable")
+      }
+    }
+  }
 
-    cocoapods {
-        summary = "Common code for 360Conferences conference app"
-        homepage = "https://360conferences.com/"
-    }
+  cocoapods {
+    summary = "Common code for 360Conferences conference app"
+    homepage = "https://360conferences.com/"
+  }
 }
 
 configurations {
-    compileClasspath
+  compileClasspath
 }

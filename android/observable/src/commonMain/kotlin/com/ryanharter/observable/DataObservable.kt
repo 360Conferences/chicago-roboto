@@ -10,7 +10,7 @@ package com.ryanharter.observable
 @Suppress("UNCHECKED_CAST")
 open class DataObservable<T> : Observable<T> {
 
-  private val observers = mutableListOf<Observer<T>>()
+  internal val observers = mutableListOf<Observer<T>>()
 
   private var _value: Any? = NOT_SET
 

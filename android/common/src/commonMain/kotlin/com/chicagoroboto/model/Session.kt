@@ -4,7 +4,7 @@ import com.chicagoroboto.data.DataSnapshotWrapper
 import com.chicagoroboto.data.get
 import com.chicagoroboto.data.getList
 
-class Session(
+data class Session(
     val id: String? = null,
     val type: String? = null,
     val title: String? = null,

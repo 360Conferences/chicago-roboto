@@ -96,9 +96,9 @@ class MainActivity : AppCompatActivity(), SessionNavigator, SpeakerNavigator, Na
         }
     }
 
-    override fun showSession(session: Session) {
+    override fun showSession(id: String) {
         val intent = Intent(this, SessionDetailActivity::class.java)
-                .putExtra("session_id", session.id)
+                .putExtra("session_id", id)
         startActivity(intent)
     }
 

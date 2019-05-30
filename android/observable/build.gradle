@@ -1,11 +1,24 @@
 plugins {
+  id "com.android.library"
   id "org.jetbrains.kotlin.multiplatform"
 }
 
 version = "1.0.0-SNAPSHOT"
 
+android {
+  compileSdkVersion rootProject.ext.compileSdkVersion
+  defaultConfig {
+    minSdkVersion rootProject.ext.minSdkVersion
+    targetSdkVersion rootProject.ext.targetSdkVersion
+    versionCode 14
+    versionName "1.0.0"
+    testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+  }
+}
+
 kotlin {
   targets {
+    fromPreset(presets.android, 'android')
     fromPreset(presets.jvm, 'jvm')
 
     // Change to `presets.iosArm64` to deploy the app to iPhone

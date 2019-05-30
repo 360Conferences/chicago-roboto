@@ -6,6 +6,7 @@ data class SessionListViewState(
 ) {
 
   data class Session(
+      val id: String,
       val title: String,
       val room: String,
       val speakers: List<String>,

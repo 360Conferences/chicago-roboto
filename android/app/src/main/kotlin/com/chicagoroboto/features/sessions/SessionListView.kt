@@ -1,6 +1,7 @@
 package com.chicagoroboto.features.sessions
 
 import android.content.Context
+import android.support.v7.util.DiffUtil
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.util.AttributeSet
@@ -12,65 +13,67 @@ import com.chicagoroboto.model.Speaker
 import javax.inject.Inject
 
 class SessionListView(context: Context, attrs: AttributeSet? = null, defStyle: Int = 0) :
-        RecyclerView(context, attrs, defStyle), SessionListMvp.View {
+    RecyclerView(context, attrs, defStyle) {
 
-    private val adapter: SessionAdapter
-    private var date: String? = null
+  private lateinit var adapter: SessionAdapter
 
-    @Inject lateinit var presenter: SessionListMvp.Presenter
-    @Inject lateinit var sessionNavigator: SessionNavigator
+  @Inject lateinit var viewModel: SessionListViewModel
+  @Inject lateinit var sessionNavigator: SessionNavigator
 
-    init {
-        context.getComponent<MainComponent>().sessionListComponent().inject(this)
+  private val viewStateObservable = { state: SessionListViewState ->
+    // Update the session list
+    val diffResult = DiffUtil.calculateDiff(SimpleDiffCallback(adapter.sessions, state.sessions))
+    adapter.sessions.clear()
+    adapter.sessions.addAll(state.sessions)
+    diffResult.dispatchUpdatesTo(adapter)
 
-        layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
-        layoutManager = LinearLayoutManager(context, VERTICAL, false)
-        addItemDecoration(SessionItemDecoration(context))
-        adapter = SessionAdapter({ session ->
-            sessionNavigator.showSession(session)
-        })
-        super.setAdapter(adapter)
+    // TODO handle empty list?
+  }
+
+  private val viewEventObservable = { event: SessionListViewEvent ->
+    when (event) {
+      is ScrollToSessionIndex -> scrollToPosition(event.index)
     }
+  }
 
-    override fun onAttachedToWindow() {
-        super.onAttachedToWindow()
-        presenter.onAttach(this)
-        date?.let { presenter.setDate(it) }
-    }
+  private class SimpleDiffCallback(val old: List<Any>, val new: List<Any>) : DiffUtil.Callback() {
+    override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int) =
+      old[oldItemPosition] == new[newItemPosition]
 
-    override fun onDetachedFromWindow() {
-        presenter.onDetach()
-        super.onDetachedFromWindow()
-    }
+    override fun getOldListSize(): Int = old.size
+    override fun getNewListSize(): Int = new.size
+    override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int) =
+      old[oldItemPosition] == new[newItemPosition]
+  }
 
-    fun setDate(date: String) {
-        this.date = date
-    }
+  init {
+    context.getComponent<MainComponent>().sessionListComponent().inject(this)
 
-    override fun showNoSessions() {
-        // todo
+    layoutParams = ViewGroup.LayoutParams(
+        ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT
+    )
+    layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+    addItemDecoration(SessionItemDecoration(context))
+    adapter = SessionAdapter { id ->
+      sessionNavigator.showSession(id)
     }
+    super.setAdapter(adapter)
+  }
 
-    override fun showSessions(sessions: List<Session>) {
-        adapter.sessions.clear()
-        adapter.sessions.addAll(sessions)
-        adapter.notifyDataSetChanged()
-    }
+  override fun onAttachedToWindow() {
+    super.onAttachedToWindow()
+    viewModel.viewState.observe(viewStateObservable)
+    viewModel.viewEvents.observe(viewEventObservable)
+  }
 
-    override fun showSpeakers(speakers: Map<String, Speaker>) {
-        adapter.speakers.clear()
-        adapter.speakers.putAll(speakers)
-        adapter.notifyDataSetChanged()
-    }
+  override fun onDetachedFromWindow() {
+    viewModel.viewState.removeObserver(viewStateObservable)
+    viewModel.viewEvents.removeObserver(viewEventObservable)
+    super.onDetachedFromWindow()
+  }
 
-    override fun showFavorites(favorites: Set<String>) {
-        adapter.favorites.clear()
-        adapter.favorites.addAll(favorites)
-        adapter.notifyDataSetChanged()
-    }
-
-    override fun scrollTo(index: Int) {
-        scrollToPosition(index)
-    }
+  fun setDate(date: String) {
+    viewModel.setDate(date)
+  }
 }
 
