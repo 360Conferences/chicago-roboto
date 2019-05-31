@@ -1,41 +1,53 @@
 package com.chicagoroboto.features.location
 
-import android.content.Context
-import android.util.AttributeSet
+import android.os.Bundle
+import android.support.v4.app.Fragment
 import android.view.LayoutInflater
-import android.widget.RelativeLayout
+import android.view.View
+import android.view.ViewGroup
+import android.widget.TextView
 import com.chicagoroboto.R
 import com.chicagoroboto.ext.getComponent
-import com.chicagoroboto.features.main.MainView
 import com.chicagoroboto.features.main.MainComponent
+import com.chicagoroboto.features.main.MainView
 import com.chicagoroboto.model.Venue
 import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.MapView
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
-import kotlinx.android.synthetic.main.view_location.view.*
 import javax.inject.Inject
 
-class LocationView(context: Context, attrs: AttributeSet? = null) : RelativeLayout(context, attrs), LocationMvp.View, MainView {
+class LocationView : Fragment(), LocationMvp.View, MainView {
 
     override val titleResId = R.string.action_location
 
     @Inject lateinit var presenter: LocationMvp.Presenter
 
-    init {
-        context.getComponent<MainComponent>().locationComponent().inject(this)
+    private lateinit var map: MapView
+    private lateinit var name: TextView
+    private lateinit var address: TextView
 
-        LayoutInflater.from(context).inflate(R.layout.view_location, this, true)
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ) = inflater.inflate(R.layout.view_location, container, false).apply {
+        map = findViewById(R.id.map)
+        name = findViewById(R.id.name)
+        address = findViewById(R.id.address)
     }
 
-    override fun onAttachedToWindow() {
-        super.onAttachedToWindow()
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        requireContext().getComponent<MainComponent>().locationComponent().inject(this)
+
         map.onCreate(null)
         presenter.onAttach(this)
     }
 
-    override fun onDetachedFromWindow() {
+    override fun onDestroy() {
         presenter.onDetach()
-        super.onDetachedFromWindow()
+        super.onDestroy()
     }
 
     override fun showVenue(venue: Venue?) {

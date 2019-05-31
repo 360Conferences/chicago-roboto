@@ -15,7 +15,7 @@ pluginManagement {
   }
 }
 
-include ':app'
+include ':app', ':observable-livedata'
 include ':common'
 include ':common:jvmMain'
 include ':common:iosMain'

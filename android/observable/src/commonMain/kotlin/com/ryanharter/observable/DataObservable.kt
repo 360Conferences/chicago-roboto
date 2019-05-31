@@ -10,13 +10,15 @@ package com.ryanharter.observable
 @Suppress("UNCHECKED_CAST")
 open class DataObservable<T> : Observable<T> {
 
-  internal val observers = mutableListOf<Observer<T>>()
+  // We use an indexed map here so we can handle observers that mutate the list
+  private var observerIndex = 0
+  internal val observers = mutableMapOf<Int, Observer<T>>()
 
   private var _value: Any? = NOT_SET
 
-  var value: T
+  open var value: T
     get() = _value as T
-    set(v) {
+    protected set(v) {
       _value = v
       dispatchValue()
     }
@@ -30,15 +32,31 @@ open class DataObservable<T> : Observable<T> {
   override fun onInactive() {
   }
 
+  private var dispatching = false
+  private var invalidated = false
+
   private fun dispatchValue() {
-    val value = this.value
-    if (value != NOT_SET) {
-      observers.forEach { it.invoke(value) }
+    if (dispatching) {
+      invalidated = true
+      return
     }
+    dispatching = true
+    do {
+      invalidated = false
+      val value = this.value
+      if (value != NOT_SET) {
+        // copy the set so it can be mutated
+        val keys = observers.keys.toMutableSet()
+        for (key in keys) {
+          observers[key]?.invoke(value)
+        }
+      }
+    } while (invalidated)
+    dispatching = false
   }
 
   override fun observe(observer: Observer<T>) {
-    observers.add(observer)
+    observers[observerIndex++] = observer
 
     val value = this.value
     if (value != NOT_SET) {
@@ -51,7 +69,9 @@ open class DataObservable<T> : Observable<T> {
   }
 
   override fun removeObserver(observer: Observer<T>) {
-    observers.remove(observer)
+    observers.entries.find { it.value == observer }?.let {
+      observers.remove(it.key)
+    }
     if (observers.isEmpty()) {
       onInactive()
     }

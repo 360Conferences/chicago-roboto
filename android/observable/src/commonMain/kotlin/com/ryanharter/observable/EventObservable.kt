@@ -15,7 +15,7 @@ open class EventObservable<T> : Observable<T> {
   override val isLive: Boolean
     get() = observers.isNotEmpty()
 
-  fun postValue(value: T) {
+  protected open fun postValue(value: T) {
     observers.forEach { it.invoke(value) }
   }
 
@@ -37,6 +37,12 @@ open class EventObservable<T> : Observable<T> {
     if (observers.isEmpty()) {
       onInactive()
     }
+  }
+}
+
+open class MutableEventObservable<T> : EventObservable<T>() {
+  public override fun postValue(value: T) {
+    super.postValue(value)
   }
 }
 

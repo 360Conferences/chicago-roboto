@@ -1,27 +1,24 @@
 package com.chicagoroboto.features.sessions
 
-import android.content.Context
+import android.os.Bundle
 import android.support.design.widget.TabLayout
+import android.support.v4.app.Fragment
+import android.support.v4.view.ViewPager
 import android.text.format.DateUtils
-import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
-import android.widget.FrameLayout
+import android.view.ViewGroup
 import com.chicagoroboto.R
+import com.chicagoroboto.ext.getAppComponent
 import com.chicagoroboto.ext.getComponent
-import com.chicagoroboto.features.main.MainView
 import com.chicagoroboto.features.TabHolder
 import com.chicagoroboto.features.main.MainComponent
-import kotlinx.android.synthetic.main.view_sessions.view.*
+import com.chicagoroboto.features.main.MainView
 import java.text.SimpleDateFormat
-import java.util.*
+import java.util.Locale
 import javax.inject.Inject
 
-class SessionDateView(context: Context, attrs: AttributeSet? = null, defStyle: Int = 0) :
-        FrameLayout(context, attrs, defStyle), SessionDateListMvp.View, MainView {
-
-    constructor(context: Context): this(context, null, 0)
-    constructor(context: Context, attrs: AttributeSet?): this(context, attrs, 0)
+class SessionDateView : Fragment(), SessionDateListMvp.View, MainView {
 
     override val titleResId = R.string.action_schedule
 
@@ -33,34 +30,37 @@ class SessionDateView(context: Context, attrs: AttributeSet? = null, defStyle: I
             field?.setupWithViewPager(pager)
         }
 
-    private val adapter: SessionPagerAdapter
+    private lateinit var pager: ViewPager
 
-    init {
-        context.getComponent<MainComponent>().sessionListComponent().inject(this)
+    private val adapter = SessionPagerAdapter()
 
-        LayoutInflater.from(context).inflate(R.layout.view_sessions, this, true)
-
-        adapter = SessionPagerAdapter()
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ) = inflater.inflate(R.layout.view_sessions, container, false).apply {
+        pager = findViewById(R.id.pager)
         pager.adapter = adapter
     }
 
-    override fun onAttachedToWindow() {
-        super.onAttachedToWindow()
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        requireContext().getComponent<MainComponent>().sessionListComponent().inject(this)
+
         presenter.onAttach(this)
 
-        val parentContext = context
-        when (parentContext) {
+        when (val parentContext = context) {
             is TabHolder -> {
                 tabLayout = parentContext.tabLayout
             }
         }
     }
 
-    override fun onDetachedFromWindow() {
+    override fun onDestroy() {
         tabLayout?.visibility = View.GONE
         tabLayout = null
         presenter.onDetach()
-        super.onDetachedFromWindow()
+        super.onDestroy()
     }
 
     override fun showNoSessionDates() {

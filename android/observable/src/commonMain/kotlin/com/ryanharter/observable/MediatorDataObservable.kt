@@ -1,6 +1,6 @@
 package com.ryanharter.observable
 
-open class MediatorObservable<T> : DataObservable<T>() {
+open class MediatorDataObservable<T> : MutableDataObservable<T>() {
 
   private val sources = mutableMapOf<Observable<*>, Source<*>>()
 
