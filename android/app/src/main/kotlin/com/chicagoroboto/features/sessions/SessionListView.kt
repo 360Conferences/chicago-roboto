@@ -1,20 +1,33 @@
 package com.chicagoroboto.features.sessions
 
 import android.content.Context
-import android.support.v7.util.DiffUtil
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
-import android.util.AttributeSet
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.VERTICAL
+import com.chicagoroboto.R
 import com.chicagoroboto.ext.getComponent
 import com.chicagoroboto.features.main.MainComponent
-import com.chicagoroboto.model.Session
-import com.chicagoroboto.model.Speaker
+import java.lang.IllegalStateException
 import javax.inject.Inject
 
-class SessionListView(context: Context, attrs: AttributeSet? = null, defStyle: Int = 0) :
-    RecyclerView(context, attrs, defStyle) {
+private const val ARG_DATE = "date"
 
+fun makeSessionListView(date: String) = SessionListView().apply {
+  arguments = bundleOf(
+      ARG_DATE to date
+  )
+}
+
+class SessionListView : Fragment() {
+
+  private lateinit var list: RecyclerView
   private lateinit var adapter: SessionAdapter
 
   @Inject lateinit var viewModel: SessionListViewModel
@@ -32,7 +45,7 @@ class SessionListView(context: Context, attrs: AttributeSet? = null, defStyle: I
 
   private val viewEventObservable = { event: SessionListViewEvent ->
     when (event) {
-      is ScrollToSessionIndex -> scrollToPosition(event.index)
+      is ScrollToSessionIndex -> list.scrollToPosition(event.index)
     }
   }
 
@@ -46,34 +59,35 @@ class SessionListView(context: Context, attrs: AttributeSet? = null, defStyle: I
       old[oldItemPosition] == new[newItemPosition]
   }
 
-  init {
-    context.getComponent<MainComponent>().sessionListComponent().inject(this)
+  override fun onCreateView(
+      inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+  ): View? = inflater.inflate(R.layout.view_session_list, container, false).apply {
+    list = findViewById(R.id.list)
+  }
 
-    layoutParams = ViewGroup.LayoutParams(
-        ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT
-    )
-    layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
-    addItemDecoration(SessionItemDecoration(context))
+  override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    super.onViewCreated(view, savedInstanceState)
+    list.layoutManager = LinearLayoutManager(requireContext(), VERTICAL, false)
+    list.addItemDecoration(SessionItemDecoration(requireContext()))
+  }
+
+  override fun onActivityCreated(savedInstanceState: Bundle?) {
+    super.onActivityCreated(savedInstanceState)
+    requireContext().getComponent<MainComponent>().sessionListComponent().inject(this)
+
     adapter = SessionAdapter { id ->
       sessionNavigator.showSession(id)
     }
-    super.setAdapter(adapter)
+    list.setAdapter(adapter)
+
+    val date = arguments?.getString(ARG_DATE) ?: throw IllegalStateException("Missing date argument")
+    viewModel.setDate(date)
   }
 
-  override fun onAttachedToWindow() {
-    super.onAttachedToWindow()
+  override fun onAttach(context: Context?) {
+    super.onAttach(context)
     viewModel.viewState.observe(viewStateObservable)
     viewModel.viewEvents.observe(viewEventObservable)
-  }
-
-  override fun onDetachedFromWindow() {
-    viewModel.viewState.removeObserver(viewStateObservable)
-    viewModel.viewEvents.removeObserver(viewEventObservable)
-    super.onDetachedFromWindow()
-  }
-
-  fun setDate(date: String) {
-    viewModel.setDate(date)
   }
 }
 

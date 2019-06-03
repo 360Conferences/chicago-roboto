@@ -8,7 +8,7 @@ import android.graphics.drawable.Drawable
 import android.support.annotation.CheckResult
 import android.support.annotation.DrawableRes
 import android.support.graphics.drawable.VectorDrawableCompat
-import android.support.v4.content.ContextCompat
+import androidx.core.content.ContextCompat
 
 object DrawableUtils {
 

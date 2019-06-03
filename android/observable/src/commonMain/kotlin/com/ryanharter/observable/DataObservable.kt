@@ -21,6 +21,11 @@ open class DataObservable<T> : Observable<T> {
     protected set(v) {
       _value = v
       dispatchValue()
+  // TODO How can this respect T's nullability without a default value
+  open var value: T?
+    get() = _value.data
+    set(v) {
+        dispatchValue()
     }
 
   override val isLive: Boolean
@@ -50,6 +55,12 @@ open class DataObservable<T> : Observable<T> {
         for (key in keys) {
           observers[key]?.invoke(value)
         }
+
+        // if observers were added while emitting
+        // values invalidate the data and loop again.
+        if (observers.keys.size > keys.size) {
+          invalidated = true
+        }
       }
     } while (invalidated)
     dispatching = false
@@ -70,6 +81,7 @@ open class DataObservable<T> : Observable<T> {
 
   override fun removeObserver(observer: Observer<T>) {
     observers.entries.find { it.value == observer }?.let {
+  override fun removeObserver(observer: Observer<T?>) {
       observers.remove(it.key)
     }
     if (observers.isEmpty()) {

@@ -16,7 +16,7 @@ android {
     targetSdkVersion rootProject.ext.targetSdkVersion
     versionCode 14
     versionName "1.0.0"
-    testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
   }
 
   buildTypes {
@@ -60,6 +60,7 @@ kotlin {
       dependencies {
         implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
         implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
+        implementation libs.lifecycle
       }
     }
     jvmTest {

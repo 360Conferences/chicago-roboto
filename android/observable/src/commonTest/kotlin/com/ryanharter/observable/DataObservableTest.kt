@@ -81,7 +81,7 @@ class DataObservableTest {
     }
   }
 
-  class FakeDataObservable<T> : MutableDataObservable<T>() {
+  class FakeDataObservable<T> : DataObservable<T>() {
 
     var onActiveCalled = false
     override fun onActive() {

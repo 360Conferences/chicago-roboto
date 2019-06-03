@@ -4,7 +4,7 @@ import android.app.AlarmManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
-import android.support.v4.app.NotificationCompat
+import androidx.core.app.NotificationCompat
 import com.chicagoroboto.R
 import com.chicagoroboto.features.sessiondetail.SessionDetailActivity
 import com.chicagoroboto.model.Session

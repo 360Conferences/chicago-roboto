@@ -12,8 +12,12 @@ android {
     targetSdkVersion rootProject.ext.targetSdkVersion
     versionCode 14
     versionName "1.0.0"
-    testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
   }
+}
+
+dependencies {
+  implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
 }
 
 kotlin {
@@ -21,10 +25,6 @@ kotlin {
     fromPreset(presets.android, 'android')
     fromPreset(presets.jvm, 'jvm')
 
-    // Change to `presets.iosArm64` to deploy the app to iPhone
-    final def iOSTarget = System.getenv('SDK_NAME')?.startsWith('iphoneos')
-        ? presets.iosArm64 : presets.iosX64
-    fromPreset(iOSTarget, 'ios') {
       binaries.framework('Observable')
     }
   }
@@ -32,6 +32,7 @@ kotlin {
     commonMain {
       dependencies {
         implementation "org.jetbrains.kotlin:kotlin-stdlib"
+        implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core-common:$coroutines_version"
       }
     }
     commonTest {
@@ -43,6 +44,7 @@ kotlin {
     jvmMain {
       dependencies {
         implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+        implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
       }
     }
     jvmTest {
@@ -52,6 +54,7 @@ kotlin {
     }
     iosMain {
       dependencies {
+        implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core-native:$coroutines_version"
       }
     }
   }

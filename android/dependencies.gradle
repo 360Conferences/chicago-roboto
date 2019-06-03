@@ -12,7 +12,8 @@ ext {
 
   libs = [
       circularImageView : 'com.mikhaellopez:circularimageview:3.0.2',
-      constraintLayout  : "com.android.support.constraint:constraint-layout:1.0.2",
+      constraintLayout  : "androidx.constraintlayout:constraintlayout:1.1.2",
+      coreKtx           : 'androidx.core:core-ktx:1.0.2',
       dagger            : "com.google.dagger:dagger:$dagger_version",
       daggerCompiler    : "com.google.dagger:dagger-compiler:$dagger_version",
       firebaseAuth      : "com.google.firebase:firebase-auth:$play_services_version",
@@ -24,14 +25,15 @@ ext {
       kotlinRuntime     : "org.jetbrains.kotlin:kotlin-runtime:$kotlin_version",
       kotlinStdlib      : "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version",
       kotlinTest        : "org.jetbrains.kotlin:kotlin-test:$kotlin_version",
+      lifecycle         : "androidx.lifecycle:lifecycle-extensions:2.0.0",
       mockitoCore       : "org.mockito:mockito-core:2.8.47",
       mockitoKotlin     : "com.nhaarman:mockito-kotlin:1.5.0",
       multilineToolbar  : "net.opacapp:multiline-collapsingtoolbar:27.1.0",
       playServicesMaps  : "com.google.android.gms:play-services-maps:$play_services_version",
-      recyclerView     : "com.android.support:recyclerview-v7:$support_version",
-      supportAppCompat  : "com.android.support:appcompat-v7:$support_version",
-      supportCardView   : "com.android.support:cardview-v7:$support_version",
-      supportDesign     : "com.android.support:design:$support_version",
+      recyclerView      : "androidx.recyclerview:recyclerview:1.0.0",
+      supportAppCompat  : "androidx.appcompat:appcompat:1.0.0",
+      supportCardView   : "androidx.cardview:cardview:1.0.0",
+      supportDesign     : "com.google.android.material:material:1.0.0-rc01",
       truth             : "com.google.truth:truth:0.39",
   ]
 }

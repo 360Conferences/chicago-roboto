@@ -1,12 +1,12 @@
 package com.chicagoroboto.features.sessions
 
-import android.support.v7.widget.CardView
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.cardview.widget.CardView
+import androidx.recyclerview.widget.RecyclerView
 import com.chicagoroboto.R
 import com.chicagoroboto.utils.DrawableUtils
 import kotlinx.android.synthetic.main.item_session.view.card
@@ -96,12 +96,12 @@ internal class SessionAdapter(val onSessionSelectedListener: ((id: String) -> Un
         val favorite: ImageView
 
         init {
-            card = super.itemView.card
-            timeslot = super.itemView.timeslot
-            title = super.itemView.title
-            speakers = super.itemView.speakers
-            room = super.itemView.room
-            favorite = super.itemView.favorite
+            card = super.itemView.findViewById(R.id.card)
+            timeslot = super.itemView.findViewById(R.id.timeslot)
+            title = super.itemView.findViewById(R.id.title)
+            speakers = super.itemView.findViewById(R.id.speakers)
+            room = super.itemView.findViewById(R.id.room)
+            favorite = super.itemView.findViewById(R.id.favorite)
             itemView.setOnClickListener(this)
         }
 

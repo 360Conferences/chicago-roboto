@@ -48,7 +48,7 @@ open class MediatorDataObservable<T> : MutableDataObservable<T>() {
       observable.removeObserver(this)
     }
 
-    override fun invoke(value: V) {
+    override fun invoke(value: V?) {
       observer.invoke(value)
     }
   }

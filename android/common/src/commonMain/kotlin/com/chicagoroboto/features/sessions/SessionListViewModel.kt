@@ -8,7 +8,7 @@ import com.chicagoroboto.model.Session
 import com.chicagoroboto.model.Speaker
 import com.ryanharter.observable.DataObservable
 import com.ryanharter.observable.EventObservable
-import com.ryanharter.observable.MutableDataObservable
+import com.ryanharter.observable.DataObservable
 import com.ryanharter.observable.Observable
 import com.ryanharter.observable.dataObservable
 import com.ryanharter.observable.map
@@ -31,7 +31,7 @@ class SessionListViewModel(
       val favorites: Set<String>
   )
 
-  private val _dateObservable = MutableDataObservable<String>()
+  private val _dateObservable = DataObservable<String>()
   private val _viewDataObservable = _dateObservable.switchMap { date ->
     return@switchMap ViewDataObservable(date)
   }

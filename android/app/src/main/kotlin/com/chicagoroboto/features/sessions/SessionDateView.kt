@@ -1,19 +1,18 @@
 package com.chicagoroboto.features.sessions
 
 import android.os.Bundle
-import android.support.design.widget.TabLayout
-import android.support.v4.app.Fragment
-import android.support.v4.view.ViewPager
 import android.text.format.DateUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.viewpager.widget.ViewPager
 import com.chicagoroboto.R
-import com.chicagoroboto.ext.getAppComponent
 import com.chicagoroboto.ext.getComponent
 import com.chicagoroboto.features.TabHolder
 import com.chicagoroboto.features.main.MainComponent
 import com.chicagoroboto.features.main.MainView
+import com.google.android.material.tabs.TabLayout
 import java.text.SimpleDateFormat
 import java.util.Locale
 import javax.inject.Inject
@@ -32,7 +31,7 @@ class SessionDateView : Fragment(), SessionDateListMvp.View, MainView {
 
     private lateinit var pager: ViewPager
 
-    private val adapter = SessionPagerAdapter()
+    private lateinit var adapter: SessionPagerAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -40,20 +39,22 @@ class SessionDateView : Fragment(), SessionDateListMvp.View, MainView {
         savedInstanceState: Bundle?
     ) = inflater.inflate(R.layout.view_sessions, container, false).apply {
         pager = findViewById(R.id.pager)
-        pager.adapter = adapter
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         requireContext().getComponent<MainComponent>().sessionListComponent().inject(this)
 
-        presenter.onAttach(this)
+        adapter = SessionPagerAdapter(requireFragmentManager())
+        pager.adapter = adapter
 
         when (val parentContext = context) {
             is TabHolder -> {
                 tabLayout = parentContext.tabLayout
             }
         }
+
+        presenter.onAttach(this)
     }
 
     override fun onDestroy() {
