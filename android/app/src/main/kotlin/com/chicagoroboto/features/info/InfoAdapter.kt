@@ -1,13 +1,12 @@
 package com.chicagoroboto.features.info
 
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
 import com.chicagoroboto.R
 import com.chicagoroboto.model.Library
-import kotlinx.android.synthetic.main.view_info_library.view.*
 
 class InfoAdapter(val libraryListener: (library: Library) -> Unit) : RecyclerView.Adapter<InfoAdapter.ViewHolder>() {
 
@@ -52,7 +51,7 @@ class InfoAdapter(val libraryListener: (library: Library) -> Unit) : RecyclerVie
     private fun getItem(position: Int): Library? {
         var i = position
         --i
-        for ((key, value) in libraries) {
+        for ((_, value) in libraries) {
             if (i == 0) {
                 return value[0]
             }
@@ -88,12 +87,10 @@ class InfoAdapter(val libraryListener: (library: Library) -> Unit) : RecyclerVie
 
     class ViewHolder(itemView: View, val libraryListener: (library: Library) -> Unit) : RecyclerView.ViewHolder(itemView) {
         var library: Library? = null
-        val title: TextView?
-        val license: TextView?
+        val title: TextView = itemView.findViewById(R.id.title)
+        private val license: TextView = itemView.findViewById(R.id.license)
 
         init {
-            title = itemView.title
-            license = itemView.license
             itemView.setOnClickListener {
                 if (itemViewType == R.layout.view_info_library && library != null) {
                     libraryListener(library!!)
@@ -104,10 +101,10 @@ class InfoAdapter(val libraryListener: (library: Library) -> Unit) : RecyclerVie
         fun bind(library: Library) {
             this.library = library
             when (itemViewType) {
-                R.layout.view_info_header -> title?.text = library.owner
-                R.layout.view_info_library -> title?.text = library.name
+                R.layout.view_info_header -> title.text = library.owner
+                R.layout.view_info_library -> title.text = library.name
             }
-            license?.text = library.license
+            license.text = library.license
         }
     }
 }

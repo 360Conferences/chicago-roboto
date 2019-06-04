@@ -1,12 +1,12 @@
 package com.chicagoroboto.features.sessions
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView.VERTICAL
 import com.chicagoroboto.R
 import com.chicagoroboto.ext.getComponent
 import com.chicagoroboto.features.main.MainComponent
-import java.lang.IllegalStateException
+import com.ryanharter.observable.livedata.observe
 import javax.inject.Inject
 
 private const val ARG_DATE = "date"
@@ -32,22 +32,6 @@ class SessionListView : Fragment() {
 
   @Inject lateinit var viewModel: SessionListViewModel
   @Inject lateinit var sessionNavigator: SessionNavigator
-
-  private val viewStateObservable = { state: SessionListViewState ->
-    // Update the session list
-    val diffResult = DiffUtil.calculateDiff(SimpleDiffCallback(adapter.sessions, state.sessions))
-    adapter.sessions.clear()
-    adapter.sessions.addAll(state.sessions)
-    diffResult.dispatchUpdatesTo(adapter)
-
-    // TODO handle empty list?
-  }
-
-  private val viewEventObservable = { event: SessionListViewEvent ->
-    when (event) {
-      is ScrollToSessionIndex -> list.scrollToPosition(event.index)
-    }
-  }
 
   private class SimpleDiffCallback(val old: List<Any>, val new: List<Any>) : DiffUtil.Callback() {
     override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int) =
@@ -67,27 +51,40 @@ class SessionListView : Fragment() {
 
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
+
     list.layoutManager = LinearLayoutManager(requireContext(), VERTICAL, false)
     list.addItemDecoration(SessionItemDecoration(requireContext()))
+
+    adapter = SessionAdapter { id ->
+      sessionNavigator.showSession(id)
+    }
+    list.adapter = adapter
   }
 
   override fun onActivityCreated(savedInstanceState: Bundle?) {
     super.onActivityCreated(savedInstanceState)
     requireContext().getComponent<MainComponent>().sessionListComponent().inject(this)
 
-    adapter = SessionAdapter { id ->
-      sessionNavigator.showSession(id)
-    }
-    list.setAdapter(adapter)
+    viewModel.viewState.observe(this, Observer { state ->
+      // Update the session list
+      val diffResult = DiffUtil.calculateDiff(
+          SimpleDiffCallback(adapter.sessions, state?.sessions ?: emptyList())
+      )
+      adapter.sessions.clear()
+      state?.let { adapter.sessions.addAll(it.sessions) }
+      diffResult.dispatchUpdatesTo(adapter)
+
+      // TODO handle empty list?
+    })
+    viewModel.viewEvents.observe(this, Observer { event ->
+      when (event) {
+        is ScrollToSessionIndex -> list.scrollToPosition(event.index)
+        null -> {} // no op
+      }
+    })
 
     val date = arguments?.getString(ARG_DATE) ?: throw IllegalStateException("Missing date argument")
     viewModel.setDate(date)
-  }
-
-  override fun onAttach(context: Context?) {
-    super.onAttach(context)
-    viewModel.viewState.observe(viewStateObservable)
-    viewModel.viewEvents.observe(viewEventObservable)
   }
 }
 

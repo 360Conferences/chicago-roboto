@@ -11,6 +11,7 @@ import com.chicagoroboto.features.speakerdetail.SpeakerDetailComponent
 import dagger.Component
 import javax.inject.Singleton
 
+@ExperimentalUnsignedTypes
 @Singleton
 @Component(modules = arrayOf(AppModule::class, DataModule::class))
 interface AppComponent {

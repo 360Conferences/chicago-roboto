@@ -1,6 +1,6 @@
 package com.ryanharter.observable
 
-open class MediatorDataObservable<T> : MutableDataObservable<T>() {
+open class MediatorDataObservable<T> : DataObservable<T>() {
 
   private val sources = mutableMapOf<Observable<*>, Source<*>>()
 
@@ -28,11 +28,13 @@ open class MediatorDataObservable<T> : MutableDataObservable<T>() {
   }
 
   override fun onActive() {
-    sources.values.forEach { it.plug() }
+    val sources = sources.values.toMutableList()
+    sources.forEach { it.plug() }
   }
 
   override fun onInactive() {
-    sources.values.forEach { it.unplug() }
+    val sources = sources.values.toMutableList()
+    sources.forEach { it.unplug() }
   }
 
   private class Source<V>(

@@ -17,14 +17,19 @@ android {
 }
 
 dependencies {
-  implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
 }
 
 kotlin {
   targets {
-    fromPreset(presets.android, 'android')
-    fromPreset(presets.jvm, 'jvm')
-
+    android()
+    jvm()
+    fromPreset(presets.iosArm32, 'iosArm32') {
+      binaries.framework('Observable')
+    }
+    fromPreset(presets.iosArm64, 'iosArm64') {
+      binaries.framework('Observable')
+    }
+    fromPreset(presets.iosX64, 'iosX64') {
       binaries.framework('Observable')
     }
   }
@@ -32,7 +37,6 @@ kotlin {
     commonMain {
       dependencies {
         implementation "org.jetbrains.kotlin:kotlin-stdlib"
-        implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core-common:$coroutines_version"
       }
     }
     commonTest {
@@ -44,7 +48,6 @@ kotlin {
     jvmMain {
       dependencies {
         implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-        implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
       }
     }
     jvmTest {
@@ -52,10 +55,37 @@ kotlin {
         implementation "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
       }
     }
-    iosMain {
+    nativeCommonMain {
+      dependsOn commonMain
       dependencies {
-        implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core-native:$coroutines_version"
       }
+    }
+    nativeCommonTest {
+      dependsOn commonTest
+    }
+    appleMain {
+      dependsOn nativeCommonMain
+    }
+    appleTest {
+      dependsOn nativeCommonTest
+    }
+    iosArm32().compilations.main.defaultSourceSet {
+      dependsOn appleMain
+    }
+    iosArm32().compilations.test.defaultSourceSet {
+      dependsOn appleTest
+    }
+    iosArm64().compilations.main.defaultSourceSet {
+      dependsOn appleMain
+    }
+    iosArm64().compilations.test.defaultSourceSet {
+      dependsOn appleTest
+    }
+    iosX64().compilations.main.defaultSourceSet {
+      dependsOn appleMain
+    }
+    iosX64().compilations.test.defaultSourceSet {
+      dependsOn appleTest
     }
   }
 }

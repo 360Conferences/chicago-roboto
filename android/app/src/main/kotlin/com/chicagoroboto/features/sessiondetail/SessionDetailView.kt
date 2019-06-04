@@ -2,16 +2,17 @@ package com.chicagoroboto.features.sessiondetail
 
 import android.content.Context
 import android.content.Intent
-import android.content.Intent.ACTION_VIEW
 import android.net.Uri
-import android.support.design.widget.CoordinatorLayout
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.LinearLayoutManager
 import android.text.format.DateUtils
 import android.util.AttributeSet
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
+import androidx.coordinatorlayout.widget.CoordinatorLayout
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.chicagoroboto.R
 import com.chicagoroboto.data.AvatarProvider
 import com.chicagoroboto.ext.getComponent
@@ -22,11 +23,13 @@ import com.chicagoroboto.model.Speaker
 import com.chicagoroboto.model.endTime
 import com.chicagoroboto.model.startTime
 import com.chicagoroboto.utils.DrawableUtils
-import com.google.android.gms.maps.CameraUpdateFactory
-import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.MarkerOptions
-import kotlinx.android.synthetic.main.view_location.view.*
-import kotlinx.android.synthetic.main.view_session_detail.view.*
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import kotlinx.android.synthetic.main.view_session_detail.view.banner
+import kotlinx.android.synthetic.main.view_session_detail.view.description
+import kotlinx.android.synthetic.main.view_session_detail.view.location
+import kotlinx.android.synthetic.main.view_session_detail.view.status
+import kotlinx.android.synthetic.main.view_session_detail.view.toolbar
+import net.opacapp.multilinecollapsingtoolbar.CollapsingToolbarLayout
 import java.util.Date
 import javax.inject.Inject
 
@@ -40,6 +43,15 @@ class SessionDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
     private val speakerAdapter: SpeakerAdapter
     private var sessionId: String? = null
 
+    private lateinit var feedback: FloatingActionButton
+    private lateinit var favorite: FloatingActionButton
+    private lateinit var speakers: RecyclerView
+    private lateinit var banner: TextView
+    private lateinit var description: TextView
+    private lateinit var location: TextView
+    private lateinit var status: TextView
+    private lateinit var toolbar: Toolbar
+
     constructor(context: Context): this(context, null, 0)
     constructor(context: Context, attrs: AttributeSet?): this(context, attrs, 0)
 
@@ -47,6 +59,14 @@ class SessionDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
         context.getComponent<SessionDetailComponent>().inject(this)
 
         LayoutInflater.from(context).inflate(R.layout.view_session_detail, this, true)
+        feedback = findViewById(R.id.feedback)
+        favorite = findViewById(R.id.favorite)
+        speakers = findViewById(R.id.speakers)
+        banner = findViewById(R.id.banner)
+        description = findViewById(R.id.description)
+        location = findViewById(R.id.location)
+        status = findViewById(R.id.status)
+        toolbar = findViewById(R.id.toolbar)
 
         speakerAdapter = SpeakerAdapter(avatarProvider, true, { speaker, image ->
             speakerNavigator.navigateToSpeaker(speaker.id!!, image)
@@ -55,7 +75,7 @@ class SessionDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
         speakers.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
 
         // initially hide the feedback button until we get a session
-        feedback.visibility = GONE
+        feedback.visibility = View.GONE
         feedback.setOnClickListener {
             FeedbackDialog(context, sessionId!!).show()
         }

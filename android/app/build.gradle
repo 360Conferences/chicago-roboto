@@ -59,7 +59,6 @@ android {
 }
 
 dependencies {
-  implementation libs.constraintLayout
   implementation libs.circularImageView
   implementation libs.firebaseAuth
   implementation libs.firebaseCore
@@ -69,11 +68,15 @@ dependencies {
   implementation libs.multilineToolbar
   implementation libs.playServicesMaps
 
-  implementation libs.coreKtx
-  implementation libs.lifecycle
+  implementation libs.androidx.cardview
+  implementation libs.androidx.constraintlayout
+  implementation libs.androidx.core
+  implementation libs.androidx.lifecycle.extensions
+  implementation libs.androidx.lifecycle.viewmodel
+  implementation libs.androidx.lifecycle.livedata
+  implementation libs.androidx.viewpager
   implementation libs.recyclerView
   implementation libs.supportAppCompat
-  implementation libs.supportCardView
   implementation libs.supportDesign
 
   implementation project(':common')

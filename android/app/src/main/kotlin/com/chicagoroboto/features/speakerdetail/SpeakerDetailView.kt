@@ -6,10 +6,10 @@ import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
 import android.net.Uri
-import androidx.constraintlayout.ConstraintLayout
-import androidx.core.app.ActivityCompat
 import android.util.AttributeSet
 import android.view.LayoutInflater
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.app.ActivityCompat
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.BitmapImageViewTarget
 import com.chicagoroboto.R
@@ -18,9 +18,13 @@ import com.chicagoroboto.ext.getActivity
 import com.chicagoroboto.ext.getComponent
 import com.chicagoroboto.model.Speaker
 import com.chicagoroboto.utils.DrawableUtils
-import kotlinx.android.synthetic.main.view_speaker_detail.view.*
+import kotlinx.android.synthetic.main.view_speaker_detail.view.bio
+import kotlinx.android.synthetic.main.view_speaker_detail.view.github
+import kotlinx.android.synthetic.main.view_speaker_detail.view.image
+import kotlinx.android.synthetic.main.view_speaker_detail.view.name
+import kotlinx.android.synthetic.main.view_speaker_detail.view.toolbar
+import kotlinx.android.synthetic.main.view_speaker_detail.view.twitter
 import javax.inject.Inject
-
 
 class SpeakerDetailView(context: Context, attrs: AttributeSet? = null, defStyle: Int = 0) :
         ConstraintLayout(context, attrs, defStyle), SpeakerDetailMvp.View {

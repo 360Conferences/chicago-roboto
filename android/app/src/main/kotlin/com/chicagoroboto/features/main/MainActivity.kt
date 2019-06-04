@@ -2,16 +2,14 @@ package com.chicagoroboto.features.main
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.design.widget.NavigationView
-import android.support.design.widget.TabLayout
-import androidx.core.app.Fragment
-import androidx.core.view.GravityCompat
-import androidx.core.widget.DrawerLayout
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.Toolbar
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
+import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.Fragment
 import com.chicagoroboto.R
 import com.chicagoroboto.ext.getAppComponent
 import com.chicagoroboto.features.TabHolder
@@ -23,6 +21,8 @@ import com.chicagoroboto.features.sessions.SessionNavigator
 import com.chicagoroboto.features.speakerdetail.SpeakerDetailActivity
 import com.chicagoroboto.features.speakerdetail.SpeakerNavigator
 import com.chicagoroboto.features.speakerlist.SpeakerListView
+import com.google.android.material.navigation.NavigationView
+import com.google.android.material.tabs.TabLayout
 
 class MainActivity : AppCompatActivity(), SessionNavigator, SpeakerNavigator, NavigationView.OnNavigationItemSelectedListener,
         TabHolder {

@@ -1,11 +1,10 @@
 package com.chicagoroboto.features.location
 
 import android.os.Bundle
-import androidx.core.app.Fragment
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.fragment.app.Fragment
 import com.chicagoroboto.R
 import com.chicagoroboto.ext.getComponent
 import com.chicagoroboto.features.main.MainComponent

@@ -5,10 +5,10 @@ import android.content.res.Resources
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.drawable.Drawable
-import android.support.annotation.CheckResult
-import android.support.annotation.DrawableRes
-import android.support.graphics.drawable.VectorDrawableCompat
+import androidx.annotation.CheckResult
+import androidx.annotation.DrawableRes
 import androidx.core.content.ContextCompat
+import androidx.vectordrawable.graphics.drawable.VectorDrawableCompat
 
 object DrawableUtils {
 

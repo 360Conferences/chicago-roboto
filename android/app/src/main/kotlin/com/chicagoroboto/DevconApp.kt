@@ -6,6 +6,7 @@ import com.chicagoroboto.injection.AppComponent
 import com.chicagoroboto.injection.AppModule
 import com.chicagoroboto.injection.DaggerAppComponent
 
+@ExperimentalUnsignedTypes
 class DevconApp() : Application() {
 
     lateinit var component: AppComponent

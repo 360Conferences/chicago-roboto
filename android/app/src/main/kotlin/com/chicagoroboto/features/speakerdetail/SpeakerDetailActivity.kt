@@ -7,7 +7,7 @@ import android.os.Build.VERSION
 import android.os.Build.VERSION_CODES
 import android.os.Bundle
 import androidx.core.util.Pair
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.view.View
 import com.chicagoroboto.R
 import com.chicagoroboto.ext.getActivity

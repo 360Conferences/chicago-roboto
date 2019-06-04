@@ -16,16 +16,12 @@ open class DataObservable<T> : Observable<T> {
 
   private var _value: Any? = NOT_SET
 
-  open var value: T
-    get() = _value as T
-    protected set(v) {
-      _value = v
-      dispatchValue()
   // TODO How can this respect T's nullability without a default value
   open var value: T?
-    get() = _value.data
+    get() = _value as T?
     set(v) {
-        dispatchValue()
+      _value = v
+      dispatchValue()
     }
 
   override val isLive: Boolean
@@ -67,6 +63,10 @@ open class DataObservable<T> : Observable<T> {
   }
 
   override fun observe(observer: Observer<T>) {
+    if (observers.containsValue(observer)) {
+      return
+    }
+
     observers[observerIndex++] = observer
 
     val value = this.value
@@ -81,7 +81,6 @@ open class DataObservable<T> : Observable<T> {
 
   override fun removeObserver(observer: Observer<T>) {
     observers.entries.find { it.value == observer }?.let {
-  override fun removeObserver(observer: Observer<T?>) {
       observers.remove(it.key)
     }
     if (observers.isEmpty()) {
@@ -98,12 +97,12 @@ fun <T> dataObservable(
     onActive: DataObservable<T>.() -> Unit = {},
     onInactive: DataObservable<T>.() -> Unit = {}
 ): DataObservable<T> =
-    object : DataObservable<T>() {
-      override fun onActive() {
-        onActive.invoke(this)
-      }
-
-      override fun onInactive() {
-        onInactive.invoke(this)
-      }
+  object : DataObservable<T>() {
+    override fun onActive() {
+      onActive.invoke(this)
     }
+
+    override fun onInactive() {
+      onInactive.invoke(this)
+    }
+  }

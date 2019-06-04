@@ -8,15 +8,9 @@ import com.chicagoroboto.model.Session
 import com.chicagoroboto.model.Speaker
 import com.ryanharter.observable.DataObservable
 import com.ryanharter.observable.EventObservable
-import com.ryanharter.observable.DataObservable
 import com.ryanharter.observable.Observable
-import com.ryanharter.observable.dataObservable
 import com.ryanharter.observable.map
 import com.ryanharter.observable.switchMap
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.async
-import kotlinx.coroutines.launch
-import kotlin.coroutines.coroutineContext
 
 class SessionListViewModel(
     private val sessionProvider: SessionProvider,
@@ -33,10 +27,15 @@ class SessionListViewModel(
 
   private val _dateObservable = DataObservable<String>()
   private val _viewDataObservable = _dateObservable.switchMap { date ->
-    return@switchMap ViewDataObservable(date)
+    if (date != null) {
+      return@switchMap ViewDataObservable(date)
+    } else {
+      return@switchMap null
+    }
   }
 
   private val _viewState = _viewDataObservable.map { data ->
+    if (data == null) return@map null
     val sessions = data.sessions.map { s ->
       SessionListViewState.Session(
           id = s.id ?: "unknown",
