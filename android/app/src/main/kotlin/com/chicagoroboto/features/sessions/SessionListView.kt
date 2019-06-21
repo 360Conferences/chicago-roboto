@@ -12,9 +12,15 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.VERTICAL
 import com.chicagoroboto.R
+import com.chicagoroboto.ext.asObservable
 import com.chicagoroboto.ext.getComponent
 import com.chicagoroboto.features.main.MainComponent
-import com.ryanharter.observable.livedata.observe
+import com.uber.autodispose.android.lifecycle.AndroidLifecycleScopeProvider
+import com.uber.autodispose.autoDisposable
+import io.reactivex.Observable
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.FlowPreview
+import kotlinx.coroutines.InternalCoroutinesApi
 import javax.inject.Inject
 
 private const val ARG_DATE = "date"
@@ -30,7 +36,11 @@ class SessionListView : Fragment() {
   private lateinit var list: RecyclerView
   private lateinit var adapter: SessionAdapter
 
+  @FlowPreview
+  @InternalCoroutinesApi
+  @ExperimentalCoroutinesApi
   @Inject lateinit var viewModel: SessionListViewModel
+
   @Inject lateinit var sessionNavigator: SessionNavigator
 
   private class SimpleDiffCallback(val old: List<Any>, val new: List<Any>) : DiffUtil.Callback() {
@@ -61,29 +71,39 @@ class SessionListView : Fragment() {
     list.adapter = adapter
   }
 
+  @FlowPreview
+  @ExperimentalCoroutinesApi
+  @InternalCoroutinesApi
   override fun onActivityCreated(savedInstanceState: Bundle?) {
     super.onActivityCreated(savedInstanceState)
     requireContext().getComponent<MainComponent>().sessionListComponent().inject(this)
 
-    viewModel.viewState.observe(this, Observer { state ->
-      // Update the session list
-      val diffResult = DiffUtil.calculateDiff(
-          SimpleDiffCallback(adapter.sessions, state?.sessions ?: emptyList())
-      )
-      adapter.sessions.clear()
-      state?.let { adapter.sessions.addAll(it.sessions) }
-      diffResult.dispatchUpdatesTo(adapter)
+    viewModel.viewState
+        .asObservable()
+        .autoDisposable(AndroidLifecycleScopeProvider.from(this))
+        .subscribe { state ->
+          // Update the session list
+          val diffResult = DiffUtil.calculateDiff(
+              SimpleDiffCallback(adapter.sessions, state?.sessions ?: emptyList())
+          )
+          adapter.sessions.clear()
+          state?.let { adapter.sessions.addAll(it.sessions) }
+          diffResult.dispatchUpdatesTo(adapter)
 
-      // TODO handle empty list?
-    })
-    viewModel.viewEvents.observe(this, Observer { event ->
-      when (event) {
-        is ScrollToSessionIndex -> list.scrollToPosition(event.index)
-        null -> {} // no op
-      }
-    })
+          // TODO handle empty list?
+        }
+    viewModel.viewEvents
+        .asObservable()
+        .autoDisposable(AndroidLifecycleScopeProvider.from(this))
+        .subscribe { event ->
+          when (event) {
+            is ScrollToSessionIndex -> list.scrollToPosition(event.index)
+            null -> {} // no op
+          }
+        }
 
-    val date = arguments?.getString(ARG_DATE) ?: throw IllegalStateException("Missing date argument")
+    val date = arguments?.getString(ARG_DATE)
+        ?: throw IllegalStateException("Missing date argument")
     viewModel.setDate(date)
   }
 }

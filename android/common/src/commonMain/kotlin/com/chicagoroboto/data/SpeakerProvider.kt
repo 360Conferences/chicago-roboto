@@ -1,17 +1,46 @@
 package com.chicagoroboto.data
 
 import com.chicagoroboto.model.Speaker
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.FlowPreview
+import kotlinx.coroutines.channels.awaitClose
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.callbackFlow
+import kotlinx.coroutines.flow.flowViaChannel
+import kotlinx.coroutines.launch
 
 interface SpeakerProvider {
+
+  @ExperimentalCoroutinesApi fun getSpeakers(): Flow<List<Speaker>>
+
   fun addSpeakerListener(key: Any, onComplete: (speakers: Map<String, Speaker>?) -> Unit)
   fun addSpeakerListener(id: String, onComplete: (speaker: Speaker?) -> Unit)
   fun removeSpeakerListener(key: Any)
 
+  @ExperimentalCoroutinesApi
   @ExperimentalUnsignedTypes
   class Impl(private val db: DatabaseReferenceWrapper) : SpeakerProvider {
 
     private val handles = mutableMapOf<Any, ULong>()
     private val queries = mutableMapOf<Any, DatabaseReferenceWrapper>()
+
+    override fun getSpeakers(): Flow<List<Speaker>> = callbackFlow {
+      val listener = object : ValueEventListenerWrapper {
+        override fun onDataChange(data: DataSnapshotWrapper?) {
+          val speakers = data?.getList(Speaker.Factory::fromDataSnapshot)?.filterNotNull()
+              ?: emptyList()
+          offer(speakers)
+        }
+
+        override fun onCancelled(error: Exception) {
+          close()
+        }
+      }
+      val query = db.child("speakers")
+      val handle = query.addValueEventListener(listener)
+      awaitClose { query.removeEventListener(handle) }
+    }
 
     private fun makeSpeakersValueEventListener(onComplete: (Map<String, Speaker>?) -> Unit) =
       object : ValueEventListenerWrapper {

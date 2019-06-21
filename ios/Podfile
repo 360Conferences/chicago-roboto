@@ -7,6 +7,7 @@ target 'confios' do
 
   # Pods for confios
   pod 'common', :path => '../android/common'
+  # pod 'observable', :path => '../android/observable'
   pod 'Swinject'
   pod 'Firebase/Core'
   pod 'Firebase/Database'

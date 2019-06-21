@@ -1,7 +1,14 @@
 package com.chicagoroboto.data
 
 import com.chicagoroboto.storage.Settings
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.FlowPreview
+import kotlinx.coroutines.channels.ConflatedBroadcastChannel
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.asFlow
 
+@FlowPreview
+@ExperimentalCoroutinesApi
 class LocalFavoriteProvider(private val settings: Settings) : FavoriteProvider {
 
   private val favorites: MutableSet<String> = settings
@@ -9,6 +16,9 @@ class LocalFavoriteProvider(private val settings: Settings) : FavoriteProvider {
       .split(SET_DELIMITER)
       .toMutableSet()
   private val listeners: MutableMap<String, ((sessions: Set<String>) -> Unit)> = mutableMapOf()
+  private val broadcastChannel = ConflatedBroadcastChannel<Set<String>>(favorites)
+
+  override fun getFavorites(): Flow<Set<String>> = broadcastChannel.asFlow()
 
   override fun addFavoriteListener(key: String, onComplete: (sessions: Set<String>) -> Unit) {
     listeners[key] = onComplete
@@ -23,12 +33,14 @@ class LocalFavoriteProvider(private val settings: Settings) : FavoriteProvider {
     favorites.add(id)
     storeFavorites(favorites)
     listeners.forEach { it.value.invoke(favorites) }
+    broadcastChannel.offer(favorites)
   }
 
   override fun removeFavoriteSession(id: String) {
     favorites.remove(id)
     storeFavorites(favorites)
     listeners.forEach { it.value.invoke(favorites) }
+    broadcastChannel.offer(favorites)
   }
 
   private fun storeFavorites(favorites: Set<String>) {

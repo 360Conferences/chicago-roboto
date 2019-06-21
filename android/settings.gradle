@@ -24,4 +24,8 @@ include ':observable'
 include ':observable:jvmMain'
 include ':observable:iosMain'
 
+include ':reactive-streams-mpp'
+include ':reactive-streams-mpp:jvmMain'
+include ':reactive-streams-mpp:iosMain'
+
 enableFeaturePreview('GRADLE_METADATA')

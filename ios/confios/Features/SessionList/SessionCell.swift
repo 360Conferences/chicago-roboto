@@ -33,9 +33,14 @@ class SessionCell: MDCCardCollectionCell {
         room.text = nil
     }
     
-    func bind(to session: Session) {
+    func bind(to session: SessionListViewState.Session) {
         title.text = session.title
-        speakers.text = session.speakers?.joined(separator: ", ")
-        room.text = session.location
+        speakers.text = session.speakers.joined(separator: ", ")
+        room.text = session.room
+        if (session.isFavorite) {
+            favorite.image = UIImage(named: "ic_favorite_black_18pt")
+        } else {
+            favorite.image = UIImage(named: "ic_favorite_border_black_18pt")
+        }
     }
 }

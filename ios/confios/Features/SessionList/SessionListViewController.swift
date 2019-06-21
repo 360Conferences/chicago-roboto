@@ -15,41 +15,33 @@ private let KEY = "SESSION_LIST"
 private let sessionReuseIdentifier = "SessionCell"
 
 class SessionListViewControllerFactory {
-    private let sessionProvider: SessionProvider
+    private let viewModel: SessionListViewModel
 
-    init(sessionProvider: SessionProvider) {
-        self.sessionProvider = sessionProvider
+    init(viewModel: SessionListViewModel) {
+        self.viewModel = viewModel
     }
 
     func create(date: String) -> SessionListViewController {
-        return SessionListViewController(date: date, sessionProvider: sessionProvider)
+        return SessionListViewController(viewModel: viewModel, date: date)
     }
 }
 
 class SessionListViewController: UICollectionViewController {
 
     private let date: String
-    private let sessionProvider: SessionProvider
+    private let viewModel: SessionListViewModel
 
-    private var sessionListener: (([Session]?) -> KotlinUnit)!
-    private var sessions: [Session] = [Session]() {
+    private var sessions: [SessionListViewState.Session] = [SessionListViewState.Session]() {
         didSet {
             self.collectionView.reloadData()
         }
     }
 
-    init(date: String, sessionProvider: SessionProvider) {
+    init(viewModel: SessionListViewModel, date: String) {
         self.date = date
-        self.sessionProvider = sessionProvider
+        self.viewModel = viewModel
 
         super.init(collectionViewLayout: UICollectionViewFlowLayout())
-
-        self.sessionListener = { [weak self] (s: [Session]?) in
-            if let sessions = s {
-                self?.sessions = sessions
-            }
-            return KotlinUnit()
-        }
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -67,7 +59,14 @@ class SessionListViewController: UICollectionViewController {
         let sessionCellNib = UINib.init(nibName: "SessionCell", bundle: nil)
         collectionView.register(sessionCellNib, forCellWithReuseIdentifier: sessionReuseIdentifier)
 
-        sessionProvider.addSessionListener(key: KEY, date: date, onComplete: sessionListener)
+        self.viewModel.viewState.subscribe(
+                onNext: { [weak self] (state: SessionListViewState) in
+                    self?.sessions = state.sessions
+                },
+                onError: { error in
+                    NSLog("Failed to load state.", error.localizedDescription)
+                }
+        )
     }
 
     override func viewDidAppear(_ animated: Bool) {

@@ -9,8 +9,17 @@ import common
 
 class AppAssembly: Assembly {
     func assemble(container: Container) {
+
+        container.register(SessionListViewModel.self) { r in
+            return SessionListViewModel(
+                    sessionProvider: r.resolve(SessionProvider.self)!,
+                    speakerProvider: r.resolve(SpeakerProvider.self)!,
+                    favoriteProvider: r.resolve(FavoriteProvider.self)!
+            )
+        }
+
         container.register(SessionListViewControllerFactory.self) { r in
-            return SessionListViewControllerFactory(sessionProvider: r.resolve(SessionProvider.self)!)
+            return SessionListViewControllerFactory(viewModel: r.resolve(SessionListViewModel.self)!)
         }
 
         container.register(SpeakerListViewController.self) { _ in SpeakerListViewController() }

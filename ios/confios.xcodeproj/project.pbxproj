@@ -10,6 +10,7 @@
 		04347D2022795597006BC2B7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04347D1F22795597006BC2B7 /* GoogleService-Info.plist */; };
 		04347D25227AA093006BC2B7 /* SessionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04347D23227AA093006BC2B7 /* SessionCell.swift */; };
 		04347D28227AA74D006BC2B7 /* SessionListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04347D27227AA74D006BC2B7 /* SessionListViewController.xib */; };
+		04847E6C22B1FF04001632C7 /* BlockSubscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04847E6B22B1FF04001632C7 /* BlockSubscriber.swift */; };
 		04F05D7D228CEDAA0036B670 /* SessionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F05D7C228CEDAA0036B670 /* SessionCell.xib */; };
 		0D03EE738065BED568A6E3A3 /* Pods_confiosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C01037C3CB2F15530E08F7 /* Pods_confiosUITests.framework */; };
 		458AD02401E5623B98B7E0EF /* SpeakerListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 458AD2B125EC533709E85847 /* SpeakerListViewController.xib */; };
@@ -54,6 +55,7 @@
 		04347D1F22795597006BC2B7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		04347D23227AA093006BC2B7 /* SessionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionCell.swift; sourceTree = "<group>"; };
 		04347D27227AA74D006BC2B7 /* SessionListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SessionListViewController.xib; sourceTree = "<group>"; };
+		04847E6B22B1FF04001632C7 /* BlockSubscriber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockSubscriber.swift; sourceTree = "<group>"; };
 		04F05D7C228CEDAA0036B670 /* SessionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SessionCell.xib; sourceTree = "<group>"; };
 		10F32991A30E7AFE57704ABF /* Pods-confiosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-confiosTests.debug.xcconfig"; path = "Target Support Files/Pods-confiosTests/Pods-confiosTests.debug.xcconfig"; sourceTree = "<group>"; };
 		171CD3209A8D6DFAC88EF8CE /* Pods-confiosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-confiosUITests.debug.xcconfig"; path = "Target Support Files/Pods-confiosUITests/Pods-confiosUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -117,6 +119,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04847E6A22B1FEDC001632C7 /* Reactive */ = {
+			isa = PBXGroup;
+			children = (
+				04847E6B22B1FF04001632C7 /* BlockSubscriber.swift */,
+			);
+			path = Reactive;
+			sourceTree = "<group>";
+		};
 		2DD02C81DBBA702F86F835A3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +173,7 @@
 		458AD51703921A93C1D7AFF6 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				04847E6A22B1FEDC001632C7 /* Reactive */,
 				458AD38148016BA24E3599BD /* Scheme.swift */,
 				458ADD7D0B1C1A109A3EC527 /* AppAssembly.swift */,
 			);
@@ -505,6 +516,7 @@
 				458ADF138261EE31E36E523D /* SessionListViewController.swift in Sources */,
 				458ADDC7EB968D5100D10069 /* Scheme.swift in Sources */,
 				458AD496B87A481200FBDD7C /* HomeViewController.swift in Sources */,
+				04847E6C22B1FF04001632C7 /* BlockSubscriber.swift in Sources */,
 				458AD528C3971C7198B268C6 /* AppAssembly.swift in Sources */,
 				458AD6811C6890660972E64F /* SpeakerListViewController.swift in Sources */,
 				458AD110D3009F18FEDF7350 /* SpeakerCell.swift in Sources */,

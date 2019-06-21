@@ -1,6 +1,7 @@
 plugins {
   id "com.android.library"
   id "org.jetbrains.kotlin.multiplatform"
+  id "org.jetbrains.kotlin.native.cocoapods"
 }
 
 version = "1.0.0-SNAPSHOT"
@@ -48,6 +49,7 @@ kotlin {
     jvmMain {
       dependencies {
         implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+        implementation "org.reactivestreams:reactive-streams:1.0.2"
       }
     }
     jvmTest {
@@ -87,6 +89,11 @@ kotlin {
     iosX64().compilations.test.defaultSourceSet {
       dependsOn appleTest
     }
+  }
+
+  cocoapods {
+    summary = "Observable containers for Kotlin MPP applications."
+    homepage = "https://ryanharter.com/"
   }
 }
 

@@ -18,6 +18,10 @@ android {
     versionName "1.0.0"
     testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
   }
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
 
   buildTypes {
     release {
@@ -31,6 +35,17 @@ android {
   }
 }
 
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
+  sourceCompatibility = JavaVersion.VERSION_1_8
+  targetCompatibility = JavaVersion.VERSION_1_8
+
+  kotlinOptions {
+    jvmTarget = '1.8'
+    apiVersion = '1.3'
+    languageVersion = '1.3'
+  }
+}
+
 kotlin {
   targets {
     fromPreset(presets.android, 'jvm')
@@ -39,7 +54,9 @@ kotlin {
     final def iOSTarget = System.getenv('SDK_NAME')?.startsWith('iphoneos')
         ? presets.iosArm64 : presets.iosX64
     fromPreset(iOSTarget, 'ios') {
-      binaries.framework('Common')
+      binaries.framework('Common')  {
+        freeCompilerArgs.add("-Xobjc-generics")
+      }
     }
   }
   sourceSets {
@@ -47,7 +64,7 @@ kotlin {
       dependencies {
         implementation "org.jetbrains.kotlin:kotlin-stdlib"
         implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core-common:$coroutines_version"
-        api project(":observable")
+        implementation "org.jetbrains.kotlinx:atomicfu-common:$atomicfu_version"
       }
     }
     commonTest {
@@ -60,7 +77,8 @@ kotlin {
       dependencies {
         implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
         implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
-        implementation libs.androidx.lifecycle.livedata
+        implementation "org.jetbrains.kotlinx:atomicfu:$atomicfu_version"
+        api "org.reactivestreams:reactive-streams:1.0.2"
       }
     }
     jvmTest {
@@ -71,7 +89,7 @@ kotlin {
     iosMain {
       dependencies {
         implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core-native:$coroutines_version"
-        api project(":observable")
+        implementation "org.jetbrains.kotlinx:atomicfu-native:$atomicfu_version"
       }
     }
   }

@@ -6,6 +6,9 @@ import com.chicagoroboto.data.SessionProvider
 import com.chicagoroboto.data.SpeakerProvider
 import dagger.Module
 import dagger.Provides
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.FlowPreview
+import kotlinx.coroutines.InternalCoroutinesApi
 
 @Module
 class SessionListModule() {
@@ -14,6 +17,9 @@ class SessionListModule() {
         return SessionDatePresenter(sessionDateProvider)
     }
 
+    @FlowPreview
+    @ExperimentalCoroutinesApi
+    @InternalCoroutinesApi
     @Provides fun sessionListViewModel(sessionProvider: SessionProvider,
         speakerProvider: SpeakerProvider,
         favoriteProvider: FavoriteProvider): SessionListViewModel {
