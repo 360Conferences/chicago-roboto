@@ -39,6 +39,9 @@ extension KotlinThrowable {
 }
 
 class BlockSubscriber<T>: Subscriber {
+
+    private var subscription: Subscription?
+
     private let onNextBlock: (T) -> Void
     private let onErrorBlock: (Error) -> Void
     private let onCompleteBlock: () -> Void
@@ -50,11 +53,17 @@ class BlockSubscriber<T>: Subscriber {
     }
 
     func onSubscribe(s: Subscription) {
-
+        if subscription != nil {
+            s.cancel()
+        } else {
+            subscription = s
+            s.request(n: 1)
+        }
     }
 
     func onNext(t: Any?) {
         onNextBlock(t as! T)
+        subscription?.request(n: 1)
     }
 
     func onError(t: KotlinThrowable) {

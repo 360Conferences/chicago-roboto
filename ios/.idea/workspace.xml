@@ -2,76 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="177ed9f0-c012-4550-84f5-64b95b74b15e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/reactive/Processor.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/reactive/Publisher.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/reactive/Subscriber.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/reactive/Subscription.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/kotlinx/coroutines/reactive/flow/FlowAsPublisher.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../android/common/src/iosMain/kotlin/com/chicagoroboto/reactive/Processor.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../android/common/src/iosMain/kotlin/com/chicagoroboto/reactive/Publisher.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../android/common/src/iosMain/kotlin/com/chicagoroboto/reactive/Subscriber.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../android/common/src/iosMain/kotlin/com/chicagoroboto/reactive/Subscription.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../android/common/src/jvmMain/kotlin/com/chicagoroboto/reactive/Processor.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../android/common/src/jvmMain/kotlin/com/chicagoroboto/reactive/Publisher.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../android/common/src/jvmMain/kotlin/com/chicagoroboto/reactive/Subscriber.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../android/common/src/jvmMain/kotlin/com/chicagoroboto/reactive/Subscription.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../android/observable/src/commonMain/kotlin/org/reactivestreams/mpp/Processor.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../android/observable/src/commonMain/kotlin/org/reactivestreams/mpp/Publisher.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../android/observable/src/commonMain/kotlin/org/reactivestreams/mpp/Subscriber.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../android/observable/src/commonMain/kotlin/org/reactivestreams/mpp/Subscription.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../android/observable/src/jvmMain/kotlin/org/reactivestreams/mpp/Processor.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../android/observable/src/jvmMain/kotlin/org/reactivestreams/mpp/Publisher.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../android/observable/src/jvmMain/kotlin/org/reactivestreams/mpp/Subscriber.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../android/observable/src/jvmMain/kotlin/org/reactivestreams/mpp/Subscription.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../android/reactive-streams-mpp/src/commonMain/kotlin/org/reactivestreams/mpp/Processor.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../android/reactive-streams-mpp/src/commonMain/kotlin/org/reactivestreams/mpp/Publisher.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../android/reactive-streams-mpp/src/commonMain/kotlin/org/reactivestreams/mpp/Subscriber.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../android/reactive-streams-mpp/src/commonMain/kotlin/org/reactivestreams/mpp/Subscription.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../android/reactive-streams-mpp/src/jvmMain/kotlin/org/reactivestreams/mpp/Processor.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../android/reactive-streams-mpp/src/jvmMain/kotlin/org/reactivestreams/mpp/Publisher.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../android/reactive-streams-mpp/src/jvmMain/kotlin/org/reactivestreams/mpp/Subscriber.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../android/reactive-streams-mpp/src/jvmMain/kotlin/org/reactivestreams/mpp/Subscription.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../android/reactive-streams-mpp/src/main/AndroidManifest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../android/reactive-streams-mpp/src/nativeCommonMain/kotlin/org/reactivestreams/mpp/Processor.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../android/reactive-streams-mpp/src/nativeCommonMain/kotlin/org/reactivestreams/mpp/Publisher.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../android/reactive-streams-mpp/src/nativeCommonMain/kotlin/org/reactivestreams/mpp/Subscriber.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../android/reactive-streams-mpp/src/nativeCommonMain/kotlin/org/reactivestreams/mpp/Subscription.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/confios/Shared/Reactive/BlockSubscriber.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../android/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android/app/src/main/kotlin/com/chicagoroboto/ext/ObservableExt.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/app/src/main/kotlin/com/chicagoroboto/ext/ObservableExt.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android/app/src/main/kotlin/com/chicagoroboto/features/sessions/SessionListModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/app/src/main/kotlin/com/chicagoroboto/features/sessions/SessionListModule.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android/app/src/main/kotlin/com/chicagoroboto/features/sessions/SessionListView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/app/src/main/kotlin/com/chicagoroboto/features/sessions/SessionListView.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../android/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android/common/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../android/common/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/data/FavoriteProvider.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/data/FavoriteProvider.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/data/LocalFavoriteProvider.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/data/LocalFavoriteProvider.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/data/SessionProvider.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/data/SessionProvider.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/data/SpeakerProvider.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/data/SpeakerProvider.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/ext/Log.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../android/common/src/iosMain/kotlin/com/chicagoroboto/ext/Log.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../android/common/src/jvmMain/kotlin/com/chicagoroboto/ext/Log.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/features/sessions/SessionListViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/common/src/commonMain/kotlin/com/chicagoroboto/features/sessions/SessionListViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android/common/src/iosMain/kotlin/com/chicagoroboto/features/sessions/findCurrentSessionIndex.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/common/src/iosMain/kotlin/com/chicagoroboto/features/sessions/findCurrentSessionIndex.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android/common/src/jvmMain/kotlin/com/chicagoroboto/features/sessions/findCurrentSessionIndex.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/common/src/jvmMain/kotlin/com/chicagoroboto/features/sessions/findCurrentSessionIndex.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android/dependencies.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../android/dependencies.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android/observable-livedata/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android/observable-livedata/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android/observable-livedata/proguard-rules.pro" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android/observable-livedata/src/main/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android/observable-livedata/src/main/java/com/ryanharter/observable/livedata/ObservableExt.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android/observable/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../android/observable/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../android/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../confios/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../confios/confios.xcodeproj/project.xcworkspace/xcuserdata/rharter.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../confios/confios.xcodeproj/xcuserdata/rharter.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Podfile" beforeDir="false" afterPath="$PROJECT_DIR$/Podfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Podfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pods/Manifest.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Manifest.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/rharter.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/rharter.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/confios.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/confios.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/confios.xcworkspace/xcuserdata/rharter.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/confios.xcworkspace/xcuserdata/rharter.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/confios/Data/DataAssembly.swift" beforeDir="false" afterPath="$PROJECT_DIR$/confios/Data/DataAssembly.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/confios/Features/SessionList/SessionCell.swift" beforeDir="false" afterPath="$PROJECT_DIR$/confios/Features/SessionList/SessionCell.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/confios/Features/SessionList/SessionListViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/confios/Features/SessionList/SessionListViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/confios/Shared/AppAssembly.swift" beforeDir="false" afterPath="$PROJECT_DIR$/confios/Shared/AppAssembly.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/confios/Shared/Reactive/BlockSubscriber.swift" beforeDir="false" afterPath="$PROJECT_DIR$/confios/Shared/Reactive/BlockSubscriber.swift" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -160,7 +97,7 @@
       <workItem from="1559790039438" duration="338000" />
       <workItem from="1560109094196" duration="2268000" />
       <workItem from="1560407038966" duration="397000" />
-      <workItem from="1561053010949" duration="4210000" />
+      <workItem from="1561053010949" duration="5910000" />
     </task>
     <servers />
   </component>

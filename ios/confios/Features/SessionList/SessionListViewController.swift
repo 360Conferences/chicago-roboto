@@ -61,12 +61,18 @@ class SessionListViewController: UICollectionViewController {
 
         self.viewModel.viewState.subscribe(
                 onNext: { [weak self] (state: SessionListViewState) in
+                    NSLog("Received onNext[ \(state) ]")
                     self?.sessions = state.sessions
                 },
                 onError: { error in
                     NSLog("Failed to load state.", error.localizedDescription)
+                },
+                onComplete: {
+                    NSLog("onComplete")
                 }
         )
+
+        self.viewModel.setDate(date: self.date)
     }
 
     override func viewDidAppear(_ animated: Bool) {

@@ -3,6 +3,7 @@ package com.chicagoroboto.features.sessions
 import com.chicagoroboto.data.FavoriteProvider
 import com.chicagoroboto.data.SessionProvider
 import com.chicagoroboto.data.SpeakerProvider
+import com.chicagoroboto.ext.Log
 import com.chicagoroboto.features.shared.ViewModel
 import com.chicagoroboto.model.Session
 import com.chicagoroboto.model.Speaker
