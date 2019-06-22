@@ -11,25 +11,18 @@ import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.InternalCoroutinesApi
 
 @Module
-class SessionListModule() {
+object SessionListModule {
 
-    @Provides fun provideSessionDatePresenter(sessionDateProvider: SessionDateProvider): SessionDateListMvp.Presenter {
-        return SessionDatePresenter(sessionDateProvider)
-    }
+    @Provides
+    @JvmStatic
+    fun provideSessionDateViewModel(dateProvider: SessionDateProvider)
+        = SessionDateViewModel(dateProvider)
 
-    @FlowPreview
-    @ExperimentalCoroutinesApi
-    @InternalCoroutinesApi
-    @Provides fun sessionListViewModel(sessionProvider: SessionProvider,
+    @Provides
+    @JvmStatic
+    fun sessionListViewModel(
+        sessionProvider: SessionProvider,
         speakerProvider: SpeakerProvider,
-        favoriteProvider: FavoriteProvider): SessionListViewModel {
-        return SessionListViewModel(sessionProvider, speakerProvider, favoriteProvider)
-    }
-
-    @Provides fun sessionListPresenter(sessionProvider: SessionProvider,
-                                       speakerProvider: SpeakerProvider,
-                                       favoriteProvider: FavoriteProvider): SessionListMvp.Presenter {
-        return SessionListPresenter(sessionProvider, speakerProvider, favoriteProvider)
-    }
-
+        favoriteProvider: FavoriteProvider
+    ) = SessionListViewModel(sessionProvider, speakerProvider, favoriteProvider)
 }

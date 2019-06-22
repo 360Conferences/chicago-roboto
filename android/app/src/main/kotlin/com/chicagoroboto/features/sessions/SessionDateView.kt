@@ -8,20 +8,24 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import com.chicagoroboto.R
+import com.chicagoroboto.ext.asObservable
 import com.chicagoroboto.ext.getComponent
 import com.chicagoroboto.features.TabHolder
 import com.chicagoroboto.features.main.MainComponent
 import com.chicagoroboto.features.main.MainView
 import com.google.android.material.tabs.TabLayout
+import com.uber.autodispose.android.lifecycle.AndroidLifecycleScopeProvider
+import com.uber.autodispose.autoDisposable
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import java.text.SimpleDateFormat
 import java.util.Locale
 import javax.inject.Inject
 
 class SessionDateView : Fragment(), SessionDateListMvp.View, MainView {
 
-    override val titleResId = R.string.action_schedule
+    @Inject lateinit var viewModel: SessionDateViewModel
 
-    @Inject lateinit var presenter: SessionDateListMvp.Presenter
+    override val titleResId = R.string.action_schedule
 
     private var tabLayout: TabLayout? = null
         set(value) {
@@ -37,10 +41,11 @@ class SessionDateView : Fragment(), SessionDateListMvp.View, MainView {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ) = inflater.inflate(R.layout.view_sessions, container, false).apply {
+    ): View = inflater.inflate(R.layout.view_sessions, container, false).apply {
         pager = findViewById(R.id.pager)
     }
 
+    @ExperimentalCoroutinesApi
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         requireContext().getComponent<MainComponent>().sessionListComponent().inject(this)
@@ -54,13 +59,22 @@ class SessionDateView : Fragment(), SessionDateListMvp.View, MainView {
             }
         }
 
-        presenter.onAttach(this)
+        viewModel.viewState
+            .asObservable()
+            .autoDisposable(AndroidLifecycleScopeProvider.from(this))
+            .subscribe {
+                if (it.dates.isEmpty()) {
+                    showNoSessionDates()
+                } else {
+                    showSessionDates(it.dates)
+                    scrollToCurrentDay()
+                }
+            }
     }
 
     override fun onDestroy() {
         tabLayout?.visibility = View.GONE
         tabLayout = null
-        presenter.onDetach()
         super.onDestroy()
     }
 
@@ -74,8 +88,10 @@ class SessionDateView : Fragment(), SessionDateListMvp.View, MainView {
         adapter.dates.addAll(sessionDates)
         adapter.notifyDataSetChanged()
 
-        if (sessionDates.isNotEmpty()) {
-            tabLayout?.visibility = View.VISIBLE
+        tabLayout?.visibility = if (sessionDates.isEmpty()) {
+            View.GONE
+        } else {
+            View.VISIBLE
         }
     }
 

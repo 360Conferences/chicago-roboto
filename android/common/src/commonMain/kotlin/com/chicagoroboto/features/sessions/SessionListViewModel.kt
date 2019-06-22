@@ -8,12 +8,6 @@ import com.chicagoroboto.features.shared.ViewModel
 import com.chicagoroboto.model.Session
 import com.chicagoroboto.model.Speaker
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-//import com.ryanharter.observable.DataObservable
-//import com.ryanharter.observable.EventObservable
-//import com.ryanharter.observable.Observable
-//import com.ryanharter.observable.Observer
-//import com.ryanharter.observable.map
-//import com.ryanharter.observable.switchMap
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.InternalCoroutinesApi
 import kotlinx.coroutines.channels.BroadcastChannel
@@ -25,26 +19,25 @@ import kotlinx.coroutines.flow.combineLatest
 import kotlinx.coroutines.flow.flatMapConcat
 import kotlinx.coroutines.reactive.flow.asPublisher
 
-//
-//class SessionListViewStateObservable(
-//    private val wrapped: Observable<SessionListViewState>
-//) : Observable<SessionListViewState> by wrapped
-
-@InternalCoroutinesApi
-@ExperimentalCoroutinesApi
-@FlowPreview
 class SessionListViewModel(
     private val sessionProvider: SessionProvider,
     private val speakerProvider: SpeakerProvider,
     private val favoriteProvider: FavoriteProvider
 ) : ViewModel() {
 
+  @ExperimentalCoroutinesApi
   private val dateChannel = ConflatedBroadcastChannel<String>()
+  @FlowPreview
+  @ExperimentalCoroutinesApi
   private val sessionFlow: Flow<List<Session>> = dateChannel
       .asFlow()
       .flatMapConcat { sessionProvider.sessionsForDate(it) }
+  @ExperimentalCoroutinesApi
   private val speakerFlow: Flow<List<Speaker>> = speakerProvider.getSpeakers()
+  @ExperimentalCoroutinesApi
   private val favoriteFlow: Flow<Set<String>> = favoriteProvider.getFavorites()
+  @ExperimentalCoroutinesApi
+  @FlowPreview
   val viewState = dateChannel.asFlow()
       .combineLatest(sessionFlow, speakerFlow, favoriteFlow) { date, sessions, speakers, favorites ->
         val viewSessions = sessions.map { s ->
@@ -63,9 +56,13 @@ class SessionListViewModel(
       }
       .asPublisher()
 
+  @ExperimentalCoroutinesApi
   private val eventChannel = BroadcastChannel<SessionListViewEvent>(BUFFERED)
+  @ExperimentalCoroutinesApi
+  @FlowPreview
   val viewEvents = eventChannel.asFlow().asPublisher()
 
+  @ExperimentalCoroutinesApi
   fun setDate(date: String) {
     dateChannel.offer(date)
   }

@@ -12,20 +12,21 @@ import kotlinx.coroutines.launch
 
 interface SessionProvider {
 
+  @ExperimentalCoroutinesApi
   fun sessionsForDate(date: String): Flow<List<Session>>
 
   fun addSessionListener(id: String, onComplete: (Session?) -> Unit)
   fun addSessionListener(key: Any, date: String, onComplete: (sessions: List<Session>?) -> Unit)
   fun removeSessionListener(key: Any)
 
-  @ExperimentalCoroutinesApi
-  @FlowPreview
-  @ExperimentalUnsignedTypes
   class Impl(private val db: DatabaseReferenceWrapper) : SessionProvider {
 
+    @ExperimentalUnsignedTypes
     private val handles: MutableMap<Any, ULong> = mutableMapOf()
     private val queries: MutableMap<Any, DatabaseReferenceWrapper> = mutableMapOf()
 
+    @ExperimentalUnsignedTypes
+    @ExperimentalCoroutinesApi
     override fun sessionsForDate(date: String): Flow<List<Session>> = callbackFlow {
       val query = db.child("sessions")
       val listener = object : ValueEventListenerWrapper {
@@ -46,6 +47,7 @@ interface SessionProvider {
       awaitClose { query.removeEventListener(handle) }
     }
 
+    @ExperimentalUnsignedTypes
     override fun addSessionListener(id: String, onComplete: (Session?) -> Unit) {
       val listener = object : ValueEventListenerWrapper {
         override fun onDataChange(data: DataSnapshotWrapper?) {
@@ -62,6 +64,7 @@ interface SessionProvider {
       handles[id] = query.addValueEventListener(listener)
     }
 
+    @ExperimentalUnsignedTypes
     override fun addSessionListener(
         key: Any, date: String, onComplete: (sessions: List<Session>?) -> Unit
     ) {
@@ -87,6 +90,7 @@ interface SessionProvider {
       handles[key] = query.addValueEventListener(listener)
     }
 
+    @ExperimentalUnsignedTypes
     override fun removeSessionListener(key: Any) {
       val query = queries.remove(key)
       val handle = handles.remove(key)
