@@ -31,6 +31,8 @@ class SessionListViewController: UICollectionViewController {
     private let date: String
     private let viewModel: SessionListViewModel
 
+    private var disposables = [Disposable]()
+
     private var sessions: [SessionListViewState.Session] = [SessionListViewState.Session]() {
         didSet {
             self.collectionView.reloadData()
@@ -59,9 +61,8 @@ class SessionListViewController: UICollectionViewController {
         let sessionCellNib = UINib.init(nibName: "SessionCell", bundle: nil)
         collectionView.register(sessionCellNib, forCellWithReuseIdentifier: sessionReuseIdentifier)
 
-        self.viewModel.viewState.subscribe(
+        disposables <= self.viewModel.viewState.subscribe(
                 onNext: { [weak self] (state: SessionListViewState) in
-                    NSLog("Received onNext[ \(state) ]")
                     self?.sessions = state.sessions
                 },
                 onError: { error in
@@ -97,5 +98,9 @@ class SessionListViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: sessionReuseIdentifier, for: indexPath) as! SessionCell
         cell.bind(to: sessions[indexPath.item])
         return cell
+    }
+
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        super.collectionView(collectionView, didSelectItemAt: indexPath)
     }
 }

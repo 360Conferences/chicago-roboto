@@ -32,14 +32,17 @@ class DataAssembly: Assembly {
             return FirebaseDatabaseReference(eventRef)
         }
 
+        container.register(SessionDateProvider.self) { r in
+            SessionDateProviderImpl(db: r.resolve(FirebaseDatabaseReference.self)!)
+        }
         container.register(SessionProvider.self) { r in
-            return SessionProviderImpl(db: r.resolve(FirebaseDatabaseReference.self)!)
+            SessionProviderImpl(db: r.resolve(FirebaseDatabaseReference.self)!)
         }
         container.register(SpeakerProvider.self) { r in
-            return SpeakerProviderImpl(db: r.resolve(FirebaseDatabaseReference.self)!)
+            SpeakerProviderImpl(db: r.resolve(FirebaseDatabaseReference.self)!)
         }
         container.register(FavoriteProvider.self) { r in
-            return LocalFavoriteProvider(settings: r.resolve(Settings.self)!)
+            LocalFavoriteProvider(settings: r.resolve(Settings.self)!)
         }
     }
 }

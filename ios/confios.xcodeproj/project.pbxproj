@@ -18,13 +18,16 @@
 		458AD100ABC8C421667D1A2A /* DataAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458AD316116E8E7FE4FDEA04 /* DataAssembly.swift */; };
 		458AD110D3009F18FEDF7350 /* SpeakerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458ADA3DCB1550B9136024B6 /* SpeakerCell.swift */; };
 		458AD18B8722CA0803E4D048 /* SpeakerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 458AD7F3A0EA88D023CBF2C9 /* SpeakerCell.xib */; };
+		458AD251D44B0B468A7E5165 /* SessionDatesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 458AD35EFD1D6533E60F9086 /* SessionDatesViewController.xib */; };
 		458AD43BC9E989C4346C9F18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458AD663E2030DA9DCA1BBAF /* AppDelegate.swift */; };
 		458AD496B87A481200FBDD7C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458ADC714AB565A50FB636A8 /* HomeViewController.swift */; };
 		458AD528C3971C7198B268C6 /* AppAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458ADD7D0B1C1A109A3EC527 /* AppAssembly.swift */; };
 		458AD6811C6890660972E64F /* SpeakerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458AD00A08DA21143AD752F7 /* SpeakerListViewController.swift */; };
 		458AD70337DB231AF13E9E91 /* VenueViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 458AD53A98C6C7C6BA3FAC42 /* VenueViewController.xib */; };
+		458AD78F33473C088C4045D4 /* SessionDatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458AD71D35670B3C4E429DCF /* SessionDatesViewController.swift */; };
 		458AD7F37404FD4DAED4C92E /* VenueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458AD3B29936F456BAEF8E6A /* VenueViewController.swift */; };
 		458AD8450B3823C1A5EF1999 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 458ADD664AE3182C2BFAA3C0 /* LaunchScreen.storyboard */; };
+		458AD969031BF14AA2E558F3 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458AD001B3F3C9D9193B7853 /* Array.swift */; };
 		458ADC14076539198002C698 /* FirebaseDatabaseReferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458AD98EDF4E572F6392DDEA /* FirebaseDatabaseReferences.swift */; };
 		458ADC52875D4BA1D9782292 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 458ADBE0CE006943229187AB /* Assets.xcassets */; };
 		458ADCFA88CDEA27AC44E7FB /* confiosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458AD91AA7AA742191886D11 /* confiosTests.swift */; };
@@ -61,16 +64,19 @@
 		171CD3209A8D6DFAC88EF8CE /* Pods-confiosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-confiosUITests.debug.xcconfig"; path = "Target Support Files/Pods-confiosUITests/Pods-confiosUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		316EDA4063DFABCEE89CBED9 /* Pods-confiosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-confiosUITests.release.xcconfig"; path = "Target Support Files/Pods-confiosUITests/Pods-confiosUITests.release.xcconfig"; sourceTree = "<group>"; };
 		3E4AB936EDDB7F57827A1BE5 /* Pods-confios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-confios.debug.xcconfig"; path = "Target Support Files/Pods-confios/Pods-confios.debug.xcconfig"; sourceTree = "<group>"; };
+		458AD001B3F3C9D9193B7853 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		458AD00A08DA21143AD752F7 /* SpeakerListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerListViewController.swift; sourceTree = "<group>"; };
 		458AD03C2A2F40246291BFC9 /* confios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = confios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		458AD2B125EC533709E85847 /* SpeakerListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpeakerListViewController.xib; sourceTree = "<group>"; };
 		458AD2BB4279A457FD0E2EC2 /* confiosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = confiosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		458AD316116E8E7FE4FDEA04 /* DataAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataAssembly.swift; sourceTree = "<group>"; };
+		458AD35EFD1D6533E60F9086 /* SessionDatesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SessionDatesViewController.xib; sourceTree = "<group>"; };
 		458AD38148016BA24E3599BD /* Scheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scheme.swift; sourceTree = "<group>"; };
 		458AD3B29936F456BAEF8E6A /* VenueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueViewController.swift; sourceTree = "<group>"; };
 		458AD422E223A688777B6CA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		458AD53A98C6C7C6BA3FAC42 /* VenueViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VenueViewController.xib; sourceTree = "<group>"; };
 		458AD663E2030DA9DCA1BBAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		458AD71D35670B3C4E429DCF /* SessionDatesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionDatesViewController.swift; sourceTree = "<group>"; };
 		458AD7F3A0EA88D023CBF2C9 /* SpeakerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpeakerCell.xib; sourceTree = "<group>"; };
 		458AD91AA7AA742191886D11 /* confiosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = confiosTests.swift; sourceTree = "<group>"; };
 		458AD98EDF4E572F6392DDEA /* FirebaseDatabaseReferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseDatabaseReferences.swift; sourceTree = "<group>"; };
@@ -147,6 +153,8 @@
 				04347D27227AA74D006BC2B7 /* SessionListViewController.xib */,
 				04347D23227AA093006BC2B7 /* SessionCell.swift */,
 				04F05D7C228CEDAA0036B670 /* SessionCell.xib */,
+				458AD71D35670B3C4E429DCF /* SessionDatesViewController.swift */,
+				458AD35EFD1D6533E60F9086 /* SessionDatesViewController.xib */,
 			);
 			path = SessionList;
 			sourceTree = "<group>";
@@ -158,6 +166,14 @@
 				458AD98EDF4E572F6392DDEA /* FirebaseDatabaseReferences.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		458AD31C01334953DF2F1D3C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				458AD001B3F3C9D9193B7853 /* Array.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		458AD4921E1EEE1A987845F3 /* Products */ = {
@@ -176,6 +192,7 @@
 				04847E6A22B1FEDC001632C7 /* Reactive */,
 				458AD38148016BA24E3599BD /* Scheme.swift */,
 				458ADD7D0B1C1A109A3EC527 /* AppAssembly.swift */,
+				458AD31C01334953DF2F1D3C /* Extensions */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -376,6 +393,7 @@
 				458AD02401E5623B98B7E0EF /* SpeakerListViewController.xib in Resources */,
 				458AD18B8722CA0803E4D048 /* SpeakerCell.xib in Resources */,
 				458AD70337DB231AF13E9E91 /* VenueViewController.xib in Resources */,
+				458AD251D44B0B468A7E5165 /* SessionDatesViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,6 +539,8 @@
 				458AD6811C6890660972E64F /* SpeakerListViewController.swift in Sources */,
 				458AD110D3009F18FEDF7350 /* SpeakerCell.swift in Sources */,
 				458AD7F37404FD4DAED4C92E /* VenueViewController.swift in Sources */,
+				458AD78F33473C088C4045D4 /* SessionDatesViewController.swift in Sources */,
+				458AD969031BF14AA2E558F3 /* Array.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

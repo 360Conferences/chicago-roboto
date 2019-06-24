@@ -10,8 +10,19 @@ import common
 class AppAssembly: Assembly {
     func assemble(container: Container) {
 
+        container.register(SessionDateViewModel.self) { r in
+            SessionDateViewModel(sessionDateProvider: r.resolve(SessionDateProvider.self)!)
+        }
+
+        container.register(SessionDatesViewController.self) { r in
+            SessionDatesViewController(
+                    viewModel: r.resolve(SessionDateViewModel.self)!,
+                    sessionListViewControllerFactory: r.resolve(SessionListViewControllerFactory.self)!
+            )
+        }
+
         container.register(SessionListViewModel.self) { r in
-            return SessionListViewModel(
+            SessionListViewModel(
                     sessionProvider: r.resolve(SessionProvider.self)!,
                     speakerProvider: r.resolve(SpeakerProvider.self)!,
                     favoriteProvider: r.resolve(FavoriteProvider.self)!
@@ -19,15 +30,14 @@ class AppAssembly: Assembly {
         }
 
         container.register(SessionListViewControllerFactory.self) { r in
-            return SessionListViewControllerFactory(viewModel: r.resolve(SessionListViewModel.self)!)
+            SessionListViewControllerFactory(viewModel: r.resolve(SessionListViewModel.self)!)
         }
 
         container.register(SpeakerListViewController.self) { _ in SpeakerListViewController() }
         container.register(VenueViewController.self) { _ in VenueViewController() }
 
         container.register([UIViewController].self, name: "MainViewControllers") { r in
-            let factory = r.resolve(SessionListViewControllerFactory.self)!
-            let c1 = factory.create(date: "2019-04-25")
+            let c1 = r.resolve(SessionDatesViewController.self)!
             c1.tabBarItem = UITabBarItem(title: "Sessions", image: UIImage.init(named: "ic_schedule_black_18pt"), tag: 0)
 
             let c2 = r.resolve(SpeakerListViewController.self)!

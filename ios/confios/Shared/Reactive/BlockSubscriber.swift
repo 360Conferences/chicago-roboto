@@ -10,17 +10,28 @@ import Foundation
 import common
 
 extension Publisher {
+
+    /**
+        Subscribes to the Publisher, returning a [Disposable], which will automatically cancel the subscription on
+        `deinit`.
+    */
     func subscribe<T>(
             onNext onNextBlock: @escaping (T) -> Void,
             onError onErrorBlock: @escaping (Error) -> Void = {_ in},
             onComplete onCompleteBlock: @escaping () -> Void = {}
-    ) {
-        self.subscribe(s: BlockSubscriber<T>(
+    ) -> Disposable {
+        let subscriber =  BlockSubscriber<T>(
             onNextBlock: onNextBlock,
             onErrorBlock: {_ in },
             onCompleteBlock: {}
-        ))
+        )
+        subscribe(s: subscriber)
+        return subscriber
     }
+}
+
+protocol Disposable {
+    func dispose()
 }
 
 class SubscriberError: Error {
@@ -38,9 +49,10 @@ extension KotlinThrowable {
     }
 }
 
-class BlockSubscriber<T>: Subscriber {
+class BlockSubscriber<T>: Subscriber, Disposable {
 
     private var subscription: Subscription?
+    private var cancelled = false
 
     private let onNextBlock: (T) -> Void
     private let onErrorBlock: (Error) -> Void
@@ -62,6 +74,8 @@ class BlockSubscriber<T>: Subscriber {
     }
 
     func onNext(t: Any?) {
+        guard !cancelled else { return }
+
         onNextBlock(t as! T)
         subscription?.request(n: 1)
     }
@@ -72,5 +86,16 @@ class BlockSubscriber<T>: Subscriber {
 
     func onComplete() {
         onCompleteBlock()
+    }
+
+    func dispose() {
+        if (!cancelled) {
+            cancelled = true
+            subscription?.cancel()
+        }
+    }
+
+    deinit {
+        dispose()
     }
 }
