@@ -14,6 +14,7 @@
             <connections>
                 <outlet property="contentView" destination="9Tp-Me-dq0" id="cJm-4Y-86W"/>
                 <outlet property="tabs" destination="I5j-lU-kwt" id="ENX-Pz-fgb"/>
+                <outlet property="toolbar" destination="HBN-kS-5bu" id="261-wy-YIR"/>
                 <outlet property="view" destination="iN0-l3-epB" id="fxF-jj-f5w"/>
             </connections>
         </placeholder>
@@ -22,28 +23,37 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="I5j-lU-kwt">
-                    <rect key="frame" x="146.5" y="44" width="121" height="28"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="27" id="1Jg-VN-mUM"/>
-                    </constraints>
-                    <segments>
-                        <segment title="First"/>
-                        <segment title="Second"/>
-                    </segments>
-                </segmentedControl>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HBN-kS-5bu">
+                    <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <items>
+                        <barButtonItem style="plain" id="BRg-k5-WKS">
+                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="I5j-lU-kwt">
+                                <rect key="frame" x="20" y="7.5" width="374" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="1Jg-VN-mUM"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                            </segmentedControl>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Tp-Me-dq0">
-                    <rect key="frame" x="0.0" y="79" width="414" height="783"/>
+                    <rect key="frame" x="0.0" y="89" width="414" height="773"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="9Tp-Me-dq0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="3pg-ze-dG3"/>
-                <constraint firstItem="I5j-lU-kwt" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="AXP-Ou-fKZ"/>
-                <constraint firstItem="I5j-lU-kwt" firstAttribute="centerX" secondItem="9Tp-Me-dq0" secondAttribute="centerX" id="R4M-Tw-Imk"/>
+                <constraint firstItem="9Tp-Me-dq0" firstAttribute="top" secondItem="HBN-kS-5bu" secondAttribute="bottom" constant="1" id="KFF-lG-EbS"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="HBN-kS-5bu" secondAttribute="trailing" id="NHa-Ve-OLX"/>
+                <constraint firstItem="HBN-kS-5bu" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Oci-Y0-FJe"/>
                 <constraint firstAttribute="trailing" secondItem="9Tp-Me-dq0" secondAttribute="trailing" id="aBc-3d-Kcy"/>
-                <constraint firstItem="9Tp-Me-dq0" firstAttribute="top" secondItem="I5j-lU-kwt" secondAttribute="bottom" constant="8" symbolic="YES" id="dlt-N4-MMX"/>
+                <constraint firstItem="HBN-kS-5bu" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="i4T-o1-O4s"/>
                 <constraint firstItem="9Tp-Me-dq0" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="ivG-Li-5ww"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

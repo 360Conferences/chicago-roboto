@@ -7,29 +7,18 @@
 //
 
 import UIKit
-import MaterialComponents
 
 class HomeViewController: UITabBarController {
-
-    private static let indexNotFound = -1
-
-    private let navigationBar = MDCBottomNavigationBar()
 
     init(viewControllers: [UIViewController]) {
         super.init(nibName: nil, bundle: nil)
         super.viewControllers = viewControllers
+
+        navigationItem.title = "Chicago Roboto" // todo read from config
     }
 
     @available(*, unavailable)
     required init?(coder aDecoder: NSCoder) {
         fatalError("die")
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        view.backgroundColor = containerScheme.colorScheme.backgroundColor
-        view.addSubview(navigationBar)
-    }
-
 }
