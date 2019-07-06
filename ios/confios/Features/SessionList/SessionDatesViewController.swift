@@ -18,6 +18,7 @@ class SessionDatesViewController: UIViewController {
     private let dateFormatter = DateFormatter()
     private let titleFormatter = DateFormatter()
     private var disposables = [Disposable]()
+    private var currentTabIndex = 0
     private var currentChildVC: UIViewController? = nil
 
     private var dates: [String]? = nil {
@@ -86,11 +87,49 @@ class SessionDatesViewController: UIViewController {
             selectedDate = dates[0]
         }
 
-        currentChildVC?.remove()
-        currentChildVC = viewControllerForDate(date: selectedDate)
-        if let child = currentChildVC {
-            add(child, inContainer: contentView)
+        let newVC = viewControllerForDate(date: selectedDate)
+        newVC.willMove(toParent: self)
+        guard let oldVC = currentChildVC else {
+            addChild(newVC)
+            contentView.addSubview(newVC.view)
+            newVC.didMove(toParent: self)
+            currentChildVC = newVC
+            currentTabIndex = selectedIndex
+            return
         }
+        
+        oldVC.willMove(toParent: nil)
+        addChild(newVC)
+        
+        let endFrame: CGRect
+        let originalFrame = oldVC.view.frame
+        if selectedIndex < currentTabIndex {
+            // coming in from the left
+            newVC.view.frame = originalFrame.applying(CGAffineTransform(translationX: -originalFrame.width, y: 0))
+            endFrame = originalFrame.applying(CGAffineTransform(translationX: originalFrame.width, y: 0))
+        } else {
+            // coming in from the right
+            newVC.view.frame = originalFrame.applying(CGAffineTransform(translationX: originalFrame.width, y: 0))
+            endFrame = originalFrame.applying(CGAffineTransform(translationX: -originalFrame.width, y: 0))
+        }
+        
+        transition(
+            from: oldVC,
+            to: newVC,
+            duration: 0.1,
+            options: [],
+            animations: {
+                newVC.view.frame = oldVC.view.frame
+                oldVC.view.frame = endFrame
+            },
+            completion: { (finished) in
+                oldVC.removeFromParent()
+                newVC.didMove(toParent: self)
+            }
+        )
+        
+        currentChildVC = newVC
+        currentTabIndex = selectedIndex
     }
 
     private func viewControllerForDate(date: String) -> UIViewController {

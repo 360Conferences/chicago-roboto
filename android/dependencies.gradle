@@ -5,7 +5,7 @@ ext {
   minSdkVersion = 21
   targetSdkVersion = 28
 
-  coroutines_version = '1.3.0-M1'
+  coroutines_version = '1.3.0-M2'
   dagger_version = '2.4'
   play_services_version = '12.0.1'
   lifecycle_version = '2.1.0-beta01'

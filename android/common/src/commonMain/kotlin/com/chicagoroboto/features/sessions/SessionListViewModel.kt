@@ -1,3 +1,5 @@
+@file:Suppress("EXPERIMENTAL_API_USAGE")
+
 package com.chicagoroboto.features.sessions
 
 import com.chicagoroboto.data.FavoriteProvider
@@ -25,19 +27,12 @@ class SessionListViewModel(
     private val favoriteProvider: FavoriteProvider
 ) : ViewModel() {
 
-  @ExperimentalCoroutinesApi
   private val dateChannel = ConflatedBroadcastChannel<String>()
-  @FlowPreview
-  @ExperimentalCoroutinesApi
   private val sessionFlow: Flow<List<Session>> = dateChannel
       .asFlow()
       .flatMapConcat { sessionProvider.sessionsForDate(it) }
-  @ExperimentalCoroutinesApi
   private val speakerFlow: Flow<List<Speaker>> = speakerProvider.getSpeakers()
-  @ExperimentalCoroutinesApi
   private val favoriteFlow: Flow<Set<String>> = favoriteProvider.getFavorites()
-  @ExperimentalCoroutinesApi
-  @FlowPreview
   val viewState = dateChannel.asFlow()
       .combineLatest(sessionFlow, speakerFlow, favoriteFlow) { date, sessions, speakers, favorites ->
         val viewSessions = sessions.map { s ->
@@ -56,18 +51,12 @@ class SessionListViewModel(
       }
       .asPublisher()
 
-  @ExperimentalCoroutinesApi
   private val eventChannel = BroadcastChannel<SessionListViewEvent>(BUFFERED)
-  @ExperimentalCoroutinesApi
-  @FlowPreview
   val viewEvents = eventChannel.asFlow().asPublisher()
 
-  @ExperimentalCoroutinesApi
   fun setDate(date: String) {
     dateChannel.offer(date)
   }
 }
 
-@ExperimentalCoroutinesApi
-@InternalCoroutinesApi
 internal expect fun SessionListViewModel.findCurrentSessionIndex(sessions: List<Session>): Int
