@@ -1,9 +1,8 @@
 ext {
 
-  compileSdkVersion = 27
-  buildToolsVersion = "27.1.0"
+  compileSdkVersion = 29
   minSdkVersion = 21
-  targetSdkVersion = 27
+  targetSdkVersion = 29
 
   dagger_version = '2.4'
   play_services_version = '12.0.1'
