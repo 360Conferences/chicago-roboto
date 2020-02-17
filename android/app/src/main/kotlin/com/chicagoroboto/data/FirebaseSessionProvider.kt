@@ -16,11 +16,11 @@ class FirebaseSessionProvider(private val database: DatabaseReference) : Session
 
     override fun addSessionListener(id: String, onComplete: (Session?) -> Unit) {
         val listener = object : ValueEventListener {
-            override fun onDataChange(data: DataSnapshot?) {
-                onComplete(data?.getValue(Session::class.java))
+            override fun onDataChange(data: DataSnapshot) {
+                onComplete(data.getValue(Session::class.java))
             }
 
-            override fun onCancelled(e: DatabaseError?) {
+            override fun onCancelled(e: DatabaseError) {
                 onComplete(null)
             }
         }
@@ -33,16 +33,16 @@ class FirebaseSessionProvider(private val database: DatabaseReference) : Session
 
     override fun addSessionListener(key: Any, date: String, onComplete: (List<Session>?) -> Unit) {
         val listener = object : ValueEventListener {
-            override fun onDataChange(data: DataSnapshot?) {
+            override fun onDataChange(data: DataSnapshot) {
                 val typeIndicator = object : GenericTypeIndicator<HashMap<String, @JvmSuppressWildcards Session>>() {}
-                val sessions = data?.getValue(typeIndicator)
+                val sessions = data.getValue(typeIndicator)
                         ?.map { it.value }
                         ?.filter { it.start_time?.startsWith(date) ?: false }
                         ?.sortedBy { it.startTime }
                 onComplete(sessions)
             }
 
-            override fun onCancelled(p0: DatabaseError?) {
+            override fun onCancelled(e: DatabaseError) {
                 onComplete(null)
             }
         }
@@ -54,7 +54,8 @@ class FirebaseSessionProvider(private val database: DatabaseReference) : Session
     }
 
     override fun removeSessionListener(key: Any) {
-        val query = queries.remove(key)
-        query?.removeEventListener(listeners.remove(key))
+        queries.remove(key)?.let { query ->
+            listeners.remove(key)?.let { query.removeEventListener(it) }
+        }
     }
 }

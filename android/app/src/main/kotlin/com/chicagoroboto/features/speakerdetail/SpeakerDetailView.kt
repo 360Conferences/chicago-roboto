@@ -6,8 +6,8 @@ import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
 import android.net.Uri
-import android.support.constraint.ConstraintLayout
-import android.support.v4.app.ActivityCompat
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.app.ActivityCompat
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import com.bumptech.glide.Glide

@@ -14,11 +14,11 @@ class FirebaseVenueProvider(val database: DatabaseReference) : VenueProvider {
         }
 
         val listener = object : ValueEventListener {
-            override fun onDataChange(data: DataSnapshot?) {
-                onComplete(data?.getValue(Venue::class.java))
+            override fun onDataChange(data: DataSnapshot) {
+                onComplete(data.getValue(Venue::class.java))
             }
 
-            override fun onCancelled(e: DatabaseError?) {
+            override fun onCancelled(e: DatabaseError) {
                 onComplete(null)
             }
         }
@@ -30,10 +30,8 @@ class FirebaseVenueProvider(val database: DatabaseReference) : VenueProvider {
     }
 
     override fun removeVenueListener(key: Any) {
-        val query = queries[key]
-        query?.removeEventListener(listeners[key])
-
-        queries.remove(key)
-        listeners.remove(key)
+        queries.remove(key)?.let { query ->
+            listeners.remove(key)?.let { query.removeEventListener(it) }
+        }
     }
 }

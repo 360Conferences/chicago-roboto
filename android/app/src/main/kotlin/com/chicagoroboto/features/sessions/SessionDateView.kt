@@ -1,7 +1,7 @@
 package com.chicagoroboto.features.sessions
 
 import android.content.Context
-import android.support.design.widget.TabLayout
+import com.google.android.material.tabs.TabLayout
 import android.text.format.DateUtils
 import android.util.AttributeSet
 import android.view.LayoutInflater

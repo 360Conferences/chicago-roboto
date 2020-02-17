@@ -4,13 +4,13 @@ import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Rect
 import android.graphics.drawable.Drawable
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.View
 import com.chicagoroboto.R
 
 internal class SessionItemDecoration(private val context: Context) : RecyclerView.ItemDecoration() {
 
-    private val divider: Drawable
+    private val divider: Drawable?
     private val spacing: Int
 
     init {
@@ -22,6 +22,8 @@ internal class SessionItemDecoration(private val context: Context) : RecyclerVie
     }
 
     override fun onDraw(c: Canvas, parent: RecyclerView, state: RecyclerView.State) {
+        if (divider == null) return
+
         val childCount = parent.childCount
         for (i in 0..childCount) {
             val view = parent.getChildAt(i)
@@ -42,6 +44,8 @@ internal class SessionItemDecoration(private val context: Context) : RecyclerVie
     }
 
     override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
+        if (divider == null) return
+
         val holder = parent.getChildViewHolder(view)
         if (holder is SessionAdapter.ViewHolder) {
             if (holder.timeslot.visibility == View.VISIBLE && holder.adapterPosition != 0) {

@@ -20,12 +20,12 @@ class FirebaseSpeakerProvider(private val database: DatabaseReference) : Speaker
         }
 
         val listener = object : ValueEventListener {
-            override fun onDataChange(data: DataSnapshot?) {
+            override fun onDataChange(data: DataSnapshot) {
                 val typeIndicator = object : GenericTypeIndicator<HashMap<String, Speaker>>() {}
-                onComplete(data?.getValue(typeIndicator))
+                onComplete(data.getValue(typeIndicator))
             }
 
-            override fun onCancelled(e: DatabaseError?) {
+            override fun onCancelled(e: DatabaseError) {
                 onComplete(null)
             }
         }
@@ -42,11 +42,11 @@ class FirebaseSpeakerProvider(private val database: DatabaseReference) : Speaker
         }
 
         val listener = object : ValueEventListener {
-            override fun onDataChange(data: DataSnapshot?) {
-                onComplete(data?.getValue(Speaker::class.java))
+            override fun onDataChange(data: DataSnapshot) {
+                onComplete(data.getValue(Speaker::class.java))
             }
 
-            override fun onCancelled(e: DatabaseError?) {
+            override fun onCancelled(e: DatabaseError) {
                 onComplete(null)
             }
         }
@@ -58,10 +58,8 @@ class FirebaseSpeakerProvider(private val database: DatabaseReference) : Speaker
     }
 
     override fun removeSpeakerListener(key: Any) {
-        val query = queries[key]
-        query?.removeEventListener(listeners[key])
-
-        queries.remove(key)
-        listeners.remove(key)
+        queries.remove(key)?.let { query ->
+            listeners.remove(key)?.let { query.removeEventListener(it) }
+        }
     }
 }

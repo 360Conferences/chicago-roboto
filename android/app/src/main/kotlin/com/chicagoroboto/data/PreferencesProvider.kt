@@ -7,12 +7,12 @@ import java.util.*
 
 class PreferencesProvider(val app: Application) {
 
-    val sharedPreferences: SharedPreferences = app.getSharedPreferences("devcon", Context.MODE_PRIVATE)
+  private val sharedPreferences: SharedPreferences =
+      app.getSharedPreferences("devcon", Context.MODE_PRIVATE)
 
-    fun getId(): String? {
-        if (!sharedPreferences.contains("uid")) {
-            sharedPreferences.edit().putString("uid", UUID.randomUUID().toString()).apply();
+  val uid: String
+    get() = sharedPreferences.getString("uid", null)
+        ?: UUID.randomUUID().toString().also {
+          sharedPreferences.edit().putString("uid", it).apply()
         }
-        return sharedPreferences.getString("uid", null)
-    }
 }

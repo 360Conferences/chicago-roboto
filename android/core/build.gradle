@@ -8,15 +8,14 @@ sourceSets {
 }
 
 dependencies {
-    compile libs.kotlinStdlib
+    api libs.kotlinStdlib
 
-    testCompile libs.junit4
-    testCompile libs.truth
-    testCompile libs.mockitoCore
-    testCompile libs.mockitoKotlin
-    testCompile libs.kotlinStdlib
-    testCompile libs.kotlinRuntime
-    testCompile libs.kotlinTest
+    testImplementation libs.junit4
+    testImplementation libs.truth
+    testImplementation libs.mockitoCore
+    testImplementation libs.mockitoKotlin
+    testImplementation libs.kotlinStdlib
+    testImplementation libs.kotlinTest
 }
 
 sourceCompatibility = "1.7"

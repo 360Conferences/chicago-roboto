@@ -3,21 +3,21 @@ package com.chicagoroboto.data
 import com.google.firebase.database.*
 import java.util.*
 
-class FirebaseSessionDateProvider(private val dbRoot: DatabaseReference) : SessionDateProvider {
+class FirebaseSessionDateProvider(dbRoot: DatabaseReference) : SessionDateProvider {
 
     private val ref: DatabaseReference = dbRoot.child("config").child("event_dates")
 
-    private val listeners: MutableMap<Any, ValueEventListener> = HashMap<Any, ValueEventListener>()
+    private val listeners: MutableMap<Any, ValueEventListener> = HashMap()
 
     override fun addSessionDateListener(key: Any, onComplete: (List<String>?) -> Unit) {
         val listener = object : ValueEventListener {
-            override fun onDataChange(data: DataSnapshot?) {
+            override fun onDataChange(data: DataSnapshot) {
                 val typeIndicator = object : GenericTypeIndicator<ArrayList<String>>() {}
-                val dates = data?.getValue(typeIndicator)
+                val dates = data.getValue(typeIndicator)
                 onComplete(dates)
             }
 
-            override fun onCancelled(error: DatabaseError?) {
+            override fun onCancelled(error: DatabaseError) {
                 onComplete(null)
             }
         }
@@ -26,6 +26,6 @@ class FirebaseSessionDateProvider(private val dbRoot: DatabaseReference) : Sessi
     }
 
     override fun removeSessionDateListener(key: Any) {
-        ref.removeEventListener(listeners[key])
+        listeners[key]?.let { ref.removeEventListener(it) }
     }
 }

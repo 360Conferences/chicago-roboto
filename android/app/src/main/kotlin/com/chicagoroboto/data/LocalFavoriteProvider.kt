@@ -6,7 +6,7 @@ class LocalFavoriteProvider(private val prefs: SharedPreferences) : FavoriteProv
 
   private val favoritesKey = "favorite_sessions"
 
-  private val favorites: MutableSet<String> = prefs.getStringSet(favoritesKey, mutableSetOf())
+  private val favorites: MutableSet<String> = prefs.getStringSet(favoritesKey, setOf())!!.toMutableSet()
   private val listeners: MutableMap<String, ((sessions: Set<String>) -> Unit)> = mutableMapOf()
 
   override fun addFavoriteListener(key: String, onComplete: (sessions: Set<String>) -> Unit) {
