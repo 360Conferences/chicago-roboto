@@ -1,12 +1,14 @@
 package com.chicagoroboto.data
 
-import android.content.SharedPreferences
+import javax.inject.Inject
 
-class LocalFavoriteProvider(private val prefs: SharedPreferences) : FavoriteProvider {
+class LocalFavoriteProvider @Inject constructor(
+    private val prefs: PreferencesProvider
+) : FavoriteProvider {
 
   private val favoritesKey = "favorite_sessions"
 
-  private val favorites: MutableSet<String> = prefs.getStringSet(favoritesKey, setOf())!!.toMutableSet()
+  private val favorites: MutableSet<String> = prefs.getStringSet(favoritesKey).toMutableSet()
   private val listeners: MutableMap<String, ((sessions: Set<String>) -> Unit)> = mutableMapOf()
 
   override fun addFavoriteListener(key: String, onComplete: (sessions: Set<String>) -> Unit) {
@@ -20,13 +22,13 @@ class LocalFavoriteProvider(private val prefs: SharedPreferences) : FavoriteProv
 
   override fun addFavoriteSession(id: String) {
     favorites.add(id)
-    prefs.edit().putStringSet(favoritesKey, favorites).apply()
+    prefs.putStringSet(favoritesKey, favorites)
     listeners.forEach { it.value.invoke(favorites) }
   }
 
   override fun removeFavoriteSession(id: String) {
     favorites.remove(id)
-    prefs.edit().putStringSet(favoritesKey, favorites).apply()
+    prefs.putStringSet(favoritesKey, favorites)
     listeners.forEach { it.value.invoke(favorites) }
   }
 }

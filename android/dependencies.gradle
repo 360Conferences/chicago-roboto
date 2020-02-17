@@ -4,7 +4,7 @@ ext {
   minSdkVersion = 21
   targetSdkVersion = 29
 
-  dagger_version = '2.4'
+  dagger_version = '2.26'
 
   libs = [
       circularImageView: 'com.mikhaellopez:circularimageview:3.0.2',

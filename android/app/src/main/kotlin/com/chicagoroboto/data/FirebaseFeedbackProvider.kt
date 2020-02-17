@@ -2,8 +2,9 @@ package com.chicagoroboto.data
 
 import com.chicagoroboto.model.Feedback
 import com.google.firebase.database.*
+import javax.inject.Inject
 
-class FirebaseFeedbackProvider(
+class FirebaseFeedbackProvider @Inject constructor(
     db: DatabaseReference,
     private val preferencesProvider: PreferencesProvider
 ) : FeedbackProvider {
