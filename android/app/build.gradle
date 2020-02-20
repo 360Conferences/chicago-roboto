@@ -57,17 +57,19 @@ android {
 dependencies {
   implementation libs.constraintLayout
   implementation libs.circularImageView
-  implementation libs.firebaseAuth
-  implementation libs.firebaseCore
-  implementation libs.firebaseDatabase
-  implementation libs.firebaseStorage
+  implementation libs.firebase.auth
+  implementation libs.firebase.database
+  implementation libs.firebase.storage
   implementation libs.kotlinStdlib
+  implementation libs.kotlin.coroutines.android
+  implementation libs.kotlin.coroutines.firebase
   implementation libs.multilineToolbar
   implementation libs.playServicesMaps
   implementation libs.recyclerView
   implementation libs.supportAppCompat
   implementation libs.supportCardView
   implementation libs.supportDesign
+  implementation libs.timber.android
 
   implementation project(':core')
 

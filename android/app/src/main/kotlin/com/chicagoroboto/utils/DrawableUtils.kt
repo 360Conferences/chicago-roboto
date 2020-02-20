@@ -17,13 +17,11 @@ object DrawableUtils {
    * to a plain old drawable resource.
    */
   @CheckResult fun create(context: Context, @DrawableRes resourceId: Int): Drawable? {
-    var drawable: Drawable?
-    try {
-      drawable = VectorDrawableCompat.create(context.resources, resourceId, context.theme)
+    return try {
+      VectorDrawableCompat.create(context.resources, resourceId, context.theme)
     } catch (exception: Resources.NotFoundException) {
-      drawable = ContextCompat.getDrawable(context, resourceId)
+      ContextCompat.getDrawable(context, resourceId)
     }
-    return drawable
   }
 
 }

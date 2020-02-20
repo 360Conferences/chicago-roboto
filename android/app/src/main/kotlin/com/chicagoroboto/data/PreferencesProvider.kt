@@ -10,7 +10,7 @@ class PreferencesProvider @Inject constructor(
     val app: Application
 ) {
 
-  private val sharedPreferences: SharedPreferences =
+  val sharedPreferences: SharedPreferences =
       app.getSharedPreferences("devcon", Context.MODE_PRIVATE)
 
   val uid: String

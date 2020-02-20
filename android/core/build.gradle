@@ -2,20 +2,24 @@ apply plugin: 'java'
 apply plugin: 'kotlin'
 
 sourceSets {
-    main.java.srcDirs += 'src/main/kotlin'
-    test.java.srcDirs += 'src/test/kotlin'
-    androidTest.java.srcDirs += 'src/androidTest/kotlin'
+  main.java.srcDirs += 'src/main/kotlin'
+  test.java.srcDirs += 'src/test/kotlin'
+  androidTest.java.srcDirs += 'src/androidTest/kotlin'
 }
 
 dependencies {
-    api libs.kotlinStdlib
+  api libs.kotlinStdlib
+  api libs.kotlin.coroutines.core
+  api libs.dagger
 
-    testImplementation libs.junit4
-    testImplementation libs.truth
-    testImplementation libs.mockitoCore
-    testImplementation libs.mockitoKotlin
-    testImplementation libs.kotlinStdlib
-    testImplementation libs.kotlinTest
+  implementation libs.timber.jdk
+
+  testImplementation libs.junit4
+  testImplementation libs.truth
+  testImplementation libs.mockitoCore
+  testImplementation libs.mockitoKotlin
+  testImplementation libs.kotlinStdlib
+  testImplementation libs.kotlinTest
 }
 
 sourceCompatibility = "1.7"

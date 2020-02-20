@@ -1,75 +1,92 @@
 package com.chicagoroboto.features.sessiondetail
 
-import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.recyclerview.widget.DiffUtil.ItemCallback
+import androidx.recyclerview.widget.ListAdapter
+import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.chicagoroboto.R
-import com.chicagoroboto.data.AvatarProvider
-import com.chicagoroboto.model.Speaker
+import com.chicagoroboto.features.sessiondetail.SessionDetailPresenter.Model.Speaker
 import com.chicagoroboto.utils.DrawableUtils
-import kotlinx.android.synthetic.main.item_speaker.view.*
 
-internal class SpeakerAdapter(private val avatarProvider: AvatarProvider,
-                              val wrapsWidth: Boolean = true,
-                              val onSpeakerClickedListener: ((speaker: Speaker, view: View) -> Unit)) :
-        RecyclerView.Adapter<SpeakerAdapter.ViewHolder>() {
+internal class SpeakerAdapter(
+    private val wrapsWidth: Boolean = true,
+    private val callback: Callback
+) : ListAdapter<Speaker, SpeakerAdapter.ViewHolder>(SpeakerItemCallback) {
 
-    val speakers: MutableList<Speaker> = mutableListOf()
+  interface Callback {
+    fun onSpeakerClicked(speaker: Speaker)
+  }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.item_speaker, parent, false)
-        if (!wrapsWidth) {
-            v.layoutParams.width = ViewGroup.LayoutParams.MATCH_PARENT
-        }
-        return ViewHolder(v, avatarProvider, onSpeakerClickedListener)
+  override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+    holder.bind(getItem(position))
+  }
+
+  override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+    val v = LayoutInflater.from(parent.context).inflate(R.layout.item_speaker, parent, false)
+    if (!wrapsWidth) {
+      v.layoutParams.width = ViewGroup.LayoutParams.MATCH_PARENT
+    }
+    return ViewHolder(v, callback)
+  }
+
+  internal class ViewHolder(
+      itemView: View,
+      private val callback: Callback
+  ) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
+
+    private val image: ImageView = itemView.findViewById(R.id.image)
+    private val name: TextView = itemView.findViewById(R.id.name)
+    private val namePlaceholder: View = itemView.findViewById(R.id.ph_name)
+    private val title: TextView = itemView.findViewById(R.id.title)
+
+    private var speaker: Speaker? = null
+
+    init {
+      itemView.setOnClickListener(this)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(speakers[position])
+    fun bind(speaker: Speaker) {
+      this.speaker = speaker
+      if (speaker.name.isBlank()) {
+        namePlaceholder.visibility = View.VISIBLE
+        name.visibility = View.GONE
+      } else {
+        namePlaceholder.visibility = View.GONE
+        name.visibility = View.VISIBLE
+        name.text = speaker.name
+      }
+
+      Glide.with(itemView.context)
+          .load(speaker.avatarUrl)
+          .asBitmap()
+          .placeholder(DrawableUtils.create(itemView.context, R.drawable.ph_speaker))
+          .into(image)
     }
 
-    override fun getItemCount(): Int {
-        return speakers.size
+    override fun onClick(v: View?) {
+      speaker?.let(callback::onSpeakerClicked)
+    }
+  }
+
+  private object SpeakerItemCallback : ItemCallback<Speaker>() {
+    override fun areItemsTheSame(oldItem: Speaker, newItem: Speaker): Boolean {
+      return oldItem.id == newItem.id
     }
 
-    internal class ViewHolder(itemView: View,
-                              private val avatarProvider: AvatarProvider,
-                              private val onSpeakerClickedListener: ((speaker: Speaker, view: View) -> Unit)) :
-            RecyclerView.ViewHolder(itemView), View.OnClickListener {
-        private var speaker: Speaker? = null
-        val image: ImageView
-        val name: TextView
-        val title: TextView
-
-        init {
-            image = itemView.image
-            name = itemView.name
-            title = itemView.title
-            itemView.setOnClickListener(this)
-        }
-
-        fun bind(speaker: Speaker) {
-            this.speaker = speaker
-            name.text = speaker.name
-
-            avatarProvider.getAvatarUri(speaker) {
-                Glide.with(itemView.context)
-                    .load(it)
-                    .asBitmap()
-                    .placeholder(DrawableUtils.create(itemView.context, R.drawable.ph_speaker))
-                    .into(image)
-            }
-        }
-
-        override fun onClick(v: View?) {
-            val sp = speaker
-            if (sp != null) {
-                onSpeakerClickedListener(sp, image)
-            }
-        }
+    override fun areContentsTheSame(oldItem: Speaker, newItem: Speaker): Boolean {
+      return oldItem == newItem
     }
+
+//    override fun getChangePayload(oldItem: Speaker, newItem: Speaker): Any? {
+//      if (oldItem == newItem) {
+//        return null
+//      }
+//      return Unit // Dummy value to prevent item animation
+//    }
+  }
 }

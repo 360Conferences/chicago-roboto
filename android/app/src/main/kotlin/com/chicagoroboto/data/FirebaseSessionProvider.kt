@@ -1,15 +1,35 @@
 package com.chicagoroboto.data
 
+import com.chicagoroboto.ext.addValueEventListener
 import com.chicagoroboto.model.Session
 import com.google.firebase.database.*
+import com.google.firebase.database.ktx.getValue
+import kotlinx.coroutines.channels.awaitClose
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.channelFlow
 import javax.inject.Inject
 
 class FirebaseSessionProvider @Inject constructor(
-    private val database: DatabaseReference
+    database: DatabaseReference
 ) : SessionProvider {
 
+  private val sessionsRef = database.child("sessions")
   private val listeners: MutableMap<Any, ValueEventListener> = mutableMapOf()
   private val queries: MutableMap<Any, Query> = mutableMapOf()
+
+  override fun session(sessionId: String): Flow<Session> = channelFlow {
+    val query = sessionsRef.child(sessionId)
+
+    val listener = query.addValueEventListener(
+        onDataChange = {
+          if (it.exists()) {
+            it.getValue<Session>()?.let(channel::offer)
+          }
+        }
+    )
+
+    awaitClose { query.removeEventListener(listener) }
+  }
 
   override fun addSessionListener(id: String, onComplete: (Session?) -> Unit) {
     val listener = object : ValueEventListener {
@@ -23,7 +43,7 @@ class FirebaseSessionProvider @Inject constructor(
     }
     listeners[id] = listener
 
-    val query = database.child("sessions").child(id)
+    val query = sessionsRef.child(id)
     queries[id] = query
     query.addValueEventListener(listener)
   }
@@ -45,7 +65,7 @@ class FirebaseSessionProvider @Inject constructor(
     }
     listeners[key] = listener
 
-    val query = database.child("sessions")
+    val query = sessionsRef
     queries[key] = query
     query.addValueEventListener(listener)
   }

@@ -1,5 +1,6 @@
 package com.chicagoroboto.data
 
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
@@ -13,7 +14,7 @@ import javax.inject.Singleton
 abstract class DataModule {
 
   @Binds
-  abstract fun bindFavoriteProvider(impl: LocalFavoriteProvider): FavoriteProvider
+  abstract fun bindFavoriteProvider(impl: FirebaseFavoriteProvider): FavoriteProvider
 
   @Binds
   abstract fun bindNotificationProvider(impl: LocalNotificationProvider): NotificationProvider
@@ -41,6 +42,9 @@ abstract class DataModule {
   @Binds
   abstract fun bindAvatarProvider(impl: FirebaseAvatarProvider): AvatarProvider
 
+  @Binds
+  abstract fun bindUserProvider(impl: FirebaseUserProvider): UserProvider
+
   companion object {
 
     @Provides
@@ -56,5 +60,8 @@ abstract class DataModule {
     @Singleton
     fun provideStorage(@EventId eventId: String): StorageReference =
         FirebaseStorage.getInstance().reference.child(eventId)
+
+    @Provides
+    fun provideAuth(): FirebaseAuth = FirebaseAuth.getInstance()
   }
 }

@@ -44,4 +44,16 @@
         android:orientation="horizontal"
         tools:layout_editor_absoluteY="44dp"
         tools:layout_editor_absoluteX="0dp"/>
+
+  <View
+      android:id="@+id/ph_name"
+      android:layout_width="80dp"
+      android:layout_height="8dp"
+      android:layout_marginStart="8dp"
+      android:layout_marginEnd="8dp"
+      android:layout_marginBottom="4dp"
+      android:background="#3C000000"
+      app:layout_constraintBottom_toTopOf="@+id/guideline"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@+id/image" />
 </androidx.constraintlayout.widget.ConstraintLayout>

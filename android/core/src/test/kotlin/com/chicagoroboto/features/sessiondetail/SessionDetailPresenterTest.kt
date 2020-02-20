@@ -85,12 +85,12 @@ class SessionDetailPresenterTest {
       listeners.remove(key)
     }
 
-    override fun addFavoriteSession(id: String) {
+    override fun addFavoriteSession(userId: String, id: String) {
       favorites.add(id)
       listeners.values.forEach { it.invoke(favorites) }
     }
 
-    override fun removeFavoriteSession(id: String) {
+    override fun removeFavoriteSession(userId: String, id: String) {
       favorites.remove(id)
       listeners.values.forEach { it.invoke(favorites) }
     }

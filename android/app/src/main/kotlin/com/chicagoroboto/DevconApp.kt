@@ -3,6 +3,8 @@ package com.chicagoroboto
 import android.app.Application
 import com.chicagoroboto.injection.AppComponent
 import com.chicagoroboto.injection.DaggerAppComponent
+import timber.log.LogcatTree
+import timber.log.Timber
 
 class DevconApp() : Application() {
 
@@ -10,6 +12,11 @@ class DevconApp() : Application() {
 
   override fun onCreate() {
     super.onCreate()
+
+    if (BuildConfig.DEBUG) {
+      Timber.plant(LogcatTree())
+    }
+
     component = DaggerAppComponent.builder()
         .application(this)
         .eventId(BuildConfig.EVENT_ID)
@@ -17,9 +24,9 @@ class DevconApp() : Application() {
   }
 
   override fun getSystemService(name: String): Any? {
-    when (name) {
-      "component" -> return component
-      else -> return super.getSystemService(name)
+    return when (name) {
+      "component" -> component
+      else -> super.getSystemService(name)
     }
   }
 }

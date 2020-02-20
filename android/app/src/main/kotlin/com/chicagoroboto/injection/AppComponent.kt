@@ -8,7 +8,6 @@ import com.chicagoroboto.features.info.InfoModule
 import com.chicagoroboto.features.main.MainComponent
 import com.chicagoroboto.features.main.MainModule
 import com.chicagoroboto.features.sessiondetail.SessionDetailComponent
-import com.chicagoroboto.features.sessiondetail.SessionDetailModule
 import com.chicagoroboto.features.speakerdetail.SpeakerDetailComponent
 import dagger.BindsInstance
 import dagger.Component
@@ -17,7 +16,8 @@ import javax.inject.Singleton
 @Singleton
 @Component(modules = [DataModule::class])
 interface AppComponent {
-  fun sessionDetailComponent(sessionDetailModule: SessionDetailModule): SessionDetailComponent
+  val sessionDetailComponentFactory: SessionDetailComponent.Factory
+
   fun speakerDetailComponent(): SpeakerDetailComponent
   fun mainComponent(mainModule: MainModule): MainComponent
   fun infoComponent(infoModule: InfoModule): InfoComponent

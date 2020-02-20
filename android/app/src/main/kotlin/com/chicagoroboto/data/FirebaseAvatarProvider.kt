@@ -13,8 +13,8 @@ class FirebaseAvatarProvider @Inject constructor(
 
   override fun getAvatarUri(speaker: Speaker, callback: (String) -> Unit) {
     val id = speaker.id ?: return
-    ref.child(id).downloadUrl.addOnSuccessListener(OnSuccessListener {
+    ref.child(id).downloadUrl.addOnSuccessListener {
       callback(it.toString())
-    })
+    }
   }
 }
