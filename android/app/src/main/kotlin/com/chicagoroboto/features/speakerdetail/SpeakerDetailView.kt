@@ -35,10 +35,7 @@ class SpeakerDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
 
         LayoutInflater.from(context).inflate(R.layout.view_speaker_detail, this, true)
 
-        var speakerId = ""
-        getActivity()?.let {
-            speakerId = it.intent.getStringExtra("speaker_id")
-        }
+        var speakerId = getActivity()?.intent?.getStringExtra("speaker_id") ?: ""
 
         // FIXME: the shared image is transition properly. The start/end locations are off
         //  ViewCompat.setTransitionName(image, "image_$speakerId")
@@ -64,7 +61,7 @@ class SpeakerDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
         name.text = speaker.name
         bio.text = speaker.bio
 
-        if (speaker.twitter != null && speaker.twitter!!.isNotEmpty()) {
+        if (speaker.twitter.isNotEmpty()) {
             twitter.visibility = VISIBLE
             twitter.text = speaker.twitter
             twitter.setCompoundDrawablesWithIntrinsicBounds(
@@ -75,7 +72,7 @@ class SpeakerDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
 
           twitter.setOnClickListener {
               val twitterIntent = Intent(Intent.ACTION_VIEW).apply {
-                  data = Uri.parse("https://www.twitter.com/${speaker.twitter?.removePrefix("@")}")
+                  data = Uri.parse("https://www.twitter.com/${speaker.twitter.removePrefix("@")}")
               }
               context.startActivity(twitterIntent)
           }
@@ -83,7 +80,7 @@ class SpeakerDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
             twitter.visibility = GONE
         }
 
-        if (speaker.github?.isNotEmpty() ?: false) {
+        if (speaker.github.isNotEmpty()) {
             github.visibility = VISIBLE
             github.text = speaker.github
             github.setCompoundDrawablesWithIntrinsicBounds(

@@ -1,12 +1,13 @@
 package com.chicagoroboto.data
 
-import com.chicagoroboto.ext.addValueEventListener
 import com.chicagoroboto.model.Session
 import com.google.firebase.database.*
 import com.google.firebase.database.ktx.getValue
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.channelFlow
+import timber.log.Timber
+import timber.log.error
 import javax.inject.Inject
 
 class FirebaseSessionProvider @Inject constructor(
@@ -19,14 +20,17 @@ class FirebaseSessionProvider @Inject constructor(
 
   override fun session(sessionId: String): Flow<Session> = channelFlow {
     val query = sessionsRef.child(sessionId)
-
-    val listener = query.addValueEventListener(
-        onDataChange = {
-          if (it.exists()) {
-            it.getValue<Session>()?.let(channel::offer)
-          }
+    val listener = query.addValueEventListener(object : ValueEventListener {
+      override fun onDataChange(data: DataSnapshot) {
+        if (data.exists()) {
+          data.getValue<Session>()?.let(channel::offer)
         }
-    )
+      }
+
+      override fun onCancelled(e: DatabaseError) {
+        Timber.error(e.toException()) { "Failed to get session[$sessionId] from Firebase."}
+      }
+    })
 
     awaitClose { query.removeEventListener(listener) }
   }

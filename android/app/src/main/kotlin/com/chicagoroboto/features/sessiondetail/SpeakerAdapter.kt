@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.chicagoroboto.R
-import com.chicagoroboto.features.sessiondetail.SessionDetailPresenter.Model.Speaker
+import com.chicagoroboto.model.Speaker
 import com.chicagoroboto.utils.DrawableUtils
 
 internal class SpeakerAdapter(
@@ -81,12 +81,5 @@ internal class SpeakerAdapter(
     override fun areContentsTheSame(oldItem: Speaker, newItem: Speaker): Boolean {
       return oldItem == newItem
     }
-
-//    override fun getChangePayload(oldItem: Speaker, newItem: Speaker): Any? {
-//      if (oldItem == newItem) {
-//        return null
-//      }
-//      return Unit // Dummy value to prevent item animation
-//    }
   }
 }

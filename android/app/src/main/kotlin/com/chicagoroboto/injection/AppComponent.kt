@@ -9,6 +9,7 @@ import com.chicagoroboto.features.main.MainComponent
 import com.chicagoroboto.features.main.MainModule
 import com.chicagoroboto.features.sessiondetail.SessionDetailComponent
 import com.chicagoroboto.features.speakerdetail.SpeakerDetailComponent
+import com.chicagoroboto.features.speakerlist.SpeakerListComponent
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton

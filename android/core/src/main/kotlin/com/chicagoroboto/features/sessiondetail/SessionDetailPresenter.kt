@@ -2,14 +2,21 @@ package com.chicagoroboto.features.sessiondetail
 
 import com.chicagoroboto.data.*
 import com.chicagoroboto.ext.guard
-import com.chicagoroboto.features.sessiondetail.SessionDetailPresenter.Model.Speaker
+import com.chicagoroboto.features.sessiondetail.SessionDetailPresenter.Event
+import com.chicagoroboto.features.sessiondetail.SessionDetailPresenter.Model
+import com.chicagoroboto.features.shared.Presenter
 import com.chicagoroboto.model.Session
+import com.chicagoroboto.model.Speaker
 import kotlinx.coroutines.*
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.channels.Channel.Factory.BUFFERED
 import kotlinx.coroutines.channels.ConflatedBroadcastChannel
+import kotlinx.coroutines.channels.SendChannel
 import kotlinx.coroutines.channels.consumeEach
-import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.asFlow
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.combine
 import timber.log.Timber
 import timber.log.debug
 import timber.log.error
@@ -21,64 +28,15 @@ class SessionDetailPresenter @Inject constructor(
     private val favoriteProvider: FavoriteProvider,
     private val userProvider: UserProvider,
     private val notificationProvider: NotificationProvider
-) {
-
-  data class Model(
-      val session: Session = Session(),
-      val speakers: List<Speaker> = emptyList(),
-      internal val favorites: Set<String> = emptySet()
-  ) {
-    val isFavorite = favorites.contains(session.id)
-
-    data class Speaker(
-        val id: String = "",
-        val name: String = "",
-        val title: String = "",
-        val company: String = "",
-        val email: String = "",
-        val twitter: String = "",
-        val github: String = "",
-        val bio: String = "",
-        val avatarUrl: String = ""
-    )
-  }
-
-  private fun speakerToUiSpeaker(speaker: com.chicagoroboto.model.Speaker) = Speaker(
-      id = speaker.id ?: "",
-      name = speaker.name ?: "",
-      title = speaker.title ?: "",
-      company = speaker.company ?: "",
-      email = speaker.email ?: "",
-      twitter = speaker.twitter ?: "",
-      github = speaker.github ?: "",
-      bio = speaker.bio ?: ""
-  )
-
-  private fun List<com.chicagoroboto.model.Speaker>.toUiSpeakers(): List<Speaker> = map {
-    Speaker(
-        id = it.id ?: "",
-        name = it.name ?: "",
-        title = it.title ?: "",
-        company = it.company ?: "",
-        email = it.email ?: "",
-        twitter = it.twitter ?: "",
-        github = it.github ?: "",
-        bio = it.bio ?: "",
-        avatarUrl = ""
-    )
-  }
-
-  sealed class Event {
-    data class SetSessionId(val sessionId: String) : Event()
-    object ToggleFavorite : Event()
-  }
+) : Presenter<Model, Event> {
 
   private val _models = ConflatedBroadcastChannel<Model>()
-  val models: Flow<Model> get() = _models.asFlow()
+  override val models: Flow<Model> get() = _models.asFlow()
 
   private val _events = Channel<Event>(BUFFERED)
+  override val events: SendChannel<Event> get() = _events
 
-  suspend fun start() = coroutineScope {
+  override suspend fun start() = coroutineScope {
     var model = Model()
     fun sendModel(newModel: Model) {
       model = newModel
@@ -132,7 +90,7 @@ class SessionDetailPresenter @Inject constructor(
                   ))
                   activeSpeakerJob = launch {
                     combine(activeSpeakers.map(speakerProvider::speaker)) { speakers ->
-                      speakers.map(::speakerToUiSpeaker).map { speaker ->
+                      speakers.map { speaker ->
                         // Asynchronously fetch all of the speaker avatars
                         async(Dispatchers.Default) {
                           speaker.copy(avatarUrl = speakerProvider.avatar(speaker.id))
@@ -169,9 +127,19 @@ class SessionDetailPresenter @Inject constructor(
         }
       }
     }
+    Unit
   }
 
-  fun onEvent(event: Event) {
-    _events.offer(event)
+  data class Model(
+      val session: Session = Session(),
+      val speakers: List<Speaker> = emptyList(),
+      internal val favorites: Set<String> = emptySet()
+  ) {
+    val isFavorite = favorites.contains(session.id)
+  }
+
+  sealed class Event {
+    data class SetSessionId(val sessionId: String) : Event()
+    object ToggleFavorite : Event()
   }
 }

@@ -9,8 +9,8 @@ import dagger.Subcomponent
 @Subcomponent(modules = [MainModule::class])
 interface MainComponent {
   val userProvider: UserProvider
+  val speakerListComponentFactory: SpeakerListComponent.Factory
 
   fun sessionListComponent(): SessionListComponent
-  fun speakerListComponent(): SpeakerListComponent
   fun locationComponent(): LocationComponent
 }

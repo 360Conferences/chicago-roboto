@@ -1,6 +1,5 @@
 package com.chicagoroboto.data
 
-import com.chicagoroboto.ext.addValueEventListener
 import com.chicagoroboto.model.Speaker
 import com.google.firebase.database.*
 import com.google.firebase.database.ktx.getValue
@@ -9,6 +8,8 @@ import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.channelFlow
 import kotlinx.coroutines.tasks.await
+import timber.log.Timber
+import timber.log.error
 import java.util.*
 import javax.inject.Inject
 
@@ -23,15 +24,48 @@ class FirebaseSpeakerProvider @Inject constructor(
   private val queries: MutableMap<Any, Query> = mutableMapOf()
   private val listeners: MutableMap<Any, ValueEventListener> = mutableMapOf()
 
+  private fun DataSnapshot.getSpeaker() = Speaker(
+      id = child("id").getValue<String>() ?: "",
+      name = child("name").getValue<String>() ?: "",
+      title = child("title").getValue<String>() ?: "",
+      company = child("company").getValue<String>() ?: "",
+      email = child("email").getValue<String>() ?: "",
+      twitter = child("twitter").getValue<String>() ?: "",
+      github = child("github").getValue<String>() ?: "",
+      bio = child("bio").getValue<String>() ?: ""
+  )
+
+  override fun speakers(): Flow<List<Speaker>> = channelFlow {
+    val query = speakersRef
+    val listener = query.addValueEventListener(object : ValueEventListener {
+      override fun onDataChange(data: DataSnapshot) {
+        if (data.exists()) {
+          channel.offer(data.children.map { it.getSpeaker() })
+        }
+      }
+      override fun onCancelled(error: DatabaseError) {
+        Timber.error(error.toException()) { "Error fetching speaker list from Firebase." }
+      }
+    })
+
+    awaitClose { query.removeEventListener(listener) }
+  }
+
   override fun speaker(speakerId: String): Flow<Speaker> = channelFlow {
     val query = speakersRef.child(speakerId)
-    val listener = query.addValueEventListener(
-        onDataChange = {
-          if (it.exists()) {
-            it.getValue<Speaker>()?.let(channel::offer)
-          }
+    val listener = query.addValueEventListener(object : ValueEventListener {
+      override fun onDataChange(data: DataSnapshot) {
+        if (data.exists()) {
+          channel.offer(data.getSpeaker())
         }
-    )
+      }
+
+      override fun onCancelled(error: DatabaseError) {
+        Timber.error(error.toException()) { "Error fetching speaker from Firebase." }
+      }
+
+    })
+
     awaitClose { query.removeEventListener(listener) }
   }
 

@@ -1,11 +1,12 @@
 package com.chicagoroboto.data
 
-import com.chicagoroboto.ext.addValueEventListener
 import com.google.firebase.database.*
 import com.google.firebase.database.ktx.getValue
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.channelFlow
+import timber.log.Timber
+import timber.log.error
 import javax.inject.Inject
 
 class FirebaseFavoriteProvider @Inject constructor(
@@ -17,12 +18,16 @@ class FirebaseFavoriteProvider @Inject constructor(
 
   override fun favorites(userId: String): Flow<Set<String>> = channelFlow {
     val query = database.child("users").child(userId).child("favorites")
-    val listener = query.addValueEventListener(
-        onDataChange = {
-          val favs = if (it.exists()) it.getValue<Map<String, Boolean>>() else null
-          channel.offer(favs?.keys ?: emptySet())
-        }
-    )
+    val listener = query.addValueEventListener(object : ValueEventListener {
+      override fun onDataChange(data: DataSnapshot) {
+        val favs = if (data.exists()) data.getValue<Map<String, Boolean>>() else null
+        channel.offer(favs?.keys ?: emptySet<String>())
+      }
+
+      override fun onCancelled(error: DatabaseError) {
+        Timber.error(error.toException()) { "Error fetching favorites for user[$userId] from Firebase." }
+      }
+    })
 
     awaitClose { query.removeEventListener(listener) }
   }

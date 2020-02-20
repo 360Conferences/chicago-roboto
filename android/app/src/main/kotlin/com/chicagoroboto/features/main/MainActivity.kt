@@ -6,6 +6,7 @@ import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
+import androidx.fragment.app.Fragment
 import com.chicagoroboto.R
 import com.chicagoroboto.ext.getAppComponent
 import com.chicagoroboto.features.TabHolder
@@ -46,10 +47,10 @@ class MainActivity : AppCompatActivity(), SessionNavigator, SpeakerNavigator, Na
 
     // Sure don't like this here, should definitely be handled elsewhere.
     component.userProvider.signIn {
-      showView(R.id.action_schedule)
+      showView(R.id.action_speakers)
 
       nav_view.setNavigationItemSelectedListener(this)
-      nav_view.setCheckedItem(R.id.action_schedule)
+      nav_view.setCheckedItem(R.id.action_speakers)
     }
   }
 
@@ -73,23 +74,19 @@ class MainActivity : AppCompatActivity(), SessionNavigator, SpeakerNavigator, Na
   }
 
   private fun showView(viewId: Int): Boolean {
-    val view: View? = when (viewId) {
-      R.id.action_schedule -> SessionDateView(this)
-      R.id.action_speakers -> SpeakerListView(this)
-      R.id.action_location -> LocationView(this)
-      R.id.action_info -> InfoView(this)
-      else -> null
+    val view: Fragment = when (viewId) {
+//      R.id.action_schedule -> SessionDateView(this)
+      R.id.action_speakers -> SpeakerListView()
+//      R.id.action_location -> LocationView(this)
+//      R.id.action_info -> InfoView(this)
+      else -> return false
     }
-    return view?.let {
-      content.removeAllViews()
-      content.addView(view)
-      val title = when (view) {
-        is MainView -> view.titleResId
-        else -> R.string.app_name
-      }
-      setTitle(title)
-      true
-    } ?: false
+
+    supportFragmentManager.beginTransaction()
+        .replace(R.id.content, view)
+        .commit()
+
+    return true
   }
 
   override fun getSystemService(name: String): Any? {

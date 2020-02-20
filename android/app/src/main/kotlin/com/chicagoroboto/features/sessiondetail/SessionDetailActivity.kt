@@ -21,6 +21,7 @@ import com.chicagoroboto.features.sessiondetail.SessionDetailPresenter.Model
 import com.chicagoroboto.features.sessiondetail.feedback.FeedbackDialog
 import com.chicagoroboto.features.speakerdetail.SpeakerDetailActivity
 import com.chicagoroboto.features.speakerdetail.SpeakerNavigator
+import com.chicagoroboto.model.Speaker
 import com.chicagoroboto.utils.DrawableUtils
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.coroutines.InternalCoroutinesApi
@@ -71,7 +72,7 @@ class SessionDetailActivity : AppCompatActivity(), SpeakerNavigator {
     toolbar.setNavigationOnClickListener { finish() }
 
     speakerAdapter = SpeakerAdapter(true, object : SpeakerAdapter.Callback {
-      override fun onSpeakerClicked(speaker: Model.Speaker) {
+      override fun onSpeakerClicked(speaker: Speaker) {
         navigateToSpeaker(speaker.id)
       }
     })
@@ -82,7 +83,7 @@ class SessionDetailActivity : AppCompatActivity(), SpeakerNavigator {
     // initially hide the feedback button until we get a session
     (feedback as View).visibility = CoordinatorLayout.GONE
     feedback.setOnClickListener { FeedbackDialog(this, sessionId).show() }
-    favorite.setOnClickListener { presenter.onEvent(ToggleFavorite) }
+    favorite.setOnClickListener { presenter.events.offer(ToggleFavorite) }
 
     scope.launch {
       presenter.models.collect { bindModel(it) }
@@ -92,7 +93,7 @@ class SessionDetailActivity : AppCompatActivity(), SpeakerNavigator {
       presenter.start()
     }
 
-    presenter.onEvent(SetSessionId(sessionId))
+    presenter.events.offer(SetSessionId(sessionId))
   }
 
   override fun onDestroy() {

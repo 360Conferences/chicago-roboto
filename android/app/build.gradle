@@ -66,6 +66,8 @@ dependencies {
   implementation libs.multilineToolbar
   implementation libs.playServicesMaps
   implementation libs.recyclerView
+  implementation libs.androidx.fragment
+  implementation libs.androidx.lifecycle.runtime
   implementation libs.supportAppCompat
   implementation libs.supportCardView
   implementation libs.supportDesign
