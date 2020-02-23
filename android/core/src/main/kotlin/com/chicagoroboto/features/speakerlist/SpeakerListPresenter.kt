@@ -34,8 +34,6 @@ class SpeakerListPresenter @Inject constructor(
     }
 
     launch {
-      var activeSpeakerJob: Job? = null
-
       speakerProvider.speakers().collect { speakers ->
         sendModel(model.copy(speakers = speakers))
 

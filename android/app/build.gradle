@@ -68,9 +68,10 @@ dependencies {
   implementation libs.recyclerView
   implementation libs.androidx.fragment
   implementation libs.androidx.lifecycle.runtime
+  implementation libs.androidx.viewpager
   implementation libs.supportAppCompat
   implementation libs.supportCardView
-  implementation libs.supportDesign
+  implementation libs.material
   implementation libs.timber.android
 
   implementation project(':core')

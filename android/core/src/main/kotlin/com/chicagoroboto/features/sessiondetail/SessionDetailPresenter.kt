@@ -82,7 +82,7 @@ class SessionDetailPresenter @Inject constructor(
                 ))
 
                 if (session.speakers != activeSpeakers) {
-                  activeSpeakers = session.speakers ?: emptyList()
+                  activeSpeakers = session.speakers
                   activeSpeakerJob?.cancel()
 
                   sendModel(model.copy(
@@ -131,7 +131,7 @@ class SessionDetailPresenter @Inject constructor(
   }
 
   data class Model(
-      val session: Session = Session(),
+      val session: Session = Session(""),
       val speakers: List<Speaker> = emptyList(),
       internal val favorites: Set<String> = emptySet()
   ) {

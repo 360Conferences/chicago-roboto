@@ -1,10 +1,9 @@
 package com.chicagoroboto.features.sessions
 
-import com.chicagoroboto.features.sessions.SessionDateView
 import dagger.Subcomponent
 
-@Subcomponent(modules = arrayOf(SessionListModule::class))
+@Subcomponent
 interface SessionListComponent {
-    fun inject(sessionListView: SessionListView)
-    fun inject(sessionDateView: SessionDateView)
+    fun inject(sessionListFragment: SessionListFragment)
+    fun inject(sessionDateFragment: SessionDateFragment)
 }

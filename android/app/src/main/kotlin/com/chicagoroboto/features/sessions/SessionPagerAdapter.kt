@@ -1,41 +1,24 @@
 package com.chicagoroboto.features.sessions
 
-import android.content.Context
-import androidx.viewpager.widget.PagerAdapter
-import android.text.format.DateUtils
-import android.view.View
-import android.view.ViewGroup
-import java.text.SimpleDateFormat
-import java.util.Locale
+import androidx.fragment.app.Fragment
+import androidx.viewpager2.adapter.FragmentStateAdapter
+import androidx.viewpager2.widget.ViewPager2
+import com.chicagoroboto.features.sessions.SessionDatePresenter.Model.SessionDate
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
 
-internal class SessionPagerAdapter : PagerAdapter() {
+internal class SessionPagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
 
-    val dates: MutableList<String> = mutableListOf()
-    var context: Context? = null
+  val dates: MutableList<SessionDate> = mutableListOf()
 
-    override fun instantiateItem(container: ViewGroup, position: Int): Any {
-        context = container.context
-        val v = SessionListView(container.context)
-        v.setDate(dates[position])
-        container.addView(v)
-        return v
-    }
+  override fun getItemCount(): Int = dates.size
 
-    override fun getPageTitle(position: Int): CharSequence {
-        val format = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
-        val date = format.parse(dates[position])
-        return DateUtils.formatDateTime(context, date.time, DateUtils.FORMAT_SHOW_DATE)
-    }
+  override fun createFragment(position: Int): Fragment =
+      SessionListFragment.create(dates[position].id)
 
-    override fun destroyItem(container: ViewGroup, position: Int, `object`: Any) {
-        container.removeView(`object` as View)
-    }
-
-    override fun isViewFromObject(view: View, `object`: Any): Boolean {
-        return view == `object`
-    }
-
-    override fun getCount(): Int {
-        return dates.size
-    }
+  fun mediateTabs(tabLayout: TabLayout, viewPager: ViewPager2) {
+    TabLayoutMediator(tabLayout, viewPager) { tab, position ->
+      tab.text = dates[position].name
+    }.attach()
+  }
 }

@@ -6,17 +6,19 @@ import timber.log.error
 import java.text.*
 import java.util.*
 
-class Session(val id: String? = null,
-              val type: String? = null,
-              val title: String? = null,
-              val description: String? = null,
-              val start_time: String? = "",
-              val end_time: String? = "",
-              val date: String? = null,
-              val speakers: List<String>? = null,
-              val location: String? = "Main",
-              val address: String? = null,
-              val tracks: List<String>? = null) {
+data class Session(
+    val id: String,
+    val type: String = "",
+    val title: String = "",
+    val description: String = "",
+    val start_time: String = "",
+    val end_time: String = "",
+    val date: String = "",
+    val speakers: List<String> = emptyList(),
+    val location: String = "Main",
+    val address: String = "",
+    val tracks: List<String> = emptyList()
+) {
 
   private val format = object : DateFormat() {
     private val format1 = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"

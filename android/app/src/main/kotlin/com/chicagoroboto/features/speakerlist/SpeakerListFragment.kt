@@ -23,7 +23,7 @@ import kotlinx.coroutines.flow.collect
 import javax.inject.Inject
 import javax.inject.Provider
 
-class SpeakerListView : Fragment() {
+class SpeakerListFragment : Fragment() {
 
   private lateinit var component: SpeakerListComponent
 
@@ -56,7 +56,7 @@ class SpeakerListView : Fragment() {
     list = view.findViewById<RecyclerView>(R.id.list).apply {
       layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
       addItemDecoration(DividerItemDecoration(context, RecyclerView.VERTICAL))
-      adapter = this@SpeakerListView.adapter
+      adapter = this@SpeakerListFragment.adapter
     }
   }
 

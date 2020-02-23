@@ -2,7 +2,6 @@ package com.chicagoroboto.data
 
 import com.chicagoroboto.model.Speaker
 import com.google.firebase.database.*
-import com.google.firebase.database.ktx.getValue
 import com.google.firebase.storage.StorageReference
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
@@ -24,23 +23,12 @@ class FirebaseSpeakerProvider @Inject constructor(
   private val queries: MutableMap<Any, Query> = mutableMapOf()
   private val listeners: MutableMap<Any, ValueEventListener> = mutableMapOf()
 
-  private fun DataSnapshot.getSpeaker() = Speaker(
-      id = child("id").getValue<String>() ?: "",
-      name = child("name").getValue<String>() ?: "",
-      title = child("title").getValue<String>() ?: "",
-      company = child("company").getValue<String>() ?: "",
-      email = child("email").getValue<String>() ?: "",
-      twitter = child("twitter").getValue<String>() ?: "",
-      github = child("github").getValue<String>() ?: "",
-      bio = child("bio").getValue<String>() ?: ""
-  )
-
   override fun speakers(): Flow<List<Speaker>> = channelFlow {
     val query = speakersRef
     val listener = query.addValueEventListener(object : ValueEventListener {
       override fun onDataChange(data: DataSnapshot) {
         if (data.exists()) {
-          channel.offer(data.children.map { it.getSpeaker() })
+          channel.offer(data.children.map { it.toSpeaker() })
         }
       }
       override fun onCancelled(error: DatabaseError) {
@@ -56,7 +44,7 @@ class FirebaseSpeakerProvider @Inject constructor(
     val listener = query.addValueEventListener(object : ValueEventListener {
       override fun onDataChange(data: DataSnapshot) {
         if (data.exists()) {
-          channel.offer(data.getSpeaker())
+          channel.offer(data.toSpeaker())
         }
       }
 

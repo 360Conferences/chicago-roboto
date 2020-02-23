@@ -2,7 +2,6 @@ package com.chicagoroboto.data
 
 import com.chicagoroboto.model.Session
 import com.google.firebase.database.*
-import com.google.firebase.database.ktx.getValue
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.channelFlow
@@ -23,7 +22,7 @@ class FirebaseSessionProvider @Inject constructor(
     val listener = query.addValueEventListener(object : ValueEventListener {
       override fun onDataChange(data: DataSnapshot) {
         if (data.exists()) {
-          data.getValue<Session>()?.let(channel::offer)
+          channel.offer(data.toSession())
         }
       }
 
@@ -33,6 +32,25 @@ class FirebaseSessionProvider @Inject constructor(
     })
 
     awaitClose { query.removeEventListener(listener) }
+  }
+
+  override fun sessionsByDate(date: String): Flow<List<Session>> = channelFlow {
+    val listener = sessionsRef.addValueEventListener(object : ValueEventListener {
+      override fun onDataChange(data: DataSnapshot) {
+        if (data.exists()) {
+          val sessions = data.children.map { it.toSession() }
+              .filter { it.start_time.startsWith(date) }
+              .sortedBy { it.start_time }
+          channel.offer(sessions)
+        }
+      }
+
+      override fun onCancelled(error: DatabaseError) {
+        Timber.error(error.toException()) { "Failed to get sessions by date: $date" }
+      }
+    })
+
+    awaitClose { sessionsRef.removeEventListener(listener) }
   }
 
   override fun addSessionListener(id: String, onComplete: (Session?) -> Unit) {

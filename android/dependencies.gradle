@@ -24,6 +24,7 @@ ext {
           'lifecycle': [
               'runtime': "androidx.lifecycle:lifecycle-runtime-ktx:2.2.0"
           ],
+          'viewpager': "androidx.viewpager2:viewpager2:1.0.0",
       ],
       'firebase'       : [
           'auth'    : "com.google.firebase:firebase-auth:19.2.0",
@@ -52,7 +53,7 @@ ext {
       recyclerView     : 'androidx.recyclerview:recyclerview:1.0.0',
       supportAppCompat : 'androidx.appcompat:appcompat:1.0.0',
       supportCardView  : 'androidx.cardview:cardview:1.0.0',
-      supportDesign    : 'com.google.android.material:material:1.0.0',
+      'material'    : 'com.google.android.material:material:1.1.0',
       'timber' : [
           'jdk': 'com.jakewharton.timber:timber-jdk:5.0.0-SNAPSHOT',
           'android': 'com.jakewharton.timber:timber-android:5.0.0-SNAPSHOT',

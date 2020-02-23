@@ -1,6 +1,12 @@
 package com.chicagoroboto.data
 
 import com.google.firebase.database.*
+import com.google.firebase.database.ktx.getValue
+import kotlinx.coroutines.channels.awaitClose
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.channelFlow
+import timber.log.Timber
+import timber.log.error
 import java.util.*
 import javax.inject.Inject
 
@@ -10,25 +16,20 @@ class FirebaseSessionDateProvider @Inject constructor(
 
   private val ref: DatabaseReference = dbRoot.child("config").child("event_dates")
 
-  private val listeners: MutableMap<Any, ValueEventListener> = HashMap()
-
-  override fun addSessionDateListener(key: Any, onComplete: (List<String>?) -> Unit) {
-    val listener = object : ValueEventListener {
+  override fun sessionDates(): Flow<List<String>> = channelFlow {
+    val listener = ref.addValueEventListener(object : ValueEventListener {
       override fun onDataChange(data: DataSnapshot) {
-        val typeIndicator = object : GenericTypeIndicator<ArrayList<String>>() {}
-        val dates = data.getValue(typeIndicator)
-        onComplete(dates)
+        if (data.exists()) {
+          val dates = data.getValue<List<String>>() ?: emptyList()
+          offer(dates)
+        }
       }
 
       override fun onCancelled(error: DatabaseError) {
-        onComplete(null)
+        Timber.error(error.toException()) { "Failed to get event dates from Firebase." }
       }
-    }
-    listeners[key] = listener
-    ref.addValueEventListener(listener)
-  }
+    })
 
-  override fun removeSessionDateListener(key: Any) {
-    listeners[key]?.let { ref.removeEventListener(it) }
+    awaitClose { ref.removeEventListener(listener) }
   }
 }

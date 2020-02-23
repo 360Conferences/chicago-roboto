@@ -6,22 +6,22 @@ import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
-import androidx.fragment.app.Fragment
 import com.chicagoroboto.R
 import com.chicagoroboto.ext.getAppComponent
+import com.chicagoroboto.ext.guard
 import com.chicagoroboto.features.TabHolder
-import com.chicagoroboto.features.info.InfoView
-import com.chicagoroboto.features.location.LocationView
 import com.chicagoroboto.features.sessiondetail.SessionDetailActivity
-import com.chicagoroboto.features.sessions.SessionDateView
+import com.chicagoroboto.features.sessions.SessionDateFragment
 import com.chicagoroboto.features.sessions.SessionNavigator
 import com.chicagoroboto.features.speakerdetail.SpeakerDetailActivity
 import com.chicagoroboto.features.speakerdetail.SpeakerNavigator
-import com.chicagoroboto.features.speakerlist.SpeakerListView
+import com.chicagoroboto.features.speakerlist.SpeakerListFragment
 import com.chicagoroboto.model.Session
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.activity_main.*
+import timber.log.Timber
+import timber.log.error
 
 class MainActivity : AppCompatActivity(), SessionNavigator, SpeakerNavigator, NavigationView.OnNavigationItemSelectedListener,
     TabHolder {
@@ -47,10 +47,10 @@ class MainActivity : AppCompatActivity(), SessionNavigator, SpeakerNavigator, Na
 
     // Sure don't like this here, should definitely be handled elsewhere.
     component.userProvider.signIn {
-      showView(R.id.action_speakers)
+      showView(R.id.action_schedule)
 
       nav_view.setNavigationItemSelectedListener(this)
-      nav_view.setCheckedItem(R.id.action_speakers)
+      nav_view.setCheckedItem(R.id.action_schedule)
     }
   }
 
@@ -73,17 +73,20 @@ class MainActivity : AppCompatActivity(), SessionNavigator, SpeakerNavigator, Na
     return super.onOptionsItemSelected(item)
   }
 
+  private val fragments = mapOf(
+      R.id.action_schedule to { SessionDateFragment() },
+      R.id.action_speakers to { SpeakerListFragment() }
+  )
+
   private fun showView(viewId: Int): Boolean {
-    val view: Fragment = when (viewId) {
-//      R.id.action_schedule -> SessionDateView(this)
-      R.id.action_speakers -> SpeakerListView()
-//      R.id.action_location -> LocationView(this)
-//      R.id.action_info -> InfoView(this)
-      else -> return false
+    val tag = viewId.toString()
+    val fragment = fragments[viewId] guard {
+      Timber.error { "Unknown root view id: ${resources.getResourceName(viewId)}" }
+      return false
     }
 
     supportFragmentManager.beginTransaction()
-        .replace(R.id.content, view)
+        .replace(R.id.content, fragment(), tag)
         .commit()
 
     return true
