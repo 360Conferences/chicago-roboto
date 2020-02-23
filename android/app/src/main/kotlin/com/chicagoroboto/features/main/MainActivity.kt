@@ -2,14 +2,11 @@ package com.chicagoroboto.features.main
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.GravityCompat
+import androidx.core.view.updatePadding
 import com.chicagoroboto.R
 import com.chicagoroboto.ext.getAppComponent
-import com.chicagoroboto.ext.guard
-import com.chicagoroboto.features.TabHolder
 import com.chicagoroboto.features.sessiondetail.SessionDetailActivity
 import com.chicagoroboto.features.sessions.SessionDateFragment
 import com.chicagoroboto.features.sessions.SessionNavigator
@@ -17,17 +14,13 @@ import com.chicagoroboto.features.speakerdetail.SpeakerDetailActivity
 import com.chicagoroboto.features.speakerdetail.SpeakerNavigator
 import com.chicagoroboto.features.speakerlist.SpeakerListFragment
 import com.chicagoroboto.model.Session
-import com.google.android.material.navigation.NavigationView
-import com.google.android.material.tabs.TabLayout
-import kotlinx.android.synthetic.main.activity_main.*
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import timber.log.Timber
 import timber.log.error
 
-class MainActivity : AppCompatActivity(), SessionNavigator, SpeakerNavigator, NavigationView.OnNavigationItemSelectedListener,
-    TabHolder {
+class MainActivity : AppCompatActivity(), SessionNavigator, SpeakerNavigator {
 
-  override val tabLayout: TabLayout?
-    get() = tabs
+  private lateinit var navView: BottomNavigationView
 
   private val component: MainComponent by lazy(LazyThreadSafetyMode.NONE) {
     getAppComponent().mainComponent(MainModule(this, this))
@@ -35,61 +28,40 @@ class MainActivity : AppCompatActivity(), SessionNavigator, SpeakerNavigator, Na
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-
     setContentView(R.layout.activity_main)
 
-    setSupportActionBar(toolbar)
+    val rootView = findViewById<View>(R.id.root)
+    rootView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_STABLE or
+            View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
 
-    supportActionBar?.let {
-      it.setHomeAsUpIndicator(R.drawable.ic_menu)
-      it.setDisplayHomeAsUpEnabled(true)
-    }
-
-    // Sure don't like this here, should definitely be handled elsewhere.
-    component.userProvider.signIn {
-      showView(R.id.action_schedule)
-
-      nav_view.setNavigationItemSelectedListener(this)
-      nav_view.setCheckedItem(R.id.action_schedule)
-    }
-  }
-
-  override fun onNavigationItemSelected(item: MenuItem): Boolean {
-    if (showView(item.itemId)) {
-      drawer_layout.closeDrawers()
-      return true
-    } else {
-      return false
-    }
-  }
-
-  override fun onOptionsItemSelected(item: MenuItem): Boolean {
-    when (item.itemId) {
-      android.R.id.home -> {
-        drawer_layout.openDrawer(GravityCompat.START)
-        return true
+    navView = findViewById(R.id.nav_view)
+    navView.setOnNavigationItemSelectedListener { item ->
+      val tag = item.title
+      val fragment = when (item.itemId) {
+        R.id.action_schedule -> SessionDateFragment()
+        R.id.action_speakers -> SpeakerListFragment()
+        else -> {
+          Timber.error { "Unknown root view id: ${resources.getResourceName(item.itemId)}" }
+          return@setOnNavigationItemSelectedListener false
+        }
       }
-    }
-    return super.onOptionsItemSelected(item)
-  }
 
-  private val fragments = mapOf(
-      R.id.action_schedule to { SessionDateFragment() },
-      R.id.action_speakers to { SpeakerListFragment() }
-  )
+      supportFragmentManager.beginTransaction()
+          .replace(R.id.content, fragment, tag.toString())
+          .commit()
 
-  private fun showView(viewId: Int): Boolean {
-    val tag = viewId.toString()
-    val fragment = fragments[viewId] guard {
-      Timber.error { "Unknown root view id: ${resources.getResourceName(viewId)}" }
-      return false
+      true
     }
 
-    supportFragmentManager.beginTransaction()
-        .replace(R.id.content, fragment(), tag)
-        .commit()
+    val navViewPadding = navView.paddingBottom
+    navView.setOnApplyWindowInsetsListener { view, insets ->
+      view.updatePadding(
+          bottom = insets.systemWindowInsetBottom + navViewPadding
+      )
+      insets
+    }
 
-    return true
+    navView.selectedItemId = R.id.action_schedule
   }
 
   override fun getSystemService(name: String): Any? {
@@ -110,11 +82,10 @@ class MainActivity : AppCompatActivity(), SessionNavigator, SpeakerNavigator, Na
   }
 
   override fun onBackPressed() {
-    if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
-      drawer_layout.closeDrawer(GravityCompat.START)
+    if (navView.selectedItemId != R.id.action_schedule) {
+      navView.selectedItemId = R.id.action_schedule
     } else {
       super.onBackPressed()
     }
   }
-
 }

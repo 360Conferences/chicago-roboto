@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <group
-        android:id="@+id/group_options"
-        android:checkableBehavior="single">
-        <item
-            android:id="@+id/action_schedule"
-            android:icon="@drawable/ic_schedule"
-            android:title="@string/action_schedule" />
-        <item
-            android:id="@+id/action_speakers"
-            android:icon="@drawable/ic_speaker"
-            android:title="@string/action_speakers" />
-    </group>
-
-    <group android:id="@+id/group_other" android:checkableBehavior="single">
-        <item
-            android:id="@+id/action_location"
-            android:icon="@drawable/ic_location"
-            android:title="@string/action_location" />
-        <item
-            android:id="@+id/action_info"
-            android:icon="@drawable/ic_info"
-            android:title="@string/action_info" />
-    </group>
+  <item
+      android:id="@+id/action_schedule"
+      android:icon="@drawable/ic_schedule"
+      android:title="@string/action_schedule" />
+  <item
+      android:id="@+id/action_speakers"
+      android:icon="@drawable/ic_speaker"
+      android:title="@string/action_speakers" />
+  <item
+      android:id="@+id/action_location"
+      android:icon="@drawable/ic_location"
+      android:title="@string/action_location" />
+  <item
+      android:id="@+id/action_info"
+      android:icon="@drawable/ic_info"
+      android:title="@string/action_info" />
 </menu>

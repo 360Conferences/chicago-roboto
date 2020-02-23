@@ -1,12 +1,18 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
-  <style name="Base.AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+  <style name="Platform.Theme.Conferences" parent="Theme.MaterialComponents.Light.NoActionBar">
+  </style>
+
+  <style name="Base.Theme.Conferences" parent="Platform.Theme.Conferences">
     <item name="colorPrimary">@color/colorPrimary</item>
     <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
     <item name="colorAccent">@color/colorAccent</item>
+
+    <item name="android:navigationBarColor">@android:color/transparent</item>
+    <item name="android:statusBarColor">@android:color/transparent</item>
   </style>
 
-  <style name="AppTheme" parent="Base.AppTheme"/>
+  <style name="AppTheme" parent="Base.Theme.Conferences"/>
 
   <style name="TwitterTextAppearance" parent="TextAppearance.AppCompat.Medium">
     <item name="android:textSize">18sp</item>

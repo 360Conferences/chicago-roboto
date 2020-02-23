@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.Toolbar
+import androidx.core.view.updatePadding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.viewpager2.widget.ViewPager2
@@ -14,6 +15,7 @@ import com.chicagoroboto.ext.presentations
 import com.chicagoroboto.features.main.MainComponent
 import com.chicagoroboto.features.shared.Presentation
 import com.chicagoroboto.features.shared.startPresentation
+import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.tabs.TabLayout
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collect
@@ -43,11 +45,21 @@ class SessionDateFragment : Fragment() {
 
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
-    toolbar = view.findViewById(R.id.toolbar)
-    tabs = view.findViewById(R.id.tabs)
     pager = view.findViewById(R.id.pager)
     pager.adapter = adapter
+
+    toolbar = view.findViewById(R.id.toolbar)
+    tabs = view.findViewById(R.id.tabs)
     adapter.mediateTabs(tabs, pager)
+
+    val appBar: AppBarLayout = view.findViewById(R.id.app_bar)
+    val initialToolbarPadding = appBar.paddingTop
+    appBar.setOnApplyWindowInsetsListener { view, insets ->
+      view.updatePadding(
+          top = insets.systemWindowInsetTop + initialToolbarPadding
+      )
+      insets
+    }
   }
 
   override fun onCreate(savedInstanceState: Bundle?) {
