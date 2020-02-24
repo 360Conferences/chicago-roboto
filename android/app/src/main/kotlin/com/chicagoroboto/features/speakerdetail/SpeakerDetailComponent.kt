@@ -1,8 +1,15 @@
 package com.chicagoroboto.features.speakerdetail
 
-import dagger.Subcomponent
+import com.chicagoroboto.injection.AppComponent
+import dagger.Component
 
-@Subcomponent(modules = arrayOf(SpeakerDetailModule::class))
+@SpeakerDetailScope
+@Component(dependencies = [AppComponent::class])
 interface SpeakerDetailComponent {
-    fun inject(speakerDetailView: SpeakerDetailView)
+  fun inject(speakerDetailActivity: SpeakerDetailActivity)
+
+  @Component.Factory
+  interface Factory {
+    fun create(appComponent: AppComponent): SpeakerDetailComponent
+  }
 }

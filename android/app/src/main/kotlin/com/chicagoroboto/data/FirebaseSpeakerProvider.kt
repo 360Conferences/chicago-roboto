@@ -20,9 +20,6 @@ class FirebaseSpeakerProvider @Inject constructor(
   private val speakersRef = database.child("speakers")
   private val avatarRef = storage.child("profiles")
 
-  private val queries: MutableMap<Any, Query> = mutableMapOf()
-  private val listeners: MutableMap<Any, ValueEventListener> = mutableMapOf()
-
   override fun speakers(): Flow<List<Speaker>> = channelFlow {
     val query = speakersRef
     val listener = query.addValueEventListener(object : ValueEventListener {
@@ -60,54 +57,5 @@ class FirebaseSpeakerProvider @Inject constructor(
   override suspend fun avatar(speakerId: String): String {
     val url = avatarRef.child(speakerId).downloadUrl.await()
     return url.toString()
-  }
-
-  override fun addSpeakerListener(key: Any, onComplete: (Map<String, Speaker>?) -> Unit) {
-    if (queries[key] != null) {
-      removeSpeakerListener(key)
-    }
-
-    val listener = object : ValueEventListener {
-      override fun onDataChange(data: DataSnapshot) {
-        val typeIndicator = object : GenericTypeIndicator<HashMap<String, Speaker>>() {}
-        onComplete(data.getValue(typeIndicator))
-      }
-
-      override fun onCancelled(e: DatabaseError) {
-        onComplete(null)
-      }
-    }
-    listeners[key] = listener
-
-    val query = speakersRef
-    query.addValueEventListener(listener)
-    queries[key] = query
-  }
-
-  override fun addSpeakerListener(id: String, onComplete: (Speaker?) -> Unit) {
-    if (queries[id] != null) {
-      removeSpeakerListener(id)
-    }
-
-    val listener = object : ValueEventListener {
-      override fun onDataChange(data: DataSnapshot) {
-        onComplete(data.getValue(Speaker::class.java))
-      }
-
-      override fun onCancelled(e: DatabaseError) {
-        onComplete(null)
-      }
-    }
-    listeners[id] = listener
-
-    val query = speakersRef.child(id)
-    query.addValueEventListener(listener)
-    queries[id] = query
-  }
-
-  override fun removeSpeakerListener(key: Any) {
-    queries.remove(key)?.let { query ->
-      listeners.remove(key)?.let { query.removeEventListener(it) }
-    }
   }
 }

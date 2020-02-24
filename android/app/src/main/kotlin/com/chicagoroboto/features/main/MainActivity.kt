@@ -6,6 +6,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.updatePadding
 import com.chicagoroboto.R
+import com.chicagoroboto.databinding.ActivityMainBinding
 import com.chicagoroboto.ext.getAppComponent
 import com.chicagoroboto.features.info.InfoFragment
 import com.chicagoroboto.features.location.LocationFragment
@@ -17,12 +18,13 @@ import com.chicagoroboto.features.speakerdetail.SpeakerNavigator
 import com.chicagoroboto.features.speakerlist.SpeakerListFragment
 import com.chicagoroboto.model.Session
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import dev.chrisbanes.insetter.doOnApplyWindowInsets
 import timber.log.Timber
 import timber.log.error
 
 class MainActivity : AppCompatActivity(), SessionNavigator, SpeakerNavigator {
 
-  private lateinit var navView: BottomNavigationView
+  private lateinit var binding: ActivityMainBinding
 
   private val component: MainComponent by lazy(LazyThreadSafetyMode.NONE) {
     getAppComponent().mainComponent(MainModule(this, this))
@@ -30,14 +32,13 @@ class MainActivity : AppCompatActivity(), SessionNavigator, SpeakerNavigator {
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    setContentView(R.layout.activity_main)
+    binding = ActivityMainBinding.inflate(layoutInflater)
+    setContentView(binding.root)
 
-    val rootView = findViewById<View>(R.id.root)
-    rootView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_STABLE or
+    binding.root.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_STABLE or
             View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
 
-    navView = findViewById(R.id.nav_view)
-    navView.setOnNavigationItemSelectedListener { item ->
+    binding.navView.setOnNavigationItemSelectedListener { item ->
       val tag = item.title
       val fragment = when (item.itemId) {
         R.id.action_schedule -> SessionDateFragment()
@@ -57,15 +58,15 @@ class MainActivity : AppCompatActivity(), SessionNavigator, SpeakerNavigator {
       true
     }
 
-    val navViewPadding = navView.paddingBottom
-    navView.setOnApplyWindowInsetsListener { view, insets ->
+    binding.navView.doOnApplyWindowInsets { view, insets, initialState ->
       view.updatePadding(
-          bottom = insets.systemWindowInsetBottom + navViewPadding
+          bottom = initialState.paddings.bottom + insets.systemWindowInsetBottom
       )
-      insets
     }
 
-    navView.selectedItemId = R.id.action_schedule
+    if (savedInstanceState == null) {
+      binding.navView.selectedItemId = R.id.action_schedule
+    }
   }
 
   override fun getSystemService(name: String): Any? {
@@ -86,8 +87,8 @@ class MainActivity : AppCompatActivity(), SessionNavigator, SpeakerNavigator {
   }
 
   override fun onBackPressed() {
-    if (navView.selectedItemId != R.id.action_schedule) {
-      navView.selectedItemId = R.id.action_schedule
+    if (binding.navView.selectedItemId != R.id.action_schedule) {
+      binding.navView.selectedItemId = R.id.action_schedule
     } else {
       super.onBackPressed()
     }

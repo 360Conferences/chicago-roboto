@@ -52,34 +52,41 @@
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
             android:orientation="vertical">
-            <TextView
-                android:id="@+id/name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:textAppearanceLarge"
-                tools:text="Ryan Harter"/>
-            <TextView
-                android:id="@+id/subname"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:textAppearanceMedium"
-                tools:text="Pixite"/>
-            <TextView
-                android:id="@+id/twitter"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawablePadding="4dp"
-                android:layout_marginBottom="8dp"
-                android:textAppearance="@style/TwitterTextAppearance"
-                tools:text="\@devunwired"/>
-            <TextView
-                android:id="@+id/github"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawablePadding="4dp"
-                android:layout_marginBottom="8dp"
-                android:textAppearance="@style/GithubTextAppearance"
-                tools:text="\rharter"/>
+
+          <TextView
+              android:id="@+id/name"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textAppearance="?android:textAppearanceLarge"
+              tools:text="Ryan Harter" />
+
+          <TextView
+              android:id="@+id/subname"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginBottom="8dp"
+              android:textAppearance="?android:textAppearanceMedium"
+              tools:text="Pixite" />
+
+          <TextView
+              android:id="@+id/twitter"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginBottom="8dp"
+              android:drawablePadding="4dp"
+              android:textAppearance="@style/TwitterTextAppearance"
+              app:drawableStartCompat="@drawable/ic_logo_twitter"
+              tools:text="\@devunwired" />
+
+          <TextView
+              android:id="@+id/github"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginBottom="8dp"
+              android:drawablePadding="4dp"
+              android:textAppearance="@style/GithubTextAppearance"
+              app:drawableStartCompat="@drawable/ic_logo_github"
+              tools:text="\rharter" />
             <TextView
                 android:id="@+id/bio"
                 android:layout_width="wrap_content"

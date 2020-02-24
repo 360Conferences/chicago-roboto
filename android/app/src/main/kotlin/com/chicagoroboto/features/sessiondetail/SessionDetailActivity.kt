@@ -6,53 +6,57 @@ import android.os.Bundle
 import android.text.format.DateUtils
 import android.util.Log
 import android.view.View
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import androidx.coordinatorlayout.widget.CoordinatorLayout
+import androidx.core.view.updatePadding
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager.HORIZONTAL
 import androidx.recyclerview.widget.RecyclerView
 import com.chicagoroboto.R
+import com.chicagoroboto.databinding.ActivitySessionDetailBinding
 import com.chicagoroboto.ext.getAppComponent
 import com.chicagoroboto.ext.guard
+import com.chicagoroboto.ext.presentations
 import com.chicagoroboto.features.sessiondetail.SessionDetailPresenter.Event.SetSessionId
 import com.chicagoroboto.features.sessiondetail.SessionDetailPresenter.Event.ToggleFavorite
 import com.chicagoroboto.features.sessiondetail.SessionDetailPresenter.Model
 import com.chicagoroboto.features.sessiondetail.feedback.FeedbackDialog
+import com.chicagoroboto.features.shared.Presentation
+import com.chicagoroboto.features.shared.startPresentation
 import com.chicagoroboto.features.speakerdetail.SpeakerDetailActivity
 import com.chicagoroboto.features.speakerdetail.SpeakerNavigator
 import com.chicagoroboto.model.Speaker
-import com.chicagoroboto.utils.DrawableUtils
-import com.google.android.material.floatingactionbutton.FloatingActionButton
+import dev.chrisbanes.insetter.doOnApplyWindowInsets
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.InternalCoroutinesApi
-import kotlinx.coroutines.MainScope
-import kotlinx.coroutines.cancel
 import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.launch
 import java.util.*
 import javax.inject.Inject
+import javax.inject.Provider
 
 class SessionDetailActivity : AppCompatActivity(), SpeakerNavigator {
-  private val scope = MainScope()
+
+  @Inject lateinit var presenterProvider: Provider<SessionDetailPresenter>
 
   private lateinit var component: SessionDetailComponent
+  private lateinit var binding: ActivitySessionDetailBinding
 
-  @Inject lateinit var presenter: SessionDetailPresenter
+  private val presentation: Presentation<SessionDetailPresenter> by presentations {
+    presenterProvider.get().startPresentation(Dispatchers.Main)
+  }
 
-  private lateinit var speakerAdapter: SpeakerAdapter
-
-  private lateinit var toolbar: Toolbar
-  private lateinit var banner: TextView
-  private lateinit var description: TextView
-  private lateinit var location: TextView
-  private lateinit var status: TextView
-  private lateinit var favorite: FloatingActionButton
-  private lateinit var feedback: FloatingActionButton
+  private val speakerAdapter = SpeakerAdapter(true, object : SpeakerAdapter.Callback {
+    override fun onSpeakerClicked(speaker: Speaker) {
+      navigateToSpeaker(speaker.id)
+    }
+  })
 
   @InternalCoroutinesApi
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    component = getAppComponent().sessionDetailComponentFactory.create(this).also { it.inject(this) }
+    component = getAppComponent().sessionDetailComponentFactory.create(this)
+    component.inject(this)
 
     val sessionId = intent.getStringExtra("session_id") guard {
       Log.e("SessionDetailActivity", "Missing required string extra: session_id")
@@ -60,51 +64,36 @@ class SessionDetailActivity : AppCompatActivity(), SpeakerNavigator {
       return
     }
 
-    setContentView(R.layout.activity_session_detail)
-    toolbar = findViewById(R.id.toolbar)
-    banner = findViewById(R.id.banner)
-    description = findViewById(R.id.description)
-    location = findViewById(R.id.location)
-    status = findViewById(R.id.status)
-    favorite = findViewById(R.id.favorite)
-    feedback = findViewById(R.id.feedback)
+    val presenter = presentation.presenter
 
-    toolbar.setNavigationOnClickListener { finish() }
+    binding = ActivitySessionDetailBinding.inflate(layoutInflater)
+    setContentView(binding.root)
 
-    speakerAdapter = SpeakerAdapter(true, object : SpeakerAdapter.Callback {
-      override fun onSpeakerClicked(speaker: Speaker) {
-        navigateToSpeaker(speaker.id)
-      }
-    })
-    val speakers: RecyclerView = findViewById(R.id.speakers)
-    speakers.adapter = speakerAdapter
-    speakers.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-
-    // initially hide the feedback button until we get a session
-    (feedback as View).visibility = CoordinatorLayout.GONE
-    feedback.setOnClickListener { FeedbackDialog(this, sessionId).show() }
-    favorite.setOnClickListener { presenter.events.offer(ToggleFavorite) }
-
-    scope.launch {
-      presenter.models.collect { bindModel(it) }
+    binding.toolbar.setNavigationOnClickListener { finish() }
+    binding.toolbar.doOnApplyWindowInsets { view, insets, initialState ->
+      view.updatePadding(top = initialState.paddings.top + insets.systemWindowInsetTop)
     }
 
-    scope.launch {
-      presenter.start()
+    val speakers: RecyclerView = findViewById(R.id.speakers)
+    speakers.adapter = speakerAdapter
+    speakers.layoutManager = LinearLayoutManager(this, HORIZONTAL, false)
+
+    // initially hide the feedback button until we get a session
+    (binding.feedback as View).visibility = CoordinatorLayout.GONE
+    binding.feedback.setOnClickListener { FeedbackDialog(this, sessionId).show() }
+    binding.favorite.setOnClickListener { presenter.events.offer(ToggleFavorite) }
+
+    lifecycleScope.launchWhenStarted {
+      presenter.models.collect { bindModel(it) }
     }
 
     presenter.events.offer(SetSessionId(sessionId))
   }
 
-  override fun onDestroy() {
-    super.onDestroy()
-    scope.cancel()
-  }
-
   private fun bindModel(model: Model) {
     // Session
-    toolbar.title = model.session.title
-    banner.text = getString(
+    binding.toolbar.title = model.session.title
+    binding.banner.text = getString(
         R.string.session_detail_time,
         model.session.location,
         DateUtils.formatDateTime(this, model.session.startTime?.time
@@ -112,42 +101,43 @@ class SessionDetailActivity : AppCompatActivity(), SpeakerNavigator {
         DateUtils.formatDateTime(this, model.session.endTime?.time
             ?: 0, DateUtils.FORMAT_SHOW_TIME)
     )
-    description.text = model.session.description
+    binding.description.text = model.session.description
 
     val address = model.session.address
-    if (address != null) {
-      location.visibility = View.VISIBLE
-      location.text = address
+    if (address.isNotBlank()) {
+      binding.location.visibility = View.VISIBLE
+      binding.location.text = address
 
-      location.setOnClickListener {
-        val mapUri = Uri.parse("geo:0,0?q=${location},+${address.replace(Regex("[\\r\\n\\s]"), "+")}")
-        val intent = Intent(Intent.ACTION_VIEW, mapUri)
-        intent.setPackage("com.google.android.apps.maps")
+      binding.location.setOnClickListener {
+        val mapUri = Uri.parse("geo:0,0?q=${model.session.location},+${address.replace(Regex("[\\r\\n\\s]"), "+")}")
+        val intent = Intent(Intent.ACTION_VIEW, mapUri).apply {
+          setPackage("com.google.android.apps.maps")
+        }
         startActivity(intent)
       }
     } else {
-      location.visibility = View.GONE
+      binding.location.visibility = View.GONE
     }
 
     val now = Date()
     if (model.session.startTime?.after(now) == true) {
-      status.visibility = View.GONE
-      favorite.show()
+      binding.status.visibility = View.GONE
+      binding.favorite.show()
     } else {
-      status.visibility = View.VISIBLE
-      favorite.hide()
+      binding.status.visibility = View.VISIBLE
+      binding.favorite.hide()
 
       if (model.session.endTime?.after(now) == true) {
-        status.setText(R.string.status_in_progress)
+        binding.status.setText(R.string.status_in_progress)
       } else {
-        status.setText(R.string.status_over)
-        feedback.show()
+        binding.status.setText(R.string.status_over)
+        binding.feedback.show()
       }
     }
 
     speakerAdapter.submitList(model.speakers)
 
-    favorite.setImageResource(
+    binding.favorite.setImageResource(
         if (model.isFavorite) R.drawable.ic_favorite_white_24dp
         else R.drawable.ic_favorite_border_white_24dp
     )
