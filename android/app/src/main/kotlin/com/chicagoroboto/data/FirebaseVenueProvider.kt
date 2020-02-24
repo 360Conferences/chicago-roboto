@@ -2,39 +2,29 @@ package com.chicagoroboto.data
 
 import com.chicagoroboto.model.Venue
 import com.google.firebase.database.*
+import kotlinx.coroutines.channels.awaitClose
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.channelFlow
+import timber.log.Timber
+import timber.log.error
 import javax.inject.Inject
 
 class FirebaseVenueProvider @Inject constructor(
     val database: DatabaseReference
 ) : VenueProvider {
 
-  private val queries: MutableMap<Any, Query> = mutableMapOf()
-  private val listeners: MutableMap<Any, ValueEventListener> = mutableMapOf()
-
-  override fun addVenueListener(key: Any, onComplete: (Venue?) -> Unit) {
-    if (queries[key] != null) {
-      removeVenueListener(queries)
-    }
-
-    val listener = object : ValueEventListener {
+  override fun venue(): Flow<Venue> = channelFlow {
+    val query = database.child("venue")
+    val listener = query.addValueEventListener(object : ValueEventListener {
       override fun onDataChange(data: DataSnapshot) {
-        onComplete(data.getValue(Venue::class.java))
+        offer(data.toVenue())
       }
 
-      override fun onCancelled(e: DatabaseError) {
-        onComplete(null)
+      override fun onCancelled(error: DatabaseError) {
+        // no op
       }
-    }
-    listeners[key] = listener
+    })
 
-    val query = this.database.child("venue")
-    query.addValueEventListener(listener)
-    queries[key] = query
-  }
-
-  override fun removeVenueListener(key: Any) {
-    queries.remove(key)?.let { query ->
-      listeners.remove(key)?.let { query.removeEventListener(it) }
-    }
+    awaitClose { query.removeEventListener(listener) }
   }
 }

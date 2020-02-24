@@ -2,6 +2,7 @@ package com.chicagoroboto.data
 
 import com.chicagoroboto.model.Session
 import com.chicagoroboto.model.Speaker
+import com.chicagoroboto.model.Venue
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.ktx.getValue
 
@@ -28,4 +29,15 @@ fun DataSnapshot.toSession() = Session(
     location = child("location").getValue<String>() ?: "",
     address = child("address").getValue<String>() ?: "",
     tracks = child("tracks").getValue<List<String>>() ?: emptyList()
+)
+
+fun DataSnapshot.toVenue(): Venue = Venue(
+    name = child("name").getValue<String>() ?: "",
+    address = child("address").getValue<String>() ?: "",
+    city = child("city").getValue<String>() ?: "",
+    state = child("state").getValue<String>() ?: "",
+    zip = child("zip").getValue<String>() ?: "",
+    phone = child("phone").getValue<String>() ?: "",
+    latitude = child("latitude").getValue<Double>() ?: 41.8339042,
+    longitude = child("longitude").getValue<Double>() ?: -88.012144
 )

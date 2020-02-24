@@ -2,7 +2,7 @@ package com.chicagoroboto.features.location
 
 import dagger.Subcomponent
 
-@Subcomponent(modules = arrayOf(LocationModule::class))
+@Subcomponent
 interface LocationComponent {
-    fun inject(locationView: LocationView)
+    fun inject(locationFragment: LocationFragment)
 }

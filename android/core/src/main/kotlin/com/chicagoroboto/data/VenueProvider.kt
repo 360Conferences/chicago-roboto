@@ -1,8 +1,8 @@
 package com.chicagoroboto.data
 
 import com.chicagoroboto.model.Venue
+import kotlinx.coroutines.flow.Flow
 
 interface VenueProvider {
-    fun addVenueListener(key: Any, onComplete: (venue: Venue?) -> Unit)
-    fun removeVenueListener(key: Any)
+  fun venue(): Flow<Venue>
 }
