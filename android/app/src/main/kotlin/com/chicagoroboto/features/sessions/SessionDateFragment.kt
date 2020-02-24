@@ -4,19 +4,17 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.widget.Toolbar
 import androidx.core.view.updatePadding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
-import androidx.viewpager2.widget.ViewPager2
 import com.chicagoroboto.R
+import com.chicagoroboto.databinding.SessionsBinding
 import com.chicagoroboto.ext.getComponent
 import com.chicagoroboto.ext.presentations
 import com.chicagoroboto.features.main.MainComponent
 import com.chicagoroboto.features.shared.Presentation
 import com.chicagoroboto.features.shared.startPresentation
-import com.google.android.material.appbar.AppBarLayout
-import com.google.android.material.tabs.TabLayout
+import dev.chrisbanes.insetter.doOnApplyWindowInsets
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collect
 import java.text.SimpleDateFormat
@@ -34,31 +32,23 @@ class SessionDateFragment : Fragment() {
 
   @Inject lateinit var presenterProvider: Provider<SessionDatePresenter>
 
-  private lateinit var toolbar: Toolbar
-  private lateinit var tabs: TabLayout
-  private lateinit var pager: ViewPager2
-
+  private lateinit var binding: SessionsBinding
   private lateinit var adapter: SessionPagerAdapter
 
-  override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
-      inflater.inflate(R.layout.view_sessions, container,false)
+  override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    binding = SessionsBinding.inflate(inflater, container, false)
+    return binding.root
+  }
 
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
-    pager = view.findViewById(R.id.pager)
-    pager.adapter = adapter
+    binding.pager.adapter = adapter
+    adapter.mediateTabs(binding.tabs, binding.pager)
 
-    toolbar = view.findViewById(R.id.toolbar)
-    tabs = view.findViewById(R.id.tabs)
-    adapter.mediateTabs(tabs, pager)
-
-    val appBar: AppBarLayout = view.findViewById(R.id.app_bar)
-    val initialToolbarPadding = appBar.paddingTop
-    appBar.setOnApplyWindowInsetsListener { view, insets ->
+    binding.appBar.doOnApplyWindowInsets { view, insets, initialState ->
       view.updatePadding(
-          top = insets.systemWindowInsetTop + initialToolbarPadding
+          top = initialState.paddings.top + insets.systemWindowInsetTop
       )
-      insets
     }
   }
 
@@ -79,7 +69,7 @@ class SessionDateFragment : Fragment() {
           val today = dateFormat.format(Date())
           val index = adapter.dates.indexOfFirst { it.id == today }
           if (index >= 0) {
-            pager.setCurrentItem(index, false)
+            binding.pager.setCurrentItem(index, false)
           }
         }
       }

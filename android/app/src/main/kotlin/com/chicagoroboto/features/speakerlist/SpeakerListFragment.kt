@@ -4,12 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.updatePadding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.chicagoroboto.R
+import com.chicagoroboto.databinding.SpeakerListBinding
 import com.chicagoroboto.ext.getComponent
 import com.chicagoroboto.ext.presentations
 import com.chicagoroboto.features.main.MainComponent
@@ -18,12 +20,13 @@ import com.chicagoroboto.features.shared.Presentation
 import com.chicagoroboto.features.shared.startPresentation
 import com.chicagoroboto.features.speakerdetail.SpeakerNavigator
 import com.chicagoroboto.model.Speaker
+import dev.chrisbanes.insetter.doOnApplyWindowInsets
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collect
 import javax.inject.Inject
 import javax.inject.Provider
 
-class SpeakerListFragment : Fragment() {
+class SpeakerListFragment : Fragment(R.layout.speaker_list) {
 
   private lateinit var component: SpeakerListComponent
 
@@ -40,7 +43,7 @@ class SpeakerListFragment : Fragment() {
     }
   })
 
-  private lateinit var list: RecyclerView
+  private lateinit var binding: SpeakerListBinding
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -48,15 +51,19 @@ class SpeakerListFragment : Fragment() {
     component.inject(this)
   }
 
-  override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
-      inflater.inflate(R.layout.fragment_speaker_list, container, false)
-
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
-    list = view.findViewById<RecyclerView>(R.id.list).apply {
+    binding = SpeakerListBinding.bind(view)
+    binding.list.apply {
       layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
       addItemDecoration(DividerItemDecoration(context, RecyclerView.VERTICAL))
       adapter = this@SpeakerListFragment.adapter
+    }
+
+    binding.appBar.doOnApplyWindowInsets { view, insets, initialState ->
+      view.updatePadding(
+          top = initialState.paddings.top + insets.systemWindowInsetTop
+      )
     }
   }
 

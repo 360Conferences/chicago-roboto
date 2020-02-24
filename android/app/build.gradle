@@ -4,54 +4,56 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
-    defaultConfig {
-        minSdkVersion rootProject.ext.minSdkVersion
-        targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 14
-        versionName "2.2.1"
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables.useSupportLibrary = true
+  compileSdkVersion rootProject.ext.compileSdkVersion
+  defaultConfig {
+    minSdkVersion rootProject.ext.minSdkVersion
+    targetSdkVersion rootProject.ext.targetSdkVersion
+    versionCode 14
+    versionName "2.2.1"
+    testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    vectorDrawables.useSupportLibrary = true
+  }
+  if (project.hasProperty('CHICAGO_ROBOTO_STORE_FILE')) {
+    signingConfigs {
+      release {
+        storeFile file(CHICAGO_ROBOTO_STORE_FILE)
+        storePassword CHICAGO_ROBOTO_STORE_PASSWORD
+        keyAlias CHICAGO_ROBOTO_KEY_ALIAS
+        keyPassword CHICAGO_ROBOTO_KEY_PASSWORD
+      }
     }
-    if (project.hasProperty('CHICAGO_ROBOTO_STORE_FILE')) {
-        signingConfigs {
-            release {
-                storeFile file(CHICAGO_ROBOTO_STORE_FILE)
-                storePassword CHICAGO_ROBOTO_STORE_PASSWORD
-                keyAlias CHICAGO_ROBOTO_KEY_ALIAS
-                keyPassword CHICAGO_ROBOTO_KEY_PASSWORD
-            }
-        }
+  }
+  buildTypes {
+    release {
+      if (project.hasProperty('CHICAGO_ROBOTO_STORE_FILE')) {
+        signingConfig signingConfigs.release
+      }
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
     }
-    buildTypes {
-        release {
-            if (project.hasProperty('CHICAGO_ROBOTO_STORE_FILE')) {
-                signingConfig signingConfigs.release
-            }
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
+  }
+  flavorDimensions 'version'
+  productFlavors {
+    roboto {
+      applicationId "com.chicagoroboto"
+      buildConfigField "String", "EVENT_ID", "\"chicagoroboto-2019\""
+      resValue "string", "app_name", "Roboto"
+      resValue "string", "event_name", "Chicago Roboto"
     }
-    flavorDimensions 'version'
-    productFlavors {
-        roboto {
-            applicationId "com.chicagoroboto"
-            buildConfigField "String", "EVENT_ID", "\"chicagoroboto-2019\""
-            resValue "string", "app_name", "Roboto"
-            resValue "string", "event_name", "Chicago Roboto"
-        }
-        andev {
-            applicationId "com.threesixtyconferences.andev"
-            buildConfigField "String", "EVENT_ID", "\"360andev-2018\""
-            resValue "string", "app_name", "360|AnDev"
-            resValue "string", "event_name", "360|AnDev"
-        }
+    andev {
+      applicationId "com.threesixtyconferences.andev"
+      buildConfigField "String", "EVENT_ID", "\"360andev-2018\""
+      resValue "string", "app_name", "360|AnDev"
+      resValue "string", "event_name", "360|AnDev"
     }
-    sourceSets {
-        main.java.srcDirs += 'src/main/kotlin'
-        test.java.srcDirs += 'src/test/kotlin'
-        androidTest.java.srcDirs += 'src/androidTest/kotlin'
-    }
+  }
+  sourceSets {
+    main.java.srcDirs += 'src/main/kotlin'
+    test.java.srcDirs += 'src/test/kotlin'
+    androidTest.java.srcDirs += 'src/androidTest/kotlin'
+  }
+
+  viewBinding.enabled = true
 }
 
 dependencies {
@@ -73,6 +75,7 @@ dependencies {
   implementation libs.supportCardView
   implementation libs.material
   implementation libs.timber.android
+  implementation libs.insetter
 
   implementation project(':core')
 
@@ -82,8 +85,8 @@ dependencies {
   kapt libs.daggerCompiler
   compileOnly 'org.glassfish:javax.annotation:10.0-b28'
 
-    androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0', {
-      exclude group: 'com.android.support', module: 'support-annotations'
+  androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0', {
+    exclude group: 'com.android.support', module: 'support-annotations'
   })
 
   testImplementation libs.junit4

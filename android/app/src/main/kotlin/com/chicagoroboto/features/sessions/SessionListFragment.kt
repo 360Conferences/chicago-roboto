@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.VERTICAL
 import com.chicagoroboto.R
+import com.chicagoroboto.databinding.GenericListBinding
 import com.chicagoroboto.ext.getComponent
 import com.chicagoroboto.ext.guard
 import com.chicagoroboto.ext.presentations
@@ -26,7 +27,7 @@ import timber.log.error
 import javax.inject.Inject
 import javax.inject.Provider
 
-class SessionListFragment : Fragment() {
+class SessionListFragment : Fragment(R.layout.generic_list) {
 
   companion object {
     private const val ARG_DATE = "date"
@@ -42,7 +43,7 @@ class SessionListFragment : Fragment() {
   @Inject lateinit var presenterProvider: Provider<SessionListPresenter>
   @Inject lateinit var sessionNavigator: SessionNavigator
 
-  private lateinit var list: RecyclerView
+  private lateinit var binding: GenericListBinding
 
   private val adapter: SessionAdapter = SessionAdapter(object : SessionAdapter.Callback {
     override fun onSessionClicked(session: Session) {
@@ -50,12 +51,10 @@ class SessionListFragment : Fragment() {
     }
   })
 
-  override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
-      inflater.inflate(R.layout.fragment_speaker_list, container, false)
-
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
-    list = view.findViewById<RecyclerView>(R.id.list).apply {
+    binding = GenericListBinding.bind(view)
+    binding.list.apply {
       layoutManager = LinearLayoutManager(context, VERTICAL, false)
       addItemDecoration(SessionItemDecoration(context))
       adapter = this@SessionListFragment.adapter
@@ -76,7 +75,7 @@ class SessionListFragment : Fragment() {
       presentation.presenter.models.collect {
         adapter.submitList(it.sessions)
         if (it.currentSessionIndex != -1) {
-          list.scrollToPosition(it.currentSessionIndex)
+          binding.list.scrollToPosition(it.currentSessionIndex)
         }
       }
     }
