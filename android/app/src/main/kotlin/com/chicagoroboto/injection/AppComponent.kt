@@ -21,7 +21,7 @@ interface AppComponent {
 
   fun speakerDetailComponent(): SpeakerDetailComponent
   fun mainComponent(mainModule: MainModule): MainComponent
-  fun infoComponent(infoModule: InfoModule): InfoComponent
+  fun infoComponent(): InfoComponent
 
   @Component.Builder
   interface Builder {

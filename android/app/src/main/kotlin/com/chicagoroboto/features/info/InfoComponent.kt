@@ -2,7 +2,7 @@ package com.chicagoroboto.features.info
 
 import dagger.Subcomponent
 
-@Subcomponent(modules = arrayOf(InfoModule::class))
+@Subcomponent(modules = [InfoModule::class])
 interface InfoComponent {
-    fun inject(infoView: InfoView)
+    fun inject(infoFragment: InfoFragment)
 }

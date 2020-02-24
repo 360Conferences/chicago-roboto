@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.updatePadding
 import com.chicagoroboto.R
 import com.chicagoroboto.ext.getAppComponent
+import com.chicagoroboto.features.info.InfoFragment
 import com.chicagoroboto.features.location.LocationFragment
 import com.chicagoroboto.features.sessiondetail.SessionDetailActivity
 import com.chicagoroboto.features.sessions.SessionDateFragment
@@ -42,6 +43,7 @@ class MainActivity : AppCompatActivity(), SessionNavigator, SpeakerNavigator {
         R.id.action_schedule -> SessionDateFragment()
         R.id.action_speakers -> SpeakerListFragment()
         R.id.action_location -> LocationFragment()
+        R.id.action_info -> InfoFragment()
         else -> {
           Timber.error { "Unknown root view id: ${resources.getResourceName(item.itemId)}" }
           return@setOnNavigationItemSelectedListener false
