@@ -15,7 +15,6 @@ ext {
   ]
 
   libs = [
-      circularImageView: 'com.mikhaellopez:circularimageview:3.0.2',
       'dagger'         : [
           'core'    : "com.google.dagger:dagger:${versions.dagger}",
           'compiler': "com.google.dagger:dagger-compiler:${versions.dagger}",
@@ -36,9 +35,9 @@ ext {
           'database': "com.google.firebase:firebase-database-ktx:19.2.1",
           'storage' : "com.google.firebase:firebase-storage-ktx:19.1.1",
       ],
-      glide            : "com.github.bumptech.glide:glide:3.7.0",
+      'glide'            : "com.github.bumptech.glide:glide:3.7.0",
       'insetter'       : "dev.chrisbanes:insetter-ktx:0.2.1",
-      junit4           : "junit:junit:4.12",
+      'junit4'           : "junit:junit:4.12",
       'kotlin'         : [
           'stdlib'    : "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version",
           'coroutines': [
@@ -48,15 +47,15 @@ ext {
           ],
           'test'      : "org.jetbrains.kotlin:kotlin-test:$kotlin_version",
       ],
-      mockitoCore      : "org.mockito:mockito-core:2.8.47",
-      mockitoKotlin    : "com.nhaarman:mockito-kotlin:1.5.0",
-      multilineToolbar : "net.opacapp:multiline-collapsingtoolbar:27.1.0",
-      playServicesMaps : "com.google.android.gms:play-services-maps:17.0.0",
-      'material'       : 'com.google.android.material:material:1.1.0',
+      'mockitoCore'      : "org.mockito:mockito-core:2.8.47",
+      'mockitoKotlin'    : "com.nhaarman:mockito-kotlin:1.5.0",
+      'multilineToolbar' : "net.opacapp:multiline-collapsingtoolbar:27.1.1",
+      'playServicesMaps' : "com.google.android.gms:play-services-maps:17.0.0",
+      'material'       : 'com.google.android.material:material:1.2.0-alpha05',
       'timber'         : [
           'jdk'    : 'com.jakewharton.timber:timber-jdk:5.0.0-SNAPSHOT',
           'android': 'com.jakewharton.timber:timber-android:5.0.0-SNAPSHOT',
       ],
-      truth            : "com.google.truth:truth:0.39",
+      'truth'            : "com.google.truth:truth:0.39",
   ]
 }

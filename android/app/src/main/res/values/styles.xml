@@ -1,5 +1,12 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
+  <attr name="borderWidth" format="dimension|reference" />
+  <attr name="borderColor" format="color|reference" />
+  <declare-styleable name="CircularImageView">
+    <attr name="borderWidth" />
+    <attr name="borderColor" />
+  </declare-styleable>
+
   <style name="Platform.Theme.Conferences" parent="Theme.MaterialComponents.Light.NoActionBar">
   </style>
 

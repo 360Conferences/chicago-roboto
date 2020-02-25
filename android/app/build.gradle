@@ -57,7 +57,6 @@ android {
 }
 
 dependencies {
-  implementation libs.circularImageView
   implementation libs.firebase.auth
   implementation libs.firebase.database
   implementation libs.firebase.storage
@@ -72,7 +71,6 @@ dependencies {
   implementation libs.androidx.viewpager
   implementation libs.androidx.constraintlayout
   implementation libs.androidx.appcompat
-  implementation libs.androidx.cardview
   implementation libs.material
   implementation libs.timber.android
   implementation libs.insetter
