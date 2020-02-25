@@ -70,9 +70,6 @@ class SessionDetailActivity : AppCompatActivity(), SpeakerNavigator {
     setContentView(binding.root)
 
     binding.toolbar.setNavigationOnClickListener { finish() }
-    binding.toolbar.doOnApplyWindowInsets { view, insets, initialState ->
-      view.updatePadding(top = initialState.paddings.top + insets.systemWindowInsetTop)
-    }
 
     val speakers: RecyclerView = findViewById(R.id.speakers)
     speakers.adapter = speakerAdapter

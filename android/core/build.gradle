@@ -8,9 +8,9 @@ sourceSets {
 }
 
 dependencies {
-  api libs.kotlinStdlib
+  api libs.kotlin.stdlib
   api libs.kotlin.coroutines.core
-  api libs.dagger
+  api libs.dagger.core
 
   implementation libs.timber.jdk
 
@@ -18,8 +18,8 @@ dependencies {
   testImplementation libs.truth
   testImplementation libs.mockitoCore
   testImplementation libs.mockitoKotlin
-  testImplementation libs.kotlinStdlib
-  testImplementation libs.kotlinTest
+  testImplementation libs.kotlin.stdlib
+  testImplementation libs.kotlin.test
 }
 
 sourceCompatibility = "1.7"

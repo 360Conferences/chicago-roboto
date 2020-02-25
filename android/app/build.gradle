@@ -61,7 +61,7 @@ dependencies {
   implementation libs.firebase.auth
   implementation libs.firebase.database
   implementation libs.firebase.storage
-  implementation libs.kotlinStdlib
+  implementation libs.kotlin.stdlib
   implementation libs.kotlin.coroutines.android
   implementation libs.kotlin.coroutines.firebase
   implementation libs.multilineToolbar
@@ -81,8 +81,8 @@ dependencies {
 
   implementation libs.glide
 
-  implementation libs.dagger
-  kapt libs.daggerCompiler
+  implementation libs.dagger.core
+  kapt libs.dagger.compiler
   compileOnly 'org.glassfish:javax.annotation:10.0-b28'
 
   androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0', {

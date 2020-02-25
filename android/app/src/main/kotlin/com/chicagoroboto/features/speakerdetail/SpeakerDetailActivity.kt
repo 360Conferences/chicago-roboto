@@ -11,6 +11,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.net.toUri
 import androidx.core.util.Pair
+import androidx.core.view.updatePadding
 import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.GlideDrawable
@@ -24,6 +25,7 @@ import com.chicagoroboto.ext.guard
 import com.chicagoroboto.ext.presentations
 import com.chicagoroboto.features.shared.Presentation
 import com.chicagoroboto.features.shared.startPresentation
+import dev.chrisbanes.insetter.doOnApplyWindowInsets
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collect
 import timber.log.Timber
@@ -105,6 +107,7 @@ class SpeakerDetailActivity : AppCompatActivity() {
     binding.toolbar.setNavigationOnClickListener {
       onBackPressed()
     }
+
     lifecycleScope.launchWhenStarted {
       presentation.presenter.models.collect { model ->
         binding.name.text = model.speaker.name
