@@ -13,12 +13,14 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.chicagoroboto.R
+import com.chicagoroboto.databinding.ItemSessionBinding
 import com.chicagoroboto.features.sessions.SessionAdapter.ViewHolder
 import com.chicagoroboto.features.sessions.SessionListPresenter.Model.Session
 import com.chicagoroboto.utils.DrawableUtils
 import java.util.*
 
 internal class SessionAdapter(
+    private val inflater: LayoutInflater,
     private val callback: Callback
 ) : ListAdapter<Session, ViewHolder>(SessionItemCallback) {
 
@@ -27,57 +29,42 @@ internal class SessionAdapter(
   }
 
   override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-    val view = LayoutInflater.from(parent.context).inflate(R.layout.item_session, parent, false)
+    val view = ItemSessionBinding.inflate(inflater, parent, false)
     return ViewHolder(view, callback)
   }
 
   override fun onBindViewHolder(holder: ViewHolder, position: Int) {
     val session = getItem(position)
-    holder.bindSession(session)
+    val firstInTimeSlot = position == 0 ||
+        (getItem(position - 1).session.startTime == session.session.startTime)
 
-    if (position > 0) {
-      val previous = getItem(position - 1)
-      holder.timeslot.visibility = if (previous.session.startTime == session.session.startTime) {
-        View.INVISIBLE
-      } else {
-        View.VISIBLE
-      }
-    } else {
-      holder.timeslot.visibility = View.VISIBLE
-    }
+    holder.bindSession(session, firstInTimeSlot)
   }
 
   internal class ViewHolder(
-      itemView: View,
+      internal val binding: ItemSessionBinding,
       private val callback: Callback
-  ) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
+  ) : RecyclerView.ViewHolder(binding.root), View.OnClickListener {
 
     var session: Session? = null
 
-    val timeslot: TextView = itemView.findViewById(R.id.timeslot)
-    private val card: CardView = itemView.findViewById(R.id.card)
-    private val title: TextView = itemView.findViewById(R.id.title)
-    private val speakers: TextView = itemView.findViewById(R.id.speakers)
-    private val room: TextView = itemView.findViewById(R.id.room)
-    private val favorite: ImageView = itemView.findViewById(R.id.favorite)
-
     init {
-      itemView.setOnClickListener(this)
+      binding.card.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
       session?.let { callback.onSessionClicked(it) }
     }
 
-    fun bindSession(session: Session) {
+    fun bindSession(session: Session, isFirstInTimeSlot: Boolean) {
       this.session = session
 
-      val context = itemView.context
+      val context = binding.root.context
       val startTime = formatDateTime(context, session.session.startTime?.time ?: 0,
           DateUtils.FORMAT_SHOW_TIME)
       val endTime = formatDateTime(context, session.session.endTime?.time ?: 0,
           DateUtils.FORMAT_SHOW_TIME)
-      timeslot.text = context.getString(R.string.session_time, startTime, endTime)
+      binding.timeslot.text = context.getString(R.string.session_time, startTime, endTime)
 
       // Dim the session card once the session is over
       val now = Date()
@@ -86,16 +73,16 @@ internal class SessionAdapter(
       } else {
         R.color.session_finished_bg
       }
-      card.setBackgroundColor(ContextCompat.getColor(context, bgColor))
+      binding.card.setBackgroundColor(ContextCompat.getColor(context, bgColor))
 
-      title.text = session.session.title
+      binding.title.text = session.session.title
 
       if (session.speakers.isEmpty()) {
-        speakers.visibility = View.GONE
+        binding.speakers.visibility = View.GONE
       } else {
-        speakers.visibility = View.VISIBLE
-        speakers.text = session.speakers.joinToString { it.name }
-        room.setCompoundDrawablesWithIntrinsicBounds(
+        binding.speakers.visibility = View.VISIBLE
+        binding.speakers.text = session.speakers.joinToString { it.name }
+        binding.room.setCompoundDrawablesWithIntrinsicBounds(
             DrawableUtils.create(context, R.drawable.ic_speaker),
             null,
             null,
@@ -103,18 +90,24 @@ internal class SessionAdapter(
       }
 
       if (session.session.location.isBlank()) {
-        room.visibility = View.GONE
+        binding.room.visibility = View.GONE
       } else {
-        room.visibility = View.VISIBLE
-        room.text = session.session.location
-        room.setCompoundDrawablesWithIntrinsicBounds(
+        binding.room.visibility = View.VISIBLE
+        binding.room.text = session.session.location
+        binding.room.setCompoundDrawablesWithIntrinsicBounds(
             DrawableUtils.create(context, R.drawable.ic_room),
             null,
             null,
             null)
       }
 
-      favorite.visibility = if (session.isFavorite) View.VISIBLE else View.GONE
+      binding.favorite.visibility = if (session.isFavorite) View.VISIBLE else View.GONE
+
+      if (isFirstInTimeSlot) {
+        binding.timeslot.visibility = View.VISIBLE
+      } else {
+        binding.timeslot.visibility = View.INVISIBLE
+      }
     }
   }
 

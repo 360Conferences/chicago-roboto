@@ -30,7 +30,7 @@ internal class SessionItemDecoration(private val context: Context) : RecyclerVie
             if (view != null) {
                 val holder = parent.getChildViewHolder(view)
                 if (holder is SessionAdapter.ViewHolder && holder.adapterPosition != 0) {
-                    if (holder.timeslot.visibility == View.VISIBLE) {
+                    if (holder.binding.timeslot.visibility == View.VISIBLE) {
                         val left = 0
                         val top = holder.itemView.top
                         val right = parent.width
@@ -48,7 +48,7 @@ internal class SessionItemDecoration(private val context: Context) : RecyclerVie
 
         val holder = parent.getChildViewHolder(view)
         if (holder is SessionAdapter.ViewHolder) {
-            if (holder.timeslot.visibility == View.VISIBLE && holder.adapterPosition != 0) {
+            if (holder.binding.timeslot.visibility == View.VISIBLE && holder.adapterPosition != 0) {
                 outRect.set(0, divider.intrinsicHeight, 0, 0)
             }
         }

@@ -41,12 +41,7 @@ class SessionListFragment : Fragment(R.layout.generic_list) {
   @Inject lateinit var sessionNavigator: SessionNavigator
 
   private lateinit var binding: GenericListBinding
-
-  private val adapter: SessionAdapter = SessionAdapter(object : SessionAdapter.Callback {
-    override fun onSessionClicked(session: Session) {
-      sessionNavigator.showSession(session.session)
-    }
-  })
+  private lateinit var adapter: SessionAdapter
 
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
@@ -54,7 +49,11 @@ class SessionListFragment : Fragment(R.layout.generic_list) {
     binding.list.apply {
       layoutManager = LinearLayoutManager(context, VERTICAL, false)
       addItemDecoration(SessionItemDecoration(context))
-      adapter = this@SessionListFragment.adapter
+      this@SessionListFragment.adapter = SessionAdapter(layoutInflater, object : SessionAdapter.Callback {
+        override fun onSessionClicked(session: Session) {
+          sessionNavigator.showSession(session.session)
+        }
+      }).also { adapter = it }
     }
   }
 

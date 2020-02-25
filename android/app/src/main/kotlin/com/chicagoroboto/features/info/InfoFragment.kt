@@ -2,6 +2,8 @@ package com.chicagoroboto.features.info
 
 import android.os.Bundle
 import android.view.View
+import androidx.constraintlayout.widget.ConstraintSet
+import androidx.core.view.updateLayoutParams
 import androidx.core.view.updatePadding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
@@ -15,6 +17,7 @@ import com.chicagoroboto.features.info.InfoPresenter.Event.ClickedLibrary
 import com.chicagoroboto.features.shared.Presentation
 import com.chicagoroboto.features.shared.startPresentation
 import dev.chrisbanes.insetter.doOnApplyWindowInsets
+import kotlinx.android.synthetic.main.info.view.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collect
 import javax.inject.Inject
@@ -41,10 +44,8 @@ class InfoFragment : Fragment(R.layout.info) {
       adapter = this@InfoFragment.adapter
     }
 
-    binding.appBar.doOnApplyWindowInsets { view, insets, initialState ->
-      view.updatePadding(
-          top = initialState.paddings.top + insets.systemWindowInsetTop
-      )
+    binding.inset.doOnApplyWindowInsets { view, insets, initialState ->
+      view.updateLayoutParams { height = insets.systemWindowInsetTop }
     }
   }
 

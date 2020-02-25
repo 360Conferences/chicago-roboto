@@ -20,11 +20,15 @@ ext {
       dagger           : "com.google.dagger:dagger:${versions.dagger}",
       daggerCompiler   : "com.google.dagger:dagger-compiler:${versions.dagger}",
       'androidx'       : [
-          'fragment' : "androidx.fragment:fragment-ktx:1.2.0",
-          'lifecycle': [
+          'recyclerview'    : 'androidx.recyclerview:recyclerview:1.0.0',
+          'appcompat'       : 'androidx.appcompat:appcompat:1.0.0',
+          'cardview'        : 'androidx.cardview:cardview:1.0.0',
+          'constraintlayout': "androidx.constraintlayout:constraintlayout:2.0.0-beta4",
+          'fragment'        : "androidx.fragment:fragment-ktx:1.2.0",
+          'lifecycle'       : [
               'runtime': "androidx.lifecycle:lifecycle-runtime-ktx:2.2.0"
           ],
-          'viewpager': "androidx.viewpager2:viewpager2:1.0.0",
+          'viewpager'       : "androidx.viewpager2:viewpager2:1.0.0",
       ],
       'firebase'       : [
           'auth'    : "com.google.firebase:firebase-auth:19.2.0",
@@ -51,9 +55,6 @@ ext {
       mockitoKotlin    : "com.nhaarman:mockito-kotlin:1.5.0",
       multilineToolbar : "net.opacapp:multiline-collapsingtoolbar:27.1.0",
       playServicesMaps : "com.google.android.gms:play-services-maps:17.0.0",
-      recyclerView     : 'androidx.recyclerview:recyclerview:1.0.0',
-      supportAppCompat : 'androidx.appcompat:appcompat:1.0.0',
-      supportCardView  : 'androidx.cardview:cardview:1.0.0',
       'material'       : 'com.google.android.material:material:1.1.0',
       'timber'         : [
           'jdk'    : 'com.jakewharton.timber:timber-jdk:5.0.0-SNAPSHOT',

@@ -57,7 +57,6 @@ android {
 }
 
 dependencies {
-  implementation libs.constraintLayout
   implementation libs.circularImageView
   implementation libs.firebase.auth
   implementation libs.firebase.database
@@ -67,12 +66,13 @@ dependencies {
   implementation libs.kotlin.coroutines.firebase
   implementation libs.multilineToolbar
   implementation libs.playServicesMaps
-  implementation libs.recyclerView
+  implementation libs.androidx.recyclerview
   implementation libs.androidx.fragment
   implementation libs.androidx.lifecycle.runtime
   implementation libs.androidx.viewpager
-  implementation libs.supportAppCompat
-  implementation libs.supportCardView
+  implementation libs.androidx.constraintlayout
+  implementation libs.androidx.appcompat
+  implementation libs.androidx.cardview
   implementation libs.material
   implementation libs.timber.android
   implementation libs.insetter

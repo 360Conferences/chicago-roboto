@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+  <color name="bg_window">#fafafa</color>
   <color name="colorPrimary">#4c626c</color>
-  <color name="colorPrimaryDark">#324047</color>
-  <color name="colorAccent">#ee5c49</color>
+  <color name="colorPrimaryVariant">#324047</color>
+  <color name="colorOnPrimary">#ffffff</color>
+  <color name="colorSecondary">#ee5c49</color>
+  <color name="colorSecondaryVariant">#ee5c49</color>
+  <color name="colorOnSecondary">#ffffff</color>
 
   <color name="twitter_blue">#55ACEE</color>
   <color name="color_nav_bg">#333333</color>

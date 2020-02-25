@@ -3,6 +3,7 @@ package com.chicagoroboto.features.speakerdetail
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
+import android.content.Intent.ACTION_VIEW
 import android.os.Build.VERSION
 import android.os.Build.VERSION_CODES
 import android.os.Bundle
@@ -109,22 +110,26 @@ class SpeakerDetailActivity : AppCompatActivity() {
         binding.name.text = model.speaker.name
         binding.bio.text = model.speaker.bio
 
-        if (model.speaker.twitter.isBlank()) {
+        if (model.speaker.twitter.isNotBlank()) {
           binding.twitter.visibility = View.VISIBLE
           binding.twitter.text = model.speaker.twitter
-          startActivity(
-              Intent(Intent.ACTION_VIEW, "https://www.twitter.com/${model.speaker.twitter}".toUri())
-          )
+          binding.twitter.setOnClickListener {
+            startActivity(
+                Intent(ACTION_VIEW, "https://www.twitter.com/${model.speaker.twitter.removePrefix("@")}".toUri())
+            )
+          }
         } else {
           binding.twitter.visibility = View.GONE
         }
 
-        if (model.speaker.github.isBlank()) {
+        if (model.speaker.github.isNotBlank()) {
           binding.github.visibility = View.VISIBLE
           binding.github.text = model.speaker.github
-          startActivity(
-              Intent(Intent.ACTION_VIEW, "https://www.github.com/${model.speaker.github}".toUri())
-          )
+          binding.github.setOnClickListener {
+            startActivity(
+                Intent(ACTION_VIEW, "https://www.github.com/${model.speaker.github}".toUri())
+            )
+          }
         } else {
           binding.github.visibility = View.GONE
         }
