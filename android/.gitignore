@@ -8,3 +8,4 @@
 .externalNativeBuild
 build
 google-services.json
+play-service-account.json

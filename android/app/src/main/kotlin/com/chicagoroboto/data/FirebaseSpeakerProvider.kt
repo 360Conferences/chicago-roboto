@@ -25,7 +25,7 @@ class FirebaseSpeakerProvider @Inject constructor(
     val listener = query.addValueEventListener(object : ValueEventListener {
       override fun onDataChange(data: DataSnapshot) {
         if (data.exists()) {
-          channel.offer(data.children.map { it.toSpeaker() })
+          channel.offer(data.children.map { it.toSpeaker() }.sortedBy { it.name })
         }
       }
       override fun onCancelled(error: DatabaseError) {

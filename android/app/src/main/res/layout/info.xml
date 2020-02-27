@@ -158,6 +158,18 @@
         android:textAppearance="?textAppearanceBody1"
         android:textColor="?attr/colorOnPrimary" />
 
+    <Button
+        android:id="@+id/contributor_invite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/toolbar"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar"
+        app:layout_constraintTop_toBottomOf="@+id/after_10"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        android:text="@string/contributor_invite"
+        android:textColor="?attr/colorOnPrimary"
+        style="@style/Widget.MaterialComponents.Button.TextButton" />
+
     <TextView
         android:id="@+id/hider"
         android:layout_width="0dp"

@@ -32,6 +32,8 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBkzDCz4N_AWbrywq6KUrek5DH86zfQvaE" />
 
+      <meta-data android:name="firebase_analytics_collection_enabled" android:value="false" />
+
     </application>
 
 </manifest>

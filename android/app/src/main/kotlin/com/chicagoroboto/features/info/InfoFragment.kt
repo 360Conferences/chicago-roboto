@@ -1,7 +1,11 @@
 package com.chicagoroboto.features.info
 
+import android.content.Intent
+import android.content.Intent.ACTION_VIEW
+import android.net.Uri
 import android.os.Bundle
 import android.view.View
+import androidx.core.view.updateLayoutParams
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -13,6 +17,7 @@ import com.chicagoroboto.ext.presentations
 import com.chicagoroboto.features.info.InfoPresenter.Event.ClickedLibrary
 import com.chicagoroboto.features.shared.Presentation
 import com.chicagoroboto.features.shared.startPresentation
+import dev.chrisbanes.insetter.doOnApplyWindowInsets
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collect
 import javax.inject.Inject
@@ -41,6 +46,10 @@ class InfoFragment : Fragment(R.layout.info) {
 
     binding.inset.doOnApplyWindowInsets { view, insets, initialState ->
       view.updateLayoutParams { height = insets.systemWindowInsetTop }
+    }
+
+    binding.contributorInvite.setOnClickListener {
+      startActivity(Intent(ACTION_VIEW, Uri.parse(getString(R.string.github_link))))
     }
   }
 

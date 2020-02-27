@@ -1,29 +1,30 @@
 <resources>
-    <string name="open_drawer">Open Drawer</string>
-    <string name="close_drawer">Close Drawer</string>
-    <string name="status_in_progress">Happening now</string>
-    <string name="status_over">Tell us how it went</string>
-    <string name="action_schedule">Schedule</string>
-    <string name="action_speakers">Speakers</string>
-    <string name="action_location">Location</string>
-    <string name="action_info">Info</string>
+  <string name="open_drawer">Open Drawer</string>
+  <string name="close_drawer">Close Drawer</string>
+  <string name="status_in_progress">Happening now</string>
+  <string name="status_over">Tell us how it went</string>
+  <string name="action_schedule">Schedule</string>
+  <string name="action_speakers">Speakers</string>
+  <string name="action_location">Location</string>
+  <string name="action_info">Info</string>
 
-    <string name="session_time">%1$s\nto\n%2$s</string>
-    <string name="session_detail_time">%1$s, %2$s - %3$s</string>
+  <string name="session_time">%1$s\nto\n%2$s</string>
+  <string name="session_detail_time">%1$s, %2$s - %3$s</string>
 
-    <!-- Licensing -->
-    <string name="google_maps">Google Maps</string>
-    <string name="glide">Glide</string>
-    <string name="info_topper">The <b>Chicago Roboto</b> app is open source, and uses these open source libraries.</string>
-    <string name="feedback_title">How would you rate this session?</string>
-    <string name="feedback_session">Overall session experience:</string>
-    <string name="feedback_content">Technical level of the session content:</string>
-    <string name="feedback_speaker">Presentation skills of the speaker:</string>
-    <string name="cancel">Cancel</string>
-    <string name="submit">Submit</string>
-    <string name="cd_logo">Event Logo</string>
-    <string name="note_feedback_title">%1$s complete</string>
-    <string name="note_feedback_msg">Don\'t forget to submit feedback.</string>
+  <!-- Licensing -->
+  <string name="google_maps">Google Maps</string>
+  <string name="glide">Glide</string>
+  <string name="info_topper">The <b>Chicago Roboto</b> app is open source, and uses these open source libraries.</string>
+  <string name="feedback_title">How would you rate this session?</string>
+  <string name="feedback_session">Overall session experience:</string>
+  <string name="feedback_content">Technical level of the session content:</string>
+  <string name="feedback_speaker">Presentation skills of the speaker:</string>
+  <string name="cancel">Cancel</string>
+  <string name="submit">Submit</string>
+  <string name="cd_logo">Event Logo</string>
+  <string name="note_feedback_title">%1$s complete</string>
+  <string name="note_feedback_msg">Don\'t forget to submit feedback.</string>
   <string name="feedback_note_channel">Session Feedback</string>
-    <string name="cd_favorite">Favorite</string>
+  <string name="cd_favorite">Favorite</string>
+  <string name="contributor_invite">Join us on GitHub!</string>
 </resources>
