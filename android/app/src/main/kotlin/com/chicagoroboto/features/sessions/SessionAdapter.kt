@@ -33,7 +33,7 @@ internal class SessionAdapter(
   override fun onBindViewHolder(holder: ViewHolder, position: Int) {
     val session = getItem(position)
     val firstInTimeSlot = position == 0 ||
-        (getItem(position - 1).session.startTime == session.session.startTime)
+        (getItem(position - 1).session.startTime != session.session.startTime)
 
     holder.bindSession(session, firstInTimeSlot)
   }
