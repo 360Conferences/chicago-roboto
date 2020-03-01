@@ -1,64 +1,232 @@
 <?xml version="1.0" encoding="utf-8"?>
 <MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
   <Transition
-      app:constraintSetEnd="@id/end"
-      app:constraintSetStart="@id/start"
-      app:duration="1000">
+      app:constraintSetEnd="@id/collapsed"
+      app:constraintSetStart="@id/expanded"
+      app:duration="200">
+
     <OnSwipe
         app:dragDirection="dragUp"
+        app:dragScale="1.2"
+        app:maxAcceleration="100"
+        app:onTouchUp="autoComplete"
         app:touchAnchorId="@+id/list"
         app:touchAnchorSide="top" />
+
+    <KeyFrameSet>
+      <!--region toolbar text -->
+      <KeyPosition
+          app:framePosition="80"
+          app:motionTarget="@+id/toolbar_text"
+          app:percentX="1"
+          app:percentY="1" />
+
+      <KeyPosition
+          app:framePosition="50"
+          app:motionTarget="@+id/toolbar_text"
+          app:percentX="0.04"
+          app:percentY="0.9" />
+
+      <KeyAttribute
+          android:elevation="0dp"
+          app:framePosition="99"
+          app:motionTarget="@id/toolbar_text" />
+      <!--endregion toolbar text -->
+
+      <!--region toolbar background -->
+      <KeyAttribute
+          android:elevation="0dp"
+          app:framePosition="99"
+          app:motionTarget="@id/toolbar_background" />
+      <!--endregion toolbar background -->
+
+      <!--region fab background -->
+      <KeyAttribute
+          android:alpha="1"
+          android:scaleX="1"
+          android:scaleY="1"
+          app:framePosition="50"
+          app:motionTarget="@id/contribute_fab" />
+
+      <KeyAttribute
+          android:scaleX="0"
+          android:scaleY="0"
+          app:framePosition="80"
+          app:motionTarget="@id/contribute_fab" />
+      <!--endregion fab background -->
+
+      <!--region fab icon -->
+      <KeyPosition
+          app:framePosition="55"
+          app:motionTarget="@+id/contribute_img"
+          app:percentX="0"
+          app:percentY="0.5" />
+
+      <KeyPosition
+          app:framePosition="80"
+          app:motionTarget="@+id/contribute_img"
+          app:percentX="1"
+          app:percentY="1"
+          app:sizePercent="1" />
+
+      <KeyAttribute
+          android:elevation="6dp"
+          app:framePosition="90"
+          app:motionTarget="@id/contribute_img" />
+      <!--endregion fab icon -->
+    </KeyFrameSet>
   </Transition>
 
-  <ConstraintSet android:id="@+id/start">
+  <ConstraintSet android:id="@+id/expanded">
     <Constraint
-        android:id="@+id/toolbar"
-        android:layout_width="0dp"
-        android:layout_height="200dp"
+        android:id="@+id/toolbar_background"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Constraint
+        android:id="@+id/toolbar_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.45"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Constraint
+        android:id="@+id/toolbar_text_space_place_holder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <Constraint
+        android:id="@+id/start_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toStartOf="@id/toolbar_text_space_place_holder"
+        app:layout_constraintTop_toTopOf="parent" />
+    <Constraint
+        android:id="@+id/end_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        app:layout_constraintStart_toEndOf="@id/toolbar_text_space_place_holder"
+        app:layout_constraintTop_toTopOf="parent" />
+    <Constraint
+        android:id="@+id/underline_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_text_space_place_holder" />
+
+    <Constraint
+        android:id="@+id/contribute_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@id/toolbar_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_background" />
+
+    <Constraint
+        android:id="@+id/contribute_img"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        android:elevation="6dp"
+        app:layout_constraintBottom_toBottomOf="@id/contribute_fab"
+        app:layout_constraintEnd_toEndOf="@id/contribute_fab"
+        app:layout_constraintStart_toStartOf="@id/contribute_fab"
+        app:layout_constraintTop_toTopOf="@id/contribute_fab" />
+
   </ConstraintSet>
 
-  <ConstraintSet android:id="@+id/end">
+  <ConstraintSet android:id="@+id/collapsed">
+
     <Constraint
-        android:id="@+id/toolbar"
-        android:layout_width="0dp"
-        android:layout_height="?attr/actionBarSize"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/toolbar_background"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:elevation="4dp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Constraint
+        android:id="@+id/toolbar_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:elevation="4dp"
+        android:scaleX="1.2"
+        android:scaleY="1.2"
+        app:layout_constraintBottom_toBottomOf="@id/toolbar_background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <Constraint
-        android:id="@+id/title"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintTop_toTopOf="@+id/toolbar"
-        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/start_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toStartOf="@id/toolbar_text_space_place_holder"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Constraint
+        android:id="@+id/toolbar_text_space_place_holder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+
+        android:visibility="invisible"
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Constraint
+        android:id="@+id/end_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@id/toolbar_text_space_place_holder"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Constraint
+        android:id="@+id/underline_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginStart="16dp"
-        android:alpha="0"/>
-    <Constraint
-        android:id="@+id/title_bold"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintTop_toTopOf="@+id/toolbar"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_text_space_place_holder" />
+
+    <Constraint
+        android:id="@+id/contribute_img"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        android:elevation="4dp"
+        app:layout_constraintBottom_toBottomOf="@id/toolbar_background"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginStart="16dp"
-        android:alpha="1"/>
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Constraint
-        android:id="@+id/hider"
-        android:alpha="1.0"
-        app:layout_constraintEnd_toEndOf="@+id/toolbar"
-        app:layout_constraintStart_toStartOf="@+id/toolbar"
-        app:layout_constraintTop_toTopOf="@+id/toolbar"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar" />
-    <Constraint
-      android:id="@+id/contributor_invite"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintTop_toTopOf="@+id/toolbar"
-        app:layout_constraintStart_toStartOf="@+id/toolbar"
-        app:layout_constraintEnd_toEndOf="@+id/toolbar"
-        android:alpha="0"/>
+        android:id="@+id/contribute_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:scaleX="0"
+        android:scaleY="0"
+        app:layout_constraintBottom_toBottomOf="@id/toolbar_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_background"/>
+
   </ConstraintSet>
 
 </MotionScene>
