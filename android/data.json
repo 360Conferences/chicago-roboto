@@ -181,7 +181,7 @@
     "-L-2S4rWWRVi2OlUEpRR" : {
       "abstract" : "Mark Allison (author of https://blog.stylingandroid,com) has a deep love of VectorDrawable. He has spoken at conferences about how to construct and Animate them in his talk entitled \"Vector All The Things\".\n\nIn this all new talk, Mark will look at some of the features which have been added to VectorDrawable and its sibling AnimatedVectorDrawable since they first appeared in Android Lollipop 5.0 (API 21). There will be a dive in to fill windings which can cause some baffling rendering oddities, yet can be quite simple to fix once you recognise that fill windings are the cause; There will also be a look at the recently added gradient support; And, of course, there will be plenty of tricks and tips to help with your creation of fabulous VectorDrawables, and amazing Animations.",
       "start_time": "2018-04-12T14:00:00-0500",
-      "end_time": "2018-04-1214:45:00-0500",
+      "end_time": "2018-04-12T14:45:00-0500",
       "date" : "2018-04-12",
       "accepted" : true,
       "duration" : 40,
