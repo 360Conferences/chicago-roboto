@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.core.view.updatePadding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
-import com.chicagoroboto.R
 import com.chicagoroboto.databinding.SessionsBinding
 import com.chicagoroboto.ext.getComponent
 import com.chicagoroboto.ext.presentations
@@ -42,8 +41,6 @@ class SessionDateFragment : Fragment() {
 
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
-    binding.pager.adapter = adapter
-    adapter.mediateTabs(binding.tabs, binding.pager)
 
     binding.appBar.doOnApplyWindowInsets { view, insets, initialState ->
       view.updatePadding(
@@ -63,6 +60,9 @@ class SessionDateFragment : Fragment() {
         adapter.dates.clear()
         adapter.dates.addAll(it.dates)
         adapter.notifyDataSetChanged()
+
+        binding.pager.adapter = adapter
+        adapter.mediateTabs(binding.tabs, binding.pager)
 
         // Set the current tab to today
         if (it.dates.isNotEmpty()) {
