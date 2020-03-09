@@ -64,12 +64,14 @@ class SessionDateFragment : Fragment() {
         binding.pager.adapter = adapter
         adapter.mediateTabs(binding.tabs, binding.pager)
 
-        // Set the current tab to today
-        if (it.dates.isNotEmpty()) {
-          val today = dateFormat.format(Date())
-          val index = adapter.dates.indexOfFirst { it.id == today }
-          if (index >= 0) {
-            binding.pager.setCurrentItem(index, false)
+        if (savedInstanceState == null) {
+          // Set the current tab to today
+          if (it.dates.isNotEmpty()) {
+            val today = dateFormat.format(Date())
+            val index = adapter.dates.indexOfFirst { it.id == today }
+            if (index >= 0) {
+              binding.pager.setCurrentItem(index, false)
+            }
           }
         }
       }
